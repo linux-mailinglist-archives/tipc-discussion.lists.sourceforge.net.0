@@ -2,116 +2,95 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC3CC3627F
-	for <lists+tipc-discussion@lfdr.de>; Wed,  5 Jun 2019 19:28:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D791F3AB34
+	for <lists+tipc-discussion@lfdr.de>; Sun,  9 Jun 2019 20:45:00 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1hYZhd-0006nw-K3; Wed, 05 Jun 2019 17:27:57 +0000
+	id 1ha2oG-0002ik-UI; Sun, 09 Jun 2019 18:44:52 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jon.maloy@ericsson.com>) id 1hYZhc-0006nm-7t
- for tipc-discussion@lists.sourceforge.net; Wed, 05 Jun 2019 17:27:56 +0000
+ (envelope-from <lucien.xin@gmail.com>) id 1ha2oF-0002iY-IE
+ for tipc-discussion@lists.sourceforge.net; Sun, 09 Jun 2019 18:44:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
+ In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
+ :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=e+Hhsu3mF/x6Jkw/6OZPYsemvoBw1hKyQv34CBMNIMk=; b=lSiLpmiTIFO6JMErANXT5KeZpJ
- zpRilR4dWakZu3UHzO1m501PlyqviPpCRmPs71BjsQfOV4SMBJgF8hjMSxpatLDfWrEIVF+0e7pEK
- w+WrtUTNVQIAlySEXx8a+hWOK+T4RyzfnSSwWl0g488+sNAXRGypF6s9uvQcahp3ruZc=;
+ bh=Da88wBTs9LOEdvHpH2F2PYZaKc1cITGuLPz23cQj6Ag=; b=fgWPKt2+pnIr0FInXd5kzoqQkn
+ jJKMCYSV07FRlnNGEe2WBtpqDE+7Tak8TK/zllqWdNAQjiuPuRUHExSRm7uPZ0ovlxcoL3SBtUhrs
+ aEv7njetC/3v3gquHTOjgSrshr+pnWcBHR7sh3UWRgZgoYGAUQ1BKe74cT1DjnBoCvPY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
- References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+ h=Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+ MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=e+Hhsu3mF/x6Jkw/6OZPYsemvoBw1hKyQv34CBMNIMk=; b=TvBZQ8mDaoDcLDb1ccSLOqonLC
- C0jsnJG2ahSV4XwwPschY7qgWSC/NugKK9cQEHqbH/eW75s7pW6+EsZ7l2JjRKM1GLVdFeKnQOAwV
- l611Bwl6VfXjP1ovD0Nau65U77gWTq/1oNr9u3SIwbOQJcQpVr78R7suLC6l/wbA0MZI=;
-Received: from mail-eopbgr710088.outbound.protection.outlook.com
- ([40.107.71.88] helo=NAM05-BY2-obe.outbound.protection.outlook.com)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.90_1)
- id 1hYZhX-009hn3-Ci
- for tipc-discussion@lists.sourceforge.net; Wed, 05 Jun 2019 17:27:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=e+Hhsu3mF/x6Jkw/6OZPYsemvoBw1hKyQv34CBMNIMk=;
- b=gkdHMbqYHMPfzdlevlZhAvDZH3KVB3FGncOSpjXmX7jnb4J1KeIShAO7tzovfAo39YpBsHA9q0zLBqgT3wwsdtRKm0Au7Pa92quPC9Z1kC5b0yNP47WtmqbY+SuPLBIjVVmM6Jw83v3Nv2auaSGMxd1o5maMBfnua8ce4aCmjBw=
-Received: from CH2PR15MB3575.namprd15.prod.outlook.com (52.132.228.77) by
- CH2PR15MB3622.namprd15.prod.outlook.com (52.132.228.224) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1943.22; Wed, 5 Jun 2019 17:12:17 +0000
-Received: from CH2PR15MB3575.namprd15.prod.outlook.com
- ([fe80::8d6a:e759:6fd:5ee0]) by CH2PR15MB3575.namprd15.prod.outlook.com
- ([fe80::8d6a:e759:6fd:5ee0%7]) with mapi id 15.20.1965.011; Wed, 5 Jun 2019
- 17:12:17 +0000
-From: Jon Maloy <jon.maloy@ericsson.com>
-To: Tuong Tong Lien <tuong.t.lien@dektech.com.au>,
- "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>, "maloy@donjonn.com"
- <maloy@donjonn.com>, "ying.xue@windriver.com" <ying.xue@windriver.com>
-Thread-Topic: [PATCH RFC 0/2] tipc: link changeover issues
-Thread-Index: AQHVGpWZ8RPkTWeZBUKJue+KnVQnEaaNTlYw
-Date: Wed, 5 Jun 2019 17:12:17 +0000
-Message-ID: <CH2PR15MB3575A223148C635EF294ADD19A160@CH2PR15MB3575.namprd15.prod.outlook.com>
-References: <20190604052239.9352-1-tuong.t.lien@dektech.com.au>
-In-Reply-To: <20190604052239.9352-1-tuong.t.lien@dektech.com.au>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=jon.maloy@ericsson.com; 
-x-originating-ip: [192.75.88.130]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c039f8b6-dfc0-40f7-b1e8-08d6e9d8f66d
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:CH2PR15MB3622; 
-x-ms-traffictypediagnostic: CH2PR15MB3622:
-x-ld-processed: 92e84ceb-fbfd-47ab-be52-080c6b87953f,ExtAddr
-x-microsoft-antispam-prvs: <CH2PR15MB3622DDDE4072D73F1D2F82249A160@CH2PR15MB3622.namprd15.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4941;
-x-forefront-prvs: 00594E8DBA
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(366004)(376002)(346002)(136003)(39860400002)(199004)(189003)(13464003)(73956011)(5660300002)(316002)(2906002)(99286004)(64756008)(6246003)(53936002)(52536014)(66946007)(44832011)(66446008)(66476007)(66556008)(71200400001)(71190400001)(33656002)(4744005)(76116006)(25786009)(68736007)(14454004)(478600001)(8936002)(446003)(486006)(8676002)(2201001)(81166006)(81156014)(11346002)(110136005)(186003)(476003)(256004)(6436002)(229853002)(86362001)(53546011)(6506007)(6116002)(2501003)(7736002)(305945005)(55016002)(66066001)(76176011)(102836004)(9686003)(74316002)(7696005)(3846002)(26005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR15MB3622;
- H:CH2PR15MB3575.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: ericsson.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: gfHq+u8iSlifn8A69amKW0NiJJNj186dyPCfU2lccU38ANYI3McaMrnLzj37vyT0k7ERFWC1QfqckPEWDu12HfvxN1Ms05qItnkZ/SZxIs001ip42G9byktgSEwAz/9/7fUxIQEFe3m7x4SHtQ9NW954riwyyXnO1uYkabe04FaWhu+vwR2rsZSAE9RRMa5xehx9WJBfpQwUInxvjXKa//njGurhLfVhcwe6qAV+C1TeXz+kOBdnUgn2OampJikA3zG46I2sSInro9gHTai9tQseuCnYl2aAIaiQaV2SQ6pD8Km0lL1cniE3sEA9yfoQAxLcRhRfsC2VwMj3oV22RRY9ZVwGw2JCgb3UrAfnvtjWSLW2MLLUtvl3n65QwZ3JpVBluidBlmsDmWfMBu7aX86tLlKFsUTiq7ri3IgGCHw=
+ bh=Da88wBTs9LOEdvHpH2F2PYZaKc1cITGuLPz23cQj6Ag=; b=ROan5VHIhg6fzJmEFbyWyBLOU4
+ +DJW2Ub9PHZFA+l+EtjYTmEu3JBsnp9cUD/b24gq3AgCac1wgoMS7CpcHkXpGcasDSHvgR9/aHPIE
+ 4WHBnBALPlZ4JDsplktSXIv+R2Lr1k0v8rVtzE5Uutc8Kfxa67vyRIa+hCX4jEB78SaU=;
+Received: from mail-wr1-f67.google.com ([209.85.221.67])
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
+ id 1ha2oD-004u6G-7m
+ for tipc-discussion@lists.sourceforge.net; Sun, 09 Jun 2019 18:44:50 +0000
+Received: by mail-wr1-f67.google.com with SMTP id m3so6967742wrv.2
+ for <tipc-discussion@lists.sourceforge.net>;
+ Sun, 09 Jun 2019 11:44:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Da88wBTs9LOEdvHpH2F2PYZaKc1cITGuLPz23cQj6Ag=;
+ b=h0Y28na4yaGSKJOIZYvb5yRmSHL+BSW5/OYxulXPUMGZozJHavvZTrcnT1OPF4U8Xb
+ umOrC40tx/FkQ6BIWEoIW6cFcCuHFt8S5Io+8JXpkpr6Qr1PyQIoEcGLovmDDvzNymE9
+ CNJ9L362LGrwzUBET0Ik8cvX+ULEqYFLBQ7lSKemj7wP8tejb8ylyOJxHrS49xgzKeEV
+ UmFV0yhmm8j12+2kw/9EfsjhK6BPxEHAuuzov9g3kRMZ5f1FdQizLBPv4NQaY6WioHOz
+ IENoLihYeZqjY7CvsE8ixOZrEwptSvpxzXUlSP+Kv+xVMr8uqxOENokQaQKPuWFoclei
+ WeGw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Da88wBTs9LOEdvHpH2F2PYZaKc1cITGuLPz23cQj6Ag=;
+ b=QSX13vZQW6cANgrL9hVwbwrL/2AF7FMnsZay46HOVj3jsVwQq2dbwJU/raVuthMEo4
+ f5KTgme/4WXG+srujfa/AGqW2QXYwngGHFcrMkCkVhZPa0N2/TcjejP62yfMjDsC6xS1
+ 2tUz8JY4JLVNamkOlNlbOQSmww9NxkY90OycUDH0rISVKWcGzOxpUHVc/NbQPG2dzbjo
+ 0eTpeQcKFimhutD++NUWgBCmAcjgAa/AK2eu7nGH9hx024Nmcozuvakx2DLEzXiExjO1
+ lpHFM1Pu8MJTwQeF03LcuTknHr4L3ZceBE8G+Yoj5fD6WJ77kmdpfTi2z2Ek9d3vDOQZ
+ fWvA==
+X-Gm-Message-State: APjAAAVzjrGDEhuEHSFwLIxhLWTK9VNiGOOrxw3TvbEu9Q3UF5Y3HRKU
+ +CsIY1jv9qFzn7GTdY9hBnWJSG/QgoyKd6BDTmU=
+X-Google-Smtp-Source: APXvYqwp9fw8BNZ8G6/ahEMiAGVzOVt0NDgzKLcIgA+sQlsmmP6spzQBpRXteWAuZFWqs8Nl83+DjDIokSPKvT0A4h4=
+X-Received: by 2002:adf:fb81:: with SMTP id a1mr2702407wrr.329.1560105881662; 
+ Sun, 09 Jun 2019 11:44:41 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: ericsson.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c039f8b6-dfc0-40f7-b1e8-08d6e9d8f66d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Jun 2019 17:12:17.4356 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: jon.maloy@ericsson.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR15MB3622
-X-Spam-Score: -0.1 (/)
+References: <000000000000000c060589a8bc66@google.com>
+In-Reply-To: <000000000000000c060589a8bc66@google.com>
+From: Xin Long <lucien.xin@gmail.com>
+Date: Mon, 10 Jun 2019 02:44:30 +0800
+Message-ID: <CADvbK_cMohjd3U=8H8ECT74rK85Tjy1FZYAXQQ_CsWgFq3c5gA@mail.gmail.com>
+To: syzbot <syzbot+78fbe679c8ca8d264a8d@syzkaller.appspotmail.com>
+X-Spam-Score: 1.8 (+)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
+ 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+ (lucien.xin[at]gmail.com)
+ -0.6 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.67 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.71.88 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ trust [209.85.221.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
-X-Headers-End: 1hYZhX-009hn3-Ci
-Subject: Re: [tipc-discussion] [PATCH RFC 0/2] tipc: link changeover issues
+X-Headers-End: 1ha2oD-004u6G-7m
+Subject: Re: [tipc-discussion] memory leak in tipc_buf_acquire
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -123,40 +102,182 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: network dev <netdev@vger.kernel.org>,
+ syzkaller-bugs <syzkaller-bugs@googlegroups.com>,
+ LKML <linux-kernel@vger.kernel.org>, tipc-discussion@lists.sourceforge.net,
+ davem <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Both patches acked by me.
+On Sat, May 25, 2019 at 5:18 AM syzbot
+<syzbot+78fbe679c8ca8d264a8d@syzkaller.appspotmail.com> wrote:
+>
+> Hello,
+>
+> syzbot found the following crash on:
+>
+> HEAD commit:    4dde821e Merge tag 'xfs-5.2-fixes-1' of git://git.kernel.o..
+> git tree:       upstream
+> console output: https://syzkaller.appspot.com/x/log.txt?x=107db73aa00000
+> kernel config:  https://syzkaller.appspot.com/x/.config?x=61dd9e15a761691d
+> dashboard link: https://syzkaller.appspot.com/bug?extid=78fbe679c8ca8d264a8d
+> compiler:       gcc (GCC) 9.0.0 20181231 (experimental)
+> syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=162bd84ca00000
+> C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=160c605ca00000
+>
+Looks we need to purge each member's deferredq list in tipc_group_delete():
+diff --git a/net/tipc/group.c b/net/tipc/group.c
+index 992be61..23823eb 100644
+--- a/net/tipc/group.c
++++ b/net/tipc/group.c
+@@ -218,6 +218,7 @@ void tipc_group_delete(struct net *net, struct
+tipc_group *grp)
 
-///jon
+  rbtree_postorder_for_each_entry_safe(m, tmp, tree, tree_node) {
+  tipc_group_proto_xmit(grp, m, GRP_LEAVE_MSG, &xmitq);
++ __skb_queue_purge(&m->deferredq);
+  list_del(&m->list);
+  kfree(m);
+  }
 
-
-> -----Original Message-----
-> From: Tuong Lien <tuong.t.lien@dektech.com.au>
-> Sent: 4-Jun-19 01:23
-> To: tipc-discussion@lists.sourceforge.net; Jon Maloy
-> <jon.maloy@ericsson.com>; maloy@donjonn.com; ying.xue@windriver.com
-> Subject: [PATCH RFC 0/2] tipc: link changeover issues
-> 
-> This patch series is to resolve some issues found with the current link
-> changeover mechanism, it also includes an optimization for the link synching.
-> 
-> Tuong Lien (2):
->   tipc: optimize link synching mechanism
->   tipc: fix changeover issues due to large packet
-> 
->  net/tipc/link.c | 118
-> +++++++++++++++++++++++++++++++++++++++++++++++++-------
->  net/tipc/msg.c  |  62 +++++++++++++++++++++++++++++  net/tipc/msg.h  |
-> 28 +++++++++++++-
->  net/tipc/node.c |   6 ++-
->  net/tipc/node.h |   6 ++-
->  5 files changed, 202 insertions(+), 18 deletions(-)
-> 
-> --
-> 2.13.7
-
+> IMPORTANT: if you fix the bug, please add the following tag to the commit:
+> Reported-by: syzbot+78fbe679c8ca8d264a8d@syzkaller.appspotmail.com
+>
+> type=1400 audit(1558701681.775:36): avc:  denied  { map } for  pid=7128
+> comm="syz-executor987" path="/root/syz-executor987656147" dev="sda1"
+> ino=15900 scontext=unconfined_u:system_r:insmod_t:s0-s0:c0.c1023
+> tcontext=unconfined_u:object_r:user_home_t:s0 tclass=file permissive=1
+> executing program
+> executing program
+> executing program
+> executing program
+> BUG: memory leak
+> unreferenced object 0xffff88810df83c00 (size 512):
+>    comm "softirq", pid 0, jiffies 4294942354 (age 19.830s)
+>    hex dump (first 32 bytes):
+>      38 1a 0d 0f 81 88 ff ff 38 1a 0d 0f 81 88 ff ff  8.......8.......
+>      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+>    backtrace:
+>      [<000000009375ee42>] kmemleak_alloc_recursive
+> include/linux/kmemleak.h:55 [inline]
+>      [<000000009375ee42>] slab_post_alloc_hook mm/slab.h:439 [inline]
+>      [<000000009375ee42>] slab_alloc_node mm/slab.c:3269 [inline]
+>      [<000000009375ee42>] kmem_cache_alloc_node+0x153/0x2a0 mm/slab.c:3579
+>      [<000000004c563922>] __alloc_skb+0x6e/0x210 net/core/skbuff.c:198
+>      [<00000000ec87bfa1>] alloc_skb_fclone include/linux/skbuff.h:1107
+> [inline]
+>      [<00000000ec87bfa1>] tipc_buf_acquire+0x2f/0x80 net/tipc/msg.c:66
+>      [<00000000d151ef84>] tipc_msg_create+0x37/0xe0 net/tipc/msg.c:98
+>      [<000000008bb437b0>] tipc_group_create_event+0xb3/0x1b0
+> net/tipc/group.c:679
+>      [<00000000947b1d0f>] tipc_group_proto_rcv+0x569/0x640
+> net/tipc/group.c:781
+>      [<00000000b75ab039>] tipc_sk_proto_rcv net/tipc/socket.c:1996 [inline]
+>      [<00000000b75ab039>] tipc_sk_filter_rcv+0x9ac/0xf20
+> net/tipc/socket.c:2163
+>      [<000000000dab7a6c>] tipc_sk_enqueue net/tipc/socket.c:2255 [inline]
+>      [<000000000dab7a6c>] tipc_sk_rcv+0x494/0x8a0 net/tipc/socket.c:2306
+>      [<00000000023a7ddd>] tipc_node_xmit+0x196/0x1f0 net/tipc/node.c:1442
+>      [<00000000337dd9eb>] tipc_node_xmit_skb net/tipc/node.c:1491 [inline]
+>      [<00000000337dd9eb>] tipc_node_distr_xmit+0x7d/0x120
+> net/tipc/node.c:1506
+>      [<00000000b6375182>] tipc_group_delete+0xe6/0x130 net/tipc/group.c:224
+>      [<000000000361ba2b>] tipc_sk_leave+0x57/0xb0 net/tipc/socket.c:2925
+>      [<000000009df90505>] tipc_release+0x7b/0x5e0 net/tipc/socket.c:584
+>      [<000000009f3189da>] __sock_release+0x4b/0xe0 net/socket.c:607
+>      [<00000000d3568ee0>] sock_close+0x1b/0x30 net/socket.c:1279
+>      [<00000000266a6215>] __fput+0xed/0x300 fs/file_table.c:280
+>
+> BUG: memory leak
+> unreferenced object 0xffff888111895400 (size 1024):
+>    comm "softirq", pid 0, jiffies 4294942354 (age 19.830s)
+>    hex dump (first 32 bytes):
+>      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+>      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+>    backtrace:
+>      [<00000000e2e2855e>] kmemleak_alloc_recursive
+> include/linux/kmemleak.h:55 [inline]
+>      [<00000000e2e2855e>] slab_post_alloc_hook mm/slab.h:439 [inline]
+>      [<00000000e2e2855e>] slab_alloc_node mm/slab.c:3269 [inline]
+>      [<00000000e2e2855e>] kmem_cache_alloc_node_trace+0x15b/0x2a0
+> mm/slab.c:3597
+>      [<00000000a5030ce7>] __do_kmalloc_node mm/slab.c:3619 [inline]
+>      [<00000000a5030ce7>] __kmalloc_node_track_caller+0x38/0x50
+> mm/slab.c:3634
+>      [<0000000039212451>] __kmalloc_reserve.isra.0+0x40/0xb0
+> net/core/skbuff.c:142
+>      [<00000000307cb4cf>] __alloc_skb+0xa0/0x210 net/core/skbuff.c:210
+>      [<00000000ec87bfa1>] alloc_skb_fclone include/linux/skbuff.h:1107
+> [inline]
+>      [<00000000ec87bfa1>] tipc_buf_acquire+0x2f/0x80 net/tipc/msg.c:66
+>      [<00000000d151ef84>] tipc_msg_create+0x37/0xe0 net/tipc/msg.c:98
+>      [<000000008bb437b0>] tipc_group_create_event+0xb3/0x1b0
+> net/tipc/group.c:679
+>      [<00000000947b1d0f>] tipc_group_proto_rcv+0x569/0x640
+> net/tipc/group.c:781
+>      [<00000000b75ab039>] tipc_sk_proto_rcv net/tipc/socket.c:1996 [inline]
+>      [<00000000b75ab039>] tipc_sk_filter_rcv+0x9ac/0xf20
+> net/tipc/socket.c:2163
+>      [<000000000dab7a6c>] tipc_sk_enqueue net/tipc/socket.c:2255 [inline]
+>      [<000000000dab7a6c>] tipc_sk_rcv+0x494/0x8a0 net/tipc/socket.c:2306
+>      [<00000000023a7ddd>] tipc_node_xmit+0x196/0x1f0 net/tipc/node.c:1442
+>      [<00000000337dd9eb>] tipc_node_xmit_skb net/tipc/node.c:1491 [inline]
+>      [<00000000337dd9eb>] tipc_node_distr_xmit+0x7d/0x120
+> net/tipc/node.c:1506
+>      [<00000000b6375182>] tipc_group_delete+0xe6/0x130 net/tipc/group.c:224
+>      [<000000000361ba2b>] tipc_sk_leave+0x57/0xb0 net/tipc/socket.c:2925
+>      [<000000009df90505>] tipc_release+0x7b/0x5e0 net/tipc/socket.c:584
+>      [<000000009f3189da>] __sock_release+0x4b/0xe0 net/socket.c:607
+>
+> BUG: memory leak
+> unreferenced object 0xffff88810e63de00 (size 512):
+>    comm "softirq", pid 0, jiffies 4294943548 (age 7.890s)
+>    hex dump (first 32 bytes):
+>      38 10 0d 0f 81 88 ff ff 38 10 0d 0f 81 88 ff ff  8.......8.......
+>      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+>    backtrace:
+>      [<000000009375ee42>] kmemleak_alloc_recursive
+> include/linux/kmemleak.h:55 [inline]
+>      [<000000009375ee42>] slab_post_alloc_hook mm/slab.h:439 [inline]
+>      [<000000009375ee42>] slab_alloc_node mm/slab.c:3269 [inline]
+>      [<000000009375ee42>] kmem_cache_alloc_node+0x153/0x2a0 mm/slab.c:3579
+>      [<000000004c563922>] __alloc_skb+0x6e/0x210 net/core/skbuff.c:198
+>      [<00000000ec87bfa1>] alloc_skb_fclone include/linux/skbuff.h:1107
+> [inline]
+>      [<00000000ec87bfa1>] tipc_buf_acquire+0x2f/0x80 net/tipc/msg.c:66
+>      [<00000000d151ef84>] tipc_msg_create+0x37/0xe0 net/tipc/msg.c:98
+>      [<000000008bb437b0>] tipc_group_create_event+0xb3/0x1b0
+> net/tipc/group.c:679
+>      [<00000000947b1d0f>] tipc_group_proto_rcv+0x569/0x640
+> net/tipc/group.c:781
+>      [<00000000b75ab039>] tipc_sk_proto_rcv net/tipc/socket.c:1996 [inline]
+>      [<00000000b75ab039>] tipc_sk_filter_rcv+0x9ac/0xf20
+> net/tipc/socket.c:2163
+>      [<000000000dab7a6c>] tipc_sk_enqueue net/tipc/socket.c:2255 [inline]
+>      [<000000000dab7a6c>] tipc_sk_rcv+0x494/0x8a0 net/tipc/socket.c:2306
+>      [<00000000023a7ddd>] tipc_node_xmit+0x196/0x1f0 net/tipc/node.c:1442
+>      [<00000000337dd9eb>] tipc_node_xmit_skb net/tipc/node.c:1491 [inline]
+>      [<00000000337dd9eb>] tipc_node_distr_xmit+0x7d/0x120
+> net/tipc/node.c:1506
+>      [<00000000b6375182>] tipc_group_delete+0xe6/0x130 net/tipc/group.c:224
+>      [<000000000361ba2b>] tipc_sk_leave+0x57/0xb0 net/tipc/socket.c:2925
+>      [<000000009df90505>] tipc_release+0x7b/0x5e0 net/tipc/socket.c:584
+>      [<000000009f3189da>] __sock_release+0x4b/0xe0 net/socket.c:607
+>      [<00000000d3568ee0>] sock_close+0x1b/0x30 net/socket.c:1279
+>      [<00000000266a6215>] __fput+0xed/0x300 fs/file_table.c:280
+>
+>
+>
+> ---
+> This bug is generated by a bot. It may contain errors.
+> See https://goo.gl/tpsmEJ for more information about syzbot.
+> syzbot engineers can be reached at syzkaller@googlegroups.com.
+>
+> syzbot will keep track of this bug report. See:
+> https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+> syzbot can test patches for this bug, for details see:
+> https://goo.gl/tpsmEJ#testing-patches
 
 
 _______________________________________________
