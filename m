@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BC874334C
-	for <lists+tipc-discussion@lfdr.de>; Thu, 13 Jun 2019 09:26:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68F84433F5
+	for <lists+tipc-discussion@lfdr.de>; Thu, 13 Jun 2019 10:07:52 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1hbK7n-00083R-1w; Thu, 13 Jun 2019 07:26:19 +0000
+	id 1hbKlu-0006lW-UI; Thu, 13 Jun 2019 08:07:46 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <hoang.h.le@dektech.com.au>) id 1hbK7l-00083D-FW
- for tipc-discussion@lists.sourceforge.net; Thu, 13 Jun 2019 07:26:17 +0000
+ (envelope-from <hoang.h.le@dektech.com.au>) id 1hbKlt-0006l0-Iv
+ for tipc-discussion@lists.sourceforge.net; Thu, 13 Jun 2019 08:07:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:
  MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=VpbK/I9azV99c2ZRihC/fbqXX/Ko7axTed3MRDHcPGs=; b=hN5Zd/clIoPNYJLXG9Jcvvz+9j
- HcK+8HKsYnbaPdzcN210uXRcCwiYRZRaxIfDml3pZFh1nScf3p7ajAAjIgxkUxtDsZp1TfHPQA76r
- VZYpRIQN66ArDqrWO6CL06xQchLxNdLJH20/jGndjpGgWonUM5hm/TYqhZm3nvKXt8MA=;
+ bh=b5tk07ZzjXhrNGdr+m4igM7MeVLbDPrv5B20fbbDZ2Y=; b=cr7RckF0ku3JA7nTvuJHjuOg7I
+ r3W4L/YEegVCk3G/VcP2uAPg5/4HYKuaCDgzA+dZMJ2nTQRQStP6XSYfSUWqsM20ViYOGw/5gmD50
+ OEyMdWnIPrhAe1c+4qqwmoMejTtlDGzbwEF7k0PrQxfvBVxj7BRYzqnsZ0ksPBWkkgLw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:MIME-Version:
@@ -29,45 +29,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
  In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=VpbK/I9azV99c2ZRihC/fbqXX/Ko7axTed3MRDHcPGs=; b=jlzqwDN2vyhwTofA64SjIK3Y9l
- 4Do8qbpqhdeDCFoeGOW8B+UOCoVnc854XBhABT8SApbMF3UqkA1Wo510NB9/lxmIeabGThzHdMY7T
- PLpP8av/YxroWLtFn85Tjnh33nQm11M7/eLi9o31AnNDZgw2CdHzi2+XD/DmsgXJ/N6Y=;
+ bh=b5tk07ZzjXhrNGdr+m4igM7MeVLbDPrv5B20fbbDZ2Y=; b=ZnS9NWEL3VF3L8NqIUiTkABCYa
+ koVKOR9GHfYQNC/aNjWe40x5quXeZjVyDveBI2yA/XZseo66a/lVwNXzokZp9fpIMi7FRTUl3VgoG
+ faQrqGCQuRMmBDl0B4nzWicdkqrRQgJ9ydA3w19C995tKaSAZmPplNKfqnUV/yz4n1fI=;
 Received: from f0-dek.dektech.com.au ([210.10.221.142]
  helo=mail.dektech.com.au)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- id 1hbK7g-00BCr6-Pw
- for tipc-discussion@lists.sourceforge.net; Thu, 13 Jun 2019 07:26:16 +0000
+ id 1hbKlp-004jTz-Gw
+ for tipc-discussion@lists.sourceforge.net; Thu, 13 Jun 2019 08:07:44 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.dektech.com.au (Postfix) with ESMTP id 28A7CE245A;
- Thu, 13 Jun 2019 17:26:06 +1000 (AEST)
+ by mail.dektech.com.au (Postfix) with ESMTP id E867DE49A4;
+ Thu, 13 Jun 2019 18:07:31 +1000 (AEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
  h=x-mailer:message-id:date:date:subject:subject:from:from
- :received:received:received; s=mail_dkim; t=1560410766; bh=TlAqb
- Y+Y/Nk/xinv0oXwaBI/JgLTGJM+BcFsiZMUIdQ=; b=Qn9jJjdyaCFzRtnqLQMMs
- JDk+MyoVg/uUEz1xEpBXdnOkHBx6mmXDdKJhhu6qWku736ZiMF7+2Kyl6g29CYWA
- K73l6Huu3jnUvOPjqZ0Rlxiehsar1dZ7UGCuEMUQk0uygn0tDtbAlFe8dvdw2a27
- vd7/gyWCxjjRrP9IFauusg=
+ :received:received:received; s=mail_dkim; t=1560413251; bh=PG6Bg
+ rw+6QUWi1LieFk9hLcFGDmDyZpBIV7MRFY7Ja0=; b=Fi5vPICtJHEq8SUX3WBfk
+ R/TSDlUBoQ/qOvZF5DwugFYTE452Ev5YiHliIG0sH2dpnGAGrLzmRwCWt12YABgk
+ JsHEWSLuPo0c6blr6WxIW9YE0n8nl+ohCsmXxdxaqoDXpiSRRWy1Kg69KvxlmzIJ
+ 1JY6iiycw3gzwAldu55ZnM=
 X-Virus-Scanned: amavisd-new at dektech.com.au
 Received: from mail.dektech.com.au ([127.0.0.1])
  by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id NE5pbgZEfpVu; Thu, 13 Jun 2019 17:26:06 +1000 (AEST)
+ with ESMTP id V6rKn6Nnrbwy; Thu, 13 Jun 2019 18:07:31 +1000 (AEST)
 Received: from mail.dektech.com.au (localhost [127.0.0.1])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPS id AB2F3E492F;
- Thu, 13 Jun 2019 17:26:05 +1000 (AEST)
+ by mail.dektech.com.au (Postfix) with ESMTPS id C9313E49C8;
+ Thu, 13 Jun 2019 18:07:31 +1000 (AEST)
 Received: from build.dek-tpc.internal (unknown [14.161.14.188])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPSA id C04DAE245A;
- Thu, 13 Jun 2019 17:26:03 +1000 (AEST)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id 3C018E49A4;
+ Thu, 13 Jun 2019 18:07:30 +1000 (AEST)
 From: Hoang Le <hoang.h.le@dektech.com.au>
 To: dsahern@gmail.com, jon.maloy@ericsson.com, maloy@donjonn.com,
  ying.xue@windriver.com, netdev@vger.kernel.org,
  tipc-discussion@lists.sourceforge.net
-Date: Thu, 13 Jun 2019 14:25:53 +0700
-Message-Id: <20190613072553.20747-1-hoang.h.le@dektech.com.au>
+Date: Thu, 13 Jun 2019 15:07:19 +0700
+Message-Id: <20190613080719.22081-1-hoang.h.le@dektech.com.au>
 X-Mailer: git-send-email 2.17.1
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
@@ -81,8 +81,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1hbK7g-00BCr6-Pw
-Subject: [tipc-discussion] [iproute2-next v4] tipc: support interface name
+X-Headers-End: 1hbKlp-004jTz-Gw
+Subject: [tipc-discussion] [iproute2-next v5] tipc: support interface name
  when activating UDP bearer
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -115,20 +115,18 @@ v2:
     - Removed initial value for fd
     - Fixed the returning value for cmd_bearer_validate_and_get_addr
       to make its consistent with using: zero or non-zero
-v3:
-    - Switch to use helper 'get_ifname' to retrieve interface name
-
-v4:
-    - Replace legacy SIOCGIFADDR using by netlink
+v3: - Switch to use helper 'get_ifname' to retrieve interface name
+v4: - Replace legacy SIOCGIFADDR by netlink
+v5: - Fix leaky rtnl_handle
 
 Acked-by: Ying Xue <ying.xue@windriver.com>
 Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
 ---
- tipc/bearer.c | 89 ++++++++++++++++++++++++++++++++++++++++++++++++---
- 1 file changed, 84 insertions(+), 5 deletions(-)
+ tipc/bearer.c | 92 ++++++++++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 87 insertions(+), 5 deletions(-)
 
 diff --git a/tipc/bearer.c b/tipc/bearer.c
-index 1f3a4d44441e..367ec8a2630f 100644
+index 1f3a4d44441e..e17e2477c1ad 100644
 --- a/tipc/bearer.c
 +++ b/tipc/bearer.c
 @@ -19,10 +19,12 @@
@@ -153,11 +151,11 @@ index 1f3a4d44441e..367ec8a2630f 100644
  		"OPTIONS\n"
  		" domain DOMAIN		- Discovery domain\n"
  		" priority PRIORITY	- Bearer priority\n\n"
-@@ -119,6 +121,71 @@ static int generate_multicast(short af, char *buf, int bufsize)
+@@ -119,6 +121,74 @@ static int generate_multicast(short af, char *buf, int bufsize)
  	return 0;
  }
  
-+static struct ifreq ifr;
++static struct ifreq ifr = {};
 +static int nl_dump_addr_filter(struct nlmsghdr *nlh, void *arg)
 +{
 +	struct ifaddrmsg *ifa = NLMSG_DATA(nlh);
@@ -196,7 +194,7 @@ index 1f3a4d44441e..367ec8a2630f 100644
 +
 +static int cmd_bearer_validate_and_get_addr(const char *name, char *r_addr)
 +{
-+	struct rtnl_handle rth = { .fd = -1 };
++	struct rtnl_handle rth ={ .fd = -1 };
 +
 +	memset(&ifr, 0, sizeof(ifr));
 +	if (!name || !r_addr || get_ifname(ifr.ifr_name, name))
@@ -212,12 +210,15 @@ index 1f3a4d44441e..367ec8a2630f 100644
 +	if (rtnl_open(&rth, 0) < 0)
 +		return 0;
 +
-+	if (rtnl_addrdump_req(&rth, AF_UNSPEC, 0) < 0)
++	if (rtnl_addrdump_req(&rth, AF_UNSPEC, 0) < 0) {
++		rtnl_close(&rth);
 +		return 0;
++	}
 +
-+	if (rtnl_dump_filter(&rth, nl_dump_addr_filter, r_addr) < 0)
++	if (rtnl_dump_filter(&rth, nl_dump_addr_filter, r_addr) < 0) {
++		rtnl_close(&rth);
 +		return 0;
-+
++	}
 +	rtnl_close(&rth);
 +	return 1;
 +}
@@ -225,7 +226,7 @@ index 1f3a4d44441e..367ec8a2630f 100644
  static int nl_add_udp_enable_opts(struct nlmsghdr *nlh, struct opt *opts,
  				  struct cmdl *cmdl)
  {
-@@ -136,13 +203,25 @@ static int nl_add_udp_enable_opts(struct nlmsghdr *nlh, struct opt *opts,
+@@ -136,13 +206,25 @@ static int nl_add_udp_enable_opts(struct nlmsghdr *nlh, struct opt *opts,
  		.ai_family = AF_UNSPEC,
  		.ai_socktype = SOCK_DGRAM
  	};
