@@ -2,122 +2,76 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22EA645DE9
-	for <lists+tipc-discussion@lfdr.de>; Fri, 14 Jun 2019 15:17:08 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id E27024735F
+	for <lists+tipc-discussion@lfdr.de>; Sun, 16 Jun 2019 08:47:34 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1hbm4l-0000R4-Vg; Fri, 14 Jun 2019 13:17:03 +0000
+	id 1hcOwn-0005V1-Gk; Sun, 16 Jun 2019 06:47:25 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jon.maloy@ericsson.com>) id 1hbm4k-0000Qr-3j
- for tipc-discussion@lists.sourceforge.net; Fri, 14 Jun 2019 13:17:02 +0000
+ (envelope-from <Ying.Xue@windriver.com>) id 1hcOwm-0005Uu-MG
+ for tipc-discussion@lists.sourceforge.net; Sun, 16 Jun 2019 06:47:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=y6mHPFL1D0aWqrhTMGgOQe4mtMFZWUR17EWorpgC0BE=; b=LoGA4urXXxcERGnR8iSMNEva2D
- MvkYynccf3N3QRlLDQPjqnDQf9DKSsofqhD9CCHhD8r8ydEL1eXjKVFp2kFmw5oajBg3viQAYZ8nF
- LPZyyWj5GZFAfolRaDqgBAsP5fCQ990KP6ARtLc/VqP5PCypmEwZlpHSHO1kQiy6pgUY=;
+ bh=aLccMgvN1j+l7H5X0i3y9/624eFA1Vwk2h5M/vK75W8=; b=b5i7uv+jzjpLDJdbo6e2mswBu2
+ K+t9iYggTUekTKb4xan8L5vG61jaEolBtPX3CIsvVX9ivT/uUbhCxlYTwiqM7CqYoaWoqv8/TlDqZ
+ 48fP1F2s4FJfQF1Eo6h076hprxGA4o93foi1YLPuNxzV8WuucPdcSw02cXlKxJTAULlE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
- References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=y6mHPFL1D0aWqrhTMGgOQe4mtMFZWUR17EWorpgC0BE=; b=Pfh1tGxCVGQYco8vDC0WLnEu1N
- 4y7KaidGWvWwj5Lel3cZR+pXaXx1S0aTdq+mPwNOHwqmA3xdlMmhuBjWkLlsTWn0Ss5DOqOkpH1an
- +So4fJjIywIrrLvfSM2G78bytZsVb5dRoOO1zNJHVwBZhC5bJa14AnMg/DZ0nrx1WMP0=;
-Received: from mail-eopbgr750073.outbound.protection.outlook.com
- ([40.107.75.73] helo=NAM02-BL2-obe.outbound.protection.outlook.com)
+ bh=aLccMgvN1j+l7H5X0i3y9/624eFA1Vwk2h5M/vK75W8=; b=O4Ke8Sryt/Q/TpN03XoKWPS9k3
+ 8gyJecbwfbFhAVHU+vXkzAMk5TmxfPnCnUranskMvu6fibNgKKj6Y5rOD9fFhzX/aF8UZ/TvoYgBX
+ DtU3162HunFh398docknmiT4NKWb2vbkrJqm7HjrCPjd7iYCblmPWCsrRI7R9lneGkOQ=;
+Received: from [192.103.53.11] (helo=mail5.wrs.com)
  by sfi-mx-4.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.90_1)
- id 1hbm4f-00DI53-TL
- for tipc-discussion@lists.sourceforge.net; Fri, 14 Jun 2019 13:17:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=y6mHPFL1D0aWqrhTMGgOQe4mtMFZWUR17EWorpgC0BE=;
- b=cViVCKheT2quXIWqCB4Z7v6KCY+kdbMvqkrysJyPpsyjhIrCbzRpoCc5kZHWKsTrtS+530jx2oN8ze9DEKZSI/1ge47CW0rFpLpbGlB0SQcr/Za5HUkYTAd90AWyy6G940MRyIb6HD7Bw0raXw/ZqLhUXPTrsTBFKPP5fZEFwcE=
-Received: from CH2PR15MB3575.namprd15.prod.outlook.com (52.132.228.77) by
- CH2PR15MB3656.namprd15.prod.outlook.com (52.132.229.90) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1965.15; Fri, 14 Jun 2019 13:00:56 +0000
-Received: from CH2PR15MB3575.namprd15.prod.outlook.com
- ([fe80::8d6a:e759:6fd:5ee0]) by CH2PR15MB3575.namprd15.prod.outlook.com
- ([fe80::8d6a:e759:6fd:5ee0%7]) with mapi id 15.20.1987.013; Fri, 14 Jun 2019
- 13:00:56 +0000
-From: Jon Maloy <jon.maloy@ericsson.com>
-To: Tuong Tong Lien <tuong.t.lien@dektech.com.au>,
- "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>, "maloy@donjonn.com"
- <maloy@donjonn.com>, "ying.xue@windriver.com" <ying.xue@windriver.com>
-Thread-Topic: [net] tipc: fix issues with early FAILOVER_MSG from peer
-Thread-Index: AQHVIp3bu9hdXCXjHECyhhblWU8bZ6abHFAg
-Date: Fri, 14 Jun 2019 13:00:55 +0000
-Message-ID: <CH2PR15MB35756F56F591B55728BF21FC9AEE0@CH2PR15MB3575.namprd15.prod.outlook.com>
-References: <20190614104101.24276-1-tuong.t.lien@dektech.com.au>
-In-Reply-To: <20190614104101.24276-1-tuong.t.lien@dektech.com.au>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=jon.maloy@ericsson.com; 
-x-originating-ip: [24.225.233.31]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 7e90cefb-885f-433e-2730-08d6f0c856e8
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:CH2PR15MB3656; 
-x-ms-traffictypediagnostic: CH2PR15MB3656:
-x-ld-processed: 92e84ceb-fbfd-47ab-be52-080c6b87953f,ExtAddr
-x-microsoft-antispam-prvs: <CH2PR15MB3656631E143A602B3623748F9AEE0@CH2PR15MB3656.namprd15.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3383;
-x-forefront-prvs: 0068C7E410
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(396003)(39860400002)(366004)(346002)(376002)(199004)(189003)(13464003)(64756008)(53546011)(73956011)(66446008)(66946007)(66556008)(66476007)(76116006)(305945005)(6506007)(76176011)(7736002)(14454004)(229853002)(478600001)(86362001)(316002)(2201001)(14444005)(256004)(110136005)(6246003)(25786009)(66066001)(7696005)(53936002)(81166006)(99286004)(33656002)(8676002)(81156014)(102836004)(8936002)(3846002)(52536014)(71200400001)(6116002)(9686003)(68736007)(55016002)(71190400001)(6436002)(26005)(2906002)(186003)(74316002)(44832011)(5660300002)(2501003)(486006)(476003)(446003)(11346002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR15MB3656;
- H:CH2PR15MB3575.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: ericsson.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: W4UfFIVIPRA1jDiy57GSfZ3sjWe+yw9RvwZzGfOQms+6aoWXWQ1uHbDRYBlyoNUE99/u2RfggVrlDX1I3dDnJ9mjHwcyJOsIOox6d41HbwxfFqa6a2rDeyRE12ErLCEjStQwSQq5pFJsWh7hbu2zpmML8uadynJzG2SWpZ8bvx1fBOBCUcdMmbx4B0qljjZFFpiOiT9nTBM9Sskj19zlQJSfORvWtT+kbkYQazDtx+yTZ1e20T8wZE3lXrowRUh+1o108r28FDxXBtYufYimV7i2HrTmE8DJcuT4eEuWOHeKrGy0BzWcP++oRjBn2VYBRp/T6WSxVI2s3ohKR1R0svwSZkXcVAf3w76GTz9f269h0ja5TteCFhkKKY/FVobMyhQVo9vjcUHMhGV2EWIL7/aDWMKMER22xPK6gZgt+Rw=
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ id 1hcOwj-00FrN5-EX
+ for tipc-discussion@lists.sourceforge.net; Sun, 16 Jun 2019 06:47:24 +0000
+Received: from ALA-HCA.corp.ad.wrs.com (ala-hca.corp.ad.wrs.com
+ [147.11.189.40])
+ by mail5.wrs.com (8.15.2/8.15.2) with ESMTPS id x5G6jY5P029788
+ (version=TLSv1 cipher=AES128-SHA bits=128 verify=FAIL);
+ Sat, 15 Jun 2019 23:45:50 -0700
+Received: from [128.224.155.90] (128.224.155.90) by ALA-HCA.corp.ad.wrs.com
+ (147.11.189.50) with Microsoft SMTP Server (TLS) id 14.3.439.0; Sat, 15 Jun
+ 2019 23:45:27 -0700
+To: Tuong Lien <tuong.t.lien@dektech.com.au>,
+ <tipc-discussion@lists.sourceforge.net>, <jon.maloy@ericsson.com>,
+ <maloy@donjonn.com>
+References: <20190604052239.9352-1-tuong.t.lien@dektech.com.au>
+ <20190604052239.9352-2-tuong.t.lien@dektech.com.au>
+From: Ying Xue <ying.xue@windriver.com>
+Message-ID: <7efdc7b2-6141-6814-140c-cb05679f9c81@windriver.com>
+Date: Sun, 16 Jun 2019 14:35:27 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-OriginatorOrg: ericsson.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7e90cefb-885f-433e-2730-08d6f0c856e8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jun 2019 13:00:56.0115 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: jon.maloy@ericsson.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR15MB3656
-X-Spam-Score: -0.1 (/)
+In-Reply-To: <20190604052239.9352-2-tuong.t.lien@dektech.com.au>
+Content-Language: en-US
+X-Originating-IP: [128.224.155.90]
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: windriver.com]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.75.73 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
- 0.0 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1hbm4f-00DI53-TL
-Subject: Re: [tipc-discussion] [net] tipc: fix issues with early
- FAILOVER_MSG from peer
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 RDNS_NONE Delivered to internal network by a host with no rDNS
+X-Headers-End: 1hcOwj-00FrN5-EX
+Subject: Re: [tipc-discussion] [PATCH RFC 1/2] tipc: optimize link synching
+ mechanism
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -133,130 +87,149 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Acked-by: Jon
+On 6/4/19 1:22 PM, Tuong Lien wrote:
+> This commit is along with the latter commit 4ec6a14c3933
 
-///jon
+The commit ID might be changed after the commit is merged into upstream,
+which means the ID will be invalid as well.
 
-
-> -----Original Message-----
-> From: Tuong Lien <tuong.t.lien@dektech.com.au>
-> Sent: 14-Jun-19 06:41
-> To: tipc-discussion@lists.sourceforge.net; Jon Maloy
-> <jon.maloy@ericsson.com>; maloy@donjonn.com; ying.xue@windriver.com
-> Subject: [net] tipc: fix issues with early FAILOVER_MSG from peer
+ ("tipc: fix
+> changeover issues due to large packet") to resolve the issues with the
+> link changeover mechanism. See that commit for details.
 > 
-> It appears that a FAILOVER_MSG can come from peer even when the failure
-> link is resetting (i.e. just after the 'node_write_unlock()'...). This means the
-> failover procedure on the node has not been started yet.
-> The situation is as follows:
+> Basically, for the link synching, from now on, we will send only one
+> single ("dummy") SYNCH message to peer. The SYNCH message does not
+> contain any data, just a header conveying the synch point to the peer.
 > 
->          node1                                node2
->   linkb          linka                  linka        linkb
->     |              |                      |            |
->     |              |                      x failure    |
->     |              |                  RESETTING        |
->     |              |                      |            |
->     |              x failure            RESET          |
->     |          RESETTING             FAILINGOVER       |
->     |              |   (FAILOVER_MSG)     |            |
->     |<-------------------------------------------------|
->     | *FAILINGOVER |                      |            |
->     |              | (dummy FAILOVER_MSG) |            |
->     |------------------------------------------------->|
->     |            RESET                    |            | FAILOVER_END
->     |         FAILINGOVER               RESET          |
->     .              .                      .            .
->     .              .                      .            .
->     .              .                      .            .
+> A new node capability flag ("TIPC_TUNNEL_ENHANCED") is introduced for
+> backward compatible!
 > 
-> Once this happens, the link failover procedure will be triggered wrongly on the
-> receiving node since the node isn't in FAILINGOVER state but then another link
-> failover will be carried out.
-> The consequences are:
-> 
-> 1) A peer might get stuck in FAILINGOVER state because the 'sync_point'
-> was set, reset and set incorrectly, the criteria to end the failover would not be
-> met, it could keep waiting for a message that has already received.
-> 
-> 2) The early FAILOVER_MSG(s) could be queued in the link failover deferdq
-> but would be purged or not pulled out because the 'drop_point'
-> was not set correctly.
-> 
-> 3) The early FAILOVER_MSG(s) could be dropped too.
-> 
-> 4) The dummy FAILOVER_MSG could make the peer leaving FAILINGOVER
-> state shortly, but later on it would be restarted.
-> 
-> The same situation can also happen when the link is in PEER_RESET state and a
-> FAILOVER_MSG arrives.
-> 
-> The commit resolves the issues by forcing the link down immediately, so the
-> failover procedure will be started normally (which is the same as when
-> receiving a FAILOVER_MSG and the link is in up state).
-> 
-> Also, the function "tipc_node_link_failover()" is toughen to avoid such a
-> situation from happening.
-> 
+> Suggested-by: Jon Maloy <jon.maloy@ericsson.com>
 > Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
+
+Acked-by: Ying Xue <ying.xue@windriver.com>
+
 > ---
->  net/tipc/link.c |  1 -
->  net/tipc/node.c | 10 +++++++---
->  2 files changed, 7 insertions(+), 4 deletions(-)
+>  net/tipc/link.c | 26 ++++++++++++++++++++++++++
+>  net/tipc/msg.h  | 10 ++++++++++
+>  net/tipc/node.c |  6 ++++--
+>  net/tipc/node.h |  6 ++++--
+>  4 files changed, 44 insertions(+), 4 deletions(-)
 > 
-> diff --git a/net/tipc/link.c b/net/tipc/link.c index
-> d5ed509e0660..bcfb0a4ab485 100644
+> diff --git a/net/tipc/link.c b/net/tipc/link.c
+> index f5cd986e1e50..6924cf1e526f 100644
 > --- a/net/tipc/link.c
 > +++ b/net/tipc/link.c
-> @@ -1762,7 +1762,6 @@ void tipc_link_failover_prepare(struct tipc_link *l,
-> struct tipc_link *tnl,
->  	 * node has entered SELF_DOWN_PEER_LEAVING and both peer nodes
->  	 * would have to start over from scratch instead.
->  	 */
-> -	WARN_ON(l && tipc_link_is_up(l));
->  	tnl->drop_point = 1;
->  	tnl->failover_reasm_skb = NULL;
-> 
-> diff --git a/net/tipc/node.c b/net/tipc/node.c index
-> e4dba865105e..65644642c091 100644
+> @@ -1637,6 +1637,7 @@ void tipc_link_tnl_prepare(struct tipc_link *l, struct tipc_link *tnl,
+>  	struct sk_buff_head *queue = &l->transmq;
+>  	struct sk_buff_head tmpxq, tnlq;
+>  	u16 pktlen, pktcnt, seqno = l->snd_nxt;
+> +	u16 syncpt;
+>  
+>  	if (!tnl)
+>  		return;
+> @@ -1656,6 +1657,31 @@ void tipc_link_tnl_prepare(struct tipc_link *l, struct tipc_link *tnl,
+>  	tipc_link_xmit(l, &tnlq, &tmpxq);
+>  	__skb_queue_purge(&tmpxq);
+>  
+> +	/* Link Synching:
+> +	 * From now on, send only one single ("dummy") SYNCH message
+> +	 * to peer. The SYNCH message does not contain any data, just
+> +	 * a header conveying the synch point to the peer.
+> +	 */
+> +	if (mtyp == SYNCH_MSG && (tnl->peer_caps & TIPC_TUNNEL_ENHANCED)) {
+> +		tnlskb = tipc_msg_create(TUNNEL_PROTOCOL, SYNCH_MSG,
+> +					 INT_H_SIZE, 0, l->addr,
+> +					 tipc_own_addr(l->net),
+> +					 0, 0, 0);
+> +		if (!tnlskb) {
+> +			pr_warn("%sunable to create dummy SYNCH_MSG\n",
+> +				link_co_err);
+> +			return;
+> +		}
+> +
+> +		hdr = buf_msg(tnlskb);
+> +		syncpt = l->snd_nxt + skb_queue_len(&l->backlogq) - 1;
+> +		msg_set_syncpt(hdr, syncpt);
+> +		msg_set_bearer_id(hdr, l->peer_bearer_id);
+> +		__skb_queue_tail(&tnlq, tnlskb);
+> +		tipc_link_xmit(tnl, &tnlq, xmitq);
+> +		return;
+> +	}
+> +
+>  	/* Initialize reusable tunnel packet header */
+>  	tipc_msg_init(tipc_own_addr(l->net), &tnlhdr, TUNNEL_PROTOCOL,
+>  		      mtyp, INT_H_SIZE, l->addr);
+> diff --git a/net/tipc/msg.h b/net/tipc/msg.h
+> index 8de02ad6e352..baf937bfa702 100644
+> --- a/net/tipc/msg.h
+> +++ b/net/tipc/msg.h
+> @@ -877,6 +877,16 @@ static inline void msg_set_msgcnt(struct tipc_msg *m, u16 n)
+>  	msg_set_bits(m, 9, 16, 0xffff, n);
+>  }
+>  
+> +static inline u16 msg_syncpt(struct tipc_msg *m)
+> +{
+> +	return msg_bits(m, 9, 16, 0xffff);
+> +}
+> +
+> +static inline void msg_set_syncpt(struct tipc_msg *m, u16 n)
+> +{
+> +	msg_set_bits(m, 9, 16, 0xffff, n);
+> +}
+> +
+>  static inline u32 msg_conn_ack(struct tipc_msg *m)
+>  {
+>  	return msg_bits(m, 9, 16, 0xffff);
+> diff --git a/net/tipc/node.c b/net/tipc/node.c
+> index 9e106d3ed187..2a8399cf5525 100644
 > --- a/net/tipc/node.c
 > +++ b/net/tipc/node.c
-> @@ -777,9 +777,9 @@ static void tipc_node_link_up(struct tipc_node *n,
-> int bearer_id,
->   *	   disturbance, wrong session, etc.)
->   *	3. Link <1B-2B> up
->   *	4. Link endpoint 2A down (e.g. due to link tolerance timeout)
-> - *	5. Node B starts failover onto link <1B-2B>
-> + *	5. Node 2 starts failover onto link <1B-2B>
->   *
-> - *	==> Node A does never start link/node failover!
-> + *	==> Node 1 does never start link/node failover!
->   *
->   * @n: tipc node structure
->   * @l: link peer endpoint failingover (- can be NULL) @@ -794,6 +794,10 @@
-> static void tipc_node_link_failover(struct tipc_node *n, struct tipc_link *l,
->  	if (!tipc_link_is_up(tnl))
->  		return;
+> @@ -1645,7 +1645,6 @@ static bool tipc_node_check_state(struct tipc_node *n, struct sk_buff *skb,
+>  	int usr = msg_user(hdr);
+>  	int mtyp = msg_type(hdr);
+>  	u16 oseqno = msg_seqno(hdr);
+> -	u16 iseqno = msg_seqno(msg_get_wrapped(hdr));
+>  	u16 exp_pkts = msg_msgcnt(hdr);
+>  	u16 rcv_nxt, syncpt, dlv_nxt, inputq_len;
+>  	int state = n->state;
+> @@ -1744,7 +1743,10 @@ static bool tipc_node_check_state(struct tipc_node *n, struct sk_buff *skb,
+>  
+>  	/* Initiate synch mode if applicable */
+>  	if ((usr == TUNNEL_PROTOCOL) && (mtyp == SYNCH_MSG) && (oseqno == 1)) {
+> -		syncpt = iseqno + exp_pkts - 1;
+> +		if (n->capabilities & TIPC_TUNNEL_ENHANCED)
+> +			syncpt = msg_syncpt(hdr);
+> +		else
+> +			syncpt = msg_seqno(msg_get_wrapped(hdr)) + exp_pkts - 1;
+>  		if (!tipc_link_is_up(l))
+>  			__tipc_node_link_up(n, bearer_id, xmitq);
+>  		if (n->state == SELF_UP_PEER_UP) {
+> diff --git a/net/tipc/node.h b/net/tipc/node.h
+> index c0bf49ea3de4..291d0ecd4101 100644
+> --- a/net/tipc/node.h
+> +++ b/net/tipc/node.h
+> @@ -53,7 +53,8 @@ enum {
+>  	TIPC_NODE_ID128       = (1 << 5),
+>  	TIPC_LINK_PROTO_SEQNO = (1 << 6),
+>  	TIPC_MCAST_RBCTL      = (1 << 7),
+> -	TIPC_GAP_ACK_BLOCK    = (1 << 8)
+> +	TIPC_GAP_ACK_BLOCK    = (1 << 8),
+> +	TIPC_TUNNEL_ENHANCED  = (1 << 9)
+>  };
+>  
+>  #define TIPC_NODE_CAPABILITIES (TIPC_SYN_BIT           |  \
+> @@ -64,7 +65,8 @@ enum {
+>  				TIPC_NODE_ID128        |   \
+>  				TIPC_LINK_PROTO_SEQNO  |   \
+>  				TIPC_MCAST_RBCTL       |   \
+> -				TIPC_GAP_ACK_BLOCK)
+> +				TIPC_GAP_ACK_BLOCK     |   \
+> +				TIPC_TUNNEL_ENHANCED)
+>  #define INVALID_BEARER_ID -1
+>  
+>  void tipc_node_stop(struct net *net);
 > 
-> +	/* Don't rush, failure link may be in the process of resetting */
-> +	if (l && !tipc_link_is_reset(l))
-> +		return;
-> +
->  	tipc_link_fsm_evt(tnl, LINK_SYNCH_END_EVT);
->  	tipc_node_fsm_evt(n, NODE_SYNCH_END_EVT);
-> 
-> @@ -1719,7 +1723,7 @@ static bool tipc_node_check_state(struct
-> tipc_node *n, struct sk_buff *skb,
->  	/* Initiate or update failover mode if applicable */
->  	if ((usr == TUNNEL_PROTOCOL) && (mtyp == FAILOVER_MSG)) {
->  		syncpt = oseqno + exp_pkts - 1;
-> -		if (pl && tipc_link_is_up(pl)) {
-> +		if (pl && !tipc_link_is_reset(pl)) {
->  			__tipc_node_link_down(n, &pb_id, xmitq, &maddr);
->  			trace_tipc_node_link_down(n, true,
->  						  "node link down <- failover!");
-> --
-> 2.13.7
-
 
 
 _______________________________________________
