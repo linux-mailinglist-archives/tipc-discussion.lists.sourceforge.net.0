@@ -2,72 +2,82 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3719479A6
-	for <lists+tipc-discussion@lfdr.de>; Mon, 17 Jun 2019 07:16:08 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A4C247D8B
+	for <lists+tipc-discussion@lfdr.de>; Mon, 17 Jun 2019 10:49:41 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1hcjzv-0000us-4N; Mon, 17 Jun 2019 05:16:03 +0000
+	id 1hcnKU-0004Kz-GA; Mon, 17 Jun 2019 08:49:30 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1hcjzt-0000u1-Ae
- for tipc-discussion@lists.sourceforge.net; Mon, 17 Jun 2019 05:16:01 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1hcnKT-0004Km-25
+ for tipc-discussion@lists.sourceforge.net; Mon, 17 Jun 2019 08:49:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Message-ID:Date:Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=PmFIaxlEEd851iJr870NNdlzgawFAZc1Ltix1hNTXJQ=; b=PSn39hw8hzK4MmpFsOwKq81alv
- qLOPcTmjsy+QQO0EzJBR6H8ciy2GtceMlN0W0AJu05caT8s4Sm2fqPcmHlaLGzFNJPiQkXyxo421d
- oNrQgJY8RDmzydqfi63nDqbtUO5aH8DMz7h+NFUzfzRA6GDqrHL3lGtznbZ7yb9PwOx0=;
+ bh=GZih52jwIGqu3463Zn6yI4G4zH5JFGKi8CgYcSZCGO4=; b=hw4pUnMym3qQRrc0FLy3q36YC0
+ bhx2aVUpBrpFGUPcgx2MszaV/1yUUkXavMp6M8FLjx5dsM6pq1YnuLoOpWd6JI7bZhkz5erbuSpth
+ BRSAOnGw4Id12BdUFtV6rh5ecFa1UJ01+DTEQa4UHrAQh3f/Xvhtix4G4w9cXF5U3IdA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:MIME-Version:
- Content-Type:Content-Transfer-Encoding:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:
+ Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=PmFIaxlEEd851iJr870NNdlzgawFAZc1Ltix1hNTXJQ=; b=Yz8p3zlN6fXAhIor9pVLEichW/
- 0CVe0LmFbaaQSUyI1gI5mxsrdTozVl53IOI6oAbo+7GcxZ/pNC+blC7EacLHM0zCnHMjZatrD0Bv7
- LsS1JU8eHaBGc7QkwEFBOxamWov5M+u5X4lt8J/Yh1d+Xa5XczvkF1NvrFtIheioy4uQ=;
+ bh=GZih52jwIGqu3463Zn6yI4G4zH5JFGKi8CgYcSZCGO4=; b=mv9J3c7HJjersHocBDcUr5nxkO
+ 3QdTDnlUYYVRnEwGYkh3XdrXnl+v0QySiPFxx0EABSHrmbGGEl7FNEoLnfBEhQAKZlW0wKVvHbgdN
+ 8QOgIOCeWXp5euFy6Kz43/GcJCxROcqLB6DrY8vv2yhWgfzPs3ljeZ/7sXk2veN+GvYc=;
 Received: from f0-dek.dektech.com.au ([210.10.221.142]
  helo=mail.dektech.com.au)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- id 1hcjzp-000IDP-LV
- for tipc-discussion@lists.sourceforge.net; Mon, 17 Jun 2019 05:16:00 +0000
+ id 1hcnKP-00149J-10
+ for tipc-discussion@lists.sourceforge.net; Mon, 17 Jun 2019 08:49:29 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.dektech.com.au (Postfix) with ESMTP id E6226E4F89;
- Mon, 17 Jun 2019 15:15:50 +1000 (AEST)
+ by mail.dektech.com.au (Postfix) with ESMTP id 895B7E4FB5;
+ Mon, 17 Jun 2019 18:49:17 +1000 (AEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
- h=x-mailer:message-id:date:date:subject:subject:from:from
- :received:received:received; s=mail_dkim; t=1560748550; bh=/+i7n
- BBZCB0X4FPUG8yNW/nePa2NKgJT97q7+ZxinmQ=; b=MwGxDEyzCrSnNhOa+JEJw
- RxlcFP91WeJwshH+0tiI1h5ZtrZZKvHANfM5E95d0psssRjTzjXgdRUh3dl8MB57
- 2e8tmSAsyKXRN615EcY7+D5WuuxY5udPkA9dsueb+IhdlBkVUTpPLsVHA/QG2lHv
- iDVLEvNxCdll6Eg1dPc3EM=
+ h=content-language:x-mailer:content-transfer-encoding
+ :content-type:content-type:mime-version:message-id:date:date
+ :subject:subject:in-reply-to:references:from:from:received
+ :received:received; s=mail_dkim; t=1560761357; bh=uHACBr4IABXhbn
+ lhovLjrGP4YnTjuKR9h5uDixiGApc=; b=QJos61eudCdOnx0rH5F2PxI936yxYD
+ Y5mLF4f5JDXqMsx836gcGNV2Uo/Tuoxw9BYQ7q3SSsVqWXKvTRBAXbUBr7/8lxDc
+ 6DVYcI4Bmr9aytfRLD/IEtf4A9QAnjed2RJSeTdVkSrdJerBAevAIGmSIL8YHeWA
+ Wek8EvGw4kzm8=
 X-Virus-Scanned: amavisd-new at dektech.com.au
 Received: from mail.dektech.com.au ([127.0.0.1])
  by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id kW_a0olO7aNV; Mon, 17 Jun 2019 15:15:50 +1000 (AEST)
+ with ESMTP id gSFuCyEVYIuQ; Mon, 17 Jun 2019 18:49:17 +1000 (AEST)
 Received: from mail.dektech.com.au (localhost [127.0.0.1])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPS id BACC5E4F8A;
- Mon, 17 Jun 2019 15:15:50 +1000 (AEST)
-Received: from localhost.localdomain (unknown [14.161.14.188])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ by mail.dektech.com.au (Postfix) with ESMTPS id 36962E4FB6;
+ Mon, 17 Jun 2019 18:49:17 +1000 (AEST)
+Received: from VNLAP288VNPC (unknown [14.161.14.188])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPSA id CF5E9E4F89;
- Mon, 17 Jun 2019 15:15:48 +1000 (AEST)
-From: Tuong Lien <tuong.t.lien@dektech.com.au>
-To: davem@davemloft.net, jon.maloy@ericsson.com, maloy@donjonn.com,
- ying.xue@windriver.com, netdev@vger.kernel.org
-Date: Mon, 17 Jun 2019 12:15:42 +0700
-Message-Id: <20190617051542.4133-1-tuong.t.lien@dektech.com.au>
-X-Mailer: git-send-email 2.13.7
+ by mail.dektech.com.au (Postfix) with ESMTPSA id D8217E4FB5;
+ Mon, 17 Jun 2019 18:49:15 +1000 (AEST)
+From: "Tuong Lien Tong" <tuong.t.lien@dektech.com.au>
+To: "'Ying Xue'" <ying.xue@windriver.com>,
+ <tipc-discussion@lists.sourceforge.net>, <jon.maloy@ericsson.com>,
+ <maloy@donjonn.com>
+References: <20190604052239.9352-1-tuong.t.lien@dektech.com.au>
+ <20190604052239.9352-3-tuong.t.lien@dektech.com.au>
+ <ed976f06-6034-203e-7170-fbdef7074019@windriver.com>
+In-Reply-To: <ed976f06-6034-203e-7170-fbdef7074019@windriver.com>
+Date: Mon, 17 Jun 2019 15:49:12 +0700
+Message-ID: <02a001d524e9$8adb5eb0$a0921c10$@dektech.com.au>
+MIME-Version: 1.0
+X-Mailer: Microsoft Outlook 16.0
+Content-Language: en-us
+Thread-Index: AQIM6M5SwoF7ZkqbCWDjrOpoblsc2AKMDrpeAVpdwcmmEMhvMA==
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
@@ -80,10 +90,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1hcjzp-000IDP-LV
-Subject: [tipc-discussion] [net-next] tipc: include retrans failure
- detection for unicast
+X-Headers-End: 1hcnKP-00149J-10
+Subject: Re: [tipc-discussion] [PATCH RFC 2/2] tipc: fix changeover issues
+ due to large packet
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,218 +104,108 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: tipc-discussion@lists.sourceforge.net
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-In patch series, commit 9195948fbf34 ("tipc: improve TIPC throughput by
-Gap ACK blocks"), as for simplicity, the repeated retransmit failures'
-detection in the function - "tipc_link_retrans()" was kept there for
-broadcast retransmissions only.
+Hi Ying,
 
-This commit now reapplies this feature for link unicast retransmissions
-that has been done via the function - "tipc_link_advance_transmq()".
+Thanks for your comments!
+Regarding your last statement, yes when making the patch, I noticed that the "tipc_msg_build()" and "tipc_msg_fragment()" do a similar task, also I tried to think a way to combine them but didn't because of the reasons:
+1- The "core" functions to copy the data are different since the "tipc_msg_build()" plays with user data in the iov buffers, whereas, for the other, it's skb data.
+Also, the outputs are different, the first function will set the messages' type in header such as "FIRST_FRAGMENT", "FRAGMENT" or "LAST_FRAGMENT", but not with the other because it will overwrite the tunnel messages' type... that I had to use the other field (fragm_no/nof_fragms) to determine this at the receiving side...
+2- I don't want to touch the old code that can be risky :(
 
-Also, the "tipc_link_retrans()" is renamed to "tipc_link_bc_retrans()"
-as it is used only for broadcast.
+BR/Tuong
 
-Acked-by: Jon Maloy <jon.maloy@ericsson.se>
-Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
----
- net/tipc/link.c | 106 +++++++++++++++++++++++++++++++++++++-------------------
- 1 file changed, 70 insertions(+), 36 deletions(-)
+-----Original Message-----
+From: Ying Xue <ying.xue@windriver.com> 
+Sent: Sunday, June 16, 2019 1:42 PM
+To: Tuong Lien <tuong.t.lien@dektech.com.au>; tipc-discussion@lists.sourceforge.net; jon.maloy@ericsson.com; maloy@donjonn.com
+Subject: Re: [PATCH RFC 2/2] tipc: fix changeover issues due to large packet
 
-diff --git a/net/tipc/link.c b/net/tipc/link.c
-index f5cd986e1e50..d5ed509e0660 100644
---- a/net/tipc/link.c
-+++ b/net/tipc/link.c
-@@ -249,9 +249,9 @@ static void tipc_link_build_bc_init_msg(struct tipc_link *l,
- 					struct sk_buff_head *xmitq);
- static bool tipc_link_release_pkts(struct tipc_link *l, u16 to);
- static u16 tipc_build_gap_ack_blks(struct tipc_link *l, void *data);
--static void tipc_link_advance_transmq(struct tipc_link *l, u16 acked, u16 gap,
--				      struct tipc_gap_ack_blks *ga,
--				      struct sk_buff_head *xmitq);
-+static int tipc_link_advance_transmq(struct tipc_link *l, u16 acked, u16 gap,
-+				     struct tipc_gap_ack_blks *ga,
-+				     struct sk_buff_head *xmitq);
- 
- /*
-  *  Simple non-static link routines (i.e. referenced outside this file)
-@@ -1044,32 +1044,69 @@ static void tipc_link_advance_backlog(struct tipc_link *l,
- 	l->snd_nxt = seqno;
- }
- 
--static void link_retransmit_failure(struct tipc_link *l, struct sk_buff *skb)
-+/**
-+ * link_retransmit_failure() - Detect repeated retransmit failures
-+ * @l: tipc link sender
-+ * @r: tipc link receiver (= l in case of unicast)
-+ * @from: seqno of the 1st packet in retransmit request
-+ * @rc: returned code
-+ *
-+ * Return: true if the repeated retransmit failures happens, otherwise
-+ * false
-+ */
-+static bool link_retransmit_failure(struct tipc_link *l, struct tipc_link *r,
-+				    u16 from, int *rc)
- {
--	struct tipc_msg *hdr = buf_msg(skb);
-+	struct sk_buff *skb = skb_peek(&l->transmq);
-+	struct tipc_msg *hdr;
-+
-+	if (!skb)
-+		return false;
-+	hdr = buf_msg(skb);
-+
-+	/* Detect repeated retransmit failures on same packet */
-+	if (r->prev_from != from) {
-+		r->prev_from = from;
-+		r->stale_limit = jiffies + msecs_to_jiffies(r->tolerance);
-+		r->stale_cnt = 0;
-+	} else if (++r->stale_cnt > 99 && time_after(jiffies, r->stale_limit)) {
-+		pr_warn("Retransmission failure on link <%s>\n", l->name);
-+		link_print(l, "State of link ");
-+		pr_info("Failed msg: usr %u, typ %u, len %u, err %u\n",
-+			msg_user(hdr), msg_type(hdr), msg_size(hdr),
-+			msg_errcode(hdr));
-+		pr_info("sqno %u, prev: %x, src: %x\n",
-+			msg_seqno(hdr), msg_prevnode(hdr), msg_orignode(hdr));
-+
-+		trace_tipc_list_dump(&l->transmq, true, "retrans failure!");
-+		trace_tipc_link_dump(l, TIPC_DUMP_NONE, "retrans failure!");
-+		trace_tipc_link_dump(r, TIPC_DUMP_NONE, "retrans failure!");
-+
-+		if (link_is_bc_sndlink(l))
-+			*rc = TIPC_LINK_DOWN_EVT;
-+
-+		*rc = tipc_link_fsm_evt(l, LINK_FAILURE_EVT);
-+		return true;
-+	}
- 
--	pr_warn("Retransmission failure on link <%s>\n", l->name);
--	link_print(l, "State of link ");
--	pr_info("Failed msg: usr %u, typ %u, len %u, err %u\n",
--		msg_user(hdr), msg_type(hdr), msg_size(hdr), msg_errcode(hdr));
--	pr_info("sqno %u, prev: %x, src: %x\n",
--		msg_seqno(hdr), msg_prevnode(hdr), msg_orignode(hdr));
-+	return false;
- }
- 
--/* tipc_link_retrans() - retransmit one or more packets
-+/* tipc_link_bc_retrans() - retransmit zero or more packets
-  * @l: the link to transmit on
-  * @r: the receiving link ordering the retransmit. Same as l if unicast
-  * @from: retransmit from (inclusive) this sequence number
-  * @to: retransmit to (inclusive) this sequence number
-  * xmitq: queue for accumulating the retransmitted packets
-  */
--static int tipc_link_retrans(struct tipc_link *l, struct tipc_link *r,
--			     u16 from, u16 to, struct sk_buff_head *xmitq)
-+static int tipc_link_bc_retrans(struct tipc_link *l, struct tipc_link *r,
-+				u16 from, u16 to, struct sk_buff_head *xmitq)
- {
- 	struct sk_buff *_skb, *skb = skb_peek(&l->transmq);
- 	u16 bc_ack = l->bc_rcvlink->rcv_nxt - 1;
- 	u16 ack = l->rcv_nxt - 1;
- 	struct tipc_msg *hdr;
-+	int rc = 0;
- 
- 	if (!skb)
- 		return 0;
-@@ -1077,20 +1114,9 @@ static int tipc_link_retrans(struct tipc_link *l, struct tipc_link *r,
- 		return 0;
- 
- 	trace_tipc_link_retrans(r, from, to, &l->transmq);
--	/* Detect repeated retransmit failures on same packet */
--	if (r->prev_from != from) {
--		r->prev_from = from;
--		r->stale_limit = jiffies + msecs_to_jiffies(r->tolerance);
--		r->stale_cnt = 0;
--	} else if (++r->stale_cnt > 99 && time_after(jiffies, r->stale_limit)) {
--		link_retransmit_failure(l, skb);
--		trace_tipc_list_dump(&l->transmq, true, "retrans failure!");
--		trace_tipc_link_dump(l, TIPC_DUMP_NONE, "retrans failure!");
--		trace_tipc_link_dump(r, TIPC_DUMP_NONE, "retrans failure!");
--		if (link_is_bc_sndlink(l))
--			return TIPC_LINK_DOWN_EVT;
--		return tipc_link_fsm_evt(l, LINK_FAILURE_EVT);
--	}
-+
-+	if (link_retransmit_failure(l, r, from, &rc))
-+		return rc;
- 
- 	skb_queue_walk(&l->transmq, skb) {
- 		hdr = buf_msg(skb);
-@@ -1324,17 +1350,23 @@ static u16 tipc_build_gap_ack_blks(struct tipc_link *l, void *data)
-  * @gap: # of gap packets
-  * @ga: buffer pointer to Gap ACK blocks from peer
-  * @xmitq: queue for accumulating the retransmitted packets if any
-+ *
-+ * In case of a repeated retransmit failures, the call will return shortly
-+ * with a returned code (e.g. TIPC_LINK_DOWN_EVT)
-  */
--static void tipc_link_advance_transmq(struct tipc_link *l, u16 acked, u16 gap,
--				      struct tipc_gap_ack_blks *ga,
--				      struct sk_buff_head *xmitq)
-+static int tipc_link_advance_transmq(struct tipc_link *l, u16 acked, u16 gap,
-+				     struct tipc_gap_ack_blks *ga,
-+				     struct sk_buff_head *xmitq)
- {
- 	struct sk_buff *skb, *_skb, *tmp;
- 	struct tipc_msg *hdr;
- 	u16 bc_ack = l->bc_rcvlink->rcv_nxt - 1;
- 	u16 ack = l->rcv_nxt - 1;
--	u16 seqno;
--	u16 n = 0;
-+	u16 seqno, n = 0;
-+	int rc = 0;
-+
-+	if (gap && link_retransmit_failure(l, l, acked + 1, &rc))
-+		return rc;
- 
- 	skb_queue_walk_safe(&l->transmq, skb, tmp) {
- 		seqno = buf_seqno(skb);
-@@ -1369,6 +1401,8 @@ static void tipc_link_advance_transmq(struct tipc_link *l, u16 acked, u16 gap,
- 			goto next_gap_ack;
- 		}
- 	}
-+
-+	return 0;
- }
- 
- /* tipc_link_build_state_msg: prepare link state message for transmission
-@@ -1919,7 +1953,7 @@ static int tipc_link_proto_rcv(struct tipc_link *l, struct sk_buff *skb,
- 			tipc_link_build_proto_msg(l, STATE_MSG, 0, reply,
- 						  rcvgap, 0, 0, xmitq);
- 
--		tipc_link_advance_transmq(l, ack, gap, ga, xmitq);
-+		rc |= tipc_link_advance_transmq(l, ack, gap, ga, xmitq);
- 
- 		/* If NACK, retransmit will now start at right position */
- 		if (gap)
-@@ -2036,7 +2070,7 @@ int tipc_link_bc_sync_rcv(struct tipc_link *l, struct tipc_msg *hdr,
- 	if (more(peers_snd_nxt, l->rcv_nxt + l->window))
- 		return rc;
- 
--	rc = tipc_link_retrans(snd_l, l, from, to, xmitq);
-+	rc = tipc_link_bc_retrans(snd_l, l, from, to, xmitq);
- 
- 	l->snd_nxt = peers_snd_nxt;
- 	if (link_bc_rcv_gap(l))
-@@ -2132,7 +2166,7 @@ int tipc_link_bc_nack_rcv(struct tipc_link *l, struct sk_buff *skb,
- 
- 	if (dnode == tipc_own_addr(l->net)) {
- 		tipc_link_bc_ack_rcv(l, acked, xmitq);
--		rc = tipc_link_retrans(l->bc_sndlink, l, from, to, xmitq);
-+		rc = tipc_link_bc_retrans(l->bc_sndlink, l, from, to, xmitq);
- 		l->stats.recv_nacks++;
- 		return rc;
- 	}
--- 
-2.13.7
+> 2) The same scenario above can happen more easily in case the MTU of
+> the links is set differently or when changing. In that case, as long as
+> a large message in the failure link's transmq queue was built and
+> fragmented with its link's MTU > the other link's one, the issue will
+> happen (there is no need of a link synching in advance).
+> 
+> 3) The link synching procedure also faces with the same issue but since
+> the link synching is only started upon receipt of a SYNCH_MSG, dropping
+> the message will not result in a state deadlock, but it is not expected
+> as design.
+> 
+> The 1) & 3) issues are resolved by the previous commit 81e4dd94b214
+
+This is the same as previous commit. The commit ID might be invalid
+after it's merged into upstream.
+
+> ("tipc: optimize link synching mechanism") by generating only a dummy
+> SYNCH_MSG (i.e. without data) at the link synching, so the size of a
+> FAILOVER_MSG if any then will never exceed the link's MTU.
+
+>  /**
+> + * tipc_msg_fragment - build a fragment skb list for TIPC message
+> + *
+> + * @skb: TIPC message skb
+> + * @hdr: internal msg header to be put on the top of the fragments
+> + * @pktmax: max size of a fragment incl. the header
+> + * @frags: returned fragment skb list
+> + *
+> + * Returns 0 if the fragmentation is successful, otherwise: -EINVAL
+> + * or -ENOMEM
+> + */
+> +int tipc_msg_fragment(struct sk_buff *skb, const struct tipc_msg *hdr,
+> +		      int pktmax, struct sk_buff_head *frags)
+> +{
+> +	int pktno, nof_fragms, dsz, dmax, eat;
+> +	struct tipc_msg *_hdr;
+> +	struct sk_buff *_skb;
+> +	u8 *data;
+> +
+> +	/* Non-linear buffer? */
+> +	if (skb_linearize(skb))
+> +		return -ENOMEM;
+> +
+> +	data = (u8 *)skb->data;
+> +	dsz = msg_size(buf_msg(skb));
+> +	dmax = pktmax - INT_H_SIZE;
+> +
+> +	if (dsz <= dmax || !dmax)
+> +		return -EINVAL;
+> +
+> +	nof_fragms = dsz / dmax + 1;
+> +
+> +	for (pktno = 1; pktno <= nof_fragms; pktno++) {
+> +		if (pktno < nof_fragms)
+> +			eat = dmax;
+> +		else
+> +			eat = dsz % dmax;
+> +
+> +		_skb = tipc_buf_acquire(INT_H_SIZE + eat, GFP_ATOMIC);
+> +		if (!_skb)
+> +			goto error;
+> +
+> +		skb_orphan(_skb);
+> +		__skb_queue_tail(frags, _skb);
+> +
+> +		skb_copy_to_linear_data(_skb, hdr, INT_H_SIZE);
+> +		skb_copy_to_linear_data_offset(_skb, INT_H_SIZE, data, eat);
+> +		data += eat;
+> +
+> +		_hdr = buf_msg(_skb);
+> +		msg_set_fragm_no(_hdr, pktno);
+> +		msg_set_nof_fragms(_hdr, nof_fragms);
+> +		msg_set_size(_hdr, INT_H_SIZE + eat);
+> +	}
+> +	return 0;
+> +
+
+In fact we have similar code in tipc_msg_build() where we also fragment
+packet if necessary. In order to eliminate redundant code, I suggest we
+should extract the common code into a separate function and then
+tipc_msg_build() and tipc_msg_fragment() call it.
+
 
 
 
