@@ -2,67 +2,66 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A3CA47845
-	for <lists+tipc-discussion@lfdr.de>; Mon, 17 Jun 2019 04:54:37 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B86B478CA
+	for <lists+tipc-discussion@lfdr.de>; Mon, 17 Jun 2019 05:43:04 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1hchmw-0006BF-Ju; Mon, 17 Jun 2019 02:54:30 +0000
+	id 1hciXo-0001D6-SV; Mon, 17 Jun 2019 03:42:56 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Ying.Xue@windriver.com>) id 1hchmt-0006Az-K5
- for tipc-discussion@lists.sourceforge.net; Mon, 17 Jun 2019 02:54:27 +0000
+ (envelope-from <davem@davemloft.net>) id 1hciXn-0001Cm-3t
+ for tipc-discussion@lists.sourceforge.net; Mon, 17 Jun 2019 03:42:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:CC:To:Subject:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Mime-Version
+ :References:In-Reply-To:From:Subject:Cc:To:Message-Id:Date:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ALr1BWYnxqIkorG0xPSgfd3dp7iW+Ed/yVPE+b/g3CE=; b=MsIvbdZh5aIfwhrDxUolVEmFin
- GEP0a5emNVBeHC3J4Vdtk6dOPL3yqkTE1lbgSFbQk7+QAzpGc5D8yADzcx4CLKNyG1/ZCmGfreopK
- wOyL0lFD/a7oEmyWjwfnAIgh0mMYdJsIpRZ3YSNs9e8BkhXD2YVLOjKDzuRGqt61dgDo=;
+ bh=vtiOdAQWTM04qE+4Q8WruSlac/6PI5zT8xrEws/lLb0=; b=lCPxznQMTI2cvp9YecEyVk0kgj
+ AYTgENlizNHB2+xrFhRIH0Dw+39Gmy5e/vl+oczBXxojcINd6TvkZPeTf5nGdG7sZUr8DozppNl/k
+ Hzdf9ICe+HogtF2HDJvsOzFki1BeM8ZU+KKpn5S4mNumu9Y2aL7ynggIMcku/w3NUdbU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:CC:To:Subject:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:Mime-Version:References:
+ In-Reply-To:From:Subject:Cc:To:Message-Id:Date:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ALr1BWYnxqIkorG0xPSgfd3dp7iW+Ed/yVPE+b/g3CE=; b=VMTj14j2o1efv1mkBRGiYOJARq
- /aAxs2DTsGxfX+WJRGxgJDOeau7HikiTdcsFOCgryOF2wCKuNGzDXPcu0ADacciSopmSBysXxlseA
- nkwx6806sbWHPMVfhWWr2ha6GfB/9/ZE0lJTd9JM1RSigh1NnCs+gre4pGUSk579xJyA=;
-Received: from mail5.windriver.com ([192.103.53.11] helo=mail5.wrs.com)
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ bh=vtiOdAQWTM04qE+4Q8WruSlac/6PI5zT8xrEws/lLb0=; b=VqFfHOW2os3PYpsQq3rd9eZTSj
+ 5YyI3d7enVEPaSlrMv9C6icYjul5dAXw3LqjRWEaGVBzXy+2+Zl8Zm2H+bhqk3FKtBfGl2DjACoU3
+ zUe+R8DRCk/qSo8Fw8g/hle8N+RP9I7YkAX8YuSOGpLJTrFVIFEbFUFKnlzILruax9aM=;
+Received: from shards.monkeyblade.net ([23.128.96.9])
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- id 1hchmn-000UKs-LZ
- for tipc-discussion@lists.sourceforge.net; Mon, 17 Jun 2019 02:54:25 +0000
-Received: from ALA-HCA.corp.ad.wrs.com (ala-hca.corp.ad.wrs.com
- [147.11.189.40])
- by mail5.wrs.com (8.15.2/8.15.2) with ESMTPS id x5H2qO12026851
- (version=TLSv1 cipher=AES128-SHA bits=128 verify=FAIL);
- Sun, 16 Jun 2019 19:52:39 -0700
-Received: from [128.224.155.90] (128.224.155.90) by ALA-HCA.corp.ad.wrs.com
- (147.11.189.50) with Microsoft SMTP Server (TLS) id 14.3.439.0; Sun, 16 Jun
- 2019 19:52:30 -0700
-To: Xin Long <lucien.xin@gmail.com>, network dev <netdev@vger.kernel.org>
-References: <14ff2b79da7b9098fbff2919f0bc5a1afa33fe32.1560677047.git.lucien.xin@gmail.com>
-From: Ying Xue <ying.xue@windriver.com>
-Message-ID: <1f6b032c-9f63-6c70-b71b-5afae0093179@windriver.com>
-Date: Mon, 17 Jun 2019 10:42:04 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
+ id 1hciXk-000ALZ-8H
+ for tipc-discussion@lists.sourceforge.net; Mon, 17 Jun 2019 03:42:54 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 1C0CD14DB0333;
+ Sun, 16 Jun 2019 20:42:43 -0700 (PDT)
+Date: Sun, 16 Jun 2019 20:42:40 -0700 (PDT)
+Message-Id: <20190616.204240.717937021550114907.davem@davemloft.net>
+To: lucien.xin@gmail.com
+From: David Miller <davem@davemloft.net>
 In-Reply-To: <14ff2b79da7b9098fbff2919f0bc5a1afa33fe32.1560677047.git.lucien.xin@gmail.com>
-Content-Language: en-US
-X-Originating-IP: [128.224.155.90]
-X-Spam-Score: 0.1 (/)
+References: <14ff2b79da7b9098fbff2919f0bc5a1afa33fe32.1560677047.git.lucien.xin@gmail.com>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Sun, 16 Jun 2019 20:42:43 -0700 (PDT)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [23.128.96.9 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1hchmn-000UKs-LZ
+X-Headers-End: 1hciXk-000ALZ-8H
 Subject: Re: [tipc-discussion] [PATCH net] tipc: purge deferredq list for
  each grp member in tipc_group_delete
 X-BeenThere: tipc-discussion@lists.sourceforge.net
@@ -76,13 +75,15 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: syzkaller-bugs@googlegroups.com, tipc-discussion@lists.sourceforge.net,
- davem@davemloft.net
+Cc: netdev@vger.kernel.org, syzkaller-bugs@googlegroups.com,
+ tipc-discussion@lists.sourceforge.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-On 6/16/19 5:24 PM, Xin Long wrote:
+From: Xin Long <lucien.xin@gmail.com>
+Date: Sun, 16 Jun 2019 17:24:07 +0800
+
 > Syzbot reported a memleak caused by grp members' deferredq list not
 > purged when the grp is be deleted.
 > 
@@ -96,25 +97,7 @@ On 6/16/19 5:24 PM, Xin Long wrote:
 > Reported-by: syzbot+78fbe679c8ca8d264a8d@syzkaller.appspotmail.com
 > Signed-off-by: Xin Long <lucien.xin@gmail.com>
 
-Acked-by: Ying Xue <ying.xue@windriver.com>
-
-> ---
->  net/tipc/group.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/net/tipc/group.c b/net/tipc/group.c
-> index 992be61..5f98d38 100644
-> --- a/net/tipc/group.c
-> +++ b/net/tipc/group.c
-> @@ -218,6 +218,7 @@ void tipc_group_delete(struct net *net, struct tipc_group *grp)
->  
->  	rbtree_postorder_for_each_entry_safe(m, tmp, tree, tree_node) {
->  		tipc_group_proto_xmit(grp, m, GRP_LEAVE_MSG, &xmitq);
-> +		__skb_queue_purge(&m->deferredq);
->  		list_del(&m->list);
->  		kfree(m);
->  	}
-> 
+Applied, thanks.
 
 
 _______________________________________________
