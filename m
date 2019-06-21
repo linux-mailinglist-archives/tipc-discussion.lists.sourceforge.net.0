@@ -2,101 +2,73 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 614904E208
-	for <lists+tipc-discussion@lfdr.de>; Fri, 21 Jun 2019 10:39:38 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6764D4E7F7
+	for <lists+tipc-discussion@lfdr.de>; Fri, 21 Jun 2019 14:27:18 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1heF4z-0007pq-GW; Fri, 21 Jun 2019 08:39:29 +0000
+	id 1heIdK-0000nc-Dl; Fri, 21 Jun 2019 12:27:10 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <lucien.xin@gmail.com>) id 1heF4y-0007pX-Cs
- for tipc-discussion@lists.sourceforge.net; Fri, 21 Jun 2019 08:39:28 +0000
+ (envelope-from <Ying.Xue@windriver.com>) id 1heIdI-0000nQ-RS
+ for tipc-discussion@lists.sourceforge.net; Fri, 21 Jun 2019 12:27:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
- In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
- :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=2X/Vwx/s3L58Q0MZKkvfHIkdcQDmB8vSD9+Ww3/y5uE=; b=kFGFkW2KGRLoOmGM9ZcJzlug9q
- iraUcByfgBc56sWCWqw43mOUfjfI5ybv/mXqfIeKn7TzTVKl0hpRElW8U2JFp7awLm6XQMU5sRYp/
- ZANO5NtLznEXBMEsovy4q2CkkS0q09/5SxNc43oCtxzdN+6VJu2lV18JJNALXpim6ZQI=;
+ bh=CghZ4NmVL5asYmCblsLs4M8jitGANANDRhPXdXPY+z4=; b=luzsZLseFYxq3AwWA6U4jg6T60
+ whZ9G7EmVlFE6zgVqk6jxza39yqvdfS83FPl3X/djTEjLUjAifXlLhM+CbNVdms00smWTE2dAMujy
+ ccjUDeEGglx/yMCMYB+SMOawvfOz4BN/BLi5Ix4SmZov2YpUs10fTyJVwUWPmMi2sqP4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
- MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=2X/Vwx/s3L58Q0MZKkvfHIkdcQDmB8vSD9+Ww3/y5uE=; b=LFR8UDZijp+4ECy2/ubSDlNSrL
- 22heM0NmSqRbkuJbmMfAye5KX1q1cx37mVaFlxKDkDDj8RwgYlseWROSJVIZkT0Mjdih1FBPAb0af
- vDNrWzjtP8Xec1XiiR3I9xQ+YqIB0CrG/iZbW3HSBqiAccVreM4ZwSbfCNbRTRySHdmQ=;
-Received: from mail-wr1-f66.google.com ([209.85.221.66])
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
- id 1heF4z-007Wiv-4b
- for tipc-discussion@lists.sourceforge.net; Fri, 21 Jun 2019 08:39:30 +0000
-Received: by mail-wr1-f66.google.com with SMTP id n4so5652166wrw.13
- for <tipc-discussion@lists.sourceforge.net>;
- Fri, 21 Jun 2019 01:39:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2X/Vwx/s3L58Q0MZKkvfHIkdcQDmB8vSD9+Ww3/y5uE=;
- b=S0Et/q1t0biciguO86myWT/3NPmNceQfQ18CV87GLOFA1Nyo2Ym+Cw7Vlif7b8qIYL
- FOFEYunTwMydKR5m1ADtUv178hEFiQFGDtvB29ew4rEwqPLOM/8cU7N3eSAuJ9LAF33k
- 8ytoU7RjrvOGbRTI3NbLh+0wQiOdQa9Fnd7qP0KkzOyh7mAdaLpN6UDyI+fKJpWCJ5E6
- VCAI6pjEl5kLnsRSA0rmKt2+aqe+qgzmwisxS3k2PdROAWO3Ei2ibGs4T+TgennAqaJZ
- /uZzaNwrbKXwzOrAiTZti1xhcMpgM5NiV1HcoRT2ErJ6gsLQLbBNNlwDVli+Gat+PVze
- gWSQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2X/Vwx/s3L58Q0MZKkvfHIkdcQDmB8vSD9+Ww3/y5uE=;
- b=Kef/8H5y1af474eUDfYrg76RzaZmfD85+Y/DM1NVBsjsmbkRPY1nhtn4PjL7t3k2i0
- haFcCoXYtqloeQKbn2lhfgG7Spu8rchXmjNcqkRXBGP0kw0/m7ha1yA8tenTzc0li/ED
- MTkKmFkKeDZ7viE0o8PhPh5JAzOa14D/aHgimhFechf/mzwtd20HqinW604xQClNEJHc
- /mOOnNYzWEhMHfAimTDq1hkO/9aSTKx7GcP//+B0Cph2kUYaH1I29Q5Tiaxiy6/6OUTl
- iB2N8zbRKqXzBEFUbU5xOFM9H/MCDQS5K0NpoqHQBK+G5hw2z8w3sHSa9dQkKVQfo86+
- bIEQ==
-X-Gm-Message-State: APjAAAXf6VufGQFbw3Pk1S2BxdqYHx3CZBEpFpQuhv5026ScDfktj9YC
- snslPOmsnWZXAHINE8P2KInFeMhE2FJMXzjKFpk=
-X-Google-Smtp-Source: APXvYqyGLGIFTq7u7gwpiI+A54k0uzIdZ4ailEEMxv4AKJL0dxlWlocnsA70jg8tDyTk0FvxLkgIVLM+u1ZPPfpATbY=
-X-Received: by 2002:adf:fb81:: with SMTP id a1mr10750363wrr.329.1561106362613; 
- Fri, 21 Jun 2019 01:39:22 -0700 (PDT)
+ bh=CghZ4NmVL5asYmCblsLs4M8jitGANANDRhPXdXPY+z4=; b=jr1AAzAgU8Tu8gqnh2OoDA8zYR
+ /T2iwjdJ+hZiS1dTROlbKvyAW7ICFrlQxPMHcSxQ2xQWpE88J16PPcjAMerE/RG7XF7QdyFPfePp0
+ 8Z04YVJ7KTfNqjd9GZOl572JmyjwqPS0blHoaJ78aYmatzTNzvo8sMHnneNAW2Y/xhiQ=;
+Received: from mail5.windriver.com ([192.103.53.11] helo=mail5.wrs.com)
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ id 1heIdI-002qq1-Au
+ for tipc-discussion@lists.sourceforge.net; Fri, 21 Jun 2019 12:27:10 +0000
+Received: from ALA-HCA.corp.ad.wrs.com (ala-hca.corp.ad.wrs.com
+ [147.11.189.40])
+ by mail5.wrs.com (8.15.2/8.15.2) with ESMTPS id x5LCQKSi015661
+ (version=TLSv1 cipher=AES128-SHA bits=128 verify=FAIL);
+ Fri, 21 Jun 2019 05:26:31 -0700
+Received: from [128.224.155.90] (128.224.155.90) by ALA-HCA.corp.ad.wrs.com
+ (147.11.189.50) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 21 Jun
+ 2019 05:26:09 -0700
+To: John Rutherford <john.rutherford@dektech.com.au>,
+ <tipc-discussion@lists.sourceforge.net>
+References: <20190619001118.16154-1-john.rutherford@dektech.com.au>
+From: Ying Xue <ying.xue@windriver.com>
+Message-ID: <28b25428-9fe9-8cc6-52f8-21b6aa863c2f@windriver.com>
+Date: Fri, 21 Jun 2019 20:15:40 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <00000000000045db72058baf24f7@google.com>
-In-Reply-To: <00000000000045db72058baf24f7@google.com>
-From: Xin Long <lucien.xin@gmail.com>
-Date: Fri, 21 Jun 2019 16:39:11 +0800
-Message-ID: <CADvbK_dzcTTRpZVssQZEGhHGJMqPnv+-my8_wdobEUfvbVTEyg@mail.gmail.com>
-To: syzbot <syzbot+30eaa8bf392f7fafffaf@syzkaller.appspotmail.com>
-X-Spam-Score: 1.1 (+)
+In-Reply-To: <20190619001118.16154-1-john.rutherford@dektech.com.au>
+Content-Language: en-US
+X-Originating-IP: [128.224.155.90]
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.221.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- (lucien.xin[at]gmail.com)
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: googlegroups.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.66 listed in wl.mailspike.net]
+ for more information. [URIs: dektech.com.au]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -1.2 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1heF4z-007Wiv-4b
-Subject: Re: [tipc-discussion] KMSAN: uninit-value in
- tipc_nl_compat_bearer_disable
+X-Headers-End: 1heIdI-002qq1-Au
+Subject: Re: [tipc-discussion] [net-next v2] tipc: add loopback device
+ tracking
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,129 +80,253 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: network dev <netdev@vger.kernel.org>,
- syzkaller-bugs <syzkaller-bugs@googlegroups.com>,
- LKML <linux-kernel@vger.kernel.org>, Alexander Potapenko <glider@google.com>,
- tipc-discussion@lists.sourceforge.net, davem <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-On Wed, Jun 19, 2019 at 11:48 PM syzbot
-<syzbot+30eaa8bf392f7fafffaf@syzkaller.appspotmail.com> wrote:
->
-> Hello,
->
-> syzbot found the following crash on:
->
-> HEAD commit:    f75e4cfe kmsan: use kmsan_handle_urb() in urb.c
-> git tree:       kmsan
-> console output: https://syzkaller.appspot.com/x/log.txt?x=13d0a6fea00000
-> kernel config:  https://syzkaller.appspot.com/x/.config?x=602468164ccdc30a
-> dashboard link: https://syzkaller.appspot.com/bug?extid=30eaa8bf392f7fafffaf
-> compiler:       clang version 9.0.0 (/home/glider/llvm/clang
-> 06d00afa61eef8f7f501ebdb4e8612ea43ec2d78)
-> syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=15b4a95aa00000
-> C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=162fc761a00000
->
-> IMPORTANT: if you fix the bug, please add the following tag to the commit:
-> Reported-by: syzbot+30eaa8bf392f7fafffaf@syzkaller.appspotmail.com
->
-> IPv6: ADDRCONF(NETDEV_CHANGE): hsr0: link becomes ready
-> 8021q: adding VLAN 0 to HW filter on device batadv0
-> ==================================================================
-> BUG: KMSAN: uninit-value in memchr+0xce/0x110 lib/string.c:981
-> CPU: 0 PID: 12554 Comm: syz-executor731 Not tainted 5.1.0+ #1
-> Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS
-> Google 01/01/2011
-> Call Trace:
->   __dump_stack lib/dump_stack.c:77 [inline]
->   dump_stack+0x191/0x1f0 lib/dump_stack.c:113
->   kmsan_report+0x130/0x2a0 mm/kmsan/kmsan.c:622
->   __msan_warning+0x75/0xe0 mm/kmsan/kmsan_instr.c:310
->   memchr+0xce/0x110 lib/string.c:981
->   string_is_valid net/tipc/netlink_compat.c:176 [inline]
->   tipc_nl_compat_bearer_disable+0x2a1/0x480 net/tipc/netlink_compat.c:449
-TLV_GET_DATA_LEN(msg->req) may return a negtive value, which will be
-used as size_t (a big unsigned long) passed into  memchr(),
-triggered this issue.
+Good work!
 
-@@ -446,7 +446,7 @@ static int tipc_nl_compat_bearer_disable(struct
-tipc_nl_compat_cmd_doit *cmd,
-  return -EMSGSIZE;
+Just one suggestion: it's better to add one separate kernel config to
+control whether the new feature is enabled or not, and its default value
+should be set to "Disabled" because the feature is related to debug.
 
-  len = min_t(int, TLV_GET_DATA_LEN(msg->req), TIPC_MAX_BEARER_NAME);
-- if (!string_is_valid(name, len))
-+ if (len <=0 || !string_is_valid(name, len))
-  return -EINVAL;
-
-The same fix is needed for some other places, and I will give a fix-ups.
-
->   __tipc_nl_compat_doit net/tipc/netlink_compat.c:327 [inline]
->   tipc_nl_compat_doit+0x3ac/0xb00 net/tipc/netlink_compat.c:360
->   tipc_nl_compat_handle net/tipc/netlink_compat.c:1178 [inline]
->   tipc_nl_compat_recv+0x1b1b/0x27b0 net/tipc/netlink_compat.c:1281
->   genl_family_rcv_msg net/netlink/genetlink.c:602 [inline]
->   genl_rcv_msg+0x185a/0x1a40 net/netlink/genetlink.c:627
->   netlink_rcv_skb+0x431/0x620 net/netlink/af_netlink.c:2486
->   genl_rcv+0x63/0x80 net/netlink/genetlink.c:638
->   netlink_unicast_kernel net/netlink/af_netlink.c:1311 [inline]
->   netlink_unicast+0xf3e/0x1020 net/netlink/af_netlink.c:1337
->   netlink_sendmsg+0x127e/0x12f0 net/netlink/af_netlink.c:1926
->   sock_sendmsg_nosec net/socket.c:651 [inline]
->   sock_sendmsg net/socket.c:661 [inline]
->   ___sys_sendmsg+0xcc6/0x1200 net/socket.c:2260
->   __sys_sendmsg net/socket.c:2298 [inline]
->   __do_sys_sendmsg net/socket.c:2307 [inline]
->   __se_sys_sendmsg+0x305/0x460 net/socket.c:2305
->   __x64_sys_sendmsg+0x4a/0x70 net/socket.c:2305
->   do_syscall_64+0xbc/0xf0 arch/x86/entry/common.c:291
->   entry_SYSCALL_64_after_hwframe+0x63/0xe7
-> RIP: 0033:0x442639
-> Code: 41 02 00 85 c0 b8 00 00 00 00 48 0f 44 c3 5b c3 90 48 89 f8 48 89 f7
-> 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff
-> ff 0f 83 fb 10 fc ff c3 66 2e 0f 1f 84 00 00 00 00
-> RSP: 002b:00000000007efea8 EFLAGS: 00000246 ORIG_RAX: 000000000000002e
-> RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 0000000000442639
-> RDX: 0000000000000000 RSI: 0000000020000080 RDI: 0000000000000003
-> RBP: 00000000007eff00 R08: 0000000000000003 R09: 0000000000000003
-> R10: 00000000bb1414ac R11: 0000000000000246 R12: 0000000000000003
-> R13: 0000000000403c50 R14: 0000000000000000 R15: 0000000000000000
->
-> Uninit was created at:
->   kmsan_save_stack_with_flags mm/kmsan/kmsan.c:208 [inline]
->   kmsan_internal_poison_shadow+0x92/0x150 mm/kmsan/kmsan.c:162
->   kmsan_kmalloc+0xa4/0x130 mm/kmsan/kmsan_hooks.c:175
->   kmsan_slab_alloc+0xe/0x10 mm/kmsan/kmsan_hooks.c:184
->   slab_post_alloc_hook mm/slab.h:442 [inline]
->   slab_alloc_node mm/slub.c:2771 [inline]
->   __kmalloc_node_track_caller+0xcba/0xf30 mm/slub.c:4399
->   __kmalloc_reserve net/core/skbuff.c:140 [inline]
->   __alloc_skb+0x306/0xa10 net/core/skbuff.c:208
->   alloc_skb include/linux/skbuff.h:1059 [inline]
->   netlink_alloc_large_skb net/netlink/af_netlink.c:1183 [inline]
->   netlink_sendmsg+0xb81/0x12f0 net/netlink/af_netlink.c:1901
->   sock_sendmsg_nosec net/socket.c:651 [inline]
->   sock_sendmsg net/socket.c:661 [inline]
->   ___sys_sendmsg+0xcc6/0x1200 net/socket.c:2260
->   __sys_sendmsg net/socket.c:2298 [inline]
->   __do_sys_sendmsg net/socket.c:2307 [inline]
->   __se_sys_sendmsg+0x305/0x460 net/socket.c:2305
->   __x64_sys_sendmsg+0x4a/0x70 net/socket.c:2305
->   do_syscall_64+0xbc/0xf0 arch/x86/entry/common.c:291
->   entry_SYSCALL_64_after_hwframe+0x63/0xe7
-> ==================================================================
->
->
+On 6/19/19 8:11 AM, John Rutherford wrote:
+> Since node internal messages are passed directly to socket it is not
+> possible to observe this message exchange via tcpdump or wireshark.
+> 
+> We now remedy this by making it possible to clone such messages and send
+> the clones to the loopback interface.  The clones are dropped at reception
+> and have no functional role except making the traffic visible.
+> 
+> The feature is turned on/off by enabling/disabling the loopback "bearer"
+> "eth:lo".
+>  
+> Signed-off-by: John Rutherford <john.rutherford@dektech.com.au>
 > ---
-> This bug is generated by a bot. It may contain errors.
-> See https://goo.gl/tpsmEJ for more information about syzbot.
-> syzbot engineers can be reached at syzkaller@googlegroups.com.
->
-> syzbot will keep track of this bug report. See:
-> https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
-> syzbot can test patches for this bug, for details see:
-> https://goo.gl/tpsmEJ#testing-patches
+>  net/tipc/bcast.c  |  4 +++-
+>  net/tipc/bearer.c | 67 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+>  net/tipc/bearer.h |  3 +++
+>  net/tipc/core.c   |  5 ++++-
+>  net/tipc/core.h   | 12 ++++++++++
+>  net/tipc/node.c   |  1 +
+>  net/tipc/topsrv.c |  2 ++
+>  7 files changed, 92 insertions(+), 2 deletions(-)
+> 
+> diff --git a/net/tipc/bcast.c b/net/tipc/bcast.c
+> index 6c997d4..235331d 100644
+> --- a/net/tipc/bcast.c
+> +++ b/net/tipc/bcast.c
+> @@ -406,8 +406,10 @@ int tipc_mcast_xmit(struct net *net, struct sk_buff_head *pkts,
+>  			rc = tipc_bcast_xmit(net, pkts, cong_link_cnt);
+>  	}
+>  
+> -	if (dests->local)
+> +	if (dests->local) {
+> +		tipc_loopback_trace(net, &localq);
+>  		tipc_sk_mcast_rcv(net, &localq, &inputq);
+> +	}
+>  exit:
+>  	/* This queue should normally be empty by now */
+>  	__skb_queue_purge(pkts);
+> diff --git a/net/tipc/bearer.c b/net/tipc/bearer.c
+> index 2bed658..27b4fd7 100644
+> --- a/net/tipc/bearer.c
+> +++ b/net/tipc/bearer.c
+> @@ -836,6 +836,12 @@ int __tipc_nl_bearer_disable(struct sk_buff *skb, struct genl_info *info)
+>  
+>  	name = nla_data(attrs[TIPC_NLA_BEARER_NAME]);
+>  
+> +	if (!strcmp(name, "eth:lo")) {
+> +		tipc_net(net)->loopback_trace = false;
+> +		pr_info("Disabled packet tracing on loopback interface\n");
+> +		return 0;
+> +	}
+> +
+>  	bearer = tipc_bearer_find(net, name);
+>  	if (!bearer)
+>  		return -EINVAL;
+> @@ -881,6 +887,12 @@ int __tipc_nl_bearer_enable(struct sk_buff *skb, struct genl_info *info)
+>  
+>  	bearer = nla_data(attrs[TIPC_NLA_BEARER_NAME]);
+>  
+> +	if (!strcmp(bearer, "eth:lo")) {
+> +		tipc_net(net)->loopback_trace = true;
+> +		pr_info("Enabled packet tracing on loopback interface\n");
+> +		return 0;
+> +	}
+> +
+>  	if (attrs[TIPC_NLA_BEARER_DOMAIN])
+>  		domain = nla_get_u32(attrs[TIPC_NLA_BEARER_DOMAIN]);
+>  
+> @@ -1021,6 +1033,61 @@ int tipc_nl_bearer_set(struct sk_buff *skb, struct genl_info *info)
+>  	return err;
+>  }
+>  
+> +void tipc_clone_to_loopback(struct net *net, struct sk_buff_head *xmitq)
+> +{
+> +	struct net_device *dev = net->loopback_dev;
+> +	struct sk_buff *skb, *_skb;
+> +	int exp;
+> +
+> +	skb_queue_walk(xmitq, _skb) {
+> +		skb = pskb_copy(_skb, GFP_ATOMIC);
+> +		if (!skb)
+> +			continue;
+> +		exp = SKB_DATA_ALIGN(dev->hard_header_len - skb_headroom(skb));
+> +		if (exp > 0 && pskb_expand_head(skb, exp, 0, GFP_ATOMIC)) {
+> +			kfree_skb(skb);
+> +			continue;
+> +		}
+> +		skb_reset_network_header(skb);
+> +		skb->dev = dev;
+> +		skb->protocol = htons(ETH_P_TIPC);
+> +		dev_hard_header(skb, dev, ETH_P_TIPC, dev->dev_addr,
+> +				dev->dev_addr, skb->len);
+> +		dev_queue_xmit(skb);
+> +	}
+> +}
+> +
+> +static int tipc_loopback_rcv_pkt(struct sk_buff *skb, struct net_device *dev,
+> +				 struct packet_type *pt, struct net_device *od)
+> +{
+> +	consume_skb(skb);
+> +	return NET_RX_SUCCESS;
+> +}
+> +
+> +int tipc_attach_loopback(struct net *net)
+> +{
+> +	struct net_device *dev = net->loopback_dev;
+> +	struct tipc_net *tn = tipc_net(net);
+> +
+> +	if (!dev)
+> +		return -ENODEV;
+> +	dev_hold(dev);
+> +	tn->loopback_pt.dev = dev;
+> +	tn->loopback_pt.type = htons(ETH_P_TIPC);
+> +	tn->loopback_pt.func = tipc_loopback_rcv_pkt;
+> +	tn->loopback_trace = false;
+> +	dev_add_pack(&tn->loopback_pt);
+> +	return 0;
+> +}
+> +
+> +void tipc_detach_loopback(struct net *net)
+> +{
+> +	struct tipc_net *tn = tipc_net(net);
+> +
+> +	dev_remove_pack(&tn->loopback_pt);
+> +	dev_put(net->loopback_dev);
+> +}
+> +
+>  static int __tipc_nl_add_media(struct tipc_nl_msg *msg,
+>  			       struct tipc_media *media, int nlflags)
+>  {
+> diff --git a/net/tipc/bearer.h b/net/tipc/bearer.h
+> index 7f4c569..ef7fad9 100644
+> --- a/net/tipc/bearer.h
+> +++ b/net/tipc/bearer.h
+> @@ -232,6 +232,9 @@ void tipc_bearer_xmit(struct net *net, u32 bearer_id,
+>  		      struct tipc_media_addr *dst);
+>  void tipc_bearer_bc_xmit(struct net *net, u32 bearer_id,
+>  			 struct sk_buff_head *xmitq);
+> +void tipc_clone_to_loopback(struct net *net, struct sk_buff_head *xmitq);
+> +int tipc_attach_loopback(struct net *net);
+> +void tipc_detach_loopback(struct net *net);
+>  
+>  /* check if device MTU is too low for tipc headers */
+>  static inline bool tipc_mtu_bad(struct net_device *dev, unsigned int reserve)
+> diff --git a/net/tipc/core.c b/net/tipc/core.c
+> index ed536c0..1867687 100644
+> --- a/net/tipc/core.c
+> +++ b/net/tipc/core.c
+> @@ -81,7 +81,9 @@ static int __net_init tipc_init_net(struct net *net)
+>  	err = tipc_bcast_init(net);
+>  	if (err)
+>  		goto out_bclink;
+> -
+> +	err = tipc_attach_loopback(net);
+> +	if (err)
+> +		goto out_bclink;
+>  	return 0;
+>  
+>  out_bclink:
+> @@ -94,6 +96,7 @@ static int __net_init tipc_init_net(struct net *net)
+>  
+>  static void __net_exit tipc_exit_net(struct net *net)
+>  {
+> +	tipc_detach_loopback(net);
+>  	tipc_net_stop(net);
+>  	tipc_bcast_stop(net);
+>  	tipc_nametbl_stop(net);
+> diff --git a/net/tipc/core.h b/net/tipc/core.h
+> index 7a68e1b..c1c2906 100644
+> --- a/net/tipc/core.h
+> +++ b/net/tipc/core.h
+> @@ -67,6 +67,7 @@ struct tipc_link;
+>  struct tipc_name_table;
+>  struct tipc_topsrv;
+>  struct tipc_monitor;
+> +void tipc_clone_to_loopback(struct net *net, struct sk_buff_head *pkts);
+>  
+>  #define TIPC_MOD_VER "2.0.0"
+>  
+> @@ -125,6 +126,10 @@ struct tipc_net {
+>  
+>  	/* Cluster capabilities */
+>  	u16 capabilities;
+> +
+> +	/* Tracing of node internal messages */
+> +	struct packet_type loopback_pt;
+> +	bool loopback_trace;
+>  };
+>  
+>  static inline struct tipc_net *tipc_net(struct net *net)
+> @@ -152,6 +157,13 @@ static inline struct tipc_topsrv *tipc_topsrv(struct net *net)
+>  	return tipc_net(net)->topsrv;
+>  }
+>  
+> +static inline void tipc_loopback_trace(struct net *net,
+> +				       struct sk_buff_head *pkts)
+> +{
+> +	if (unlikely(tipc_net(net)->loopback_trace))
+> +		tipc_clone_to_loopback(net, pkts);
+> +}
+> +
+>  static inline unsigned int tipc_hashfn(u32 addr)
+>  {
+>  	return addr & (NODE_HTABLE_SIZE - 1);
+> diff --git a/net/tipc/node.c b/net/tipc/node.c
+> index 9e106d3..7e58831 100644
+> --- a/net/tipc/node.c
+> +++ b/net/tipc/node.c
+> @@ -1439,6 +1439,7 @@ int tipc_node_xmit(struct net *net, struct sk_buff_head *list,
+>  	int rc;
+>  
+>  	if (in_own_node(net, dnode)) {
+> +		tipc_loopback_trace(net, list);
+>  		tipc_sk_rcv(net, list);
+>  		return 0;
+>  	}
+> diff --git a/net/tipc/topsrv.c b/net/tipc/topsrv.c
+> index f345662..e3a6ba1 100644
+> --- a/net/tipc/topsrv.c
+> +++ b/net/tipc/topsrv.c
+> @@ -40,6 +40,7 @@
+>  #include "socket.h"
+>  #include "addr.h"
+>  #include "msg.h"
+> +#include "bearer.h"
+>  #include <net/sock.h>
+>  #include <linux/module.h>
+>  
+> @@ -608,6 +609,7 @@ static void tipc_topsrv_kern_evt(struct net *net, struct tipc_event *evt)
+>  	memcpy(msg_data(buf_msg(skb)), evt, sizeof(*evt));
+>  	skb_queue_head_init(&evtq);
+>  	__skb_queue_tail(&evtq, skb);
+> +	tipc_loopback_trace(net, &evtq);
+>  	tipc_sk_rcv(net, &evtq);
+>  }
+>  
+> 
 
 
 _______________________________________________
