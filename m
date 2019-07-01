@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F8085C17B
-	for <lists+tipc-discussion@lfdr.de>; Mon,  1 Jul 2019 18:55:23 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 529F05C188
+	for <lists+tipc-discussion@lfdr.de>; Mon,  1 Jul 2019 18:57:41 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1hhza6-0000JF-EA; Mon, 01 Jul 2019 16:55:06 +0000
+	id 1hhzcM-0003Mr-9Z; Mon, 01 Jul 2019 16:57:26 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <lucien.xin@gmail.com>) id 1hhza5-0000J3-9q
- for tipc-discussion@lists.sourceforge.net; Mon, 01 Jul 2019 16:55:05 +0000
+ (envelope-from <lucien.xin@gmail.com>) id 1hhzcL-0003Mk-M4
+ for tipc-discussion@lists.sourceforge.net; Mon, 01 Jul 2019 16:57:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=rsYSRMQDvpj2JBh7T2693BdOfBG3YhePj+PlQvXlBd8=; b=LdWqMfpLs1RF2eEyhupPenHYg2
- EFsxpR8uk+hYaBpTahl+/vvDvM+JuJ2q2c2L8IVIaUdsLs5DVEnSVu+WAzTnQiMltQRX0ANxm3Jci
- 7VULrozihv+dAP/MaT0wAHn5d4/5g2GLGj5gK35poksrVge6zzmFij5eS5TGAKdl4W1w=;
+ bh=m73zpQ3RUbZ++pUg/1sY1Yqn90IGmJDz42wSnQwxdv8=; b=jodbjDlHnVp1tRICOQr12N24Jc
+ VizF95YlE7tKWzuzpjYGnTfANYIu7C0o+LvdfJ1C0u0S8wEKcT0KY/kpidkgjcxkzxpt08ZNoFNUI
+ kB6nK3ZevnQMVm2/xsXUBCAiUP38KMhWxDlQexdWG8XpZxSgpHDCtf7GPaym+hL0T+88=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:MIME-Version:
@@ -29,60 +29,59 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
  In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=rsYSRMQDvpj2JBh7T2693BdOfBG3YhePj+PlQvXlBd8=; b=Jg2S8nfiQhw/EavIX1CejJeRNg
- h4JuLrPnVy7rUHT739Uj4RxcB9SWg8ZwTengQgdqjupXZ8S8oKUDkg6CbFCT21E42pMloKylfi3Yv
- YcXJnzaHNpWY26kxA+k8bT5YdMdVvXQk/rU8puZMTS0qbvZ26pgn0+64Obmxa+TSVyfY=;
-Received: from mail-pf1-f194.google.com ([209.85.210.194])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=m73zpQ3RUbZ++pUg/1sY1Yqn90IGmJDz42wSnQwxdv8=; b=TlbVud1Y8VDi/hgdIfdTuEHLl+
+ seJgE2BaiFDAXUxdySClh5vBAGaT3KTS72cT/PHg27cazNld8naVVqjEqbda1VAhCvLpE3IJKoIMl
+ KRW030Uk4DDLD8IVXvj5nyLtQ1bpbdVvuqsRdR+dcU6/2se6WcCDa2IwlhwJKZZm/B30=;
+Received: from mail-pf1-f195.google.com ([209.85.210.195])
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
- id 1hhza8-000p2y-T9
- for tipc-discussion@lists.sourceforge.net; Mon, 01 Jul 2019 16:55:10 +0000
-Received: by mail-pf1-f194.google.com with SMTP id j2so6861374pfe.6
+ id 1hhzcS-003Hkp-PV
+ for tipc-discussion@lists.sourceforge.net; Mon, 01 Jul 2019 16:57:34 +0000
+Received: by mail-pf1-f195.google.com with SMTP id y15so6874029pfn.5
  for <tipc-discussion@lists.sourceforge.net>;
- Mon, 01 Jul 2019 09:55:08 -0700 (PDT)
+ Mon, 01 Jul 2019 09:57:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=rsYSRMQDvpj2JBh7T2693BdOfBG3YhePj+PlQvXlBd8=;
- b=fvmqgVy5oZgunW7Ma7iI4wG/lLhzPJmly7bbH+BVuMdq9KDJM+gpETB0C/Xwo8hG4P
- a5kJXf/+9pZpcXeHmdxhlCklV7ELAOJaw3TSw+T2fpnvG0JCjQNGDdTuCE38zQYcV7JM
- pOO+ks2aYSiIalNVomh3S+wHdH+njjZKlMHtZOktxisWpE+1rBU5vDWAkN3d05HJiqiS
- 3Tkhj9nfDe3wFwNPuXksH+lqMXLQvgKSdTeV86uv9PKEq9GnbbjNn0W7Z5A8dUKaissV
- gnZ/XC6+6uvebJhQAfwohr7/lwTmxb1EXQfUky+fOtsg5RpmuuP+lTL9uS3xaaL61Ye9
- Y0uQ==
+ bh=m73zpQ3RUbZ++pUg/1sY1Yqn90IGmJDz42wSnQwxdv8=;
+ b=PW4FgFCAjY9nE5e+O3eeWWGWkDvBMDhgpd2UItHfNoV5l17o5TQZgacU57hCXfLb9N
+ Ii+KhxeOFAK2FFkTmmh5W3OmKBepOTuBPL/qHQvjq0sYUfdflfVT3ITX1leNpfyxSTe2
+ PnY8jApP/HaJZEjWoOxXkqm5aamvazJ36Ujt4sdo/Bwxue5JPa8j8pGYGVIxfGby2xn7
+ /JBpPD/wX/zu5EUn3yXVdpFpesDbHG0j7tsBIYdJwV8sD81LjLoeX9g7UkTj1m2c/NQR
+ xIUtRkLvu3/I9gkYIfu481+5EnfIcYM9EMiksnj/5OVwHArXjdkst+inERClxa01qx/z
+ +Nbg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=rsYSRMQDvpj2JBh7T2693BdOfBG3YhePj+PlQvXlBd8=;
- b=IAje6VrhW0s4c0JOqSm9Q4n5ZxbAZgBYppP9lyUXp8+rcKXzxsJSComtKVrfAr9eCL
- 0mGegs53RYd/sEarPruHwlKsT5QezgL7AEFmjdvqHmC6+gmOZ0FKotTLI515AqgP6/PB
- Z2iIFsGjfivgS2zU89iGn8HWwb4FeTgAMRmN8rHp1sso2SwIR/iQ8d5HM6U7UIItYtKE
- G6Am782hCJvrcS/bT5YMy2mxsluEktdyHI2V3yGGAfBpnErjPH5+4opk9DXLRxg44BNv
- tel+EH+ZncIGZljMIWoe31TyOTGxQR8VSqSg50o7WxEEdSXXRm/2hhAOZVFze2Cch1jc
- 2jrA==
-X-Gm-Message-State: APjAAAVA/JeMnL30ROvJZ4K2rNb9kQganP8ph0CrLOvYxpw24H+buMh9
- 7123vV406t/67oTjwHhAbfs=
-X-Google-Smtp-Source: APXvYqw9uJNB5GOH0xPlKlKWbq8dUZhRQ4jDCyQeGsNYwENWoPo1uTpv0f6HGD+A3TwIh8WgH9AzUg==
-X-Received: by 2002:a17:90a:2ec1:: with SMTP id
- h1mr246012pjs.101.1562000103119; 
- Mon, 01 Jul 2019 09:55:03 -0700 (PDT)
+ bh=m73zpQ3RUbZ++pUg/1sY1Yqn90IGmJDz42wSnQwxdv8=;
+ b=tz2Iwx5pv8L/qnJ6MsCh6/Y+iX57FKvcg0jLmQ2VCSWOdVtSAsfi45X9Pz8C+Te4vw
+ ST12XIj7+9BuXVQ5ccEMRrDlh8K3a1ZtR3/vooYkCAlw86upsVHCkBNOCyKSQkFqk919
+ dEsbIAEAQL7wSKFCCDOoZf5z2Y1dyhVkzjxGBPEqOdgImIBoecxJPDWmQtoR3RXTzlCe
+ df2fC422YjFyVFqZ6sAyF+EOGfjnMWQdrumpjAmqsR1GoyOknjFbgI6ELgFi0MOgSMY7
+ mRO22Ni3eJ+6o+OLW/umVi/Pdfh3Qlg2N5hJlaWZy1jh6CY0mc+6LHNIyPnchp7eym7q
+ VJ0w==
+X-Gm-Message-State: APjAAAVhpx7qukt1g04lAHc5UYn9jAKkqxz6mKyIc+Fm8NdT0AJOOfKa
+ WNsVDqeaWFT0OmyL9W0SKmY=
+X-Google-Smtp-Source: APXvYqxQ9DEwe9BHXFbYddhJvnscuAWHRWt4OSTk8T4Sp4bbndoorAg8bwejImgOVyo+h6k93TemBQ==
+X-Received: by 2002:a63:fa57:: with SMTP id g23mr18181559pgk.75.1562000247075; 
+ Mon, 01 Jul 2019 09:57:27 -0700 (PDT)
 Received: from localhost ([209.132.188.80])
- by smtp.gmail.com with ESMTPSA id j23sm10404074pgb.63.2019.07.01.09.55.01
+ by smtp.gmail.com with ESMTPSA id p65sm11624325pfp.58.2019.07.01.09.57.25
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 01 Jul 2019 09:55:02 -0700 (PDT)
+ Mon, 01 Jul 2019 09:57:26 -0700 (PDT)
 From: Xin Long <lucien.xin@gmail.com>
 To: network dev <netdev@vger.kernel.org>
-Date: Tue,  2 Jul 2019 00:54:55 +0800
-Message-Id: <07e0518ac689f5919890a38634df38edf95d34a1.1562000095.git.lucien.xin@gmail.com>
+Date: Tue,  2 Jul 2019 00:57:19 +0800
+Message-Id: <d59889f395b2c224131046c832fe1a8056209107.1562000239.git.lucien.xin@gmail.com>
 X-Mailer: git-send-email 2.1.0
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.210.194 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
  (lucien.xin[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [209.85.210.195 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.194 listed in wl.mailspike.net]
+ [209.85.210.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -91,9 +90,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1hhza8-000p2y-T9
-Subject: [tipc-discussion] [PATCH net-next] tipc: use rcu dereference
- functions properly
+X-Headers-End: 1hhzcS-003Hkp-PV
+Subject: [tipc-discussion] [PATCH net-next] tipc: remove ub->ubsock checks
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,124 +109,69 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-For these places are protected by rcu_read_lock, we change from
-rcu_dereference_rtnl to rcu_dereference, as there is no need to
-check if rtnl lock is held.
+Both tipc_udp_enable and tipc_udp_disable are called under rtnl_lock,
+ub->ubsock could never be NULL in tipc_udp_disable and cleanup_bearer,
+so remove the check.
 
-For these places are protected by rtnl_lock, we change from
-rcu_dereference_rtnl to rtnl_dereference/rcu_dereference_protected,
-as no extra memory barriers are needed under rtnl_lock() which also
-protects tn->bearer_list[] and dev->tipc_ptr/b->media_ptr updating.
-
-rcu_dereference_rtnl will be only used in the places where it could
-be under rcu_read_lock or rtnl_lock.
+Also remove the one in tipc_udp_enable by adding "free" label.
 
 Signed-off-by: Xin Long <lucien.xin@gmail.com>
 ---
- net/tipc/bearer.c    | 14 +++++++-------
- net/tipc/udp_media.c |  8 ++++----
- 2 files changed, 11 insertions(+), 11 deletions(-)
+ net/tipc/udp_media.c | 17 ++++++++---------
+ 1 file changed, 8 insertions(+), 9 deletions(-)
 
-diff --git a/net/tipc/bearer.c b/net/tipc/bearer.c
-index 2bed658..a809c0e 100644
---- a/net/tipc/bearer.c
-+++ b/net/tipc/bearer.c
-@@ -62,7 +62,7 @@ static struct tipc_bearer *bearer_get(struct net *net, int bearer_id)
- {
- 	struct tipc_net *tn = tipc_net(net);
- 
--	return rcu_dereference_rtnl(tn->bearer_list[bearer_id]);
-+	return rcu_dereference(tn->bearer_list[bearer_id]);
- }
- 
- static void bearer_disable(struct net *net, struct tipc_bearer *b);
-@@ -210,7 +210,7 @@ void tipc_bearer_add_dest(struct net *net, u32 bearer_id, u32 dest)
- 	struct tipc_bearer *b;
- 
- 	rcu_read_lock();
--	b = rcu_dereference_rtnl(tn->bearer_list[bearer_id]);
-+	b = rcu_dereference(tn->bearer_list[bearer_id]);
- 	if (b)
- 		tipc_disc_add_dest(b->disc);
- 	rcu_read_unlock();
-@@ -222,7 +222,7 @@ void tipc_bearer_remove_dest(struct net *net, u32 bearer_id, u32 dest)
- 	struct tipc_bearer *b;
- 
- 	rcu_read_lock();
--	b = rcu_dereference_rtnl(tn->bearer_list[bearer_id]);
-+	b = rcu_dereference(tn->bearer_list[bearer_id]);
- 	if (b)
- 		tipc_disc_remove_dest(b->disc);
- 	rcu_read_unlock();
-@@ -444,7 +444,7 @@ int tipc_l2_send_msg(struct net *net, struct sk_buff *skb,
- 	struct net_device *dev;
- 	int delta;
- 
--	dev = (struct net_device *)rcu_dereference_rtnl(b->media_ptr);
-+	dev = (struct net_device *)rcu_dereference(b->media_ptr);
- 	if (!dev)
- 		return 0;
- 
-@@ -481,7 +481,7 @@ int tipc_bearer_mtu(struct net *net, u32 bearer_id)
- 	struct tipc_bearer *b;
- 
- 	rcu_read_lock();
--	b = rcu_dereference_rtnl(tipc_net(net)->bearer_list[bearer_id]);
-+	b = rcu_dereference(tipc_net(net)->bearer_list[bearer_id]);
- 	if (b)
- 		mtu = b->mtu;
- 	rcu_read_unlock();
-@@ -574,8 +574,8 @@ static int tipc_l2_rcv_msg(struct sk_buff *skb, struct net_device *dev,
- 	struct tipc_bearer *b;
- 
- 	rcu_read_lock();
--	b = rcu_dereference_rtnl(dev->tipc_ptr) ?:
--		rcu_dereference_rtnl(orig_dev->tipc_ptr);
-+	b = rcu_dereference(dev->tipc_ptr) ?:
-+		rcu_dereference(orig_dev->tipc_ptr);
- 	if (likely(b && test_bit(0, &b->up) &&
- 		   (skb->pkt_type <= PACKET_MULTICAST))) {
- 		skb_mark_not_on_list(skb);
 diff --git a/net/tipc/udp_media.c b/net/tipc/udp_media.c
-index b8962df..62b85db 100644
+index 62b85db..287df687 100644
 --- a/net/tipc/udp_media.c
 +++ b/net/tipc/udp_media.c
-@@ -231,7 +231,7 @@ static int tipc_udp_send_msg(struct net *net, struct sk_buff *skb,
+@@ -759,7 +759,7 @@ static int tipc_udp_enable(struct net *net, struct tipc_bearer *b,
+ 
+ 	err = dst_cache_init(&ub->rcast.dst_cache, GFP_ATOMIC);
+ 	if (err)
+-		goto err;
++		goto free;
+ 
+ 	/**
+ 	 * The bcast media address port is used for all peers and the ip
+@@ -771,13 +771,14 @@ static int tipc_udp_enable(struct net *net, struct tipc_bearer *b,
+ 	else
+ 		err = tipc_udp_rcast_add(b, &remote);
+ 	if (err)
+-		goto err;
++		goto free;
+ 
+ 	return 0;
+-err:
++
++free:
+ 	dst_cache_destroy(&ub->rcast.dst_cache);
+-	if (ub->ubsock)
+-		udp_tunnel_sock_release(ub->ubsock);
++	udp_tunnel_sock_release(ub->ubsock);
++err:
+ 	kfree(ub);
+ 	return err;
+ }
+@@ -795,8 +796,7 @@ static void cleanup_bearer(struct work_struct *work)
  	}
  
- 	skb_set_inner_protocol(skb, htons(ETH_P_TIPC));
--	ub = rcu_dereference_rtnl(b->media_ptr);
-+	ub = rcu_dereference(b->media_ptr);
- 	if (!ub) {
- 		err = -ENODEV;
- 		goto out;
-@@ -490,7 +490,7 @@ int tipc_udp_nl_dump_remoteip(struct sk_buff *skb, struct netlink_callback *cb)
- 		}
- 	}
- 
--	ub = rcu_dereference_rtnl(b->media_ptr);
-+	ub = rtnl_dereference(b->media_ptr);
- 	if (!ub) {
- 		rtnl_unlock();
- 		return -EINVAL;
-@@ -532,7 +532,7 @@ int tipc_udp_nl_add_bearer_data(struct tipc_nl_msg *msg, struct tipc_bearer *b)
- 	struct udp_bearer *ub;
- 	struct nlattr *nest;
- 
--	ub = rcu_dereference_rtnl(b->media_ptr);
-+	ub = rtnl_dereference(b->media_ptr);
- 	if (!ub)
- 		return -ENODEV;
- 
-@@ -806,7 +806,7 @@ static void tipc_udp_disable(struct tipc_bearer *b)
- {
- 	struct udp_bearer *ub;
- 
--	ub = rcu_dereference_rtnl(b->media_ptr);
-+	ub = rtnl_dereference(b->media_ptr);
- 	if (!ub) {
+ 	dst_cache_destroy(&ub->rcast.dst_cache);
+-	if (ub->ubsock)
+-		udp_tunnel_sock_release(ub->ubsock);
++	udp_tunnel_sock_release(ub->ubsock);
+ 	synchronize_net();
+ 	kfree(ub);
+ }
+@@ -811,8 +811,7 @@ static void tipc_udp_disable(struct tipc_bearer *b)
  		pr_err("UDP bearer instance not found\n");
  		return;
+ 	}
+-	if (ub->ubsock)
+-		sock_set_flag(ub->ubsock->sk, SOCK_DEAD);
++	sock_set_flag(ub->ubsock->sk, SOCK_DEAD);
+ 	RCU_INIT_POINTER(ub->bearer, NULL);
+ 
+ 	/* sock_release need to be done outside of rtnl lock */
 -- 
 2.1.0
 
