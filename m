@@ -2,93 +2,120 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F4216660C
-	for <lists+tipc-discussion@lfdr.de>; Fri, 12 Jul 2019 07:16:12 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82E8A6702E
+	for <lists+tipc-discussion@lfdr.de>; Fri, 12 Jul 2019 15:35:48 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1hlnuf-0006EQ-EW; Fri, 12 Jul 2019 05:16:05 +0000
+	id 1hlvi8-00089I-81; Fri, 12 Jul 2019 13:35:40 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1hlnue-0006EA-4G
- for tipc-discussion@lists.sourceforge.net; Fri, 12 Jul 2019 05:16:04 +0000
+ (envelope-from <jon.maloy@ericsson.com>) id 1hlvi6-000899-SF
+ for tipc-discussion@lists.sourceforge.net; Fri, 12 Jul 2019 13:35:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=References:In-Reply-To:Message-Id:Date:Subject:Cc:
- To:From:Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=QVGbb85xMAg5kSUOfG4HsGHKAzhmS3a4UYs8BzVpc9w=; b=YQENPJm3unu23m19BxStD4sIGA
- 91ZDGKnZO3lekPEu8mNO0IyKvDWDGiacohx6tKuOtdrNpEsC5I5TGEMuRFdVl/UfBYcMXzhHfFfCU
- eLou/3JlUDZVbcjVsPTMCvnXqfDSX/ODaIhP8P8JlhBaQCiKgFD1E8LqLH3YBzAQ0QOg=;
+ bh=mOs/onyuvwBe+d48Ynim9WFKw/OPCBnL7quQOO9kq+8=; b=RMxsxgZI6F+YKK6KW3ip0MDEvk
+ FO7jsSSEi2NRZ41ugysaehBLjCp2YrrApIBSSvGfXsazqR9H2CHV9Eg/ens9Du0wiTBI6bkca4Oya
+ De90rRYQfRdNO+GjriJ5INGQJMUxxI6EPQ97aeT4vW/AGygtar75IbGBulkqEF9U+cKA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To
- :MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=QVGbb85xMAg5kSUOfG4HsGHKAzhmS3a4UYs8BzVpc9w=; b=gTRU8U7t29djFe1mNTWFNfQNUc
- 1KJDgS5sjWy37hNgtdOgnRt+qOMCoZIuzAXPzUPWDPHVmDm+lthAwg+Nt/8C+XE1m1FLAZeli+pIv
- 15EhQZ2m/tUPnzB29WH4Kpdds7ThAKqn8bBhOs2X0t69rsk/tKegwKhL9Y/8y50YCXc8=;
-Received: from f0-dek.dektech.com.au ([210.10.221.142]
- helo=mail.dektech.com.au)
+ bh=mOs/onyuvwBe+d48Ynim9WFKw/OPCBnL7quQOO9kq+8=; b=VmFPIGCuIbYja0KUO1Kx/DWxEb
+ PeNcVVd+ajAqZ1yO9SLuJFOp74yAMlXcj6Z7YdeqiXsIE371SHr1jOYSBHopHn6fsNqK4q3BmbWCF
+ BuDMRyAt029wXYOLW9WLVRFYQTxJYTjez28zNJdolQnmADo5SIxdFYriJKy3pWLZloJ8=;
+Received: from mail-eopbgr790089.outbound.protection.outlook.com
+ ([40.107.79.89] helo=NAM03-CO1-obe.outbound.protection.outlook.com)
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- id 1hlnua-00FxyB-Fj
- for tipc-discussion@lists.sourceforge.net; Fri, 12 Jul 2019 05:16:04 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.dektech.com.au (Postfix) with ESMTP id DE81946093;
- Fri, 12 Jul 2019 15:15:53 +1000 (AEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
- h=references:in-reply-to:x-mailer:message-id:date:date:subject
- :subject:from:from:received:received:received; s=mail_dkim; t=
- 1562908553; bh=zVSoHHrwvJqIRHGtSTgFlOFqG2fzcMht6hHVUB7FH/c=; b=M
- UoQMMev8SSYtZRVZkQGlV5EztmgB/VTn8ka1gb0tajDuXC5zVsqJgO6cNPqxNJPT
- mqY4tuJYdeY3MX1N7sjC4QPaRAzKBhwp5tjDgmYF+UJdWnyn8/nGT26gohCgFmht
- yeS5NhgTLl5q1Lum96QpiBrqomb1vCbRTuKZZ2CNzc=
-X-Virus-Scanned: amavisd-new at dektech.com.au
-Received: from mail.dektech.com.au ([127.0.0.1])
- by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id zDWWLp3agBKC; Fri, 12 Jul 2019 15:15:53 +1000 (AEST)
-Received: from mail.dektech.com.au (localhost [127.0.0.1])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPS id BD12A4609B;
- Fri, 12 Jul 2019 15:15:53 +1000 (AEST)
-Received: from localhost.localdomain (unknown [14.161.14.188])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPSA id C183346093;
- Fri, 12 Jul 2019 15:15:51 +1000 (AEST)
-From: Tuong Lien <tuong.t.lien@dektech.com.au>
-To: davem@davemloft.net, jon.maloy@ericsson.com, maloy@donjonn.com,
- ying.xue@windriver.com, netdev@vger.kernel.org
-Date: Fri, 12 Jul 2019 12:15:37 +0700
-Message-Id: <20190712051537.10826-3-tuong.t.lien@dektech.com.au>
-X-Mailer: git-send-email 2.13.7
-In-Reply-To: <20190712051537.10826-1-tuong.t.lien@dektech.com.au>
-References: <20190712051537.10826-1-tuong.t.lien@dektech.com.au>
-X-Spam-Score: -0.1 (/)
+ id 1hlvi2-00GN7s-NP
+ for tipc-discussion@lists.sourceforge.net; Fri, 12 Jul 2019 13:35:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mOs/onyuvwBe+d48Ynim9WFKw/OPCBnL7quQOO9kq+8=;
+ b=UY3MBG5yXQEPTSrxXrzTqgOcH79EK4oAZ3HhSiVCrUUsT8NvAn0xeMPxSrQshCr4gGomuEzzoLN2yFY1iyGSwKZwGXKxziDPRQrCswiKQlfTX5NGoXTN4JZ5a46mr/bXxlBh+YxzfrgfLPf/EWMiM3ab0rn8HV6VlYRevaZQSOM=
+Received: from CH2PR15MB3575.namprd15.prod.outlook.com (10.255.156.17) by
+ CH2PR15MB3656.namprd15.prod.outlook.com (52.132.229.90) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2052.19; Fri, 12 Jul 2019 13:35:27 +0000
+Received: from CH2PR15MB3575.namprd15.prod.outlook.com
+ ([fe80::ecc4:bffd:8512:a8b6]) by CH2PR15MB3575.namprd15.prod.outlook.com
+ ([fe80::ecc4:bffd:8512:a8b6%2]) with mapi id 15.20.2073.008; Fri, 12 Jul 2019
+ 13:35:27 +0000
+From: Jon Maloy <jon.maloy@ericsson.com>
+To: Chris Packham <chris.packham@alliedtelesis.co.nz>,
+ "eric.dumazet@gmail.com" <eric.dumazet@gmail.com>, "ying.xue@windriver.com"
+ <ying.xue@windriver.com>, "davem@davemloft.net" <davem@davemloft.net>
+Thread-Topic: [PATCH v2] tipc: ensure head->lock is initialised
+Thread-Index: AQHVODnNEHBSydfkNkiklxzCzKphuKbG9Kpw
+Date: Fri, 12 Jul 2019 13:35:26 +0000
+Message-ID: <CH2PR15MB3575CECCB65404A0292B68759AF20@CH2PR15MB3575.namprd15.prod.outlook.com>
+References: <20190711224115.21499-1-chris.packham@alliedtelesis.co.nz>
+In-Reply-To: <20190711224115.21499-1-chris.packham@alliedtelesis.co.nz>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=jon.maloy@ericsson.com; 
+x-originating-ip: [198.24.6.220]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 78725d05-fcc3-4cb5-9e4e-08d706cdccf8
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:CH2PR15MB3656; 
+x-ms-traffictypediagnostic: CH2PR15MB3656:
+x-microsoft-antispam-prvs: <CH2PR15MB36562282307A1AE20CE23D699AF20@CH2PR15MB3656.namprd15.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4303;
+x-forefront-prvs: 00963989E5
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(136003)(39860400002)(396003)(376002)(346002)(13464003)(199004)(189003)(74316002)(476003)(52536014)(7696005)(76176011)(25786009)(53546011)(102836004)(110136005)(86362001)(54906003)(8936002)(256004)(5660300002)(81156014)(7736002)(8676002)(99286004)(68736007)(14444005)(6506007)(26005)(3846002)(305945005)(81166006)(6116002)(4326008)(14454004)(53936002)(66476007)(478600001)(446003)(71200400001)(2201001)(316002)(44832011)(2501003)(186003)(66446008)(64756008)(66946007)(76116006)(486006)(2906002)(66556008)(11346002)(66066001)(6246003)(55016002)(229853002)(6436002)(45080400002)(9686003)(33656002)(71190400001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR15MB3656;
+ H:CH2PR15MB3575.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: ericsson.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: COba7c/03QhoU0IIgRYnXipC6w6PIPoQUmQePLZLPI5T8SoHPllujkbIxdvu5Air+eRq+a7uoqk5nHNGIKnRVj8iZX4nAvq2zBOeVpjSeDnLQgHHEIDwCOEgmXWJ5CFqlsoToY957CBznbutAjTWq3QOQr7hGES7QlczIrZXiynWuTGnYf8rVT35/pz9Ai7UP1daPi2GG719XfdIKDS/7LrkEjmazoM5cpVGsp0eROwJv3dnuoYRP4CwolxR9Xj9ZmWDpfkNLMa+IZy9jr7+63wQWylGcWR7h6Eqth/bi2NoLxUlOEdGgJB0te6xiCqAYpxQx/8fVJtl/zObeQJkBZg+lSCYNwWuLuFiOdQ3PudlS9G5beYiT7IMD6nzRjT6asymuHaPwhSAG1Zl6/PtKvPq4LfIuLQWlakS2VGjXvo=
+MIME-Version: 1.0
+X-OriginatorOrg: ericsson.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 78725d05-fcc3-4cb5-9e4e-08d706cdccf8
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Jul 2019 13:35:26.9954 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: jon.maloy@ericsson.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR15MB3656
+X-Spam-Score: 1.2 (+)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: dektech.com.au]
+ for more information. [URIs: ericsson.com]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [210.10.221.142 listed in list.dnswl.org]
+ trust [40.107.79.89 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1hlnua-00FxyB-Fj
-Subject: [tipc-discussion] [net-next 2/2] tipc: fix changeover issues due to
- large packet
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+X-Headers-End: 1hlvi2-00GN7s-NP
+Subject: Re: [tipc-discussion] [PATCH v2] tipc: ensure head->lock is
+ initialised
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,361 +127,117 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: tipc-discussion@lists.sourceforge.net
-MIME-Version: 1.0
+Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "tipc-discussion@lists.sourceforge.net"
+ <tipc-discussion@lists.sourceforge.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-In conjunction with changing the interfaces' MTU (e.g. especially in
-the case of a bonding) where the TIPC links are brought up and down
-in a short time, a couple of issues were detected with the current link
-changeover mechanism:
-
-1) When one link is up but immediately forced down again, the failover
-procedure will be carried out in order to failover all the messages in
-the link's transmq queue onto the other working link. The link and node
-state is also set to FAILINGOVER as part of the process. The message
-will be transmited in form of a FAILOVER_MSG, so its size is plus of 40
-bytes (= the message header size). There is no problem if the original
-message size is not larger than the link's MTU - 40, and indeed this is
-the max size of a normal payload messages. However, in the situation
-above, because the link has just been up, the messages in the link's
-transmq are almost SYNCH_MSGs which had been generated by the link
-synching procedure, then their size might reach the max value already!
-When the FAILOVER_MSG is built on the top of such a SYNCH_MSG, its size
-will exceed the link's MTU. As a result, the messages are dropped
-silently and the failover procedure will never end up, the link will
-not be able to exit the FAILINGOVER state, so cannot be re-established.
-
-2) The same scenario above can happen more easily in case the MTU of
-the links is set differently or when changing. In that case, as long as
-a large message in the failure link's transmq queue was built and
-fragmented with its link's MTU > the other link's one, the issue will
-happen (there is no need of a link synching in advance).
-
-3) The link synching procedure also faces with the same issue but since
-the link synching is only started upon receipt of a SYNCH_MSG, dropping
-the message will not result in a state deadlock, but it is not expected
-as design.
-
-The 1) & 3) issues are resolved by the last commit that only a dummy
-SYNCH_MSG (i.e. without data) is generated at the link synching, so the
-size of a FAILOVER_MSG if any then will never exceed the link's MTU.
-
-For the 2) issue, the only solution is trying to fragment the messages
-in the failure link's transmq queue according to the working link's MTU
-so they can be failovered then. A new function is made to accomplish
-this, it will still be a TUNNEL PROTOCOL/FAILOVER MSG but if the
-original message size is too large, it will be fragmented & reassembled
-at the receiving side.
-
-Acked-by: Ying Xue <ying.xue@windriver.com>
 Acked-by: Jon Maloy <jon.maloy@ericsson.com>
-Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
----
- net/tipc/link.c | 93 ++++++++++++++++++++++++++++++++++++++++++++++++---------
- net/tipc/msg.c  | 59 ++++++++++++++++++++++++++++++++++++
- net/tipc/msg.h  | 18 ++++++++++-
- 3 files changed, 155 insertions(+), 15 deletions(-)
 
-diff --git a/net/tipc/link.c b/net/tipc/link.c
-index e215b4ba6a4b..2c274777b2dd 100644
---- a/net/tipc/link.c
-+++ b/net/tipc/link.c
-@@ -180,6 +180,7 @@ struct tipc_link {
+Actually, this was not what I meant, but it solves our problem in a simple and safe way, for now.
+Later, when net-next opens, I will revert this and do it the right way, which is to change from skb_queue_purge() to __skb_queue_purge as Eric correctly noted.
+That change has to be done at four locations, at least,  and is too intrusive to post to 'net' now.
+I'll send a cleanup patch when net-next re-opens.
+
+BR
+///jon
  
- 	/* Fragmentation/reassembly */
- 	struct sk_buff *reasm_buf;
-+	struct sk_buff *reasm_tnlmsg;
- 
- 	/* Broadcast */
- 	u16 ackers;
-@@ -897,8 +898,10 @@ void tipc_link_reset(struct tipc_link *l)
- 	l->backlog[TIPC_CRITICAL_IMPORTANCE].len = 0;
- 	l->backlog[TIPC_SYSTEM_IMPORTANCE].len = 0;
- 	kfree_skb(l->reasm_buf);
-+	kfree_skb(l->reasm_tnlmsg);
- 	kfree_skb(l->failover_reasm_skb);
- 	l->reasm_buf = NULL;
-+	l->reasm_tnlmsg = NULL;
- 	l->failover_reasm_skb = NULL;
- 	l->rcv_unacked = 0;
- 	l->snd_nxt = 1;
-@@ -940,6 +943,9 @@ int tipc_link_xmit(struct tipc_link *l, struct sk_buff_head *list,
- 	int rc = 0;
- 
- 	if (unlikely(msg_size(hdr) > mtu)) {
-+		pr_warn("Too large msg, purging xmit list %d %d %d %d %d!\n",
-+			skb_queue_len(list), msg_user(hdr),
-+			msg_type(hdr), msg_size(hdr), mtu);
- 		skb_queue_purge(list);
- 		return -EMSGSIZE;
- 	}
-@@ -1233,6 +1239,7 @@ static int tipc_link_tnl_rcv(struct tipc_link *l, struct sk_buff *skb,
- 			     struct sk_buff_head *inputq)
- {
- 	struct sk_buff **reasm_skb = &l->failover_reasm_skb;
-+	struct sk_buff **reasm_tnlmsg = &l->reasm_tnlmsg;
- 	struct sk_buff_head *fdefq = &l->failover_deferdq;
- 	struct tipc_msg *hdr = buf_msg(skb);
- 	struct sk_buff *iskb;
-@@ -1240,40 +1247,56 @@ static int tipc_link_tnl_rcv(struct tipc_link *l, struct sk_buff *skb,
- 	int rc = 0;
- 	u16 seqno;
- 
--	/* SYNCH_MSG */
--	if (msg_type(hdr) == SYNCH_MSG)
--		goto drop;
-+	if (msg_type(hdr) == SYNCH_MSG) {
-+		kfree_skb(skb);
-+		return 0;
-+	}
- 
--	/* FAILOVER_MSG */
--	if (!tipc_msg_extract(skb, &iskb, &ipos)) {
--		pr_warn_ratelimited("Cannot extract FAILOVER_MSG, defq: %d\n",
--				    skb_queue_len(fdefq));
--		return rc;
-+	/* Not a fragment? */
-+	if (likely(!msg_nof_fragms(hdr))) {
-+		if (unlikely(!tipc_msg_extract(skb, &iskb, &ipos))) {
-+			pr_warn_ratelimited("Unable to extract msg, defq: %d\n",
-+					    skb_queue_len(fdefq));
-+			return 0;
-+		}
-+		kfree_skb(skb);
-+	} else {
-+		/* Set fragment type for buf_append */
-+		if (msg_fragm_no(hdr) == 1)
-+			msg_set_type(hdr, FIRST_FRAGMENT);
-+		else if (msg_fragm_no(hdr) < msg_nof_fragms(hdr))
-+			msg_set_type(hdr, FRAGMENT);
-+		else
-+			msg_set_type(hdr, LAST_FRAGMENT);
-+
-+		if (!tipc_buf_append(reasm_tnlmsg, &skb)) {
-+			/* Successful but non-complete reassembly? */
-+			if (*reasm_tnlmsg || link_is_bc_rcvlink(l))
-+				return 0;
-+			pr_warn_ratelimited("Unable to reassemble tunnel msg\n");
-+			return tipc_link_fsm_evt(l, LINK_FAILURE_EVT);
-+		}
-+		iskb = skb;
- 	}
- 
- 	do {
- 		seqno = buf_seqno(iskb);
--
- 		if (unlikely(less(seqno, l->drop_point))) {
- 			kfree_skb(iskb);
- 			continue;
- 		}
--
- 		if (unlikely(seqno != l->drop_point)) {
- 			__tipc_skb_queue_sorted(fdefq, seqno, iskb);
- 			continue;
- 		}
- 
- 		l->drop_point++;
--
- 		if (!tipc_data_input(l, iskb, inputq))
- 			rc |= tipc_link_input(l, iskb, inputq, reasm_skb);
- 		if (unlikely(rc))
- 			break;
- 	} while ((iskb = __tipc_skb_dequeue(fdefq, l->drop_point)));
- 
--drop:
--	kfree_skb(skb);
- 	return rc;
- }
- 
-@@ -1663,15 +1686,18 @@ void tipc_link_tnl_prepare(struct tipc_link *l, struct tipc_link *tnl,
- 	struct sk_buff *skb, *tnlskb;
- 	struct tipc_msg *hdr, tnlhdr;
- 	struct sk_buff_head *queue = &l->transmq;
--	struct sk_buff_head tmpxq, tnlq;
-+	struct sk_buff_head tmpxq, tnlq, frags;
- 	u16 pktlen, pktcnt, seqno = l->snd_nxt;
-+	bool pktcnt_need_update = false;
- 	u16 syncpt;
-+	int rc;
- 
- 	if (!tnl)
- 		return;
- 
- 	skb_queue_head_init(&tnlq);
- 	skb_queue_head_init(&tmpxq);
-+	skb_queue_head_init(&frags);
- 
- 	/* At least one packet required for safe algorithm => add dummy */
- 	skb = tipc_msg_create(TIPC_LOW_IMPORTANCE, TIPC_DIRECT_MSG,
-@@ -1727,6 +1753,39 @@ void tipc_link_tnl_prepare(struct tipc_link *l, struct tipc_link *tnl,
- 		if (queue == &l->backlogq)
- 			msg_set_seqno(hdr, seqno++);
- 		pktlen = msg_size(hdr);
-+
-+		/* Tunnel link MTU is not large enough? This could be
-+		 * due to:
-+		 * 1) Link MTU has just changed or set differently;
-+		 * 2) Or FAILOVER on the top of a SYNCH message
-+		 *
-+		 * The 2nd case should not happen if peer supports
-+		 * TIPC_TUNNEL_ENHANCED
-+		 */
-+		if (pktlen > tnl->mtu - INT_H_SIZE) {
-+			if (mtyp == FAILOVER_MSG &&
-+			    (tnl->peer_caps & TIPC_TUNNEL_ENHANCED)) {
-+				rc = tipc_msg_fragment(skb, &tnlhdr, tnl->mtu,
-+						       &frags);
-+				if (rc) {
-+					pr_warn("%sunable to frag msg: rc %d\n",
-+						link_co_err, rc);
-+					return;
-+				}
-+				pktcnt += skb_queue_len(&frags) - 1;
-+				pktcnt_need_update = true;
-+				skb_queue_splice_tail_init(&frags, &tnlq);
-+				continue;
-+			}
-+			/* Unluckily, peer doesn't have TIPC_TUNNEL_ENHANCED
-+			 * => Just warn it and return!
-+			 */
-+			pr_warn_ratelimited("%stoo large msg <%d, %d>: %d!\n",
-+					    link_co_err, msg_user(hdr),
-+					    msg_type(hdr), msg_size(hdr));
-+			return;
-+		}
-+
- 		msg_set_size(&tnlhdr, pktlen + INT_H_SIZE);
- 		tnlskb = tipc_buf_acquire(pktlen + INT_H_SIZE, GFP_ATOMIC);
- 		if (!tnlskb) {
-@@ -1742,6 +1801,12 @@ void tipc_link_tnl_prepare(struct tipc_link *l, struct tipc_link *tnl,
- 		goto tnl;
- 	}
- 
-+	if (pktcnt_need_update)
-+		skb_queue_walk(&tnlq, skb) {
-+			hdr = buf_msg(skb);
-+			msg_set_msgcnt(hdr, pktcnt);
-+		}
-+
- 	tipc_link_xmit(tnl, &tnlq, xmitq);
- 
- 	if (mtyp == FAILOVER_MSG) {
-diff --git a/net/tipc/msg.c b/net/tipc/msg.c
-index f48e5857210f..e6d49cdc61b4 100644
---- a/net/tipc/msg.c
-+++ b/net/tipc/msg.c
-@@ -244,6 +244,65 @@ bool tipc_msg_validate(struct sk_buff **_skb)
- }
- 
- /**
-+ * tipc_msg_fragment - build a fragment skb list for TIPC message
-+ *
-+ * @skb: TIPC message skb
-+ * @hdr: internal msg header to be put on the top of the fragments
-+ * @pktmax: max size of a fragment incl. the header
-+ * @frags: returned fragment skb list
-+ *
-+ * Returns 0 if the fragmentation is successful, otherwise: -EINVAL
-+ * or -ENOMEM
-+ */
-+int tipc_msg_fragment(struct sk_buff *skb, const struct tipc_msg *hdr,
-+		      int pktmax, struct sk_buff_head *frags)
-+{
-+	int pktno, nof_fragms, dsz, dmax, eat;
-+	struct tipc_msg *_hdr;
-+	struct sk_buff *_skb;
-+	u8 *data;
-+
-+	/* Non-linear buffer? */
-+	if (skb_linearize(skb))
-+		return -ENOMEM;
-+
-+	data = (u8 *)skb->data;
-+	dsz = msg_size(buf_msg(skb));
-+	dmax = pktmax - INT_H_SIZE;
-+	if (dsz <= dmax || !dmax)
-+		return -EINVAL;
-+
-+	nof_fragms = dsz / dmax + 1;
-+	for (pktno = 1; pktno <= nof_fragms; pktno++) {
-+		if (pktno < nof_fragms)
-+			eat = dmax;
-+		else
-+			eat = dsz % dmax;
-+		/* Allocate a new fragment */
-+		_skb = tipc_buf_acquire(INT_H_SIZE + eat, GFP_ATOMIC);
-+		if (!_skb)
-+			goto error;
-+		skb_orphan(_skb);
-+		__skb_queue_tail(frags, _skb);
-+		/* Copy header & data to the fragment */
-+		skb_copy_to_linear_data(_skb, hdr, INT_H_SIZE);
-+		skb_copy_to_linear_data_offset(_skb, INT_H_SIZE, data, eat);
-+		data += eat;
-+		/* Update the fragment's header */
-+		_hdr = buf_msg(_skb);
-+		msg_set_fragm_no(_hdr, pktno);
-+		msg_set_nof_fragms(_hdr, nof_fragms);
-+		msg_set_size(_hdr, INT_H_SIZE + eat);
-+	}
-+	return 0;
-+
-+error:
-+	__skb_queue_purge(frags);
-+	__skb_queue_head_init(frags);
-+	return -ENOMEM;
-+}
-+
-+/**
-  * tipc_msg_build - create buffer chain containing specified header and data
-  * @mhdr: Message header, to be prepended to data
-  * @m: User message
-diff --git a/net/tipc/msg.h b/net/tipc/msg.h
-index fca042cdff88..1c8c8dd32a4e 100644
---- a/net/tipc/msg.h
-+++ b/net/tipc/msg.h
-@@ -721,12 +721,26 @@ static inline void msg_set_last_bcast(struct tipc_msg *m, u32 n)
- 	msg_set_bits(m, 4, 16, 0xffff, n);
- }
- 
-+static inline u32 msg_nof_fragms(struct tipc_msg *m)
-+{
-+	return msg_bits(m, 4, 0, 0xffff);
-+}
-+
-+static inline void msg_set_nof_fragms(struct tipc_msg *m, u32 n)
-+{
-+	msg_set_bits(m, 4, 0, 0xffff, n);
-+}
-+
-+static inline u32 msg_fragm_no(struct tipc_msg *m)
-+{
-+	return msg_bits(m, 4, 16, 0xffff);
-+}
-+
- static inline void msg_set_fragm_no(struct tipc_msg *m, u32 n)
- {
- 	msg_set_bits(m, 4, 16, 0xffff, n);
- }
- 
--
- static inline u16 msg_next_sent(struct tipc_msg *m)
- {
- 	return msg_bits(m, 4, 0, 0xffff);
-@@ -1045,6 +1059,8 @@ bool tipc_msg_bundle(struct sk_buff *skb, struct tipc_msg *msg, u32 mtu);
- bool tipc_msg_make_bundle(struct sk_buff **skb, struct tipc_msg *msg,
- 			  u32 mtu, u32 dnode);
- bool tipc_msg_extract(struct sk_buff *skb, struct sk_buff **iskb, int *pos);
-+int tipc_msg_fragment(struct sk_buff *skb, const struct tipc_msg *hdr,
-+		      int pktmax, struct sk_buff_head *frags);
- int tipc_msg_build(struct tipc_msg *mhdr, struct msghdr *m,
- 		   int offset, int dsz, int mtu, struct sk_buff_head *list);
- bool tipc_msg_lookup_dest(struct net *net, struct sk_buff *skb, int *err);
--- 
-2.13.7
+
+> -----Original Message-----
+> From: Chris Packham <chris.packham@alliedtelesis.co.nz>
+> Sent: 11-Jul-19 18:41
+> To: Jon Maloy <jon.maloy@ericsson.com>; eric.dumazet@gmail.com;
+> ying.xue@windriver.com; davem@davemloft.net
+> Cc: linux-kernel@vger.kernel.org; netdev@vger.kernel.org; tipc-
+> discussion@lists.sourceforge.net; Chris Packham
+> <chris.packham@alliedtelesis.co.nz>
+> Subject: [PATCH v2] tipc: ensure head->lock is initialised
+> 
+> tipc_named_node_up() creates a skb list. It passes the list to
+> tipc_node_xmit() which has some code paths that can call
+> skb_queue_purge() which relies on the list->lock being initialised.
+> 
+> The spin_lock is only needed if the messages end up on the receive path but
+> when the list is created in tipc_named_node_up() we don't necessarily know if
+> it is going to end up there.
+> 
+> Once all the skb list users are updated in tipc it will then be possible to update
+> them to use the unlocked variants of the skb list functions and initialise the
+> lock when we know the message will follow the receive path.
+> 
+> Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+> ---
+> 
+> I'm updating our products to use the latest kernel. One change that we have
+> that doesn't appear to have been upstreamed is related to the following soft
+> lockup.
+> 
+> NMI watchdog: BUG: soft lockup - CPU#3 stuck for 23s! [swapper/3:0]
+> Modules linked in: tipc jitterentropy_rng echainiv drbg platform_driver(O)
+> ipifwd(PO)
+> CPU: 3 PID: 0 Comm: swapper/3 Tainted: P           O    4.4.6-at1 #1
+> task: a3054e00 ti: ac6b4000 task.ti: a307a000
+> NIP: 806891c4 LR: 804f5060 CTR: 804f50d0
+> REGS: ac6b59b0 TRAP: 0901   Tainted: P           O     (4.4.6-at1)
+> MSR: 00029002 <CE,EE,ME>  CR: 84002088  XER: 20000000
+> 
+> GPR00: 804f50fc ac6b5a60 a3054e00 00029002 00000101 01001011
+> 00000000 00000001
+> GPR08: 00021002 c1502d1c ac6b5ae4 00000000 804f50d0 NIP [806891c4]
+> _raw_spin_lock_irqsave+0x44/0x80 LR [804f5060] skb_dequeue+0x20/0x90
+> Call Trace:
+> [ac6b5a80] [804f50fc] skb_queue_purge+0x2c/0x50 [ac6b5a90] [c1511058]
+> tipc_node_xmit+0x138/0x170 [tipc] [ac6b5ad0] [c1509e58]
+> tipc_named_node_up+0x88/0xa0 [tipc] [ac6b5b00] [c150fc1c]
+> tipc_netlink_compat_stop+0x9bc/0xf50 [tipc] [ac6b5b20] [c1511638]
+> tipc_rcv+0x418/0x9b0 [tipc] [ac6b5bc0] [c150218c]
+> tipc_bcast_stop+0xfc/0x7b0 [tipc] [ac6b5bd0] [80504e38]
+> __netif_receive_skb_core+0x468/0xa10
+> [ac6b5c70] [805082fc] netif_receive_skb_internal+0x3c/0xe0
+> [ac6b5ca0] [80642a48] br_handle_frame_finish+0x1d8/0x4d0
+> [ac6b5d10] [80642f30] br_handle_frame+0x1f0/0x330 [ac6b5d60]
+> [80504ec8] __netif_receive_skb_core+0x4f8/0xa10
+> [ac6b5e00] [805082fc] netif_receive_skb_internal+0x3c/0xe0
+> [ac6b5e30] [8044c868] _dpa_rx+0x148/0x5c0 [ac6b5ea0] [8044b0c8]
+> priv_rx_default_dqrr+0x98/0x170 [ac6b5ed0] [804d1338]
+> qman_p_poll_dqrr+0x1b8/0x240 [ac6b5f00] [8044b1c0]
+> dpaa_eth_poll+0x20/0x60 [ac6b5f20] [805087cc]
+> net_rx_action+0x15c/0x320 [ac6b5f80] [8002594c]
+> __do_softirq+0x13c/0x250 [ac6b5fe0] [80025c34] irq_exit+0xb4/0xf0
+> [ac6b5ff0] [8000d81c] call_do_irq+0x24/0x3c [a307be60] [80004acc]
+> do_IRQ+0x8c/0x120 [a307be80] [8000f450] ret_from_except+0x0/0x18
+> --- interrupt: 501 at arch_cpu_idle+0x24/0x70
+> 
+> Eyeballing the code I think it can still happen since tipc_named_node_up
+> allocates struct sk_buff_head head on the stack so it could have arbitrary
+> content.
+> 
+> Changes in v2:
+> - fixup commit subject
+> - add more information to commit message from mailing list discussion
+> 
+>  net/tipc/name_distr.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/net/tipc/name_distr.c b/net/tipc/name_distr.c index
+> 61219f0b9677..44abc8e9c990 100644
+> --- a/net/tipc/name_distr.c
+> +++ b/net/tipc/name_distr.c
+> @@ -190,7 +190,7 @@ void tipc_named_node_up(struct net *net, u32
+> dnode)
+>  	struct name_table *nt = tipc_name_table(net);
+>  	struct sk_buff_head head;
+> 
+> -	__skb_queue_head_init(&head);
+> +	skb_queue_head_init(&head);
+> 
+>  	read_lock_bh(&nt->cluster_scope_lock);
+>  	named_distribute(net, &head, dnode, &nt->cluster_scope);
+> --
+> 2.22.0
 
 
 
