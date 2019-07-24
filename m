@@ -2,67 +2,86 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F0CD714EA
-	for <lists+tipc-discussion@lfdr.de>; Tue, 23 Jul 2019 11:19:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9AF272419
+	for <lists+tipc-discussion@lfdr.de>; Wed, 24 Jul 2019 03:56:42 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1hpqxY-00024H-3t; Tue, 23 Jul 2019 09:19:48 +0000
+	id 1hq6WE-0004L6-J0; Wed, 24 Jul 2019 01:56:38 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Zhe.He@windriver.com>) id 1hpqxW-000246-Od
- for tipc-discussion@lists.sourceforge.net; Tue, 23 Jul 2019 09:19:46 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1hq6WD-0004Kz-Aw
+ for tipc-discussion@lists.sourceforge.net; Wed, 24 Jul 2019 01:56:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:MIME-Version:Message-ID:Date:Subject:
- To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=3IgTfx0rQUokBWsDds0/pACj2DFuujdA0EXSfGKgqpM=; b=Z2OgAsoYMzQXTAX2XA8MA32Jdw
- 2f5Zq0jY9xX+C4mF7wyGHLAsqOjINeVesbSZecreVdQCFemIf/Yc3sa8vDeAoycOYDG/bBn6dwsAQ
- voVSpnUJIWgoBHD2l6LMLaCTwy8Uv2fTcVWDK9KEllAPyrtGcjfZ9O/ld6SBlHr4t3SA=;
+ bh=wW3a6HrUCim2y0I+TQA4DDduDpp+15DRConV0Rur4C4=; b=Uteqivs7ks7wR2uczxHgPTnRRi
+ nZbZstVA0vtGysXeKawCE/Fu7YIfoBMh+zgXPgf/JQLw4vjR55kWbVAHWbQ3EAwinG/LLv2uJslX4
+ YMIegpj9fkAXjbQ8zU3dY8Qk2hsggOFZiKcFu3bIcYQ6G2QuJMfiuEYn+HVdE3W/DozM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:MIME-Version:Message-ID:Date:Subject:To:From:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=3IgTfx0rQUokBWsDds0/pACj2DFuujdA0EXSfGKgqpM=; b=M
- AxElgHu1HAVMmOKhi46/ZK6apsjYW1jJtzbjjckgeqTy7F9zePIhkopLH1TAtCj+uS3A4sQrS+VEf
- YT9Xrx3KwnbIICJvzV1gpa2pyuvdoYDe4wBTwJTyO4ChawnS8Cry9tYdu1Izpf3UIhf+KqBaAxNCW
- qB7Yj4RQP2P+RmD0=;
-Received: from mail5.windriver.com ([192.103.53.11] helo=mail5.wrs.com)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ h=Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:MIME-Version:
+ Content-Type:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=wW3a6HrUCim2y0I+TQA4DDduDpp+15DRConV0Rur4C4=; b=WdPWg7pZ1SvSpzANgB4g9Rl01u
+ 5YvocDt9ZbyHJmOqfIQVFJmW6VCE2jaYs+t2gTlk6zbsKeEk8lJfgjlGIucPGcKsm5ll8XdGMw6/J
+ tdAhjGbaOxRD7GLXD3WliKLWSesZ1Eyw/9vAYkBbrV61X8fXXr0KWMF9RCLDux3gw7JE=;
+Received: from f0-dek.dektech.com.au ([210.10.221.142]
+ helo=mail.dektech.com.au)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- id 1hpqxT-00C042-Sa
- for tipc-discussion@lists.sourceforge.net; Tue, 23 Jul 2019 09:19:46 +0000
-Received: from ALA-HCA.corp.ad.wrs.com (ala-hca.corp.ad.wrs.com
- [147.11.189.40])
- by mail5.wrs.com (8.15.2/8.15.2) with ESMTPS id x6N9J75I012364
- (version=TLSv1 cipher=AES128-SHA bits=128 verify=FAIL)
- for <tipc-discussion@lists.sourceforge.net>; Tue, 23 Jul 2019 02:19:28 -0700
-Received: from pek-lpg-core2.corp.ad.wrs.com (128.224.153.41) by
- ALA-HCA.corp.ad.wrs.com (147.11.189.40) with Microsoft SMTP Server id
- 14.3.468.0; Tue, 23 Jul 2019 02:19:00 -0700
-From: <zhe.he@windriver.com>
-To: <tipc-discussion@lists.sourceforge.net>
-Date: Tue, 23 Jul 2019 17:18:58 +0800
-Message-ID: <1563873538-193562-1-git-send-email-zhe.he@windriver.com>
-X-Mailer: git-send-email 2.7.4
-MIME-Version: 1.0
-X-Spam-Score: 0.0 (/)
+ id 1hq6WB-00DSut-Gs
+ for tipc-discussion@lists.sourceforge.net; Wed, 24 Jul 2019 01:56:37 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.dektech.com.au (Postfix) with ESMTP id 2A93246577;
+ Wed, 24 Jul 2019 11:56:24 +1000 (AEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
+ h=x-mailer:message-id:date:date:subject:subject:from:from
+ :received:received:received; s=mail_dkim; t=1563933384; bh=X/NiD
+ 9F4ca5btl8KKqmDa7eqU6izIOjkoSf62MF/nDc=; b=VzIZd0OKCKe9WSE788haZ
+ qUN3uWq35B256W1J5wi9eMe6kStIPOT1dFsoZaF6C1qeGer7kuA9tksjGeEwrk32
+ Yc+SXmDagEWoJ4USyOCm7tU/hEOMnQz3HwqwYyumPZumOj9w7gtt+Y6LpxvJL68V
+ Hdfdnke5V7hr3lYD4tJUZ0=
+X-Virus-Scanned: amavisd-new at dektech.com.au
+Received: from mail.dektech.com.au ([127.0.0.1])
+ by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id xhPxE-DoUU5z; Wed, 24 Jul 2019 11:56:24 +1000 (AEST)
+Received: from mail.dektech.com.au (localhost [127.0.0.1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.dektech.com.au (Postfix) with ESMTPS id 7CB6646579;
+ Wed, 24 Jul 2019 11:56:23 +1000 (AEST)
+Received: from localhost.localdomain (unknown [14.161.14.188])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id 75A4546577;
+ Wed, 24 Jul 2019 11:56:21 +1000 (AEST)
+From: Tuong Lien <tuong.t.lien@dektech.com.au>
+To: davem@davemloft.net, jon.maloy@ericsson.com, maloy@donjonn.com,
+ ying.xue@windriver.com, netdev@vger.kernel.org
+Date: Wed, 24 Jul 2019 08:56:10 +0700
+Message-Id: <20190724015612.2518-1-tuong.t.lien@dektech.com.au>
+X-Mailer: git-send-email 2.13.7
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: windriver.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [210.10.221.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-X-Headers-End: 1hpqxT-00C042-Sa
-Subject: [tipc-discussion] [tipc-tipcutils][PATCH] test: ptts: Set recv
- buffer size too max to receive as many packets as possible
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+X-Headers-End: 1hq6WB-00DSut-Gs
+Subject: [tipc-discussion] [net-next 0/2] tipc: link changeover issues
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,67 +93,29 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: tipc-discussion@lists.sourceforge.net
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-From: He Zhe <zhe.he@windriver.com>
+This patch series is to resolve some issues found with the current link
+changeover mechanism, it also includes an optimization for the link
+synching.
 
-Flooding multicast may make the rcv buffer overrun and is considered premature
-messages later and thus cause the following error.
+Tuong Lien (2):
+  tipc: optimize link synching mechanism
+  tipc: fix changeover issues due to large packet
 
-"Ignoring premature msg 16, currently handling 12"
+ net/tipc/link.c | 119 +++++++++++++++++++++++++++++++++++++++++++++++++-------
+ net/tipc/msg.c  |  59 ++++++++++++++++++++++++++++
+ net/tipc/msg.h  |  28 ++++++++++++-
+ net/tipc/node.c |   6 ++-
+ net/tipc/node.h |   6 ++-
+ 5 files changed, 199 insertions(+), 19 deletions(-)
 
-This patch sets SO_RCVBUF the of socket to max int value to receive as many
-packets as possible, and give a hint to user when possible overrun occurs. Note
-that the value of SO_RCVBUF will be limited up to
-min(INT_MAX/2, sysctl_rmem_max) in kernel.
-
-Signed-off-by: He Zhe <zhe.he@windriver.com>
----
- test/ptts/tipc_ts_server.c | 18 ++++++++++++++++--
- 1 file changed, 16 insertions(+), 2 deletions(-)
-
-diff --git a/test/ptts/tipc_ts_server.c b/test/ptts/tipc_ts_server.c
-index a286daa..cc69e6e 100644
---- a/test/ptts/tipc_ts_server.c
-+++ b/test/ptts/tipc_ts_server.c
-@@ -641,8 +641,9 @@ void server_mcast
- 				if (rc < 0)
- 					err("multicast message not received");
- 				if (msgno != *(int*) buf) {
--					dbg1("Ignoring premature msg %u, currently handling %u\n",
--					       *(int*)buf, msgno);
-+					dbg1("Ignoring premature msg %u, currently handling %u\n"
-+                                             "You can enlarge /proc/sys/net/core/rmem_max and try again\n",
-+                                             *(int*)buf, msgno);
- 					continue;
- 				}
- 				rc = recvfrom(sd[i], buf, expected_szs[numSubTest], 
-@@ -687,8 +688,21 @@ void server_test_multicast(void)
- 	FD_ZERO(&readfds);
- 
- 	for (i = 0; i < TIPC_MCAST_SOCKETS; i++) {
-+		int optval = (int)(~0U >> 1);
-+		socklen_t optlen = sizeof(optval);
-+		int rc = 0;
-+
- 		sd[i] = createSocketTIPC (SOCK_RDM);
- 		FD_SET(sd[i], &readfds);
-+
-+		/*
-+                 * Flooding multicast may make the rcv buffer overrun and is considered premature msg later.
-+                 * Set SO_RCVBUF to max int value to receive as many as possible.
-+                 * Note that it will be limited up to min(INT_MAX/2, sysctl_rmem_max) in kernel.
-+                 */
-+		rc = setsockopt(sd[i], SOL_SOCKET, SO_RCVBUF, (const char*)&optval, optlen);
-+		if(rc != 0)
-+			strerror(errno);
- 	}
- 
- 	server_bindMulticast(  0,  99, sd[0]);
 -- 
-2.7.4
+2.13.7
 
 
 
