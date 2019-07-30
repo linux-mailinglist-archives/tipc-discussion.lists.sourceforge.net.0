@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCE4379FD6
-	for <lists+tipc-discussion@lfdr.de>; Tue, 30 Jul 2019 06:24:29 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 411E47A43B
+	for <lists+tipc-discussion@lfdr.de>; Tue, 30 Jul 2019 11:34:14 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1hsJgW-0000tr-Gu; Tue, 30 Jul 2019 04:24:24 +0000
+	id 1hsOWG-00040b-9w; Tue, 30 Jul 2019 09:34:08 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <hoang.h.le@dektech.com.au>) id 1hsJgU-0000tY-QH
- for tipc-discussion@lists.sourceforge.net; Tue, 30 Jul 2019 04:24:23 +0000
+ (envelope-from <hoang.h.le@dektech.com.au>) id 1hsOWE-00040T-R0
+ for tipc-discussion@lists.sourceforge.net; Tue, 30 Jul 2019 09:34:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
  :Message-ID:Date:Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=JYocxAIkpKsXDipuE16w79eFiTIyaRMN/gwkScX09wY=; b=TVUZHQbqsJfHMg+RsPiXAtYzQZ
- oXpB/Rx0sXryJe/R7x/z7nCSMulX5wucWrNOmFgSQTaBxbylF0KLSQNMqoCplss5aK1754ob6CKi7
- P2VVxeU+lkwxinuju0vXgZBL00GNg4t0GIvHsyUgqYt5hwviZdHmO17JXgiQ/c2N5VUE=;
+ bh=Mlggw+RJy1mzzCCu0myEPTSr5W1dzYIHHLqdfzJyTls=; b=aiW7HUBcyYPUATopapU+tkR2k1
+ OjOqUBmnn9MN7hSUNV6yHXR+KN0HL46VlALNPPHrmGz3428/INCw1AmSatakHSuy/bVD133z2QFHw
+ oz4dknoXf7djBqTW9+DK6as5zBEitKqOmCuF9088d3Z9j2yAH4OVnOZAGO7hRMjSukGQ=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:
@@ -29,40 +29,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=JYocxAIkpKsXDipuE16w79eFiTIyaRMN/gwkScX09wY=; b=IGY3g3lGeti8AT/lTeEcpSXQ84
- vldkND4kJNwYRJ0wLICMRMziY9V/YmuFb12josg6sp2dR9g30hqdpQ4aaaA8IWeZNOP/1I/pOxBQG
- SKu2HSrb+tBWTD0DQxpqElYpGD2ziNyTCrEXQQ9OxvT60rAuv3fr5a3DTC2woyRSjDVU=;
-Received: from [210.10.221.142] (helo=mail.dektech.com.au)
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ bh=Mlggw+RJy1mzzCCu0myEPTSr5W1dzYIHHLqdfzJyTls=; b=dUsUVhvuXswMGjvdNYiDkQtcEN
+ rPRowTNQJm6A0pIg5zNTgK53qvXy+RdpzKzH+fyXII0TA7QBXIwf+tyh1yHH+6xBof3emy7wElmZs
+ yzFCa4r0rGLfS6gNIOMlxAUp+VqftH19lQaZlW+LJXV7s+ug7oqp8qVpQYqSJzzOfLE4=;
+Received: from f0-dek.dektech.com.au ([210.10.221.142]
+ helo=mail.dektech.com.au)
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- id 1hsJgO-004OfT-6m
- for tipc-discussion@lists.sourceforge.net; Tue, 30 Jul 2019 04:24:22 +0000
+ id 1hsOW9-0009mt-Tq
+ for tipc-discussion@lists.sourceforge.net; Tue, 30 Jul 2019 09:34:06 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.dektech.com.au (Postfix) with ESMTP id A525547E27;
- Tue, 30 Jul 2019 14:23:59 +1000 (AEST)
+ by mail.dektech.com.au (Postfix) with ESMTP id B8F7F47D67;
+ Tue, 30 Jul 2019 19:33:53 +1000 (AEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
  h=content-language:x-mailer:content-transfer-encoding
  :content-type:content-type:mime-version:message-id:date:date
  :subject:subject:in-reply-to:references:from:from:received
- :received:received; s=mail_dkim; t=1564460639; bh=2fGB5Ec0k58Oyf
- fVmxfHI2mPvfisQCMdgm8xDk1pR+A=; b=rZob1qXvhBHJ+keFLU1rNysdT2zb1u
- h8DT6Y38w43U4hbuOpyFycluscUZpF5wT1tzPDX2qOgU45gRW6LNka5w/WtGlO+N
- TO4Lp0zi4W4YvbRpf9ZD4+Pdq30VqEiVnvshKVH/mDIMqKqpU5l5AWjZU0SjegOZ
- FosBDzUcvjaPY=
+ :received:received; s=mail_dkim; t=1564479233; bh=Si7et6CW+43ELU
+ tw/lmdJmROBIqqI0JuyJkOBw5FKZE=; b=hYoP6GOTkxP649uuSdwnFYxdM27pCc
+ xupNRfHe/VhR9tCl9mKTAPDDXS2FVz6h6ndu5Ot22ETtMWlI9sxiUiOf/ru9iyIe
+ U4PQWZ2ZimTUd1RZiKKMIr8wYFTAmoAsm9r8aJY7BM5RWG+DDhwUmVApv9uOaRlM
+ XKssrlTORgw2E=
 X-Virus-Scanned: amavisd-new at dektech.com.au
 Received: from mail.dektech.com.au ([127.0.0.1])
  by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id g79eySREDhpn; Tue, 30 Jul 2019 14:23:59 +1000 (AEST)
+ with ESMTP id 5rnYcoMcFK-n; Tue, 30 Jul 2019 19:33:53 +1000 (AEST)
 Received: from mail.dektech.com.au (localhost [127.0.0.1])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPS id 1413647DC6;
- Tue, 30 Jul 2019 14:23:59 +1000 (AEST)
+ by mail.dektech.com.au (Postfix) with ESMTPS id 2EB8F47DD3;
+ Tue, 30 Jul 2019 19:33:53 +1000 (AEST)
 Received: from VNLAP298VNPC (unknown [14.161.14.188])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPSA id 61A1247D67;
- Tue, 30 Jul 2019 14:23:57 +1000 (AEST)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id 9C50C47D67;
+ Tue, 30 Jul 2019 19:33:51 +1000 (AEST)
 From: "Hoang Le" <hoang.h.le@dektech.com.au>
 To: "'tung quang nguyen'" <tung.q.nguyen@dektech.com.au>,
  <tipc-discussion@lists.sourceforge.net>,
@@ -70,14 +71,15 @@ To: "'tung quang nguyen'" <tung.q.nguyen@dektech.com.au>,
  <ying.xue@windriver.com>
 References: <1563505531-15432-1-git-send-email-jon.maloy@ericsson.com>
  <02dd01d542d6$b27eb2e0$177c18a0$@dektech.com.au>
-In-Reply-To: <02dd01d542d6$b27eb2e0$177c18a0$@dektech.com.au>
-Date: Tue, 30 Jul 2019 11:23:54 +0700
-Message-ID: <016a01d5468e$9b934d00$d2b9e700$@dektech.com.au>
+ <016a01d5468e$9b934d00$d2b9e700$@dektech.com.au>
+In-Reply-To: <016a01d5468e$9b934d00$d2b9e700$@dektech.com.au>
+Date: Tue, 30 Jul 2019 16:33:48 +0700
+Message-ID: <026d01d546b9$e684bad0$b38e3070$@dektech.com.au>
 MIME-Version: 1.0
 X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQLPnM81z1xTbz3fgHN+V9W4aeb3xgK4G4Z1pNge3zA=
+Thread-Index: AQLPnM81z1xTbz3fgHN+V9W4aeb3xgK4G4Z1Afc8xC+kyL3xMA==
 Content-Language: en-us
-X-Spam-Score: 0.9 (/)
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
@@ -85,7 +87,7 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: ericsson.com]
+ for more information. [URIs: windriver.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -93,8 +95,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 1.0 RDNS_NONE Delivered to internal network by a host with no rDNS
-X-Headers-End: 1hsJgO-004OfT-6m
+ 0.5 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1hsOW9-0009mt-Tq
 Subject: Re: [tipc-discussion] [net-next v2 1/1] tipc: reduce risk of wakeup
  queue starvation
 X-BeenThere: tipc-discussion@lists.sourceforge.net
@@ -111,6 +113,19 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
+
+Hi Jon,
+
+Please ignore previous results because I'm wrong on testing ICMP starved by TIPC.
+
+Regards,
+Hoang
+-----Original Message-----
+From: Hoang Le <hoang.h.le@dektech.com.au> 
+Sent: Tuesday, July 30, 2019 11:24 AM
+To: 'tung quang nguyen' <tung.q.nguyen@dektech.com.au>; tipc-discussion@lists.sourceforge.net; 'Jon Maloy' <jon.maloy@ericsson.com>;
+'Jon Maloy' <maloy@donjonn.com>; ying.xue@windriver.com
+Subject: Re: [tipc-discussion] [net-next v2 1/1] tipc: reduce risk of wakeup queue starvation
 
 Hi Jon,
 
@@ -264,6 +279,13 @@ struct tipc_msg *hdr)
 -- 
 2.1.4
 
+
+
+
+_______________________________________________
+tipc-discussion mailing list
+tipc-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tipc-discussion
 
 
 
