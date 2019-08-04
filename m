@@ -2,67 +2,133 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24D3680AC9
-	for <lists+tipc-discussion@lfdr.de>; Sun,  4 Aug 2019 14:04:30 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id C901680CDD
+	for <lists+tipc-discussion@lfdr.de>; Mon,  5 Aug 2019 00:09:34 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1huFFS-0003v7-US; Sun, 04 Aug 2019 12:04:26 +0000
+	id 1huOh0-0005o1-4q; Sun, 04 Aug 2019 22:09:30 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Ying.Xue@windriver.com>) id 1huFFR-0003ue-D3
- for tipc-discussion@lists.sourceforge.net; Sun, 04 Aug 2019 12:04:25 +0000
+ (envelope-from <jon.maloy@ericsson.com>) id 1huOgy-0005nu-LS
+ for tipc-discussion@lists.sourceforge.net; Sun, 04 Aug 2019 22:09:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:MIME-Version:References:In-Reply-To:
- Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ghE4XDI7/CXlKGrhF4DFQp2GkEfhzAzRye05k0qJQz0=; b=CFfV7smysvIo7rma5qTnZsyNEl
- gCbryJhtOQ2ybAl7A1rOSL42Gmz8wzPuAzKYsvgYNhUK44pQrDkrHq84QSZAB/MGlE3Fa4cEWjfoq
- ZT2icwoPeOr8SikB5crtmaVEA9w6uqPsQkHkqeub/i8Novr6Jhj+rFTumIwwLoICUIHc=;
+ bh=Y+BIf4P0iZlO4rX4GpNbyh97UMT8hDO6eZkdxnzvTIc=; b=Le45F9/i/HOTGisVqvHrQdSjej
+ KGSCLhddock+JgGGz8qth+JDxMFf/j7Q1D4PbM8CHnF5HWYAF6CXoDeKWTuqV+r5TrSOy3h1fGgCR
+ nF03vabnGSD43EwscmFWKiOEMeCVgB7jixIFShbZCtATRNAHRpQ09TMGWW6+uofowT/0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:
- CC:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ghE4XDI7/CXlKGrhF4DFQp2GkEfhzAzRye05k0qJQz0=; b=dCFn455WZUcJET0uZxrZo0ibUD
- niF4CFivGBMlr6O+JcDDe0r/lmwN6fGDGKq2YHN9lQBu7hoGkfzVv/+KBoQUtM6/ReCV/z6ARRSVD
- F9nP41TkOpu6NaxL1YshOgAOG+lY6InNLFDHADB7wTtCHfKUzkOrLKQrnhubviDXAU+s=;
-Received: from mail.windriver.com ([147.11.1.11])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.1:ECDHE-RSA-AES256-SHA:256) (Exim 4.90_1) id 1huFFP-00A3Ki-0c
- for tipc-discussion@lists.sourceforge.net; Sun, 04 Aug 2019 12:04:25 +0000
-Received: from ALA-HCA.corp.ad.wrs.com ([147.11.189.40])
- by mail.windriver.com (8.15.2/8.15.1) with ESMTPS id x74C4CDG018127
- (version=TLSv1 cipher=AES128-SHA bits=128 verify=FAIL);
- Sun, 4 Aug 2019 05:04:12 -0700 (PDT)
-Received: from pek-yxue-d1.wrs.com (128.224.155.90) by ALA-HCA.corp.ad.wrs.com
- (147.11.189.40) with Microsoft SMTP Server id 14.3.468.0;
- Sun, 4 Aug 2019 05:04:11 -0700
-From: Ying Xue <ying.xue@windriver.com>
-To: <jon.maloy@ericsson.com>
-Date: Sun, 4 Aug 2019 19:52:28 +0800
-Message-ID: <1564919548-29132-4-git-send-email-ying.xue@windriver.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1564919548-29132-1-git-send-email-ying.xue@windriver.com>
-References: <1564919548-29132-1-git-send-email-ying.xue@windriver.com>
+ bh=Y+BIf4P0iZlO4rX4GpNbyh97UMT8hDO6eZkdxnzvTIc=; b=iJpkA7WaaxKVRET7aLDbg8OyZC
+ DvHasmEaAl3uQ+uKXvcMhJb3WvJ5QLJCPl/3lK/VkrP1wmfKnVXYrA51+p+rmA8dQbA35UKxZZhkf
+ sYxcd13Dd5aqDVZTd5L163IXvhWcB3ITmbb/dKHBNrLJyBKKF8WYbdqsca8lQEy9bKtY=;
+Received: from mail-eopbgr810072.outbound.protection.outlook.com
+ ([40.107.81.72] helo=NAM01-BY2-obe.outbound.protection.outlook.com)
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ id 1huOgr-00ASEL-Ju
+ for tipc-discussion@lists.sourceforge.net; Sun, 04 Aug 2019 22:09:28 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=n3aI2V+SQ7ufWctUgxaW5W5pmOkIdhb8OeHAPRvzbGheNBW1Fo+t2DgPpX95o6oD8IVlz9sRdB7yu8OJa1lsmx9VZDVIfzfV0gVPrVO3x3/nORWd9mVxKIGI9p0wN1HFckbT/x28I65vcURoS6Wo1bW7iPZ8LSO+1NjAG21TwDVVx9lPm0UxCL9ZGcXl5LVhZyZRjIk0FRpDSmnFpdgfGEtLrQf49LXYpCZstvHm/owO24AntmSSzfY2glF5Elh/huhDxyYs84cBR8MrM7oFraXpEMVbKSRCVXiYjkBrK8YbONjy+ZrOThGzNeR9OrDxDRKLZ3LHL90ljHmeQriONw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Y+BIf4P0iZlO4rX4GpNbyh97UMT8hDO6eZkdxnzvTIc=;
+ b=FIQRbZpDCMiDx2v6YorTzXjBUFFL7hBK1ly+tdlxg2IphC2rO6ba8tu2PuX+DtVQoVWALNIs+m9vEXDyf485at7c0erYLz/4f2ChnykwQ8aoOzV29DGAlJkOe/Ykva25qitU1qUFnI9llnnuJSWSBTGDR2GVYrVX2Ya/k7iPx7WgxWWXJdeSo3AqOItoS83L6N41vUdHHT8TrBKoks50gh0oH4S48lIDVN5OrD6rGI4EyiUXeLHx2/Jtp4GL3lGBWdH84txhpDec/OYtBpcqixTdnNBbwfaRcC8ONS0riCpOAYuDNj0ps6zuxiH2sVoK7SiLTerjKbCG4y9O9R8scQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
+ smtp.mailfrom=ericsson.com;dmarc=pass action=none
+ header.from=ericsson.com;dkim=pass header.d=ericsson.com;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Y+BIf4P0iZlO4rX4GpNbyh97UMT8hDO6eZkdxnzvTIc=;
+ b=nZsQRSXTvhYodDBVS4TvpLz39CNmjv0aJuRFukCwYt3j+QEg6+xacSUlhIvWV752cTar5bBNp0cyI053LDi4buQ7t+jNFBhgWWexYdd5gohKj2ifLl06euO6IEpiIDM6hok1mt1V0PFbCR0OLVa41LaUaLT1WuKy5QFn2S39hfg=
+Received: from CH2PR15MB3575.namprd15.prod.outlook.com (10.255.156.17) by
+ CH2SPR01MB0016.namprd15.prod.outlook.com (10.141.52.203) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2115.15; Sun, 4 Aug 2019 21:53:52 +0000
+Received: from CH2PR15MB3575.namprd15.prod.outlook.com
+ ([fe80::ecc4:bffd:8512:a8b6]) by CH2PR15MB3575.namprd15.prod.outlook.com
+ ([fe80::ecc4:bffd:8512:a8b6%2]) with mapi id 15.20.2136.018; Sun, 4 Aug 2019
+ 21:53:52 +0000
+From: Jon Maloy <jon.maloy@ericsson.com>
+To: Chris Packham <Chris.Packham@alliedtelesis.co.nz>,
+ "tipc-discussion@lists.sourceforge.net"
+ <tipc-discussion@lists.sourceforge.net>
+Thread-Topic: Slowness forming TIPC cluster with explicit node addresses
+Thread-Index: AQHVQ0Hkw5M86TmlWkazctTgG4cJIabc5XqAgALa5YCABtFugIAFBHpw
+Date: Sun, 4 Aug 2019 21:53:52 +0000
+Message-ID: <CH2PR15MB3575BF6FC4001C19B8A789559ADB0@CH2PR15MB3575.namprd15.prod.outlook.com>
+References: <1564097836.11887.16.camel@alliedtelesis.co.nz>
+ <CH2PR15MB35754D65AB240A74AE488E719AC00@CH2PR15MB3575.namprd15.prod.outlook.com>
+ <1564347861.9737.25.camel@alliedtelesis.co.nz>
+ <1564722689.4914.27.camel@alliedtelesis.co.nz>
+In-Reply-To: <1564722689.4914.27.camel@alliedtelesis.co.nz>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=jon.maloy@ericsson.com; 
+x-originating-ip: [24.225.233.31]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 1d046517-50cb-4ef8-9506-08d719263d42
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:CH2SPR01MB0016; 
+x-ms-traffictypediagnostic: CH2SPR01MB0016:
+x-microsoft-antispam-prvs: <CH2SPR01MB00165F9053AEAE1F1C308CA29ADB0@CH2SPR01MB0016.namprd15.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 0119DC3B5E
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(39850400004)(366004)(136003)(346002)(396003)(13464003)(199004)(189003)(14454004)(86362001)(5660300002)(4326008)(6246003)(7736002)(6436002)(26005)(52536014)(8676002)(2906002)(76116006)(71190400001)(71200400001)(229853002)(66446008)(64756008)(66556008)(476003)(446003)(186003)(99286004)(25786009)(66476007)(11346002)(66946007)(44832011)(478600001)(256004)(14444005)(486006)(8936002)(76176011)(66066001)(316002)(102836004)(6506007)(2501003)(81156014)(9686003)(53546011)(54906003)(110136005)(6116002)(3846002)(305945005)(74316002)(81166006)(55016002)(33656002)(68736007)(7696005)(53936002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2SPR01MB0016;
+ H:CH2PR15MB3575.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: ericsson.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: VjtABl/P1Kr8VqgoEoq4cG7Wf12bX1sCnj8GM9zGwrOTNlPb+1CRKrwrDiGlffwGK31h9HzBmLSHwhWh/76oGiyS6GkBW2I4gG/3lTNy0zZyGJLt1MBeCzdz3fAQEUyzifpAVPHsRkCbiHzgOZu6H5HRxuU76OjtIkAh9dcmTgGP0yeU+0VdwEz4mtUCGkt1umZnbjD7WQkBYIGvWmxytHg48J9QsIIOZ+rRo0KJFhgcXRyAgo41m8n/q9Ax0gcChuz26161fORVGw6cYDe4MB/otONKkdaC6pYXCL/pefV6hf5ZADG+c7icsDLotuRYtExK4DkHpqfuMKNlgRfUKCm0z5MbvmO7l2ruWrmXwS5jtM7jc5r5HAAeIM/QCKQTHu8LlnNuu5ZshfuCVxCBc6S+SkH7ZaiTpKlSyD/CFng=
 MIME-Version: 1.0
-X-Spam-Score: 0.0 (/)
+X-OriginatorOrg: ericsson.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1d046517-50cb-4ef8-9506-08d719263d42
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Aug 2019 21:53:52.1171 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: jon.maloy@ericsson.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2SPR01MB0016
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [40.107.81.72 listed in list.dnswl.org]
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: windriver.com]
-X-Headers-End: 1huFFP-00A3Ki-0c
-Subject: [tipc-discussion] [PATCH 3/3] tipc: fix issue of calling
- smp_processor_id() in preemptible
+ for more information. [URIs: ericsson.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1huOgr-00ASEL-Ju
+Subject: Re: [tipc-discussion] Slowness forming TIPC cluster with explicit
+ node addresses
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,156 +140,101 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: hdanton@sina.com, tipc-discussion@lists.sourceforge.net
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-syzbot found the following issue:
-
-[   81.119772][ T8612] BUG: using smp_processor_id() in preemptible [00000000] code: syz-executor834/8612
-[   81.136212][ T8612] caller is dst_cache_get+0x3d/0xb0
-[   81.141450][ T8612] CPU: 0 PID: 8612 Comm: syz-executor834 Not tainted 5.2.0-rc6+ #48
-[   81.149435][ T8612] Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/01/2011
-[   81.159480][ T8612] Call Trace:
-[   81.162789][ T8612]  dump_stack+0x172/0x1f0
-[   81.167123][ T8612]  debug_smp_processor_id+0x251/0x280
-[   81.172479][ T8612]  dst_cache_get+0x3d/0xb0
-[   81.176928][ T8612]  tipc_udp_xmit.isra.0+0xc4/0xb80
-[   81.182046][ T8612]  ? kasan_kmalloc+0x9/0x10
-[   81.186531][ T8612]  ? tipc_udp_addr2str+0x170/0x170
-[   81.191641][ T8612]  ? __copy_skb_header+0x2e8/0x560
-[   81.196750][ T8612]  ? __skb_checksum_complete+0x3f0/0x3f0
-[   81.202364][ T8612]  ? netdev_alloc_frag+0x1b0/0x1b0
-[   81.207452][ T8612]  ? skb_copy_header+0x21/0x2b0
-[   81.212282][ T8612]  ? __pskb_copy_fclone+0x516/0xc90
-[   81.217470][ T8612]  tipc_udp_send_msg+0x29a/0x4b0
-[   81.222400][ T8612]  tipc_bearer_xmit_skb+0x16c/0x360
-[   81.227585][ T8612]  tipc_enable_bearer+0xabe/0xd20
-[   81.232606][ T8612]  ? __nla_validate_parse+0x2d0/0x1ee0
-[   81.238048][ T8612]  ? tipc_bearer_xmit_skb+0x360/0x360
-[   81.243401][ T8612]  ? nla_memcpy+0xb0/0xb0
-[   81.247710][ T8612]  ? nla_memcpy+0xb0/0xb0
-[   81.252020][ T8612]  ? __nla_parse+0x43/0x60
-[   81.256417][ T8612]  __tipc_nl_bearer_enable+0x2de/0x3a0
-[   81.261856][ T8612]  ? __tipc_nl_bearer_enable+0x2de/0x3a0
-[   81.267467][ T8612]  ? tipc_nl_bearer_disable+0x40/0x40
-[   81.272848][ T8612]  ? unwind_get_return_address+0x58/0xa0
-[   81.278501][ T8612]  ? lock_acquire+0x16f/0x3f0
-[   81.283190][ T8612]  tipc_nl_bearer_enable+0x23/0x40
-[   81.288300][ T8612]  genl_family_rcv_msg+0x74b/0xf90
-[   81.293404][ T8612]  ? genl_unregister_family+0x790/0x790
-[   81.298935][ T8612]  ? __lock_acquire+0x54f/0x5490
-[   81.303852][ T8612]  ? __netlink_lookup+0x3fa/0x7b0
-[   81.308865][ T8612]  genl_rcv_msg+0xca/0x16c
-[   81.313266][ T8612]  netlink_rcv_skb+0x177/0x450
-[   81.318043][ T8612]  ? genl_family_rcv_msg+0xf90/0xf90
-[   81.323311][ T8612]  ? netlink_ack+0xb50/0xb50
-[   81.327906][ T8612]  ? lock_acquire+0x16f/0x3f0
-[   81.332589][ T8612]  ? kasan_check_write+0x14/0x20
-[   81.337511][ T8612]  genl_rcv+0x29/0x40
-[   81.341485][ T8612]  netlink_unicast+0x531/0x710
-[   81.346268][ T8612]  ? netlink_attachskb+0x770/0x770
-[   81.351374][ T8612]  ? _copy_from_iter_full+0x25d/0x8c0
-[   81.356765][ T8612]  ? __sanitizer_cov_trace_cmp8+0x18/0x20
-[   81.362479][ T8612]  ? __check_object_size+0x3d/0x42f
-[   81.367667][ T8612]  netlink_sendmsg+0x8ae/0xd70
-[   81.372415][ T8612]  ? netlink_unicast+0x710/0x710
-[   81.377520][ T8612]  ? aa_sock_msg_perm.isra.0+0xba/0x170
-[   81.383051][ T8612]  ? apparmor_socket_sendmsg+0x2a/0x30
-[   81.388530][ T8612]  ? __sanitizer_cov_trace_const_cmp4+0x16/0x20
-[   81.394775][ T8612]  ? security_socket_sendmsg+0x8d/0xc0
-[   81.400240][ T8612]  ? netlink_unicast+0x710/0x710
-[   81.405161][ T8612]  sock_sendmsg+0xd7/0x130
-[   81.409561][ T8612]  ___sys_sendmsg+0x803/0x920
-[   81.414220][ T8612]  ? copy_msghdr_from_user+0x430/0x430
-[   81.419667][ T8612]  ? _raw_spin_unlock_irqrestore+0x6b/0xe0
-[   81.425461][ T8612]  ? debug_object_active_state+0x25d/0x380
-[   81.431255][ T8612]  ? __lock_acquire+0x54f/0x5490
-[   81.436174][ T8612]  ? kasan_check_read+0x11/0x20
-[   81.441208][ T8612]  ? _raw_spin_unlock_irqrestore+0xa4/0xe0
-[   81.447008][ T8612]  ? mark_held_locks+0xf0/0xf0
-[   81.451768][ T8612]  ? __call_rcu.constprop.0+0x28b/0x720
-[   81.457298][ T8612]  ? call_rcu+0xb/0x10
-[   81.461353][ T8612]  ? __sanitizer_cov_trace_const_cmp4+0x16/0x20
-[   81.467589][ T8612]  ? __fget_light+0x1a9/0x230
-[   81.472249][ T8612]  ? __fdget+0x1b/0x20
-[   81.476301][ T8612]  ? __sanitizer_cov_trace_const_cmp8+0x18/0x20
-[   81.482545][ T8612]  __sys_sendmsg+0x105/0x1d0
-[   81.487115][ T8612]  ? __ia32_sys_shutdown+0x80/0x80
-[   81.492208][ T8612]  ? blkcg_maybe_throttle_current+0x5e2/0xfb0
-[   81.498272][ T8612]  ? trace_hardirqs_on_thunk+0x1a/0x1c
-[   81.503726][ T8612]  ? do_syscall_64+0x26/0x680
-[   81.508385][ T8612]  ? entry_SYSCALL_64_after_hwframe+0x49/0xbe
-[   81.514444][ T8612]  ? do_syscall_64+0x26/0x680
-[   81.519110][ T8612]  __x64_sys_sendmsg+0x78/0xb0
-[   81.523862][ T8612]  do_syscall_64+0xfd/0x680
-[   81.528352][ T8612]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
-[   81.534234][ T8612] RIP: 0033:0x444679
-[   81.538114][ T8612] Code: 18 89 d0 c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 0f 83 1b d8 fb ff c3 66 2e 0f 1f 84 00 00 00 00
-[   81.557709][ T8612] RSP: 002b:00007fff0201a8b8 EFLAGS: 00000246 ORIG_RAX: 000000000000002e
-[   81.566147][ T8612] RAX: ffffffffffffffda RBX: 00000000004002e0 RCX: 0000000000444679
-[   81.574108][ T8612] RDX: 0000000000000000 RSI: 0000000020000580 RDI: 0000000000000003
-[   81.582152][ T8612] RBP: 00000000006cf018 R08: 0000000000000001 R09: 00000000004002e0
-[   81.590113][ T8612] R10: 0000000000000008 R11: 0000000000000246 R12: 0000000000402320
-[   81.598089][ T8612] R13: 00000000004023b0 R14: 0000000000000000 R15: 0000000000
-
-In commit e9c1a793210f ("tipc: add dst_cache support for udp media")
-dst_cache_get() was introduced to be called in tipc_udp_xmit(). But
-smp_processor_id() called by dst_cache_get() cannot be invoked in
-preemptible context, as a result, the complaint above was reported.
-
-Fixes: e9c1a793210f ("tipc: add dst_cache support for udp media")
-syzbot+1a68504d96cd17b33a05@syzkaller.appspotmail.com
-Signed-off-by: Hillf Danton <hdanton@sina.com>
-Signed-off-by: Ying Xue <ying.xue@windriver.com>
----
- net/tipc/udp_media.c | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
-
-diff --git a/net/tipc/udp_media.c b/net/tipc/udp_media.c
-index 287df687..ca3ae2e 100644
---- a/net/tipc/udp_media.c
-+++ b/net/tipc/udp_media.c
-@@ -224,6 +224,8 @@ static int tipc_udp_send_msg(struct net *net, struct sk_buff *skb,
- 	struct udp_bearer *ub;
- 	int err = 0;
- 
-+	local_bh_disable();
-+
- 	if (skb_headroom(skb) < UDP_MIN_HEADROOM) {
- 		err = pskb_expand_head(skb, UDP_MIN_HEADROOM, 0, GFP_ATOMIC);
- 		if (err)
-@@ -237,9 +239,12 @@ static int tipc_udp_send_msg(struct net *net, struct sk_buff *skb,
- 		goto out;
- 	}
- 
--	if (addr->broadcast != TIPC_REPLICAST_SUPPORT)
--		return tipc_udp_xmit(net, skb, ub, src, dst,
--				     &ub->rcast.dst_cache);
-+	if (addr->broadcast != TIPC_REPLICAST_SUPPORT) {
-+		err = tipc_udp_xmit(net, skb, ub, src, dst,
-+				    &ub->rcast.dst_cache);
-+		local_bh_enable();
-+		return err;
-+	}
- 
- 	/* Replicast, send an skb to each configured IP address */
- 	list_for_each_entry_rcu(rcast, &ub->rcast.list, list) {
-@@ -259,6 +264,7 @@ static int tipc_udp_send_msg(struct net *net, struct sk_buff *skb,
- 	err = 0;
- out:
- 	kfree_skb(skb);
-+	local_bh_enable();
- 	return err;
- }
- 
--- 
-2.7.4
-
-
-
-_______________________________________________
-tipc-discussion mailing list
-tipc-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+DQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogbmV0ZGV2LW93bmVyQHZn
+ZXIua2VybmVsLm9yZyA8bmV0ZGV2LW93bmVyQHZnZXIua2VybmVsLm9yZz4gT24NCj4gQmVoYWxm
+IE9mIENocmlzIFBhY2toYW0NCj4gU2VudDogMi1BdWctMTkgMDE6MTENCj4gVG86IEpvbiBNYWxv
+eSA8am9uLm1hbG95QGVyaWNzc29uLmNvbT47IHRpcGMtDQo+IGRpc2N1c3Npb25AbGlzdHMuc291
+cmNlZm9yZ2UubmV0DQo+IENjOiBuZXRkZXZAdmdlci5rZXJuZWwub3JnOyBsaW51eC1rZXJuZWxA
+dmdlci5rZXJuZWwub3JnDQo+IFN1YmplY3Q6IFJlOiBTbG93bmVzcyBmb3JtaW5nIFRJUEMgY2x1
+c3RlciB3aXRoIGV4cGxpY2l0IG5vZGUgYWRkcmVzc2VzDQo+IA0KPiBPbiBNb24sIDIwMTktMDct
+MjkgYXQgMDk6MDQgKzEyMDAsIENocmlzIFBhY2toYW0gd3JvdGU6DQo+ID4gT24gRnJpLCAyMDE5
+LTA3LTI2IGF0IDEzOjMxICswMDAwLCBKb24gTWFsb3kgd3JvdGU6DQo+ID4gPg0KPiA+ID4NCj4g
+PiA+ID4NCj4gPiA+ID4NCj4gPiA+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gPiA+
+ID4gRnJvbTogbmV0ZGV2LW93bmVyQHZnZXIua2VybmVsLm9yZyA8bmV0ZGV2LQ0KPiBvd25lckB2
+Z2VyLmtlcm5lbC5vcmc+DQo+ID4gPiA+IE9uIEJlaGFsZiBPZiBDaHJpcyBQYWNraGFtDQo+ID4g
+PiA+IFNlbnQ6IDI1LUp1bC0xOSAxOTozNw0KPiA+ID4gPiBUbzogdGlwYy1kaXNjdXNzaW9uQGxp
+c3RzLnNvdXJjZWZvcmdlLm5ldA0KPiA+ID4gPiBDYzogbmV0ZGV2QHZnZXIua2VybmVsLm9yZzsg
+bGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZw0KPiA+ID4gPiBTdWJqZWN0OiBTbG93bmVzcyBm
+b3JtaW5nIFRJUEMgY2x1c3RlciB3aXRoIGV4cGxpY2l0IG5vZGUNCj4gPiA+ID4gYWRkcmVzc2Vz
+DQo+ID4gPiA+DQo+ID4gPiA+IEhpLA0KPiA+ID4gPg0KPiA+ID4gPiBJJ20gaGF2aW5nIHByb2Js
+ZW1zIGZvcm1pbmcgYSBUSVBDIGNsdXN0ZXIgYmV0d2VlbiAyIG5vZGVzLg0KPiA+ID4gPg0KPiA+
+ID4gPiBUaGlzIGlzIHRoZSBiYXNpYyBzdGVwcyBJJ20gZ29pbmcgdGhyb3VnaCBvbiBlYWNoIG5v
+ZGUuDQo+ID4gPiA+DQo+ID4gPiA+IG1vZHByb2JlIHRpcGMNCj4gPiA+ID4gaXAgbGluayBzZXQg
+ZXRoMiB1cA0KPiA+ID4gPiB0aXBjIG5vZGUgc2V0IGFkZHIgMS4xLjUgIyBvciAxLjEuNiB0aXBj
+IGJlYXJlciBlbmFibGUgbWVkaWEgZXRoDQo+ID4gPiA+IGRldiBldGgwDQo+ID4gPiBldGgyLCBJ
+IGFzc3VtZS4uLg0KPiA+ID4NCj4gPiBZZXMgc29ycnkgSSBrZWVwIHN3aXRjaGluZyBiZXR3ZWVu
+IGJldHdlZW4gRXRoZXJuZXQgcG9ydHMgZm9yIHRlc3RpbmcNCj4gPiBzbyBJIGhhbmQgZWRpdGVk
+IHRoZSBlbWFpbC4NCj4gPg0KPiA+ID4NCj4gPiA+ID4NCj4gPiA+ID4NCj4gPiA+ID4NCj4gPiA+
+ID4gVGhlbiB0byBjb25maXJtIGlmIHRoZSBjbHVzdGVyIGlzIGZvcm1lZCBJIHVzZcKgdGlwYyBs
+aW5rIGxpc3QNCj4gPiA+ID4NCj4gPiA+ID4gW3Jvb3RAbm9kZS01IH5dIyB0aXBjIGxpbmsgbGlz
+dA0KPiA+ID4gPiBicm9hZGNhc3QtbGluazogdXANCj4gPiA+ID4gLi4uDQo+ID4gPiA+DQo+ID4g
+PiA+IExvb2tpbmcgYXQgdGNwZHVtcCB0aGUgdHdvIG5vZGVzIGFyZSBzZW5kaW5nIHBhY2tldHMN
+Cj4gPiA+ID4NCj4gPiA+ID4gMjI6MzA6MDUuNzgyMzIwIFRJUEMgdjIuMCAxLjEuNSA+IDAuMC4w
+LCBoZWFkZXJsZW5ndGggNjAgYnl0ZXMsDQo+ID4gPiA+IE1lc3NhZ2VTaXplDQo+ID4gPiA+IDc2
+IGJ5dGVzLCBOZWlnaGJvciBEZXRlY3Rpb24gUHJvdG9jb2wgaW50ZXJuYWwsIG1lc3NhZ2VUeXBl
+IExpbmsNCj4gPiA+ID4gcmVxdWVzdA0KPiA+ID4gPiAyMjozMDowNS44NjM1NTUgVElQQyB2Mi4w
+IDEuMS42ID4gMC4wLjAsIGhlYWRlcmxlbmd0aCA2MCBieXRlcywNCj4gPiA+ID4gTWVzc2FnZVNp
+emUNCj4gPiA+ID4gNzYgYnl0ZXMsIE5laWdoYm9yIERldGVjdGlvbiBQcm90b2NvbCBpbnRlcm5h
+bCwgbWVzc2FnZVR5cGUgTGluaw0KPiA+ID4gPiByZXF1ZXN0DQo+ID4gPiA+DQo+ID4gPiA+IEV2
+ZW50dWFsbHkgKGFmdGVyIGEgZmV3IG1pbnV0ZXMpIHRoZSBsaW5rIGRvZXMgY29tZSB1cA0KPiA+
+ID4gPg0KPiA+ID4gPiBbcm9vdEBub2RlLTbCoH5dIyB0aXBjIGxpbmsgbGlzdA0KPiA+ID4gPiBi
+cm9hZGNhc3QtbGluazogdXANCj4gPiA+ID4gMTAwMTAwNjpldGgyLTEwMDEwMDU6ZXRoMjogdXAN
+Cj4gPiA+ID4NCj4gPiA+ID4gW3Jvb3RAbm9kZS01wqB+XSMgdGlwYyBsaW5rIGxpc3QNCj4gPiA+
+ID4gYnJvYWRjYXN0LWxpbms6IHVwDQo+ID4gPiA+IDEwMDEwMDU6ZXRoMi0xMDAxMDA2OmV0aDI6
+IHVwDQo+ID4gPiA+DQo+ID4gPiA+IFdoZW4gSSByZW1vdmUgdGhlICJ0aXBjIG5vZGUgc2V0IGFk
+ZHIiIHRoaW5ncyBzZWVtIHRvIGtpY2sgaW50bw0KPiA+ID4gPiBsaWZlIHN0cmFpZ2h0IGF3YXkN
+Cj4gPiA+ID4NCj4gPiA+ID4gW3Jvb3RAbm9kZS01IH5dIyB0aXBjIGxpbmsgbGlzdA0KPiA+ID4g
+PiBicm9hZGNhc3QtbGluazogdXANCj4gPiA+ID4gMDA1MGI2MWJkMmFhOmV0aDItMDA1MGI2MWU2
+ZGZhOmV0aDI6IHVwDQo+ID4gPiA+DQo+ID4gPiA+IFNvIHRoZXJlIGFwcGVhcnMgdG8gYmUgc29t
+ZSBkaWZmZXJlbmNlIGluIGJlaGF2aW91ciBiZXR3ZWVuIGhhdmluZw0KPiA+ID4gPiBhbiBleHBs
+aWNpdCBub2RlIGFkZHJlc3MgYW5kIHVzaW5nIHRoZSBkZWZhdWx0LiBVbmZvcnR1bmF0ZWx5IG91
+cg0KPiA+ID4gPiBhcHBsaWNhdGlvbiByZWxpZXMgb24gc2V0dGluZyB0aGUgbm9kZSBhZGRyZXNz
+ZXMuDQo+ID4gPiBJIGRvIHRoaXMgbWFueSB0aW1lcyBhIGRheSwgd2l0aG91dCBhbnkgcHJvYmxl
+bXMuIElmIHRoZXJlIHdvdWxkIGJlDQo+ID4gPiBhbnkgdGltZSBkaWZmZXJlbmNlLCBJIHdvdWxk
+IGV4cGVjdCB0aGUgJ2F1dG8gY29uZmlndXJhYmxlJyB2ZXJzaW9uDQo+ID4gPiB0byBiZSBzbG93
+ZXIsIGJlY2F1c2UgaXQgaW52b2x2ZXMgYSBEQUQgc3RlcC4NCj4gPiA+IEFyZSB5b3Ugc3VyZSB5
+b3UgZG9uJ3QgaGF2ZSBhbnkgb3RoZXIgbm9kZXMgcnVubmluZyBpbiB5b3VyIHN5c3RlbT8NCj4g
+PiA+DQo+ID4gPiAvLy9qb24NCj4gPiA+DQo+ID4gTm9wZSB0aGUgdHdvIG5vZGVzIGFyZSBjb25u
+ZWN0ZWQgYmFjayB0byBiYWNrLiBEb2VzIHRoZSBudW1iZXIgb2YNCj4gPiBFdGhlcm5ldCBpbnRl
+cmZhY2VzIG1ha2UgYSBkaWZmZXJlbmNlPyBBcyB5b3UgY2FuIHNlZSBJJ3ZlIGdvdCAzIG9uDQo+
+ID4gZWFjaCBub2RlLiBPbmUgaXMgY29tcGxldGVseSBkaXNjb25uZWN0ZWQsIG9uZSBpcyBmb3Ig
+Ym9vdGluZyBvdmVyDQo+ID4gVEZUUA0KPiA+IMKgKG9ubHkgdXNlZCBieSBVLWJvb3QpIGFuZCB0
+aGUgb3RoZXIgaXMgdGhlIFVTQiBFdGhlcm5ldCBJJ20gdXNpbmcgZm9yDQo+ID4gdGVzdGluZy4N
+Cj4gPg0KPiANCj4gU28gSSBjYW4gc3RpbGwgcmVwcm9kdWNlIHRoaXMgb24gbm9kZXMgdGhhdCBv
+bmx5IGhhdmUgb25lIG5ldHdvcmsgaW50ZXJmYWNlIGFuZA0KPiBhcmUgdGhlIG9ubHkgdGhpbmdz
+IGNvbm5lY3RlZC4NCj4gDQo+IEkgZGlkIGZpbmQgb25lIHRoaW5nIHRoYXQgaGVscHMNCj4gDQo+
+IGRpZmYgLS1naXQgYS9uZXQvdGlwYy9kaXNjb3Zlci5jIGIvbmV0L3RpcGMvZGlzY292ZXIuYyBp
+bmRleA0KPiBjMTM4ZDY4ZThhNjkuLjQ5OTIxZGFkNDA0YSAxMDA2NDQNCj4gLS0tIGEvbmV0L3Rp
+cGMvZGlzY292ZXIuYw0KPiArKysgYi9uZXQvdGlwYy9kaXNjb3Zlci5jDQo+IEBAIC0zNTgsMTAg
+KzM1OCwxMCBAQCBpbnQgdGlwY19kaXNjX2NyZWF0ZShzdHJ1Y3QgbmV0ICpuZXQsIHN0cnVjdA0K
+PiB0aXBjX2JlYXJlciAqYiwNCj4gwqDCoMKgwqDCoMKgwqDCoHRpcGNfZGlzY19pbml0X21zZyhu
+ZXQsIGQtPnNrYiwgRFNDX1JFUV9NU0csIGIpOw0KPiANCj4gwqDCoMKgwqDCoMKgwqDCoC8qIERv
+IHdlIG5lZWQgYW4gYWRkcmVzcyB0cmlhbCBwZXJpb2QgZmlyc3QgPyAqLw0KPiAtwqDCoMKgwqDC
+oMKgwqBpZiAoIXRpcGNfb3duX2FkZHIobmV0KSkgew0KPiArLy/CoMKgwqDCoMKgaWYgKCF0aXBj
+X293bl9hZGRyKG5ldCkpIHsNCj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqB0bi0+
+YWRkcl90cmlhbF9lbmQgPSBqaWZmaWVzICsgbXNlY3NfdG9famlmZmllcygxMDAwKTsNCj4gwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqBtc2dfc2V0X3R5cGUoYnVmX21zZyhkLT5za2Ip
+LCBEU0NfVFJJQUxfTVNHKTsNCj4gLcKgwqDCoMKgwqDCoMKgfQ0KPiArLy/CoMKgwqDCoMKgfQ0K
+PiDCoMKgwqDCoMKgwqDCoMKgbWVtY3B5KCZkLT5kZXN0LCBkZXN0LCBzaXplb2YoKmRlc3QpKTsN
+Cj4gwqDCoMKgwqDCoMKgwqDCoGQtPm5ldCA9IG5ldDsNCj4gwqDCoMKgwqDCoMKgwqDCoGQtPmJl
+YXJlcl9pZCA9IGItPmlkZW50aXR5Ow0KPiANCj4gSSB0aGluayBiZWNhdXNlIHdpdGggcHJlLWNv
+bmZpZ3VyZWQgYWRkcmVzc2VzIHRoZSBkdXBsaWNhdGUgYWRkcmVzcyBkZXRlY3Rpb24NCj4gaXMg
+c2tpcHBlZCB0aGUgc2hvcnRlciBpbml0IHBoYXNlIGlzIHNraXBwZWQuIFdvdWxkIGlzIG1ha2Ug
+c2Vuc2UgdG8NCj4gdW5jb25kaXRpb25hbGx5IGRvIHRoZSB0cmlhbCBzdGVwPyBPciBpcyB0aGVy
+ZSBzb21lIGJldHRlciB3YXkgdG8gZ2V0IHRoaW5ncyB0bw0KPiB0cmFuc2l0aW9uIHdpdGggcHJl
+LWFzc2lnbmVkIGFkZHJlc3Nlcy4NCg0KSSBhbSBvbiB2YWNhdGlvbiB1bnRpbCB0aGUgZW5kIG9m
+IG5leHQtd2Vlaywgc28gSSBjYW4ndCBnaXZlIHlvdSBhbnkgZ29vZCBhbmFseXNpcyByaWdodCBu
+b3cuDQpUbyBkbyB0aGUgdHJpYWwgc3RlcCBkb2VzbuKAmXQgbWFrZSBtdWNoIHNlbnNlIHRvIG1l
+LCAtaXQgd291bGQgb25seSBkZWxheSB0aGUgc2V0dXAgdW5uZWNlc3NhcmlseSAoYnV0IHdpdGgg
+b25seSAxIHNlY29uZCkuDQpDYW4geW91IGNoZWNrIHRoZSBpbml0aWFsIHZhbHVlIG9mIGFkZHJf
+dHJpYWxfZW5kIHdoZW4gdGhlcmUgYSBwcmUtY29uZmlndXJlZCBhZGRyZXNzPw0KDQovLy9qb24N
+Cg0KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCnRpcGMt
+ZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKdGlwYy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdl
+Lm5ldApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9saXN0cy9saXN0aW5mby90aXBjLWRp
+c2N1c3Npb24K
