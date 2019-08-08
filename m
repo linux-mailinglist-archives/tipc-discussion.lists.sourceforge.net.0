@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2716184363
-	for <lists+tipc-discussion@lfdr.de>; Wed,  7 Aug 2019 06:28:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D510864CE
+	for <lists+tipc-discussion@lfdr.de>; Thu,  8 Aug 2019 16:50:18 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1hvDZB-0004AY-0Z; Wed, 07 Aug 2019 04:28:49 +0000
+	id 1hvjk6-0002ER-13; Thu, 08 Aug 2019 14:50:14 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jon.maloy@ericsson.com>) id 1hvDZ9-0004AK-O0
- for tipc-discussion@lists.sourceforge.net; Wed, 07 Aug 2019 04:28:47 +0000
+ (envelope-from <jon.maloy@ericsson.com>) id 1hvjk4-0002EJ-5A
+ for tipc-discussion@lists.sourceforge.net; Thu, 08 Aug 2019 14:50:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
  :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=WppfqCVJqwNBN2+zc62wPd6NKKvq7SDUv3AGXGjGq2g=; b=Yp4HCfGRMMGycPaGs/1l5et5FG
- uuSpbkJDYDiNYwIrHljQpdxATgaE0s4N4pDG2g2JRWM4XyaoRokz++/Qdwla2uo8msHUY1WtRU44n
- y5ovYPWZcqJscbaIVdSk1rv1SZO2f7G9MVfmRfE0a1Q26wJx4WeM9w+GhkuBHMWLmRC4=;
+ bh=yL0nlJSeSM94CHyhyv86iXc4NfKp1W9+6UOQAB2lJSg=; b=gdy2UubXGNiP4Xys2sYg+9a94x
+ YiQLYXuLP1usQa1ACd8nfUljBSuG65X6mZ1sA0ZjKua9lpQS3grH927CkUksOySPIw4KJxQQqqEZH
+ b68ARHO/jzfm4cV8LZXVQINWIWwd+mZCfoRE5LhTO1Cs+QID9FxB2koh6DQhrx27hCj0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
@@ -29,96 +29,93 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=WppfqCVJqwNBN2+zc62wPd6NKKvq7SDUv3AGXGjGq2g=; b=jLYhVsmhMDDmGvHyeKt8YaPEjp
- hMfFGCR3emZwrCMqTPh/8twX+oWeX56hYnwspd6IiDPezj2oogQdFI/kAduaSYjhn+7FAKnatwH3H
- vVfJeVn5p5u1F2Cql3EZ1OcnRaAw2HYiOFUhGW9c/Mlx5OzPW4G1e67kv7Q+PDLg0Q9k=;
-Received: from mail-eopbgr790041.outbound.protection.outlook.com
- ([40.107.79.41] helo=NAM03-CO1-obe.outbound.protection.outlook.com)
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.90_1)
- id 1hvDZ6-00Dhit-Kv
- for tipc-discussion@lists.sourceforge.net; Wed, 07 Aug 2019 04:28:47 +0000
+ bh=yL0nlJSeSM94CHyhyv86iXc4NfKp1W9+6UOQAB2lJSg=; b=P1jLQcsAcX30HdMEL2x2RG/8Q/
+ XTPvksIGw4vFAFmvm2p59O5Q/Vbqn72feXiKiLU5FfzGCyY53psBA5XZdUhnpo+2J/lTCET13u4ve
+ pf4Cz22k7RLz0Fi+HoP1rOl87D276cXP8A8/VzEi2/aKcnf+x2L/tCSo3FOCTVa2JVrQ=;
+Received: from mail-eopbgr690042.outbound.protection.outlook.com
+ ([40.107.69.42] helo=NAM04-CO1-obe.outbound.protection.outlook.com)
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ id 1hvjjy-00GHNm-Iz
+ for tipc-discussion@lists.sourceforge.net; Thu, 08 Aug 2019 14:50:12 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BYeUUlhRWVmZ9xfH3PwMGkIoJYOMVI50LkkdJNBpocBpvcqYojmLFiDcWzwRmRUSD1Vm0VRTcnfdMYgxREH0uy2nVy93Mn3GztSQjs9/5dkSqGbA+MqtAdF4goIj8eF5Uol256LH7Vs2l/9RTqpHEvUxNFF4dEn85BxVzX4Hq/UhSsxB2eK8KAY615aLWvHe0Am8T6feYvvNfAVStJ4gRrdffOZp8xCtAeqUUbAK+PMfNXOMzlNjd1S1pBB7ruSjOpzY4XkRWN16HXeeQAYgUD7D3ZhZMc0+GSt++y/AN0L3ezjSOnXFaYjmUhNphYafDp6iTDE8VSliHj7GKT9tRA==
+ b=HsjnyM5YzursRdLBKRr9N5sjmQNCRkHDQddWltcK+ZOCYYFlOWT9OIXnnTgPcfLFQNuTxvjFqmCuBKoIQgSKyRttTLlp2GGcOrYqQSlFGkI86dtbBTqG29jKTwVoVRj2fzsrLeDYYyB1JpJ4QbIvLwoSkjuk8xTsEh61ZEc7ldLQKKQLo/gX6eEUiYpVjCxDEk7UtakleqDbOa6JvYHEdZY+mEJhU3Xm7fwO+bJta7f9pAv/RJrYweoNxCDsNU430LU3v2mv8QDcpMcPKOif1KDq5VWKxqW1bLRw986b6tw+BqHAkJNeMPYqxHmuq4OAf7sRFkZxNcwTMIrPM+W2Gg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WppfqCVJqwNBN2+zc62wPd6NKKvq7SDUv3AGXGjGq2g=;
- b=CnnvfM8x+Fx1sAMRwVStAxS4uSsadewKaCuOg2aUK9kwXqCO2BR++lgsymv2rpEqrAA7bOeW9FByoGy+hk+Hss8WCetkpSngaP6Ly/8TXRaI0SbrGEV3oDchJR1zmYAwvWJzzqKDblDSKHcoy1GkNqqMipCYxh40kWRSVrfgoqbPiU67Rrhu/w8gCI8kgXs4b9GhspsUavDCLc8chBSYC/aryI15Y03f9IsGwgAvIbLnz/u2lt6Hnr0JmsxtqHgNJeb1AGI9eYmfXSSFspSSWlzV5HgUIO+UPBldVndVY+n2SFgaDS7u+QfqzdYHjXk7Vzmbzt6MvFuPbSD4ipRpBA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=ericsson.com;dmarc=pass action=none
- header.from=ericsson.com;dkim=pass header.d=ericsson.com;arc=none
+ bh=yL0nlJSeSM94CHyhyv86iXc4NfKp1W9+6UOQAB2lJSg=;
+ b=kdkEgb4vjtai36wGjr/VCR29RX96qDIkIPv1Km73AROAhgFjWeUZuR3Wihstm/LUFFH758VDsJfW/F02Tz8jNUDmid7XEaPdectuiGO3ixqp2qywf8CqlOx7Z0Bfss+X8ngFlMa8QilQWW54tqI9ac1rPNkxug8QF8MoT4vfTawdGunqbtqtqWQPsUBvBdd0F7uhADUpDStmC+oeFZqmkZHy9ESL9Rch4SPGBfUewdt7tIkEtKzn82j10fRBAFT9L35PVPgTce9PAKFLi1wtIK4fefyPYAV7oDrjjzmlWghHfemF4PIPOCwSqiZjBOxasycBG4jsUMrbhf0uH1kanQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=ericsson.com; dmarc=pass action=none header.from=ericsson.com;
+ dkim=pass header.d=ericsson.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WppfqCVJqwNBN2+zc62wPd6NKKvq7SDUv3AGXGjGq2g=;
- b=opWH3gwPcCghdShuPjXz9HEgR/2jngkDK9WyqChFln4gy0NcaVbsWF5AdOerICWvSCQRE9iOqVW0VvrpUANs2IcRGDgb97R599fg6aztg7QS2DMWZYnTLOtuMznxttbDbYGzOm6BdP+MQXRANRe5UH79icrgUqnOh3GTWFak86o=
-Received: from CH2PR15MB3575.namprd15.prod.outlook.com (10.255.156.17) by
- CH2PR15MB3670.namprd15.prod.outlook.com (52.132.229.148) with Microsoft SMTP
+ bh=yL0nlJSeSM94CHyhyv86iXc4NfKp1W9+6UOQAB2lJSg=;
+ b=L4qerM9HygZjvgAyZ5eNDfMG1GdDs7CqPSj2pb73laOHUk2hw4WASFv1fgJlsGaVsMzhsj2ewz/IjPOIOWxjhVHVSwNfijVon0ahiuglozsZeY+RAcCbMn7sk9zrzNL6/+zjHtSZdmqC+8LgpzQqj1A+QLBM0YhKLxJSWOptimc=
+Received: from MN2PR15MB3581.namprd15.prod.outlook.com (52.132.172.94) by
+ MN2PR15MB3104.namprd15.prod.outlook.com (20.178.252.10) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2136.16; Wed, 7 Aug 2019 02:55:51 +0000
-Received: from CH2PR15MB3575.namprd15.prod.outlook.com
- ([fe80::ecc4:bffd:8512:a8b6]) by CH2PR15MB3575.namprd15.prod.outlook.com
- ([fe80::ecc4:bffd:8512:a8b6%2]) with mapi id 15.20.2136.018; Wed, 7 Aug 2019
- 02:55:51 +0000
+ 15.20.2157.14; Thu, 8 Aug 2019 14:49:59 +0000
+Received: from MN2PR15MB3581.namprd15.prod.outlook.com
+ ([fe80::a8a2:3747:eeff:2cfe]) by MN2PR15MB3581.namprd15.prod.outlook.com
+ ([fe80::a8a2:3747:eeff:2cfe%7]) with mapi id 15.20.2157.015; Thu, 8 Aug 2019
+ 14:49:59 +0000
 From: Jon Maloy <jon.maloy@ericsson.com>
-To: Chris Packham <Chris.Packham@alliedtelesis.co.nz>,
- "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>
-Thread-Topic: Slowness forming TIPC cluster with explicit node addresses
-Thread-Index: AQHVQ0Hkw5M86TmlWkazctTgG4cJIabc5XqAgALa5YCABtFugIAFBHpw//9MBoCABC4cMA==
-Date: Wed, 7 Aug 2019 02:55:51 +0000
-Message-ID: <CH2PR15MB35759E27F2A01FAE59AB66809AD40@CH2PR15MB3575.namprd15.prod.outlook.com>
-References: <1564097836.11887.16.camel@alliedtelesis.co.nz>
- <CH2PR15MB35754D65AB240A74AE488E719AC00@CH2PR15MB3575.namprd15.prod.outlook.com>
- <1564347861.9737.25.camel@alliedtelesis.co.nz>
- <1564722689.4914.27.camel@alliedtelesis.co.nz>
- <CH2PR15MB3575BF6FC4001C19B8A789559ADB0@CH2PR15MB3575.namprd15.prod.outlook.com>
- <1564959879.27215.18.camel@alliedtelesis.co.nz>
-In-Reply-To: <1564959879.27215.18.camel@alliedtelesis.co.nz>
+To: Chris Packham <chris.packham@alliedtelesis.co.nz>,
+ "ying.xue@windriver.com" <ying.xue@windriver.com>, "davem@davemloft.net"
+ <davem@davemloft.net>
+Thread-Topic: [PATCH] tipc: set addr_trail_end when using explicit node
+ addresses
+Thread-Index: AQHVTNxmcyx4K5X64kCOEEbx4BfRSKbxVbDQ
+Date: Thu, 8 Aug 2019 14:49:59 +0000
+Message-ID: <MN2PR15MB358160FE1011F0ED1C785A2E9AD70@MN2PR15MB3581.namprd15.prod.outlook.com>
+References: <20190807045543.28373-1-chris.packham@alliedtelesis.co.nz>
+In-Reply-To: <20190807045543.28373-1-chris.packham@alliedtelesis.co.nz>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
  smtp.mailfrom=jon.maloy@ericsson.com; 
-x-originating-ip: [71.190.216.107]
+x-originating-ip: [75.146.241.189]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c7f43d45-76fe-4eed-ffd0-08d71ae2c227
+x-ms-office365-filtering-correlation-id: 72f0e3de-d39b-4a1d-1fc6-08d71c0fafd2
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:CH2PR15MB3670; 
-x-ms-traffictypediagnostic: CH2PR15MB3670:
-x-microsoft-antispam-prvs: <CH2PR15MB36707E10EA69AD923309E4579AD40@CH2PR15MB3670.namprd15.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 01221E3973
+ SRVR:MN2PR15MB3104; 
+x-ms-traffictypediagnostic: MN2PR15MB3104:
+x-microsoft-antispam-prvs: <MN2PR15MB31040DA26616194FFC5B6EBB9AD70@MN2PR15MB3104.namprd15.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 012349AD1C
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(136003)(396003)(39860400002)(366004)(346002)(199004)(189003)(13464003)(4326008)(55016002)(76116006)(2501003)(66556008)(25786009)(8936002)(14444005)(6436002)(64756008)(81166006)(305945005)(7736002)(256004)(8676002)(9686003)(81156014)(54906003)(53936002)(66446008)(66946007)(6246003)(478600001)(229853002)(68736007)(66476007)(6116002)(5660300002)(86362001)(6506007)(53546011)(76176011)(66066001)(102836004)(3846002)(7696005)(52536014)(99286004)(74316002)(26005)(71200400001)(14454004)(476003)(71190400001)(2906002)(110136005)(11346002)(44832011)(33656002)(486006)(186003)(316002)(446003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR15MB3670;
- H:CH2PR15MB3575.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
+ SFS:(10009020)(4636009)(39860400002)(346002)(376002)(136003)(366004)(396003)(13464003)(189003)(199004)(102836004)(86362001)(81166006)(2201001)(53546011)(81156014)(6506007)(7736002)(14444005)(305945005)(256004)(26005)(2501003)(186003)(71200400001)(52536014)(11346002)(14454004)(99286004)(446003)(66446008)(64756008)(66556008)(486006)(5660300002)(476003)(4326008)(33656002)(76116006)(2906002)(66946007)(66476007)(7696005)(76176011)(44832011)(316002)(6116002)(3846002)(478600001)(8676002)(110136005)(53936002)(71190400001)(25786009)(74316002)(8936002)(66066001)(55016002)(229853002)(9686003)(6246003)(6436002)(54906003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR15MB3104;
+ H:MN2PR15MB3581.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: ericsson.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 4/uzE/rvKqsoN5Irb5jVJAdhQs8pbhpGL8z19x+yGAu7BOxOUNlptNXknAKWddJt41lzJkz36EtNHdiizsCiCkm/v6dN5Eli6fNWoJf7vkSFQmtXtNb9rVRlh7lQgl1vYvjovmUnnXXYvPuVnZaRR0uh+TNy71r1PwnZWoGlHAYiWc3nWdyuKXRiYJXEIYpw6sj3W3L7x9iQOX5iWfspIrJhT/Sue5pkXhqCrcdYbNyQMFoZ9JP0VrGAth9UfiLiTBYa7aTK01Y/ATI8WVhNXolt1ZbTC0Lx+szIO53u+j8+7g/SRP8XpHkB0vTxsqAyWs1zH2cnpx9nVOduhouj2lz/jkYyHDbAvlaVaH/tgrzta+m5T9AroSH5CIlSpCIkyD1iKXNQdn9KRSo+BnInaA96AMPkhKFKqibORmDmkkw=
+x-microsoft-antispam-message-info: /ygghzORsSgFAz9KVoVG+3VypaDCZ9fRsv2oTYTn6sMVKa5HKhSVNcfCD8ED9PBTsY9o9ySU6/JFtqjBxCgTI++sk78psYVcNmxk8Lw0JidOquSgYISEVmlYBc5kbv1olx6ONSrbQJ/H/+1cU/MknSBDCx3ziI32x0rKzjIZ1/Q6ZJ33WjlyBeRnUC2j/wtod9dltflB4EHeo61lMPbdfG3uSC4sfpWfcsvLvScJsypfWI3TP7M3Er4B9wp54AHip4XCsXkd4cJ+5h/PgWC/nZwH28lQvJbGUPTeCVyAP6YxCI7sSVq/2BKPrx7lYbQt1SG9hDFp5FpA1JjsYdORKtVHzSeA6Y0eFf56FLx+IUrifiH3+zuEMaoU6DR23Ex7s9G212twKeluiTSNGt+RUaDBwOlpZ6VVN6jO9bvPH9I=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
 X-OriginatorOrg: ericsson.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c7f43d45-76fe-4eed-ffd0-08d71ae2c227
-X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Aug 2019 02:55:51.3119 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 72f0e3de-d39b-4a1d-1fc6-08d71c0fafd2
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Aug 2019 14:49:59.2647 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: jon.maloy@ericsson.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR15MB3670
+X-MS-Exchange-CrossTenant-userprincipalname: lKde4D9ScGVGL4Dw2TxWMrYwGRN4fW/E6GVdZ0s+0K6KguQTsTGCUzSHX1ka65/u1GWU1bk35DoYd/XPeq1OYQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR15MB3104
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.79.41 listed in list.dnswl.org]
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: alliedtelesis.co.nz]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [40.107.69.42 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -127,9 +124,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Headers-End: 1hvDZ6-00Dhit-Kv
-Subject: Re: [tipc-discussion] Slowness forming TIPC cluster with explicit
- node addresses
+X-Headers-End: 1hvjjy-00GHNm-Iz
+Subject: Re: [tipc-discussion] [PATCH] tipc: set addr_trail_end when using
+ explicit node addresses
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -142,126 +139,64 @@ List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
 Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "tipc-discussion@lists.sourceforge.net"
+ <tipc-discussion@lists.sourceforge.net>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-DQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogQ2hyaXMgUGFja2hhbSA8
-Q2hyaXMuUGFja2hhbUBhbGxpZWR0ZWxlc2lzLmNvLm56Pg0KPiBTZW50OiA0LUF1Zy0xOSAxOTow
-NQ0KPiBUbzogSm9uIE1hbG95IDxqb24ubWFsb3lAZXJpY3Nzb24uY29tPjsgdGlwYy0NCj4gZGlz
-Y3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQNCj4gQ2M6IG5ldGRldkB2Z2VyLmtlcm5lbC5v
-cmc7IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmcNCj4gU3ViamVjdDogUmU6IFNsb3duZXNz
-IGZvcm1pbmcgVElQQyBjbHVzdGVyIHdpdGggZXhwbGljaXQgbm9kZSBhZGRyZXNzZXMNCj4gDQo+
-IE9uIFN1biwgMjAxOS0wOC0wNCBhdCAyMTo1MyArMDAwMCwgSm9uIE1hbG95IHdyb3RlOg0KPiA+
-DQo+ID4gPg0KPiA+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gPiA+IEZyb206IG5l
-dGRldi1vd25lckB2Z2VyLmtlcm5lbC5vcmcgPG5ldGRldi1vd25lckB2Z2VyLmtlcm5lbC5vcmc+
-DQo+IE9uDQo+ID4gPiBCZWhhbGYgT2YgQ2hyaXMgUGFja2hhbQ0KPiA+ID4gU2VudDogMi1BdWct
-MTkgMDE6MTENCj4gPiA+IFRvOiBKb24gTWFsb3kgPGpvbi5tYWxveUBlcmljc3Nvbi5jb20+OyB0
-aXBjLQ0KPiA+ID4gZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQNCj4gPiA+IENjOiBu
-ZXRkZXZAdmdlci5rZXJuZWwub3JnOyBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnDQo+ID4g
-PiBTdWJqZWN0OiBSZTogU2xvd25lc3MgZm9ybWluZyBUSVBDIGNsdXN0ZXIgd2l0aCBleHBsaWNp
-dCBub2RlDQo+ID4gPiBhZGRyZXNzZXMNCj4gPiA+DQo+ID4gPiBPbiBNb24sIDIwMTktMDctMjkg
-YXQgMDk6MDQgKzEyMDAsIENocmlzIFBhY2toYW0gd3JvdGU6DQo+ID4gPiA+DQo+ID4gPiA+IE9u
-IEZyaSwgMjAxOS0wNy0yNiBhdCAxMzozMSArMDAwMCwgSm9uIE1hbG95IHdyb3RlOg0KPiA+ID4g
-PiA+DQo+ID4gPiA+ID4NCj4gPiA+ID4gPg0KPiA+ID4gPiA+ID4NCj4gPiA+ID4gPiA+DQo+ID4g
-PiA+ID4gPg0KPiA+ID4gPiA+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gPiA+ID4g
-PiA+IEZyb206IG5ldGRldi1vd25lckB2Z2VyLmtlcm5lbC5vcmcgPG5ldGRldi0NCj4gPiA+IG93
-bmVyQHZnZXIua2VybmVsLm9yZz4NCj4gPiA+ID4NCj4gPiA+ID4gPg0KPiA+ID4gPiA+ID4NCj4g
-PiA+ID4gPiA+IE9uIEJlaGFsZiBPZiBDaHJpcyBQYWNraGFtDQo+ID4gPiA+ID4gPiBTZW50OiAy
-NS1KdWwtMTkgMTk6MzcNCj4gPiA+ID4gPiA+IFRvOiB0aXBjLWRpc2N1c3Npb25AbGlzdHMuc291
-cmNlZm9yZ2UubmV0DQo+ID4gPiA+ID4gPiBDYzogbmV0ZGV2QHZnZXIua2VybmVsLm9yZzsgbGlu
-dXgta2VybmVsQHZnZXIua2VybmVsLm9yZw0KPiA+ID4gPiA+ID4gU3ViamVjdDogU2xvd25lc3Mg
-Zm9ybWluZyBUSVBDIGNsdXN0ZXIgd2l0aCBleHBsaWNpdCBub2RlDQo+ID4gPiA+ID4gPiBhZGRy
-ZXNzZXMNCj4gPiA+ID4gPiA+DQo+ID4gPiA+ID4gPiBIaSwNCj4gPiA+ID4gPiA+DQo+ID4gPiA+
-ID4gPiBJJ20gaGF2aW5nIHByb2JsZW1zIGZvcm1pbmcgYSBUSVBDIGNsdXN0ZXIgYmV0d2VlbiAy
-IG5vZGVzLg0KPiA+ID4gPiA+ID4NCj4gPiA+ID4gPiA+IFRoaXMgaXMgdGhlIGJhc2ljIHN0ZXBz
-IEknbSBnb2luZyB0aHJvdWdoIG9uIGVhY2ggbm9kZS4NCj4gPiA+ID4gPiA+DQo+ID4gPiA+ID4g
-PiBtb2Rwcm9iZSB0aXBjDQo+ID4gPiA+ID4gPiBpcCBsaW5rIHNldCBldGgyIHVwDQo+ID4gPiA+
-ID4gPiB0aXBjIG5vZGUgc2V0IGFkZHIgMS4xLjUgIyBvciAxLjEuNiB0aXBjIGJlYXJlciBlbmFi
-bGUgbWVkaWENCj4gPiA+ID4gPiA+IGV0aCBkZXYgZXRoMA0KPiA+ID4gPiA+IGV0aDIsIEkgYXNz
-dW1lLi4uDQo+ID4gPiA+ID4NCj4gPiA+ID4gWWVzIHNvcnJ5IEkga2VlcCBzd2l0Y2hpbmcgYmV0
-d2VlbiBiZXR3ZWVuIEV0aGVybmV0IHBvcnRzIGZvcg0KPiA+ID4gPiB0ZXN0aW5nDQo+ID4gPiA+
-IHNvIEkgaGFuZCBlZGl0ZWQgdGhlIGVtYWlsLg0KPiA+ID4gPg0KPiA+ID4gPiA+DQo+ID4gPiA+
-ID4NCj4gPiA+ID4gPiA+DQo+ID4gPiA+ID4gPg0KPiA+ID4gPiA+ID4NCj4gPiA+ID4gPiA+DQo+
-ID4gPiA+ID4gPiBUaGVuIHRvIGNvbmZpcm0gaWYgdGhlIGNsdXN0ZXIgaXMgZm9ybWVkIEkgdXNl
-wqB0aXBjIGxpbmsgbGlzdA0KPiA+ID4gPiA+ID4NCj4gPiA+ID4gPiA+IFtyb290QG5vZGUtNSB+
-XSMgdGlwYyBsaW5rIGxpc3QNCj4gPiA+ID4gPiA+IGJyb2FkY2FzdC1saW5rOiB1cA0KPiA+ID4g
-PiA+ID4gLi4uDQo+ID4gPiA+ID4gPg0KPiA+ID4gPiA+ID4gTG9va2luZyBhdCB0Y3BkdW1wIHRo
-ZSB0d28gbm9kZXMgYXJlIHNlbmRpbmcgcGFja2V0cw0KPiA+ID4gPiA+ID4NCj4gPiA+ID4gPiA+
-IDIyOjMwOjA1Ljc4MjMyMCBUSVBDIHYyLjAgMS4xLjUgPiAwLjAuMCwgaGVhZGVybGVuZ3RoIDYw
-DQo+ID4gPiA+ID4gPiBieXRlcywNCj4gPiA+ID4gPiA+IE1lc3NhZ2VTaXplDQo+ID4gPiA+ID4g
-PiA3NiBieXRlcywgTmVpZ2hib3IgRGV0ZWN0aW9uIFByb3RvY29sIGludGVybmFsLCBtZXNzYWdl
-VHlwZQ0KPiA+ID4gPiA+ID4gTGluaw0KPiA+ID4gPiA+ID4gcmVxdWVzdA0KPiA+ID4gPiA+ID4g
-MjI6MzA6MDUuODYzNTU1IFRJUEMgdjIuMCAxLjEuNiA+IDAuMC4wLCBoZWFkZXJsZW5ndGggNjAN
-Cj4gPiA+ID4gPiA+IGJ5dGVzLA0KPiA+ID4gPiA+ID4gTWVzc2FnZVNpemUNCj4gPiA+ID4gPiA+
-IDc2IGJ5dGVzLCBOZWlnaGJvciBEZXRlY3Rpb24gUHJvdG9jb2wgaW50ZXJuYWwsIG1lc3NhZ2VU
-eXBlDQo+ID4gPiA+ID4gPiBMaW5rDQo+ID4gPiA+ID4gPiByZXF1ZXN0DQo+ID4gPiA+ID4gPg0K
-PiA+ID4gPiA+ID4gRXZlbnR1YWxseSAoYWZ0ZXIgYSBmZXcgbWludXRlcykgdGhlIGxpbmsgZG9l
-cyBjb21lIHVwDQo+ID4gPiA+ID4gPg0KPiA+ID4gPiA+ID4gW3Jvb3RAbm9kZS02wqB+XSMgdGlw
-YyBsaW5rIGxpc3QNCj4gPiA+ID4gPiA+IGJyb2FkY2FzdC1saW5rOiB1cA0KPiA+ID4gPiA+ID4g
-MTAwMTAwNjpldGgyLTEwMDEwMDU6ZXRoMjogdXANCj4gPiA+ID4gPiA+DQo+ID4gPiA+ID4gPiBb
-cm9vdEBub2RlLTXCoH5dIyB0aXBjIGxpbmsgbGlzdA0KPiA+ID4gPiA+ID4gYnJvYWRjYXN0LWxp
-bms6IHVwDQo+ID4gPiA+ID4gPiAxMDAxMDA1OmV0aDItMTAwMTAwNjpldGgyOiB1cA0KPiA+ID4g
-PiA+ID4NCj4gPiA+ID4gPiA+IFdoZW4gSSByZW1vdmUgdGhlICJ0aXBjIG5vZGUgc2V0IGFkZHIi
-IHRoaW5ncyBzZWVtIHRvIGtpY2sNCj4gPiA+ID4gPiA+IGludG8NCj4gPiA+ID4gPiA+IGxpZmUg
-c3RyYWlnaHQgYXdheQ0KPiA+ID4gPiA+ID4NCj4gPiA+ID4gPiA+IFtyb290QG5vZGUtNSB+XSMg
-dGlwYyBsaW5rIGxpc3QNCj4gPiA+ID4gPiA+IGJyb2FkY2FzdC1saW5rOiB1cA0KPiA+ID4gPiA+
-ID4gMDA1MGI2MWJkMmFhOmV0aDItMDA1MGI2MWU2ZGZhOmV0aDI6IHVwDQo+ID4gPiA+ID4gPg0K
-PiA+ID4gPiA+ID4gU28gdGhlcmUgYXBwZWFycyB0byBiZSBzb21lIGRpZmZlcmVuY2UgaW4gYmVo
-YXZpb3VyIGJldHdlZW4NCj4gPiA+ID4gPiA+IGhhdmluZw0KPiA+ID4gPiA+ID4gYW4gZXhwbGlj
-aXQgbm9kZSBhZGRyZXNzIGFuZCB1c2luZyB0aGUgZGVmYXVsdC4gVW5mb3J0dW5hdGVseQ0KPiA+
-ID4gPiA+ID4gb3VyDQo+ID4gPiA+ID4gPiBhcHBsaWNhdGlvbiByZWxpZXMgb24gc2V0dGluZyB0
-aGUgbm9kZSBhZGRyZXNzZXMuDQo+ID4gPiA+ID4gSSBkbyB0aGlzIG1hbnkgdGltZXMgYSBkYXks
-IHdpdGhvdXQgYW55IHByb2JsZW1zLiBJZiB0aGVyZQ0KPiA+ID4gPiA+IHdvdWxkIGJlDQo+ID4g
-PiA+ID4gYW55IHRpbWUgZGlmZmVyZW5jZSwgSSB3b3VsZCBleHBlY3QgdGhlICdhdXRvIGNvbmZp
-Z3VyYWJsZScNCj4gPiA+ID4gPiB2ZXJzaW9uDQo+ID4gPiA+ID4gdG8gYmUgc2xvd2VyLCBiZWNh
-dXNlIGl0IGludm9sdmVzIGEgREFEIHN0ZXAuDQo+ID4gPiA+ID4gQXJlIHlvdSBzdXJlIHlvdSBk
-b24ndCBoYXZlIGFueSBvdGhlciBub2RlcyBydW5uaW5nIGluIHlvdXINCj4gPiA+ID4gPiBzeXN0
-ZW0/DQo+ID4gPiA+ID4NCj4gPiA+ID4gPiAvLy9qb24NCj4gPiA+ID4gPg0KPiA+ID4gPiBOb3Bl
-IHRoZSB0d28gbm9kZXMgYXJlIGNvbm5lY3RlZCBiYWNrIHRvIGJhY2suIERvZXMgdGhlIG51bWJl
-ciBvZg0KPiA+ID4gPiBFdGhlcm5ldCBpbnRlcmZhY2VzIG1ha2UgYSBkaWZmZXJlbmNlPyBBcyB5
-b3UgY2FuIHNlZSBJJ3ZlIGdvdCAzDQo+ID4gPiA+IG9uDQo+ID4gPiA+IGVhY2ggbm9kZS4gT25l
-IGlzIGNvbXBsZXRlbHkgZGlzY29ubmVjdGVkLCBvbmUgaXMgZm9yIGJvb3RpbmcNCj4gPiA+ID4g
-b3Zlcg0KPiA+ID4gPiBURlRQDQo+ID4gPiA+IMKgKG9ubHkgdXNlZCBieSBVLWJvb3QpIGFuZCB0
-aGUgb3RoZXIgaXMgdGhlIFVTQiBFdGhlcm5ldCBJJ20NCj4gPiA+ID4gdXNpbmcgZm9yDQo+ID4g
-PiA+IHRlc3RpbmcuDQo+ID4gPiA+DQo+ID4gPiBTbyBJIGNhbiBzdGlsbCByZXByb2R1Y2UgdGhp
-cyBvbiBub2RlcyB0aGF0IG9ubHkgaGF2ZSBvbmUgbmV0d29yaw0KPiA+ID4gaW50ZXJmYWNlIGFu
-ZA0KPiA+ID4gYXJlIHRoZSBvbmx5IHRoaW5ncyBjb25uZWN0ZWQuDQo+ID4gPg0KPiA+ID4gSSBk
-aWQgZmluZCBvbmUgdGhpbmcgdGhhdCBoZWxwcw0KPiA+ID4NCj4gPiA+IGRpZmYgLS1naXQgYS9u
-ZXQvdGlwYy9kaXNjb3Zlci5jIGIvbmV0L3RpcGMvZGlzY292ZXIuYyBpbmRleA0KPiA+ID4gYzEz
-OGQ2OGU4YTY5Li40OTkyMWRhZDQwNGEgMTAwNjQ0DQo+ID4gPiAtLS0gYS9uZXQvdGlwYy9kaXNj
-b3Zlci5jDQo+ID4gPiArKysgYi9uZXQvdGlwYy9kaXNjb3Zlci5jDQo+ID4gPiBAQCAtMzU4LDEw
-ICszNTgsMTAgQEAgaW50IHRpcGNfZGlzY19jcmVhdGUoc3RydWN0IG5ldCAqbmV0LCBzdHJ1Y3QN
-Cj4gPiA+IHRpcGNfYmVhcmVyICpiLA0KPiA+ID4gwqDCoMKgwqDCoMKgwqDCoHRpcGNfZGlzY19p
-bml0X21zZyhuZXQsIGQtPnNrYiwgRFNDX1JFUV9NU0csIGIpOw0KPiA+ID4NCj4gPiA+IMKgwqDC
-oMKgwqDCoMKgwqAvKiBEbyB3ZSBuZWVkIGFuIGFkZHJlc3MgdHJpYWwgcGVyaW9kIGZpcnN0ID8g
-Ki8NCj4gPiA+IC3CoMKgwqDCoMKgwqDCoGlmICghdGlwY19vd25fYWRkcihuZXQpKSB7DQo+ID4g
-PiArLy/CoMKgwqDCoMKgaWYgKCF0aXBjX293bl9hZGRyKG5ldCkpIHsNCj4gPiA+IMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgdG4tPmFkZHJfdHJpYWxfZW5kID0gamlmZmllcyArDQo+
-ID4gPiBtc2Vjc190b19qaWZmaWVzKDEwMDApOw0KPiA+ID4gwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqBtc2dfc2V0X3R5cGUoYnVmX21zZyhkLT5za2IpLCBEU0NfVFJJQUxfTVNHKTsN
-Cj4gPiA+IC3CoMKgwqDCoMKgwqDCoH0NCj4gPiA+ICsvL8KgwqDCoMKgwqB9DQo+ID4gPiDCoMKg
-wqDCoMKgwqDCoMKgbWVtY3B5KCZkLT5kZXN0LCBkZXN0LCBzaXplb2YoKmRlc3QpKTsNCj4gPiA+
-IMKgwqDCoMKgwqDCoMKgwqBkLT5uZXQgPSBuZXQ7DQo+ID4gPiDCoMKgwqDCoMKgwqDCoMKgZC0+
-YmVhcmVyX2lkID0gYi0+aWRlbnRpdHk7DQo+ID4gPg0KPiA+ID4gSSB0aGluayBiZWNhdXNlIHdp
-dGggcHJlLWNvbmZpZ3VyZWQgYWRkcmVzc2VzIHRoZSBkdXBsaWNhdGUgYWRkcmVzcw0KPiA+ID4g
-ZGV0ZWN0aW9uDQo+ID4gPiBpcyBza2lwcGVkIHRoZSBzaG9ydGVyIGluaXQgcGhhc2UgaXMgc2tp
-cHBlZC4gV291bGQgaXMgbWFrZSBzZW5zZQ0KPiA+ID4gdG8NCj4gPiA+IHVuY29uZGl0aW9uYWxs
-eSBkbyB0aGUgdHJpYWwgc3RlcD8gT3IgaXMgdGhlcmUgc29tZSBiZXR0ZXIgd2F5IHRvDQo+ID4g
-PiBnZXQgdGhpbmdzIHRvDQo+ID4gPiB0cmFuc2l0aW9uIHdpdGggcHJlLWFzc2lnbmVkIGFkZHJl
-c3Nlcy4NCj4gPg0KPiA+IEkgYW0gb24gdmFjYXRpb24gdW50aWwgdGhlIGVuZCBvZiBuZXh0LXdl
-ZWssIHNvIEkgY2FuJ3QgZ2l2ZSB5b3UgYW55DQo+ID4gZ29vZCBhbmFseXNpcyByaWdodCBub3cu
-DQo+IA0KPiBUaGFua3MgZm9yIHRha2luZyB0aGUgdGltZSB0byByZXNwb25kLg0KPiANCj4gPiBU
-byBkbyB0aGUgdHJpYWwgc3RlcCBkb2VzbuKAmXQgbWFrZSBtdWNoIHNlbnNlIHRvIG1lLCAtaXQg
-d291bGQgb25seQ0KPiA+IGRlbGF5IHRoZSBzZXR1cCB1bm5lY2Vzc2FyaWx5IChidXQgd2l0aCBv
-bmx5IDEgc2Vjb25kKS4NCj4gPiBDYW4geW91IGNoZWNrIHRoZSBpbml0aWFsIHZhbHVlIG9mIGFk
-ZHJfdHJpYWxfZW5kIHdoZW4gdGhlcmUgYSBwcmUtDQo+ID4gY29uZmlndXJlZCBhZGRyZXNzPw0K
-PiANCj4gSSBoYWQgdGhlIHNhbWUgdGhvdWdodC4gRm9yIGJvdGggbXkgZGV2aWNlcyAnYWRkcl90
-cmlhbF9lbmQgPSAwJyBzbyBJDQo+IHRoaW5rwqB0aXBjX2Rpc2NfYWRkcl90cmlhbF9tc2cgc2hv
-dWxkIGVuZCB1cCB3aXRoIHRyaWFsID09IGZhbHNlDQoNCkkgc3VnZ2VzdCB5b3UgdHJ5IGluaXRp
-YWxpemluZyBpdCB0byBqaWZmaWVzIGFuZCBzZWUgd2hhdCBoYXBwZW5zLg0KDQovLy9qb24NCg0K
-PiANCj4gPg0KPiA+IC8vL2pvbg0KPiA+DQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KdGlwYy1kaXNjdXNzaW9uIG1haWxpbmcgbGlzdAp0aXBjLWRpc2N1
-c3Npb25AbGlzdHMuc291cmNlZm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNlZm9yZ2UubmV0
-L2xpc3RzL2xpc3RpbmZvL3RpcGMtZGlzY3Vzc2lvbgo=
+You should rather set this one unconditionally in tipc_set_node_addr().
+The problems is not about the state machine, but that jiffies is close to the wrap-around time, so that it is perceived as being before the time "0".
+
+BR
+///jon
+
+
+> -----Original Message-----
+> From: netdev-owner@vger.kernel.org <netdev-owner@vger.kernel.org> On
+> Behalf Of Chris Packham
+> Sent: 7-Aug-19 00:56
+> To: Jon Maloy <jon.maloy@ericsson.com>; ying.xue@windriver.com;
+> davem@davemloft.net
+> Cc: netdev@vger.kernel.org; tipc-discussion@lists.sourceforge.net; linux-
+> kernel@vger.kernel.org; Chris Packham <chris.packham@alliedtelesis.co.nz>
+> Subject: [PATCH] tipc: set addr_trail_end when using explicit node addresses
+> 
+> When tipc uses auto-generated node addresses it goes through a duplicate
+> address detection phase to ensure the address is unique.
+> 
+> When using explicitly configured node names the DAD phase is skipped.
+> However addr_trail_end was being left set to 0 which causes parts of the tipc
+> state machine to assume that the address is not yet valid and unnecessarily
+> delays the discovery phase. By setting addr_trail_end to jiffies when using
+> explicit addresses we ensure that we move straight to discovery.
+> 
+> Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+> ---
+>  net/tipc/discover.c | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/net/tipc/discover.c b/net/tipc/discover.c index
+> c138d68e8a69..f83bfe8c9443 100644
+> --- a/net/tipc/discover.c
+> +++ b/net/tipc/discover.c
+> @@ -361,6 +361,8 @@ int tipc_disc_create(struct net *net, struct
+> tipc_bearer *b,
+>  	if (!tipc_own_addr(net)) {
+>  		tn->addr_trial_end = jiffies + msecs_to_jiffies(1000);
+>  		msg_set_type(buf_msg(d->skb), DSC_TRIAL_MSG);
+> +	} else {
+> +		tn->addr_trial_end = jiffies;
+>  	}
+>  	memcpy(&d->dest, dest, sizeof(*dest));
+>  	d->net = net;
+> --
+> 2.22.0
+
+
+
+_______________________________________________
+tipc-discussion mailing list
+tipc-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tipc-discussion
