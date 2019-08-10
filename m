@@ -2,67 +2,131 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57571872F1
-	for <lists+tipc-discussion@lfdr.de>; Fri,  9 Aug 2019 09:29:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C507C88C86
+	for <lists+tipc-discussion@lfdr.de>; Sat, 10 Aug 2019 19:47:11 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1hvzL5-0002x3-A0; Fri, 09 Aug 2019 07:29:27 +0000
+	id 1hwVSJ-0007kT-VF; Sat, 10 Aug 2019 17:47:03 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Ying.Xue@windriver.com>) id 1hvzL3-0002wt-RQ
- for tipc-discussion@lists.sourceforge.net; Fri, 09 Aug 2019 07:29:25 +0000
+ (envelope-from <jon.maloy@ericsson.com>) id 1hwVSI-0007kI-FA
+ for tipc-discussion@lists.sourceforge.net; Sat, 10 Aug 2019 17:47:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:MIME-Version:References:In-Reply-To:
- Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ghE4XDI7/CXlKGrhF4DFQp2GkEfhzAzRye05k0qJQz0=; b=F3bnf5GzONkpLSGxW9704OcwA1
- ZnIL1hFTQWWjIojaZyyBvqhqFJOYvIlFcREIjKyjuqQRpZrKDcr4i9tmp8PinRXZjSAwcbLKB2w5x
- dJLV/AoCL8GXcYmNal6tkCf3asFq9ADrF25nUpdP4wNXOrF+NzN8q2TZiNNBQh15/IK4=;
+ bh=UD4ZutWy5HWbFYCzdbZSJV/o/vBuwDFF5jUj9mSMej0=; b=aeqOJ7NoBrZDz4Noo8g95dJmaf
+ qDYGpjdDwVTosH5DTCnblwAQdu7FZCHwCFe3Ac/WrpgNsF32asp/C5NymkVX85cdTFspFEnuObM+d
+ 2Nh3lqnfPpyz5HbGyHt+70svPnET9GqpdZ0yDq5F34OS63M0uDecfK1r2e+DBsgNBRwQ=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:
- CC:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ghE4XDI7/CXlKGrhF4DFQp2GkEfhzAzRye05k0qJQz0=; b=TmsUfOFEtr12ITJfSb2PTFSUdv
- l6IJSIHxVRaMkq4utE43z8wmfzucogw5ElArUvjaCkFYHCqsHxCNpImac+yYB8ngVX2jCyzxCe0o4
- KdhP/ew8zJwkPTQXscSRPfmZy3oimlvpbOKSMwwz3EUPVFje+tfeJ4E561BLcH1KJUYQ=;
-Received: from mail1.windriver.com ([147.11.146.13])
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
- (TLSv1.1:ECDHE-RSA-AES256-SHA:256) (Exim 4.90_1) id 1hvzL2-00FgY1-05
- for tipc-discussion@lists.sourceforge.net; Fri, 09 Aug 2019 07:29:25 +0000
-Received: from ALA-HCB.corp.ad.wrs.com ([147.11.189.41])
- by mail1.windriver.com (8.15.2/8.15.1) with ESMTPS id x797TCBr018272
- (version=TLSv1 cipher=AES128-SHA bits=128 verify=FAIL);
- Fri, 9 Aug 2019 00:29:12 -0700 (PDT)
-Received: from pek-yxue-d1.wrs.com (128.224.155.90) by ALA-HCB.corp.ad.wrs.com
- (147.11.189.41) with Microsoft SMTP Server id 14.3.468.0;
- Fri, 9 Aug 2019 00:29:11 -0700
-From: Ying Xue <ying.xue@windriver.com>
-To: <davem@davemloft.net>, <netdev@vger.kernel.org>
-Date: Fri, 9 Aug 2019 15:16:57 +0800
-Message-ID: <1565335017-21302-4-git-send-email-ying.xue@windriver.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1565335017-21302-1-git-send-email-ying.xue@windriver.com>
-References: <1565335017-21302-1-git-send-email-ying.xue@windriver.com>
+ bh=UD4ZutWy5HWbFYCzdbZSJV/o/vBuwDFF5jUj9mSMej0=; b=kOO5uwYvHYNI9xmVgqJHPPoH4a
+ u8BPqfTNd72ufmcty+sSCuI/9Kzp8/amaq4i+y18I8x0rkxfrDz2NvKOc45fIN7YGC1/VujUCT0fM
+ dyOGl27vRlQpQcX4CLpWSAhYUC6+9dvJeO0K3UGe/PT/7QXkl8sb0M3iDoRY4f1Yrv04=;
+Received: from mail-eopbgr820079.outbound.protection.outlook.com
+ ([40.107.82.79] helo=NAM01-SN1-obe.outbound.protection.outlook.com)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ id 1hwVSE-00HGwp-R2
+ for tipc-discussion@lists.sourceforge.net; Sat, 10 Aug 2019 17:47:02 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=i3H1Sw/fYBhU1GV35QYyZvsC8sBKsYAi5kKwCHor6qSRKbD7Kd7yN3K1DELM27I41ZrbSBGFq7gYt8DK11n8/L5Xi9hrhaLbvJvNlo/3S7cKtrT48i0nQ7qkKg2HnJNAVXdiOqvrbngSuQP5codx4nZPEtCW4ctiNt0f2lAqkOjCRYpbmGyswj01bRum6XWL9YqiGOihP44Y07JUIQ6jF19P4vVS9xfllknMv1RFRHjgWrFoIhVXualo2QMENR6VNr08zINNSvgD6PnCjJBzow44IhsP+dJd4rDxIXfCfnFZPypIZwGFixEbjO5cT9ml7SpdvZu6pz5BCYP+ekPIEQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=UD4ZutWy5HWbFYCzdbZSJV/o/vBuwDFF5jUj9mSMej0=;
+ b=ebXr/mDzQ1S9PgxPA5uUOxLBeEXNs//lDSNvVJoD9byl3KoEC8OVP6y5zOwrSKNaEn7BtsZ2gGZvfjWFBHK6KO7yVSMxgAOglF2EbWzq+QJ1mwpEhIB+vrijeKnfh18xri/+3NpzwvGWNONxWmc9Bw+3k1IKav0wM3Dvf649QJ4B9fYqls0LHy16h02RnhXJV6DW7ON80614G1X/KbVk+iR2Sucwlcd95S3l3NXEchzpWAp7mXh+p02H/pnfS+k+u333nBL7pWlzvCQ/JU785/T3GspwkOTwd58gUULQRa/S8Fiqhy2tnBhXKsNH8aiIDETDNBqL1zvCZXB7v/2Cew==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=ericsson.com; dmarc=pass action=none header.from=ericsson.com;
+ dkim=pass header.d=ericsson.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=UD4ZutWy5HWbFYCzdbZSJV/o/vBuwDFF5jUj9mSMej0=;
+ b=peP1RLXAFCC4R4emfaG5wBzdO3I0yWjlwaDyKmzEWdox2nEccEBDvU5PhGFOagoonSLirRg4UWqoCAdCRu6c7CaGiJTywrgChtS5qsKudalz9JtMjkpSgkU6WubiThl9180VOrU9MMnjq2vArWH8Nrqk5oxXsMVLlmTNAyeDBcU=
+Received: from CH2PR15MB3575.namprd15.prod.outlook.com (10.255.156.17) by
+ CH2PR15MB3637.namprd15.prod.outlook.com (52.132.231.96) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2157.20; Sat, 10 Aug 2019 17:46:49 +0000
+Received: from CH2PR15MB3575.namprd15.prod.outlook.com
+ ([fe80::49b5:cc04:ec33:c7c2]) by CH2PR15MB3575.namprd15.prod.outlook.com
+ ([fe80::49b5:cc04:ec33:c7c2%7]) with mapi id 15.20.2157.021; Sat, 10 Aug 2019
+ 17:46:49 +0000
+From: Jon Maloy <jon.maloy@ericsson.com>
+To: Chris Packham <chris.packham@alliedtelesis.co.nz>,
+ "ying.xue@windriver.com" <ying.xue@windriver.com>, "davem@davemloft.net"
+ <davem@davemloft.net>
+Thread-Topic: [PATCH v2] tipc: initialise addr_trail_end when setting node
+ addresses
+Thread-Index: AQHVTk0Yw1fWCdXpz0COXP7OMd9Hsab0omhQ
+Date: Sat, 10 Aug 2019 17:46:48 +0000
+Message-ID: <CH2PR15MB35751C0AA17673A100E646839AD10@CH2PR15MB3575.namprd15.prod.outlook.com>
+References: <20190809005451.18881-1-chris.packham@alliedtelesis.co.nz>
+In-Reply-To: <20190809005451.18881-1-chris.packham@alliedtelesis.co.nz>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=jon.maloy@ericsson.com; 
+x-originating-ip: [24.225.233.31]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: d7e19fb9-16d1-4743-7650-08d71dbab877
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:CH2PR15MB3637; 
+x-ms-traffictypediagnostic: CH2PR15MB3637:
+x-microsoft-antispam-prvs: <CH2PR15MB3637C49060568465F77851B39AD10@CH2PR15MB3637.namprd15.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 012570D5A0
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(346002)(376002)(136003)(396003)(39860400002)(199004)(189003)(13464003)(5660300002)(446003)(8936002)(11346002)(66066001)(476003)(486006)(44832011)(7736002)(305945005)(74316002)(2501003)(4326008)(14454004)(25786009)(6246003)(53936002)(71200400001)(256004)(71190400001)(478600001)(86362001)(2201001)(3846002)(316002)(186003)(229853002)(6436002)(8676002)(81166006)(81156014)(2906002)(26005)(6116002)(110136005)(9686003)(54906003)(55016002)(99286004)(102836004)(33656002)(66446008)(64756008)(66556008)(66476007)(52536014)(76176011)(76116006)(53546011)(6506007)(66946007)(7696005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR15MB3637;
+ H:CH2PR15MB3575.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: ericsson.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: zAS6GaaYN+eGqWca4VPM4XM4zSDyhYVzYyOtelDv7QJQk4QvCjtxElJvQGbAA2XmF076BqmboCplne67R3O7kZeyV7+B0bpCWLQWzU+VI+P89/uzxHVr/ZjHv8Bf/KHOH5ziJLgTTGj4WUTK5nfpK8hfRI05EuiAFKwA1/lJn3gIkcMwZyJTm2rZ4hx7/WF2xywt+NFnGm2B/h14O+MitmQLFD8yTH3+mv1Nmc0jkGN4QSF/db6aBcjV8u4m3rnHJnnwuhDx96SDJWaDXN2ssNsX7huhIGLlkXazZgYgJAhOEXwIT8yKLWWhsyLB8ex4OIlWvhjalHRxiMt0wWEe/lOtHDAfgVcBKITlwH6TQwo5dZcJLzPX9djxWmRGVlccb6cYe6sSh75N0IquwSEPQi0TxbWl6GL9m+JdTo4aU2c=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-X-Spam-Score: 0.0 (/)
+X-OriginatorOrg: ericsson.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d7e19fb9-16d1-4743-7650-08d71dbab877
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Aug 2019 17:46:49.0005 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 1MwiKXivKbTHgHJH5GO1962x5g8Bdy+QGONJzFVbttRXM2eIqUADvNoEdfATDoRCCyGWdzUwiwxNaJA6EYfjYg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR15MB3637
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: windriver.com]
+ for more information. [URIs: davemloft.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [40.107.82.79 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-X-Headers-End: 1hvzL2-00FgY1-05
-Subject: [tipc-discussion] [PATCH 3/3] tipc: fix issue of calling
- smp_processor_id() in preemptible
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+X-Headers-End: 1hwVSE-00HGwp-R2
+Subject: Re: [tipc-discussion] [PATCH v2] tipc: initialise addr_trail_end
+ when setting node addresses
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,153 +138,58 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: syzkaller-bugs@googlegroups.com, hdanton@sina.com,
- tipc-discussion@lists.sourceforge.net
+Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "tipc-discussion@lists.sourceforge.net"
+ <tipc-discussion@lists.sourceforge.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-syzbot found the following issue:
+I would re-phrase this a little:
+We set the field 'addr_trial_end' to 'jiffies', instead of the current value 0,  at the moment the node address is initialized. 
+This guarantees we don't inadvertently enter an address trial period when the node address is explicitly set by the user.
 
-[   81.119772][ T8612] BUG: using smp_processor_id() in preemptible [00000000] code: syz-executor834/8612
-[   81.136212][ T8612] caller is dst_cache_get+0x3d/0xb0
-[   81.141450][ T8612] CPU: 0 PID: 8612 Comm: syz-executor834 Not tainted 5.2.0-rc6+ #48
-[   81.149435][ T8612] Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/01/2011
-[   81.159480][ T8612] Call Trace:
-[   81.162789][ T8612]  dump_stack+0x172/0x1f0
-[   81.167123][ T8612]  debug_smp_processor_id+0x251/0x280
-[   81.172479][ T8612]  dst_cache_get+0x3d/0xb0
-[   81.176928][ T8612]  tipc_udp_xmit.isra.0+0xc4/0xb80
-[   81.182046][ T8612]  ? kasan_kmalloc+0x9/0x10
-[   81.186531][ T8612]  ? tipc_udp_addr2str+0x170/0x170
-[   81.191641][ T8612]  ? __copy_skb_header+0x2e8/0x560
-[   81.196750][ T8612]  ? __skb_checksum_complete+0x3f0/0x3f0
-[   81.202364][ T8612]  ? netdev_alloc_frag+0x1b0/0x1b0
-[   81.207452][ T8612]  ? skb_copy_header+0x21/0x2b0
-[   81.212282][ T8612]  ? __pskb_copy_fclone+0x516/0xc90
-[   81.217470][ T8612]  tipc_udp_send_msg+0x29a/0x4b0
-[   81.222400][ T8612]  tipc_bearer_xmit_skb+0x16c/0x360
-[   81.227585][ T8612]  tipc_enable_bearer+0xabe/0xd20
-[   81.232606][ T8612]  ? __nla_validate_parse+0x2d0/0x1ee0
-[   81.238048][ T8612]  ? tipc_bearer_xmit_skb+0x360/0x360
-[   81.243401][ T8612]  ? nla_memcpy+0xb0/0xb0
-[   81.247710][ T8612]  ? nla_memcpy+0xb0/0xb0
-[   81.252020][ T8612]  ? __nla_parse+0x43/0x60
-[   81.256417][ T8612]  __tipc_nl_bearer_enable+0x2de/0x3a0
-[   81.261856][ T8612]  ? __tipc_nl_bearer_enable+0x2de/0x3a0
-[   81.267467][ T8612]  ? tipc_nl_bearer_disable+0x40/0x40
-[   81.272848][ T8612]  ? unwind_get_return_address+0x58/0xa0
-[   81.278501][ T8612]  ? lock_acquire+0x16f/0x3f0
-[   81.283190][ T8612]  tipc_nl_bearer_enable+0x23/0x40
-[   81.288300][ T8612]  genl_family_rcv_msg+0x74b/0xf90
-[   81.293404][ T8612]  ? genl_unregister_family+0x790/0x790
-[   81.298935][ T8612]  ? __lock_acquire+0x54f/0x5490
-[   81.303852][ T8612]  ? __netlink_lookup+0x3fa/0x7b0
-[   81.308865][ T8612]  genl_rcv_msg+0xca/0x16c
-[   81.313266][ T8612]  netlink_rcv_skb+0x177/0x450
-[   81.318043][ T8612]  ? genl_family_rcv_msg+0xf90/0xf90
-[   81.323311][ T8612]  ? netlink_ack+0xb50/0xb50
-[   81.327906][ T8612]  ? lock_acquire+0x16f/0x3f0
-[   81.332589][ T8612]  ? kasan_check_write+0x14/0x20
-[   81.337511][ T8612]  genl_rcv+0x29/0x40
-[   81.341485][ T8612]  netlink_unicast+0x531/0x710
-[   81.346268][ T8612]  ? netlink_attachskb+0x770/0x770
-[   81.351374][ T8612]  ? _copy_from_iter_full+0x25d/0x8c0
-[   81.356765][ T8612]  ? __sanitizer_cov_trace_cmp8+0x18/0x20
-[   81.362479][ T8612]  ? __check_object_size+0x3d/0x42f
-[   81.367667][ T8612]  netlink_sendmsg+0x8ae/0xd70
-[   81.372415][ T8612]  ? netlink_unicast+0x710/0x710
-[   81.377520][ T8612]  ? aa_sock_msg_perm.isra.0+0xba/0x170
-[   81.383051][ T8612]  ? apparmor_socket_sendmsg+0x2a/0x30
-[   81.388530][ T8612]  ? __sanitizer_cov_trace_const_cmp4+0x16/0x20
-[   81.394775][ T8612]  ? security_socket_sendmsg+0x8d/0xc0
-[   81.400240][ T8612]  ? netlink_unicast+0x710/0x710
-[   81.405161][ T8612]  sock_sendmsg+0xd7/0x130
-[   81.409561][ T8612]  ___sys_sendmsg+0x803/0x920
-[   81.414220][ T8612]  ? copy_msghdr_from_user+0x430/0x430
-[   81.419667][ T8612]  ? _raw_spin_unlock_irqrestore+0x6b/0xe0
-[   81.425461][ T8612]  ? debug_object_active_state+0x25d/0x380
-[   81.431255][ T8612]  ? __lock_acquire+0x54f/0x5490
-[   81.436174][ T8612]  ? kasan_check_read+0x11/0x20
-[   81.441208][ T8612]  ? _raw_spin_unlock_irqrestore+0xa4/0xe0
-[   81.447008][ T8612]  ? mark_held_locks+0xf0/0xf0
-[   81.451768][ T8612]  ? __call_rcu.constprop.0+0x28b/0x720
-[   81.457298][ T8612]  ? call_rcu+0xb/0x10
-[   81.461353][ T8612]  ? __sanitizer_cov_trace_const_cmp4+0x16/0x20
-[   81.467589][ T8612]  ? __fget_light+0x1a9/0x230
-[   81.472249][ T8612]  ? __fdget+0x1b/0x20
-[   81.476301][ T8612]  ? __sanitizer_cov_trace_const_cmp8+0x18/0x20
-[   81.482545][ T8612]  __sys_sendmsg+0x105/0x1d0
-[   81.487115][ T8612]  ? __ia32_sys_shutdown+0x80/0x80
-[   81.492208][ T8612]  ? blkcg_maybe_throttle_current+0x5e2/0xfb0
-[   81.498272][ T8612]  ? trace_hardirqs_on_thunk+0x1a/0x1c
-[   81.503726][ T8612]  ? do_syscall_64+0x26/0x680
-[   81.508385][ T8612]  ? entry_SYSCALL_64_after_hwframe+0x49/0xbe
-[   81.514444][ T8612]  ? do_syscall_64+0x26/0x680
-[   81.519110][ T8612]  __x64_sys_sendmsg+0x78/0xb0
-[   81.523862][ T8612]  do_syscall_64+0xfd/0x680
-[   81.528352][ T8612]  entry_SYSCALL_64_after_hwframe+0x49/0xbe
-[   81.534234][ T8612] RIP: 0033:0x444679
-[   81.538114][ T8612] Code: 18 89 d0 c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 0f 83 1b d8 fb ff c3 66 2e 0f 1f 84 00 00 00 00
-[   81.557709][ T8612] RSP: 002b:00007fff0201a8b8 EFLAGS: 00000246 ORIG_RAX: 000000000000002e
-[   81.566147][ T8612] RAX: ffffffffffffffda RBX: 00000000004002e0 RCX: 0000000000444679
-[   81.574108][ T8612] RDX: 0000000000000000 RSI: 0000000020000580 RDI: 0000000000000003
-[   81.582152][ T8612] RBP: 00000000006cf018 R08: 0000000000000001 R09: 00000000004002e0
-[   81.590113][ T8612] R10: 0000000000000008 R11: 0000000000000246 R12: 0000000000402320
-[   81.598089][ T8612] R13: 00000000004023b0 R14: 0000000000000000 R15: 0000000000
+Acked-by: Jon Maloy <jon.maloy@ericsson.com>
 
-In commit e9c1a793210f ("tipc: add dst_cache support for udp media")
-dst_cache_get() was introduced to be called in tipc_udp_xmit(). But
-smp_processor_id() called by dst_cache_get() cannot be invoked in
-preemptible context, as a result, the complaint above was reported.
 
-Fixes: e9c1a793210f ("tipc: add dst_cache support for udp media")
-syzbot+1a68504d96cd17b33a05@syzkaller.appspotmail.com
-Signed-off-by: Hillf Danton <hdanton@sina.com>
-Signed-off-by: Ying Xue <ying.xue@windriver.com>
----
- net/tipc/udp_media.c | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
-
-diff --git a/net/tipc/udp_media.c b/net/tipc/udp_media.c
-index 287df687..ca3ae2e 100644
---- a/net/tipc/udp_media.c
-+++ b/net/tipc/udp_media.c
-@@ -224,6 +224,8 @@ static int tipc_udp_send_msg(struct net *net, struct sk_buff *skb,
- 	struct udp_bearer *ub;
- 	int err = 0;
- 
-+	local_bh_disable();
-+
- 	if (skb_headroom(skb) < UDP_MIN_HEADROOM) {
- 		err = pskb_expand_head(skb, UDP_MIN_HEADROOM, 0, GFP_ATOMIC);
- 		if (err)
-@@ -237,9 +239,12 @@ static int tipc_udp_send_msg(struct net *net, struct sk_buff *skb,
- 		goto out;
- 	}
- 
--	if (addr->broadcast != TIPC_REPLICAST_SUPPORT)
--		return tipc_udp_xmit(net, skb, ub, src, dst,
--				     &ub->rcast.dst_cache);
-+	if (addr->broadcast != TIPC_REPLICAST_SUPPORT) {
-+		err = tipc_udp_xmit(net, skb, ub, src, dst,
-+				    &ub->rcast.dst_cache);
-+		local_bh_enable();
-+		return err;
-+	}
- 
- 	/* Replicast, send an skb to each configured IP address */
- 	list_for_each_entry_rcu(rcast, &ub->rcast.list, list) {
-@@ -259,6 +264,7 @@ static int tipc_udp_send_msg(struct net *net, struct sk_buff *skb,
- 	err = 0;
- out:
- 	kfree_skb(skb);
-+	local_bh_enable();
- 	return err;
- }
- 
--- 
-2.7.4
+> -----Original Message-----
+> From: netdev-owner@vger.kernel.org <netdev-owner@vger.kernel.org> On
+> Behalf Of Chris Packham
+> Sent: 8-Aug-19 20:55
+> To: Jon Maloy <jon.maloy@ericsson.com>; ying.xue@windriver.com;
+> davem@davemloft.net
+> Cc: netdev@vger.kernel.org; tipc-discussion@lists.sourceforge.net; linux-
+> kernel@vger.kernel.org; Chris Packham <chris.packham@alliedtelesis.co.nz>
+> Subject: [PATCH v2] tipc: initialise addr_trail_end when setting node addresses
+> 
+> Ensure addr_trail_end is set to jiffies when configuring the node address. This
+> ensures that we don't treat the initial value of 0 as being a wrapped. This isn't a
+> problem when using auto-generated node addresses because the
+> addr_trail_end is updated for the duplicate address detection phase.
+> 
+> Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+> ---
+> Changes in v2:
+> - move setting to tipc_set_node_addr() as suggested
+> - reword commit message
+> 
+>  net/tipc/addr.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/net/tipc/addr.c b/net/tipc/addr.c index
+> b88d48d00913..0f1eaed1bd1b 100644
+> --- a/net/tipc/addr.c
+> +++ b/net/tipc/addr.c
+> @@ -75,6 +75,7 @@ void tipc_set_node_addr(struct net *net, u32 addr)
+>  		tipc_set_node_id(net, node_id);
+>  	}
+>  	tn->trial_addr = addr;
+> +	tn->addr_trial_end = jiffies;
+>  	pr_info("32-bit node address hash set to %x\n", addr);  }
+> 
+> --
+> 2.22.0
 
 
 
