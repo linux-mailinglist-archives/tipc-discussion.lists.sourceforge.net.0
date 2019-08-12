@@ -2,69 +2,62 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC37989655
-	for <lists+tipc-discussion@lfdr.de>; Mon, 12 Aug 2019 06:40:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03E3189815
+	for <lists+tipc-discussion@lfdr.de>; Mon, 12 Aug 2019 09:45:54 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1hx28a-0002c5-S0; Mon, 12 Aug 2019 04:40:52 +0000
+	id 1hx51a-0001nl-OD; Mon, 12 Aug 2019 07:45:50 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <davem@davemloft.net>) id 1hx28Z-0002bw-Fh
- for tipc-discussion@lists.sourceforge.net; Mon, 12 Aug 2019 04:40:51 +0000
+ (envelope-from <Ying.Xue@windriver.com>) id 1hx51Z-0001nd-9u
+ for tipc-discussion@lists.sourceforge.net; Mon, 12 Aug 2019 07:45:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Mime-Version
- :References:In-Reply-To:From:Subject:Cc:To:Message-Id:Date:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:MIME-Version:Message-ID:Date:Subject:
+ CC:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=voueXJ07I6bl0P9axSnB2sBjruqLSazhw3pdcy75BrU=; b=blmPAgIajpb9Fy+61rKJAI9SA+
- Xx05dfrOhrblxP3+Wl9nHUlKuF0MiJ4GWAIwrAAW1oVgWLe3MH7/ZCLv3FiG7VaPR0VQ/xjDm+tFz
- /kaJrRinKuMT00rJ2GqwKm9t+5ygqhAgtJ9ynDFNTRr38g1o0xV5dlXNAF5Uk8rXol/0=;
+ bh=k17S6QTHlEn7aixAtlPqp0jKidt1dMmFbJ3wKyfLgno=; b=mRFt6gIAi6r32Vr/iT/Iot4j3Z
+ DzH+waiUP7/9AO1GbW8EdI/gCed6db+1Ms67u/Hm9eda63qO2/Qca30XRY9vfN9IhzXC2yrWsSIU2
+ +VePPpSdCKH01KKRwpc5Tt+icurdGAOH0JgKraBNtpRpPDBUxAppPWAvEUUeOk3q4/cg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:Mime-Version:References:
- In-Reply-To:From:Subject:Cc:To:Message-Id:Date:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=voueXJ07I6bl0P9axSnB2sBjruqLSazhw3pdcy75BrU=; b=l6SvTICWKdQekanZJuFtKYuM2+
- 3jPSDFsFUq1N2fu04dD479OZpH2TOm6x+p7hYywvATXhatUBJ1z5EoGhizHxPdBYdEoOHhrmbjcrr
- 3cEkFgexGUdFPLs/i7qnhTQH6m8e/f6bNaSVZ6h2mZt0qlD4t0iJbprJ63LYV0oxI5jk=;
-Received: from shards.monkeyblade.net ([23.128.96.9])
+ h=Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From:Sender:
+ Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=k17S6QTHlEn7aixAtlPqp0jKidt1dMmFbJ3wKyfLgno=; b=G
+ +pzX25Qfi6RYySZ3GfGa8yVN8LIMXJpfc4Ew+qxyAj9Ndq+/JkNXZuzlrJm9t6/z+emGIio75wzuI
+ 48VwWI1yGqP+jdvI6fDhpQo02ym8ad5MuQBTzRGcC5TY/32IyiyjuRkR6vJcYV3FJJSw6dNhw+nW/
+ F/g+3sT/Kknibs1E=;
+Received: from mail5.windriver.com ([192.103.53.11] helo=mail5.wrs.com)
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- id 1hx28X-000kGO-JH
- for tipc-discussion@lists.sourceforge.net; Mon, 12 Aug 2019 04:40:51 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id A3BE1145F4F52;
- Sun, 11 Aug 2019 21:40:40 -0700 (PDT)
-Date: Sun, 11 Aug 2019 21:40:40 -0700 (PDT)
-Message-Id: <20190811.214040.1362923590670743834.davem@davemloft.net>
-To: chris.packham@alliedtelesis.co.nz
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20190811201825.13876-1-chris.packham@alliedtelesis.co.nz>
-References: <20190811201825.13876-1-chris.packham@alliedtelesis.co.nz>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Sun, 11 Aug 2019 21:40:40 -0700 (PDT)
-X-Spam-Score: -0.2 (/)
+ id 1hx51V-000qRq-1A
+ for tipc-discussion@lists.sourceforge.net; Mon, 12 Aug 2019 07:45:49 +0000
+Received: from ALA-HCA.corp.ad.wrs.com (ala-hca.corp.ad.wrs.com
+ [147.11.189.40])
+ by mail5.wrs.com (8.15.2/8.15.2) with ESMTPS id x7C7heW4021295
+ (version=TLSv1 cipher=AES128-SHA bits=128 verify=FAIL);
+ Mon, 12 Aug 2019 00:44:11 -0700
+Received: from pek-yxue-d1.wrs.com (128.224.155.90) by ALA-HCA.corp.ad.wrs.com
+ (147.11.189.40) with Microsoft SMTP Server id 14.3.468.0;
+ Mon, 12 Aug 2019 00:43:52 -0700
+From: Ying Xue <ying.xue@windriver.com>
+To: <davem@davemloft.net>, <netdev@vger.kernel.org>
+Date: Mon, 12 Aug 2019 15:32:39 +0800
+Message-ID: <1565595162-1383-1-git-send-email-ying.xue@windriver.com>
+X-Mailer: git-send-email 2.7.4
+MIME-Version: 1.0
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [23.128.96.9 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.2 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1hx28X-000kGO-JH
-Subject: Re: [tipc-discussion] [PATCH v3] tipc: initialise addr_trail_end
- when setting node addresses
+X-Headers-End: 1hx51V-000qRq-1A
+Subject: [tipc-discussion] [PATCH v2 0/3] Fix three issues found by syzbot
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,24 +69,32 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: tipc-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
- netdev@vger.kernel.org
+Cc: syzkaller-bugs@googlegroups.com, hdanton@sina.com,
+ tipc-discussion@lists.sourceforge.net, jakub.kicinski@netronome.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-From: Chris Packham <chris.packham@alliedtelesis.co.nz>
-Date: Mon, 12 Aug 2019 08:18:25 +1200
+In this series, try to fix two memory leak issues and another issue of
+calling smp_processor_id() in preemptible context.
 
-> We set the field 'addr_trial_end' to 'jiffies', instead of the current
-> value 0, at the moment the node address is initialized. This guarantees
-> we don't inadvertently enter an address trial period when the node
-> address is explicitly set by the user.
-> 
-> Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
-> Acked-by: Jon Maloy <jon.maloy@ericsson.com>
+Changes since v1:
+ - Fix "Reported-by:" missing in patch #3, which was reported by Jakub
+   Kicinski
 
-Applied.
+Ying Xue (3):
+  tipc: fix memory leak issue
+  tipc: fix memory leak issue
+  tipc: fix issue of calling smp_processor_id() in preemptible
+
+ net/tipc/group.c     | 22 +++++++++++++---------
+ net/tipc/node.c      |  7 +++++--
+ net/tipc/udp_media.c | 12 +++++++++---
+ 3 files changed, 27 insertions(+), 14 deletions(-)
+
+-- 
+2.7.4
+
 
 
 _______________________________________________
