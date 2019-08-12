@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 503DD89814
-	for <lists+tipc-discussion@lfdr.de>; Mon, 12 Aug 2019 09:45:51 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6091289810
+	for <lists+tipc-discussion@lfdr.de>; Mon, 12 Aug 2019 09:45:09 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1hx51Y-0008Ke-Al; Mon, 12 Aug 2019 07:45:48 +0000
+	id 1hx50n-0001l2-AK; Mon, 12 Aug 2019 07:45:01 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Ying.Xue@windriver.com>) id 1hx51W-0008KM-9S
- for tipc-discussion@lists.sourceforge.net; Mon, 12 Aug 2019 07:45:46 +0000
+ (envelope-from <Ying.Xue@windriver.com>) id 1hx50l-0001ko-UK
+ for tipc-discussion@lists.sourceforge.net; Mon, 12 Aug 2019 07:44:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:MIME-Version:References:In-Reply-To:
  Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=def7mrpUJhxaJx5/C8iJM9/XPHGwX14pbkP5P1pCg0k=; b=AHNAj/E4SDd2LJIwJ5iBADUMuV
- R/R3ovsfKznhmRr6IJE8H9q0G9R4EJsls1B5inX90YEBojBlwM0wxXGDlAauErS5JvFXTDSsgqR/f
- DI2zOOEMDMrY8kHd8MsuPCqI04KnwmGj7di/iMFmeuuse68lgkoUvTHLS2hzdj4BmEsI=;
+ bh=RLgxWqUZrC2Qh3UiRW3qEJtIPFI3EfVgQ9ax2w+svL8=; b=LFJ9c4P1adjJZQ2aOxH+045bCU
+ p8v1mRLZtN0yn6kn/B46vRyNtzsJmkDsPTCq0MEQ1sy7w8GyYFsLkb0G1TnSAZlN/Jp2DJubl2tZV
+ yuOjxb357r8zVFb81SXJ2ZPo3avkHpy5RcYZPKu//uEDGs/586r2GHLCbAaSrL1Af1Q0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:
@@ -29,26 +29,24 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=def7mrpUJhxaJx5/C8iJM9/XPHGwX14pbkP5P1pCg0k=; b=HF5qaXDoueNBQQefH4BuQ2aZNk
- 7e81U+tNt4thKnR1iwBNVcKvgWon5d3NlGvVA/N7ZGFcTH+MKHRzgFnDRQjWWVKnBOewU7WIDJ03j
- wR+LNIc3nly9py4HA5zzmKPRuQ1KW532UdvUef4VsEhKjOuGGv7couZrq7He12pxPMfQ=;
-Received: from mail5.windriver.com ([192.103.53.11] helo=mail5.wrs.com)
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- id 1hx51U-002Ppt-Vw
- for tipc-discussion@lists.sourceforge.net; Mon, 12 Aug 2019 07:45:46 +0000
-Received: from ALA-HCA.corp.ad.wrs.com (ala-hca.corp.ad.wrs.com
- [147.11.189.40])
- by mail5.wrs.com (8.15.2/8.15.2) with ESMTPS id x7C7heW5021295
+ bh=RLgxWqUZrC2Qh3UiRW3qEJtIPFI3EfVgQ9ax2w+svL8=; b=lmQWOH2FvI6PLOkNmva/f/Ti8j
+ 5+1XC1cHkXTxgOFUcYTD7oDP8eUGls+oaGYFAisfGdv4vBKijC8c3HhNhyLzfzru1tIjZjhR7Wxz+
+ 3tc07fZKju40tZiTo+rdRcjISbhmTKwFVobqFtUxdgGsDTa3RYPSuF00tJOAcfUMUFbU=;
+Received: from mail.windriver.com ([147.11.1.11])
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ (TLSv1.1:ECDHE-RSA-AES256-SHA:256) (Exim 4.90_1) id 1hx50k-000qQI-4P
+ for tipc-discussion@lists.sourceforge.net; Mon, 12 Aug 2019 07:44:59 +0000
+Received: from ALA-HCA.corp.ad.wrs.com ([147.11.189.40])
+ by mail.windriver.com (8.15.2/8.15.1) with ESMTPS id x7C7iioS025414
  (version=TLSv1 cipher=AES128-SHA bits=128 verify=FAIL);
- Mon, 12 Aug 2019 00:44:42 -0700
+ Mon, 12 Aug 2019 00:44:44 -0700 (PDT)
 Received: from pek-yxue-d1.wrs.com (128.224.155.90) by ALA-HCA.corp.ad.wrs.com
  (147.11.189.40) with Microsoft SMTP Server id 14.3.468.0;
- Mon, 12 Aug 2019 00:44:25 -0700
+ Mon, 12 Aug 2019 00:44:44 -0700
 From: Ying Xue <ying.xue@windriver.com>
 To: <davem@davemloft.net>, <netdev@vger.kernel.org>
-Date: Mon, 12 Aug 2019 15:32:40 +0800
-Message-ID: <1565595162-1383-2-git-send-email-ying.xue@windriver.com>
+Date: Mon, 12 Aug 2019 15:32:41 +0800
+Message-ID: <1565595162-1383-3-git-send-email-ying.xue@windriver.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1565595162-1383-1-git-send-email-ying.xue@windriver.com>
 References: <1565595162-1383-1-git-send-email-ying.xue@windriver.com>
@@ -58,8 +56,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-X-Headers-End: 1hx51U-002Ppt-Vw
-Subject: [tipc-discussion] [PATCH v2 1/3] tipc: fix memory leak issue
+X-Headers-End: 1hx50k-000qQI-4P
+Subject: [tipc-discussion] [PATCH v2 2/3] tipc: fix memory leak issue
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,60 +75,96 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-syzbot found the following memory leak:
+syzbot found the following memory leak issue:
 
-[   68.602482][ T7130] kmemleak: 2 new suspected memory leaks (see /sys/kernel/debug/kmemleak)
+[   72.286706][ T7064] kmemleak: 1 new suspected memory leaks (see /sys/kernel/debug/kmemleak)
 BUG: memory leak
-unreferenced object 0xffff88810df83c00 (size 512):
-  comm "softirq", pid 0, jiffies 4294942354 (age 19.830s)
+unreferenced object 0xffff888122bca200 (size 128):
+  comm "syz-executor232", pid 7065, jiffies 4294943817 (age 8.880s)
   hex dump (first 32 bytes):
-    38 1a 0d 0f 81 88 ff ff 38 1a 0d 0f 81 88 ff ff  8.......8.......
     00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+    00 00 00 00 00 00 00 00 18 a2 bc 22 81 88 ff ff  ..........."....
   backtrace:
-    [<000000009375ee42>] kmem_cache_alloc_node+0x153/0x2a0
-    [<000000004c563922>] __alloc_skb+0x6e/0x210
-    [<00000000ec87bfa1>] tipc_buf_acquire+0x2f/0x80
-    [<00000000d151ef84>] tipc_msg_create+0x37/0xe0
-    [<000000008bb437b0>] tipc_group_create_event+0xb3/0x1b0
-    [<00000000947b1d0f>] tipc_group_proto_rcv+0x569/0x640
-    [<00000000b75ab039>] tipc_sk_filter_rcv+0x9ac/0xf20
-    [<000000000dab7a6c>] tipc_sk_rcv+0x494/0x8a0
-    [<00000000023a7ddd>] tipc_node_xmit+0x196/0x1f0
-    [<00000000337dd9eb>] tipc_node_distr_xmit+0x7d/0x120
-    [<00000000b6375182>] tipc_group_delete+0xe6/0x130
-    [<000000000361ba2b>] tipc_sk_leave+0x57/0xb0
-    [<000000009df90505>] tipc_release+0x7b/0x5e0
-    [<000000009f3189da>] __sock_release+0x4b/0xe0
-    [<00000000d3568ee0>] sock_close+0x1b/0x30
-    [<00000000266a6215>] __fput+0xed/0x300
+    [<000000005bada299>] kmem_cache_alloc_trace+0x145/0x2c0
+    [<00000000e7bcdc9f>] tipc_group_create_member+0x3c/0x190
+    [<0000000005f56f40>] tipc_group_add_member+0x34/0x40
+    [<0000000044406683>] tipc_nametbl_build_group+0x9b/0xf0
+    [<000000009f71e803>] tipc_setsockopt+0x170/0x490
+    [<000000007f61cbc2>] __sys_setsockopt+0x10f/0x220
+    [<00000000cc630372>] __x64_sys_setsockopt+0x26/0x30
+    [<00000000ec30be33>] do_syscall_64+0x76/0x1a0
+    [<00000000271be3e6>] entry_SYSCALL_64_after_hwframe+0x44/0xa9
 
-Reported-by: syzbot+78fbe679c8ca8d264a8d@syzkaller.appspotmail.com
+Reported-by: syzbot+f95d90c454864b3b5bc9@syzkaller.appspotmail.com
 Signed-off-by: Hillf Danton <hdanton@sina.com>
 Signed-off-by: Ying Xue <ying.xue@windriver.com>
 ---
- net/tipc/node.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ net/tipc/group.c | 22 +++++++++++++---------
+ 1 file changed, 13 insertions(+), 9 deletions(-)
 
-diff --git a/net/tipc/node.c b/net/tipc/node.c
-index 7ca0190..d1852fc 100644
---- a/net/tipc/node.c
-+++ b/net/tipc/node.c
-@@ -1469,10 +1469,13 @@ int tipc_node_xmit(struct net *net, struct sk_buff_head *list,
- 	spin_unlock_bh(&le->lock);
- 	tipc_node_read_unlock(n);
+diff --git a/net/tipc/group.c b/net/tipc/group.c
+index 5f98d38..cbc540a 100644
+--- a/net/tipc/group.c
++++ b/net/tipc/group.c
+@@ -273,8 +273,8 @@ static struct tipc_member *tipc_group_find_node(struct tipc_group *grp,
+ 	return NULL;
+ }
  
--	if (unlikely(rc == -ENOBUFS))
-+	if (unlikely(rc == -ENOBUFS)) {
- 		tipc_node_link_down(n, bearer_id, false);
--	else
-+		skb_queue_purge(list);
-+		skb_queue_purge(&xmitq);
+-static void tipc_group_add_to_tree(struct tipc_group *grp,
+-				   struct tipc_member *m)
++struct tipc_member *tipc_group_add_to_tree(struct tipc_group *grp,
++					   struct tipc_member *m)
+ {
+ 	u64 nkey, key = (u64)m->node << 32 | m->port;
+ 	struct rb_node **n, *parent = NULL;
+@@ -282,7 +282,6 @@ static void tipc_group_add_to_tree(struct tipc_group *grp,
+ 
+ 	n = &grp->members.rb_node;
+ 	while (*n) {
+-		tmp = container_of(*n, struct tipc_member, tree_node);
+ 		parent = *n;
+ 		tmp = container_of(parent, struct tipc_member, tree_node);
+ 		nkey = (u64)tmp->node << 32 | tmp->port;
+@@ -291,17 +290,18 @@ static void tipc_group_add_to_tree(struct tipc_group *grp,
+ 		else if (key > nkey)
+ 			n = &(*n)->rb_right;
+ 		else
+-			return;
++			return tmp;
+ 	}
+ 	rb_link_node(&m->tree_node, parent, n);
+ 	rb_insert_color(&m->tree_node, &grp->members);
++	return m;
+ }
+ 
+ static struct tipc_member *tipc_group_create_member(struct tipc_group *grp,
+ 						    u32 node, u32 port,
+ 						    u32 instance, int state)
+ {
+-	struct tipc_member *m;
++	struct tipc_member *m, *n;
+ 
+ 	m = kzalloc(sizeof(*m), GFP_ATOMIC);
+ 	if (!m)
+@@ -315,10 +315,14 @@ static struct tipc_member *tipc_group_create_member(struct tipc_group *grp,
+ 	m->instance = instance;
+ 	m->bc_acked = grp->bc_snd_nxt - 1;
+ 	grp->member_cnt++;
+-	tipc_group_add_to_tree(grp, m);
+-	tipc_nlist_add(&grp->dests, m->node);
+-	m->state = state;
+-	return m;
++	n = tipc_group_add_to_tree(grp, m);
++	if (n == m) {
++		tipc_nlist_add(&grp->dests, m->node);
++		m->state = state;
 +	} else {
- 		tipc_bearer_xmit(net, bearer_id, &xmitq, &le->maddr);
++		kfree(m);
 +	}
++	return n;
+ }
  
- 	tipc_node_put(n);
- 
+ void tipc_group_add_member(struct tipc_group *grp, u32 node,
 -- 
 2.7.4
 
