@@ -2,127 +2,92 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C26099BE49
-	for <lists+tipc-discussion@lfdr.de>; Sat, 24 Aug 2019 16:44:46 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 673089CE59
+	for <lists+tipc-discussion@lfdr.de>; Mon, 26 Aug 2019 13:44:22 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1i1XHV-0001t7-9x; Sat, 24 Aug 2019 14:44:41 +0000
+	id 1i2DQ1-0005L4-W5; Mon, 26 Aug 2019 11:44:18 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jon.maloy@ericsson.com>) id 1i1XHU-0001t0-AB
- for tipc-discussion@lists.sourceforge.net; Sat, 24 Aug 2019 14:44:40 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1i2DQ1-0005Ks-CI
+ for tipc-discussion@lists.sourceforge.net; Mon, 26 Aug 2019 11:44:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Message-ID:Date:Subject:In-Reply-To:References:Cc:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=gi+FdJRcg9Kh4HK0Jnm2SB7zd7HIIvnkD6/I+x7o9+o=; b=Fir3WfyxKRBbdFKbpjq53gxzSW
- i5u5hvBvTGzV4Ofb/J7l03Mi16iyR8EckapVBkjC0bkB7gut+2BoYMtp4BDKnjPiYKlyw1nNyHdcB
- VTATL9ygvM2iLCPBkPfKdHCkqlYWtBvOIFd3DI2+uVrRX9t7Oicmi1+BfP44ZAFxJY84=;
+ bh=ikfTZ/cpnEyTeYU0DSYo3cd2Rv8HgDigu/S4fQmgE00=; b=UV14g37xdqK0qp53PDctYJcs+y
+ ypAoUV1vSnT02B0fxuZkV+0jw51HXMkklqplwzicPsktk4NukmMbRUB04PA1m64shtQIggLnGYaQM
+ hA8FKXRrKHTcPWTuq0HkXzDTilhrJh+ExbO3oC90l6kLz3rcZZ4vw1f0ynbcrasUOqA4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
- References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:
+ Subject:In-Reply-To:References:Cc:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=gi+FdJRcg9Kh4HK0Jnm2SB7zd7HIIvnkD6/I+x7o9+o=; b=MeA+vkmcnJ6up6SXNocG2MBl7m
- ut5wk0mC84lluNwvjWaZmgLqX2ibyb1HfzbqZA3HefG0MVYWBMzem0OpKe48Rw/9oc4xFoWBK1xub
- radIs6/IZMdP5bLNkFTqVnVdtC8o97c91abDXZ3mjPIcJHjjEJt0AVnxySd5VSZwg4wc=;
-Received: from mail-eopbgr780052.outbound.protection.outlook.com
- ([40.107.78.52] helo=NAM03-BY2-obe.outbound.protection.outlook.com)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.90_1)
- id 1i1XHQ-00Dw1Q-PU
- for tipc-discussion@lists.sourceforge.net; Sat, 24 Aug 2019 14:44:40 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=MXmBQ+sHCz6424dTDvAcEMwoFSdvRrEdHxObryDhSMNbOv/ylKfCUz1wmXS8MGnii4wHaLSk1JHnUF3w0cGRlVu8nJ/Owl2T3aTXhUM6RD7JzZEo64szv+U+mCOScJbyYIxaJ1nsUvXQRb35TiwNEmE2oR4HXDw+/rBYECSl50vx3q9w6VgciD1jQryrVHGDobcRudi60WYVEr81wjPkQL1yhcOR4SCGFoMmTOrFyFRe/Eijn8RxUn/qtFndSrn8tWCvUUMTr4kXfWok2zz61uvTONqbHjNTRERjaunmyl+GzDQRAUIVfmo8G5oDF15y/Qy0v3ampAFFDcwd1MYA2A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=gi+FdJRcg9Kh4HK0Jnm2SB7zd7HIIvnkD6/I+x7o9+o=;
- b=DLCjqMyIZ1BKHMburoOeoRmZ2EmKEnePLlr0tO2VnwWrPYXkv4cdafwh+7BgI4E4GphZBZDMKjcl6lBRLvtaqobz7LV+xT3ZM4Hi7a+Syk0VTindGLOYS+Fy8hYQOJnyjORdvb8loQVKtuk+pw3lVlY/isM1MZ8U7WYGFmuegZg0enSGp8JofOSrm4t2c496yClx53X/xq5Gpefsxnmbn3Gs/oJAF456H9HWO4WA2KQaO32b63OnNyLEMq206v77PTjCaKmiCRIP16fUARLQvAuAba+apkcz9G2nM+0grkPU3aSWmiRcwjCrIxnEAxkSwzcFnljrYYRTa5PGPui7Yg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=ericsson.com; dmarc=pass action=none header.from=ericsson.com;
- dkim=pass header.d=ericsson.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=gi+FdJRcg9Kh4HK0Jnm2SB7zd7HIIvnkD6/I+x7o9+o=;
- b=Cw2tghQp6ew0Bh+G7vh2zInN9k2DFswoTtBLd80gxYCnbNsW+lEsfi8XvbD1VXhsWaDzAsXBTRgREzywDje1sPYyyM98xBXirbNbDNBBDYmVZXQWyvNw1A2yRRCSM48x3vpZEOCcoD8ZyA9j6wWj2u2Fh68bmIZWbLQ3ZUxmT5U=
-Received: from CH2PR15MB3575.namprd15.prod.outlook.com (10.255.156.17) by
- CH2PR15MB3590.namprd15.prod.outlook.com (52.132.230.88) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2178.18; Sat, 24 Aug 2019 14:28:54 +0000
-Received: from CH2PR15MB3575.namprd15.prod.outlook.com
- ([fe80::49b5:cc04:ec33:c7c2]) by CH2PR15MB3575.namprd15.prod.outlook.com
- ([fe80::49b5:cc04:ec33:c7c2%7]) with mapi id 15.20.2199.015; Sat, 24 Aug 2019
- 14:28:54 +0000
-From: Jon Maloy <jon.maloy@ericsson.com>
-To: Jon Maloy <maloy@donjonn.com>
-Thread-Topic: [net-next  1/1] tipc: reduce risk of wakeup queue starvation
-Thread-Index: AQHVWobn2Ed6HX1bLESIQMn0hKanm6cKWNWQ
-Date: Sat, 24 Aug 2019 14:28:54 +0000
-Message-ID: <CH2PR15MB35753A5BEDDB5B76488936619AA70@CH2PR15MB3575.namprd15.prod.outlook.com>
+ bh=ikfTZ/cpnEyTeYU0DSYo3cd2Rv8HgDigu/S4fQmgE00=; b=BCwqDUkDkCAE51w5B379SNMPYo
+ uPGoh5B9vYcpL3Q6/9F6AcdkYoNL+O4P8owOmUvBaFJSGnf8Alxf0EnzxHuDkEP4pM7r3uDze/f4W
+ 31DuCCkF1EaFzlRTQc5XrdCXnPteWEsKz894rpDwv9gPn1dULaSGuxKBVsciZFXqd2bA=;
+Received: from f0-dek.dektech.com.au ([210.10.221.142]
+ helo=mail.dektech.com.au)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ id 1i2DPy-00GHII-I8
+ for tipc-discussion@lists.sourceforge.net; Mon, 26 Aug 2019 11:44:17 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.dektech.com.au (Postfix) with ESMTP id D31A849173;
+ Mon, 26 Aug 2019 21:44:07 +1000 (AEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
+ h=content-language:x-mailer:content-transfer-encoding
+ :content-type:content-type:mime-version:message-id:date:date
+ :subject:subject:in-reply-to:references:from:from:received
+ :received:received; s=mail_dkim; t=1566819847; bh=SA7eDgA7Qrk4Ax
+ KRNIeRaNNsFBYBws5XPIhRTJmzCSg=; b=ekS/Sh4kU8M8m5BEE1ZnBPvlPnTq5i
+ A2qtaYj8j7YDqy9+y5p6RmRJ0BwIvHAotMV2DDWC3bEBqFNmdhuYsHcB92qLSydb
+ 468nCsKaCX1s8q3/tVG3kMQVxtyL5EcxlSSGIM0nTRb75Fv37ySxbv6Bgw69STOo
+ +43MXH5jsfb+I=
+X-Virus-Scanned: amavisd-new at dektech.com.au
+Received: from mail.dektech.com.au ([127.0.0.1])
+ by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id 9y4hoZMVtOsx; Mon, 26 Aug 2019 21:44:07 +1000 (AEST)
+Received: from mail.dektech.com.au (localhost [127.0.0.1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.dektech.com.au (Postfix) with ESMTPS id 348BF4924C;
+ Mon, 26 Aug 2019 21:44:07 +1000 (AEST)
+Received: from VNLAP288VNPC (unknown [14.161.14.188])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id 52BA549173;
+ Mon, 26 Aug 2019 21:44:04 +1000 (AEST)
+From: "Tuong Lien Tong" <tuong.t.lien@dektech.com.au>
+To: "'Jon Maloy'" <jon.maloy@ericsson.com>, "'Jon Maloy'" <maloy@donjonn.com>
 References: <1566656332-17161-1-git-send-email-jon.maloy@ericsson.com>
-In-Reply-To: <1566656332-17161-1-git-send-email-jon.maloy@ericsson.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=jon.maloy@ericsson.com; 
-x-originating-ip: [198.24.6.220]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 440a2744-a671-47c4-e2d3-08d7289f6473
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600166)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:CH2PR15MB3590; 
-x-ms-traffictypediagnostic: CH2PR15MB3590:
-x-ld-processed: 92e84ceb-fbfd-47ab-be52-080c6b87953f,ExtAddr
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <CH2PR15MB35908E82891AD5225D3F4F179AA70@CH2PR15MB3590.namprd15.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6108;
-x-forefront-prvs: 0139052FDB
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(136003)(396003)(39860400002)(346002)(376002)(189003)(13464003)(199004)(6916009)(76176011)(7736002)(33656002)(66476007)(44832011)(256004)(66556008)(14444005)(11346002)(486006)(446003)(71190400001)(74316002)(71200400001)(316002)(66066001)(476003)(54906003)(305945005)(4326008)(8936002)(55016002)(14454004)(6436002)(86362001)(53936002)(5660300002)(25786009)(9686003)(53546011)(6506007)(26005)(102836004)(186003)(81156014)(478600001)(52536014)(8676002)(6116002)(99286004)(3846002)(2906002)(229853002)(76116006)(6246003)(7696005)(81166006)(64756008)(66446008)(66946007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR15MB3590;
- H:CH2PR15MB3575.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: ericsson.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: eZ+OMTu1zYy937t0Z4YMuvbzXLKQSYF9TnWaTbE1Xi5uyzNju0ixFDgkkjIidFw84ZhMltCqBkbGCo6OLzJdmf/iPN0DrrS89z2k1qK7IVH0SVIG79DWZK1Hz/yi8Kb3CQSRADeExVqf59ZeOBkUT8Rf3BuKoEPNW2WqMRFdXEddjTazi6MBsKkLkJaUPsWpH0nHkpZy+Vgt/E6Nw53HsK9I7QD34WHIec5kNS2A1VFHE+xTqmUMGJ/e708O1jR7uTZzJmVpg4qZsP4Weg2ZTs0uDetXY9SX+nvymqokrmsay4R5nbQheUQtnsD41AMpMGrmz4DGiCY2UqhabGMGaoPoGmANO2D/EB2QwSF3M6Cf9RXNEPufiX8GzsiXy9h1y+VRhJJ5Ag6s8jttWIETDJ3lqVrL4f8s/4GLID/N6R0=
+ <CH2PR15MB35753A5BEDDB5B76488936619AA70@CH2PR15MB3575.namprd15.prod.outlook.com>
+In-Reply-To: <CH2PR15MB35753A5BEDDB5B76488936619AA70@CH2PR15MB3575.namprd15.prod.outlook.com>
+Date: Mon, 26 Aug 2019 18:44:01 +0700
+Message-ID: <082c01d55c03$90eff580$b2cfe080$@dektech.com.au>
 MIME-Version: 1.0
-X-OriginatorOrg: ericsson.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 440a2744-a671-47c4-e2d3-08d7289f6473
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Aug 2019 14:28:54.4113 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: W0fBORPHR0e8TLdnxgD4ZqrKa9moGmeUXASLJwniw4r80HqhqrwPpEG6w6vlmkXKUYLHUgTu0DYyFw9JgYSfEw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR15MB3590
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHtBQm8KxwmyRanfw1rHuWN4a32tAEJKhQTptWznVA=
+Content-Language: en-us
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: dektech.com.au]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.78.52 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ trust [210.10.221.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Headers-End: 1i1XHQ-00Dw1Q-PU
+X-Headers-End: 1i2DPy-00GHII-I8
 Subject: Re: [tipc-discussion] [net-next 1/1] tipc: reduce risk of wakeup
  queue starvation
 X-BeenThere: tipc-discussion@lists.sourceforge.net
@@ -136,19 +101,69 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>, Mohan Krishna Ghanta Krishnamurthy
+Cc: tipc-discussion@lists.sourceforge.net, 'Mohan Krishna Ghanta Krishnamurthy'
  <mohan.krishna.ghanta.krishnamurthy@ericsson.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Hi Tuong,
-While experimenting with byte-oriented flow control I realized that this is a very real problem that has to be fixed.
-I first tried your suggestion with putting the congestion test at the end of tipc_link_xmit(), but realized that we need access to the original message header when we are scheduling a user to the wakeup queue. But this header is already gone if original the message was bundled and deleted!
-Also, there is no more space in the CB area for storing the per-level counter in the bundle packets, as was my first suggestion.
+Hi Jon,
 
-So, this was the simplest solution I could come up with. It seems to work well, but seems to give a slight performance degradation. I am afraid we will have to accept that for now.
+Yes, you are right, my previous patch was not complete (sorry, I have not
+verified it but just wanted to give a general idea...). Actually, we could
+still preserve the necessary data/header of the original message for
+building the wakeup message later as needed (look, just the message 'dport'
+is enough). However, I don't really like this approach because there is
+still an issue there (see below).
+
+Your patch can fix the bug I mentioned earlier (i.e. unlimited bundles of
+small messages...), but looks like it has a side-effect. We may again
+encounter the starvation issue that we have tried to overcome by the
+previous patches, that is, a socket user with a certain importance level
+messages can make the others starved, in this case it's the 'CRITICAL'
+level? With the additional condition at the link_xmit(), we will limit the
+other level users (i.e. report link congestion & cause them to wait...) just
+due to the congestion at the 'CRITICAL' level (i.e. not their own levels) of
+the backlog queue. Even, a "true" CRITICAL user that wants to send a message
+will face the issue because the bundles of small messages at lower levels
+occupy all the 'CRITICAL' slots...
+
+Really, I don't understand the purpose we set the importance level of a
+bundle to 'CRITICAL', which even gives more slots for the "less important"
+users with small messages... Isn't it by dividing & increasing the backlog
+level limits, we want to give more chances for higher level users in message
+sending? I think we should improve the bundle algorithm a little bit to
+reflect the backlog level usages accurately instead. I will send you another
+patch...
+ 
+BR/Tuong
+
+-----Original Message-----
+From: Jon Maloy <jon.maloy@ericsson.com> 
+Sent: Saturday, August 24, 2019 9:29 PM
+To: Jon Maloy <maloy@donjonn.com>
+Cc: Mohan Krishna Ghanta Krishnamurthy
+<mohan.krishna.ghanta.krishnamurthy@ericsson.com>;
+parthasarathy.bhuvaragan@gmail.com; Tung Quang Nguyen
+<tung.q.nguyen@dektech.com.au>; Hoang Huu Le <hoang.h.le@dektech.com.au>;
+Tuong Tong Lien <tuong.t.lien@dektech.com.au>; Gordan Mihaljevic
+<gordan.mihaljevic@dektech.com.au>; ying.xue@windriver.com;
+tipc-discussion@lists.sourceforge.net
+Subject: RE: [net-next 1/1] tipc: reduce risk of wakeup queue starvation
+
+Hi Tuong,
+While experimenting with byte-oriented flow control I realized that this is
+a very real problem that has to be fixed.
+I first tried your suggestion with putting the congestion test at the end of
+tipc_link_xmit(), but realized that we need access to the original message
+header when we are scheduling a user to the wakeup queue. But this header is
+already gone if original the message was bundled and deleted!
+Also, there is no more space in the CB area for storing the per-level
+counter in the bundle packets, as was my first suggestion.
+
+So, this was the simplest solution I could come up with. It seems to work
+well, but seems to give a slight performance degradation. I am afraid we
+will have to accept that for now.
 
 Please give feedback.
 
@@ -171,24 +186,30 @@ Please give feedback.
 > discussion@lists.sourceforge.net
 > Subject: [net-next 1/1] tipc: reduce risk of wakeup queue starvation
 > 
-> We have identified a problem with the "oversubscription" policy in the link
+> We have identified a problem with the "oversubscription" policy in the
+link
 > transmission code.
 > 
 > When small messages are transmitted, and the sending link has reached the
-> transmit window limit, those messages will be bundled and put into the link
+> transmit window limit, those messages will be bundled and put into the
+link
 > backlog queue. However, bundles of data messages are counted at the
-> 'CRITICAL' level, so that the counter for that level, instead of the counter for
+> 'CRITICAL' level, so that the counter for that level, instead of the
+counter for
 > the real, bundled message's level is the one being increased.
 > Subsequent, to-be-bundled data messagea at non-CRITICAL levels continue to
 > be tested against the unchanged counter for their own level, while
 > contributing to an unrestrained increase at the CRITICAL backlog level.
 > 
-> This leaves a gap in congestion control algorithm for small messages, and may
+> This leaves a gap in congestion control algorithm for small messages, and
+may
 > eventually lead to buffer exhaustion and link reset.
 > 
-> We fix this by adding a test for congestion at the CRITICAL level, as well as the
+> We fix this by adding a test for congestion at the CRITICAL level, as well
+as the
 > existing testing for the message's own level, whenever a message is
-> transmitted. We also refuse to notify any waiting users as long as congestion at
+> transmitted. We also refuse to notify any waiting users as long as
+congestion at
 > the CRITICAL level exists.
 > 
 > Reported-by: Tuong Lien <tuong.t.lien@dektech.com.au>
@@ -197,7 +218,8 @@ Please give feedback.
 >  net/tipc/link.c | 18 +++++++++++++-----
 >  1 file changed, 13 insertions(+), 5 deletions(-)
 > 
-> diff --git a/net/tipc/link.c b/net/tipc/link.c index 6cc75ff..25a6acb 100644
+> diff --git a/net/tipc/link.c b/net/tipc/link.c index 6cc75ff..25a6acb
+100644
 > --- a/net/tipc/link.c
 > +++ b/net/tipc/link.c
 > @@ -77,6 +77,11 @@ struct tipc_stats {
@@ -246,16 +268,19 @@ Please give feedback.
 > sk_buff_head *list,
 >  	}
 > 
->  	/* Allow oversubscription of one data msg per source at congestion */
+>  	/* Allow oversubscription of one data msg per source at congestion
+*/
 > -	if (unlikely(l->backlog[imp].len >= l->backlog[imp].limit)) {
 > +	if (bklog[TIPC_CRITICAL_IMPORTANCE].len >=
 > +	    bklog[TIPC_CRITICAL_IMPORTANCE].limit ||
 > +	    bklog[imp].len >= bklog[imp].limit) {
 >  		if (imp == TIPC_SYSTEM_IMPORTANCE) {
->  			pr_warn("%s<%s>, link overflow", link_rst_msg, l->name);
+>  			pr_warn("%s<%s>, link overflow", link_rst_msg,
+l->name);
 >  			return -ENOBUFS;
 > --
 > 2.1.4
+
 
 
 
