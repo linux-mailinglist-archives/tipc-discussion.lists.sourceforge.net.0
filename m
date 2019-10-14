@@ -2,74 +2,72 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id D89CDD60F0
-	for <lists+tipc-discussion@lfdr.de>; Mon, 14 Oct 2019 13:08:03 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2CCAD6176
+	for <lists+tipc-discussion@lfdr.de>; Mon, 14 Oct 2019 13:37:23 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iJyCm-0001Ma-3Z; Mon, 14 Oct 2019 11:08:00 +0000
+	id 1iJyf8-0000yb-7Z; Mon, 14 Oct 2019 11:37:18 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1iJyCj-0001MN-RV
- for tipc-discussion@lists.sourceforge.net; Mon, 14 Oct 2019 11:07:57 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1iJyf7-0000yN-Bq
+ for tipc-discussion@lists.sourceforge.net; Mon, 14 Oct 2019 11:37:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=References:In-Reply-To:Message-Id:Date:Subject:To:
- From:Sender:Reply-To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:
+ MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=9L4azVrt4KWsbcua7tFMR6beqOL3NCXDHEHbBIXYVgU=; b=Gj37GQnJ+ppw7fVYaZPAsodqQt
- 5zXJl8kNiAz9PSYmbQqYHeMXwEYCWT9M9S3HW8s7F7LAUtfNuICp6y03WdSPr6IdVHjPoK/IZIjVg
- 7uPsGnA+n2SvcbHO+1gZp/Ch42oDXYp95K3XYM8WmK7hLgUcucBpfCBkCbCNT7efVU0Y=;
+ bh=CzOWdQmpGzJxMZavps9RwNcij3JVuxzOSiBMgBW7uKA=; b=VK1DDPcSlgsEdSnuV8d06Tcycj
+ 4CnFGe9wv3YAhHaQnEaZJQZ/mwH190TZY4nokICAvhOWQva6A6UBkksgza6XeissLVCiB4HoMpfeU
+ 2R5a97RZ/WK73t8l2DTH3NyPfazT4GD7yirMds/gUY0Aeuid691Yz6D8elR6UMIyU8P8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=References:In-Reply-To:Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc
- :MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ h=Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:MIME-Version:
+ Content-Type:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=9L4azVrt4KWsbcua7tFMR6beqOL3NCXDHEHbBIXYVgU=; b=bWJzFcXOuQ/ysjm1pl9vohQ6Ht
- QFpjSa6DWp/nedkJVi1RJbKRSOcahXzs2E0vWwOFRhIC/bsDEyYDa74G35qYMT8Qr70JDgAsIahOb
- 4NNshvxXrxVHlGIE8AK9TcTDh4qnUPbgoDNwb9Y48z8sU9jnidELmRTuXXnG1GGjmriY=;
+ bh=CzOWdQmpGzJxMZavps9RwNcij3JVuxzOSiBMgBW7uKA=; b=OVrTFdm9YGPd1qEzKcDuyAD1p2
+ FnakigAYd3lvchY1Zh7nxmzVf9KCZ+F0SBoA+lFlEa53A7gGFQy1xPEMtn9zIy/VqvnawsPmBLDuI
+ s5Iu4o8PX4HkxGE9DPKbOVzce8H1CvN9R8L052UM6kue+QF2bwzcm/kUYJdmrzYT4tLY=;
 Received: from f0-dek.dektech.com.au ([210.10.221.142]
  helo=mail.dektech.com.au)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1iJyCi-008cZC-9G
- for tipc-discussion@lists.sourceforge.net; Mon, 14 Oct 2019 11:07:57 +0000
+ id 1iJyf4-000I0d-I1
+ for tipc-discussion@lists.sourceforge.net; Mon, 14 Oct 2019 11:37:17 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.dektech.com.au (Postfix) with ESMTP id 941FE48D2E;
- Mon, 14 Oct 2019 22:07:44 +1100 (AEDT)
+ by mail.dektech.com.au (Postfix) with ESMTP id 4E89D48D2D;
+ Mon, 14 Oct 2019 22:37:04 +1100 (AEDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
- h=references:in-reply-to:x-mailer:message-id:date:date:subject
- :subject:from:from:received:received:received; s=mail_dkim; t=
- 1571051264; bh=MRxpf2HOItepeOnoN2xeLIo0tbEnuoRyLvcW+JSnNag=; b=B
- 4TASbXhyG2SQpceoXTuBHlHNkOYX5+am+5xBq1EG5AEr806y51E7c3JSL4seMv8m
- WxclP/wxPx1VYfmO/zNjrhP/pBj9ILcMkIZOIc6H5mFW9LSUt+gHqVsCHPnftg26
- pQ/jnEUqiUCOAZZt1eqt3Cas0yN9TLtnSW7zRnzJ1s=
+ h=x-mailer:message-id:date:date:subject:subject:from:from
+ :received:received:received; s=mail_dkim; t=1571053024; bh=Nl+vf
+ 1QCWq4h0GJ2JysiwfTQ3Ibk4MPggxvt9Op0dEo=; b=o5aIeb/NkTshCZY75L0a0
+ Ewg8MOuIjP4eMvrHfOM/7K9uW/McVa9wyFn/dX9iZGWCrVa7SeWzvYUIpxUTV+Xj
+ nC+ih1o0HkAskygDuHdyTnOJbEqfznRgQ10N5HThkbnoWFcqRaFFlMeV6LnnE/nJ
+ HORTwmmNOUbc565nxudAPQ=
 X-Virus-Scanned: amavisd-new at dektech.com.au
 Received: from mail.dektech.com.au ([127.0.0.1])
  by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id URyE3hr3_zCD; Mon, 14 Oct 2019 22:07:44 +1100 (AEDT)
+ with ESMTP id 8-fCUJIEvcRw; Mon, 14 Oct 2019 22:37:04 +1100 (AEDT)
 Received: from mail.dektech.com.au (localhost [127.0.0.1])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPS id 7A59E48D30;
- Mon, 14 Oct 2019 22:07:44 +1100 (AEDT)
+ by mail.dektech.com.au (Postfix) with ESMTPS id 2F38848D2E;
+ Mon, 14 Oct 2019 22:37:03 +1100 (AEDT)
 Received: from localhost.localdomain (unknown [14.161.14.188])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPSA id AE8AD48D2E;
- Mon, 14 Oct 2019 22:07:43 +1100 (AEDT)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id 2EDD948D2D;
+ Mon, 14 Oct 2019 22:37:03 +1100 (AEDT)
 From: Tuong Lien <tuong.t.lien@dektech.com.au>
 To: tipc-discussion@lists.sourceforge.net, jon.maloy@ericsson.com,
  maloy@donjonn.com, ying.xue@windriver.com
-Date: Mon, 14 Oct 2019 18:07:22 +0700
-Message-Id: <20191014110722.13248-6-tuong.t.lien@dektech.com.au>
+Date: Mon, 14 Oct 2019 18:36:58 +0700
+Message-Id: <20191014113658.13612-1-tuong.t.lien@dektech.com.au>
 X-Mailer: git-send-email 2.13.7
-In-Reply-To: <20191014110722.13248-1-tuong.t.lien@dektech.com.au>
-References: <20191014110722.13248-1-tuong.t.lien@dektech.com.au>
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
@@ -86,10 +84,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.0 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1iJyCi-008cZC-9G
-Subject: [tipc-discussion] [PATCH RFC 5/5] tipc: add support for AEAD key
- setting via netlink
+X-Headers-End: 1iJyf4-000I0d-I1
+Subject: [tipc-discussion] [iproute2] tipc: add new commands to set TIPC
+ AEAD key
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,25 +103,70 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-This commit adds two netlink commands to TIPC in order for user to be
-able to set or remove AEAD keys:
-- TIPC_NL_KEY_SET
-- TIPC_NL_KEY_FLUSH
+Two new commands are added as part of 'tipc node' command:
 
-When the 'KEY_SET' is given along with the key data, the key will be
-initiated and attached to TIPC crypto. On the other hand, the
-'KEY_FLUSH' command will remove all existing keys if any.
+ $tipc node set key KEY [algname ALGNAME] [nodeid NODEID]
+ $tipc node flush key
+
+which enable user to set and remove AEAD keys in kernel TIPC.
+
+For the 'set key' command, the given 'nodeid' parameter decides the
+mode to be applied to the key, particularly:
+
+- If NODEID is empty, the key is a 'cluster' key which will be used for
+all message encryption/decryption from/to the node (i.e. both TX & RX).
+The same key needs to be set in the other nodes i.e. the 'cluster key'
+mode.
+
+- If NODEID is own node, the key is used for message encryption (TX)
+from the node. Whereas, if NODEID is a peer node, the key is for
+message decryption (RX) from that peer node.
+This is the 'per-node-key' mode that each nodes in the cluster has its
+specific (TX) key.
 
 Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
 ---
+ include/uapi/linux/tipc.h         |  21 ++++++
  include/uapi/linux/tipc_netlink.h |   4 ++
- net/tipc/netlink.c                |  16 ++++-
- net/tipc/node.c                   | 133 ++++++++++++++++++++++++++++++++++++++
- net/tipc/node.h                   |   2 +
- 4 files changed, 154 insertions(+), 1 deletion(-)
+ tipc/misc.c                       |  38 +++++++++++
+ tipc/misc.h                       |   1 +
+ tipc/node.c                       | 133 +++++++++++++++++++++++++++++++++++++-
+ 5 files changed, 195 insertions(+), 2 deletions(-)
 
+diff --git a/include/uapi/linux/tipc.h b/include/uapi/linux/tipc.h
+index e16cb4e2..b118ce9b 100644
+--- a/include/uapi/linux/tipc.h
++++ b/include/uapi/linux/tipc.h
+@@ -232,6 +232,27 @@ struct tipc_sioc_nodeid_req {
+ 	char node_id[TIPC_NODEID_LEN];
+ };
+ 
++/*
++ * TIPC Crypto, AEAD mode
++ */
++#define TIPC_AEAD_MAX_ALG_NAME	(32)
++#define TIPC_AEAD_MIN_KEYLEN	(16 + 4)
++#define TIPC_AEAD_MAX_KEYLEN	(32 + 4)
++
++struct tipc_aead_key {
++	char alg_name[TIPC_AEAD_MAX_ALG_NAME];
++	unsigned int keylen;	/* in bytes */
++	char key[];
++};
++
++#define TIPC_AEAD_KEY_MAX_SIZE	(sizeof(struct tipc_aead_key) + \
++						TIPC_AEAD_MAX_KEYLEN)
++
++static inline int tipc_aead_key_size(struct tipc_aead_key *key)
++{
++	return sizeof(*key) + key->keylen;
++}
++
+ /* The macros and functions below are deprecated:
+  */
+ 
 diff --git a/include/uapi/linux/tipc_netlink.h b/include/uapi/linux/tipc_netlink.h
-index efb958fd167d..6c2194ab745b 100644
+index efb958fd..6c2194ab 100644
 --- a/include/uapi/linux/tipc_netlink.h
 +++ b/include/uapi/linux/tipc_netlink.h
 @@ -63,6 +63,8 @@ enum {
@@ -145,195 +187,244 @@ index efb958fd167d..6c2194ab745b 100644
  
  	__TIPC_NLA_NODE_MAX,
  	TIPC_NLA_NODE_MAX = __TIPC_NLA_NODE_MAX - 1
-diff --git a/net/tipc/netlink.c b/net/tipc/netlink.c
-index d32bbd0f5e46..f118cc9d0885 100644
---- a/net/tipc/netlink.c
-+++ b/net/tipc/netlink.c
-@@ -102,7 +102,11 @@ const struct nla_policy tipc_nl_link_policy[TIPC_NLA_LINK_MAX + 1] = {
- const struct nla_policy tipc_nl_node_policy[TIPC_NLA_NODE_MAX + 1] = {
- 	[TIPC_NLA_NODE_UNSPEC]		= { .type = NLA_UNSPEC },
- 	[TIPC_NLA_NODE_ADDR]		= { .type = NLA_U32 },
--	[TIPC_NLA_NODE_UP]		= { .type = NLA_FLAG }
-+	[TIPC_NLA_NODE_UP]		= { .type = NLA_FLAG },
-+	[TIPC_NLA_NODE_ID]		= { .type = NLA_BINARY,
-+					    .len = TIPC_NODEID_LEN},
-+	[TIPC_NLA_NODE_KEY]		= { .type = NLA_BINARY,
-+					    .len = TIPC_AEAD_KEY_SIZE_MAX},
- };
- 
- /* Properties valid for media, bearer and link */
-@@ -257,6 +261,16 @@ static const struct genl_ops tipc_genl_v2_ops[] = {
- 		.dumpit	= tipc_udp_nl_dump_remoteip,
- 	},
- #endif
-+	{
-+		.cmd	= TIPC_NL_KEY_SET,
-+		.validate = GENL_DONT_VALIDATE_STRICT | GENL_DONT_VALIDATE_DUMP,
-+		.doit	= tipc_nl_node_set_key,
-+	},
-+	{
-+		.cmd	= TIPC_NL_KEY_FLUSH,
-+		.validate = GENL_DONT_VALIDATE_STRICT | GENL_DONT_VALIDATE_DUMP,
-+		.doit	= tipc_nl_node_flush_key,
-+	},
- };
- 
- struct genl_family tipc_genl_family __ro_after_init = {
-diff --git a/net/tipc/node.c b/net/tipc/node.c
-index e6e0c5bee4bc..6621091f22d1 100644
---- a/net/tipc/node.c
-+++ b/net/tipc/node.c
-@@ -2628,6 +2628,139 @@ int tipc_nl_node_dump_monitor_peer(struct sk_buff *skb,
- 	return skb->len;
+diff --git a/tipc/misc.c b/tipc/misc.c
+index e4b1cd0c..1daf3072 100644
+--- a/tipc/misc.c
++++ b/tipc/misc.c
+@@ -98,6 +98,44 @@ int str2nodeid(char *str, uint8_t *id)
+ 	return 0;
  }
  
-+static int tipc_nl_retrieve_key(struct nlattr **attrs,
-+				struct tipc_aead_key **key)
++int str2key(char *str, struct tipc_aead_key *key)
 +{
-+	struct nlattr *attr = attrs[TIPC_NLA_NODE_KEY];
++	int len = strlen(str);
++	int ishex = 0;
++	int i;
 +
-+	if (!attr)
-+		return -ENODATA;
-+
-+	*key = (struct tipc_aead_key *)nla_data(attr);
-+	if (nla_len(attr) < tipc_aead_key_size(*key))
-+		return -EINVAL;
-+
-+	return 0;
-+}
-+
-+static int tipc_nl_retrieve_nodeid(struct nlattr **attrs, u8 **node_id)
-+{
-+	struct nlattr *attr = attrs[TIPC_NLA_NODE_ID];
-+
-+	if (!attr)
-+		return -ENODATA;
-+
-+	if (nla_len(attr) < TIPC_NODEID_LEN)
-+		return -EINVAL;
-+
-+	*node_id = (u8 *)nla_data(attr);
-+	return 0;
-+}
-+
-+int __tipc_nl_node_set_key(struct sk_buff *skb, struct genl_info *info)
-+{
-+	struct nlattr *attrs[TIPC_NLA_NODE_MAX + 1];
-+	struct net *net = sock_net(skb->sk);
-+	struct tipc_net *tn = tipc_net(net);
-+	struct tipc_node *n = NULL;
-+	struct tipc_aead_key *ukey;
-+	struct tipc_crypto *c;
-+	u8 *id, *own_id;
-+	int rc = 0;
-+
-+	if (!info->attrs[TIPC_NLA_NODE])
-+		return -EINVAL;
-+
-+	rc = nla_parse_nested(attrs, TIPC_NLA_NODE_MAX,
-+			      info->attrs[TIPC_NLA_NODE],
-+			      tipc_nl_node_policy, info->extack);
-+	if (rc)
-+		goto exit;
-+
-+	own_id = tipc_own_id(net);
-+	if (!own_id) {
-+		rc = -EPERM;
-+		goto exit;
++	/* Check if the input is a hex string (i.e. 0x...) */
++	if (len > 2 && strncmp(str, "0x", 2) == 0) {
++	    ishex = is_hex(str + 2, len - 2 - 1);
++	    if (ishex) {
++		len -= 2;
++		str += 2;
++	    }
 +	}
 +
-+	rc = tipc_nl_retrieve_key(attrs, &ukey);
-+	if (rc)
-+		goto exit;
-+
-+	rc = tipc_aead_key_validate(ukey);
-+	if (rc)
-+		goto exit;
-+
-+	rc = tipc_nl_retrieve_nodeid(attrs, &id);
-+	switch (rc) {
-+	case -ENODATA:
-+		/* Cluster key mode */
-+		rc = tipc_crypto_key_init(tn->crypto_tx, ukey, CLUSTER_KEY);
-+		break;
-+	case 0:
-+		/* Per-node key mode */
-+		if (!memcmp(id, own_id, NODE_ID_LEN)) {
-+			c = tn->crypto_tx;
-+		} else {
-+			n = tipc_node_find_by_id(net, id) ?:
-+				tipc_node_create(net, 0, id, 0xffffu, true);
-+			if (unlikely(!n)) {
-+				rc = -ENOMEM;
-+				break;
++	/* Obtain key: */
++	if (!ishex) {
++		key->keylen = len;
++		memcpy(key->key, str, len);
++	} else {
++		/* Convert hex string to key */
++		key->keylen = (len + 1) / 2;
++		for (i = 0; i < key->keylen; i++) {
++			if (i == 0 && len % 2 != 0) {
++				if (sscanf(str, "%1hhx", &key->key[0]) != 1)
++					return -1;
++				str += 1;
++				continue;
 +			}
-+			c = n->crypto_rx;
++			if (sscanf(str, "%2hhx", &key->key[i]) != 1)
++				return -1;
++			str += 2;
 +		}
-+
-+		rc = tipc_crypto_key_init(c, ukey, PER_NODE_KEY);
-+		if (n)
-+			tipc_node_put(n);
-+		break;
-+	default:
-+		break;
 +	}
 +
-+exit:
-+	return (rc < 0) ? rc : 0;
-+}
-+
-+int tipc_nl_node_set_key(struct sk_buff *skb, struct genl_info *info)
-+{
-+	int err;
-+
-+	rtnl_lock();
-+	err = __tipc_nl_node_set_key(skb, info);
-+	rtnl_unlock();
-+
-+	return err;
-+}
-+
-+int __tipc_nl_node_flush_key(struct sk_buff *skb, struct genl_info *info)
-+{
-+	struct net *net = sock_net(skb->sk);
-+	struct tipc_net *tn = tipc_net(net);
-+	struct tipc_node *n;
-+
-+	tipc_crypto_key_flush(tn->crypto_tx);
-+	rcu_read_lock();
-+	list_for_each_entry_rcu(n, &tn->node_list, list)
-+		tipc_crypto_key_flush(n->crypto_rx);
-+	rcu_read_unlock();
-+
-+	pr_info("All keys are flushed!\n");
 +	return 0;
 +}
 +
-+int tipc_nl_node_flush_key(struct sk_buff *skb, struct genl_info *info)
+ void nodeid2str(uint8_t *id, char *str)
+ {
+ 	int i;
+diff --git a/tipc/misc.h b/tipc/misc.h
+index ff2f31f1..59309f68 100644
+--- a/tipc/misc.h
++++ b/tipc/misc.h
+@@ -18,5 +18,6 @@ uint32_t str2addr(char *str);
+ int str2nodeid(char *str, uint8_t *id);
+ void nodeid2str(uint8_t *id, char *str);
+ void hash2nodestr(uint32_t hash, char *str);
++int str2key(char *str, struct tipc_aead_key *key);
+ 
+ #endif
+diff --git a/tipc/node.c b/tipc/node.c
+index 2fec6753..fc81bd30 100644
+--- a/tipc/node.c
++++ b/tipc/node.c
+@@ -157,6 +157,111 @@ static int cmd_node_set_nodeid(struct nlmsghdr *nlh, const struct cmd *cmd,
+ 	return msg_doit(nlh, NULL, NULL);
+ }
+ 
++static void cmd_node_set_key_help(struct cmdl *cmdl)
 +{
-+	int err;
-+
-+	rtnl_lock();
-+	err = __tipc_nl_node_flush_key(skb, info);
-+	rtnl_unlock();
-+
-+	return err;
++	fprintf(stderr,
++		"Usage: %s node set key KEY [algname ALGNAME] [nodeid NODEID]\n\n"
++		"PROPERTIES\n"
++		" KEY                   - Symmetric KEY & SALT as a normal or hex string\n"
++		"                         that consists of two parts:\n"
++		"                         [KEY: 16, 24 or 32 octets][SALT: 4 octets]\n\n"
++		" algname ALGNAME       - Default: \"gcm(aes)\"\n\n"
++		" nodeid NODEID         - Own or peer node identity to which the key will\n"
++		"                         be attached. If not present, the key is a cluster\n"
++		"                         key!\n\n"
++		"EXAMPLES\n"
++		"  %s node set key this_is_a_key16_salt algname \"gcm(aes)\" nodeid node1\n"
++		"  %s node set key 0x746869735F69735F615F6B657931365F73616C74 nodeid node2\n\n",
++		cmdl->argv[0], cmdl->argv[0], cmdl->argv[0]);
 +}
 +
- /**
-  * tipc_node_dump - dump TIPC node data
-  * @n: tipc node to be dumped
-diff --git a/net/tipc/node.h b/net/tipc/node.h
-index ec44ab454aa9..a0c59893fbd6 100644
---- a/net/tipc/node.h
-+++ b/net/tipc/node.h
-@@ -115,4 +115,6 @@ int tipc_nl_node_get_monitor(struct sk_buff *skb, struct genl_info *info);
- int tipc_nl_node_dump_monitor(struct sk_buff *skb, struct netlink_callback *cb);
- int tipc_nl_node_dump_monitor_peer(struct sk_buff *skb,
- 				   struct netlink_callback *cb);
-+int tipc_nl_node_set_key(struct sk_buff *skb, struct genl_info *info);
-+int tipc_nl_node_flush_key(struct sk_buff *skb, struct genl_info *info);
- #endif
++static int cmd_node_set_key(struct nlmsghdr *nlh, const struct cmd *cmd,
++			    struct cmdl *cmdl, void *data)
++{
++	struct {
++		struct tipc_aead_key key;
++		char mem[TIPC_AEAD_MAX_KEYLEN + 1];
++	} input = {};
++	struct opt opts[] = {
++		{ "algname",	OPT_KEYVAL,	NULL },
++		{ "nodeid",	OPT_KEYVAL,	NULL },
++		{ NULL }
++	};
++	struct nlattr *nest;
++	struct opt *opt_algname, *opt_nodeid;
++	char buf[MNL_SOCKET_BUFFER_SIZE];
++	uint8_t id[TIPC_NODEID_LEN] = {0,};
++	int keysize;
++	char *str;
++
++	if (help_flag) {
++		(cmd->help)(cmdl);
++		return -EINVAL;
++	}
++
++	if (cmdl->optind >= cmdl->argc) {
++		fprintf(stderr, "error, missing key\n");
++		return -EINVAL;
++	}
++
++	/* Get user key */
++	str = shift_cmdl(cmdl);
++	if (str2key(str, &input.key)) {
++		fprintf(stderr, "error, invalid key input\n");
++		return -EINVAL;
++	}
++
++	if (parse_opts(opts, cmdl) < 0)
++		return -EINVAL;
++
++	/* Get algorithm name, default: "gcm(aes)" */
++	opt_algname = get_opt(opts, "algname");
++	if (!opt_algname)
++		strcpy(input.key.alg_name, "gcm(aes)");
++	else
++		strcpy(input.key.alg_name, opt_algname->val);
++
++	/* Get node identity */
++	opt_nodeid = get_opt(opts, "nodeid");
++	if (opt_nodeid && str2nodeid(opt_nodeid->val, id)) {
++		fprintf(stderr, "error, invalid node identity\n");
++		return -EINVAL;
++	}
++
++	/* Init & do the command */
++	nlh = msg_init(buf, TIPC_NL_KEY_SET);
++	if (!nlh) {
++		fprintf(stderr, "error, message initialisation failed\n");
++		return -1;
++	}
++	nest = mnl_attr_nest_start(nlh, TIPC_NLA_NODE);
++	keysize = tipc_aead_key_size(&input.key);
++	mnl_attr_put(nlh, TIPC_NLA_NODE_KEY, keysize, &input.key);
++	if (opt_nodeid)
++		mnl_attr_put(nlh, TIPC_NLA_NODE_ID, TIPC_NODEID_LEN, id);
++	mnl_attr_nest_end(nlh, nest);
++	return msg_doit(nlh, NULL, NULL);
++}
++
++static int cmd_node_flush_key(struct nlmsghdr *nlh, const struct cmd *cmd,
++			      struct cmdl *cmdl, void *data)
++{
++	char buf[MNL_SOCKET_BUFFER_SIZE];
++
++	if (help_flag) {
++		(cmd->help)(cmdl);
++		return -EINVAL;
++	}
++
++	/* Init & do the command */
++	nlh = msg_init(buf, TIPC_NL_KEY_FLUSH);
++	if (!nlh) {
++		fprintf(stderr, "error, message initialisation failed\n");
++		return -1;
++	}
++	return msg_doit(nlh, NULL, NULL);
++}
++
+ static int nodeid_get_cb(const struct nlmsghdr *nlh, void *data)
+ {
+ 	struct nlattr *info[TIPC_NLA_MAX + 1] = {};
+@@ -270,13 +375,34 @@ static int cmd_node_set_netid(struct nlmsghdr *nlh, const struct cmd *cmd,
+ 	return msg_doit(nlh, NULL, NULL);
+ }
+ 
++static void cmd_node_flush_help(struct cmdl *cmdl)
++{
++	fprintf(stderr,
++		"Usage: %s node flush PROPERTY\n\n"
++		"PROPERTIES\n"
++		" key                   - Flush all symmetric-keys\n",
++		cmdl->argv[0]);
++}
++
++static int cmd_node_flush(struct nlmsghdr *nlh, const struct cmd *cmd,
++			  struct cmdl *cmdl, void *data)
++{
++	const struct cmd cmds[] = {
++		{ "key",        cmd_node_flush_key,     NULL },
++		{ NULL }
++	};
++
++	return run_cmd(nlh, cmd, cmds, cmdl, NULL);
++}
++
+ static void cmd_node_set_help(struct cmdl *cmdl)
+ {
+ 	fprintf(stderr,
+ 		"Usage: %s node set PROPERTY\n\n"
+ 		"PROPERTIES\n"
+ 		" identity NODEID       - Set node identity\n"
+-		" clusterid CLUSTERID   - Set local cluster id\n",
++		" clusterid CLUSTERID   - Set local cluster id\n"
++		" key PROPERTY          - Set symmetric-key\n",
+ 		cmdl->argv[0]);
+ }
+ 
+@@ -288,6 +414,7 @@ static int cmd_node_set(struct nlmsghdr *nlh, const struct cmd *cmd,
+ 		{ "identity",	cmd_node_set_nodeid,	NULL },
+ 		{ "netid",	cmd_node_set_netid,	NULL },
+ 		{ "clusterid",	cmd_node_set_netid,	NULL },
++		{ "key",	cmd_node_set_key,	cmd_node_set_key_help },
+ 		{ NULL }
+ 	};
+ 
+@@ -325,7 +452,8 @@ void cmd_node_help(struct cmdl *cmdl)
+ 		"COMMANDS\n"
+ 		" list                  - List remote nodes\n"
+ 		" get                   - Get local node parameters\n"
+-		" set                   - Set local node parameters\n",
++		" set                   - Set local node parameters\n"
++		" flush                 - Flush local node parameters\n",
+ 		cmdl->argv[0]);
+ }
+ 
+@@ -336,6 +464,7 @@ int cmd_node(struct nlmsghdr *nlh, const struct cmd *cmd, struct cmdl *cmdl,
+ 		{ "list",	cmd_node_list,	NULL },
+ 		{ "get",	cmd_node_get,	cmd_node_get_help },
+ 		{ "set",	cmd_node_set,	cmd_node_set_help },
++		{ "flush",	cmd_node_flush, cmd_node_flush_help},
+ 		{ NULL }
+ 	};
+ 
 -- 
 2.13.7
 
