@@ -2,79 +2,83 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAD2AD60EC
-	for <lists+tipc-discussion@lfdr.de>; Mon, 14 Oct 2019 13:07:56 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0A6CD60EA
+	for <lists+tipc-discussion@lfdr.de>; Mon, 14 Oct 2019 13:07:53 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iJyCf-0001Ll-0P; Mon, 14 Oct 2019 11:07:53 +0000
+	id 1iJyCc-0003J0-GP; Mon, 14 Oct 2019 11:07:50 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1iJyCb-0001LW-Pc
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1iJyCb-0003Il-UO
  for tipc-discussion@lists.sourceforge.net; Mon, 14 Oct 2019 11:07:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=References:In-Reply-To:Message-Id:Date:Subject:To:
+ From:Sender:Reply-To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=IzdllL1whydVxgRP4pLD3mDzkYGlyAO3WT4nKhfBrko=; b=K/sKlW0lQqcQTB5sXrednJ0Kch
- mRYF8zqXHOqSVghhV0G/Y9EeWlFv903zdpct22hWpCGC+g/rWODj79SKcrOYz9r5HM/P4Udjo5cuJ
- gBHrmwk+69pVnD5y8gcEnL+Fw+z+zmDlwgZUVN20x+gKzHzo4MfkGc3WWj9121Vp7FpA=;
+ bh=r+rY22R28DNP+D90s+nojEm01jyCdkkZPNJf712Blec=; b=mduX+D2NgEcwIvvlbfs3TKbp+n
+ PK6CRkLrXz+Nn38viQxUNXkjeDmqlFdu+lbq+iXBei0sbY8ZUsiJ14GrNR8nGHfHOehr8SrX2lGfA
+ 2GUAojyIWFJpFRxJMF7M+SlKeLu770LJsZwwFUBTYek9H8VUmFngAFmGh5uJEQdh7d50=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:
- Subject:To:From:Sender:Reply-To:Cc:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=IzdllL1whydVxgRP4pLD3mDzkYGlyAO3WT4nKhfBrko=; b=l
- LzdXRtWAp9+u5WGVDQ34VUVva/6crtdvEa0bqxi+C8SdJuv6rSj1TLStd2+4HUd06S/MnY/RvseO0
- EIllBe19KsX2Nd/Lb2AO7TYu/V+Eo/6yMXinVGHgzFNMj/v+oZvJcMLXYdU0yHlv2lGj2ioFOi5GG
- rAkmlrvRAxHvZX6A=;
+ h=References:In-Reply-To:Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc
+ :MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=r+rY22R28DNP+D90s+nojEm01jyCdkkZPNJf712Blec=; b=eyaxL6+aPVAc5kiFIQurFp3qW1
+ Ay4pukyXrbkydxFbcGu5zp0WZLvV1ZM7FMIpghKBfL/W6/1xf/9QnXCmZiLBdRothD55sHA3slQx8
+ zoVQSiaep63Ac8cyLQxkmhQSSi7Lt77Xs8GPQQd/oZDyrXH+6PG+sufH9sl5PBlnZ5WI=;
 Received: from f0-dek.dektech.com.au ([210.10.221.142]
  helo=mail.dektech.com.au)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1iJyCZ-008cYX-LC
+ id 1iJyCY-008bT6-T7
  for tipc-discussion@lists.sourceforge.net; Mon, 14 Oct 2019 11:07:49 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.dektech.com.au (Postfix) with ESMTP id 8310B48D2F;
- Mon, 14 Oct 2019 22:07:39 +1100 (AEDT)
+ by mail.dektech.com.au (Postfix) with ESMTP id 23B2248D2C;
+ Mon, 14 Oct 2019 22:07:40 +1100 (AEDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
- h=content-transfer-encoding:content-type:content-type
- :mime-version:x-mailer:message-id:date:date:subject:subject:from
- :from:received:received:received; s=mail_dkim; t=1571051259; bh=
- cT6ajYVYLx7Wueq1N7mpdtyrXApbj4tUP1c/O4bce+c=; b=N1IGjtnrXeTtH9Jx
- 3mqvwYbW2tvkoo8CMgiNe6xvSQeNNf2jOFlusrWmueFVwBRfQLTfGVfMq5Q58/io
- 3P0oL7kb2zY5CH6dc17GKTRi6VQvvuxVEdrCm0G62ZA6abNxMHmBHCCiykhd7ADp
- lCZ9WLsQhLOROzVDRRv5q4eITV4=
+ h=references:in-reply-to:x-mailer:message-id:date:date:subject
+ :subject:from:from:received:received:received; s=mail_dkim; t=
+ 1571051260; bh=+ZUHSC74jxQxFZTqAn9zUc5OUAwg3Lk6/AZZwkxJxEk=; b=I
+ j6//H2d6HWgsEBxl+kdbVE1eQPQnx5OqrJubqEB00wkGXhMchnYVMQFrTO5ZIXSB
+ oeRtJmchv2IIXLnRX3m1+oqGhf/VESAzF/8HVKmY6fIm8TSNcryeEQnatqYtgeNR
+ 7UbnylsJUcXXDYkXclg0qXBijref2jA3iWtYjlgTsc=
 X-Virus-Scanned: amavisd-new at dektech.com.au
 Received: from mail.dektech.com.au ([127.0.0.1])
  by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id dEDQ1repZRST; Mon, 14 Oct 2019 22:07:39 +1100 (AEDT)
+ with ESMTP id hNk4_gKXJBU6; Mon, 14 Oct 2019 22:07:40 +1100 (AEDT)
 Received: from mail.dektech.com.au (localhost [127.0.0.1])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPS id 1FE3748D2C;
- Mon, 14 Oct 2019 22:07:38 +1100 (AEDT)
+ by mail.dektech.com.au (Postfix) with ESMTPS id 06F2F48BF5;
+ Mon, 14 Oct 2019 22:07:40 +1100 (AEDT)
 Received: from localhost.localdomain (unknown [14.161.14.188])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPSA id 2347E48BF5;
- Mon, 14 Oct 2019 22:07:38 +1100 (AEDT)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id 3253548D2D;
+ Mon, 14 Oct 2019 22:07:39 +1100 (AEDT)
 From: Tuong Lien <tuong.t.lien@dektech.com.au>
 To: tipc-discussion@lists.sourceforge.net, jon.maloy@ericsson.com,
  maloy@donjonn.com, ying.xue@windriver.com
-Date: Mon, 14 Oct 2019 18:07:17 +0700
-Message-Id: <20191014110722.13248-1-tuong.t.lien@dektech.com.au>
+Date: Mon, 14 Oct 2019 18:07:18 +0700
+Message-Id: <20191014110722.13248-2-tuong.t.lien@dektech.com.au>
 X-Mailer: git-send-email 2.13.7
-MIME-Version: 1.0
+In-Reply-To: <20191014110722.13248-1-tuong.t.lien@dektech.com.au>
+References: <20191014110722.13248-1-tuong.t.lien@dektech.com.au>
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
  trust [210.10.221.142 listed in list.dnswl.org]
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: dektech.com.au]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -82,8 +86,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1iJyCZ-008cYX-LC
-Subject: [tipc-discussion] [PATCH RFC 0/5] TIPC encryption
+X-Headers-End: 1iJyCY-008bT6-T7
+Subject: [tipc-discussion] [PATCH RFC 1/5] tipc: add reference counter to
+ bearer
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,43 +100,95 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-This series provides TIPC encryption feature, kernel part. There will be
-another one in the 'iproute2/tipc' for user space to set key.
+As a need to support the crypto asynchronous operations in the later
+commits, apart from the current RCU mechanism for bearer pointer, we
+add a 'refcnt' to the bearer object as well.
 
-Tuong Lien (5):
-  tipc: add reference counter to bearer
-  tipc: enable creating a "preliminary" node
-  tipc: add new AEAD key structure for user API
-  tipc: introduce TIPC encryption & authentication
-  tipc: add support for AEAD key setting via netlink
+So, a bearer can be hold via 'tipc_bearer_hold()' without being freed
+even though the bearer or interface can be disabled in the meanwhile.
+If that happens, the bearer will be released then when the crypto
+operation is completed and 'tipc_bearer_put()' is called.
 
- include/uapi/linux/tipc.h         |   21 +
- include/uapi/linux/tipc_netlink.h |    4 +
- net/tipc/Makefile                 |    2 +-
- net/tipc/bcast.c                  |    2 +-
- net/tipc/bearer.c                 |   52 +-
- net/tipc/bearer.h                 |    6 +-
- net/tipc/core.c                   |   10 +
- net/tipc/core.h                   |    4 +
- net/tipc/crypto.c                 | 1986 +++++++++++++++++++++++++++++++++++++
- net/tipc/crypto.h                 |  166 ++++
- net/tipc/link.c                   |   16 +-
- net/tipc/link.h                   |    1 +
- net/tipc/msg.c                    |   24 +-
- net/tipc/msg.h                    |   44 +-
- net/tipc/netlink.c                |   16 +-
- net/tipc/node.c                   |  314 +++++-
- net/tipc/node.h                   |   10 +
- net/tipc/sysctl.c                 |    9 +
- net/tipc/udp_media.c              |    1 +
- 19 files changed, 2604 insertions(+), 84 deletions(-)
- create mode 100644 net/tipc/crypto.c
- create mode 100644 net/tipc/crypto.h
+Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
+---
+ net/tipc/bearer.c | 23 ++++++++++++++++++++++-
+ net/tipc/bearer.h |  3 +++
+ 2 files changed, 25 insertions(+), 1 deletion(-)
 
+diff --git a/net/tipc/bearer.c b/net/tipc/bearer.c
+index 0214aa1c4427..6e0962e0f759 100644
+--- a/net/tipc/bearer.c
++++ b/net/tipc/bearer.c
+@@ -315,6 +315,7 @@ static int tipc_enable_bearer(struct net *net, const char *name,
+ 	b->net_plane = bearer_id + 'A';
+ 	b->priority = prio;
+ 	test_and_set_bit_lock(0, &b->up);
++	refcount_set(&b->refcnt, 1);
+ 
+ 	res = tipc_disc_create(net, b, &b->bcast_addr, &skb);
+ 	if (res) {
+@@ -351,6 +352,26 @@ static int tipc_reset_bearer(struct net *net, struct tipc_bearer *b)
+ 	return 0;
+ }
+ 
++bool tipc_bearer_hold(struct tipc_bearer *b)
++{
++	if (unlikely(!b))
++		return false;
++
++	if (unlikely(!refcount_inc_not_zero(&b->refcnt)))
++		return false;
++
++	return true;
++}
++
++void tipc_bearer_put(struct tipc_bearer *b)
++{
++	if (unlikely(!b))
++		return;
++
++	if (refcount_dec_and_test(&b->refcnt))
++		kfree_rcu(b, rcu);
++}
++
+ /**
+  * bearer_disable
+  *
+@@ -369,7 +390,7 @@ static void bearer_disable(struct net *net, struct tipc_bearer *b)
+ 	if (b->disc)
+ 		tipc_disc_delete(b->disc);
+ 	RCU_INIT_POINTER(tn->bearer_list[bearer_id], NULL);
+-	kfree_rcu(b, rcu);
++	tipc_bearer_put(b);
+ 	tipc_mon_delete(net, bearer_id);
+ }
+ 
+diff --git a/net/tipc/bearer.h b/net/tipc/bearer.h
+index ea0f3c49cbed..faca696d422f 100644
+--- a/net/tipc/bearer.h
++++ b/net/tipc/bearer.h
+@@ -165,6 +165,7 @@ struct tipc_bearer {
+ 	struct tipc_discoverer *disc;
+ 	char net_plane;
+ 	unsigned long up;
++	refcount_t refcnt;
+ };
+ 
+ struct tipc_bearer_names {
+@@ -210,6 +211,8 @@ int tipc_media_set_window(const char *name, u32 new_value);
+ int tipc_media_addr_printf(char *buf, int len, struct tipc_media_addr *a);
+ int tipc_enable_l2_media(struct net *net, struct tipc_bearer *b,
+ 			 struct nlattr *attrs[]);
++bool tipc_bearer_hold(struct tipc_bearer *b);
++void tipc_bearer_put(struct tipc_bearer *b);
+ void tipc_disable_l2_media(struct tipc_bearer *b);
+ int tipc_l2_send_msg(struct net *net, struct sk_buff *buf,
+ 		     struct tipc_bearer *b, struct tipc_media_addr *dest);
 -- 
 2.13.7
 
