@@ -2,64 +2,59 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4DEFD904A
-	for <lists+tipc-discussion@lfdr.de>; Wed, 16 Oct 2019 14:02:58 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03599D90C6
+	for <lists+tipc-discussion@lfdr.de>; Wed, 16 Oct 2019 14:25:32 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iKi10-0007Wo-Jk; Wed, 16 Oct 2019 12:02:54 +0000
+	id 1iKiMp-0005Ir-La; Wed, 16 Oct 2019 12:25:27 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Ying.Xue@windriver.com>) id 1iKi0y-0007WM-UY
- for tipc-discussion@lists.sourceforge.net; Wed, 16 Oct 2019 12:02:52 +0000
+ (envelope-from <Ying.Xue@windriver.com>) id 1iKiMo-0005Ii-7i
+ for tipc-discussion@lists.sourceforge.net; Wed, 16 Oct 2019 12:25:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:CC:To:Subject:Sender:Reply-To:
+ MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=UFQZ3o1FEeA/jWC9jzwsaEuxE+vUW79Vw5BNSqe3q5A=; b=QS+ati1Cf5R/fE5O4xclaQ5af0
- ChvH9qphoROSrrI2gGc+gDgRkI9dkK7ACLbIk7vL6Kjocav7SV6uyviBE5Gz4f4fwX/tJj3EFoNND
- ZNGoxvLg4fO0d/y4Bk4Difg5+X8MAkziqMTxoLhDgOQ3/VvNuIKqdZMXtqZKpXHIlPu4=;
+ bh=xTMVilfFeT7fDUWVijDYvy072j505k8zYoFUNllPY6A=; b=KocbznXsQZT6sAp8ZtkqRJapwf
+ ANGrlroFDy/oNso9gxYPnvUuIRmkUnvm6GroMH4bZalmQjvKPPh+GX81150hM/yv7xixWjwIxLoCh
+ qBOYH4XOnyhdSUVUc7YhTh4OBtgUGNkgw5ydaKPyqid5z/kupDKl+0vAbP9Hy//UMtzk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:CC:To:Subject:Sender:Reply-To:Content-ID:
+ Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=UFQZ3o1FEeA/jWC9jzwsaEuxE+vUW79Vw5BNSqe3q5A=; b=bukcZewU5LjIQuJS/8k527IiIp
- OZ2exxN9MhR+KZMM7PcM2bBpFqYp2ZBfcSzgIeHBbWOZBVXrTzSyIgoP4gPHnewr9m2eRXjqy5+xv
- xNccLk2jcs7tL53zeTE6XZpJA5Eja5fvQDZMYGb8Ac1IZGLpELc+hOGsB86v0J59cqrc=;
+ bh=xTMVilfFeT7fDUWVijDYvy072j505k8zYoFUNllPY6A=; b=WPLi2jx8lb4SZGxkgcAEa43074
+ +UhjRV0+/Rh9q94Dqvt6/F7w6KIyQC5ji6ErvoIbzBHhOF6bQILnzE5DUTHn/MFUrTpsfWM8qbzEi
+ 5WPP0gkWXHRa1dmqaKw3Om/cnKwYtne/eH35A12c/FmDLbvCBL2NHnF5Hg8vXp2nnBVE=;
 Received: from mail1.windriver.com ([147.11.146.13])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.1:ECDHE-RSA-AES256-SHA:256) (Exim 4.92.2) id 1iKi0v-003mq0-JY
- for tipc-discussion@lists.sourceforge.net; Wed, 16 Oct 2019 12:02:52 +0000
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ (TLSv1.1:ECDHE-RSA-AES256-SHA:256) (Exim 4.92.2) id 1iKiMm-00BMoA-Kt
+ for tipc-discussion@lists.sourceforge.net; Wed, 16 Oct 2019 12:25:26 +0000
 Received: from ALA-HCA.corp.ad.wrs.com (ala-hca.corp.ad.wrs.com
  [147.11.189.40])
- by mail1.windriver.com (8.15.2/8.15.2) with ESMTPS id x9GC2dwF023239
+ by mail1.windriver.com (8.15.2/8.15.2) with ESMTPS id x9GCP48H023406
  (version=TLSv1 cipher=AES128-SHA bits=128 verify=FAIL);
- Wed, 16 Oct 2019 05:02:39 -0700 (PDT)
+ Wed, 16 Oct 2019 05:25:04 -0700 (PDT)
 Received: from [128.224.155.90] (128.224.155.90) by ALA-HCA.corp.ad.wrs.com
  (147.11.189.50) with Microsoft SMTP Server (TLS) id 14.3.468.0; Wed, 16 Oct
- 2019 05:02:38 -0700
-To: Jon Maloy <jon.maloy@ericsson.com>, Xin Long <lxin@redhat.com>
-References: <20191002102530.6987-1-hoang.h.le@dektech.com.au>
- <CH2PR15MB3575521491DAC944A0F9F2629A9B0@CH2PR15MB3575.namprd15.prod.outlook.com>
- <1276077941.5776644.1570706044772.JavaMail.zimbra@redhat.com>
- <CH2PR15MB3575E8584C61FC485FD995469A940@CH2PR15MB3575.namprd15.prod.outlook.com>
- <25A14D9CFAB7B34FB9440F90AFD35233013CA3252F@ALA-MBD.corp.ad.wrs.com>
- <CH2PR15MB3575F826668EEBF44BC929679A970@CH2PR15MB3575.namprd15.prod.outlook.com>
- <25A14D9CFAB7B34FB9440F90AFD35233013CA36761@ALA-MBD.corp.ad.wrs.com>
- <CH2PR15MB3575216E61D2FDF239681E659A930@CH2PR15MB3575.namprd15.prod.outlook.com>
+ 2019 05:25:04 -0700
+To: Tuong Lien <tuong.t.lien@dektech.com.au>,
+ <tipc-discussion@lists.sourceforge.net>, <jon.maloy@ericsson.com>,
+ <maloy@donjonn.com>
+References: <20191014110722.13248-1-tuong.t.lien@dektech.com.au>
 From: Ying Xue <ying.xue@windriver.com>
-Message-ID: <085850cc-2b8f-c4c9-c1ff-eacea2a101c1@windriver.com>
-Date: Wed, 16 Oct 2019 19:50:06 +0800
+Message-ID: <73609fdc-1890-a5ee-b5a9-0f7e1aa48fbe@windriver.com>
+Date: Wed, 16 Oct 2019 20:12:32 +0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <CH2PR15MB3575216E61D2FDF239681E659A930@CH2PR15MB3575.namprd15.prod.outlook.com>
+In-Reply-To: <20191014110722.13248-1-tuong.t.lien@dektech.com.au>
 Content-Language: en-US
 X-Originating-IP: [128.224.155.90]
 X-Spam-Score: 0.0 (/)
@@ -67,9 +62,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-X-Headers-End: 1iKi0v-003mq0-JY
-Subject: Re: [tipc-discussion] [net-next] tipc: improve throughput between
- nodes in netns
+X-Headers-End: 1iKiMm-00BMoA-Kt
+Subject: Re: [tipc-discussion] [PATCH RFC 0/5] TIPC encryption
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,17 +75,61 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-On 10/15/19 7:46 PM, Jon Maloy wrote:
-> You must have forgot that since commit 6c9081a3915d ("add loopback device tracing") this is no problem any more.
-> Of course we do the same in this case, so a trouble shooter only needs to do tcpdump on the sender's loopback interface.
+Looks like this is an amazing proposal!
 
-Oh, the most inconvenience is gone. Please move on.
+I had the idea long time ago, but at that moment, I didn't think
+encrypting TIPC message was meaningful because TIPC was mostly used
+within internal network. After UDP bearer was supported and one TIPC
+node was capable of communicating with its peers across IP, it seemed
+the encryption feature became useful. But if needed, we could enable
+IPSEC during this situation.
+
+At present, the only useful scenario that I can image is that TIPC will
+be used as low level communication infrastructure in Docker or k8s
+environment. Is there other case?
+
+Sorry, I am pretty busy in this week, and significant changes are made
+in the series. I have to take a bit long time to review the series.
+Please wait for a while.
+
+On 10/14/19 7:07 PM, Tuong Lien wrote:
+> This series provides TIPC encryption feature, kernel part. There will be
+> another one in the 'iproute2/tipc' for user space to set key.
+> 
+> Tuong Lien (5):
+>   tipc: add reference counter to bearer
+>   tipc: enable creating a "preliminary" node
+>   tipc: add new AEAD key structure for user API
+>   tipc: introduce TIPC encryption & authentication
+>   tipc: add support for AEAD key setting via netlink
+> 
+>  include/uapi/linux/tipc.h         |   21 +
+>  include/uapi/linux/tipc_netlink.h |    4 +
+>  net/tipc/Makefile                 |    2 +-
+>  net/tipc/bcast.c                  |    2 +-
+>  net/tipc/bearer.c                 |   52 +-
+>  net/tipc/bearer.h                 |    6 +-
+>  net/tipc/core.c                   |   10 +
+>  net/tipc/core.h                   |    4 +
+>  net/tipc/crypto.c                 | 1986 +++++++++++++++++++++++++++++++++++++
+>  net/tipc/crypto.h                 |  166 ++++
+>  net/tipc/link.c                   |   16 +-
+>  net/tipc/link.h                   |    1 +
+>  net/tipc/msg.c                    |   24 +-
+>  net/tipc/msg.h                    |   44 +-
+>  net/tipc/netlink.c                |   16 +-
+>  net/tipc/node.c                   |  314 +++++-
+>  net/tipc/node.h                   |   10 +
+>  net/tipc/sysctl.c                 |    9 +
+>  net/tipc/udp_media.c              |    1 +
+>  19 files changed, 2604 insertions(+), 84 deletions(-)
+>  create mode 100644 net/tipc/crypto.c
+>  create mode 100644 net/tipc/crypto.h
+> 
 
 
 _______________________________________________
