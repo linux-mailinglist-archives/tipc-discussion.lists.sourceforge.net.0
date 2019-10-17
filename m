@@ -2,26 +2,35 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4849BDB820
-	for <lists+tipc-discussion@lfdr.de>; Thu, 17 Oct 2019 22:09:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86867DB954
+	for <lists+tipc-discussion@lfdr.de>; Thu, 17 Oct 2019 23:53:40 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
+	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:To:Sender:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ixT3Z9q/oak5yAYKA22t5kYwiL5AmsaGTS4r1g7F/J8=; b=GxY4ipVKOdrBOZDP34u4lW65z
+	xVUTw4wuNvhJZf1AirBT44MOTrh1IndElfyFFx7D7xEsdeigBYs3GqyNNRbhRDpE+SqKeg0zHMDnR
+	7NY6pXIJ3TRWXSLqLRWObuqKjkH9AFxyNn0RCWHpbIsGWri0nrmkremXQSUhZMkqjIXZE=;
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iLC5B-0006qO-KK; Thu, 17 Oct 2019 20:09:13 +0000
+	id 1iLDiA-0005VK-P9; Thu, 17 Oct 2019 21:53:34 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <runet@innovsys.com>) id 1iLC5A-0006px-9H
- for tipc-discussion@lists.sourceforge.net; Thu, 17 Oct 2019 20:09:12 +0000
+ (envelope-from <jon.maloy@ericsson.com>) id 1iLDi9-0005V4-1d
+ for tipc-discussion@lists.sourceforge.net; Thu, 17 Oct 2019 21:53:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
  :In-Reply-To:References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=a2o3aTfvB1596xRV8thihINGna5gDjjLQGTCjVTTGG0=; b=dqzw2YbyhAgD/S5o6pKYXWMG2K
- 9Pao26651953E/NFgvK+QitA5oZGvo7lMbQVHBxwoiyuKbHbNcMX+0SejypmxvQ7grCIhXdU+BUwu
- zfuKepQzHSO32Wk5g3P/G9nfUF59RmQfhCzK2L29rMC/dGGFWhVESTJSBBPuc2ozUytQ=;
+ bh=5J/6LQAmf+ffScA25jRgKD/lEISHUr+EKRXVgoMklzc=; b=iZhlybpCMz0HZsCMqXpdyLCxZR
+ VyDeWHga/EyZWXiFryYZE/LYiRSBdrBMJpc+fTQeZocQmJN9yeYL+qqqu7d84YcfqBrbgvNZOe149
+ gfDVZvETS1a4Lbnrc9NKAnN/6gWJ7f8s9YH8bYy0i12bw+rq5M8fUtSnacIGOF5s9Fbs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
@@ -29,107 +38,98 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=a2o3aTfvB1596xRV8thihINGna5gDjjLQGTCjVTTGG0=; b=mLn1sBDP67U+uSkfaszu4Vir8A
- rB5pXi82gTM6f/QN37E0Wf7u3DmD7SL+R/9UPGEu338KMBNobcXtd364KGlwhHt9ai1kxAPSeypNZ
- +KXCKgTp4+EVeDXf1XEaulLFO37GnmuuceMBr7xQfwQxgGs2uBvW/H/02gbCv64+qbMo=;
-Received: from smtp.innovsys.com ([96.2.206.15])
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.2)
- id 1iLC53-00Clwr-1W
- for tipc-discussion@lists.sourceforge.net; Thu, 17 Oct 2019 20:09:12 +0000
-X-Sendio-Return-Path: runet@innovsys.com
-X-Sendio-Delivered: Thu, 17 Oct 2019 15:08:55 -0500
-Received: (sendio-qmail 1037 invoked from network); 17 Oct 2019 20:08:55 -0000
-X-Sendio-SenderIP: 104.47.50.58
-X-Sendio-RemoteSenderIP: 104.47.50.58
-X-Sendio-MessageID: 1571342935.1034.1
-Received: from unknown (HELO NAM05-BY2-obe.outbound.protection.outlook.com)
- (104.47.50.58)
- by smtp.innovsys.com with ESMTPS (ECDHE-RSA-AES256-GCM-SHA384 encrypted);
- 17 Oct 2019 20:08:55 -0000
+ bh=5J/6LQAmf+ffScA25jRgKD/lEISHUr+EKRXVgoMklzc=; b=b4EPWl6g/kcivSc0UaykdX/AOi
+ VUGqNW20+JSuswJSa2vtnuFXL4BeeoUKL8Wq1Y6LHYUkjFpQkf2gIW6Bk8H7Z9gHt+xgPKjS9oAQf
+ RqYaclU/pTfvSZ3BTwwVeOEiJDkXoVfe/VnAOGrDzs7L/bplNrjvjBEsVt9MZYkA27xk=;
+Received: from mail-eopbgr700041.outbound.protection.outlook.com
+ ([40.107.70.41] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1iLDhx-00Ct5z-AY
+ for tipc-discussion@lists.sourceforge.net; Thu, 17 Oct 2019 21:53:32 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=G+U+L0CpIRS3dghtSMGagK9sqD93+ZlR5nmU5TWN6HqMjG6+CMl1dWUG16wJjkIGWuJzZweuucRmXm6k8g1+tSveZ4yIkCRbK18AWjJeDRpn7IMqyHk4PARXHTLQrqZ+R/hUgAF/hIYdk/WGCQGkMJ37ymO6pIWSyePmW8I+VRKLNh7Od/I0hqf9oUmn48DUybx1fJqiPtah9Zmrm4dEAvv6IwO+4pdxR07k1q7LYE5XtyS7ilkF3E9bAS+ZMPESfIWjsAUOWfFnSz8Kua5yh7vc9nKLd2C49dNXMC3Vy3qyArxrrEByr6OJboOycZqsN6P1Xepjb9c72dAU+7d5fQ==
+ b=HKCfXu8yPIYMhSzv8JsuCKpc9L5CnbS0a8AekaKM/lO6r8/QrOKNJDyCtAVjFHGu3oQDosHCy6aBHFsn7G+Qv1+wajDNM/Oc8iYcU0cN7eTAtY8vq2UPZjriAVNxQKAImYmX+nyafdAtf3ttEOH1DancYcLB3OG70karu8uZ/1ZvuXqL8AwVV9FYzb0KBArUxA7YGegMjcN7EBHaaY3YH3cd7wjbUo80rXYnPGNocBOzNjxVPzP734IOT42uPc4UaO3CatbOmQgz1tYJMdVnlxdRi/dz/H+O6IJ9j8sdWAf0gSghe4rjgWD5B0YqOcIIl+cADGL/a2RiiNErngLALw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=a2o3aTfvB1596xRV8thihINGna5gDjjLQGTCjVTTGG0=;
- b=V5ZHR202cVZPLNwnBIkxPTW30EDPOKys1Acr4+H3Rbo1h0pe6Qy8WD0O2rEKf1Wdw9+DxtlJ/Vh+2EOvbJuuvywxGIJar4ZfAhVs86tTodcLLhRPW1EoK9LcDW15/w0m+4nUGXfUSs5hFYK+T9fzA3FJ10/88N4wvn+7vi1VK54YBOd0TOINIFjyzELJEDHhbtjgDTfoGxte1Vkdy1nyjLft6AgZlXLkAeY+1nyaWs7I3PyzcGnVVMPaxdXW8RiyNevVKTDbf/EeuLTcAiSmN9t3z1HfMyFPAEk3mXFz0oB/EskwyoYldgUkQ0UX70dlHJuJKMyYE0cAY0yuvWf7Qg==
+ bh=5J/6LQAmf+ffScA25jRgKD/lEISHUr+EKRXVgoMklzc=;
+ b=c85pXTu5zvYKlD1G8qbsxGaid6xLHNCm8/lt8hD9H+MzXMAk3Nlr9MWB1dk4F7x15UWjT+vxPwOMbYrjCnyUcRWWTEqgEuqLuxwCOyVvire830Hg7k0lj85fwy+hdLOVGEh5T/9gTfCMl0vYpcdLf2N6lHQFFWDdzj9lD7EHQpK5uRFd9kuiAtuB29j6tAnbjDkbpZQSXoQmuMulFI+My8rni+KL5nY2byX7k4nuftnqDiL5gpAe0rudWNqXxdsgWgMp2DbdTIibQKCnEILrzJVpY4Y0wpkmGhIj1xtUf/xX+W4bVFD+WaPy69Tuwaq0U4F30xwrD6aMVFYLUE6JhA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=innovsys.com; dmarc=pass action=none header.from=innovsys.com;
- dkim=pass header.d=innovsys.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=innovsys.onmicrosoft.com; s=selector2-innovsys-onmicrosoft-com;
+ smtp.mailfrom=ericsson.com; dmarc=pass action=none header.from=ericsson.com;
+ dkim=pass header.d=ericsson.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
+ s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=a2o3aTfvB1596xRV8thihINGna5gDjjLQGTCjVTTGG0=;
- b=owfLVmhQugwGq/ZmOvEX33Bl1yXewd6TZ35VhSc9Vc91GqH98yXBE5qip94LiHExKFlyHgsJ4WMWwOwuK7nzHUq36YOQ2BGRzXAhQoEwHnZvYhpErqAPpy6rFr0TxiWsYJ33tIP9sxG9CvZeqECY1nfFfPoMv8xltmZdvoRcct8=
-Received: from CH2PR13MB3624.namprd13.prod.outlook.com (20.180.12.143) by
- CH2PR13MB3752.namprd13.prod.outlook.com (20.180.5.19) with Microsoft SMTP
+ bh=5J/6LQAmf+ffScA25jRgKD/lEISHUr+EKRXVgoMklzc=;
+ b=gabFBoNELpgRyPiJXRWqgJWiSgmmfqnbV2XCj6LngY1NmYxc7cnmjxyagCZ54LCm8sYc55sphgN4vJIzgT9cj9fSsIaZi22/rtdpN6SHKdBiBj9Nm8Y9yhiprX9zvk1EEvlK9YOp6dJ1nmgLa30Se6FzMUcqU6djKf0mwQlBFSA=
+Received: from CH2PR15MB3575.namprd15.prod.outlook.com (10.255.156.17) by
+ CH2PR15MB3638.namprd15.prod.outlook.com (52.132.229.28) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2367.14; Thu, 17 Oct 2019 20:08:52 +0000
-Received: from CH2PR13MB3624.namprd13.prod.outlook.com
- ([fe80::4dca:87af:2b1b:9269]) by CH2PR13MB3624.namprd13.prod.outlook.com
- ([fe80::4dca:87af:2b1b:9269%3]) with mapi id 15.20.2367.016; Thu, 17 Oct 2019
- 20:08:52 +0000
-From: Rune Torgersen <runet@innovsys.com>
-To: Rune Torgersen <runet@innovsys.com>, Jon Maloy <jon.maloy@ericsson.com>,
- "'tipc-discussion@lists.sourceforge.net'"
+ 15.20.2347.21; Thu, 17 Oct 2019 19:20:11 +0000
+Received: from CH2PR15MB3575.namprd15.prod.outlook.com
+ ([fe80::c51c:4c01:61b6:ae11]) by CH2PR15MB3575.namprd15.prod.outlook.com
+ ([fe80::c51c:4c01:61b6:ae11%7]) with mapi id 15.20.2347.023; Thu, 17 Oct 2019
+ 19:20:11 +0000
+To: Hoang Huu Le <hoang.h.le@dektech.com.au>, "maloy@donjonn.com"
+ <maloy@donjonn.com>, "tipc-dek@dektech.com.au" <tipc-dek@dektech.com.au>,
+ "tipc-discussion@lists.sourceforge.net"
  <tipc-discussion@lists.sourceforge.net>
-Thread-Topic: Error allocating memeory error when sending RDM message
-Thread-Index: AdWFAVU998AwK5GLQqyAOhiqFS9m+gAIEBdAAACQNZAAAKIvoA==
-Date: Thu, 17 Oct 2019 20:08:52 +0000
-Message-ID: <CH2PR13MB362444F4E92A630106E05541C46D0@CH2PR13MB3624.namprd13.prod.outlook.com>
-References: <CH2PR13MB36242B13A67CD76CB8760E7FC46D0@CH2PR13MB3624.namprd13.prod.outlook.com>
- <CH2PR15MB3575731941426BB15A89F8799A6D0@CH2PR15MB3575.namprd15.prod.outlook.com>
- <CH2PR13MB36241410CE65DBAA02DEC848C46D0@CH2PR13MB3624.namprd13.prod.outlook.com>
-In-Reply-To: <CH2PR13MB36241410CE65DBAA02DEC848C46D0@CH2PR13MB3624.namprd13.prod.outlook.com>
+Thread-Topic: [net-next] tipc: improve throughput between nodes in netns
+Thread-Index: AQHVhNNIiTCRJkVA1E6MYa/P9MXziKde3fGg
+Date: Thu, 17 Oct 2019 19:20:10 +0000
+Message-ID: <CH2PR15MB3575EEAF690AF68A0413193A9A6D0@CH2PR15MB3575.namprd15.prod.outlook.com>
+References: <20191017101017.6672-1-hoang.h.le@dektech.com.au>
+In-Reply-To: <20191017101017.6672-1-hoang.h.le@dektech.com.au>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=runet@innovsys.com; 
-x-originating-ip: [96.2.206.100]
+ smtp.mailfrom=jon.maloy@ericsson.com; 
+x-originating-ip: [66.187.232.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 37b1af65-2810-43b8-be1a-08d7533dd4fe
-x-ms-traffictypediagnostic: CH2PR13MB3752:
-x-ms-exchange-purlcount: 1
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <CH2PR13MB3752EDA0975C954F6E8B407CC46D0@CH2PR13MB3752.namprd13.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-ms-office365-filtering-correlation-id: 548fd1bd-21f3-4ca1-3f38-08d753370780
+x-ms-traffictypediagnostic: CH2PR15MB3638:
+x-ld-processed: 92e84ceb-fbfd-47ab-be52-080c6b87953f,ExtAddr
+x-microsoft-antispam-prvs: <CH2PR15MB363817D8207B6C82C1BBC8629A6D0@CH2PR15MB3638.namprd15.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 01930B2BA8
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(346002)(396003)(376002)(366004)(136003)(39850400004)(13464003)(189003)(199004)(478600001)(8936002)(2940100002)(15650500001)(71200400001)(316002)(81166006)(8676002)(229853002)(81156014)(6116002)(66946007)(71190400001)(66556008)(86362001)(66476007)(76116006)(3846002)(66446008)(966005)(110136005)(64756008)(25786009)(66066001)(2906002)(33656002)(6506007)(53546011)(55236004)(186003)(55016002)(14454004)(74316002)(26005)(6306002)(9686003)(6246003)(7696005)(305945005)(7736002)(76176011)(99286004)(5660300002)(256004)(486006)(476003)(446003)(6436002)(11346002)(52536014)(102836004)(491001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:CH2PR13MB3752;
- H:CH2PR13MB3624.namprd13.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: innovsys.com does not designate
+ SFS:(10009020)(4636009)(376002)(366004)(136003)(396003)(39860400002)(346002)(199004)(13464003)(189003)(99286004)(66066001)(7736002)(6116002)(229853002)(110136005)(52536014)(2501003)(256004)(5024004)(14444005)(3846002)(44832011)(86362001)(6246003)(55016002)(5660300002)(2906002)(74316002)(305945005)(6436002)(316002)(9686003)(561944003)(7696005)(30864003)(76116006)(478600001)(76176011)(8936002)(64756008)(66476007)(66556008)(186003)(25786009)(66946007)(66446008)(26005)(102836004)(33656002)(53546011)(6506007)(8676002)(81166006)(81156014)(71190400001)(71200400001)(2201001)(486006)(476003)(11346002)(446003)(14454004)(579004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR15MB3638;
+ H:CH2PR15MB3575.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: ericsson.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: oyllppN53TVQg5ufL4Z5p300Cy7IjxlaBZZf4EhfSKJKNZDlgQrdvAMPycOKlQgqMH8HSwi+C1hbS+2fNhcQKLxUbPVcj9E730LZiOyXjrgBB/RcMusVNWqieBTOAU31v8Kdfrl1r5DDrKFg0CYm75obT+FlZHOe7RWBn8UVohShafnrTPAFThIKN+Ep/BgjnVlLjoy1iao8pX0pzdD97skEJnyQvMpWLeg/1eJVKBTXIcFbHJDqd0wi6KZl/9Pe4rOA9M+K3MzjsUwhseJjV5JS3beFEdUF78WBkQ7dyRvkIjTONINKc0alp6ee9FNcuKqv3wxOVKcxT+RTUBYVn3tj1qBQiYkghfWeo0cvbWU8Sg7UjssdTfh8gre5uWwfOfqsZSYQ6hvQ9T3sOtTRXOnGv/+2Lys3kDXPVw+BXrrytFLdQYE5OHnX5kmnFN4LJbEv4lfAO4DBgXKzX03VqQ==
+x-microsoft-antispam-message-info: eUH7NJZpsdpcWm8y1WDLvQaopo9v3uoSXyLAZTrhuIHDtjby5JiQklFBSnXlEHRaUT/KJ+Lr8VGwToEeBC8YlYclgkWPofiOkM9HA6On4Ao8DZCj2Z6wMiEy8NQDeWIGMn6DbW8Z/niZ2inA0snGj2NpQy6TqzCIxyfglenY+06kZKWsqy7EzHugMyIwEk0yZkKSb+gED4SmnPW6Bkme9Qnw1MG0HciGl4EIuIMy0PeLlHr4jecgeC4FQWGLfD+U5kOv6FmeXNp6JoK2mutwZX7tQGcPHm/KZ3IeH0PoKCtR8yYmZdrUnp0RY8enUPPzgeCuHndLg7RXNCwd5cv+F+TgQqHV4PsAeIgRoN9ykRU7ti1qBu4WDYQxfAgVOlfUxGlXrOq23phC1lw3JeIiHSwX/1d9ge6dd98w6DPQ8AY=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-X-OriginatorOrg: innovsys.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 37b1af65-2810-43b8-be1a-08d7533dd4fe
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Oct 2019 20:08:52.6087 (UTC)
+X-OriginatorOrg: ericsson.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 548fd1bd-21f3-4ca1-3f38-08d753370780
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Oct 2019 19:20:10.8157 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 7a48ce45-ee97-4a95-ac18-3390878a179b
+X-MS-Exchange-CrossTenant-id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 46A2DtduwpbWkJOm76GWnHBljP/ILBNXLQp4e/tZBge5Q/Z26qEjCy5J3YOKJpcJp9l2dpyj0+9ET0RhIkRsdjjDtuF4UF3pIMDOHcboM7U=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR13MB3752
-X-Spam-Score: 0.2 (/)
+X-MS-Exchange-CrossTenant-userprincipalname: 5sAs0ui87prHV0v074OPQHXsRUBZvUxcpVtGGwk9opqInAA6O+vQcdI9hh2cDQ4/PYiXJrZpLbVS+xiNAAIyLA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR15MB3638
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [96.2.206.15 listed in list.dnswl.org]
+ trust [40.107.70.41 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.2 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1iLC53-00Clwr-1W
-Subject: Re: [tipc-discussion] Error allocating memeory error when sending
- RDM message
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+X-Headers-End: 1iLDhx-00Ct5z-AY
+Subject: Re: [tipc-discussion] [net-next] tipc: improve throughput between
+ nodes in netns
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -141,93 +141,512 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+From: Jon Maloy via tipc-discussion <tipc-discussion@lists.sourceforge.net>
+Reply-To: Jon Maloy <jon.maloy@ericsson.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Looks like I can kind of make it happen on one system mow.
-Stopping some programs (not pattern in which ones) makes it work, and starting some back up again makes it fail.
+Hi Hoang,
+We need a very good log text to justify this.
 
-Tipc nametable has 231 entries when failing and 183 entries when succeeding (however on a different system the nametable has 251 entries and it is not failing).
+My proposal:
 
-How do I look for memory used by TIPC in the kernel?
+"Currently, TIPC transports intra-node user data messages directly socket to socket, hence shortcutting all the lower layers of the communication stack. This gives TIPC very good intra node performance, both regarding throughput and latency.
 
------Original Message-----
-From: Rune Torgersen <runet@innovsys.com> 
-Sent: Thursday, October 17, 2019 14:53
+We now introduce a similar mechanism for TIPC data traffic across network name spaces located in the same kernel. On the send path, the call chain is as always accompanied by the sending node's network name space pointer. However, once we have reliably established that the receiving node is represented by a name space on the same host, we just replace the name space pointer with the receiving node/name space's ditto, and follow the regular socket receive patch though the receiving node. This technique gives us a throughput similar to the node internal throughput, several times larger than if we let the traffic go though the full network stack. As a comparison, max throughput for 64k messages is four times larger than TCP throughput for the same type of traffic.
 
+To meet any security concerns, the following should be noted. 
 
-I will have to look for leaks next time I can make it happen.
-I was trying stuff and shut down a different program that was unrelated (but had some TIPC sockets open on a different address (104)), and as soon as I did, the sends started working again.
+- All nodes joining a cluster are supposed to have been be certified and authenticated by mechanisms outside TIPC. This is no different for nodes/name spaces on the same host; they have to auto discover each other using the attached interfaces, and establish links which are supervised via the regular link monitoring mechanism. Hence, a kernel local node has no other way to join a cluster than any other node, and have to obey to policies set in the IP or device layers of the stack. 
 
-It is possible that one of those unrelated sockets has something stuck (as one of them was only ever used to send RDM messages but nothing ever reads it).
+- Only when a sender has established with 100% certainty that the peer node is located in a kernel local name space does it choose to let user data messages, and only those, take the crossover path to the receiving node/name space.
 
-Any suggestions as to what to start looking at (netstat, tipc, tipc_config or kernel params) to try to track it down?.
+- If the receiving node/name space  is removed, its name space pointer is invalidated at all peer nodes, and their neighbor link monitoring will eventually note that this node is gone.
 
-Problem with testing a patch (or using Unbuntu 18 LTS) is that we cannot reliably make it happen.
+- To ensure the "100% certainty" criteria, and prevent any possible spoofing, received discovery messages must contain a proof that they know a common secret. We use the hash_mix of the sending node/name space for this purpose, since it can be accessed directly by all other name spaces in the kernel. Upon reception of a discovery message, the receiver checks this proof against all the local name spaces' hash_mix:es.  If it finds a match, that, along with a matching node id and cluster id, this is deemed sufficient proof that the peer node in question is in a local name space, and a wormhole can be opened.
 
------Original Message-----
-From: Jon Maloy <jon.maloy@ericsson.com>
-Sent: Thursday, October 17, 2019 14:35
+- We should also consider that TIPC is intended to be a cluster local IPC mechanism (just like e.g. UNIX sockets)  rather than a network protocol, and hence should be given more freedom to shortcut the lower protocol than other protocols.
 
+Regarding traceability, we should notice that since commit 6c9081a3915d ("add loopback device tracing") it is possible to follow the node internal packet flow by just activating tcpdump on the loopback interface. This will be true even for this mechanism; by activating tcpdump on the invloved nodes' loopback interfaces their inter-name space messaging can easily be tracked."
 
-Hi Rune,
+I also think there should be a "Suggested-by: Jon Maloy <jon.maloy@ericsson.com>" at the bottom of the patch.
 
-Do you see any signs of general memory leak ("free") on your node?
+See more comments below.
 
-Anyway there can be no doubt that this happens because the big buffer pool is running empty.
-
-We fixed that in commit 4c94cc2d3d57 ("tipc: fall back to smaller MTU if allocation of local send skb fails") which was delivered to Linux 4.16.
-
-Do you have any opportunity to apply that patch and try it?
-
-BR
-///jon
 
 > -----Original Message-----
-> From: Rune Torgersen <runet@innovsys.com>
-> Sent: 17-Oct-19 12:38
-> To: 'tipc-discussion@lists.sourceforge.net' <tipc-
-> discussion@lists.sourceforge.net>
-> Subject: [tipc-discussion] Error allocating memeory error when sending RDM
-> message
->
-> Hi.
->
-> I am running into an issue when sending SOCK_RDM or SOCK_DGRAM
-> messages. On a system that has been up for a time (120+ days inthis case), I
-> cannot send any RDM/DGRAM type TIPC messages that are larger than about
-> 16000 bytes (16033+ fails, 15100 and smaller still works).
-> Any larger messages fails with erro code 12 :"Cannot allocate memory".
->
-> Really odd thing about it  only happens on some connections and not others,
-> on the same system (example, sending to tipc node 103:1003 gets no error,
-> while sending to 103:3 get error).
-> When it gets into this state, it seems to happen forever on the same
-> destination address, and not on others until system is rebooted. (restarting the
-> server side application makes no difference).
-> The sends are done on the same node as the receiver is on.
->
-> Kernel is Ubuntu 16.04 LTS 4.4.0-150 in this case, also seen on 161.
->
-> Nametable for 103:
-> 103        2          2          <1.1.1:2328193343>         2328193344  cluster
-> 103        3          3          <1.1.2:3153441800>         3153441801  cluster
-> 103        5          5          <1.1.4:269294867>          269294868   cluster
-> 103        1002       1002       <1.1.1:490133365>          490133366   cluster
-> 103        1003       1003       <1.1.2:2552019732>         2552019733  cluster
-> 103        1005       1005       <1.1.4:625110186>          625110187   cluster
->
-> _______________________________________________
-> tipc-discussion mailing list
-> tipc-discussion@lists.sourceforge.net
-> https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+> From: Hoang Le <hoang.h.le@dektech.com.au>
+> Sent: 17-Oct-19 06:10
+> To: Jon Maloy <jon.maloy@ericsson.com>; maloy@donjonn.com; tipc-
+> dek@dektech.com.au
+> Subject: [net-next] tipc: improve throughput between nodes in netns
+> 
+> Introduce traffic cross namespaces transmission as intranode.
+> By this way, throughput between nodes in namespace as fast as local.
+> Looks though the architectural view of TIPC, the new TIPC mechanism for
+> containers will not introduce any security or breaking the current policies at
+> all:
+> 
+> 1/ Extranode:
+> 
+>       Node A                                             Node B
+> +-----------------+                               +-----------------+
+> |      TIPC       |                               |      TIPC       |
+> |   Application   |                               |   Application   |
+> |-----------------|                               |-----------------|
+> |                 |                               |                 |
+> |      TIPC       |TIPC address       TIPC address|      TIPC       |
+> |                 |                               |                 |
+> |-----------------|                               |-----------------|
+> | L2 or L3 Bearer |Bearer address   Bearer address| L2 or L3 Bearer |
+> |     Service     |                               |     Service     |
+> +-----------------+                               +-----------------+
+>        NIC                                                 NIC
+>         +---------------- Bearer Transport ----------------+
+> 
+> 2/ Intranode:
+>       Node A                                             Node A
+> +-----------------+                               +-----------------+
+> |      TIPC       |                               |      TIPC       |
+> |   Application   |                               |   Application   |
+> |-----------------|                               |-----------------|
+> |                 |                               |                 |
+> |      TIPC       |TIPC address       TIPC address|      TIPC       |
+> |                 |                               |                 |
+> +-------+---------+                               +--------+--------+
+>         +--------------------------------------------------+
+> 
+> 3/ For container (same as extranode):
+> +-----------------------------------------------------------------------+
+> |       Container                                        Container      |
+> | +-----------------+                               +-----------------+
+> | +-----------------+ |
+> | |      TIPC       |                               |      TIPC       | |
+> | |   Application   |                               |   Application   | |
+> | |-----------------|                               |-----------------|
+> | |-----------------| |
+> | |                 |                               |                 | |
+> | |      TIPC       |TIPC address       TIPC address|      TIPC       | |
+> | |                 |                               |                 | |
+> | |-----------------|                               |-----------------|
+> | |-----------------| |
+> | | L2 or L3 Bearer |Bearer address   Bearer address| L2 or L3 Bearer | |
+> | |     Service     |                               |     Service     | |
+> | +-----------------+                               +-----------------+
+> | +-----------------+ |
+> |      (vNIC)                                              (vNIC)       |
+> |         +              Host Kernel (KVM, Native)            +         |
+> |         +----------------Bearer Transport-------------------+         |
+> |                       (bridge, OpenVSwitch)                           |
+> |                                 +                                     |
+> |                         +-------+---------+                           |
+> |                         | L2 or L3 Bearer |                           |
+> |                         |     Service     |                           |
+> |                         |-----------------|                           |
+> |                         |                 |                           |
+> |                         |      TIPC       |TIPC address               |
+> |                         |                 |                           |
+> |                         |-----------------|                           |
+> |                         |      TIPC       |                           |
+> |                         |   Application   |                           |
+> |                         +-----------------+                           |
+> |
+> | |
+> +-----------------------------------------------------------------------+
+> 
+> 4/ New design for container (same as intranode):
+> +-----------------------------------------------------------------------+
+> |       Container                                         Container     |
+> | +-----------------+                               +-----------------+
+> | +-----------------+ |
+> | |      TIPC       |                               |      TIPC       | |
+> | |   Application   |                               |   Application   | |
+> | |-----------------|                               |-----------------|
+> | |-----------------| |
+> | |                 |                               |                 | |
+> | |      TIPC       |TIPC address       TIPC address|      TIPC       | |
+> | |                 |                               |                 | |
+> | +-------+---------+                               +--------+--------+
+> | +-------+---------+ |
+> |         +                Host Kernel (KVM, Native)         +          |
+> |         +-------------------------+------------------------+          |
+> |                                   +-------------+                     |
+> |                          +-----------------+    |                     |
+> |                          |      TIPC       |    |                     |
+> |                          |   Application   |    |                     |
+> |                          |-----------------|    |                     |
+> |                          |                 +----+                     |
+> |                          |      TIPC       |TIPC address              |
+> |                          |                 |                          |
+> |                          +-----------------+                          |
+> |
+> | |
+> +-----------------------------------------------------------------------+
+> 
+> TIPC is as an IPC and to designate the transport layer as an "L2.5"
+> data link layer. When a TIPC node address has been accepted into a cluster
+> and located in the same kernel (as we are trying to ensure in this patch), we
+> are 100% certain it is legitimate and authentic.
+> So, I cannot see any reason why we should not be allowed to short-cut for
+> containers when security checks have already been done.
+
+Those drawings are nice, but unnecessary in my view. I think my text above is sufficient as explanation of what we are doing.
+
+> 
+> Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
+> ---
+>  net/tipc/discover.c   |  6 ++-
+>  net/tipc/msg.h        | 10 +++++
+>  net/tipc/name_distr.c |  2 +-
+>  net/tipc/node.c       | 94
+> +++++++++++++++++++++++++++++++++++++++++--
+>  net/tipc/node.h       |  4 +-
+>  net/tipc/socket.c     |  6 +--
+>  6 files changed, 111 insertions(+), 11 deletions(-)
+> 
+> diff --git a/net/tipc/discover.c b/net/tipc/discover.c index
+> c138d68e8a69..98d4eea97eb7 100644
+> --- a/net/tipc/discover.c
+> +++ b/net/tipc/discover.c
+> @@ -38,6 +38,8 @@
+>  #include "node.h"
+>  #include "discover.h"
+> 
+> +#include <net/netns/hash.h>
+> +
+>  /* min delay during bearer start up */
+>  #define TIPC_DISC_INIT	msecs_to_jiffies(125)
+>  /* max delay if bearer has no links */
+> @@ -94,6 +96,7 @@ static void tipc_disc_init_msg(struct net *net, struct
+> sk_buff *skb,
+>  	msg_set_dest_domain(hdr, dest_domain);
+>  	msg_set_bc_netid(hdr, tn->net_id);
+>  	b->media->addr2msg(msg_media_addr(hdr), &b->addr);
+> +	msg_set_peer_net_hash(hdr, net_hash_mix(net));
+
+We should not add the hash directly, since that would be exposing kernel internal info to outside observers.
+What we need to add is a *proof*  that the sender knows the hash_mix in question. So, it should XOR its hash_mix with a TIPC/kernel global random value (also secret) and add the result to the message. The receiver does XOR on the proof and the same random value, and compares the result to the hash_mixes of the local name spaces to find a match.
 
 
-_______________________________________________
-tipc-discussion mailing list
-tipc-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+>  	msg_set_node_id(hdr, tipc_own_id(net));  }
+> 
+> @@ -200,6 +203,7 @@ void tipc_disc_rcv(struct net *net, struct sk_buff
+> *skb,
+>  	u8 peer_id[NODE_ID_LEN] = {0,};
+>  	u32 dst = msg_dest_domain(hdr);
+>  	u32 net_id = msg_bc_netid(hdr);
+> +	u32 pnet_hash = msg_peer_net_hash(hdr);
+>  	struct tipc_media_addr maddr;
+>  	u32 src = msg_prevnode(hdr);
+>  	u32 mtyp = msg_type(hdr);
+> @@ -242,7 +246,7 @@ void tipc_disc_rcv(struct net *net, struct sk_buff
+> *skb,
+>  	if (!tipc_in_scope(legacy, b->domain, src))
+>  		return;
+>  	tipc_node_check_dest(net, src, peer_id, b, caps, signature,
+> -			     &maddr, &respond, &dupl_addr);
+> +			     pnet_hash, &maddr, &respond, &dupl_addr);
+>  	if (dupl_addr)
+>  		disc_dupl_alert(b, src, &maddr);
+>  	if (!respond)
+> diff --git a/net/tipc/msg.h b/net/tipc/msg.h index
+> 0daa6f04ca81..a8d0f28094f2 100644
+> --- a/net/tipc/msg.h
+> +++ b/net/tipc/msg.h
+> @@ -973,6 +973,16 @@ static inline void msg_set_grp_remitted(struct
+> tipc_msg *m, u16 n)
+>  	msg_set_bits(m, 9, 16, 0xffff, n);
+>  }
+> 
+> +static inline void msg_set_peer_net_hash(struct tipc_msg *m, u32 n) {
+> +	msg_set_word(m, 9, n);
+> +}
+> +
+> +static inline u32 msg_peer_net_hash(struct tipc_msg *m) {
+> +	return msg_word(m, 9);
+> +}
+> +
+>  /* Word 10
+>   */
+>  static inline u16 msg_grp_evt(struct tipc_msg *m) diff --git
+> a/net/tipc/name_distr.c b/net/tipc/name_distr.c index
+> 836e629e8f4a..5feaf3b67380 100644
+> --- a/net/tipc/name_distr.c
+> +++ b/net/tipc/name_distr.c
+> @@ -146,7 +146,7 @@ static void named_distribute(struct net *net, struct
+> sk_buff_head *list,
+>  	struct publication *publ;
+>  	struct sk_buff *skb = NULL;
+>  	struct distr_item *item = NULL;
+> -	u32 msg_dsz = ((tipc_node_get_mtu(net, dnode, 0) - INT_H_SIZE) /
+> +	u32 msg_dsz = ((tipc_node_get_mtu(net, dnode, 0, false) - INT_H_SIZE)
+> +/
+>  			ITEM_SIZE) * ITEM_SIZE;
+>  	u32 msg_rem = msg_dsz;
+> 
+> diff --git a/net/tipc/node.c b/net/tipc/node.c index
+> c8f6177dd5a2..9a4ffd647701 100644
+> --- a/net/tipc/node.c
+> +++ b/net/tipc/node.c
+> @@ -45,6 +45,8 @@
+>  #include "netlink.h"
+>  #include "trace.h"
+> 
+> +#include <net/netns/hash.h>
+> +
+>  #define INVALID_NODE_SIG	0x10000
+>  #define NODE_CLEANUP_AFTER	300000
+> 
+> @@ -126,6 +128,7 @@ struct tipc_node {
+>  	struct timer_list timer;
+>  	struct rcu_head rcu;
+>  	unsigned long delete_at;
+> +	struct net *pnet;
+>  };
+> 
+>  /* Node FSM states and events:
+> @@ -184,7 +187,7 @@ static struct tipc_link *node_active_link(struct
+> tipc_node *n, int sel)
+>  	return n->links[bearer_id].link;
+>  }
+> 
+> -int tipc_node_get_mtu(struct net *net, u32 addr, u32 sel)
+> +int tipc_node_get_mtu(struct net *net, u32 addr, u32 sel, bool
+> +connected)
+>  {
+>  	struct tipc_node *n;
+>  	int bearer_id;
+> @@ -194,6 +197,14 @@ int tipc_node_get_mtu(struct net *net, u32 addr,
+> u32 sel)
+>  	if (unlikely(!n))
+>  		return mtu;
+> 
+> +	/* Allow MAX_MSG_SIZE when building connection oriented message
+> +	 * if they are in the same core network
+> +	 */
+> +	if (n->pnet && connected) {
+> +		tipc_node_put(n);
+> +		return mtu;
+> +	}
+> +
+>  	bearer_id = n->active_links[sel & 1];
+>  	if (likely(bearer_id != INVALID_BEARER_ID))
+>  		mtu = n->links[bearer_id].mtu;
+> @@ -361,11 +372,14 @@ static void tipc_node_write_unlock(struct
+> tipc_node *n)  }
+> 
+>  static struct tipc_node *tipc_node_create(struct net *net, u32 addr,
+> -					  u8 *peer_id, u16 capabilities)
+> +					  u8 *peer_id, u16 capabilities,
+> +					  u32 signature, u32 pnet_hash)
+>  {
+>  	struct tipc_net *tn = net_generic(net, tipc_net_id);
+>  	struct tipc_node *n, *temp_node;
+> +	struct tipc_net *tn_peer;
+>  	struct tipc_link *l;
+> +	struct net *tmp;
+>  	int bearer_id;
+>  	int i;
+> 
+> @@ -400,6 +414,23 @@ static struct tipc_node *tipc_node_create(struct net
+> *net, u32 addr,
+>  	memcpy(&n->peer_id, peer_id, 16);
+>  	n->net = net;
+>  	n->capabilities = capabilities;
+> +	n->pnet = NULL;
+> +	for_each_net_rcu(tmp) {
+> +		/* Integrity checking whether node exists in namespace or not */
+> +		if (net_hash_mix(tmp) != pnet_hash)
+> +			continue;
+
+See my comment above.
+
+> +		tn_peer = net_generic(tmp, tipc_net_id);
+> +		if (!tn_peer)
+> +			continue;
+> +
+> +		if ((tn_peer->random & 0x7fff) != (signature & 0x7fff))
+> +			continue;
+> +
+> +		if (!memcmp(n->peer_id, tn_peer->node_id, NODE_ID_LEN)) {
+> +			n->pnet = tmp;
+> +			break;
+> +		}
+
+We even need to verify cluster ids.
+
+> +	}
+>  	kref_init(&n->kref);
+>  	rwlock_init(&n->lock);
+>  	INIT_HLIST_NODE(&n->hash);
+> @@ -979,7 +1010,7 @@ u32 tipc_node_try_addr(struct net *net, u8 *id,
+> u32 addr)
+> 
+>  void tipc_node_check_dest(struct net *net, u32 addr,
+>  			  u8 *peer_id, struct tipc_bearer *b,
+> -			  u16 capabilities, u32 signature,
+> +			  u16 capabilities, u32 signature, u32 pnet_hash,
+>  			  struct tipc_media_addr *maddr,
+>  			  bool *respond, bool *dupl_addr)
+>  {
+> @@ -998,7 +1029,8 @@ void tipc_node_check_dest(struct net *net, u32
+> addr,
+>  	*dupl_addr = false;
+>  	*respond = false;
+> 
+> -	n = tipc_node_create(net, addr, peer_id, capabilities);
+> +	n = tipc_node_create(net, addr, peer_id, capabilities, signature,
+> +			     pnet_hash);
+>  	if (!n)
+>  		return;
+> 
+> @@ -1424,6 +1456,49 @@ static int __tipc_nl_add_node(struct tipc_nl_msg
+> *msg, struct tipc_node *node)
+>  	return -EMSGSIZE;
+>  }
+> 
+> +static void tipc_lxc_xmit(struct net *pnet, struct sk_buff_head *list)
+> +{
+> +	struct tipc_msg *hdr = buf_msg(skb_peek(list));
+> +	struct sk_buff_head inputq;
+> +
+> +	switch (msg_user(hdr)) {
+> +	case TIPC_LOW_IMPORTANCE:
+> +	case TIPC_MEDIUM_IMPORTANCE:
+> +	case TIPC_HIGH_IMPORTANCE:
+> +	case TIPC_CRITICAL_IMPORTANCE:
+> +		if (msg_connected(hdr) || msg_named(hdr)) {
+> +			spin_lock_init(&list->lock);
+> +			tipc_sk_rcv(pnet, list);
+> +			return;
+> +		}
+> +		if (msg_mcast(hdr)) {
+> +			skb_queue_head_init(&inputq);
+> +			tipc_sk_mcast_rcv(pnet, list, &inputq);
+> +			__skb_queue_purge(list);
+> +			skb_queue_purge(&inputq);
+> +			return;
+> +		}
+> +		return;
+> +	case MSG_FRAGMENTER:
+> +		if (tipc_msg_assemble(list)) {
+> +			skb_queue_head_init(&inputq);
+> +			tipc_sk_mcast_rcv(pnet, list, &inputq);
+> +			__skb_queue_purge(list);
+> +			skb_queue_purge(&inputq);
+> +		}
+> +		return;
+
+> +	case LINK_PROTOCOL:
+> +	case NAME_DISTRIBUTOR:
+> +	case GROUP_PROTOCOL:
+> +	case CONN_MANAGER:
+
+GROUP_PROTOCOL and CONN_MANAGER messages must also follow the wormhole path, otherwise they (e.g. CONN_ACK) will be out of synch with the corresponding data messages, and probably result in poorer throughput.
+
+Regards
+///jon
+
+
+> +	case TUNNEL_PROTOCOL:
+> +	case BCAST_PROTOCOL:
+> +		return;
+> +	default:
+> +		return;
+> +	};
+> +}
+> +
+>  /**
+>   * tipc_node_xmit() is the general link level function for message sending
+>   * @net: the applicable net namespace
+> @@ -1439,6 +1514,7 @@ int tipc_node_xmit(struct net *net, struct
+> sk_buff_head *list,
+>  	struct tipc_link_entry *le = NULL;
+>  	struct tipc_node *n;
+>  	struct sk_buff_head xmitq;
+> +	bool node_up = false;
+>  	int bearer_id;
+>  	int rc;
+> 
+> @@ -1455,6 +1531,16 @@ int tipc_node_xmit(struct net *net, struct
+> sk_buff_head *list,
+>  		return -EHOSTUNREACH;
+>  	}
+> 
+> +	node_up = node_is_up(n);
+> +	if (node_up && n->pnet && check_net(n->pnet)) {
+> +		/* xmit inner linux container */
+> +		tipc_lxc_xmit(n->pnet, list);
+> +		if (likely(skb_queue_empty(list))) {
+> +			tipc_node_put(n);
+> +			return 0;
+> +		}
+> +	}
+> +
+>  	tipc_node_read_lock(n);
+>  	bearer_id = n->active_links[selector & 1];
+>  	if (unlikely(bearer_id == INVALID_BEARER_ID)) { diff --git
+> a/net/tipc/node.h b/net/tipc/node.h index 291d0ecd4101..11eb95ce358b
+> 100644
+> --- a/net/tipc/node.h
+> +++ b/net/tipc/node.h
+> @@ -75,7 +75,7 @@ u32 tipc_node_get_addr(struct tipc_node *node);
+>  u32 tipc_node_try_addr(struct net *net, u8 *id, u32 addr);  void
+> tipc_node_check_dest(struct net *net, u32 onode, u8 *peer_id128,
+>  			  struct tipc_bearer *bearer,
+> -			  u16 capabilities, u32 signature,
+> +			  u16 capabilities, u32 signature, u32 pnet_hash,
+>  			  struct tipc_media_addr *maddr,
+>  			  bool *respond, bool *dupl_addr);
+>  void tipc_node_delete_links(struct net *net, int bearer_id); @@ -92,7 +92,7
+> @@ void tipc_node_unsubscribe(struct net *net, struct list_head *subscr,
+> u32 addr);  void tipc_node_broadcast(struct net *net, struct sk_buff *skb);
+> int tipc_node_add_conn(struct net *net, u32 dnode, u32 port, u32
+> peer_port);  void tipc_node_remove_conn(struct net *net, u32 dnode, u32
+> port); -int tipc_node_get_mtu(struct net *net, u32 addr, u32 sel);
+> +int tipc_node_get_mtu(struct net *net, u32 addr, u32 sel, bool
+> +connected);
+>  bool tipc_node_is_up(struct net *net, u32 addr);
+>  u16 tipc_node_get_capabilities(struct net *net, u32 addr);  int
+> tipc_nl_node_dump(struct sk_buff *skb, struct netlink_callback *cb); diff --git
+> a/net/tipc/socket.c b/net/tipc/socket.c index 3b9f8cc328f5..fb24df03da6c
+> 100644
+> --- a/net/tipc/socket.c
+> +++ b/net/tipc/socket.c
+> @@ -854,7 +854,7 @@ static int tipc_send_group_msg(struct net *net,
+> struct tipc_sock *tsk,
+> 
+>  	/* Build message as chain of buffers */
+>  	__skb_queue_head_init(&pkts);
+> -	mtu = tipc_node_get_mtu(net, dnode, tsk->portid);
+> +	mtu = tipc_node_get_mtu(net, dnode, tsk->portid, false);
+>  	rc = tipc_msg_build(hdr, m, 0, dlen, mtu, &pkts);
+>  	if (unlikely(rc != dlen))
+>  		return rc;
+> @@ -1388,7 +1388,7 @@ static int __tipc_sendmsg(struct socket *sock,
+> struct msghdr *m, size_t dlen)
+>  		return rc;
+> 
+>  	__skb_queue_head_init(&pkts);
+> -	mtu = tipc_node_get_mtu(net, dnode, tsk->portid);
+> +	mtu = tipc_node_get_mtu(net, dnode, tsk->portid, false);
+>  	rc = tipc_msg_build(hdr, m, 0, dlen, mtu, &pkts);
+>  	if (unlikely(rc != dlen))
+>  		return rc;
+> @@ -1526,7 +1526,7 @@ static void tipc_sk_finish_conn(struct tipc_sock
+> *tsk, u32 peer_port,
+>  	sk_reset_timer(sk, &sk->sk_timer, jiffies + CONN_PROBING_INTV);
+>  	tipc_set_sk_state(sk, TIPC_ESTABLISHED);
+>  	tipc_node_add_conn(net, peer_node, tsk->portid, peer_port);
+> -	tsk->max_pkt = tipc_node_get_mtu(net, peer_node, tsk->portid);
+> +	tsk->max_pkt = tipc_node_get_mtu(net, peer_node, tsk->portid, true);
+>  	tsk->peer_caps = tipc_node_get_capabilities(net, peer_node);
+>  	__skb_queue_purge(&sk->sk_write_queue);
+>  	if (tsk->peer_caps & TIPC_BLOCK_FLOWCTL)
+> --
+> 2.20.1
+
 
 
 _______________________________________________
