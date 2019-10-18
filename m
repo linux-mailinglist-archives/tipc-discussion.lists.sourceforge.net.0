@@ -2,123 +2,85 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86867DB954
-	for <lists+tipc-discussion@lfdr.de>; Thu, 17 Oct 2019 23:53:40 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:To:Sender:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ixT3Z9q/oak5yAYKA22t5kYwiL5AmsaGTS4r1g7F/J8=; b=GxY4ipVKOdrBOZDP34u4lW65z
-	xVUTw4wuNvhJZf1AirBT44MOTrh1IndElfyFFx7D7xEsdeigBYs3GqyNNRbhRDpE+SqKeg0zHMDnR
-	7NY6pXIJ3TRWXSLqLRWObuqKjkH9AFxyNn0RCWHpbIsGWri0nrmkremXQSUhZMkqjIXZE=;
+	by mail.lfdr.de (Postfix) with ESMTPS id B93C9DBFD2
+	for <lists+tipc-discussion@lfdr.de>; Fri, 18 Oct 2019 10:25:30 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iLDiA-0005VK-P9; Thu, 17 Oct 2019 21:53:34 +0000
+	id 1iLNZf-0001jr-Ce; Fri, 18 Oct 2019 08:25:27 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jon.maloy@ericsson.com>) id 1iLDi9-0005V4-1d
- for tipc-discussion@lists.sourceforge.net; Thu, 17 Oct 2019 21:53:33 +0000
+ (envelope-from <hoang.h.le@dektech.com.au>) id 1iLNZe-0001iP-24
+ for tipc-discussion@lists.sourceforge.net; Fri, 18 Oct 2019 08:25:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Message-ID:Date:Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=5J/6LQAmf+ffScA25jRgKD/lEISHUr+EKRXVgoMklzc=; b=iZhlybpCMz0HZsCMqXpdyLCxZR
- VyDeWHga/EyZWXiFryYZE/LYiRSBdrBMJpc+fTQeZocQmJN9yeYL+qqqu7d84YcfqBrbgvNZOe149
- gfDVZvETS1a4Lbnrc9NKAnN/6gWJ7f8s9YH8bYy0i12bw+rq5M8fUtSnacIGOF5s9Fbs=;
+ bh=SuMK1Ocina30zErcUH2l+JYO33mBAmIiq3VX30QWR+g=; b=mjpBgLqnJPHIX1hMjU1I/Lg1rr
+ cgIgxJPKxmKY9hkdzM07JjYdg8V9qbX7aF4KBpj9RfJD0EJ9NFTkT6ROJl7xkj4VdtFi1M+YnSAjc
+ 1wSwGL3DPKC1kFSRWXzDxDC+HSrYDzxdbpp3FTZL2pOuZ4HFAfI/TZlpklJxr2Y2a04U=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
- References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:
+ Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=5J/6LQAmf+ffScA25jRgKD/lEISHUr+EKRXVgoMklzc=; b=b4EPWl6g/kcivSc0UaykdX/AOi
- VUGqNW20+JSuswJSa2vtnuFXL4BeeoUKL8Wq1Y6LHYUkjFpQkf2gIW6Bk8H7Z9gHt+xgPKjS9oAQf
- RqYaclU/pTfvSZ3BTwwVeOEiJDkXoVfe/VnAOGrDzs7L/bplNrjvjBEsVt9MZYkA27xk=;
-Received: from mail-eopbgr700041.outbound.protection.outlook.com
- ([40.107.70.41] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ bh=SuMK1Ocina30zErcUH2l+JYO33mBAmIiq3VX30QWR+g=; b=Qzt6VWFUELR6ZeRWuZXfrnAuJw
+ mBvksEQf9hXkAOHAeaLw7eQKJxiVeaKiUFg4pBq9RsnqjxZocYvaiYd4L1pAwI3leqg9W6vpOOFFa
+ hpiGhxFJS1GMWXPjGtlS6e+018l/WtHX4t8IlDAVxs/lGKpnVjCohJAOwQ7Q+EGnPa94=;
+Received: from f0-dek.dektech.com.au ([210.10.221.142]
+ helo=mail.dektech.com.au)
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1iLDhx-00Ct5z-AY
- for tipc-discussion@lists.sourceforge.net; Thu, 17 Oct 2019 21:53:32 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HKCfXu8yPIYMhSzv8JsuCKpc9L5CnbS0a8AekaKM/lO6r8/QrOKNJDyCtAVjFHGu3oQDosHCy6aBHFsn7G+Qv1+wajDNM/Oc8iYcU0cN7eTAtY8vq2UPZjriAVNxQKAImYmX+nyafdAtf3ttEOH1DancYcLB3OG70karu8uZ/1ZvuXqL8AwVV9FYzb0KBArUxA7YGegMjcN7EBHaaY3YH3cd7wjbUo80rXYnPGNocBOzNjxVPzP734IOT42uPc4UaO3CatbOmQgz1tYJMdVnlxdRi/dz/H+O6IJ9j8sdWAf0gSghe4rjgWD5B0YqOcIIl+cADGL/a2RiiNErngLALw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5J/6LQAmf+ffScA25jRgKD/lEISHUr+EKRXVgoMklzc=;
- b=c85pXTu5zvYKlD1G8qbsxGaid6xLHNCm8/lt8hD9H+MzXMAk3Nlr9MWB1dk4F7x15UWjT+vxPwOMbYrjCnyUcRWWTEqgEuqLuxwCOyVvire830Hg7k0lj85fwy+hdLOVGEh5T/9gTfCMl0vYpcdLf2N6lHQFFWDdzj9lD7EHQpK5uRFd9kuiAtuB29j6tAnbjDkbpZQSXoQmuMulFI+My8rni+KL5nY2byX7k4nuftnqDiL5gpAe0rudWNqXxdsgWgMp2DbdTIibQKCnEILrzJVpY4Y0wpkmGhIj1xtUf/xX+W4bVFD+WaPy69Tuwaq0U4F30xwrD6aMVFYLUE6JhA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=ericsson.com; dmarc=pass action=none header.from=ericsson.com;
- dkim=pass header.d=ericsson.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5J/6LQAmf+ffScA25jRgKD/lEISHUr+EKRXVgoMklzc=;
- b=gabFBoNELpgRyPiJXRWqgJWiSgmmfqnbV2XCj6LngY1NmYxc7cnmjxyagCZ54LCm8sYc55sphgN4vJIzgT9cj9fSsIaZi22/rtdpN6SHKdBiBj9Nm8Y9yhiprX9zvk1EEvlK9YOp6dJ1nmgLa30Se6FzMUcqU6djKf0mwQlBFSA=
-Received: from CH2PR15MB3575.namprd15.prod.outlook.com (10.255.156.17) by
- CH2PR15MB3638.namprd15.prod.outlook.com (52.132.229.28) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2347.21; Thu, 17 Oct 2019 19:20:11 +0000
-Received: from CH2PR15MB3575.namprd15.prod.outlook.com
- ([fe80::c51c:4c01:61b6:ae11]) by CH2PR15MB3575.namprd15.prod.outlook.com
- ([fe80::c51c:4c01:61b6:ae11%7]) with mapi id 15.20.2347.023; Thu, 17 Oct 2019
- 19:20:11 +0000
-To: Hoang Huu Le <hoang.h.le@dektech.com.au>, "maloy@donjonn.com"
- <maloy@donjonn.com>, "tipc-dek@dektech.com.au" <tipc-dek@dektech.com.au>,
- "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>
-Thread-Topic: [net-next] tipc: improve throughput between nodes in netns
-Thread-Index: AQHVhNNIiTCRJkVA1E6MYa/P9MXziKde3fGg
-Date: Thu, 17 Oct 2019 19:20:10 +0000
-Message-ID: <CH2PR15MB3575EEAF690AF68A0413193A9A6D0@CH2PR15MB3575.namprd15.prod.outlook.com>
+ id 1iLNZa-006QKX-8g
+ for tipc-discussion@lists.sourceforge.net; Fri, 18 Oct 2019 08:25:26 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.dektech.com.au (Postfix) with ESMTP id 5BCF648E06;
+ Fri, 18 Oct 2019 19:25:13 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
+ h=content-language:x-mailer:content-transfer-encoding
+ :content-type:content-type:mime-version:message-id:date:date
+ :subject:subject:in-reply-to:references:from:from:received
+ :received:received; s=mail_dkim; t=1571387113; bh=UdBEQmcV4Ofbkh
+ +P54TzzFyKE7caFkOI6gnBZCZV3xw=; b=BcLC0WE1ZINDqb4VXRaJ7bwQUtpF28
+ 5UbeuUMtxc3ADCq1J3wPtbsBX9BPetoMETYq2TPvz1kTNEhMGEH8EOfblTp5tbgL
+ IDiY+omsiFJrzLOv6sic8yJczskXCYWZXVSkFtSGs38oRhTk5wdJQP0zYFilmYMy
+ PdhY6qPmgujw8=
+X-Virus-Scanned: amavisd-new at dektech.com.au
+Received: from mail.dektech.com.au ([127.0.0.1])
+ by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id FzNyoOHw_ecf; Fri, 18 Oct 2019 19:25:13 +1100 (AEDT)
+Received: from mail.dektech.com.au (localhost [127.0.0.1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.dektech.com.au (Postfix) with ESMTPS id EB5F348E86;
+ Fri, 18 Oct 2019 19:25:12 +1100 (AEDT)
+Received: from VNLAP298VNPC (unknown [14.161.14.188])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id 147FE48E06;
+ Fri, 18 Oct 2019 19:25:11 +1100 (AEDT)
+From: "Hoang Le" <hoang.h.le@dektech.com.au>
+To: "'Jon Maloy'" <jon.maloy@ericsson.com>, <maloy@donjonn.com>,
+ <tipc-dek@dektech.com.au>, <tipc-discussion@lists.sourceforge.net>
 References: <20191017101017.6672-1-hoang.h.le@dektech.com.au>
-In-Reply-To: <20191017101017.6672-1-hoang.h.le@dektech.com.au>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=jon.maloy@ericsson.com; 
-x-originating-ip: [66.187.232.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 548fd1bd-21f3-4ca1-3f38-08d753370780
-x-ms-traffictypediagnostic: CH2PR15MB3638:
-x-ld-processed: 92e84ceb-fbfd-47ab-be52-080c6b87953f,ExtAddr
-x-microsoft-antispam-prvs: <CH2PR15MB363817D8207B6C82C1BBC8629A6D0@CH2PR15MB3638.namprd15.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 01930B2BA8
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(366004)(136003)(396003)(39860400002)(346002)(199004)(13464003)(189003)(99286004)(66066001)(7736002)(6116002)(229853002)(110136005)(52536014)(2501003)(256004)(5024004)(14444005)(3846002)(44832011)(86362001)(6246003)(55016002)(5660300002)(2906002)(74316002)(305945005)(6436002)(316002)(9686003)(561944003)(7696005)(30864003)(76116006)(478600001)(76176011)(8936002)(64756008)(66476007)(66556008)(186003)(25786009)(66946007)(66446008)(26005)(102836004)(33656002)(53546011)(6506007)(8676002)(81166006)(81156014)(71190400001)(71200400001)(2201001)(486006)(476003)(11346002)(446003)(14454004)(579004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR15MB3638;
- H:CH2PR15MB3575.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: ericsson.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: eUH7NJZpsdpcWm8y1WDLvQaopo9v3uoSXyLAZTrhuIHDtjby5JiQklFBSnXlEHRaUT/KJ+Lr8VGwToEeBC8YlYclgkWPofiOkM9HA6On4Ao8DZCj2Z6wMiEy8NQDeWIGMn6DbW8Z/niZ2inA0snGj2NpQy6TqzCIxyfglenY+06kZKWsqy7EzHugMyIwEk0yZkKSb+gED4SmnPW6Bkme9Qnw1MG0HciGl4EIuIMy0PeLlHr4jecgeC4FQWGLfD+U5kOv6FmeXNp6JoK2mutwZX7tQGcPHm/KZ3IeH0PoKCtR8yYmZdrUnp0RY8enUPPzgeCuHndLg7RXNCwd5cv+F+TgQqHV4PsAeIgRoN9ykRU7ti1qBu4WDYQxfAgVOlfUxGlXrOq23phC1lw3JeIiHSwX/1d9ge6dd98w6DPQ8AY=
-x-ms-exchange-transport-forked: True
+ <CH2PR15MB3575EEAF690AF68A0413193A9A6D0@CH2PR15MB3575.namprd15.prod.outlook.com>
+In-Reply-To: <CH2PR15MB3575EEAF690AF68A0413193A9A6D0@CH2PR15MB3575.namprd15.prod.outlook.com>
+Date: Fri, 18 Oct 2019 15:23:59 +0700
+Message-ID: <01a601d5858d$65c4b1d0$314e1570$@dektech.com.au>
 MIME-Version: 1.0
-X-OriginatorOrg: ericsson.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 548fd1bd-21f3-4ca1-3f38-08d753370780
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Oct 2019 19:20:10.8157 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 5sAs0ui87prHV0v074OPQHXsRUBZvUxcpVtGGwk9opqInAA6O+vQcdI9hh2cDQ4/PYiXJrZpLbVS+xiNAAIyLA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR15MB3638
+X-Mailer: Microsoft Outlook 16.0
+Content-Language: en-us
+Thread-Index: AQLxTTPwwXz7kgXA3p0xlpKpbZygpwIdIogVpReTfUA=
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.70.41 listed in list.dnswl.org]
+ trust [210.10.221.142 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -126,8 +88,7 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Headers-End: 1iLDhx-00Ct5z-AY
+X-Headers-End: 1iLNZa-006QKX-8g
 Subject: Re: [tipc-discussion] [net-next] tipc: improve throughput between
  nodes in netns
 X-BeenThere: tipc-discussion@lists.sourceforge.net
@@ -141,34 +102,65 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Jon Maloy via tipc-discussion <tipc-discussion@lists.sourceforge.net>
-Reply-To: Jon Maloy <jon.maloy@ericsson.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
+
+Hi Jon,
+
+Thanks for good description. 
+However, w.r.t your comment  "We even need to verify cluster ids.",  I'm still unclear why we need to isolate cluster ids here.
+I guess the node had been accepted already when bypassed at function tipc_disc_rcv. Then, we just check to apply new mechanism for
+kernel local namespaces. 
+
+Regars,
+Hoang
+-----Original Message-----
+From: Jon Maloy <jon.maloy@ericsson.com> 
+Sent: Friday, October 18, 2019 2:20 AM
+To: Hoang Huu Le <hoang.h.le@dektech.com.au>; maloy@donjonn.com; tipc-dek@dektech.com.au; tipc-discussion@lists.sourceforge.net
+Subject: RE: [net-next] tipc: improve throughput between nodes in netns
 
 Hi Hoang,
 We need a very good log text to justify this.
 
 My proposal:
 
-"Currently, TIPC transports intra-node user data messages directly socket to socket, hence shortcutting all the lower layers of the communication stack. This gives TIPC very good intra node performance, both regarding throughput and latency.
+"Currently, TIPC transports intra-node user data messages directly socket to socket, hence shortcutting all the lower layers of the
+communication stack. This gives TIPC very good intra node performance, both regarding throughput and latency.
 
-We now introduce a similar mechanism for TIPC data traffic across network name spaces located in the same kernel. On the send path, the call chain is as always accompanied by the sending node's network name space pointer. However, once we have reliably established that the receiving node is represented by a name space on the same host, we just replace the name space pointer with the receiving node/name space's ditto, and follow the regular socket receive patch though the receiving node. This technique gives us a throughput similar to the node internal throughput, several times larger than if we let the traffic go though the full network stack. As a comparison, max throughput for 64k messages is four times larger than TCP throughput for the same type of traffic.
+We now introduce a similar mechanism for TIPC data traffic across network name spaces located in the same kernel. On the send path,
+the call chain is as always accompanied by the sending node's network name space pointer. However, once we have reliably established
+that the receiving node is represented by a name space on the same host, we just replace the name space pointer with the receiving
+node/name space's ditto, and follow the regular socket receive patch though the receiving node. This technique gives us a throughput
+similar to the node internal throughput, several times larger than if we let the traffic go though the full network stack. As a
+comparison, max throughput for 64k messages is four times larger than TCP throughput for the same type of traffic.
 
 To meet any security concerns, the following should be noted. 
 
-- All nodes joining a cluster are supposed to have been be certified and authenticated by mechanisms outside TIPC. This is no different for nodes/name spaces on the same host; they have to auto discover each other using the attached interfaces, and establish links which are supervised via the regular link monitoring mechanism. Hence, a kernel local node has no other way to join a cluster than any other node, and have to obey to policies set in the IP or device layers of the stack. 
+- All nodes joining a cluster are supposed to have been be certified and authenticated by mechanisms outside TIPC. This is no
+different for nodes/name spaces on the same host; they have to auto discover each other using the attached interfaces, and establish
+links which are supervised via the regular link monitoring mechanism. Hence, a kernel local node has no other way to join a cluster
+than any other node, and have to obey to policies set in the IP or device layers of the stack. 
 
-- Only when a sender has established with 100% certainty that the peer node is located in a kernel local name space does it choose to let user data messages, and only those, take the crossover path to the receiving node/name space.
+- Only when a sender has established with 100% certainty that the peer node is located in a kernel local name space does it choose
+to let user data messages, and only those, take the crossover path to the receiving node/name space.
 
-- If the receiving node/name space  is removed, its name space pointer is invalidated at all peer nodes, and their neighbor link monitoring will eventually note that this node is gone.
+- If the receiving node/name space  is removed, its name space pointer is invalidated at all peer nodes, and their neighbor link
+monitoring will eventually note that this node is gone.
 
-- To ensure the "100% certainty" criteria, and prevent any possible spoofing, received discovery messages must contain a proof that they know a common secret. We use the hash_mix of the sending node/name space for this purpose, since it can be accessed directly by all other name spaces in the kernel. Upon reception of a discovery message, the receiver checks this proof against all the local name spaces' hash_mix:es.  If it finds a match, that, along with a matching node id and cluster id, this is deemed sufficient proof that the peer node in question is in a local name space, and a wormhole can be opened.
+- To ensure the "100% certainty" criteria, and prevent any possible spoofing, received discovery messages must contain a proof that
+they know a common secret. We use the hash_mix of the sending node/name space for this purpose, since it can be accessed directly by
+all other name spaces in the kernel. Upon reception of a discovery message, the receiver checks this proof against all the local
+name spaces' hash_mix:es.  If it finds a match, that, along with a matching node id and cluster id, this is deemed sufficient proof
+that the peer node in question is in a local name space, and a wormhole can be opened.
 
-- We should also consider that TIPC is intended to be a cluster local IPC mechanism (just like e.g. UNIX sockets)  rather than a network protocol, and hence should be given more freedom to shortcut the lower protocol than other protocols.
+- We should also consider that TIPC is intended to be a cluster local IPC mechanism (just like e.g. UNIX sockets)  rather than a
+network protocol, and hence should be given more freedom to shortcut the lower protocol than other protocols.
 
-Regarding traceability, we should notice that since commit 6c9081a3915d ("add loopback device tracing") it is possible to follow the node internal packet flow by just activating tcpdump on the loopback interface. This will be true even for this mechanism; by activating tcpdump on the invloved nodes' loopback interfaces their inter-name space messaging can easily be tracked."
+Regarding traceability, we should notice that since commit 6c9081a3915d ("add loopback device tracing") it is possible to follow the
+node internal packet flow by just activating tcpdump on the loopback interface. This will be true even for this mechanism; by
+activating tcpdump on the invloved nodes' loopback interfaces their inter-name space messaging can easily be tracked."
 
 I also think there should be a "Suggested-by: Jon Maloy <jon.maloy@ericsson.com>" at the bottom of the patch.
 
@@ -326,7 +318,9 @@ Those drawings are nice, but unnecessary in my view. I think my text above is su
 > +	msg_set_peer_net_hash(hdr, net_hash_mix(net));
 
 We should not add the hash directly, since that would be exposing kernel internal info to outside observers.
-What we need to add is a *proof*  that the sender knows the hash_mix in question. So, it should XOR its hash_mix with a TIPC/kernel global random value (also secret) and add the result to the message. The receiver does XOR on the proof and the same random value, and compares the result to the hash_mixes of the local name spaces to find a match.
+What we need to add is a *proof*  that the sender knows the hash_mix in question. So, it should XOR its hash_mix with a TIPC/kernel
+global random value (also secret) and add the result to the message. The receiver does XOR on the proof and the same random value,
+and compares the result to the hash_mixes of the local name spaces to find a match.
 
 
 >  	msg_set_node_id(hdr, tipc_own_id(net));  }
@@ -543,7 +537,8 @@ We even need to verify cluster ids.
 > +	case GROUP_PROTOCOL:
 > +	case CONN_MANAGER:
 
-GROUP_PROTOCOL and CONN_MANAGER messages must also follow the wormhole path, otherwise they (e.g. CONN_ACK) will be out of synch with the corresponding data messages, and probably result in poorer throughput.
+GROUP_PROTOCOL and CONN_MANAGER messages must also follow the wormhole path, otherwise they (e.g. CONN_ACK) will be out of synch
+with the corresponding data messages, and probably result in poorer throughput.
 
 Regards
 ///jon
@@ -646,6 +641,7 @@ Regards
 >  	if (tsk->peer_caps & TIPC_BLOCK_FLOWCTL)
 > --
 > 2.20.1
+
 
 
 
