@@ -2,88 +2,79 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFD08DFC3D
-	for <lists+tipc-discussion@lfdr.de>; Tue, 22 Oct 2019 05:35:30 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC008E1400
+	for <lists+tipc-discussion@lfdr.de>; Wed, 23 Oct 2019 10:22:09 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iMkxB-0004RU-QB; Tue, 22 Oct 2019 03:35:25 +0000
+	id 1iNBu4-0006Ip-00; Wed, 23 Oct 2019 08:22:00 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <hoang.h.le@dektech.com.au>) id 1iMkxA-0004RD-1O
- for tipc-discussion@lists.sourceforge.net; Tue, 22 Oct 2019 03:35:24 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1iNBu2-0006Ia-46
+ for tipc-discussion@lists.sourceforge.net; Wed, 23 Oct 2019 08:21:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :Message-ID:Date:Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:
+ MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=s0i3eOJW2HvntPHq98xdzqA0qRAT9ZmFttMu7BfkR8w=; b=lXPxkxoOIiqtLWHh4f5plS1/SX
- w0Zhb19eSYy4cLKOgwUbU2cV+oQtyIW1EJl/tzzSjSU5fZ5OQJinWS6IvlrYxIHA3LYiHEreKbIef
- COVTzMR16hxDmMZzcLp3+6TBdQVKGxKUk3lo86gRts54N+WuW8lfIPKOax8PghNvS6+U=;
+ bh=KpRGWpQieHm6V5QDJS1MlbEXp2v2pWYIFwRGRiHsv9c=; b=AgRHAKTkbMiFAtcYCvMVkgtErc
+ VhJ60opngze9O8T6QzZpWXucgMchUZo7CLqeP3QyHXGLwbIn81ZckeLDis3Jfm540JMcBZY41GJcV
+ a1C9XuQzWxokv+UW+khUeKi8XIzb1uYDDG96an0X0k1GmY9E6H3f/B3IEO2vWkfK2JvY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:
- Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ h=Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:MIME-Version:
+ Content-Type:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=s0i3eOJW2HvntPHq98xdzqA0qRAT9ZmFttMu7BfkR8w=; b=F7dbS+Kb9HIiM1sIaOn/P7YA8R
- VC9tuobj+0yB4uWYhBWYLsp4Wdb3rtX99k8uFOodRp9mLgwuEVAwhCGvR8e9zi4b4cBpMGwu/8E1w
- L3U5PuOAg13aj5yg7hi0jMXU0FZVsR0yCeIzE8QBhG609deigGVnWWg6ho6bhhwMD1zM=;
+ bh=KpRGWpQieHm6V5QDJS1MlbEXp2v2pWYIFwRGRiHsv9c=; b=lEaKvuGN7q50RawrvsX/u3774v
+ j2j94/dPcfB2WXv35j9BU9Re0XNGMf1YnybG/pBpi3txGPGfByJvi4TntsITVxxQoC7prGGcVfPFS
+ sWom8AVpdbYIYRy6Dz7Qe5JjDmLZ2/0nKb8W+KxMdhOLqdHLYUeB68VSriXtPaatyY8Q=;
 Received: from f0-dek.dektech.com.au ([210.10.221.142]
  helo=mail.dektech.com.au)
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1iMkx5-00AxtR-Q4
- for tipc-discussion@lists.sourceforge.net; Tue, 22 Oct 2019 03:35:23 +0000
+ id 1iNBty-00070l-LP
+ for tipc-discussion@lists.sourceforge.net; Wed, 23 Oct 2019 08:21:58 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.dektech.com.au (Postfix) with ESMTP id 29ACD4969F;
- Tue, 22 Oct 2019 14:35:13 +1100 (AEDT)
+ by mail.dektech.com.au (Postfix) with ESMTP id C2C5E48E41;
+ Wed, 23 Oct 2019 19:21:46 +1100 (AEDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
- h=content-language:x-mailer:content-transfer-encoding
- :content-type:content-type:mime-version:message-id:date:date
- :subject:subject:in-reply-to:references:from:from:received
- :received:received; s=mail_dkim; t=1571715313; bh=nIYkkU5MLtaDCy
- NKKvznch9lUcyVDVunNRYLY/3sYnY=; b=MnN5zyQYcOnCcshrs9reAorfRTRoK4
- Ng0Ac+QHt9krcr6Tl2K9Ot+bzkGolDeD8nQy/mMt5ByijlEH9+wsg9DauzXWd7kw
- cCmImjImdPvlXz32KJSF0Y7gBlEJLJj1vnIKl7IOhytHmzg94UPfKluM1R0fziWJ
- Vk1udZtJ+lkfA=
+ h=x-mailer:message-id:date:date:subject:subject:from:from
+ :received:received:received; s=mail_dkim; t=1571818906; bh=nsPVx
+ +Gy/eCt7BO6nj9LsG0kBPo04HarGc4MmuqLquQ=; b=SHioNCoTlovxEMv1O2S7M
+ HKFz0h+GTOtn8iK3bw3AoTMP2K4ikLtwJwSOt1jjQL8X6O/KpwztnMQuH0KhKzVl
+ mKyQ1kj5QgVr8iCT4qSFpfdSHeCgu5DuCqNMfv4WMHZ70PZmf5CviuR8MRQiSNyp
+ L0viVrUrbTXTcCxmuhHa9I=
 X-Virus-Scanned: amavisd-new at dektech.com.au
 Received: from mail.dektech.com.au ([127.0.0.1])
  by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id 769LCdGsZrx9; Tue, 22 Oct 2019 14:35:13 +1100 (AEDT)
+ with ESMTP id AM2745s5FxpL; Wed, 23 Oct 2019 19:21:46 +1100 (AEDT)
 Received: from mail.dektech.com.au (localhost [127.0.0.1])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPS id 0A17249D89;
- Tue, 22 Oct 2019 14:35:12 +1100 (AEDT)
-Received: from VNLAP298VNPC (unknown [14.161.14.188])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ by mail.dektech.com.au (Postfix) with ESMTPS id 56A53496A6;
+ Wed, 23 Oct 2019 19:21:46 +1100 (AEDT)
+Received: from localhost.localdomain (unknown [14.161.14.188])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPSA id A49124969F;
- Tue, 22 Oct 2019 14:35:11 +1100 (AEDT)
-From: "Hoang Le" <hoang.h.le@dektech.com.au>
-To: "'Eric Dumazet'" <eric.dumazet@gmail.com>, <jon.maloy@ericsson.com>,
- <maloy@donjonn.com>, <tipc-discussion@lists.sourceforge.net>,
- <netdev@vger.kernel.org>
-References: <20191022022036.19961-1-hoang.h.le@dektech.com.au>
- <88e00511-ae7f-cbd3-46b1-df0f0509c04e@gmail.com>
-In-Reply-To: <88e00511-ae7f-cbd3-46b1-df0f0509c04e@gmail.com>
-Date: Tue, 22 Oct 2019 10:33:56 +0700
-Message-ID: <004401d58889$8a3ba740$9eb2f5c0$@dektech.com.au>
-MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQIBGTi9TYT/dH44O8HREmWnQKht0AJdjXoypvvwHSA=
-Content-Language: en-us
-X-Spam-Score: -0.3 (/)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id 4937F48E41;
+ Wed, 23 Oct 2019 19:21:45 +1100 (AEDT)
+From: Tuong Lien <tuong.t.lien@dektech.com.au>
+To: tipc-discussion@lists.sourceforge.net, jon.maloy@ericsson.com,
+ maloy@donjonn.com, ying.xue@windriver.com
+Date: Wed, 23 Oct 2019 15:21:38 +0700
+Message-Id: <20191023082138.14469-1-tuong.t.lien@dektech.com.au>
+X-Mailer: git-send-email 2.13.7
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: dektech.com.au]
+ for more information. [URIs: ericsson.com]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
  trust [210.10.221.142 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -93,10 +84,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.2 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1iMkx5-00AxtR-Q4
-Subject: Re: [tipc-discussion] [net-next] tipc: improve throughput between
- nodes in netns
+X-Headers-End: 1iNBty-00070l-LP
+Subject: [tipc-discussion] [net-next] tipc: eliminate the dummy packet in
+ link synching
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,61 +98,86 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Hi Eric,
+When preparing tunnel packets for the link failover or synchronization,
+as for the safe algorithm, we added a dummy packet on the pair link but
+never sent it out. In the case of failover, the pair link will be reset
+anyway. But for link synching, it will always result in retransmission
+of the dummy packet after that.
+We have also observed that such the retransmission at the early stage
+when a new node comes in a large cluster will take some time and hard
+to be done, leading to the repeated retransmit failures and the link is
+reset.
 
-Thanks for quick feedback.
-See my inline answer.
+Since in commit 4929a932be33 ("tipc: optimize link synching mechanism")
+we have already built a dummy 'TUNNEL_PROTOCOL' message on the new link
+for the synchronization, there's no need for the dummy on the pair one,
+this commit will skip it when the new mechanism takes in place. In case
+nothing exists in the pair link's transmq, the link synching will just
+start and stop shortly on the peer side.
 
-Regards,
-Hoang
------Original Message-----
-From: Eric Dumazet <eric.dumazet@gmail.com> 
-Sent: Tuesday, October 22, 2019 9:41 AM
-To: Hoang Le <hoang.h.le@dektech.com.au>; jon.maloy@ericsson.com; maloy@donjonn.com; tipc-discussion@lists.sourceforge.net; netdev@vger.kernel.org
-Subject: Re: [net-next] tipc: improve throughput between nodes in netns
+The patch is backward compatible.
 
+Acked-by: Jon Maloy <jon.maloy@ericsson.com>
+Tested-by: Hoang Le <hoang.h.le@dektech.com.au>
+Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
+---
+ net/tipc/link.c | 29 ++++++++++++++---------------
+ 1 file changed, 14 insertions(+), 15 deletions(-)
 
-On 10/21/19 7:20 PM, Hoang Le wrote:
->  	n->net = net;
->  	n->capabilities = capabilities;
-> +	n->pnet = NULL;
-> +	for_each_net_rcu(tmp) {
-
-This does not scale well, if say you have a thousand netns ?
-[Hoang] This check execs only once at setup step. So we get no problem with huge namespaces.
-
-> +		tn_peer = net_generic(tmp, tipc_net_id);
-> +		if (!tn_peer)
-> +			continue;
-> +		/* Integrity checking whether node exists in namespace or not */
-> +		if (tn_peer->net_id != tn->net_id)
-> +			continue;
-> +		if (memcmp(peer_id, tn_peer->node_id, NODE_ID_LEN))
-> +			continue;
-> +
-> +		hash_chk = tn_peer->random;
-> +		hash_chk ^= net_hash_mix(&init_net);
-
-Why the xor with net_hash_mix(&init_net) is needed ?
-[Hoang] We're trying to eliminate a sniff at injectable discovery message. 
-Building hash-mixes as much as possible is to prevent fake discovery messages.
-
-> +		hash_chk ^= net_hash_mix(tmp);
-> +		if (hash_chk ^ hash_mixes)
-> +			continue;
-> +		n->pnet = tmp;
-> +		break;
-> +	}
-
-
-How can we set n->pnet without increasing netns ->count ?
-Using check_net() later might trigger an use-after-free.
-
-[Hoang] In this case, peer node is down. I assume the tipc xmit function already bypassed these lines.
+diff --git a/net/tipc/link.c b/net/tipc/link.c
+index 999eab592de8..7e36b7ba61a9 100644
+--- a/net/tipc/link.c
++++ b/net/tipc/link.c
+@@ -1728,21 +1728,6 @@ void tipc_link_tnl_prepare(struct tipc_link *l, struct tipc_link *tnl,
+ 		return;
+ 
+ 	__skb_queue_head_init(&tnlq);
+-	__skb_queue_head_init(&tmpxq);
+-	__skb_queue_head_init(&frags);
+-
+-	/* At least one packet required for safe algorithm => add dummy */
+-	skb = tipc_msg_create(TIPC_LOW_IMPORTANCE, TIPC_DIRECT_MSG,
+-			      BASIC_H_SIZE, 0, l->addr, tipc_own_addr(l->net),
+-			      0, 0, TIPC_ERR_NO_PORT);
+-	if (!skb) {
+-		pr_warn("%sunable to create tunnel packet\n", link_co_err);
+-		return;
+-	}
+-	__skb_queue_tail(&tnlq, skb);
+-	tipc_link_xmit(l, &tnlq, &tmpxq);
+-	__skb_queue_purge(&tmpxq);
+-
+ 	/* Link Synching:
+ 	 * From now on, send only one single ("dummy") SYNCH message
+ 	 * to peer. The SYNCH message does not contain any data, just
+@@ -1768,6 +1753,20 @@ void tipc_link_tnl_prepare(struct tipc_link *l, struct tipc_link *tnl,
+ 		return;
+ 	}
+ 
++	__skb_queue_head_init(&tmpxq);
++	__skb_queue_head_init(&frags);
++	/* At least one packet required for safe algorithm => add dummy */
++	skb = tipc_msg_create(TIPC_LOW_IMPORTANCE, TIPC_DIRECT_MSG,
++			      BASIC_H_SIZE, 0, l->addr, tipc_own_addr(l->net),
++			      0, 0, TIPC_ERR_NO_PORT);
++	if (!skb) {
++		pr_warn("%sunable to create tunnel packet\n", link_co_err);
++		return;
++	}
++	__skb_queue_tail(&tnlq, skb);
++	tipc_link_xmit(l, &tnlq, &tmpxq);
++	__skb_queue_purge(&tmpxq);
++
+ 	/* Initialize reusable tunnel packet header */
+ 	tipc_msg_init(tipc_own_addr(l->net), &tnlhdr, TUNNEL_PROTOCOL,
+ 		      mtyp, INT_H_SIZE, l->addr);
+-- 
+2.13.7
 
 
 
