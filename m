@@ -2,93 +2,74 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5297E2EA8
-	for <lists+tipc-discussion@lfdr.de>; Thu, 24 Oct 2019 12:19:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB700E36A6
+	for <lists+tipc-discussion@lfdr.de>; Thu, 24 Oct 2019 17:28:46 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iNaCs-0001HD-Jt; Thu, 24 Oct 2019 10:19:02 +0000
+	id 1iNf2Y-00061K-12; Thu, 24 Oct 2019 15:28:42 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <hoang.h.le@dektech.com.au>) id 1iNaCq-0001Gx-70
- for tipc-discussion@lists.sourceforge.net; Thu, 24 Oct 2019 10:19:00 +0000
+ (envelope-from <Ying.Xue@windriver.com>) id 1iNf2W-00061D-Kp
+ for tipc-discussion@lists.sourceforge.net; Thu, 24 Oct 2019 15:28:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=yjgas8M1OSthVVyTk1liQ96HayV3B+UJ1LQFQStAlsA=; b=g/+thMhIYV82tsZYbd4kYUdj71
- iGyenk4uOGCsaoAP1LNRlswI43gfjDxj7pmuaQ7ptxPhkANbNpCnMflIYzAVQAVtkZaSRHJZDkTf8
- bs3RkdJ3iJcWYSXj9oWMFltCoTKaTtjE9I2ANmk3AzCUPiCjUIenD/HiJnVoRF9Oclq8=;
+ bh=cGrbc6sMuA5Z/Iq+E+56VywRwpvkRirYBlhsJP+00bU=; b=XQ6ZYM0WCKWEIslNlP1W+Yxr0t
+ 6UtM5HJBkzndzMPBv1McRDYyL8VJZu/FZT5viqgG+3ydh7bl8p4Hnly+r7a8QZfl21bAwN6l95XtO
+ yBWTrhTMcL+6miiynne7YWtGHagiJZjIBxr62/CqWSR57WkoMew5w4CvSOGeoV2Yqky4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:To:From:
- Sender:Reply-To:Cc:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=yjgas8M1OSthVVyTk1liQ96HayV3B+UJ1LQFQStAlsA=; b=M
- jJg7rPsE9WTGlcpiWkogdiKimoSJAU1s1/DqpXzbZFPRy49r1urMh4j4rZoDZxY6RsrAreXGXsRMu
- MQVlS4ucNfDbBwKb259thaaTM6kNsbpxFP7mu8mjkGBOEN7vZH1ZsVyZegGGBVWiezQa6DHV3ZUwQ
- 7XP456r4uxziJhC4=;
-Received: from f0-dek.dektech.com.au ([210.10.221.142]
- helo=mail.dektech.com.au)
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=cGrbc6sMuA5Z/Iq+E+56VywRwpvkRirYBlhsJP+00bU=; b=ZXVXGez7kPH3ELtUMpFY5We1MV
+ 8s4h08SwhGJ2y+pKUhsxlUN3JbyBfIorSH5PPFiaAkzaaEDB2luC8Bke9S5TdtqS9MZyYSYYzfAFN
+ TSEThWg8KnuhP3ZvK2Py3UOwo9Rn1ePZrcKOWqMrzA3gC0bk7TXbVl0u62y/TaY7IPPw=;
+Received: from mail1.windriver.com ([147.11.146.13])
  by sfi-mx-4.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1iNaCm-001Pxi-3a
- for tipc-discussion@lists.sourceforge.net; Thu, 24 Oct 2019 10:19:00 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.dektech.com.au (Postfix) with ESMTP id DF4F24A402;
- Thu, 24 Oct 2019 21:18:46 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
- h=content-transfer-encoding:mime-version:x-mailer:message-id
- :date:date:subject:subject:from:from:received:received:received;
- s=mail_dkim; t=1571912326; bh=12vgwoqpGHf3yR76hbSTjfIFC3gXFUR8x
- OepIrflm84=; b=jdMUYTAKP70oquUtAhqvM1V1F5N1iNlJvVvJwsbYq0ImalFAN
- 4ning74gZEW0wODMX3TeVYR6r52ujgXa6t2gIcbS2iKqsDv96mbH3F82X8BHD3b5
- aFN+aVPIMZKGzDZJF8vsJO6SiZ0Unw1EHsd0YFvk263oqSOEoU+pDUCweE=
-X-Virus-Scanned: amavisd-new at dektech.com.au
-Received: from mail.dektech.com.au ([127.0.0.1])
- by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id bDlGtPRwHMmH; Thu, 24 Oct 2019 21:18:46 +1100 (AEDT)
-Received: from mail.dektech.com.au (localhost [127.0.0.1])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPS id 483474A404;
- Thu, 24 Oct 2019 21:18:46 +1100 (AEDT)
-Received: from dhost.dek-tpc.internal (unknown [14.161.14.188])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPSA id 4FA744A402;
- Thu, 24 Oct 2019 21:18:45 +1100 (AEDT)
-From: Hoang Le <hoang.h.le@dektech.com.au>
-To: tipc-discussion@lists.sourceforge.net, jon.maloy@ericsson.com,
- maloy@donjonn.com, tipc-dek@dektech.com.au, ying.xue@windriver.com
-Date: Thu, 24 Oct 2019 17:17:23 +0700
-Message-Id: <20191024101723.10189-1-hoang.h.le@dektech.com.au>
-X-Mailer: git-send-email 2.20.1
+ (TLSv1.1:ECDHE-RSA-AES256-SHA:256) (Exim 4.92.2) id 1iNf2S-001mM8-T3
+ for tipc-discussion@lists.sourceforge.net; Thu, 24 Oct 2019 15:28:40 +0000
+Received: from ALA-HCB.corp.ad.wrs.com (ala-hcb.corp.ad.wrs.com
+ [147.11.189.41])
+ by mail1.windriver.com (8.15.2/8.15.2) with ESMTPS id x9OFSCvh007992
+ (version=TLSv1 cipher=AES128-SHA bits=128 verify=FAIL);
+ Thu, 24 Oct 2019 08:28:12 -0700 (PDT)
+Received: from ALA-MBD.corp.ad.wrs.com ([169.254.3.249]) by
+ ALA-HCB.corp.ad.wrs.com ([147.11.189.41]) with mapi id 14.03.0468.000; Thu,
+ 24 Oct 2019 08:27:59 -0700
+From: "Xue, Ying" <Ying.Xue@windriver.com>
+To: Jon Maloy <jon.maloy@ericsson.com>, Jon Maloy <maloy@donjonn.com>
+Thread-Topic: [net-next v2 1/1] tipc: add smart nagle feature
+Thread-Index: AQHViXbzLhUfFFZlPUGeWuydn3N2/6dp6oVw
+Date: Thu, 24 Oct 2019 15:27:58 +0000
+Message-ID: <25A14D9CFAB7B34FB9440F90AFD35233013CA51534@ALA-MBD.corp.ad.wrs.com>
+References: <1571817191-20282-1-git-send-email-jon.maloy@ericsson.com>
+In-Reply-To: <1571817191-20282-1-git-send-email-jon.maloy@ericsson.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [128.224.16.88]
 MIME-Version: 1.0
-X-Spam-Score: -0.3 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: ericsson.com]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [210.10.221.142 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.2 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1iNaCm-001Pxi-3a
-Subject: [tipc-discussion] [net-next v2] tipc: improve throughput between
- nodes in netns
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+X-Headers-End: 1iNf2S-001mM8-T3
+Subject: Re: [tipc-discussion] [net-next v2 1/1] tipc: add smart nagle
+ feature
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,535 +81,433 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: "tipc-discussion@lists.sourceforge.net"
+ <tipc-discussion@lists.sourceforge.net>,
+ "mohan.krishna.ghanta.krishnamurthy@ericsson.com"
+ <mohan.krishna.ghanta.krishnamurthy@ericsson.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Currently, TIPC transports intra-node user data messages directly
-socket to socket, hence shortcutting all the lower layers of the
-communication stack. This gives TIPC very good intra node performance,
-both regarding throughput and latency.
+Hi Jon,
 
-We now introduce a similar mechanism for TIPC data traffic across
-network namespaces located in the same kernel. On the send path, the
-call chain is as always accompanied by the sending node's network name
-space pointer. However, once we have reliably established that the
-receiving node is represented by a namespace on the same host, we just
-replace the namespace pointer with the receiving node/namespace's
-ditto, and follow the regular socket receive patch though the receiving
-node. This technique gives us a throughput similar to the node internal
-throughput, several times larger than if we let the traffic go though
-the full network stacks. As a comparison, max throughput for 64k
-messages is four times larger than TCP throughput for the same type of
-traffic.
+We have the following comments:
+- Please consider to add TIPC_NODELAY option of tipc_setsockopt() so that user has right to disable nagle algorithm.
+-  I don't understand why we don't transmit the accumulated contents of the write queue when a CONN_PROBE message is received from the peer. Can you please explain it?
+- I am just curious what impact the nagle feature has on latency for SOCK_STREAM socket. Did you ever measure latency after nagle feature is enabled?
 
-To meet any security concerns, the following should be noted.
+Thanks,
+Ying
 
-- All nodes joining a cluster are supposed to have been be certified
-and authenticated by mechanisms outside TIPC. This is no different for
-nodes/namespaces on the same host; they have to auto discover each
-other using the attached interfaces, and establish links which are
-supervised via the regular link monitoring mechanism. Hence, a kernel
-local node has no other way to join a cluster than any other node, and
-have to obey to policies set in the IP or device layers of the stack.
+-----Original Message-----
+From: Jon Maloy [mailto:jon.maloy@ericsson.com] 
+Sent: Wednesday, October 23, 2019 3:53 PM
+To: Jon Maloy; Jon Maloy
+Cc: mohan.krishna.ghanta.krishnamurthy@ericsson.com; parthasarathy.bhuvaragan@gmail.com; tung.q.nguyen@dektech.com.au; hoang.h.le@dektech.com.au; tuong.t.lien@dektech.com.au; gordan.mihaljevic@dektech.com.au; Xue, Ying; tipc-discussion@lists.sourceforge.net
+Subject: [net-next v2 1/1] tipc: add smart nagle feature
 
-- Only when a sender has established with 100% certainty that the peer
-node is located in a kernel local namespace does it choose to let user
-data messages, and only those, take the crossover path to the receiving
-node/namespace.
+We introduce a Nagle-like algorithm for bundling small messages at the
+socket level.
 
-- If the receiving node/namespace is removed, its namespace pointer
-is invalidated at all peer nodes, and their neighbor link monitoring
-will eventually note that this node is gone.
+- A socket enters nagle mode when more than 4 messages have been sent
+  out without receiving any data message from the peer.
+- A socket leaves nagle mode whenever it receives a data message from
+  the peer.
 
-- To ensure the "100% certainty" criteria, and prevent any possible
-spoofing, received discovery messages must contain a proof that the
-sender knows a common secret. We use the hash mix of the sending
-node/namespace for this purpose, since it can be accessed directly by
-all other namespaces in the kernel. Upon reception of a discovery
-message, the receiver checks this proof against all the local
-namespaces'hash_mix:es. If it finds a match, that, along with a
-matching node id and cluster id, this is deemed sufficient proof that
-the peer node in question is in a local namespace, and a wormhole can
-be opened.
+In nagle mode, small messages are accumulated in the socket write queue.
+The last buffer in the queue is marked with a new 'ack_required' bit,
+which forces the receiving peer to send a CONN_ACK message back to the
+sender.
 
-- We should also consider that TIPC is intended to be a cluster local
-IPC mechanism (just like e.g. UNIX sockets) rather than a network
-protocol, and hence we think it can justified to allow it to shortcut the
-lower protocol layers.
+The accumulated contents of the write queue is transmitted when one of
+the following events or conditions occur.
 
-Regarding traceability, we should notice that since commit 6c9081a3915d
-("tipc: add loopback device tracking") it is possible to follow the node
-internal packet flow by just activating tcpdump on the loopback
-interface. This will be true even for this mechanism; by activating
-tcpdump on the involved nodes' loopback interfaces their inter-name
-space messaging can easily be tracked.
+- A CONN_ACK message is received from the peer.
+- A data message is received from the peer.
+- A SOCK_WAKEUP pseudo message is received from the link level.
+- The write queue contains more than 64 1k blocks of data.
+- The connection is being shut down.
+- There is no CONN_ACK message to expect. I.e., there is currently
+  no outstanding message where the 'ack_required' bit was set. As a
+  consequence, the first message added after we enter nagle mode
+  is always sent directly with this bit set.
 
-v2:
-- update 'net' pointer when node left/rejoined
+This new feature gives a 50-100% improvement of throughput for small
+(i.e., less than MTU size) messages, while it might add up to one RTT
+to latency time when the socket is in nagle mode.
 
-Suggested-by: Jon Maloy <jon.maloy@ericsson.com>
-Acked-by: Jon Maloy <jon.maloy@ericsson.com>
-Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
+Signed-off-by: Jon Maloy <jon.maloy@ericsson.com>
+
 ---
- net/tipc/core.c       |  16 +++++
- net/tipc/core.h       |   6 ++
- net/tipc/discover.c   |   4 +-
- net/tipc/msg.h        |  14 ++++
- net/tipc/name_distr.c |   2 +-
- net/tipc/node.c       | 148 ++++++++++++++++++++++++++++++++++++++++--
- net/tipc/node.h       |   5 +-
- net/tipc/socket.c     |   6 +-
- 8 files changed, 190 insertions(+), 11 deletions(-)
+v2: Increased max nagle size for UDP to 14k. This improves
+    throughput for messages 750-1500 bytes with ~50%.
+---
+ net/tipc/msg.c    | 53 ++++++++++++++++++++++++++++++++
+ net/tipc/msg.h    | 12 ++++++++
+ net/tipc/node.h   |  7 +++--
+ net/tipc/socket.c | 91 +++++++++++++++++++++++++++++++++++++++++++++----------
+ 4 files changed, 145 insertions(+), 18 deletions(-)
 
-diff --git a/net/tipc/core.c b/net/tipc/core.c
-index 23cb379a93d6..ab648dd150ee 100644
---- a/net/tipc/core.c
-+++ b/net/tipc/core.c
-@@ -105,6 +105,15 @@ static void __net_exit tipc_exit_net(struct net *net)
- 	tipc_sk_rht_destroy(net);
- }
- 
-+static void __net_exit tipc_pernet_pre_exit(struct net *net)
-+{
-+	tipc_node_pre_cleanup_net(net);
-+}
-+
-+static struct pernet_operations tipc_pernet_pre_exit_ops = {
-+	.pre_exit = tipc_pernet_pre_exit,
-+};
-+
- static struct pernet_operations tipc_net_ops = {
- 	.init = tipc_init_net,
- 	.exit = tipc_exit_net,
-@@ -151,6 +160,10 @@ static int __init tipc_init(void)
- 	if (err)
- 		goto out_pernet_topsrv;
- 
-+	err = register_pernet_subsys(&tipc_pernet_pre_exit_ops);
-+	if (err)
-+		goto out_register_pernet_subsys;
-+
- 	err = tipc_bearer_setup();
- 	if (err)
- 		goto out_bearer;
-@@ -158,6 +171,8 @@ static int __init tipc_init(void)
- 	pr_info("Started in single node mode\n");
+diff --git a/net/tipc/msg.c b/net/tipc/msg.c
+index 922d262..973795a 100644
+--- a/net/tipc/msg.c
++++ b/net/tipc/msg.c
+@@ -190,6 +190,59 @@ int tipc_buf_append(struct sk_buff **headbuf, struct sk_buff **buf)
  	return 0;
- out_bearer:
-+	unregister_pernet_subsys(&tipc_pernet_pre_exit_ops);
-+out_register_pernet_subsys:
- 	unregister_pernet_device(&tipc_topsrv_net_ops);
- out_pernet_topsrv:
- 	tipc_socket_stop();
-@@ -177,6 +192,7 @@ static int __init tipc_init(void)
- static void __exit tipc_exit(void)
- {
- 	tipc_bearer_cleanup();
-+	unregister_pernet_subsys(&tipc_pernet_pre_exit_ops);
- 	unregister_pernet_device(&tipc_topsrv_net_ops);
- 	tipc_socket_stop();
- 	unregister_pernet_device(&tipc_net_ops);
-diff --git a/net/tipc/core.h b/net/tipc/core.h
-index 60d829581068..8776d32a4a47 100644
---- a/net/tipc/core.h
-+++ b/net/tipc/core.h
-@@ -59,6 +59,7 @@
- #include <net/netns/generic.h>
- #include <linux/rhashtable.h>
- #include <net/genetlink.h>
-+#include <net/netns/hash.h>
- 
- struct tipc_node;
- struct tipc_bearer;
-@@ -185,6 +186,11 @@ static inline int in_range(u16 val, u16 min, u16 max)
- 	return !less(val, min) && !more(val, max);
  }
  
-+static inline u32 tipc_net_hash_mixes(struct net *net, int tn_rand)
++/**
++ * tipc_msg_append(): Append data to tail of an existing buffer queue
++ * @hdr: header to be used
++ * @m: the data to be appended
++ * @mss: max allowable size of buffer
++ * @dlen: size of data to be appended
++ * @txq: queue to appand to
++ * Returns the number og 1k blocks appended or errno value
++ */
++int tipc_msg_append(struct tipc_msg *_hdr, struct msghdr *m, int dlen,
++		    int mss, struct sk_buff_head *txq)
 +{
-+	return net_hash_mix(&init_net) ^ net_hash_mix(net) ^ tn_rand;
++	struct sk_buff *skb, *prev;
++	int accounted, total, curr;
++	int mlen, cpy, rem = dlen;
++	struct tipc_msg *hdr;
++
++	skb = skb_peek_tail(txq);
++	accounted = skb ? msg_blocks(buf_msg(skb)) : 0;
++	total = accounted;
++
++	while (rem) {
++		if (!skb || skb->len >= mss) {
++			prev = skb;
++			skb = tipc_buf_acquire(mss, GFP_KERNEL);
++			if (unlikely(!skb))
++				return -ENOMEM;
++			skb_orphan(skb);
++			skb_trim(skb, MIN_H_SIZE);
++			hdr = buf_msg(skb);
++			skb_copy_to_linear_data(skb, _hdr, MIN_H_SIZE);
++			msg_set_hdr_sz(hdr, MIN_H_SIZE);
++			msg_set_size(hdr, MIN_H_SIZE);
++			__skb_queue_tail(txq, skb);
++			total += 1;
++			if (prev)
++				msg_set_ack_required(buf_msg(prev), 0);
++			msg_set_ack_required(hdr, 1);
++		}
++		hdr = buf_msg(skb);
++		curr = msg_blocks(hdr);
++		mlen = msg_size(hdr);
++		cpy = min_t(int, rem, mss - mlen);
++		if (cpy != copy_from_iter(skb->data + mlen, cpy, &m->msg_iter))
++			return -EFAULT;
++		msg_set_size(hdr, mlen + cpy);
++		skb_put(skb, cpy);
++		rem -= cpy;
++		total += msg_blocks(hdr) - curr;
++	}
++	return total - accounted;
 +}
 +
- #ifdef CONFIG_SYSCTL
- int tipc_register_sysctl(void);
- void tipc_unregister_sysctl(void);
-diff --git a/net/tipc/discover.c b/net/tipc/discover.c
-index c138d68e8a69..b043e8c6397a 100644
---- a/net/tipc/discover.c
-+++ b/net/tipc/discover.c
-@@ -94,6 +94,7 @@ static void tipc_disc_init_msg(struct net *net, struct sk_buff *skb,
- 	msg_set_dest_domain(hdr, dest_domain);
- 	msg_set_bc_netid(hdr, tn->net_id);
- 	b->media->addr2msg(msg_media_addr(hdr), &b->addr);
-+	msg_set_peer_net_hash(hdr, tipc_net_hash_mixes(net, tn->random));
- 	msg_set_node_id(hdr, tipc_own_id(net));
- }
- 
-@@ -242,7 +243,8 @@ void tipc_disc_rcv(struct net *net, struct sk_buff *skb,
- 	if (!tipc_in_scope(legacy, b->domain, src))
- 		return;
- 	tipc_node_check_dest(net, src, peer_id, b, caps, signature,
--			     &maddr, &respond, &dupl_addr);
-+			     msg_peer_net_hash(hdr), &maddr, &respond,
-+			     &dupl_addr);
- 	if (dupl_addr)
- 		disc_dupl_alert(b, src, &maddr);
- 	if (!respond)
+ /* tipc_msg_validate - validate basic format of received message
+  *
+  * This routine ensures a TIPC message has an acceptable header, and at least
 diff --git a/net/tipc/msg.h b/net/tipc/msg.h
-index 0daa6f04ca81..2d7cb66a6912 100644
+index 0daa6f0..b85b85a 100644
 --- a/net/tipc/msg.h
 +++ b/net/tipc/msg.h
-@@ -1026,6 +1026,20 @@ static inline bool msg_is_reset(struct tipc_msg *hdr)
- 	return (msg_user(hdr) == LINK_PROTOCOL) && (msg_type(hdr) == RESET_MSG);
+@@ -290,6 +290,16 @@ static inline void msg_set_src_droppable(struct tipc_msg *m, u32 d)
+ 	msg_set_bits(m, 0, 18, 1, d);
  }
  
-+/* Word 13
-+ */
-+static inline void msg_set_peer_net_hash(struct tipc_msg *m, u32 n)
++static inline int msg_ack_required(struct tipc_msg *m)
 +{
-+	msg_set_word(m, 13, n);
++	return msg_bits(m, 0, 18, 1);
 +}
 +
-+static inline u32 msg_peer_net_hash(struct tipc_msg *m)
++static inline void msg_set_ack_required(struct tipc_msg *m, u32 d)
 +{
-+	return msg_word(m, 13);
++	msg_set_bits(m, 0, 18, 1, d);
 +}
 +
-+/* Word 14
-+ */
- static inline u32 msg_sugg_node_addr(struct tipc_msg *m)
+ static inline bool msg_is_rcast(struct tipc_msg *m)
  {
- 	return msg_word(m, 14);
-diff --git a/net/tipc/name_distr.c b/net/tipc/name_distr.c
-index 836e629e8f4a..5feaf3b67380 100644
---- a/net/tipc/name_distr.c
-+++ b/net/tipc/name_distr.c
-@@ -146,7 +146,7 @@ static void named_distribute(struct net *net, struct sk_buff_head *list,
- 	struct publication *publ;
- 	struct sk_buff *skb = NULL;
- 	struct distr_item *item = NULL;
--	u32 msg_dsz = ((tipc_node_get_mtu(net, dnode, 0) - INT_H_SIZE) /
-+	u32 msg_dsz = ((tipc_node_get_mtu(net, dnode, 0, false) - INT_H_SIZE) /
- 			ITEM_SIZE) * ITEM_SIZE;
- 	u32 msg_rem = msg_dsz;
- 
-diff --git a/net/tipc/node.c b/net/tipc/node.c
-index f2e3cf70c922..cecb2fc3dc20 100644
---- a/net/tipc/node.c
-+++ b/net/tipc/node.c
-@@ -126,6 +126,8 @@ struct tipc_node {
- 	struct timer_list timer;
- 	struct rcu_head rcu;
- 	unsigned long delete_at;
-+	struct net *peer_net;
-+	u32 peer_hash_mix;
+ 	return msg_bits(m, 0, 18, 0x1);
+@@ -1065,6 +1075,8 @@ int tipc_msg_fragment(struct sk_buff *skb, const struct tipc_msg *hdr,
+ 		      int pktmax, struct sk_buff_head *frags);
+ int tipc_msg_build(struct tipc_msg *mhdr, struct msghdr *m,
+ 		   int offset, int dsz, int mtu, struct sk_buff_head *list);
++int tipc_msg_append(struct tipc_msg *hdr, struct msghdr *m, int dlen,
++		    int mss, struct sk_buff_head *txq);
+ bool tipc_msg_lookup_dest(struct net *net, struct sk_buff *skb, int *err);
+ bool tipc_msg_assemble(struct sk_buff_head *list);
+ bool tipc_msg_reassemble(struct sk_buff_head *list, struct sk_buff_head *rcvq);
+diff --git a/net/tipc/node.h b/net/tipc/node.h
+index 291d0ec..b9036f28 100644
+--- a/net/tipc/node.h
++++ b/net/tipc/node.h
+@@ -54,7 +54,8 @@ enum {
+ 	TIPC_LINK_PROTO_SEQNO = (1 << 6),
+ 	TIPC_MCAST_RBCTL      = (1 << 7),
+ 	TIPC_GAP_ACK_BLOCK    = (1 << 8),
+-	TIPC_TUNNEL_ENHANCED  = (1 << 9)
++	TIPC_TUNNEL_ENHANCED  = (1 << 9),
++	TIPC_NAGLE            = (1 << 10)
  };
  
- /* Node FSM states and events:
-@@ -184,7 +186,7 @@ static struct tipc_link *node_active_link(struct tipc_node *n, int sel)
- 	return n->links[bearer_id].link;
- }
- 
--int tipc_node_get_mtu(struct net *net, u32 addr, u32 sel)
-+int tipc_node_get_mtu(struct net *net, u32 addr, u32 sel, bool connected)
- {
- 	struct tipc_node *n;
- 	int bearer_id;
-@@ -194,6 +196,14 @@ int tipc_node_get_mtu(struct net *net, u32 addr, u32 sel)
- 	if (unlikely(!n))
- 		return mtu;
- 
-+	/* Allow MAX_MSG_SIZE when building connection oriented message
-+	 * if they are in the same core network
-+	 */
-+	if (n->peer_net && connected) {
-+		tipc_node_put(n);
-+		return mtu;
-+	}
+ #define TIPC_NODE_CAPABILITIES (TIPC_SYN_BIT           |  \
+@@ -66,7 +67,9 @@ enum {
+ 				TIPC_LINK_PROTO_SEQNO  |   \
+ 				TIPC_MCAST_RBCTL       |   \
+ 				TIPC_GAP_ACK_BLOCK     |   \
+-				TIPC_TUNNEL_ENHANCED)
++				TIPC_TUNNEL_ENHANCED   |   \
++				TIPC_NAGLE)
 +
- 	bearer_id = n->active_links[sel & 1];
- 	if (likely(bearer_id != INVALID_BEARER_ID))
- 		mtu = n->links[bearer_id].mtu;
-@@ -360,8 +370,37 @@ static void tipc_node_write_unlock(struct tipc_node *n)
- 	}
+ #define INVALID_BEARER_ID -1
+ 
+ void tipc_node_stop(struct net *net);
+diff --git a/net/tipc/socket.c b/net/tipc/socket.c
+index 35e32ff..1594a50 100644
+--- a/net/tipc/socket.c
++++ b/net/tipc/socket.c
+@@ -75,6 +75,7 @@ struct sockaddr_pair {
+  * @conn_instance: TIPC instance used when connection was established
+  * @published: non-zero if port has one or more associated names
+  * @max_pkt: maximum packet size "hint" used when building messages sent by port
++ * @maxnagle: maximum size of mmsg subject to nagle
+  * @portid: unique port identity in TIPC socket hash table
+  * @phdr: preformatted message header used when sending messages
+  * #cong_links: list of congested links
+@@ -97,6 +98,7 @@ struct tipc_sock {
+ 	u32 conn_instance;
+ 	int published;
+ 	u32 max_pkt;
++	u32 maxnagle;
+ 	u32 portid;
+ 	struct tipc_msg phdr;
+ 	struct list_head cong_links;
+@@ -116,6 +118,9 @@ struct tipc_sock {
+ 	struct tipc_mc_method mc_method;
+ 	struct rcu_head rcu;
+ 	struct tipc_group *group;
++	u32 oneway;
++	u16 snd_backlog;
++	bool expect_ack;
+ 	bool group_is_open;
+ };
+ 
+@@ -137,6 +142,7 @@ static int tipc_sk_insert(struct tipc_sock *tsk);
+ static void tipc_sk_remove(struct tipc_sock *tsk);
+ static int __tipc_sendstream(struct socket *sock, struct msghdr *m, size_t dsz);
+ static int __tipc_sendmsg(struct socket *sock, struct msghdr *m, size_t dsz);
++static void tipc_sk_push_backlog(struct tipc_sock *tsk);
+ 
+ static const struct proto_ops packet_ops;
+ static const struct proto_ops stream_ops;
+@@ -446,6 +452,7 @@ static int tipc_sk_create(struct net *net, struct socket *sock,
+ 
+ 	tsk = tipc_sk(sk);
+ 	tsk->max_pkt = MAX_PKT_DEFAULT;
++	tsk->maxnagle = MAX_PKT_DEFAULT;
+ 	INIT_LIST_HEAD(&tsk->publications);
+ 	INIT_LIST_HEAD(&tsk->cong_links);
+ 	msg = &tsk->phdr;
+@@ -512,8 +519,12 @@ static void __tipc_shutdown(struct socket *sock, int error)
+ 	tipc_wait_for_cond(sock, &timeout, (!tsk->cong_link_cnt &&
+ 					    !tsk_conn_cong(tsk)));
+ 
+-	/* Remove any pending SYN message */
+-	__skb_queue_purge(&sk->sk_write_queue);
++	/* Push out unsent messages or remove if pending SYN */
++	skb = skb_peek(&sk->sk_write_queue);
++	if (skb && !msg_is_syn(buf_msg(skb)))
++		tipc_sk_push_backlog(tsk);
++	else
++		__skb_queue_purge(&sk->sk_write_queue);
+ 
+ 	/* Reject all unreceived messages, except on an active connection
+ 	 * (which disconnects locally & sends a 'FIN+' to peer).
+@@ -1208,6 +1219,27 @@ void tipc_sk_mcast_rcv(struct net *net, struct sk_buff_head *arrvq,
+ 	tipc_sk_rcv(net, inputq);
  }
  
-+static void tipc_node_assign_peer_net(struct tipc_node *n, u32 hash_mixes)
++/* tipc_sk_push_backlog(): send accumulated buffers in socket write queue
++ *                         when socket is in Nagle mode
++ */
++static void tipc_sk_push_backlog(struct tipc_sock *tsk)
 +{
-+	int net_id = tipc_netid(n->net);
-+	struct tipc_net *tn_peer;
-+	struct net *tmp;
-+	u32 hash_chk;
++	struct sk_buff_head *txq = &tsk->sk.sk_write_queue;
++	struct net *net = sock_net(&tsk->sk);
++	u32 dnode = tsk_peer_node(tsk);
++	int rc;
 +
-+	if (n->peer_net)
++	if (skb_queue_empty(txq) || tsk->cong_link_cnt)
 +		return;
 +
-+	for_each_net_rcu(tmp) {
-+		tn_peer = tipc_net(tmp);
-+		if (!tn_peer)
-+			continue;
-+		/* Integrity checking whether node exists in namespace or not */
-+		if (tn_peer->net_id != net_id)
-+			continue;
-+		if (memcmp(n->peer_id, tn_peer->node_id, NODE_ID_LEN))
-+			continue;
-+		hash_chk = tipc_net_hash_mixes(tmp, tn_peer->random);
-+		if (hash_mixes ^ hash_chk)
-+			continue;
-+		n->peer_net = tmp;
-+		n->peer_hash_mix = hash_mixes;
-+		break;
-+	}
-+}
-+
- static struct tipc_node *tipc_node_create(struct net *net, u32 addr,
--					  u8 *peer_id, u16 capabilities)
-+					  u8 *peer_id, u16 capabilities,
-+					  u32 signature, u32 hash_mixes)
- {
- 	struct tipc_net *tn = net_generic(net, tipc_net_id);
- 	struct tipc_node *n, *temp_node;
-@@ -372,6 +411,8 @@ static struct tipc_node *tipc_node_create(struct net *net, u32 addr,
- 	spin_lock_bh(&tn->node_list_lock);
- 	n = tipc_node_find(net, addr);
- 	if (n) {
-+		if (n->peer_hash_mix ^ hash_mixes)
-+			tipc_node_assign_peer_net(n, hash_mixes);
- 		if (n->capabilities == capabilities)
- 			goto exit;
- 		/* Same node may come back with new capabilities */
-@@ -389,6 +430,7 @@ static struct tipc_node *tipc_node_create(struct net *net, u32 addr,
- 		list_for_each_entry_rcu(temp_node, &tn->node_list, list) {
- 			tn->capabilities &= temp_node->capabilities;
- 		}
-+
- 		goto exit;
- 	}
- 	n = kzalloc(sizeof(*n), GFP_ATOMIC);
-@@ -399,6 +441,10 @@ static struct tipc_node *tipc_node_create(struct net *net, u32 addr,
- 	n->addr = addr;
- 	memcpy(&n->peer_id, peer_id, 16);
- 	n->net = net;
-+	n->peer_net = NULL;
-+	n->peer_hash_mix = 0;
-+	/* Assign kernel local namespace if exists */
-+	tipc_node_assign_peer_net(n, hash_mixes);
- 	n->capabilities = capabilities;
- 	kref_init(&n->kref);
- 	rwlock_init(&n->lock);
-@@ -426,6 +472,10 @@ static struct tipc_node *tipc_node_create(struct net *net, u32 addr,
- 				 tipc_bc_sndlink(net),
- 				 &n->bc_entry.link)) {
- 		pr_warn("Broadcast rcv link creation failed, no memory\n");
-+		if (n->peer_net) {
-+			n->peer_net = NULL;
-+			n->peer_hash_mix = 0;
-+		}
- 		kfree(n);
- 		n = NULL;
- 		goto exit;
-@@ -979,7 +1029,7 @@ u32 tipc_node_try_addr(struct net *net, u8 *id, u32 addr)
- 
- void tipc_node_check_dest(struct net *net, u32 addr,
- 			  u8 *peer_id, struct tipc_bearer *b,
--			  u16 capabilities, u32 signature,
-+			  u16 capabilities, u32 signature, u32 hash_mixes,
- 			  struct tipc_media_addr *maddr,
- 			  bool *respond, bool *dupl_addr)
- {
-@@ -998,7 +1048,8 @@ void tipc_node_check_dest(struct net *net, u32 addr,
- 	*dupl_addr = false;
- 	*respond = false;
- 
--	n = tipc_node_create(net, addr, peer_id, capabilities);
-+	n = tipc_node_create(net, addr, peer_id, capabilities, signature,
-+			     hash_mixes);
- 	if (!n)
- 		return;
- 
-@@ -1343,6 +1394,10 @@ static void node_lost_contact(struct tipc_node *n,
- 	/* Notify publications from this node */
- 	n->action_flags |= TIPC_NOTIFY_NODE_DOWN;
- 
-+	if (n->peer_net) {
-+		n->peer_net = NULL;
-+		n->peer_hash_mix = 0;
-+	}
- 	/* Notify sockets connected to node */
- 	list_for_each_entry_safe(conn, safe, conns, list) {
- 		skb = tipc_msg_create(TIPC_CRITICAL_IMPORTANCE, TIPC_CONN_MSG,
-@@ -1424,6 +1479,52 @@ static int __tipc_nl_add_node(struct tipc_nl_msg *msg, struct tipc_node *node)
- 	return -EMSGSIZE;
- }
- 
-+static void tipc_lxc_xmit(struct net *peer_net, struct sk_buff_head *list)
-+{
-+	struct tipc_msg *hdr = buf_msg(skb_peek(list));
-+	struct sk_buff_head inputq;
-+
-+	switch (msg_user(hdr)) {
-+	case TIPC_LOW_IMPORTANCE:
-+	case TIPC_MEDIUM_IMPORTANCE:
-+	case TIPC_HIGH_IMPORTANCE:
-+	case TIPC_CRITICAL_IMPORTANCE:
-+		if (msg_connected(hdr) || msg_named(hdr)) {
-+			spin_lock_init(&list->lock);
-+			tipc_sk_rcv(peer_net, list);
-+			return;
-+		}
-+		if (msg_mcast(hdr)) {
-+			skb_queue_head_init(&inputq);
-+			tipc_sk_mcast_rcv(peer_net, list, &inputq);
-+			__skb_queue_purge(list);
-+			skb_queue_purge(&inputq);
-+			return;
-+		}
-+		return;
-+	case MSG_FRAGMENTER:
-+		if (tipc_msg_assemble(list)) {
-+			skb_queue_head_init(&inputq);
-+			tipc_sk_mcast_rcv(peer_net, list, &inputq);
-+			__skb_queue_purge(list);
-+			skb_queue_purge(&inputq);
-+		}
-+		return;
-+	case GROUP_PROTOCOL:
-+	case CONN_MANAGER:
-+		spin_lock_init(&list->lock);
-+		tipc_sk_rcv(peer_net, list);
-+		return;
-+	case LINK_PROTOCOL:
-+	case NAME_DISTRIBUTOR:
-+	case TUNNEL_PROTOCOL:
-+	case BCAST_PROTOCOL:
-+		return;
-+	default:
-+		return;
-+	};
++	tsk->snt_unacked += tsk->snd_backlog;
++	tsk->snd_backlog = 0;
++	tsk->expect_ack = true;
++	rc = tipc_node_xmit(net, txq, dnode, tsk->portid);
++	if (rc == -ELINKCONG)
++		tsk->cong_link_cnt = 1;
 +}
 +
  /**
-  * tipc_node_xmit() is the general link level function for message sending
-  * @net: the applicable net namespace
-@@ -1439,6 +1540,7 @@ int tipc_node_xmit(struct net *net, struct sk_buff_head *list,
- 	struct tipc_link_entry *le = NULL;
- 	struct tipc_node *n;
- 	struct sk_buff_head xmitq;
-+	bool node_up = false;
- 	int bearer_id;
- 	int rc;
+  * tipc_sk_conn_proto_rcv - receive a connection mng protocol message
+  * @tsk: receiving socket
+@@ -1221,7 +1253,7 @@ static void tipc_sk_conn_proto_rcv(struct tipc_sock *tsk, struct sk_buff *skb,
+ 	u32 onode = tsk_own_node(tsk);
+ 	struct sock *sk = &tsk->sk;
+ 	int mtyp = msg_type(hdr);
+-	bool conn_cong;
++	bool was_cong;
  
-@@ -1455,6 +1557,16 @@ int tipc_node_xmit(struct net *net, struct sk_buff_head *list,
- 		return -EHOSTUNREACH;
- 	}
+ 	/* Ignore if connection cannot be validated: */
+ 	if (!tsk_peer_msg(tsk, hdr)) {
+@@ -1254,11 +1286,13 @@ static void tipc_sk_conn_proto_rcv(struct tipc_sock *tsk, struct sk_buff *skb,
+ 			__skb_queue_tail(xmitq, skb);
+ 		return;
+ 	} else if (mtyp == CONN_ACK) {
+-		conn_cong = tsk_conn_cong(tsk);
++		was_cong = tsk_conn_cong(tsk);
++		tsk->expect_ack = false;
++		tipc_sk_push_backlog(tsk);
+ 		tsk->snt_unacked -= msg_conn_ack(hdr);
+ 		if (tsk->peer_caps & TIPC_BLOCK_FLOWCTL)
+ 			tsk->snd_win = msg_adv_win(hdr);
+-		if (conn_cong)
++		if (was_cong && !tsk_conn_cong(tsk))
+ 			sk->sk_write_space(sk);
+ 	} else if (mtyp != CONN_PROBE_REPLY) {
+ 		pr_warn("Received unknown CONN_PROTO msg\n");
+@@ -1437,16 +1471,17 @@ static int __tipc_sendstream(struct socket *sock, struct msghdr *m, size_t dlen)
+ 	struct sock *sk = sock->sk;
+ 	DECLARE_SOCKADDR(struct sockaddr_tipc *, dest, m->msg_name);
+ 	long timeout = sock_sndtimeo(sk, m->msg_flags & MSG_DONTWAIT);
++	struct sk_buff_head *txq = &sk->sk_write_queue;
+ 	struct tipc_sock *tsk = tipc_sk(sk);
+ 	struct tipc_msg *hdr = &tsk->phdr;
+ 	struct net *net = sock_net(sk);
+-	struct sk_buff_head pkts;
+ 	u32 dnode = tsk_peer_node(tsk);
++	int blocks = tsk->snd_backlog;
++	int maxnagle = tsk->maxnagle;
++	int maxpkt = tsk->max_pkt;
+ 	int send, sent = 0;
+ 	int rc = 0;
  
-+	node_up = node_is_up(n);
-+	if (node_up && n->peer_net && check_net(n->peer_net)) {
-+		/* xmit inner linux container */
-+		tipc_lxc_xmit(n->peer_net, list);
-+		if (likely(skb_queue_empty(list))) {
-+			tipc_node_put(n);
-+			return 0;
+-	__skb_queue_head_init(&pkts);
+-
+ 	if (unlikely(dlen > INT_MAX))
+ 		return -EMSGSIZE;
+ 
+@@ -1467,21 +1502,38 @@ static int __tipc_sendstream(struct socket *sock, struct msghdr *m, size_t dlen)
+ 					 tipc_sk_connected(sk)));
+ 		if (unlikely(rc))
+ 			break;
+-
+ 		send = min_t(size_t, dlen - sent, TIPC_MAX_USER_MSG_SIZE);
+-		rc = tipc_msg_build(hdr, m, sent, send, tsk->max_pkt, &pkts);
+-		if (unlikely(rc != send))
+-			break;
+ 
+-		trace_tipc_sk_sendstream(sk, skb_peek(&pkts),
++		if (tsk->oneway++ >= 4 &&
++		    send <= maxnagle &&
++		    tsk->peer_caps & TIPC_NAGLE &&
++		    sock->type == SOCK_STREAM) {
++			rc = tipc_msg_append(hdr, m, send, maxnagle, txq);
++			if (rc < 0)
++				break;
++			blocks += rc;
++			if (blocks <= 64 && tsk->expect_ack) {
++				tsk->snd_backlog = blocks;
++				sent += send;
++				break;
++			}
++			tsk->expect_ack = true;
++		} else {
++			rc = tipc_msg_build(hdr, m, sent, send, maxpkt, txq);
++			if (unlikely(rc != send))
++				break;
++			blocks += tsk_inc(tsk, send + MIN_H_SIZE);
 +		}
-+	}
-+
- 	tipc_node_read_lock(n);
- 	bearer_id = n->active_links[selector & 1];
- 	if (unlikely(bearer_id == INVALID_BEARER_ID)) {
-@@ -2587,3 +2699,31 @@ int tipc_node_dump(struct tipc_node *n, bool more, char *buf)
- 
- 	return i;
- }
-+
-+void tipc_node_pre_cleanup_net(struct net *exit_net)
-+{
-+	struct tipc_node *n;
-+	struct tipc_net *tn;
-+	struct net *tmp;
-+	u32 hash_mix = net_hash_mix(exit_net);
-+
-+	for_each_net_rcu(tmp) {
-+		if (!(net_hash_mix(tmp) ^ hash_mix))
-+			continue;
-+		tn = tipc_net(tmp);
-+		if (!tn)
-+			continue;
-+		spin_lock_bh(&tn->node_list_lock);
-+		list_for_each_entry_rcu(n, &tn->node_list, list) {
-+			if (!n->peer_net)
-+				continue;
-+			if (net_hash_mix(n->peer_net) ^ hash_mix)
-+				continue;
-+			n->peer_net = NULL;
-+			n->peer_hash_mix = 0;
-+			break;
-+		}
-+		spin_unlock_bh(&tn->node_list_lock);
-+	}
-+}
-+
-diff --git a/net/tipc/node.h b/net/tipc/node.h
-index 291d0ecd4101..30563c4f35d5 100644
---- a/net/tipc/node.h
-+++ b/net/tipc/node.h
-@@ -75,7 +75,7 @@ u32 tipc_node_get_addr(struct tipc_node *node);
- u32 tipc_node_try_addr(struct net *net, u8 *id, u32 addr);
- void tipc_node_check_dest(struct net *net, u32 onode, u8 *peer_id128,
- 			  struct tipc_bearer *bearer,
--			  u16 capabilities, u32 signature,
-+			  u16 capabilities, u32 signature, u32 hash_mixes,
- 			  struct tipc_media_addr *maddr,
- 			  bool *respond, bool *dupl_addr);
- void tipc_node_delete_links(struct net *net, int bearer_id);
-@@ -92,7 +92,7 @@ void tipc_node_unsubscribe(struct net *net, struct list_head *subscr, u32 addr);
- void tipc_node_broadcast(struct net *net, struct sk_buff *skb);
- int tipc_node_add_conn(struct net *net, u32 dnode, u32 port, u32 peer_port);
- void tipc_node_remove_conn(struct net *net, u32 dnode, u32 port);
--int tipc_node_get_mtu(struct net *net, u32 addr, u32 sel);
-+int tipc_node_get_mtu(struct net *net, u32 addr, u32 sel, bool connected);
- bool tipc_node_is_up(struct net *net, u32 addr);
- u16 tipc_node_get_capabilities(struct net *net, u32 addr);
- int tipc_nl_node_dump(struct sk_buff *skb, struct netlink_callback *cb);
-@@ -107,4 +107,5 @@ int tipc_nl_node_get_monitor(struct sk_buff *skb, struct genl_info *info);
- int tipc_nl_node_dump_monitor(struct sk_buff *skb, struct netlink_callback *cb);
- int tipc_nl_node_dump_monitor_peer(struct sk_buff *skb,
- 				   struct netlink_callback *cb);
-+void tipc_node_pre_cleanup_net(struct net *exit_net);
- #endif
-diff --git a/net/tipc/socket.c b/net/tipc/socket.c
-index 35e32ffc2b90..2bcacd6022d5 100644
---- a/net/tipc/socket.c
-+++ b/net/tipc/socket.c
-@@ -854,7 +854,7 @@ static int tipc_send_group_msg(struct net *net, struct tipc_sock *tsk,
- 
- 	/* Build message as chain of buffers */
- 	__skb_queue_head_init(&pkts);
--	mtu = tipc_node_get_mtu(net, dnode, tsk->portid);
-+	mtu = tipc_node_get_mtu(net, dnode, tsk->portid, false);
- 	rc = tipc_msg_build(hdr, m, 0, dlen, mtu, &pkts);
- 	if (unlikely(rc != dlen))
- 		return rc;
-@@ -1388,7 +1388,7 @@ static int __tipc_sendmsg(struct socket *sock, struct msghdr *m, size_t dlen)
- 		return rc;
- 
- 	__skb_queue_head_init(&pkts);
--	mtu = tipc_node_get_mtu(net, dnode, tsk->portid);
-+	mtu = tipc_node_get_mtu(net, dnode, tsk->portid, false);
- 	rc = tipc_msg_build(hdr, m, 0, dlen, mtu, &pkts);
- 	if (unlikely(rc != dlen))
- 		return rc;
-@@ -1526,7 +1526,7 @@ static void tipc_sk_finish_conn(struct tipc_sock *tsk, u32 peer_port,
- 	sk_reset_timer(sk, &sk->sk_timer, jiffies + CONN_PROBING_INTV);
++		trace_tipc_sk_sendstream(sk, skb_peek(txq),
+ 					 TIPC_DUMP_SK_SNDQ, " ");
+-		rc = tipc_node_xmit(net, &pkts, dnode, tsk->portid);
++		rc = tipc_node_xmit(net, txq, dnode, tsk->portid);
+ 		if (unlikely(rc == -ELINKCONG)) {
+ 			tsk->cong_link_cnt = 1;
+ 			rc = 0;
+ 		}
+ 		if (likely(!rc)) {
+-			tsk->snt_unacked += tsk_inc(tsk, send + MIN_H_SIZE);
++			tsk->snt_unacked += blocks;
++			tsk->snd_backlog = 0;
+ 			sent += send;
+ 		}
+ 	} while (sent < dlen && !rc);
+@@ -1527,6 +1579,7 @@ static void tipc_sk_finish_conn(struct tipc_sock *tsk, u32 peer_port,
  	tipc_set_sk_state(sk, TIPC_ESTABLISHED);
  	tipc_node_add_conn(net, peer_node, tsk->portid, peer_port);
--	tsk->max_pkt = tipc_node_get_mtu(net, peer_node, tsk->portid);
-+	tsk->max_pkt = tipc_node_get_mtu(net, peer_node, tsk->portid, true);
+ 	tsk->max_pkt = tipc_node_get_mtu(net, peer_node, tsk->portid);
++	tsk->maxnagle = tsk->max_pkt == MAX_MSG_SIZE ? 1500 : tsk->max_pkt;
  	tsk->peer_caps = tipc_node_get_capabilities(net, peer_node);
  	__skb_queue_purge(&sk->sk_write_queue);
  	if (tsk->peer_caps & TIPC_BLOCK_FLOWCTL)
+@@ -1848,6 +1901,7 @@ static int tipc_recvstream(struct socket *sock, struct msghdr *m,
+ 	bool peek = flags & MSG_PEEK;
+ 	int offset, required, copy, copied = 0;
+ 	int hlen, dlen, err, rc;
++	bool ack = false;
+ 	long timeout;
+ 
+ 	/* Catch invalid receive attempts */
+@@ -1892,6 +1946,7 @@ static int tipc_recvstream(struct socket *sock, struct msghdr *m,
+ 
+ 		/* Copy data if msg ok, otherwise return error/partial data */
+ 		if (likely(!err)) {
++			ack = msg_ack_required(hdr);
+ 			offset = skb_cb->bytes_read;
+ 			copy = min_t(int, dlen - offset, buflen - copied);
+ 			rc = skb_copy_datagram_msg(skb, hlen + offset, m, copy);
+@@ -1919,7 +1974,7 @@ static int tipc_recvstream(struct socket *sock, struct msghdr *m,
+ 
+ 		/* Send connection flow control advertisement when applicable */
+ 		tsk->rcv_unacked += tsk_inc(tsk, hlen + dlen);
+-		if (unlikely(tsk->rcv_unacked >= tsk->rcv_win / TIPC_ACK_RATE))
++		if (ack || tsk->rcv_unacked >= tsk->rcv_win / TIPC_ACK_RATE)
+ 			tipc_sk_send_ack(tsk);
+ 
+ 		/* Exit if all requested data or FIN/error received */
+@@ -1990,6 +2045,7 @@ static void tipc_sk_proto_rcv(struct sock *sk,
+ 		smp_wmb();
+ 		tsk->cong_link_cnt--;
+ 		wakeup = true;
++		tipc_sk_push_backlog(tsk);
+ 		break;
+ 	case GROUP_PROTOCOL:
+ 		tipc_group_proto_rcv(grp, &wakeup, hdr, inputq, xmitq);
+@@ -2029,6 +2085,7 @@ static bool tipc_sk_filter_connect(struct tipc_sock *tsk, struct sk_buff *skb)
+ 
+ 	if (unlikely(msg_mcast(hdr)))
+ 		return false;
++	tsk->oneway = 0;
+ 
+ 	switch (sk->sk_state) {
+ 	case TIPC_CONNECTING:
+@@ -2074,6 +2131,8 @@ static bool tipc_sk_filter_connect(struct tipc_sock *tsk, struct sk_buff *skb)
+ 			return true;
+ 		return false;
+ 	case TIPC_ESTABLISHED:
++		if (!skb_queue_empty(&sk->sk_write_queue))
++			tipc_sk_push_backlog(tsk);
+ 		/* Accept only connection-based messages sent by peer */
+ 		if (likely(con_msg && !err && pport == oport && pnode == onode))
+ 			return true;
 -- 
-2.20.1
+2.1.4
 
 
 
