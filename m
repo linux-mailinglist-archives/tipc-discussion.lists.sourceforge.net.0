@@ -2,88 +2,127 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48A7BF4440
-	for <lists+tipc-discussion@lfdr.de>; Fri,  8 Nov 2019 11:12:33 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
-	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iT1Fl-0003Vo-En; Fri, 08 Nov 2019 10:12:29 +0000
-Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1iT1Fj-0003VK-MS
- for tipc-discussion@lists.sourceforge.net; Fri, 08 Nov 2019 10:12:27 +0000
+	by mail.lfdr.de (Postfix) with ESMTPS id D3232F510B
+	for <lists+tipc-discussion@lfdr.de>; Fri,  8 Nov 2019 17:27:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :Message-ID:Date:Subject:In-Reply-To:References:Cc:To:From:Sender:Reply-To:
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
+	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:To:Sender:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=l0WDHOmOf0Df1f6EHL6DrGzqzH4BnD0VrgMAj+SqMik=; b=e+xoiqVdOw3rmSnc0UGO5A0/D
+	165b8cVx7Ggvv2Pg2nZoenPs16/tzP6Q0kaSGGVZP6a5P14biL/Tu2uPtjkoeMwyHi7X4G1FWqZQz
+	Glye6sWWxrVboRG3uYvtamjn4JQEFeDASt1Rtzz5G8zjmurY6uzItUIynLxD+r3axuku4=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
+	id 1iT768-0002Qh-On; Fri, 08 Nov 2019 16:26:56 +0000
+Received: from [172.30.20.202] (helo=mx.sourceforge.net)
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <jon.maloy@ericsson.com>) id 1iT767-0002Qa-Je
+ for tipc-discussion@lists.sourceforge.net; Fri, 08 Nov 2019 16:26:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Uh0KLNKmC/KXXGDhpFwfWhdu2z35nWovw4bX88QtKCQ=; b=WfCwjbN9aKlfGx3Ispkcpco4uL
- PPw467YJciiHrjjATTVflTeweFVUVXPcVZxU1wYVjsf0tUdnL2EJVgHUZGwLyj7Az3AAMFDGhQnog
- vibKaObcP1BwSwBLREkHpyAJiMG3XvdYrQHdhSWtjD0pvD5J+v10YyQZboClDeCY0q4A=;
+ bh=s67ogMguzGiI6gSko4jrrF8XszNsidhuFxXjn4SmJJ8=; b=Oh7iKMn8LHhxO9IN41UAt8QYTq
+ gKZfy8BLXvwpX0c1BHGbOpsoQuMZwpHR3iAkq2GDRu7NhDHLElH05N4QTeQJwgtHAkyUcmFV4Hhfb
+ A1kOD+iExss555HVvioEw87MBzsjQyS+20ZVleBMIF7ipjx6VqxV4LD5pZIkEtJmCyMs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:
- Subject:In-Reply-To:References:Cc:To:From:Sender:Reply-To:Content-ID:
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=Uh0KLNKmC/KXXGDhpFwfWhdu2z35nWovw4bX88QtKCQ=; b=kZMqZME2bSDwEt9i7dNCWvA2h4
- 7GfjLdeYFt7GcTQR2AwwsQjreKVsC8brqMEDG9ByCLR7NbInUkIOTUqwPzdGSo2qwcI93IS8UJlmr
- Onmzu+mdllhP/htO7Kn4495l8gB/p6pHsow9zSct5nvwbTuh2KcqUSm8KN2pmdueG+5Y=;
-Received: from f0-dek.dektech.com.au ([210.10.221.142]
- helo=mail.dektech.com.au)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ bh=s67ogMguzGiI6gSko4jrrF8XszNsidhuFxXjn4SmJJ8=; b=B9b5MzcjyNkYPWtfps2yToOlfK
+ bEaImnQYkrHLaIvNIi7HSQlP30iR7jVw1BMcLFI05/MS2BHo8zGKRYf5TJAv10Go1OanqdiJhw8cW
+ uVsNSOqcpQxAYSMhekpaqkBo7dAw9fZ95Nbs01ag3kMElAF6hopTdFgVJ3reTk8Q0qPg=;
+Received: from mail-eopbgr820041.outbound.protection.outlook.com
+ ([40.107.82.41] helo=NAM01-SN1-obe.outbound.protection.outlook.com)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1iT1Ff-004tP9-S7
- for tipc-discussion@lists.sourceforge.net; Fri, 08 Nov 2019 10:12:27 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.dektech.com.au (Postfix) with ESMTP id 738AA4AB3F;
- Fri,  8 Nov 2019 21:12:13 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
- h=content-language:x-mailer:content-transfer-encoding
- :content-type:content-type:mime-version:message-id:date:date
- :subject:subject:in-reply-to:references:from:from:received
- :received:received; s=mail_dkim; t=1573207933; bh=S4jstmYdDjvDoP
- kzI0pPWcXDyEYnaI5mv5Jg9+uPLCw=; b=HpNfGZ/EbbhM5OGPyvNwKh2pRFusi/
- AuAJ8RDd+2p0Y/DHrdl3v7yPKslcz+Vi+JX9YUjzbT7k6aSCXfqMyCmCsznZO/Q4
- V8Ww7UlCNvG+e5gGr94HEJZLK+gVx0WBHiw4WPevCrS7wuNTrHh00pw/3E8t7LZA
- Aun4bfMqGf1Ds=
-X-Virus-Scanned: amavisd-new at dektech.com.au
-Received: from mail.dektech.com.au ([127.0.0.1])
- by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id kMEMQDqKvxzS; Fri,  8 Nov 2019 21:12:13 +1100 (AEDT)
-Received: from mail.dektech.com.au (localhost [127.0.0.1])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPS id D4FEA4AB49;
- Fri,  8 Nov 2019 21:12:12 +1100 (AEDT)
-Received: from VNLAP288VNPC (unknown [14.161.14.188])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPSA id 653114AB3F;
- Fri,  8 Nov 2019 21:12:11 +1100 (AEDT)
-From: "Tuong Lien Tong" <tuong.t.lien@dektech.com.au>
-To: "'Jon Maloy'" <jon.maloy@ericsson.com>, "'Jon Maloy'" <maloy@donjonn.com>
-References: <1572892770-15527-1-git-send-email-jon.maloy@ericsson.com>
- <1572892770-15527-2-git-send-email-jon.maloy@ericsson.com>
-In-Reply-To: <1572892770-15527-2-git-send-email-jon.maloy@ericsson.com>
-Date: Fri, 8 Nov 2019 17:12:09 +0700
-Message-ID: <1efb01d5961c$fd0dd310$f7297930$@dektech.com.au>
+ id 1iT762-005LLt-TF
+ for tipc-discussion@lists.sourceforge.net; Fri, 08 Nov 2019 16:26:55 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=aNYVDN+B+Sf25UIErGIpUmdm3X3ZFdJMMDI0p+mwCg6jVQAoptdlx4q1LvAFSHpdhEdSxKcSK8Y/Z8AdGvYnsWVP+jiHVxOeChPhg17pfMO7b9WHNo3GoTxuzDp+wgvjVfVDCFxQY4hxZmXhj2yNGMkLBAN/+F3mtRkpjf0PnFDlHG5MWniftkJX3ssqAZRDiMNgkhjjICzaJ7BZYZxoRPsOzJ3F/upzdX5XIh2sMTj8LAj107Pc/V9KXi8JpLBZGZ8g7dDQ6WHmD0mJmGmsnVnMZG5++pWnCa98YlVSrm+S62naexMTjknB3rTfYY8bvOa/xRjlVRvxlzl3RB5vCw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=s67ogMguzGiI6gSko4jrrF8XszNsidhuFxXjn4SmJJ8=;
+ b=gKxWB9Z7LKzaoXOzgGYOp6jPFvqfeDqIMzHbxudPQ9/JmZC3+UmXw2lx0+6v5eeko+SJdWnmmB+6F/kAh5+Wi+TU/TpHDVi+EBclWR1zZv4uB/mCHFWWJJCR6FvgN8GsB/pmCzAcZQTidJVzNH71Mflwm5ifICYE1tA1OlzClBFcHA8z6NTEdHU/azZLtFmKkiLzbC8IkCk1C9eej2sfus1/XT6r/inlF/6B3Ot+HT/IUpTkK9TKqCC83GbAOv1XqbciTZuHQ9xvCIPFVeuhHNq/2RsRzALQmuHzsfQykRlWgRjpNP1fdEtv6ch6bKk8LrBMltUmcV0WtqDmTdjCuw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=ericsson.com; dmarc=pass action=none header.from=ericsson.com;
+ dkim=pass header.d=ericsson.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=s67ogMguzGiI6gSko4jrrF8XszNsidhuFxXjn4SmJJ8=;
+ b=B47xsr3b1lh8UM3YRBHCE5o0kMUiQ4jmIqvWVlN+ywDEw6qFp8G4iOWVauADp0MotSY164/Il0Qv9ObNDBA7fn28MGM1z4aGjju4T2jS4oB6jhUEXgIPT4Iad6z+et6DFLg4fzUd/cu9vqIF1bf/W3dUbmkVMb7QFoC975bt8hM=
+Received: from CH2PR15MB3575.namprd15.prod.outlook.com (10.255.156.17) by
+ CH2PR15MB3688.namprd15.prod.outlook.com (52.132.230.79) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2430.22; Fri, 8 Nov 2019 16:26:41 +0000
+Received: from CH2PR15MB3575.namprd15.prod.outlook.com
+ ([fe80::a0a2:ffd4:4a7f:7a63]) by CH2PR15MB3575.namprd15.prod.outlook.com
+ ([fe80::a0a2:ffd4:4a7f:7a63%7]) with mapi id 15.20.2430.020; Fri, 8 Nov 2019
+ 16:26:40 +0000
+To: Tuong Tong Lien <tuong.t.lien@dektech.com.au>,
+ "tipc-discussion@lists.sourceforge.net"
+ <tipc-discussion@lists.sourceforge.net>, "maloy@donjonn.com"
+ <maloy@donjonn.com>, "ying.xue@windriver.com" <ying.xue@windriver.com>
+Thread-Topic: [PATCH RFC] tipc: fix name table rbtree issues
+Thread-Index: AQHVlI58xEbcF0WubU2khFABE4lhj6eBd2xQ
+Date: Fri, 8 Nov 2019 16:26:40 +0000
+Message-ID: <CH2PR15MB3575819B7656FC3A51A577ED9A7B0@CH2PR15MB3575.namprd15.prod.outlook.com>
+References: <20191106103915.22599-1-tuong.t.lien@dektech.com.au>
+In-Reply-To: <20191106103915.22599-1-tuong.t.lien@dektech.com.au>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=jon.maloy@ericsson.com; 
+x-originating-ip: [24.225.233.31]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 44a9db8b-d4ff-42e1-2e5e-08d764686fb2
+x-ms-traffictypediagnostic: CH2PR15MB3688:
+x-ld-processed: 92e84ceb-fbfd-47ab-be52-080c6b87953f,ExtAddr
+x-microsoft-antispam-prvs: <CH2PR15MB36882E27A80A1B66B8A1BEE29A7B0@CH2PR15MB3688.namprd15.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 0215D7173F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(346002)(376002)(366004)(39860400002)(136003)(199004)(189003)(13464003)(50084003)(25786009)(99286004)(66066001)(8676002)(7736002)(8936002)(81156014)(81166006)(74316002)(305945005)(52536014)(64756008)(66946007)(66476007)(5660300002)(66446008)(186003)(66556008)(6116002)(3846002)(110136005)(14454004)(76116006)(26005)(486006)(7696005)(446003)(11346002)(33656002)(476003)(316002)(256004)(44832011)(14444005)(86362001)(229853002)(6506007)(6436002)(2501003)(30864003)(76176011)(6246003)(2201001)(53546011)(478600001)(9686003)(102836004)(71190400001)(71200400001)(55016002)(2906002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR15MB3688;
+ H:CH2PR15MB3575.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: ericsson.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: s+QkBBDn6RPy0DqdkTu/JyJe9MqlmLybwaI0BVOge1K68se6zRiR/GjDnAJEY5IlUl0uhG6qINMD7iqu5SELyCPk0XR5/KFbO5RSpdjkiXZs7uYct5M/7lwMkhH4n+I2GjbE+96a9AXtZExawyQXa69E1UQbByZm2/vZAoKAU6EhRKP09jXVpiTmp5fTa945D2QB/oPg7X+X+o+1WMWcMrvgLBOPvrL0jcy+HjaVLs3m4aTya09dSAHysiOUzXCuSzo5eIlzhXq2qsni9o8WhUR+TSsrxbXAKm50Tplr4JEuhJssWX7lNYbdnXlqNKQOLjuNE1dgIIXgaUj4KmvOaHMQp7AsM+eJxEfDcqjjkn7tkJS8DDbwttPuoYYr/Nt4xL+E+edVjPaQ7P6y0aH9oxEw6Y+HzXeRhDLZM/K0kKvF2Vueuq236BsvE7ozJBzv
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQGCmiBkBYCWurFtZ9j0ZIW4SXO7XAIrlcOPqBWgvfA=
-Content-Language: en-us
-X-Spam-Score: -0.2 (/)
+X-OriginatorOrg: ericsson.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 44a9db8b-d4ff-42e1-2e5e-08d764686fb2
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Nov 2019 16:26:40.7080 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: vdUoWHgjqMrjJMlca/dKBNNx6AbZCcb0m6LR7W1EHkOderHtM5Sya7wvuNFH0zw9a+jMLPIni6OeHJx+mxtfFw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR15MB3688
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: dektech.com.au]
+ for more information. [URIs: ericsson.com]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [210.10.221.142 listed in list.dnswl.org]
+ trust [40.107.82.41 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -91,10 +130,10 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.1 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1iT1Ff-004tP9-S7
-Subject: Re: [tipc-discussion] [net-next 1/3] tipc: introduce variable
- window congestion control
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1iT762-005LLt-TF
+Subject: Re: [tipc-discussion] [PATCH RFC] tipc: fix name table rbtree issues
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,571 +145,511 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: tipc-discussion@lists.sourceforge.net,
- mohan.krishna.ghanta.krishnamurthy@ericsson.com
+From: Jon Maloy via tipc-discussion <tipc-discussion@lists.sourceforge.net>
+Reply-To: Jon Maloy <jon.maloy@ericsson.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Hi Jon,
-
-I just had a look into the patch, a few concerns:
-1) Do we apply the algorithm to the broadcast sender link as well? If so, I
-guess we will have to decrease the link window at the bc_retrans()...?
-2) Why don't we try to increase the link window just prior to the backlog
-advancing (its criteria might need to change a bit...)? Then, we can just go
-ahead at the link_xmit() (i.e. no worry about a gap between the two
-queues...), so even xmit more packets somehow (i.e. no need to put into the
-backlogq and wait for next chances...)?
-
-BR/Tuong
-
------Original Message-----
-From: Jon Maloy <jon.maloy@ericsson.com> 
-Sent: Tuesday, November 5, 2019 1:39 AM
-To: Jon Maloy <jon.maloy@ericsson.com>; Jon Maloy <maloy@donjonn.com>
-Cc: mohan.krishna.ghanta.krishnamurthy@ericsson.com;
-parthasarathy.bhuvaragan@gmail.com; tung.q.nguyen@dektech.com.au;
-hoang.h.le@dektech.com.au; tuong.t.lien@dektech.com.au;
-gordan.mihaljevic@dektech.com.au; ying.xue@windriver.com;
-tipc-discussion@lists.sourceforge.net
-Subject: [net-next 1/3] tipc: introduce variable window congestion control
-
-We introduce a simple variable window congestion control for links.
-The algorithm is inspired by the Reno algorithm, and can best be
-descibed as working in permanent "congestion avoidance" mode, within
-strict limits.
-
-- We introduce hard lower and upper window limits per link, still
-  different and configurable per bearer type.
-
-- Next, we let a link start at the minimum window, and then slowly
-  increment it for each 32 received non-duplicate ACK. This goes on
-  until it either reaches the upper limit, or until it receives a
-  NACK message.
-
-- For each non-duplicate NACK received, we let the window decrease by
-  intervals of 1/2 of the current window, but not below the minimum
-  window.
-
-The change does in reality have effect only on unicast ethernet
-transport, as we have seen that there is no room whatsoever for
-increasing the window size for the UDP bearer.
-
-This algorithm seems to give a ~25% throughput improvement for large
-messages, while it has no effect on small message throughput.
-
-Suggested-by: Xin Long <lucien.xin@gmail.com>
-Signed-off-by: Jon Maloy <jon.maloy@ericsson.com>
----
- net/tipc/bcast.c     | 11 +++++----
- net/tipc/bearer.c    | 11 +++++----
- net/tipc/bearer.h    |  6 +++--
- net/tipc/eth_media.c |  6 ++++-
- net/tipc/ib_media.c  |  5 +++-
- net/tipc/link.c      | 70
-++++++++++++++++++++++++++++++++++------------------
- net/tipc/link.h      |  9 ++++---
- net/tipc/node.c      | 13 ++++++----
- net/tipc/udp_media.c |  3 ++-
- 9 files changed, 86 insertions(+), 48 deletions(-)
-
-diff --git a/net/tipc/bcast.c b/net/tipc/bcast.c
-index 6ef1abd..12fde9a 100644
---- a/net/tipc/bcast.c
-+++ b/net/tipc/bcast.c
-@@ -562,18 +562,18 @@ int tipc_bclink_reset_stats(struct net *net)
- 	return 0;
- }
- 
--static int tipc_bc_link_set_queue_limits(struct net *net, u32 limit)
-+static int tipc_bc_link_set_queue_limits(struct net *net, u32 max_win)
- {
- 	struct tipc_link *l = tipc_bc_sndlink(net);
- 
- 	if (!l)
- 		return -ENOPROTOOPT;
--	if (limit < BCLINK_WIN_MIN)
--		limit = BCLINK_WIN_MIN;
--	if (limit > TIPC_MAX_LINK_WIN)
-+	if (max_win < BCLINK_WIN_MIN)
-+		max_win = BCLINK_WIN_MIN;
-+	if (max_win > TIPC_MAX_LINK_WIN)
- 		return -EINVAL;
- 	tipc_bcast_lock(net);
--	tipc_link_set_queue_limits(l, limit);
-+	tipc_link_set_queue_limits(l, BCLINK_WIN_MIN, max_win);
- 	tipc_bcast_unlock(net);
- 	return 0;
- }
-@@ -683,6 +683,7 @@ int tipc_bcast_init(struct net *net)
- 	if (!tipc_link_bc_create(net, 0, 0,
- 				 FB_MTU,
- 				 BCLINK_WIN_DEFAULT,
-+				 BCLINK_WIN_DEFAULT,
- 				 0,
- 				 &bb->inputq,
- 				 NULL,
-diff --git a/net/tipc/bearer.c b/net/tipc/bearer.c
-index 0214aa1..f994961 100644
---- a/net/tipc/bearer.c
-+++ b/net/tipc/bearer.c
-@@ -310,7 +310,8 @@ static int tipc_enable_bearer(struct net *net, const
-char *name,
- 
- 	b->identity = bearer_id;
- 	b->tolerance = m->tolerance;
--	b->window = m->window;
-+	b->min_win = m->min_win;
-+	b->max_win = m->max_win;
- 	b->domain = disc_domain;
- 	b->net_plane = bearer_id + 'A';
- 	b->priority = prio;
-@@ -765,7 +766,7 @@ static int __tipc_nl_add_bearer(struct tipc_nl_msg *msg,
- 		goto prop_msg_full;
- 	if (nla_put_u32(msg->skb, TIPC_NLA_PROP_TOL, bearer->tolerance))
- 		goto prop_msg_full;
--	if (nla_put_u32(msg->skb, TIPC_NLA_PROP_WIN, bearer->window))
-+	if (nla_put_u32(msg->skb, TIPC_NLA_PROP_WIN, bearer->max_win))
- 		goto prop_msg_full;
- 	if (bearer->media->type_id == TIPC_MEDIA_TYPE_UDP)
- 		if (nla_put_u32(msg->skb, TIPC_NLA_PROP_MTU, bearer->mtu))
-@@ -1057,7 +1058,7 @@ int __tipc_nl_bearer_set(struct sk_buff *skb, struct
-genl_info *info)
- 		if (props[TIPC_NLA_PROP_PRIO])
- 			b->priority =
-nla_get_u32(props[TIPC_NLA_PROP_PRIO]);
- 		if (props[TIPC_NLA_PROP_WIN])
--			b->window = nla_get_u32(props[TIPC_NLA_PROP_WIN]);
-+			b->max_win = nla_get_u32(props[TIPC_NLA_PROP_WIN]);
- 		if (props[TIPC_NLA_PROP_MTU]) {
- 			if (b->media->type_id != TIPC_MEDIA_TYPE_UDP)
- 				return -EINVAL;
-@@ -1111,7 +1112,7 @@ static int __tipc_nl_add_media(struct tipc_nl_msg
-*msg,
- 		goto prop_msg_full;
- 	if (nla_put_u32(msg->skb, TIPC_NLA_PROP_TOL, media->tolerance))
- 		goto prop_msg_full;
--	if (nla_put_u32(msg->skb, TIPC_NLA_PROP_WIN, media->window))
-+	if (nla_put_u32(msg->skb, TIPC_NLA_PROP_WIN, media->max_win))
- 		goto prop_msg_full;
- 	if (media->type_id == TIPC_MEDIA_TYPE_UDP)
- 		if (nla_put_u32(msg->skb, TIPC_NLA_PROP_MTU, media->mtu))
-@@ -1244,7 +1245,7 @@ int __tipc_nl_media_set(struct sk_buff *skb, struct
-genl_info *info)
- 		if (props[TIPC_NLA_PROP_PRIO])
- 			m->priority =
-nla_get_u32(props[TIPC_NLA_PROP_PRIO]);
- 		if (props[TIPC_NLA_PROP_WIN])
--			m->window = nla_get_u32(props[TIPC_NLA_PROP_WIN]);
-+			m->max_win = nla_get_u32(props[TIPC_NLA_PROP_WIN]);
- 		if (props[TIPC_NLA_PROP_MTU]) {
- 			if (m->type_id != TIPC_MEDIA_TYPE_UDP)
- 				return -EINVAL;
-diff --git a/net/tipc/bearer.h b/net/tipc/bearer.h
-index ea0f3c4..58a23b9 100644
---- a/net/tipc/bearer.h
-+++ b/net/tipc/bearer.h
-@@ -119,7 +119,8 @@ struct tipc_media {
- 			char *raw);
- 	u32 priority;
- 	u32 tolerance;
--	u32 window;
-+	u32 min_win;
-+	u32 max_win;
- 	u32 mtu;
- 	u32 type_id;
- 	u32 hwaddr_len;
-@@ -158,7 +159,8 @@ struct tipc_bearer {
- 	struct packet_type pt;
- 	struct rcu_head rcu;
- 	u32 priority;
--	u32 window;
-+	u32 min_win;
-+	u32 max_win;
- 	u32 tolerance;
- 	u32 domain;
- 	u32 identity;
-diff --git a/net/tipc/eth_media.c b/net/tipc/eth_media.c
-index f69a2fd..38cdcab 100644
---- a/net/tipc/eth_media.c
-+++ b/net/tipc/eth_media.c
-@@ -37,6 +37,9 @@
- #include "core.h"
- #include "bearer.h"
- 
-+#define TIPC_MIN_ETH_LINK_WIN 50
-+#define TIPC_MAX_ETH_LINK_WIN 500
-+
- /* Convert Ethernet address (media address format) to string */
- static int tipc_eth_addr2str(struct tipc_media_addr *addr,
- 			     char *strbuf, int bufsz)
-@@ -92,7 +95,8 @@ struct tipc_media eth_media_info = {
- 	.raw2addr	= tipc_eth_raw2addr,
- 	.priority	= TIPC_DEF_LINK_PRI,
- 	.tolerance	= TIPC_DEF_LINK_TOL,
--	.window		= TIPC_DEF_LINK_WIN,
-+	.min_win	= TIPC_MIN_ETH_LINK_WIN,
-+	.max_win	= TIPC_MAX_ETH_LINK_WIN,
- 	.type_id	= TIPC_MEDIA_TYPE_ETH,
- 	.hwaddr_len	= ETH_ALEN,
- 	.name		= "eth"
-diff --git a/net/tipc/ib_media.c b/net/tipc/ib_media.c
-index e8c1671..7aa9ff8 100644
---- a/net/tipc/ib_media.c
-+++ b/net/tipc/ib_media.c
-@@ -42,6 +42,8 @@
- #include "core.h"
- #include "bearer.h"
- 
-+#define TIPC_MAX_IB_LINK_WIN 500
-+
- /* convert InfiniBand address (media address format) media address to
-string */
- static int tipc_ib_addr2str(struct tipc_media_addr *a, char *str_buf,
- 			    int str_size)
-@@ -94,7 +96,8 @@ struct tipc_media ib_media_info = {
- 	.raw2addr	= tipc_ib_raw2addr,
- 	.priority	= TIPC_DEF_LINK_PRI,
- 	.tolerance	= TIPC_DEF_LINK_TOL,
--	.window		= TIPC_DEF_LINK_WIN,
-+	.min_win	= TIPC_DEF_LINK_WIN,
-+	.max_win	= TIPC_MAX_IB_LINK_WIN,
- 	.type_id	= TIPC_MEDIA_TYPE_IB,
- 	.hwaddr_len	= INFINIBAND_ALEN,
- 	.name		= "ib"
-diff --git a/net/tipc/link.c b/net/tipc/link.c
-index 038861ba..24ea942 100644
---- a/net/tipc/link.c
-+++ b/net/tipc/link.c
-@@ -163,7 +163,6 @@ struct tipc_link {
- 		struct sk_buff *target_bskb;
- 	} backlog[5];
- 	u16 snd_nxt;
--	u16 window;
- 
- 	/* Reception */
- 	u16 rcv_nxt;
-@@ -174,6 +173,10 @@ struct tipc_link {
- 
- 	/* Congestion handling */
- 	struct sk_buff_head wakeupq;
-+	u16 window;
-+	u16 min_win;
-+	u16 max_win;
-+	u16 cong_acks;
- 
- 	/* Fragmentation/reassembly */
- 	struct sk_buff *reasm_buf;
-@@ -307,9 +310,14 @@ u32 tipc_link_id(struct tipc_link *l)
- 	return l->peer_bearer_id << 16 | l->bearer_id;
- }
- 
--int tipc_link_window(struct tipc_link *l)
-+int tipc_link_min_win(struct tipc_link *l)
-+{
-+	return l->min_win;
-+}
-+
-+int tipc_link_max_win(struct tipc_link *l)
- {
--	return l->window;
-+	return l->max_win;
- }
- 
- int tipc_link_prio(struct tipc_link *l)
-@@ -426,7 +434,8 @@ u32 tipc_link_state(struct tipc_link *l)
-  * @net_plane: network plane (A,B,c..) this link belongs to
-  * @mtu: mtu to be advertised by link
-  * @priority: priority to be used by link
-- * @window: send window to be used by link
-+ * @min_win: minimal send window to be used by link
-+ * @max_win: maximal send window to be used by link
-  * @session: session to be used by link
-  * @ownnode: identity of own node
-  * @peer: node id of peer node
-@@ -441,7 +450,7 @@ u32 tipc_link_state(struct tipc_link *l)
-  */
- bool tipc_link_create(struct net *net, char *if_name, int bearer_id,
- 		      int tolerance, char net_plane, u32 mtu, int priority,
--		      int window, u32 session, u32 self,
-+		      u32 min_win, u32 max_win, u32 session, u32 self,
- 		      u32 peer, u8 *peer_id, u16 peer_caps,
- 		      struct tipc_link *bc_sndlink,
- 		      struct tipc_link *bc_rcvlink,
-@@ -485,7 +494,7 @@ bool tipc_link_create(struct net *net, char *if_name,
-int bearer_id,
- 	l->advertised_mtu = mtu;
- 	l->mtu = mtu;
- 	l->priority = priority;
--	tipc_link_set_queue_limits(l, window);
-+	tipc_link_set_queue_limits(l, min_win, max_win);
- 	l->ackers = 1;
- 	l->bc_sndlink = bc_sndlink;
- 	l->bc_rcvlink = bc_rcvlink;
-@@ -513,7 +522,7 @@ bool tipc_link_create(struct net *net, char *if_name,
-int bearer_id,
-  * Returns true if link was created, otherwise false
-  */
- bool tipc_link_bc_create(struct net *net, u32 ownnode, u32 peer,
--			 int mtu, int window, u16 peer_caps,
-+			 int mtu, u32 min_win, u32 max_win, u16 peer_caps,
- 			 struct sk_buff_head *inputq,
- 			 struct sk_buff_head *namedq,
- 			 struct tipc_link *bc_sndlink,
-@@ -521,9 +530,9 @@ bool tipc_link_bc_create(struct net *net, u32 ownnode,
-u32 peer,
- {
- 	struct tipc_link *l;
- 
--	if (!tipc_link_create(net, "", MAX_BEARERS, 0, 'Z', mtu, 0, window,
--			      0, ownnode, peer, NULL, peer_caps, bc_sndlink,
--			      NULL, inputq, namedq, link))
-+	if (!tipc_link_create(net, "", MAX_BEARERS, 0, 'Z', mtu, 0, min_win,
-+			      max_win, 0, ownnode, peer, NULL, peer_caps,
-+			      bc_sndlink, NULL, inputq, namedq, link))
- 		return false;
- 
- 	l = *link;
-@@ -977,7 +986,8 @@ int tipc_link_xmit(struct tipc_link *l, struct
-sk_buff_head *list,
- 
- 	/* Prepare each packet for sending, and add to relevant queue: */
- 	while ((skb = __skb_dequeue(list))) {
--		if (likely(skb_queue_len(transmq) < maxwin)) {
-+		if (likely(skb_queue_empty(backlogq) &&
-+			   skb_queue_len(transmq) < maxwin)) {
- 			hdr = buf_msg(skb);
- 			msg_set_seqno(hdr, seqno);
- 			msg_set_ack(hdr, ack);
-@@ -1028,6 +1038,8 @@ int tipc_link_xmit(struct tipc_link *l, struct
-sk_buff_head *list,
- static void tipc_link_advance_backlog(struct tipc_link *l,
- 				      struct sk_buff_head *xmitq)
- {
-+	struct sk_buff_head *txq = &l->transmq;
-+	u16 qlen, add, cwin = l->window;
- 	struct sk_buff *skb, *_skb;
- 	struct tipc_msg *hdr;
- 	u16 seqno = l->snd_nxt;
-@@ -1035,7 +1047,7 @@ static void tipc_link_advance_backlog(struct tipc_link
-*l,
- 	u16 bc_ack = l->bc_rcvlink->rcv_nxt - 1;
- 	u32 imp;
- 
--	while (skb_queue_len(&l->transmq) < l->window) {
-+	while (skb_queue_len(txq) < cwin) {
- 		skb = skb_peek(&l->backlogq);
- 		if (!skb)
- 			break;
-@@ -1063,6 +1075,11 @@ static void tipc_link_advance_backlog(struct
-tipc_link *l,
- 		seqno++;
- 	}
- 	l->snd_nxt = seqno;
-+	qlen = skb_queue_len(txq);
-+	if (qlen >= cwin && (l->snd_nxt - buf_seqno(skb_peek(txq)) == qlen))
-{
-+		add = l->cong_acks++ % 32 ? 0 : 1;
-+		l->window = min_t(u16, cwin + add, l->max_win);
-+	}
- }
- 
- /**
-@@ -1407,7 +1424,9 @@ static int tipc_link_advance_transmq(struct tipc_link
-*l, u16 acked, u16 gap,
- 	struct sk_buff *skb, *_skb, *tmp;
- 	struct tipc_msg *hdr;
- 	u16 bc_ack = l->bc_rcvlink->rcv_nxt - 1;
-+	bool retransmitted = false;
- 	u16 ack = l->rcv_nxt - 1;
-+	u16 cwin = l->window;
- 	bool passed = false;
- 	u16 seqno, n = 0;
- 	int rc = 0;
-@@ -1440,7 +1459,7 @@ static int tipc_link_advance_transmq(struct tipc_link
-*l, u16 acked, u16 gap,
- 			_skb->priority = TC_PRIO_CONTROL;
- 			__skb_queue_tail(xmitq, _skb);
- 			l->stats.retransmitted++;
--
-+			retransmitted = true;
- 			/* Increase actual retrans counter & mark first time
-*/
- 			if (!TIPC_SKB_CB(skb)->retr_cnt++)
- 				TIPC_SKB_CB(skb)->retr_stamp = jiffies;
-@@ -1454,7 +1473,8 @@ static int tipc_link_advance_transmq(struct tipc_link
-*l, u16 acked, u16 gap,
- 			goto next_gap_ack;
- 		}
- 	}
--
-+	if (retransmitted)
-+		l->window = TIPC_DEF_LINK_WIN + (cwin - l->min_win) / 2;
- 	return 0;
- }
- 
-@@ -2297,15 +2317,17 @@ int tipc_link_bc_nack_rcv(struct tipc_link *l,
-struct sk_buff *skb,
- 	return 0;
- }
- 
--void tipc_link_set_queue_limits(struct tipc_link *l, u32 win)
-+void tipc_link_set_queue_limits(struct tipc_link *l, u32 min_win, u32
-max_win)
- {
- 	int max_bulk = TIPC_MAX_PUBL / (l->mtu / ITEM_SIZE);
- 
--	l->window = win;
--	l->backlog[TIPC_LOW_IMPORTANCE].limit      = max_t(u16, 50, win);
--	l->backlog[TIPC_MEDIUM_IMPORTANCE].limit   = max_t(u16, 100, win *
-2);
--	l->backlog[TIPC_HIGH_IMPORTANCE].limit     = max_t(u16, 150, win *
-3);
--	l->backlog[TIPC_CRITICAL_IMPORTANCE].limit = max_t(u16, 200, win *
-4);
-+	l->window = min_win;
-+	l->min_win = min_win;
-+	l->max_win = max_win;
-+	l->backlog[TIPC_LOW_IMPORTANCE].limit      = min_win * 2;
-+	l->backlog[TIPC_MEDIUM_IMPORTANCE].limit   = min_win * 4;
-+	l->backlog[TIPC_HIGH_IMPORTANCE].limit     = min_win * 6;
-+	l->backlog[TIPC_CRITICAL_IMPORTANCE].limit = min_win * 8;
- 	l->backlog[TIPC_SYSTEM_IMPORTANCE].limit   = max_bulk;
- }
- 
-@@ -2358,10 +2380,10 @@ int tipc_nl_parse_link_prop(struct nlattr *prop,
-struct nlattr *props[])
- 	}
- 
- 	if (props[TIPC_NLA_PROP_WIN]) {
--		u32 win;
-+		u32 max_win;
- 
--		win = nla_get_u32(props[TIPC_NLA_PROP_WIN]);
--		if ((win < TIPC_MIN_LINK_WIN) || (win > TIPC_MAX_LINK_WIN))
-+		max_win = nla_get_u32(props[TIPC_NLA_PROP_WIN]);
-+		if (max_win < TIPC_MIN_LINK_WIN || max_win >
-TIPC_MAX_LINK_WIN)
- 			return -EINVAL;
- 	}
- 
-@@ -2597,7 +2619,7 @@ int tipc_nl_add_bc_link(struct net *net, struct
-tipc_nl_msg *msg)
- 	prop = nla_nest_start_noflag(msg->skb, TIPC_NLA_LINK_PROP);
- 	if (!prop)
- 		goto attr_msg_full;
--	if (nla_put_u32(msg->skb, TIPC_NLA_PROP_WIN, bcl->window))
-+	if (nla_put_u32(msg->skb, TIPC_NLA_PROP_WIN, bcl->max_win))
- 		goto prop_msg_full;
- 	if (nla_put_u32(msg->skb, TIPC_NLA_PROP_BROADCAST, bc_mode))
- 		goto prop_msg_full;
-diff --git a/net/tipc/link.h b/net/tipc/link.h
-index adcad65..caed071 100644
---- a/net/tipc/link.h
-+++ b/net/tipc/link.h
-@@ -73,7 +73,7 @@ enum {
- 
- bool tipc_link_create(struct net *net, char *if_name, int bearer_id,
- 		      int tolerance, char net_plane, u32 mtu, int priority,
--		      int window, u32 session, u32 ownnode,
-+		      u32 min_win, u32 max_win, u32 session, u32 ownnode,
- 		      u32 peer, u8 *peer_id, u16 peer_caps,
- 		      struct tipc_link *bc_sndlink,
- 		      struct tipc_link *bc_rcvlink,
-@@ -81,7 +81,7 @@ bool tipc_link_create(struct net *net, char *if_name, int
-bearer_id,
- 		      struct sk_buff_head *namedq,
- 		      struct tipc_link **link);
- bool tipc_link_bc_create(struct net *net, u32 ownnode, u32 peer,
--			 int mtu, int window, u16 peer_caps,
-+			 int mtu, u32 min_win, u32 max_win, u16 peer_caps,
- 			 struct sk_buff_head *inputq,
- 			 struct sk_buff_head *namedq,
- 			 struct tipc_link *bc_sndlink,
-@@ -115,7 +115,8 @@ char *tipc_link_name_ext(struct tipc_link *l, char
-*buf);
- u32 tipc_link_state(struct tipc_link *l);
- char tipc_link_plane(struct tipc_link *l);
- int tipc_link_prio(struct tipc_link *l);
--int tipc_link_window(struct tipc_link *l);
-+int tipc_link_min_win(struct tipc_link *l);
-+int tipc_link_max_win(struct tipc_link *l);
- void tipc_link_update_caps(struct tipc_link *l, u16 capabilities);
- bool tipc_link_validate_msg(struct tipc_link *l, struct tipc_msg *hdr);
- unsigned long tipc_link_tolerance(struct tipc_link *l);
-@@ -124,7 +125,7 @@ void tipc_link_set_tolerance(struct tipc_link *l, u32
-tol,
- void tipc_link_set_prio(struct tipc_link *l, u32 prio,
- 			struct sk_buff_head *xmitq);
- void tipc_link_set_abort_limit(struct tipc_link *l, u32 limit);
--void tipc_link_set_queue_limits(struct tipc_link *l, u32 window);
-+void tipc_link_set_queue_limits(struct tipc_link *l, u32 min_win, u32
-max_win);
- int __tipc_nl_add_link(struct net *net, struct tipc_nl_msg *msg,
- 		       struct tipc_link *link, int nlflags);
- int tipc_nl_parse_link_prop(struct nlattr *prop, struct nlattr *props[]);
-diff --git a/net/tipc/node.c b/net/tipc/node.c
-index 4b60928..6e361a7 100644
---- a/net/tipc/node.c
-+++ b/net/tipc/node.c
-@@ -465,7 +465,8 @@ static struct tipc_node *tipc_node_create(struct net
-*net, u32 addr,
- 	n->active_links[1] = INVALID_BEARER_ID;
- 	if (!tipc_link_bc_create(net, tipc_own_addr(net),
- 				 addr, U16_MAX,
--				 tipc_link_window(tipc_bc_sndlink(net)),
-+				 tipc_link_min_win(tipc_bc_sndlink(net)),
-+				 tipc_link_max_win(tipc_bc_sndlink(net)),
- 				 n->capabilities,
- 				 &n->bc_entry.inputq1,
- 				 &n->bc_entry.namedq,
-@@ -1134,7 +1135,7 @@ void tipc_node_check_dest(struct net *net, u32 addr,
- 		get_random_bytes(&session, sizeof(u16));
- 		if (!tipc_link_create(net, if_name, b->identity,
-b->tolerance,
- 				      b->net_plane, b->mtu, b->priority,
--				      b->window, session,
-+				      b->min_win, b->max_win, session,
- 				      tipc_own_addr(net), addr, peer_id,
- 				      n->capabilities,
- 				      tipc_bc_sndlink(n->net),
-n->bc_entry.link,
-@@ -2258,10 +2259,12 @@ int tipc_nl_node_set_link(struct sk_buff *skb,
-struct genl_info *info)
- 			tipc_link_set_prio(link, prio, &xmitq);
- 		}
- 		if (props[TIPC_NLA_PROP_WIN]) {
--			u32 win;
-+			u32 max_win;
- 
--			win = nla_get_u32(props[TIPC_NLA_PROP_WIN]);
--			tipc_link_set_queue_limits(link, win);
-+			max_win = nla_get_u32(props[TIPC_NLA_PROP_WIN]);
-+			tipc_link_set_queue_limits(link,
-+						   tipc_link_min_win(link),
-+						   max_win);
- 		}
- 	}
- 
-diff --git a/net/tipc/udp_media.c b/net/tipc/udp_media.c
-index 43ca5fd..7bcc79a 100644
---- a/net/tipc/udp_media.c
-+++ b/net/tipc/udp_media.c
-@@ -824,7 +824,8 @@ struct tipc_media udp_media_info = {
- 	.msg2addr	= tipc_udp_msg2addr,
- 	.priority	= TIPC_DEF_LINK_PRI,
- 	.tolerance	= TIPC_DEF_LINK_TOL,
--	.window		= TIPC_DEF_LINK_WIN,
-+	.min_win	= TIPC_DEF_LINK_WIN,
-+	.max_win	= TIPC_DEF_LINK_WIN,
- 	.mtu		= TIPC_DEF_LINK_UDP_MTU,
- 	.type_id	= TIPC_MEDIA_TYPE_UDP,
- 	.hwaddr_len	= 0,
--- 
-2.1.4
 
 
+> -----Original Message-----
+> From: Tuong Lien <tuong.t.lien@dektech.com.au>
+> Sent: 6-Nov-19 05:39
+> To: tipc-discussion@lists.sourceforge.net; Jon Maloy <jon.maloy@ericsson.com>; maloy@donjonn.com;
+> ying.xue@windriver.com
+> Subject: [PATCH RFC] tipc: fix name table rbtree issues
+> 
+> The current rbtree for service ranges in the name table is built based
+> on the 'lower' & 'upper' range values resulting in a flaw in the rbtree
+> searching. Some issues have been observed in case of range overlapping:
+> 
+> Case #1: unable to withdraw a name entry:
+> After some name services are bound, all of them are withdrawn by user
+> but one remains in the name table forever. This corrupts the table and
+> that service becomes dummy i.e. no real port.
+> E.g.
+> 
+>                 /
+>            {22, 22}
+>               /
+>              /
+>    --->  {10, 50}
+>            /  \
+>           /    \
+>     {10, 30}  {20, 60}
+> 
+> The node {10, 30} cannot be removed since the rbtree searching stops at
+> the node's ancestor i.e. {10, 50}, so starting from it will never reach
+> the finding node.
+> 
+> Case #2: failed to send data in some cases:
+> E.g. Two service ranges: {20, 60}, {10, 50} are bound. The rbtree for
+> this service will be one of the two cases below depending on the order
+> of the bindings:
+> 
+>         {20, 60}             {10, 50} <--
+>           /  \                 /  \
+>          /    \               /    \
+>     {10, 50}  NIL <--       NIL  {20, 60}
+> 
+>           (a)                    (b)
+> 
+> Now, try to send some data to service {30}, there will be two results:
+> (a): Failed, no route to host.
+> (b): Ok.
+> 
+> The reason is that the rbtree searching will stop at the pointing node
+> as shown above.
+> 
+> Case #3: no round-robin in data sending:
+> Same as case #2b above, the data sending to service {30} will always
+> arrive in the {10, 50}.
+
+I wouldn't mention case #3 at all. If we could make this work (which I doubt, see my previous mail) it would in reality imply new functionality. -The old functionality, round-robin between identical ranges does still work, as far as I can understand. 
+> 
+> Case #4: failed to send data:
+> Same as case #2b above but if the data sending's scope is local and the
+> {10, 50} is published by a peer node, then it will result in "no route
+> to host" even though the other {20, 60} is for example on the local
+> node which should be able to get the data.
+> 
+> The issues are actually due to the way we built the rbtree. This commit
+> fixes it by introducing an additional field to each node, named 'max',
+> which is the largest 'upper' of that node subtree. The 'max' value for
+> each subtrees will be propagated correctly whenever a node is inserted/
+> removed or the tree is rebalanced by the augmented rbtree callbacks.
+> 
+> By this way, we can change the rbtree searching appoarch to solve the
+> issues above. Case #3 is however not covered by this commit, we leave
+> it as current until one is proven to need a round-robin fashion for it.
+> 
+> Besides, since now we have the 'max' value, we can even improve the
+> searching for a next range matching e.g. in case of multicast, so get
+> rid of the unneeded looping over all the nodes in the tree.
+> 
+> Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
+> ---
+>  net/tipc/name_table.c | 268 +++++++++++++++++++++++++++++++++-----------------
+>  1 file changed, 179 insertions(+), 89 deletions(-)
+> 
+> diff --git a/net/tipc/name_table.c b/net/tipc/name_table.c
+> index 66a65c2cdb23..5cac6c1dfeb0 100644
+> --- a/net/tipc/name_table.c
+> +++ b/net/tipc/name_table.c
+> @@ -35,6 +35,7 @@
+>   */
+> 
+>  #include <net/sock.h>
+> +#include <linux/rbtree_augmented.h>
+>  #include "core.h"
+>  #include "netlink.h"
+>  #include "name_table.h"
+> @@ -50,6 +51,7 @@
+>   * @lower: service range lower bound
+>   * @upper: service range upper bound
+>   * @tree_node: member of service range RB tree
+> + * @max: largest 'upper' in this node subtree
+>   * @local_publ: list of identical publications made from this node
+>   *   Used by closest_first lookup and multicast lookup algorithm
+>   * @all_publ: all publications identical to this one, whatever node and scope
+> @@ -59,6 +61,7 @@ struct service_range {
+>  	u32 lower;
+>  	u32 upper;
+>  	struct rb_node tree_node;
+> +	u32 max;
+>  	struct list_head local_publ;
+>  	struct list_head all_publ;
+>  };
+> @@ -81,6 +84,130 @@ struct tipc_service {
+>  	struct rcu_head rcu;
+>  };
+> 
+> +#define service_range_upper(sr) ((sr)->upper)
+> +RB_DECLARE_CALLBACKS_MAX(static, sr_callbacks,
+> +			 struct service_range, tree_node, u32, max,
+> +			 service_range_upper)
+> +
+> +#define service_range_entry(rbtree_node)				\
+> +	(container_of(rbtree_node, struct service_range, tree_node))
+> +
+> +#define service_range_overlap(sr, start, end)				\
+> +	((sr)->lower <= (end) && (sr)->upper >= (start))
+> +
+> +/**
+> + * service_range_foreach_match - iterate over tipc service rbtree for each
+> + *                               range match
+> + * @sr: the service range pointer as a loop cursor
+> + * @sc: the pointer to tipc service which holds the service range rbtree
+> + * @start, end: the range (end >= start) for matching
+> + */
+> +#define service_range_foreach_match(sr, sc, start, end)			\
+> +	for (sr = service_range_match_first((sc)->ranges.rb_node,	\
+> +					    (start),			\
+> +					    (end));			\
+> +	     sr;							\
+> +	     sr = service_range_match_next(&(sr)->tree_node,		\
+> +					   (start),			\
+> +					   (end)))
+> +
+> +/**
+> + * service_range_match_first - find first service range matching a range
+> + * @n: the root node of service range rbtree for searching
+> + * @start, end: the range (end >= start) for matching
+> + *
+> + * Return: the leftmost service range node in the rbtree that overlaps the
+> + * specific range if any. Otherwise, returns NULL.
+> + */
+> +static struct service_range *service_range_match_first(struct rb_node *n,
+> +						       u32 start, u32 end)
+> +{
+> +	struct service_range *sr;
+> +	struct rb_node *l, *r;
+> +
+> +	/* Non overlaps in tree at all? */
+> +	if (!n || service_range_entry(n)->max < start)
+> +		return NULL;
+> +
+> +	while (n) {
+> +		l = n->rb_left;
+> +		if (l && service_range_entry(l)->max >= start) {
+> +			/* A leftmost overlap range node must be one in the left
+> +			 * subtree. If not, it has lower > end, then nodes on
+> +			 * the right side cannot satisfy the condition either.
+> +			 */
+> +			n = l;
+> +			continue;
+> +		}
+> +
+> +		/* No one in the left subtree can match, return if this node is
+> +		 * an overlap i.e. leftmost.
+> +		 */
+> +		sr = service_range_entry(n);
+> +		if (service_range_overlap(sr, start, end))
+> +			return sr;
+> +
+> +		/* Ok, try to lookup on the right side */
+> +		r = n->rb_right;
+> +		if (sr->lower <= end &&
+> +		    r && service_range_entry(r)->max >= start) {
+> +			n = r;
+> +			continue;
+> +		}
+> +		break;
+> +	}
+> +
+> +	return NULL;
+> +}
+> +
+> +/**
+> + * service_range_match_next - find next service range matching a range
+> + * @n: a node in service range rbtree from which the searching starts
+> + * @start, end: the range (end >= start) for matching
+> + *
+> + * Return: the next service range node to the given node in the rbtree that
+> + * overlaps the specific range if any. Otherwise, returns NULL.
+> + */
+> +static struct service_range *service_range_match_next(struct rb_node *n,
+> +						      u32 start, u32 end)
+> +{
+> +	struct service_range *sr;
+> +	struct rb_node *p, *r;
+> +
+> +	while (n) {
+> +		r = n->rb_right;
+> +		if (r && service_range_entry(r)->max >= start)
+> +			/* A next overlap range node must be one in the right
+> +			 * subtree. If not, it has lower > end, then any next
+> +			 * successor (- an ancestor) of this node cannot
+> +			 * satisfy the condition either.
+> +			 */
+> +			return service_range_match_first(r, start, end);
+> +
+> +		/* No one in the right subtree can match, go up to find an
+> +		 * ancestor of this node which is parent of a left-hand child.
+> +		 */
+> +		while ((p = rb_parent(n)) && n == p->rb_right)
+> +			n = p;
+> +		if (!p)
+> +			break;
+> +
+> +		/* Return if this ancestor is an overlap */
+> +		sr = service_range_entry(p);
+> +		if (service_range_overlap(sr, start, end))
+> +			return sr;
+> +
+> +		/* Ok, try to lookup more from this ancestor */
+> +		if (sr->lower <= end) {
+> +			n = p;
+> +			continue;
+> +		}
+> +		break;
+> +	}
+> +
+> +	return NULL;
+> +}
+> +
+>  static int hash(int x)
+>  {
+>  	return x & (TIPC_NAMETBL_SIZE - 1);
+> @@ -143,19 +270,8 @@ static struct tipc_service *tipc_service_create(u32 type, struct hlist_head *hd)
+>  static struct service_range *tipc_service_first_range(struct tipc_service *sc,
+>  						      u32 instance)
+>  {
+> -	struct rb_node *n = sc->ranges.rb_node;
+> -	struct service_range *sr;
+> -
+> -	while (n) {
+> -		sr = container_of(n, struct service_range, tree_node);
+> -		if (sr->lower > instance)
+> -			n = n->rb_left;
+> -		else if (sr->upper < instance)
+> -			n = n->rb_right;
+> -		else
+> -			return sr;
+> -	}
+> -	return NULL;
+> +	return service_range_match_first(sc->ranges.rb_node, instance,
+> +					 instance);
+>  }
+
+This function looks redundant now. It is called from only one location, and could just as well be replaced with a direct call to service_range_match_first().
+
+Otherwise this looks good.
+
+Acked-by: jon
+
+
+> 
+>  /*  tipc_service_find_range - find service range matching publication parameters
+> @@ -163,56 +279,46 @@ static struct service_range *tipc_service_first_range(struct tipc_service *sc,
+>  static struct service_range *tipc_service_find_range(struct tipc_service *sc,
+>  						     u32 lower, u32 upper)
+>  {
+> -	struct rb_node *n = sc->ranges.rb_node;
+>  	struct service_range *sr;
+> 
+> -	sr = tipc_service_first_range(sc, lower);
+> -	if (!sr)
+> -		return NULL;
+> -
+> -	/* Look for exact match */
+> -	for (n = &sr->tree_node; n; n = rb_next(n)) {
+> -		sr = container_of(n, struct service_range, tree_node);
+> -		if (sr->upper == upper)
+> -			break;
+> +	service_range_foreach_match(sr, sc, lower, upper) {
+> +		/* Look for exact match */
+> +		if (sr->lower == lower && sr->upper == upper)
+> +			return sr;
+>  	}
+> -	if (!n || sr->lower != lower || sr->upper != upper)
+> -		return NULL;
+> 
+> -	return sr;
+> +	return NULL;
+>  }
+> 
+>  static struct service_range *tipc_service_create_range(struct tipc_service *sc,
+>  						       u32 lower, u32 upper)
+>  {
+>  	struct rb_node **n, *parent = NULL;
+> -	struct service_range *sr, *tmp;
+> +	struct service_range *sr;
+> 
+>  	n = &sc->ranges.rb_node;
+>  	while (*n) {
+> -		tmp = container_of(*n, struct service_range, tree_node);
+>  		parent = *n;
+> -		tmp = container_of(parent, struct service_range, tree_node);
+> -		if (lower < tmp->lower)
+> -			n = &(*n)->rb_left;
+> -		else if (lower > tmp->lower)
+> -			n = &(*n)->rb_right;
+> -		else if (upper < tmp->upper)
+> -			n = &(*n)->rb_left;
+> -		else if (upper > tmp->upper)
+> -			n = &(*n)->rb_right;
+> +		sr = service_range_entry(parent);
+> +		if (lower == sr->lower && upper == sr->upper)
+> +			return sr;
+> +		if (sr->max < upper)
+> +			sr->max = upper;
+> +		if (lower <= sr->lower)
+> +			n = &parent->rb_left;
+>  		else
+> -			return tmp;
+> +			n = &parent->rb_right;
+>  	}
+>  	sr = kzalloc(sizeof(*sr), GFP_ATOMIC);
+>  	if (!sr)
+>  		return NULL;
+>  	sr->lower = lower;
+>  	sr->upper = upper;
+> +	sr->max = upper;
+>  	INIT_LIST_HEAD(&sr->local_publ);
+>  	INIT_LIST_HEAD(&sr->all_publ);
+>  	rb_link_node(&sr->tree_node, parent, n);
+> -	rb_insert_color(&sr->tree_node, &sc->ranges);
+> +	rb_insert_augmented(&sr->tree_node, &sc->ranges, &sr_callbacks);
+>  	return sr;
+>  }
+> 
+> @@ -289,7 +395,6 @@ static void tipc_service_subscribe(struct tipc_service *service,
+>  	struct service_range *sr;
+>  	struct tipc_name_seq ns;
+>  	struct publication *p;
+> -	struct rb_node *n;
+>  	bool first;
+> 
+>  	ns.type = tipc_sub_read(sb, seq.type);
+> @@ -302,14 +407,8 @@ static void tipc_service_subscribe(struct tipc_service *service,
+>  	if (tipc_sub_read(sb, filter) & TIPC_SUB_NO_STATUS)
+>  		return;
+> 
+> -	for (n = rb_first(&service->ranges); n; n = rb_next(n)) {
+> -		sr = container_of(n, struct service_range, tree_node);
+> -		if (sr->lower > ns.upper)
+> -			break;
+> -		if (!tipc_sub_check_overlap(&ns, sr->lower, sr->upper))
+> -			continue;
+> +	service_range_foreach_match(sr, service, ns.lower, ns.upper) {
+>  		first = true;
+> -
+>  		list_for_each_entry(p, &sr->all_publ, all_publ) {
+>  			tipc_sub_report_overlap(sub, sr->lower, sr->upper,
+>  						TIPC_PUBLISHED,	p->port,
+> @@ -390,7 +489,7 @@ struct publication *tipc_nametbl_remove_publ(struct net *net, u32 type,
+> 
+>  	/* Remove service range item if this was its last publication */
+>  	if (list_empty(&sr->all_publ)) {
+> -		rb_erase(&sr->tree_node, &sc->ranges);
+> +		rb_erase_augmented(&sr->tree_node, &sc->ranges, &sr_callbacks);
+>  		kfree(sr);
+>  	}
+> 
+> @@ -438,34 +537,39 @@ u32 tipc_nametbl_translate(struct net *net, u32 type, u32 instance, u32
+> *dnode)
+>  	rcu_read_lock();
+>  	sc = tipc_service_find(net, type);
+>  	if (unlikely(!sc))
+> -		goto not_found;
+> +		goto exit;
+> 
+>  	spin_lock_bh(&sc->lock);
+> -	sr = tipc_service_first_range(sc, instance);
+> -	if (unlikely(!sr))
+> -		goto no_match;
+> -
+> -	/* Select lookup algorithm: local, closest-first or round-robin */
+> -	if (*dnode == self) {
+> -		list = &sr->local_publ;
+> -		if (list_empty(list))
+> -			goto no_match;
+> -		p = list_first_entry(list, struct publication, local_publ);
+> -		list_move_tail(&p->local_publ, &sr->local_publ);
+> -	} else if (legacy && !*dnode && !list_empty(&sr->local_publ)) {
+> -		list = &sr->local_publ;
+> -		p = list_first_entry(list, struct publication, local_publ);
+> -		list_move_tail(&p->local_publ, &sr->local_publ);
+> -	} else {
+> -		list = &sr->all_publ;
+> -		p = list_first_entry(list, struct publication, all_publ);
+> -		list_move_tail(&p->all_publ, &sr->all_publ);
+> +	service_range_foreach_match(sr, sc, instance, instance) {
+> +		/* Select lookup algo: local, closest-first or round-robin */
+> +		if (*dnode == self) {
+> +			list = &sr->local_publ;
+> +			if (list_empty(list))
+> +				continue;
+> +			p = list_first_entry(list, struct publication,
+> +					     local_publ);
+> +			list_move_tail(&p->local_publ, &sr->local_publ);
+> +		} else if (legacy && !*dnode && !list_empty(&sr->local_publ)) {
+> +			list = &sr->local_publ;
+> +			p = list_first_entry(list, struct publication,
+> +					     local_publ);
+> +			list_move_tail(&p->local_publ, &sr->local_publ);
+> +		} else {
+> +			list = &sr->all_publ;
+> +			p = list_first_entry(list, struct publication,
+> +					     all_publ);
+> +			list_move_tail(&p->all_publ, &sr->all_publ);
+> +		}
+> +		port = p->port;
+> +		node = p->node;
+> +		/* As for legacy, pick the first matching range only, a "true"
+> +		 * round-robin will be performed as needed.
+> +		 */
+> +		break;
+>  	}
+> -	port = p->port;
+> -	node = p->node;
+> -no_match:
+>  	spin_unlock_bh(&sc->lock);
+> -not_found:
+> +
+> +exit:
+>  	rcu_read_unlock();
+>  	*dnode = node;
+>  	return port;
+> @@ -517,7 +621,6 @@ void tipc_nametbl_mc_lookup(struct net *net, u32 type, u32 lower, u32 upper,
+>  	struct service_range *sr;
+>  	struct tipc_service *sc;
+>  	struct publication *p;
+> -	struct rb_node *n;
+> 
+>  	rcu_read_lock();
+>  	sc = tipc_service_find(net, type);
+> @@ -525,13 +628,7 @@ void tipc_nametbl_mc_lookup(struct net *net, u32 type, u32 lower, u32 upper,
+>  		goto exit;
+> 
+>  	spin_lock_bh(&sc->lock);
+> -
+> -	for (n = rb_first(&sc->ranges); n; n = rb_next(n)) {
+> -		sr = container_of(n, struct service_range, tree_node);
+> -		if (sr->upper < lower)
+> -			continue;
+> -		if (sr->lower > upper)
+> -			break;
+> +	service_range_foreach_match(sr, sc, lower, upper) {
+>  		list_for_each_entry(p, &sr->local_publ, local_publ) {
+>  			if (p->scope == scope || (!exact && p->scope < scope))
+>  				tipc_dest_push(dports, 0, p->port);
+> @@ -552,7 +649,6 @@ void tipc_nametbl_lookup_dst_nodes(struct net *net, u32 type, u32 lower,
+>  	struct service_range *sr;
+>  	struct tipc_service *sc;
+>  	struct publication *p;
+> -	struct rb_node *n;
+> 
+>  	rcu_read_lock();
+>  	sc = tipc_service_find(net, type);
+> @@ -560,13 +656,7 @@ void tipc_nametbl_lookup_dst_nodes(struct net *net, u32 type, u32 lower,
+>  		goto exit;
+> 
+>  	spin_lock_bh(&sc->lock);
+> -
+> -	for (n = rb_first(&sc->ranges); n; n = rb_next(n)) {
+> -		sr = container_of(n, struct service_range, tree_node);
+> -		if (sr->upper < lower)
+> -			continue;
+> -		if (sr->lower > upper)
+> -			break;
+> +	service_range_foreach_match(sr, sc, lower, upper) {
+>  		list_for_each_entry(p, &sr->all_publ, all_publ) {
+>  			tipc_nlist_add(nodes, p->node);
+>  		}
+> @@ -764,7 +854,7 @@ static void tipc_service_delete(struct net *net, struct tipc_service *sc)
+>  			tipc_service_remove_publ(sr, p->node, p->key);
+>  			kfree_rcu(p, rcu);
+>  		}
+> -		rb_erase(&sr->tree_node, &sc->ranges);
+> +		rb_erase_augmented(&sr->tree_node, &sc->ranges, &sr_callbacks);
+>  		kfree(sr);
+>  	}
+>  	hlist_del_init_rcu(&sc->service_list);
+> --
+> 2.13.7
 
 
 _______________________________________________
