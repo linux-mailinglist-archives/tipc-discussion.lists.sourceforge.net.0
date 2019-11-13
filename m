@@ -2,126 +2,81 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 354F1FB01D
-	for <lists+tipc-discussion@lfdr.de>; Wed, 13 Nov 2019 13:02:25 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:To:Sender:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ASh9SgSAOINnSttbPFIcSg8klc8XkqXdJy0T5AhYaCw=; b=Scdr+kwcHPPWzFH3L4y4Qb/Dw
-	+6NngX5UiSh1CYwKcvCnHRsrsTe1hDZS5UVlm+wBnVyWvRHlbkf/pRtgGvx4gt3NiyckkbKDRTiaX
-	C1TAQrIRsbK7rZiIkPvXaO3uBAl9qkXLBOfa8mWpXgXgZ+qCjdLgTOj/fB2CDx/kEhpeU=;
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 571BCFB07D
+	for <lists+tipc-discussion@lfdr.de>; Wed, 13 Nov 2019 13:32:35 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iUrLp-0004K4-DX; Wed, 13 Nov 2019 12:02:21 +0000
+	id 1iUrp2-0008Lh-9s; Wed, 13 Nov 2019 12:32:32 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jon.maloy@ericsson.com>) id 1iUrLn-0004Jw-GW
- for tipc-discussion@lists.sourceforge.net; Wed, 13 Nov 2019 12:02:19 +0000
+ (envelope-from <tung.q.nguyen@dektech.com.au>) id 1iUrp0-0008La-SP
+ for tipc-discussion@lists.sourceforge.net; Wed, 13 Nov 2019 12:32:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:
+ MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hOhn6zwfo/0PSKymmN3SINMNPxLqIevSYhojs/M0rv8=; b=J0GPhL5kvfzEugB0giwLXcJCLb
- 50NUJ41Hsk2EskcutOn0L0YCk3z5lr9lIjESq3L9cyNWL1ZaEbMoYHBMGiDf0FNc0DRLswtoDcoPK
- QQQeu9YoeEil+AUJwWsJtlO/4XrDbp6+uFZncjx82clyCCdwXeIo359RiE+Im3lfLVsM=;
+ bh=VWBe4vZJA8dRV+wHdCiCYz7JuaeD85VFuHvXyE02XxU=; b=C6mlioybhtVmqkIjVsKtHceCij
+ 8tutnyD9CUZfgaGtI9NxgHIsyM2vLz98+ikHTg6c8OA9KJ7+8u4nBT6haRrFm8xLl+VLXX8YsaOhr
+ JMJIJNPnrLG+EeVIyZN9szek7HYYGPvk1aT3IXqmBkXw2kH2mcwqmHaEFOLJi9iwZk7Q=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
- References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ h=Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:MIME-Version:
+ Content-Type:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=hOhn6zwfo/0PSKymmN3SINMNPxLqIevSYhojs/M0rv8=; b=aLqK9/Oh7Aoe0vxpW4+9u4H2Lp
- QNvfdvuE6M6s3kVsYV2WaOYTkCqI7u9vRUiVvoFjKaU2C+LxmCjGNGvdBcI9hUDA/whTmjj3G94MK
- wirQKPY4E3I/chQ/7csxhGGdKWjkpQNuBim+lo+FFjapZq9DRg6dZU4dZ2FWwhzUXzlA=;
-Received: from mail-eopbgr800089.outbound.protection.outlook.com
- ([40.107.80.89] helo=NAM03-DM3-obe.outbound.protection.outlook.com)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ bh=VWBe4vZJA8dRV+wHdCiCYz7JuaeD85VFuHvXyE02XxU=; b=j8FBlylKGbVYZVW8ffPlvZYLry
+ 9mooCnJLLSStjSTM5Z1unhsK/S97f5c0uQqYifDk6TnPgj7PS1zIPki84oacT3ZN57twbKQu3iz/r
+ XFPQL85QoE/8N0AIaQ/YnIKOXMkoNQpsMtAUObYXZWOg/eQ6Ib1J7QlEjRqC5US5x0xk=;
+Received: from f0-dek.dektech.com.au ([210.10.221.142]
+ helo=mail.dektech.com.au)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1iUrLh-00F7jP-Sk
- for tipc-discussion@lists.sourceforge.net; Wed, 13 Nov 2019 12:02:19 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Ou+ynKGRchxrKPAK+mkM+9UZKUVZlxPaN8ycFds/o7ehpgntFL44Tfj/YHCSxw5AuHWhj8MAJjHDVYazJCpmIgcoRMYHezXBtW4EIVhdVRqu3OGPYmSas3R9TAtEeqMQRyfow1nJWsszR8fsSCeftkheN7DqOaMCyza00xe1CWHHjT2KmXbFfpb+WmJtyrJwk26wIaGZX5QN+h+a+UOJhoJevazsH58ydOsvRrN6a+GXm3VESgvDytWZvP9gFSHnZtpKOXABSILzkxVo7v0mMqXGxx45Nc3Z+d1SPVCpGBXtc4NWY8t/EAevbyp3lpvW4vWpi/jtut0WUt5362FiFg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hOhn6zwfo/0PSKymmN3SINMNPxLqIevSYhojs/M0rv8=;
- b=PGCSn8qMQLTZ7UFGgtgtt2TgRke5ZshT9SLWRELWGifSLTmDU4pOaNbugiRkq5fpfOKTImPfr/st/s43QBJwFbg6g6RADRhch4JqRZFo1LvUoBmUVpaHzCxSr4A+SdD6IkaqN6IqPSRaMyZbqpCVJu9uC/l2sLQZz8TwMltZ3WCQDz5qzIanaMaPnE6V+RDG0u6Hitz/nMwAB8b7Avz7jYMvi1CHbBVlB/Kxysy3/m8srGkedqZQreQ+Pju+76KBjH9WIVTNVeaPwOQtukihsiNu+lzevD/xOb76R1A5d33p76djji/zAbJoRXtyWB6CO1lcbeSzk+Q5+pmybMTaKw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=ericsson.com; dmarc=pass action=none header.from=ericsson.com;
- dkim=pass header.d=ericsson.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hOhn6zwfo/0PSKymmN3SINMNPxLqIevSYhojs/M0rv8=;
- b=qJx+7DB5d4Cy2+As8LQf2gGZ7WWgQKRXh5Lnd6NYhup+jKtgSQ71Y0xt1ZehVRMjU3bQxbHRys2Mpqf3T29rF1ZQXeUTBI7q9gLxz7iSBYbxquoe3LO2GmSUksc6Mvvpmk03FCdHZuX+9oesD5Kr8tQ8zcEbMUXbk/cvwc+LYLA=
-Received: from CH2PR15MB3575.namprd15.prod.outlook.com (10.255.156.17) by
- CH2PR15MB3528.namprd15.prod.outlook.com (52.132.228.152) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2430.22; Wed, 13 Nov 2019 12:02:03 +0000
-Received: from CH2PR15MB3575.namprd15.prod.outlook.com
- ([fe80::a0a2:ffd4:4a7f:7a63]) by CH2PR15MB3575.namprd15.prod.outlook.com
- ([fe80::a0a2:ffd4:4a7f:7a63%7]) with mapi id 15.20.2451.023; Wed, 13 Nov 2019
- 12:02:03 +0000
-To: Hoang Huu Le <hoang.h.le@dektech.com.au>, "maloy@donjonn.com"
- <maloy@donjonn.com>, "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>
-Thread-Topic: [net-next] tipc: update a binding service via broadcast
-Thread-Index: AQHVmfT4lPJTAGBK1kC8cAMBR0q0JKeI/F+A
-Date: Wed, 13 Nov 2019 12:02:03 +0000
-Message-ID: <CH2PR15MB3575CFDEEA8400E6E06C994C9A760@CH2PR15MB3575.namprd15.prod.outlook.com>
-References: <20191113073521.9394-1-hoang.h.le@dektech.com.au>
-In-Reply-To: <20191113073521.9394-1-hoang.h.le@dektech.com.au>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=jon.maloy@ericsson.com; 
-x-originating-ip: [24.225.233.31]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: e53d8ea8-c3aa-4343-6250-08d768314bf0
-x-ms-traffictypediagnostic: CH2PR15MB3528:
-x-ld-processed: 92e84ceb-fbfd-47ab-be52-080c6b87953f,ExtAddr
-x-microsoft-antispam-prvs: <CH2PR15MB352858D17D35D93F6ED9BDC69A760@CH2PR15MB3528.namprd15.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0220D4B98D
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(346002)(376002)(396003)(136003)(366004)(13464003)(199004)(189003)(8936002)(486006)(478600001)(81166006)(305945005)(81156014)(316002)(229853002)(2201001)(110136005)(74316002)(8676002)(14454004)(2906002)(5660300002)(3846002)(6116002)(2501003)(86362001)(52536014)(99286004)(25786009)(7736002)(15650500001)(14444005)(66556008)(7696005)(476003)(66946007)(55016002)(446003)(64756008)(11346002)(66066001)(6506007)(6436002)(26005)(33656002)(53546011)(9686003)(76176011)(71190400001)(71200400001)(186003)(102836004)(44832011)(4326008)(6246003)(76116006)(66476007)(256004)(66446008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR15MB3528;
- H:CH2PR15MB3575.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: ericsson.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: vLCKnWioMWBG60SJMaLQoeLqCOvsm3InXxcSwCyL/h4a4PWGHeJHy+6gUKUsOI7mdw4hwWd9sfX6zj5tTiP0p4Cw4MLXWF0eCqUQCqspA4KHZdhHVBQRsNf1mTRkCC/ksMzUABy+uH+g1zY7PnbJ0Mem1IZj9++b89YTYaOr8RdZaGRimTbHQBAFvnLmj4xWb/jzvNeaTvsLgZZqHAezIO91bzNLQUe25sFhyaHDUD3MZzgl98N4V3BG616ZOlSDH5QhjV3gSOzcWHc/Xi0kiEwxL4Mvk0m44KPEMRKNxt4qFgtUlEIeutGzWEzpGTzTpwN8K3/VzU5cz0IxQ8wSJttChrO4fb7/d59GZHEe6xaN6AzKfjjCbwYhFGK3W/FXS1a6CBKn5ygnscs9Ef5vszgczvkeJny4aLTWGnCpsKR12bM5rEPINvLdtGjjiZHK
-x-ms-exchange-transport-forked: True
-MIME-Version: 1.0
-X-OriginatorOrg: ericsson.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e53d8ea8-c3aa-4343-6250-08d768314bf0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Nov 2019 12:02:03.1816 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: lJgUr5hAmwnfJKj9alVyuLar7q3n3BlGijqiybOKeP6+iIMwchm1Br9pEfirv20Q4HrOjPG//1++xUnkxA/7Gg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR15MB3528
+ id 1iUrox-00F1gx-6W
+ for tipc-discussion@lists.sourceforge.net; Wed, 13 Nov 2019 12:32:30 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.dektech.com.au (Postfix) with ESMTP id 45D314ACFA;
+ Wed, 13 Nov 2019 23:32:16 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
+ h=x-mailer:message-id:date:date:subject:subject:from:from
+ :received:received:received; s=mail_dkim; t=1573648336; bh=JRMf7
+ VEKzSujKmkqtHlatWrv1AzTxZE7BJQVAqPzeTU=; b=cCH7f044fdIshe8IrsDSG
+ 6VPdpq46dst6gvU7WbP4LRwJEFb+5PnVLVO8KmT5DSDIovKpj3UZsbpNE3OTIO79
+ nI42ASUsUFdX8o827jhwG/LP+RC9rjz8aTz6wW3G3KF/9+74LWr13W7MphVhdGNs
+ OOJuWFb/1grWeTSgva+GXQ=
+X-Virus-Scanned: amavisd-new at dektech.com.au
+Received: from mail.dektech.com.au ([127.0.0.1])
+ by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id OR5TutYOK5uj; Wed, 13 Nov 2019 23:32:16 +1100 (AEDT)
+Received: from mail.dektech.com.au (localhost [127.0.0.1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.dektech.com.au (Postfix) with ESMTPS id 020F44ACFB;
+ Wed, 13 Nov 2019 23:32:15 +1100 (AEDT)
+Received: from tung-VirtualBox.dek-tpc.internal (unknown [14.161.14.188])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id 1A3114ACFA;
+ Wed, 13 Nov 2019 23:32:14 +1100 (AEDT)
+From: Tung Nguyen <tung.q.nguyen@dektech.com.au>
+To: tipc-discussion@lists.sourceforge.net, jon.maloy@ericsson.com,
+ maloy@donjonn.com, ying.xue@windriver.com
+Date: Wed, 13 Nov 2019 19:32:09 +0700
+Message-Id: <20191113123209.22553-1-tung.q.nguyen@dektech.com.au>
+X-Mailer: git-send-email 2.17.1
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: donjonn.com]
+ for more information. [URIs: dektech.com.au]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.80.89 listed in list.dnswl.org]
+ trust [210.10.221.142 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -129,10 +84,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Headers-End: 1iUrLh-00F7jP-Sk
-Subject: Re: [tipc-discussion] [net-next] tipc: update a binding service via
- broadcast
+X-Headers-End: 1iUrox-00F1gx-6W
+Subject: [tipc-discussion] [net v1 1/1] tipc: fix duplicate SYN messages
+ under link congestion
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -144,111 +98,66 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Jon Maloy via tipc-discussion <tipc-discussion@lists.sourceforge.net>
-Reply-To: Jon Maloy <jon.maloy@ericsson.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Hi Hoang,
-This is good, but you have missed the point about the synchronization problem I have been talking about.
+Scenario:
+1. A client socket initiates a SYN message to a listening socket.
+2. The send link is congested, the SYN message is put in the
+send link and a wakeup message is put in wakeup queue.
+3. The congestion situation is abated, the wakeup message is
+pulled out of the wakeup queue. Function tipc_sk_push_backlog()
+is called to send out delayed messages by Nagle. However,
+the client socket is still in CONNECTING state. So, it sends
+the SYN message in the socket write queue to the listening socket
+again.
+4. The listening socket receives the first SYN message and creates
+first server socket. The client socket receives ACK- and establishes
+a connection to the first server socket. The client socket closes
+its connection with the first server socket.
+5. The listening socket receives the second SYN message and creates
+second server socket. The second server socket sends ACK- to the
+client socket, but it has been closed. It results in connection
+refuse error when reading from the server socket in user space.
 
-1) A new node comes up
-2) The "bulk" binding table update is sent, as a series of packets over the new unicast link. This may take some time.
-3) The owner of one of the bindings in the bulk (on this node) does unbind.
-4) This is sent as broadcast withdraw to all nodes, and arrives before the last packets of the unicast bulk to the newly connected node.
-5) Since there is no corresponding publication in the peer node's binding table yet, the withdraw is ignored.
-6) The last bulk unicasts arrive at the new peer, and the now invalid publication is added to its binding table.
-7) This publication will stay there forever.
+Solution: return from function tipc_sk_push_backlog() immediately
+if the client socket state is not ESTABLISHED.
 
-We need to find a way to synchronize so that we know that all the bulk publications are in place in the binding table before any broadcast publications/withdraws can be accepted.
-Obviously, we could create a backlog queue in the name table, but I hope we can find a simpler and neater solution.
+Fixes: c0bceb97db9e ("tipc: add smart nagle feature")
+Signed-off-by: Tung Nguyen <tung.q.nguyen@dektech.com.au>
+---
+ net/tipc/socket.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-Regards
-///jon
+diff --git a/net/tipc/socket.c b/net/tipc/socket.c
+index 5d7859a..61f9da4 100644
+--- a/net/tipc/socket.c
++++ b/net/tipc/socket.c
+@@ -1246,13 +1246,18 @@ void tipc_sk_mcast_rcv(struct net *net, struct sk_buff_head *arrvq,
+ static void tipc_sk_push_backlog(struct tipc_sock *tsk)
+ {
+ 	struct sk_buff_head *txq = &tsk->sk.sk_write_queue;
+-	struct net *net = sock_net(&tsk->sk);
++	struct sock *sk = &tsk->sk;
++	struct net *net = sock_net(sk);
+ 	u32 dnode = tsk_peer_node(tsk);
+ 	int rc;
+ 
+ 	if (skb_queue_empty(txq) || tsk->cong_link_cnt)
+ 		return;
+ 
++	/* Do not send SYN again after congestion */
++	if (sk->sk_state != TIPC_ESTABLISHED)
++		return;
++
+ 	tsk->snt_unacked += tsk->snd_backlog;
+ 	tsk->snd_backlog = 0;
+ 	tsk->expect_ack = true;
+-- 
+2.1.4
 
-> -----Original Message-----
-> From: Hoang Le <hoang.h.le@dektech.com.au>
-> Sent: 13-Nov-19 02:35
-> To: Jon Maloy <jon.maloy@ericsson.com>; maloy@donjonn.com; tipc-discussion@lists.sourceforge.net
-> Subject: [net-next] tipc: update a binding service via broadcast
-> 
-> Currently, updating binding table (add service binding to
-> name table/withdraw a service binding) is being sent over replicast.
-> However, if we are scaling up clusters to > 100 nodes/containers this
-> method is less affection because of looping through nodes in a cluster one
-> by one.
-> 
-> It is worth to use broadcast to update a binding service. Then binding
-> table updates in all nodes for one shot.
-> 
-> The mechanism is backward compatible because of sending side changing.
-> 
-> Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
-> ---
->  net/tipc/bcast.c      | 13 +++++++++++++
->  net/tipc/bcast.h      |  2 ++
->  net/tipc/name_table.c |  4 ++--
->  3 files changed, 17 insertions(+), 2 deletions(-)
-> 
-> diff --git a/net/tipc/bcast.c b/net/tipc/bcast.c
-> index f41096a759fa..18431fa897ab 100644
-> --- a/net/tipc/bcast.c
-> +++ b/net/tipc/bcast.c
-> @@ -843,3 +843,16 @@ void tipc_mcast_filter_msg(struct net *net, struct sk_buff_head *defq,
->  		__skb_queue_tail(inputq, _skb);
->  	}
->  }
-> +
-> +int tipc_bcast_named_publish(struct net *net, struct sk_buff *skb)
-> +{
-> +	struct sk_buff_head xmitq;
-> +	u16 cong_link_cnt;
-> +	int rc = 0;
-> +
-> +	__skb_queue_head_init(&xmitq);
-> +	__skb_queue_tail(&xmitq, skb);
-> +	rc = tipc_bcast_xmit(net, &xmitq, &cong_link_cnt);
-> +	__skb_queue_purge(&xmitq);
-> +	return rc;
-> +}
-> diff --git a/net/tipc/bcast.h b/net/tipc/bcast.h
-> index dadad953e2be..a100da3800fc 100644
-> --- a/net/tipc/bcast.h
-> +++ b/net/tipc/bcast.h
-> @@ -101,6 +101,8 @@ int tipc_bclink_reset_stats(struct net *net);
->  u32 tipc_bcast_get_broadcast_mode(struct net *net);
->  u32 tipc_bcast_get_broadcast_ratio(struct net *net);
-> 
-> +int tipc_bcast_named_publish(struct net *net, struct sk_buff *skb);
-> +
->  void tipc_mcast_filter_msg(struct net *net, struct sk_buff_head *defq,
->  			   struct sk_buff_head *inputq);
-> 
-> diff --git a/net/tipc/name_table.c b/net/tipc/name_table.c
-> index 66a65c2cdb23..9e9c61f7c999 100644
-> --- a/net/tipc/name_table.c
-> +++ b/net/tipc/name_table.c
-> @@ -633,7 +633,7 @@ struct publication *tipc_nametbl_publish(struct net *net, u32 type, u32 lower,
->  	spin_unlock_bh(&tn->nametbl_lock);
-> 
->  	if (skb)
-> -		tipc_node_broadcast(net, skb);
-> +		tipc_bcast_named_publish(net, skb);
->  	return p;
->  }
-> 
-> @@ -664,7 +664,7 @@ int tipc_nametbl_withdraw(struct net *net, u32 type, u32 lower,
->  	spin_unlock_bh(&tn->nametbl_lock);
-> 
->  	if (skb) {
-> -		tipc_node_broadcast(net, skb);
-> +		tipc_bcast_named_publish(net, skb);
->  		return 1;
->  	}
->  	return 0;
-> --
-> 2.20.1
 
 
 _______________________________________________
