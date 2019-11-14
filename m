@@ -2,81 +2,87 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FC8DFC04E
-	for <lists+tipc-discussion@lfdr.de>; Thu, 14 Nov 2019 07:43:54 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id EEB10FC141
+	for <lists+tipc-discussion@lfdr.de>; Thu, 14 Nov 2019 09:09:34 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iV8r9-0007xy-6o; Thu, 14 Nov 2019 06:43:51 +0000
+	id 1iVAC3-00008R-4q; Thu, 14 Nov 2019 08:09:31 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1iV8r7-0007xb-RZ
- for tipc-discussion@lists.sourceforge.net; Thu, 14 Nov 2019 06:43:49 +0000
+ (envelope-from <hoang.h.le@dektech.com.au>) id 1iVAC1-00008K-Ug
+ for tipc-discussion@lists.sourceforge.net; Thu, 14 Nov 2019 08:09:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=References:In-Reply-To:Message-Id:Date:Subject:To:
- From:Sender:Reply-To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Message-ID:Date:Subject:In-Reply-To:References:Cc:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=HeKThCBDKE2ghgdDfKVU3m0MUMiWODb7FyjO9W76MfA=; b=RTg1u1RslWwx648rNCLZomJ131
- uK4qvZh0ZLe6T9fPP0f6qMfyXvyR4JQwsWJRE0GFczM7JVXALqNHxmz8vqSHJ2FBZ6MPVfvqkRTKm
- m4ME1duE9kdUTXz3nb2oDAcVhR4/+248JAvsgeRYseqYzxJWo+TYt5YamJ1avy7HASno=;
+ bh=/wNFV7lF/zlOkfg+PyEaOCI6RWjk/dBWhSEdwJKev9I=; b=kXTHx+7BAmvNk8fNjkm4BWe15S
+ JTd75ZGdTesL1aLUYGeewkuWAAAPOSO0CfuJSxqTiBN8kmVZ+qdG7cfxMXyFuEKVIDezNccPD1cS/
+ Sgi9Y6ZbrGKoQW4EO485Wz1bramIpdc5Svk1mzcCX53QQXF+W2CprphSGnttLBKqRezs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=References:In-Reply-To:Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc
- :MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:
+ Subject:In-Reply-To:References:Cc:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=HeKThCBDKE2ghgdDfKVU3m0MUMiWODb7FyjO9W76MfA=; b=hJfISE0uTk5nadddOpqCxDrf3U
- knKFFBiSRBKL2avgg9x1qmV8rLzBZ/ivhzlWSlyPdWOx3R/C5AbjFKl40XHiTFi7HKkBkBRraif/r
- DZByTBi5ekE0pjw+yHymdju4KEMnDzvrwdpDRNc33624WiRjnFVHdlevcNGuNEcgqguM=;
+ bh=/wNFV7lF/zlOkfg+PyEaOCI6RWjk/dBWhSEdwJKev9I=; b=cbGGKB2WPXLRrxfnNXVELHKB+W
+ eHdy/fCq9QAWD4gJ88HnJEMp4HYHLSQ5Qjia+Qp1qYCEyouRA9UsdnApTvGwMPd6D9ejIO1oQDly7
+ q2aCGFxx8rXBoaxpZrselGhavdtNOCG2G7WO9lfuEb5sG1tfLN0ICkno6ySikkAfhpt8=;
 Received: from f0-dek.dektech.com.au ([210.10.221.142]
  helo=mail.dektech.com.au)
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1iV8r5-002gPG-Co
- for tipc-discussion@lists.sourceforge.net; Thu, 14 Nov 2019 06:43:49 +0000
+ id 1iVABw-002mqT-Uj
+ for tipc-discussion@lists.sourceforge.net; Thu, 14 Nov 2019 08:09:29 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.dektech.com.au (Postfix) with ESMTP id CF2E54AD0B;
- Thu, 14 Nov 2019 17:43:40 +1100 (AEDT)
+ by mail.dektech.com.au (Postfix) with ESMTP id 7184D4AD0F;
+ Thu, 14 Nov 2019 19:09:14 +1100 (AEDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
- h=references:in-reply-to:x-mailer:message-id:date:date:subject
- :subject:from:from:received:received:received; s=mail_dkim; t=
- 1573713820; bh=XQylrrZt2y/WSYXMJoxIOswkdLHWUM+x1WQ/juArsno=; b=V
- CMQthsPqTQn0ynTw7E8ACS1aKSZ3s3R2soD1bVuHLHCjeFs8gbT8KdYzRutMM0yv
- lGq0EPdssWh/BZYw0fOPGhjPDTwfmgg8aMjCmubOEOyfk4D1J3QOv60WqdKv39qj
- WPmMyYK2h48aKSDARNngm4OS/jr7igaQ8qrUVf8RoQ=
+ h=content-language:x-mailer:content-transfer-encoding
+ :content-type:content-type:mime-version:message-id:date:date
+ :subject:subject:in-reply-to:references:from:from:received
+ :received:received; s=mail_dkim; t=1573718954; bh=rgkHzGJhboJBDz
+ wviMWezpcn/g8J9hjjBxmZb937jF8=; b=FdFpd8HUc+DI7ESqkx/8ITFRACJ70e
+ jDvOfTgfQRbsAR9aJvJXxlWOcn7yiHXQbSOUWdmje33dMV85Ay/y8SUEf4ZMZFJ9
+ DI3Tmagz3KZ+VavFm+i3j0QgXl/d4RdS2wWCQBPwToWYm+A+uLZwxs0zYj40G5wq
+ VhuAmQ/y/g+Q0=
 X-Virus-Scanned: amavisd-new at dektech.com.au
 Received: from mail.dektech.com.au ([127.0.0.1])
  by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id GXgvN_hIAI9C; Thu, 14 Nov 2019 17:43:40 +1100 (AEDT)
+ with ESMTP id HwiKh78dE9xi; Thu, 14 Nov 2019 19:09:14 +1100 (AEDT)
 Received: from mail.dektech.com.au (localhost [127.0.0.1])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPS id A83B44AD01;
- Thu, 14 Nov 2019 17:43:40 +1100 (AEDT)
-Received: from localhost.localdomain (unknown [14.161.14.188])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ by mail.dektech.com.au (Postfix) with ESMTPS id 1A50A4AD11;
+ Thu, 14 Nov 2019 19:09:13 +1100 (AEDT)
+Received: from VNLAP298VNPC (unknown [14.161.14.188])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPSA id D0C1C4ACB1;
- Thu, 14 Nov 2019 17:43:39 +1100 (AEDT)
-From: Tuong Lien <tuong.t.lien@dektech.com.au>
-To: tipc-discussion@lists.sourceforge.net, jon.maloy@ericsson.com,
- maloy@donjonn.com, ying.xue@windriver.com
-Date: Thu, 14 Nov 2019 13:43:32 +0700
-Message-Id: <20191114064332.15061-3-tuong.t.lien@dektech.com.au>
-X-Mailer: git-send-email 2.13.7
-In-Reply-To: <20191114064332.15061-1-tuong.t.lien@dektech.com.au>
-References: <20191114064332.15061-1-tuong.t.lien@dektech.com.au>
-X-Spam-Score: 0.6 (/)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id 1BD394AD0F;
+ Thu, 14 Nov 2019 19:09:12 +1100 (AEDT)
+From: "Hoang Le" <hoang.h.le@dektech.com.au>
+To: "'Jon Maloy'" <jon.maloy@ericsson.com>, <maloy@donjonn.com>,
+ <tipc-discussion@lists.sourceforge.net>
+References: <20191113073521.9394-1-hoang.h.le@dektech.com.au>
+ <CH2PR15MB3575CFDEEA8400E6E06C994C9A760@CH2PR15MB3575.namprd15.prod.outlook.com>
+In-Reply-To: <CH2PR15MB3575CFDEEA8400E6E06C994C9A760@CH2PR15MB3575.namprd15.prod.outlook.com>
+Date: Thu, 14 Nov 2019 15:09:11 +0700
+Message-ID: <017401d59ac2$cd5bdc20$68139460$@dektech.com.au>
+MIME-Version: 1.0
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQGa9tJnYPDJFSI8H8gtsnTf6TTJOgIPq2v1p+8ZKxA=
+Content-Language: en-us
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: dektech.com.au]
+ for more information. [URIs: windriver.com]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
  trust [210.10.221.142 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -86,9 +92,10 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.8 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1iV8r5-002gPG-Co
-Subject: [tipc-discussion] [net-next 2/2] tipc: fix name table rbtree issues
+ -0.1 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1iVABw-002mqT-Uj
+Subject: Re: [tipc-discussion] [net-next] tipc: update a binding service via
+ broadcast
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,502 +107,291 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-The current rbtree for service ranges in the name table is built based
-on the 'lower' & 'upper' range values resulting in a flaw in the rbtree
-searching. Some issues have been observed in case of range overlapping:
+Hi Jon,
 
-Case #1: unable to withdraw a name entry:
-After some name services are bound, all of them are withdrawn by user
-but one remains in the name table forever. This corrupts the table and
-that service becomes dummy i.e. no real port.
-E.g.
+Please take a look at v2. The mechanism looks the same as I did before in commit:
+c55c8edafa91 ("tipc: smooth change between replicast and broadcast")
+However, in this case we handle only one direction:  replicast -> broadcast.
+Then, it is still backward compatible.
 
-                /
-           {22, 22}
-              /
-             /
-   --->  {10, 50}
-           /  \
-          /    \
-    {10, 30}  {20, 60}
+[...]
+From ae2ee6a7064de3ec1dc2c7df2db241d22b0d129f Mon Sep 17 00:00:00 2001
+From: Hoang Le <hoang.h.le@dektech.com.au>
+Date: Wed, 13 Nov 2019 14:01:03 +0700
+Subject: [PATCH] tipc: update a binding service via broadcast
 
-The node {10, 30} cannot be removed since the rbtree searching stops at
-the node's ancestor i.e. {10, 50}, so starting from it will never reach
-the finding node.
+Currently, updating binding table (add service binding to
+name table/withdraw a service binding) is being sent over replicast.
+However, if we are scaling up clusters to > 100 nodes/containers this
+method is less affection because of looping through nodes in a cluster one
+by one.
 
-Case #2: failed to send data in some cases:
-E.g. Two service ranges: {20, 60}, {10, 50} are bound. The rbtree for
-this service will be one of the two cases below depending on the order
-of the bindings:
+It is worth to use broadcast to update a binding service. Then binding
+table updates in all nodes for one shot.
 
-        {20, 60}             {10, 50} <--
-          /  \                 /  \
-         /    \               /    \
-    {10, 50}  NIL <--       NIL  {20, 60}
+The mechanism is backward compatible because of sending side changing.
 
-          (a)                    (b)
+v2: resolve synchronization problem when switching from unicast to
+broadcast
 
-Now, try to send some data to service {30}, there will be two results:
-(a): Failed, no route to host.
-(b): Ok.
-
-The reason is that the rbtree searching will stop at the pointing node
-as shown above.
-
-Case #3: Same as case #2b above but if the data sending's scope is
-local and the {10, 50} is published by a peer node, then it will result
-in 'no route to host' even though the other {20, 60} is for example on
-the local node which should be able to get the data.
-
-The issues are actually due to the way we built the rbtree. This commit
-fixes it by introducing an additional field to each node - named 'max',
-which is the largest 'upper' of that node subtree. The 'max' value for
-each subtrees will be propagated correctly whenever a node is inserted/
-removed or the tree is rebalanced by the augmented rbtree callbacks.
-
-By this way, we can change the rbtree searching appoarch to solve the
-issues above. Another benefit from this is that we can now improve the
-searching for a next range matching e.g. in case of multicast, so get
-rid of the unneeded looping over all nodes in the tree.
-
-v2: remove the 'round-robin' case's description (i.e. not fixed) & call
-the service_range_match_first() directly as suggested by Jon; rebase to
-make a series.
-
-Acked-by: Jon Maloy <jon.maloy@ericsson.com>
-Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
+Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
 ---
- net/tipc/name_table.c | 279 ++++++++++++++++++++++++++++++++------------------
- 1 file changed, 179 insertions(+), 100 deletions(-)
+ net/tipc/bcast.c      | 13 +++++++++++++
+ net/tipc/bcast.h      |  2 ++
+ net/tipc/link.c       | 16 ++++++++++++++++
+ net/tipc/name_distr.c |  8 ++++++++
+ net/tipc/name_table.c |  9 ++++++---
+ 5 files changed, 45 insertions(+), 3 deletions(-)
 
+diff --git a/net/tipc/bcast.c b/net/tipc/bcast.c
+index f41096a759fa..18431fa897ab 100644
+--- a/net/tipc/bcast.c
++++ b/net/tipc/bcast.c
+@@ -843,3 +843,16 @@ void tipc_mcast_filter_msg(struct net *net, struct sk_buff_head *defq,
+                __skb_queue_tail(inputq, _skb);
+        }
+ }
++
++int tipc_bcast_named_publish(struct net *net, struct sk_buff *skb)
++{
++       struct sk_buff_head xmitq;
++       u16 cong_link_cnt;
++       int rc = 0;
++
++       __skb_queue_head_init(&xmitq);
++       __skb_queue_tail(&xmitq, skb);
++       rc = tipc_bcast_xmit(net, &xmitq, &cong_link_cnt);
++       __skb_queue_purge(&xmitq);
++       return rc;
++}
+diff --git a/net/tipc/bcast.h b/net/tipc/bcast.h
+index dadad953e2be..a100da3800fc 100644
+--- a/net/tipc/bcast.h
++++ b/net/tipc/bcast.h
+@@ -101,6 +101,8 @@ int tipc_bclink_reset_stats(struct net *net);
+ u32 tipc_bcast_get_broadcast_mode(struct net *net);
+ u32 tipc_bcast_get_broadcast_ratio(struct net *net);
+
++int tipc_bcast_named_publish(struct net *net, struct sk_buff *skb);
++
+ void tipc_mcast_filter_msg(struct net *net, struct sk_buff_head *defq,
+                           struct sk_buff_head *inputq);
+
+diff --git a/net/tipc/link.c b/net/tipc/link.c
+index fb72031228c9..22f1854435df 100644
+--- a/net/tipc/link.c
++++ b/net/tipc/link.c
+@@ -187,6 +187,9 @@ struct tipc_link {
+        struct tipc_link *bc_sndlink;
+        u8 nack_state;
+        bool bc_peer_is_up;
++       bool named_sync;
++       struct sk_buff_head defer_namedq;
++
+
+        /* Statistics */
+        struct tipc_stats stats;
+@@ -363,6 +366,7 @@ void tipc_link_remove_bc_peer(struct tipc_link *snd_l,
+        trace_tipc_link_reset(rcv_l, TIPC_DUMP_ALL, "bclink removed!");
+        tipc_link_reset(rcv_l);
+        rcv_l->state = LINK_RESET;
++       rcv_l->named_sync = false;
+        if (!snd_l->ackers) {
+                trace_tipc_link_reset(snd_l, TIPC_DUMP_ALL, "zero ackers!");
+                tipc_link_reset(snd_l);
+@@ -508,6 +512,7 @@ bool tipc_link_create(struct net *net, char *if_name, int bearer_id,
+        __skb_queue_head_init(&l->failover_deferdq);
+        skb_queue_head_init(&l->wakeupq);
+        skb_queue_head_init(l->inputq);
++       __skb_queue_head_init(&l->defer_namedq);
+        return true;
+ }
+
+@@ -932,6 +937,8 @@ void tipc_link_reset(struct tipc_link *l)
+        l->silent_intv_cnt = 0;
+        l->rst_cnt = 0;
+        l->bc_peer_is_up = false;
++       l->named_sync = false;
++       __skb_queue_purge(&l->defer_namedq);
+        memset(&l->mon_state, 0, sizeof(l->mon_state));
+        tipc_link_reset_stats(l);
+ }
+@@ -1210,6 +1217,15 @@ static bool tipc_data_input(struct tipc_link *l, struct sk_buff *skb,
+                return true;
+        case NAME_DISTRIBUTOR:
+                l->bc_rcvlink->state = LINK_ESTABLISHED;
++               if (msg_is_syn(hdr)) {
++                       l->bc_rcvlink->named_sync = true;
++                       skb_queue_splice_tail_init(&l->defer_namedq, l->namedq);
++                       return true;
++               }
++               if (msg_is_rcast(hdr) && !l->bc_rcvlink->named_sync) {
++                       skb_queue_tail(&l->defer_namedq, skb);
++                       return true;
++               }
+                skb_queue_tail(l->namedq, skb);
+                return true;
+        case MSG_BUNDLER:
+diff --git a/net/tipc/name_distr.c b/net/tipc/name_distr.c
+index 5feaf3b67380..419b3f0f102d 100644
+--- a/net/tipc/name_distr.c
++++ b/net/tipc/name_distr.c
+@@ -180,6 +180,14 @@ static void named_distribute(struct net *net, struct sk_buff_head *list,
+                skb_trim(skb, INT_H_SIZE + (msg_dsz - msg_rem));
+                __skb_queue_tail(list, skb);
+        }
++
++       /* Allocate dummy message in order to synchronize w/bcast */
++       skb = named_prepare_buf(net, PUBLICATION, 0, dnode);
++       if (skb) {
++               /* Preparing for 'synching' header */
++               msg_set_syn(buf_msg(skb), 1);
++               __skb_queue_tail(list, skb);
++       }
+ }
+
+ /**
 diff --git a/net/tipc/name_table.c b/net/tipc/name_table.c
-index 45a9ab539fdb..2290b09e080d 100644
+index 66a65c2cdb23..4ba6d73e5c4c 100644
 --- a/net/tipc/name_table.c
 +++ b/net/tipc/name_table.c
-@@ -36,6 +36,7 @@
- 
- #include <net/sock.h>
- #include <linux/list_sort.h>
-+#include <linux/rbtree_augmented.h>
- #include "core.h"
- #include "netlink.h"
- #include "name_table.h"
-@@ -51,6 +52,7 @@
-  * @lower: service range lower bound
-  * @upper: service range upper bound
-  * @tree_node: member of service range RB tree
-+ * @max: largest 'upper' in this node subtree
-  * @local_publ: list of identical publications made from this node
-  *   Used by closest_first lookup and multicast lookup algorithm
-  * @all_publ: all publications identical to this one, whatever node and scope
-@@ -60,6 +62,7 @@ struct service_range {
- 	u32 lower;
- 	u32 upper;
- 	struct rb_node tree_node;
-+	u32 max;
- 	struct list_head local_publ;
- 	struct list_head all_publ;
- };
-@@ -84,6 +87,130 @@ struct tipc_service {
- 	struct rcu_head rcu;
- };
- 
-+#define service_range_upper(sr) ((sr)->upper)
-+RB_DECLARE_CALLBACKS_MAX(static, sr_callbacks,
-+			 struct service_range, tree_node, u32, max,
-+			 service_range_upper)
-+
-+#define service_range_entry(rbtree_node)				\
-+	(container_of(rbtree_node, struct service_range, tree_node))
-+
-+#define service_range_overlap(sr, start, end)				\
-+	((sr)->lower <= (end) && (sr)->upper >= (start))
-+
-+/**
-+ * service_range_foreach_match - iterate over tipc service rbtree for each
-+ *                               range match
-+ * @sr: the service range pointer as a loop cursor
-+ * @sc: the pointer to tipc service which holds the service range rbtree
-+ * @start, end: the range (end >= start) for matching
-+ */
-+#define service_range_foreach_match(sr, sc, start, end)			\
-+	for (sr = service_range_match_first((sc)->ranges.rb_node,	\
-+					    start,			\
-+					    end);			\
-+	     sr;							\
-+	     sr = service_range_match_next(&(sr)->tree_node,		\
-+					   start,			\
-+					   end))
-+
-+/**
-+ * service_range_match_first - find first service range matching a range
-+ * @n: the root node of service range rbtree for searching
-+ * @start, end: the range (end >= start) for matching
-+ *
-+ * Return: the leftmost service range node in the rbtree that overlaps the
-+ * specific range if any. Otherwise, returns NULL.
-+ */
-+static struct service_range *service_range_match_first(struct rb_node *n,
-+						       u32 start, u32 end)
-+{
-+	struct service_range *sr;
-+	struct rb_node *l, *r;
-+
-+	/* Non overlaps in tree at all? */
-+	if (!n || service_range_entry(n)->max < start)
-+		return NULL;
-+
-+	while (n) {
-+		l = n->rb_left;
-+		if (l && service_range_entry(l)->max >= start) {
-+			/* A leftmost overlap range node must be one in the left
-+			 * subtree. If not, it has lower > end, then nodes on
-+			 * the right side cannot satisfy the condition either.
-+			 */
-+			n = l;
-+			continue;
-+		}
-+
-+		/* No one in the left subtree can match, return if this node is
-+		 * an overlap i.e. leftmost.
-+		 */
-+		sr = service_range_entry(n);
-+		if (service_range_overlap(sr, start, end))
-+			return sr;
-+
-+		/* Ok, try to lookup on the right side */
-+		r = n->rb_right;
-+		if (sr->lower <= end &&
-+		    r && service_range_entry(r)->max >= start) {
-+			n = r;
-+			continue;
-+		}
-+		break;
-+	}
-+
-+	return NULL;
-+}
-+
-+/**
-+ * service_range_match_next - find next service range matching a range
-+ * @n: a node in service range rbtree from which the searching starts
-+ * @start, end: the range (end >= start) for matching
-+ *
-+ * Return: the next service range node to the given node in the rbtree that
-+ * overlaps the specific range if any. Otherwise, returns NULL.
-+ */
-+static struct service_range *service_range_match_next(struct rb_node *n,
-+						      u32 start, u32 end)
-+{
-+	struct service_range *sr;
-+	struct rb_node *p, *r;
-+
-+	while (n) {
-+		r = n->rb_right;
-+		if (r && service_range_entry(r)->max >= start)
-+			/* A next overlap range node must be one in the right
-+			 * subtree. If not, it has lower > end, then any next
-+			 * successor (- an ancestor) of this node cannot
-+			 * satisfy the condition either.
-+			 */
-+			return service_range_match_first(r, start, end);
-+
-+		/* No one in the right subtree can match, go up to find an
-+		 * ancestor of this node which is parent of a left-hand child.
-+		 */
-+		while ((p = rb_parent(n)) && n == p->rb_right)
-+			n = p;
-+		if (!p)
-+			break;
-+
-+		/* Return if this ancestor is an overlap */
-+		sr = service_range_entry(p);
-+		if (service_range_overlap(sr, start, end))
-+			return sr;
-+
-+		/* Ok, try to lookup more from this ancestor */
-+		if (sr->lower <= end) {
-+			n = p;
-+			continue;
-+		}
-+		break;
-+	}
-+
-+	return NULL;
-+}
-+
- static int hash(int x)
- {
- 	return x & (TIPC_NAMETBL_SIZE - 1);
-@@ -139,84 +266,51 @@ static struct tipc_service *tipc_service_create(u32 type, struct hlist_head *hd)
- 	return service;
+@@ -632,8 +632,10 @@ struct publication *tipc_nametbl_publish(struct net *net, u32 type, u32 lower,
+ exit:
+        spin_unlock_bh(&tn->nametbl_lock);
+
+-       if (skb)
+-               tipc_node_broadcast(net, skb);
++       if (skb) {
++               msg_set_is_rcast(buf_msg(skb), true);
++               tipc_bcast_named_publish(net, skb);
++       }
+        return p;
  }
- 
--/**
-- * tipc_service_first_range - find first service range in tree matching instance
-- *
-- * Very time-critical, so binary search through range rb tree
-- */
--static struct service_range *tipc_service_first_range(struct tipc_service *sc,
--						      u32 instance)
--{
--	struct rb_node *n = sc->ranges.rb_node;
--	struct service_range *sr;
--
--	while (n) {
--		sr = container_of(n, struct service_range, tree_node);
--		if (sr->lower > instance)
--			n = n->rb_left;
--		else if (sr->upper < instance)
--			n = n->rb_right;
--		else
--			return sr;
--	}
--	return NULL;
--}
--
- /*  tipc_service_find_range - find service range matching publication parameters
-  */
- static struct service_range *tipc_service_find_range(struct tipc_service *sc,
- 						     u32 lower, u32 upper)
- {
--	struct rb_node *n = sc->ranges.rb_node;
- 	struct service_range *sr;
- 
--	sr = tipc_service_first_range(sc, lower);
--	if (!sr)
--		return NULL;
--
--	/* Look for exact match */
--	for (n = &sr->tree_node; n; n = rb_next(n)) {
--		sr = container_of(n, struct service_range, tree_node);
--		if (sr->upper == upper)
--			break;
-+	service_range_foreach_match(sr, sc, lower, upper) {
-+		/* Look for exact match */
-+		if (sr->lower == lower && sr->upper == upper)
-+			return sr;
- 	}
--	if (!n || sr->lower != lower || sr->upper != upper)
--		return NULL;
- 
--	return sr;
-+	return NULL;
- }
- 
- static struct service_range *tipc_service_create_range(struct tipc_service *sc,
- 						       u32 lower, u32 upper)
- {
- 	struct rb_node **n, *parent = NULL;
--	struct service_range *sr, *tmp;
-+	struct service_range *sr;
- 
- 	n = &sc->ranges.rb_node;
- 	while (*n) {
--		tmp = container_of(*n, struct service_range, tree_node);
- 		parent = *n;
--		tmp = container_of(parent, struct service_range, tree_node);
--		if (lower < tmp->lower)
--			n = &(*n)->rb_left;
--		else if (lower > tmp->lower)
--			n = &(*n)->rb_right;
--		else if (upper < tmp->upper)
--			n = &(*n)->rb_left;
--		else if (upper > tmp->upper)
--			n = &(*n)->rb_right;
-+		sr = service_range_entry(parent);
-+		if (lower == sr->lower && upper == sr->upper)
-+			return sr;
-+		if (sr->max < upper)
-+			sr->max = upper;
-+		if (lower <= sr->lower)
-+			n = &parent->rb_left;
- 		else
--			return tmp;
-+			n = &parent->rb_right;
- 	}
- 	sr = kzalloc(sizeof(*sr), GFP_ATOMIC);
- 	if (!sr)
- 		return NULL;
- 	sr->lower = lower;
- 	sr->upper = upper;
-+	sr->max = upper;
- 	INIT_LIST_HEAD(&sr->local_publ);
- 	INIT_LIST_HEAD(&sr->all_publ);
- 	rb_link_node(&sr->tree_node, parent, n);
--	rb_insert_color(&sr->tree_node, &sc->ranges);
-+	rb_insert_augmented(&sr->tree_node, &sc->ranges, &sr_callbacks);
- 	return sr;
- }
- 
-@@ -306,7 +400,6 @@ static void tipc_service_subscribe(struct tipc_service *service,
- 	struct list_head publ_list;
- 	struct service_range *sr;
- 	struct tipc_name_seq ns;
--	struct rb_node *n;
- 	u32 filter;
- 
- 	ns.type = tipc_sub_read(sb, seq.type);
-@@ -321,13 +414,7 @@ static void tipc_service_subscribe(struct tipc_service *service,
- 		return;
- 
- 	INIT_LIST_HEAD(&publ_list);
--	for (n = rb_first(&service->ranges); n; n = rb_next(n)) {
--		sr = container_of(n, struct service_range, tree_node);
--		if (sr->lower > ns.upper)
--			break;
--		if (!tipc_sub_check_overlap(&ns, sr->lower, sr->upper))
--			continue;
--
-+	service_range_foreach_match(sr, service, ns.lower, ns.upper) {
- 		first = NULL;
- 		list_for_each_entry(p, &sr->all_publ, all_publ) {
- 			if (filter & TIPC_SUB_PORTS)
-@@ -421,7 +508,7 @@ struct publication *tipc_nametbl_remove_publ(struct net *net, u32 type,
- 
- 	/* Remove service range item if this was its last publication */
- 	if (list_empty(&sr->all_publ)) {
--		rb_erase(&sr->tree_node, &sc->ranges);
-+		rb_erase_augmented(&sr->tree_node, &sc->ranges, &sr_callbacks);
- 		kfree(sr);
- 	}
- 
-@@ -469,34 +556,39 @@ u32 tipc_nametbl_translate(struct net *net, u32 type, u32 instance, u32 *dnode)
- 	rcu_read_lock();
- 	sc = tipc_service_find(net, type);
- 	if (unlikely(!sc))
--		goto not_found;
-+		goto exit;
- 
- 	spin_lock_bh(&sc->lock);
--	sr = tipc_service_first_range(sc, instance);
--	if (unlikely(!sr))
--		goto no_match;
--
--	/* Select lookup algorithm: local, closest-first or round-robin */
--	if (*dnode == self) {
--		list = &sr->local_publ;
--		if (list_empty(list))
--			goto no_match;
--		p = list_first_entry(list, struct publication, local_publ);
--		list_move_tail(&p->local_publ, &sr->local_publ);
--	} else if (legacy && !*dnode && !list_empty(&sr->local_publ)) {
--		list = &sr->local_publ;
--		p = list_first_entry(list, struct publication, local_publ);
--		list_move_tail(&p->local_publ, &sr->local_publ);
--	} else {
--		list = &sr->all_publ;
--		p = list_first_entry(list, struct publication, all_publ);
--		list_move_tail(&p->all_publ, &sr->all_publ);
-+	service_range_foreach_match(sr, sc, instance, instance) {
-+		/* Select lookup algo: local, closest-first or round-robin */
-+		if (*dnode == self) {
-+			list = &sr->local_publ;
-+			if (list_empty(list))
-+				continue;
-+			p = list_first_entry(list, struct publication,
-+					     local_publ);
-+			list_move_tail(&p->local_publ, &sr->local_publ);
-+		} else if (legacy && !*dnode && !list_empty(&sr->local_publ)) {
-+			list = &sr->local_publ;
-+			p = list_first_entry(list, struct publication,
-+					     local_publ);
-+			list_move_tail(&p->local_publ, &sr->local_publ);
-+		} else {
-+			list = &sr->all_publ;
-+			p = list_first_entry(list, struct publication,
-+					     all_publ);
-+			list_move_tail(&p->all_publ, &sr->all_publ);
-+		}
-+		port = p->port;
-+		node = p->node;
-+		/* Todo: as for legacy, pick the first matching range only, a
-+		 * "true" round-robin will be performed as needed.
-+		 */
-+		break;
- 	}
--	port = p->port;
--	node = p->node;
--no_match:
- 	spin_unlock_bh(&sc->lock);
--not_found:
-+
-+exit:
- 	rcu_read_unlock();
- 	*dnode = node;
- 	return port;
-@@ -519,7 +611,8 @@ bool tipc_nametbl_lookup(struct net *net, u32 type, u32 instance, u32 scope,
- 
- 	spin_lock_bh(&sc->lock);
- 
--	sr = tipc_service_first_range(sc, instance);
-+	/* Todo: a full search i.e. service_range_foreach_match() instead? */
-+	sr = service_range_match_first(sc->ranges.rb_node, instance, instance);
- 	if (!sr)
- 		goto no_match;
- 
-@@ -548,7 +641,6 @@ void tipc_nametbl_mc_lookup(struct net *net, u32 type, u32 lower, u32 upper,
- 	struct service_range *sr;
- 	struct tipc_service *sc;
- 	struct publication *p;
--	struct rb_node *n;
- 
- 	rcu_read_lock();
- 	sc = tipc_service_find(net, type);
-@@ -556,13 +648,7 @@ void tipc_nametbl_mc_lookup(struct net *net, u32 type, u32 lower, u32 upper,
- 		goto exit;
- 
- 	spin_lock_bh(&sc->lock);
--
--	for (n = rb_first(&sc->ranges); n; n = rb_next(n)) {
--		sr = container_of(n, struct service_range, tree_node);
--		if (sr->upper < lower)
--			continue;
--		if (sr->lower > upper)
--			break;
-+	service_range_foreach_match(sr, sc, lower, upper) {
- 		list_for_each_entry(p, &sr->local_publ, local_publ) {
- 			if (p->scope == scope || (!exact && p->scope < scope))
- 				tipc_dest_push(dports, 0, p->port);
-@@ -583,7 +669,6 @@ void tipc_nametbl_lookup_dst_nodes(struct net *net, u32 type, u32 lower,
- 	struct service_range *sr;
- 	struct tipc_service *sc;
- 	struct publication *p;
--	struct rb_node *n;
- 
- 	rcu_read_lock();
- 	sc = tipc_service_find(net, type);
-@@ -591,13 +676,7 @@ void tipc_nametbl_lookup_dst_nodes(struct net *net, u32 type, u32 lower,
- 		goto exit;
- 
- 	spin_lock_bh(&sc->lock);
--
--	for (n = rb_first(&sc->ranges); n; n = rb_next(n)) {
--		sr = container_of(n, struct service_range, tree_node);
--		if (sr->upper < lower)
--			continue;
--		if (sr->lower > upper)
--			break;
-+	service_range_foreach_match(sr, sc, lower, upper) {
- 		list_for_each_entry(p, &sr->all_publ, all_publ) {
- 			tipc_nlist_add(nodes, p->node);
- 		}
-@@ -795,7 +874,7 @@ static void tipc_service_delete(struct net *net, struct tipc_service *sc)
- 			tipc_service_remove_publ(sr, p->node, p->key);
- 			kfree_rcu(p, rcu);
- 		}
--		rb_erase(&sr->tree_node, &sc->ranges);
-+		rb_erase_augmented(&sr->tree_node, &sc->ranges, &sr_callbacks);
- 		kfree(sr);
- 	}
- 	hlist_del_init_rcu(&sc->service_list);
--- 
-2.13.7
+
+@@ -664,7 +666,8 @@ int tipc_nametbl_withdraw(struct net *net, u32 type, u32 lower,
+        spin_unlock_bh(&tn->nametbl_lock);
+
+        if (skb) {
+-               tipc_node_broadcast(net, skb);
++               msg_set_is_rcast(buf_msg(skb), true);
++               tipc_bcast_named_publish(net, skb);
+                return 1;
+        }
+        return 0;
+--
+2.20.1
+
+-----Original Message-----
+From: Jon Maloy <jon.maloy@ericsson.com> 
+Sent: Wednesday, November 13, 2019 7:02 PM
+To: Hoang Huu Le <hoang.h.le@dektech.com.au>; maloy@donjonn.com; tipc-discussion@lists.sourceforge.net
+Cc: 'Ying Xue' <ying.xue@windriver.com>
+Subject: RE: [net-next] tipc: update a binding service via broadcast
+
+Hi Hoang,
+This is good, but you have missed the point about the synchronization problem I have been talking about.
+
+1) A new node comes up
+2) The "bulk" binding table update is sent, as a series of packets over the new unicast link. This may take some time.
+3) The owner of one of the bindings in the bulk (on this node) does unbind.
+4) This is sent as broadcast withdraw to all nodes, and arrives before the last packets of the unicast bulk to the newly connected node.
+5) Since there is no corresponding publication in the peer node's binding table yet, the withdraw is ignored.
+6) The last bulk unicasts arrive at the new peer, and the now invalid publication is added to its binding table.
+7) This publication will stay there forever.
+
+We need to find a way to synchronize so that we know that all the bulk publications are in place in the binding table before any broadcast publications/withdraws can be accepted.
+Obviously, we could create a backlog queue in the name table, but I hope we can find a simpler and neater solution.
+
+Regards
+///jon
+
+> -----Original Message-----
+> From: Hoang Le <hoang.h.le@dektech.com.au>
+> Sent: 13-Nov-19 02:35
+> To: Jon Maloy <jon.maloy@ericsson.com>; maloy@donjonn.com; tipc-discussion@lists.sourceforge.net
+> Subject: [net-next] tipc: update a binding service via broadcast
+> 
+> Currently, updating binding table (add service binding to
+> name table/withdraw a service binding) is being sent over replicast.
+> However, if we are scaling up clusters to > 100 nodes/containers this
+> method is less affection because of looping through nodes in a cluster one
+> by one.
+> 
+> It is worth to use broadcast to update a binding service. Then binding
+> table updates in all nodes for one shot.
+> 
+> The mechanism is backward compatible because of sending side changing.
+> 
+> Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
+> ---
+>  net/tipc/bcast.c      | 13 +++++++++++++
+>  net/tipc/bcast.h      |  2 ++
+>  net/tipc/name_table.c |  4 ++--
+>  3 files changed, 17 insertions(+), 2 deletions(-)
+> 
+> diff --git a/net/tipc/bcast.c b/net/tipc/bcast.c
+> index f41096a759fa..18431fa897ab 100644
+> --- a/net/tipc/bcast.c
+> +++ b/net/tipc/bcast.c
+> @@ -843,3 +843,16 @@ void tipc_mcast_filter_msg(struct net *net, struct sk_buff_head *defq,
+>  		__skb_queue_tail(inputq, _skb);
+>  	}
+>  }
+> +
+> +int tipc_bcast_named_publish(struct net *net, struct sk_buff *skb)
+> +{
+> +	struct sk_buff_head xmitq;
+> +	u16 cong_link_cnt;
+> +	int rc = 0;
+> +
+> +	__skb_queue_head_init(&xmitq);
+> +	__skb_queue_tail(&xmitq, skb);
+> +	rc = tipc_bcast_xmit(net, &xmitq, &cong_link_cnt);
+> +	__skb_queue_purge(&xmitq);
+> +	return rc;
+> +}
+> diff --git a/net/tipc/bcast.h b/net/tipc/bcast.h
+> index dadad953e2be..a100da3800fc 100644
+> --- a/net/tipc/bcast.h
+> +++ b/net/tipc/bcast.h
+> @@ -101,6 +101,8 @@ int tipc_bclink_reset_stats(struct net *net);
+>  u32 tipc_bcast_get_broadcast_mode(struct net *net);
+>  u32 tipc_bcast_get_broadcast_ratio(struct net *net);
+> 
+> +int tipc_bcast_named_publish(struct net *net, struct sk_buff *skb);
+> +
+>  void tipc_mcast_filter_msg(struct net *net, struct sk_buff_head *defq,
+>  			   struct sk_buff_head *inputq);
+> 
+> diff --git a/net/tipc/name_table.c b/net/tipc/name_table.c
+> index 66a65c2cdb23..9e9c61f7c999 100644
+> --- a/net/tipc/name_table.c
+> +++ b/net/tipc/name_table.c
+> @@ -633,7 +633,7 @@ struct publication *tipc_nametbl_publish(struct net *net, u32 type, u32 lower,
+>  	spin_unlock_bh(&tn->nametbl_lock);
+> 
+>  	if (skb)
+> -		tipc_node_broadcast(net, skb);
+> +		tipc_bcast_named_publish(net, skb);
+>  	return p;
+>  }
+> 
+> @@ -664,7 +664,7 @@ int tipc_nametbl_withdraw(struct net *net, u32 type, u32 lower,
+>  	spin_unlock_bh(&tn->nametbl_lock);
+> 
+>  	if (skb) {
+> -		tipc_node_broadcast(net, skb);
+> +		tipc_bcast_named_publish(net, skb);
+>  		return 1;
+>  	}
+>  	return 0;
+> --
+> 2.20.1
+
 
 
 
