@@ -2,35 +2,35 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 870C7FE145
-	for <lists+tipc-discussion@lfdr.de>; Fri, 15 Nov 2019 16:31:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04699FE1C3
+	for <lists+tipc-discussion@lfdr.de>; Fri, 15 Nov 2019 16:48:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:To:Sender:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=gB6ZiSh2JO6jxqebbAWFQrxdpCQU8XzDUkAZRiCPuSs=; b=W5GH24w3DTG2m/7hrKHGpQ2ew
-	f/UhcG2IJ7tAZokLo9/xOtP/Hi3G4/j1L3DTrOBnWsMg98uDHQozt1GeL+mBz3NPFGo+NpztzJlSh
-	gITwcmG/96T5BLEjYTJy1wizuo3vIoqcwe+FkAzxjNBgjMDrTqSug4KdI366jNqR5jmR8=;
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	 bh=YwSp0DH1VcS21CHK6P+MsJ/AfkU/MKzewmtzwmR//v0=; b=FCKcvySmd0ftfhbmM3klhr/PC
+	j8p5LtSuXR+WQ0ausXh8hJa9LMaQPzKcOKS0l0GsKBKROv2muwGDoyPQyV0kwbb/it0y7QVj4vzjk
+	vy+9Sev7U5uX2LJqy67CBHEIuP2xDy5Y/UZa0EOWxtaYgLtR01VysQUNi8KUc63Ly48HU=;
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iVdZW-0001eu-GJ; Fri, 15 Nov 2019 15:31:42 +0000
+	id 1iVdpS-0004Rm-M0; Fri, 15 Nov 2019 15:48:10 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jon.maloy@ericsson.com>) id 1iVdZU-0001ee-Rk
- for tipc-discussion@lists.sourceforge.net; Fri, 15 Nov 2019 15:31:41 +0000
+ (envelope-from <jon.maloy@ericsson.com>) id 1iVdpK-0004RL-35
+ for tipc-discussion@lists.sourceforge.net; Fri, 15 Nov 2019 15:48:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
  :In-Reply-To:References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=D7jW5bopDNoCnOCo+o8uyy/RK5BadSeg+3xntC8jDww=; b=YFYdPYciXeQ0g/GRfw8OmT2QKd
- l9TVEfgUwo99sgOvVXLNUuIS9nmOFfp16OHGbHIOqYkLCi3goI4rp+vQ/YnTBkJNPV8k0/M9eNc5H
- C9Zn94Cr9W/mXoE6hKGjJN/5vk4d3XwY5hHCbjAGrGC8NAGGv9er8cqpRI+rBIueoAhE=;
+ bh=5yRvVtwM4iwIa84PlJopxDIdZYBNivyDtStWmmANYQc=; b=QK49ghOxYEq2WdSf/wrzD42n4j
+ mnsSgljFGCjAs0Y6SMvhmNq1RhYNQPK3NLNPBnCqzsn+MPSZ63Uz142be/QBoVV1Fy/Qw76WqoQVp
+ FIDiPVbhkdNAEg7cnTCJAtdLcAERN7ueaqNEWv7TCAMKrDRfqB6FnUeaahimC22bTS+0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
@@ -38,49 +38,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=D7jW5bopDNoCnOCo+o8uyy/RK5BadSeg+3xntC8jDww=; b=Us4jos7C3x972xD6VVvp+dZP7u
- 9SnhA6weQwNfbao/AkOZN2QHOjKUAaLiRqgyK8D6f8ax+tqv/y3j+BkZEWk7GYDyrN4dtop36Cubh
- zO7luJK/W9z5eVP4fRRGH2N5Bu6joDBHyoO77pqYaDnay2ARj23sXkXwQOByPvV0iFYA=;
-Received: from mail-eopbgr740071.outbound.protection.outlook.com
- ([40.107.74.71] helo=NAM01-BN3-obe.outbound.protection.outlook.com)
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ bh=5yRvVtwM4iwIa84PlJopxDIdZYBNivyDtStWmmANYQc=; b=k9uH33kQRnmPra1ZH8s4zPCatn
+ N/xeWzsxeeQrZrApVnJGIKx7yWVK3Y47c3jkGftc9FcgO87sHTpsDLX6cbXB6b2dpZkamem2JiDWU
+ bhHfMT/RoXn9S5/lNty/OZKC3FmT4mrtfmELWQr71RC8TmBC+RXOmISETqKA46fWdI0E=;
+Received: from mail-eopbgr720062.outbound.protection.outlook.com
+ ([40.107.72.62] helo=NAM05-CO1-obe.outbound.protection.outlook.com)
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1iVdZN-000qoy-5W
- for tipc-discussion@lists.sourceforge.net; Fri, 15 Nov 2019 15:31:40 +0000
+ id 1iVdpE-0012Ee-Oo
+ for tipc-discussion@lists.sourceforge.net; Fri, 15 Nov 2019 15:48:02 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=XYCBFBieWZp+GnZOjMExgklWLjh8HIN6J4t0GKa1mNQEFYJZh0J1UH/AY6QSbtxCfEWFP9kz8rqOKaX5b+GTWxsE/4m1T4x7t2g2gRccSIooHmNg01req8IhQnkSAiOS6LyVyOrewLMob8ojkFZDG25k+yhbR0rUC7wA77Wnd+KLIXJ8LVt5B58gUj4WioIauGKMcjb+Vdi2nkcHdVh2JXnIqh1wJKnrXQo0/2Nib/ny7PAhwiuIX5M73DVqAeicM3DqolGxNuhhZvZLc+iwXFBY75gEutOBHYfqpg4hD8bvzckoo0vKOy3PgXNt4HPlm/6D/S6WsixxLu2EwAQARQ==
+ b=Ffdxp3Ppl/7fmZH/M526SmhD5XOBnaPO+4BII0jBKYIzeqtaEtVl9rPOvY4xyPxeVpibHSJV+OV6bmO8Bls0hF2xSe+cykBJW9GgI4CubLkh6Q+Y0h3hyHsfSzfoTcekDA7BeunF1V5kIZs8n3oBIr1gb2eydvSYNc0emRruC5Q391BUouNYJEF43LytHVk2gI8Zu4Sh2kW+IMONRQAlB9qo2OnFwamQ6PVosVCtc7ep1cIF6J200epfHjdP7aRsutoMv2cLpFqg8j3n+6ELOWoZ2ZhTKWainaj00GxAmS2iNIa95P9kje9YxZ0xiJxgLQ7SfYp9d0rJxzlqdJXsHA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=D7jW5bopDNoCnOCo+o8uyy/RK5BadSeg+3xntC8jDww=;
- b=aXeW2UoOYctCRjrThmeuiO8kZVEvaB8529jPayqHQL6akDZoH6JRmUMu9/F8KJtoHwtxpkj8P2SXWYpC35MszmE2McPoAcyw3RPPDjvcXvukltRpWVRWTBK/L8bU8MoyPZo6m4KPSg8EuuT5cheR57xLrjoyR23PpuTn3IuVdquyJ/7qMbqKXtBNJSlooxp6QwvSlTz1DK7RlYOzQl9wuv+IPInEOKL8cEveQxV1R7wUBk8ygGK2Ff8LlyjNfy93Aw+GXCl1LqfK6L4O9JcnUxHVpySYVAJQ/+s3POBZ8c/GHDc3OLQ5vZHT1Cld2Dhom2kA0ljLHKLu2HZabtDgtg==
+ bh=5yRvVtwM4iwIa84PlJopxDIdZYBNivyDtStWmmANYQc=;
+ b=KWyqBvTWVdM1dCXHQ0PK9hcBsVN76bhcOZKG8WqAIia/7/uKjpIoChtM2G3i3YdfSSqZsoYmhEpOXsinx4JAp/eMVEPlZJzFCFO3iv8iIKfoeLy4TgklMRUNK6gY3gZWWy4HMTE/GMqp063wpqzqQ/wswqnW1sbOYITDGqXt36wMCY3TX+M3l44+97qVgy2u5xk1RokaSvEHUst5VIUtpGXmfqCvtLR6DfVOI14cgJbfmRD8+oT/wxxm1hXXO6TqcZ7YwwGVH+A5f8vyZO00MzaZ5iXfkesm6RV/5SmUlt2K9UXYxl+PBeDOrveQlcnRBrQGrOL6jCLjTY0pbyLpBA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=ericsson.com; dmarc=pass action=none header.from=ericsson.com;
  dkim=pass header.d=ericsson.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
  s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=D7jW5bopDNoCnOCo+o8uyy/RK5BadSeg+3xntC8jDww=;
- b=n+NE1QOI7Rr4sAz3m5QMhhs/k/PrqgzxIoV13SBOCjQA4qaWLrGneku3hhwsUiJ8K/VH80KoP1XnXMCYn7Q+SmKwVCDn9KmXpDMcTuL4fzsGzgOJN3aYkkp7mxx8gCbAyC98D+w/j4OwUllNAxP2uqQdeAxGy+QBr9317syIdtU=
+ bh=5yRvVtwM4iwIa84PlJopxDIdZYBNivyDtStWmmANYQc=;
+ b=JPdBkWccN4UZSKGxI9gPv0lQtHdDdnGSOMoXmlvh3mXjP1JecHMvCouJT03HW49ppqJgQ1fXrN8P9hA6mip6hgS9qxALhLfiYEAQ2Se10Rm9HxYeH4Ki5MawplncDHaGGFke1KMZl2xAo6KKil+DiEpe1IC1E3qXHt28gIaWwXY=
 Received: from CH2PR15MB3575.namprd15.prod.outlook.com (10.255.156.17) by
- CH2PR15MB3591.namprd15.prod.outlook.com (52.132.231.89) with Microsoft SMTP
+ CH2PR15MB3544.namprd15.prod.outlook.com (52.132.228.90) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2451.23; Fri, 15 Nov 2019 15:31:24 +0000
+ 15.20.2430.25; Fri, 15 Nov 2019 15:33:00 +0000
 Received: from CH2PR15MB3575.namprd15.prod.outlook.com
  ([fe80::a0a2:ffd4:4a7f:7a63]) by CH2PR15MB3575.namprd15.prod.outlook.com
  ([fe80::a0a2:ffd4:4a7f:7a63%7]) with mapi id 15.20.2451.029; Fri, 15 Nov 2019
- 15:31:24 +0000
+ 15:33:00 +0000
 To: Tung Quang Nguyen <tung.q.nguyen@dektech.com.au>,
  "tipc-discussion@lists.sourceforge.net"
  <tipc-discussion@lists.sourceforge.net>, "maloy@donjonn.com"
  <maloy@donjonn.com>, "ying.xue@windriver.com" <ying.xue@windriver.com>
-Thread-Topic: [tipc-discussion] [net v1 1/1] tipc: fix wrong timeout input for
- tipc_wait_for_cond()
-Thread-Index: AQHVm5Qm9ivE4f8Ex0Casncj+H9YoaeMXD3A
-Date: Fri, 15 Nov 2019 15:31:24 +0000
-Message-ID: <CH2PR15MB357576CB76E54FC3CCAD04159A700@CH2PR15MB3575.namprd15.prod.outlook.com>
-References: <20191115090725.1967-1-tung.q.nguyen@dektech.com.au>
-In-Reply-To: <20191115090725.1967-1-tung.q.nguyen@dektech.com.au>
+Thread-Topic: [tipc-discussion] [net v1 1/1] tipc: fix unreset l->rcv_unacked
+ after message retransmission
+Thread-Index: AQHVm5RB259hTAWCEE2Q83wXcxXI36eMXLTg
+Date: Fri, 15 Nov 2019 15:32:59 +0000
+Message-ID: <CH2PR15MB35757B10CAE0AF3979CDA4F19A700@CH2PR15MB3575.namprd15.prod.outlook.com>
+References: <20191115090808.2021-1-tung.q.nguyen@dektech.com.au>
+In-Reply-To: <20191115090808.2021-1-tung.q.nguyen@dektech.com.au>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -89,41 +89,41 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=jon.maloy@ericsson.com; 
 x-originating-ip: [24.225.233.31]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 15aac4c5-9b91-414f-2b50-08d769e0dff1
-x-ms-traffictypediagnostic: CH2PR15MB3591:
+x-ms-office365-filtering-correlation-id: 02459ec9-9304-4f9d-1ba9-08d769e118d7
+x-ms-traffictypediagnostic: CH2PR15MB3544:
 x-ld-processed: 92e84ceb-fbfd-47ab-be52-080c6b87953f,ExtAddr
-x-microsoft-antispam-prvs: <CH2PR15MB3591D423A990391393940D8D9A700@CH2PR15MB3591.namprd15.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:489;
+x-microsoft-antispam-prvs: <CH2PR15MB3544DC7817973D3F94E6F6BD9A700@CH2PR15MB3544.namprd15.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:323;
 x-forefront-prvs: 02229A4115
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(366004)(346002)(39860400002)(136003)(396003)(189003)(13464003)(199004)(229853002)(305945005)(55016002)(7736002)(316002)(14454004)(74316002)(76176011)(7696005)(5660300002)(3846002)(6116002)(25786009)(6436002)(14444005)(256004)(446003)(11346002)(102836004)(99286004)(66066001)(476003)(26005)(186003)(486006)(44832011)(478600001)(6506007)(53546011)(71190400001)(64756008)(66946007)(66556008)(66476007)(2201001)(66446008)(71200400001)(86362001)(110136005)(2906002)(6246003)(8936002)(2501003)(81166006)(76116006)(81156014)(8676002)(9686003)(52536014)(33656002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR15MB3591;
+ SFS:(10009020)(4636009)(396003)(39860400002)(136003)(346002)(366004)(376002)(13464003)(199004)(189003)(11346002)(81166006)(486006)(6246003)(2501003)(25786009)(5660300002)(14454004)(6116002)(478600001)(6436002)(52536014)(64756008)(229853002)(9686003)(3846002)(66476007)(66556008)(66946007)(66446008)(55016002)(76116006)(256004)(71200400001)(71190400001)(102836004)(8936002)(2201001)(53546011)(15650500001)(86362001)(81156014)(66066001)(99286004)(186003)(7696005)(446003)(74316002)(76176011)(44832011)(476003)(33656002)(26005)(305945005)(7736002)(2906002)(6506007)(316002)(110136005)(8676002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR15MB3544;
  H:CH2PR15MB3575.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
+ PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: ericsson.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: wC3Hr84EOKT1i1+zoxZrplrsgZjhclLppvXbWUfBc7qAHqGeoamTU8T+iN6pc92/VDFrWt3+9Xj/eIFLHoXl5Y692nzDPhhM/sb9Ge0ata0xIk4ScLwzAiL4m4XEPNedfJPL9/DP6Dv+xSFGplhkG4LwWjFJ3LbOog2DuxNCHAHEoiLui/VSSd7SGgKpPg4vUyYLCIKZy/IiLtK9E9qPABaopTwWJIFJTCzY80O7e3KLc9UZWuT6brUifdE7W17oEyqnCtM0hR3lBJ8g+e+i4RiPWLa0DeA8RTCS53yJtxjM4yn/3AI3xrhQpymKiVziBB1oFWAhFj3EUTgTMy5HdfR0yXYRwQXRBc3lVr/b5a4CJvmA0CZ9K4VjVar6/HIaxdwClf9dGXTVuAcqR5w1aoRlDPz5x2XH1OtlvecJLklvH8bsvyfgbt+fsugf2e5C
+x-microsoft-antispam-message-info: pt4YS6qc8siQ1tabRbLKXxKe7HeWpY0H4lVzkW8KUrhmI5fKMDyCO9ncWdUHMN432ZIy6f4n6Pz6V77M2LdtlBXRwz6hUCIkexf8L2O8m1pbSbmfVcHCQxbKs2f2ONwpkTlSPSatpgDwCM42BNxVSt6zwcmvWiYj8H72kSdy4locsdOWe92+QumTBLswlhSSYejRNTwcCstHj0zZrp0dsO8qB4fDqE4f0LbSBKtUjgrgarbuu7+CzT0WNJX1g5/s6ga+8oPNhIhJQetyuWxuiSh3hv55vVDjN68Nvx4fv8LrrLoDiqWgZagZVykBdWrErt+8wBqC/7tFXFcdlOHShyoZiKgFXvVPcrcHIO8wYVvQ1FKPboFuacQ/+nyCNmyCPtMfsLrr6cRGXMlUgPxOgwN5lnEglMojeq9MxOBv65bde1uaahOG0ao2IZ8lZbry
 x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
 X-OriginatorOrg: ericsson.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 15aac4c5-9b91-414f-2b50-08d769e0dff1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Nov 2019 15:31:24.5580 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 02459ec9-9304-4f9d-1ba9-08d769e118d7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Nov 2019 15:32:59.9484 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: fl9yFKISu/4rcM0Z1m0Dr1rBs92h3RkB8xgMF4czGpChHE0K6OEJkHgvG5UcnLhDsEx4VdYwRPTT+v1aOz3v/Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR15MB3591
-X-Spam-Score: -0.2 (/)
+X-MS-Exchange-CrossTenant-userprincipalname: BDHTndLPeVxUhPBrw9uF4ixU7nRlRWM4ENWbP8f31rA4npz7Rc3ByD8nLyBhzbPiKhwdyOrcgeOw9SazQgO9LA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR15MB3544
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: ericsson.com]
+ for more information. [URIs: donjonn.com]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.74.71 listed in list.dnswl.org]
+ trust [40.107.72.62 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -132,10 +132,10 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
- -0.1 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1iVdZN-000qoy-5W
-Subject: Re: [tipc-discussion] [net v1 1/1] tipc: fix wrong timeout input
- for tipc_wait_for_cond()
+ -0.0 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1iVdpE-0012Ee-Oo
+Subject: Re: [tipc-discussion] [net v1 1/1] tipc: fix unreset l->rcv_unacked
+ after message retransmission
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -153,41 +153,37 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Acked
+Acked.
 ///jon
 
 > -----Original Message-----
 > From: Tung Nguyen <tung.q.nguyen@dektech.com.au>
-> Sent: 15-Nov-19 04:07
+> Sent: 15-Nov-19 04:08
 > To: tipc-discussion@lists.sourceforge.net; Jon Maloy <jon.maloy@ericsson.com>; maloy@donjonn.com;
 > ying.xue@windriver.com
-> Subject: [tipc-discussion] [net v1 1/1] tipc: fix wrong timeout input for tipc_wait_for_cond()
+> Subject: [tipc-discussion] [net v1 1/1] tipc: fix unreset l->rcv_unacked after message retransmission
 > 
-> In function __tipc_shutdown(), the timeout value passed to
-> tipc_wait_for_cond() is not jiffies.
+> When lost messages are retransmitted, they also carry ACK.
+> So, l->rcv_unacked needs to be reset.
 > 
-> This commit fixes it by converting that value from milliseconds
-> to jiffies.
-> 
-> Fixes: 365ad353c256 ("tipc: reduce risk of user starvation during link congestion")
+> Fixes: 9195948fbf34 ("tipc: improve TIPC throughput by Gap ACK blocks")
 > Signed-off-by: Tung Nguyen <tung.q.nguyen@dektech.com.au>
 > ---
->  net/tipc/socket.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  net/tipc/link.c | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/net/tipc/socket.c b/net/tipc/socket.c
-> index d7be43f5..506d264 100644
-> --- a/net/tipc/socket.c
-> +++ b/net/tipc/socket.c
-> @@ -532,7 +532,7 @@ static void __tipc_shutdown(struct socket *sock, int error)
->  	struct sock *sk = sock->sk;
->  	struct tipc_sock *tsk = tipc_sk(sk);
->  	struct net *net = sock_net(sk);
-> -	long timeout = CONN_TIMEOUT_DEFAULT;
-> +	long timeout = msecs_to_jiffies(CONN_TIMEOUT_DEFAULT);
->  	u32 dnode = tsk_peer_node(tsk);
->  	struct sk_buff *skb;
+> diff --git a/net/tipc/link.c b/net/tipc/link.c
+> index fb72031..7660e5a 100644
+> --- a/net/tipc/link.c
+> +++ b/net/tipc/link.c
+> @@ -1448,6 +1448,7 @@ static int tipc_link_advance_transmq(struct tipc_link *l, u16 acked, u16 gap,
+>  			msg_set_bcast_ack(hdr, bc_ack);
+>  			_skb->priority = TC_PRIO_CONTROL;
+>  			__skb_queue_tail(xmitq, _skb);
+> +			l->rcv_unacked = 0;
+>  			l->stats.retransmitted++;
 > 
+>  			/* Increase actual retrans counter & mark first time */
 > --
 > 2.1.4
 
