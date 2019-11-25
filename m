@@ -2,90 +2,127 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AAC7108A05
-	for <lists+tipc-discussion@lfdr.de>; Mon, 25 Nov 2019 09:27:25 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
-	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iZ9iM-0002XS-5w; Mon, 25 Nov 2019 08:27:22 +0000
-Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1iZ9iJ-0002XJ-RF
- for tipc-discussion@lists.sourceforge.net; Mon, 25 Nov 2019 08:27:19 +0000
+	by mail.lfdr.de (Postfix) with ESMTPS id 6ACBE109013
+	for <lists+tipc-discussion@lfdr.de>; Mon, 25 Nov 2019 15:34:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :Message-ID:Date:Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
+	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:To:Sender:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8x8EamFyXaLyDE/HVvuCDH4ItbJnxMrusV2JiNh3RQg=; b=K54Osc2HWzb4TAA8CkjIrhpS7
+	6lXkDxgOSqM7mlbN+SWeqMjz+FRZm/xGPUjbcLBRZT8spTYzxTcYSrT6uHN8vrbniNZboad1JoVTg
+	/CQyORO/RCSXESwaVJagf2wxOzF5o3bZgJY7/A/RT3giHH1D94o5potd24s5P9yEGgB88=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
+	id 1iZFR7-00022K-3q; Mon, 25 Nov 2019 14:33:57 +0000
+Received: from [172.30.20.202] (helo=mx.sourceforge.net)
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <jon.maloy@ericsson.com>) id 1iZFR5-000222-E7
+ for tipc-discussion@lists.sourceforge.net; Mon, 25 Nov 2019 14:33:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=8zITq1zY4gTqR8wInuK2ZPiGZBFHrvq84G5cc3qZh5U=; b=ITEuTggGs86+KGOz85Z7S+DF+s
- qKd9ZwCex9HFkAABPCa7KTOdMQjPAFZu7jOO/vr9dCw0o/Uxz8E7OTtubwyJzWmSVqIcaF0ZasuCg
- bLueWwkMZtWhODKoQPwWq3oJjKjv0tpM7J91Po8XGkByq0jK+e4VfSMfRm5XoXuysjVI=;
+ bh=MkAcUBqp5VHwZ7+RisSAvVFxwKZDmUjSh6P44Wd0st0=; b=hLJHsQ6/YeFk/H0coNmxqiPnLv
+ r3yPtfYJhPbDXBgpxQ4vnP+fL0OEvvi6sLc721anEOGLm9nWAOf2FpLX36xmUj4cbuw6opFwQcfhj
+ zwLRrjg1tB+OqdiIkwsY9QAI92SdhlLSVkmFvEk85L28FBmtAeTraMNkQYSJ97yTHZrI=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:
- Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:Content-ID:
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=8zITq1zY4gTqR8wInuK2ZPiGZBFHrvq84G5cc3qZh5U=; b=IB58E54uxM3CVn4pdyMYYUW5Yz
- aWol9Y6BP2sPAf7kE5S5NVCsF4AZqzbrSyNH7wCz3Zyrochl5dT8WD1l/hq1V1KJMXgH5nEaFrpZl
- +aXiutQCT4jTpNDM9JQRaHVFH+LTbmBB/c1mlSl1hYULoaDcTUihg0W+73L/U31bhRPQ=;
-Received: from f0-dek.dektech.com.au ([210.10.221.142]
- helo=mail.dektech.com.au)
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ bh=MkAcUBqp5VHwZ7+RisSAvVFxwKZDmUjSh6P44Wd0st0=; b=VYFlb69qNBKNufVJJDA4M6B9HY
+ ehIQFmuv81KDzfcuU0qoATfsQZG6wp/hCWWevFrQSguIBEv3SC8cCYjs/hnOR9VQPXYwB32x3KMwO
+ x5VvKGRBpyW36OY93VUKzmok49GGvztAg5InLjxrx/Koc5u0EkPEoUDqaAfmD0ODmFGE=;
+Received: from mail-eopbgr730065.outbound.protection.outlook.com
+ ([40.107.73.65] helo=NAM05-DM3-obe.outbound.protection.outlook.com)
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1iZ9iH-00CzG0-MQ
- for tipc-discussion@lists.sourceforge.net; Mon, 25 Nov 2019 08:27:19 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.dektech.com.au (Postfix) with ESMTP id 1A09C4A5C6;
- Mon, 25 Nov 2019 19:27:11 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
- h=content-language:x-mailer:content-transfer-encoding
- :content-type:content-type:mime-version:message-id:date:date
- :subject:subject:in-reply-to:references:from:from:received
- :received:received; s=mail_dkim; t=1574670430; bh=UGseDtK/XhcRVM
- 8l2LjrtCL1DBCG3NyegQf1lhBpAxM=; b=rF9gdHaPmstPsCawN6OOuhfZyP1wDj
- 6L+bhTiaGlkJDa9odZ3Umzf+P8iKL/VRDEUGxeQf7mwf0rh/isdMX4LIqVB3Ig4e
- MFWkGjmFzgdH4tO2XfcgFPodVB+ISA9r0BpWasezvLRKUB6xo4QuzK2qoSGXJk0+
- DEV8fDAtEjB3c=
-X-Virus-Scanned: amavisd-new at dektech.com.au
-Received: from mail.dektech.com.au ([127.0.0.1])
- by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id muTaMk-sViUL; Mon, 25 Nov 2019 19:27:10 +1100 (AEDT)
-Received: from mail.dektech.com.au (localhost [127.0.0.1])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPS id E406B4A5C7;
- Mon, 25 Nov 2019 19:27:10 +1100 (AEDT)
-Received: from VNLAP288VNPC (unknown [14.161.14.188])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPSA id D02EB4A5C6;
- Mon, 25 Nov 2019 19:27:09 +1100 (AEDT)
-From: "Tuong Lien Tong" <tuong.t.lien@dektech.com.au>
-To: "'tung quang nguyen'" <tung.q.nguyen@dektech.com.au>,
- <tipc-discussion@lists.sourceforge.net>, <jon.maloy@ericsson.com>,
- <maloy@donjonn.com>, <ying.xue@windriver.com>
-References: <20191125081231.29393-1-tuong.t.lien@dektech.com.au>
- <023a01d5a369$8c192790$a44b76b0$@dektech.com.au>
-In-Reply-To: <023a01d5a369$8c192790$a44b76b0$@dektech.com.au>
-Date: Mon, 25 Nov 2019 15:27:08 +0700
-Message-ID: <03ff01d5a36a$21cbc180$65634480$@dektech.com.au>
+ id 1iZFQz-004vVF-Hx
+ for tipc-discussion@lists.sourceforge.net; Mon, 25 Nov 2019 14:33:55 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=S23OVGQvmEKnR2wkfSaOUzsqNqs84A0mXHFeuwPoMI1m8CG34ksWOAoDfikulCGlcvX0bbJW9E4qI8sL8N5dn0zfZwpZb517oSwy+ONf3+fqHPK6q03ihcoRMJLkDo6aM1DHir+Z9nNFk3OOc41besGNlCDmL+U6pEcDKG1RLWi3vJQyCB7ptyRmBOwOPVPAQIs4CvSACPrigxJGbHEg/mX1NoL8waw2UPQcXAkbpcJ6f6qRReI7bO/P7I2lnhCvk5IYVgKR0bpJluns876X9QY+0W//Q2mAYiBmXf0IKKJG7zYR9AM9BL8RfVZrhi7zSWPSX/7kYtqowGKtKVBg/g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=MkAcUBqp5VHwZ7+RisSAvVFxwKZDmUjSh6P44Wd0st0=;
+ b=gegRxzou2gXDEqrn0ZtLIhN0nTRBSpCwJUCdVW0Qb6cb9JuBLLKSBwcPtL+McfGw6GTaGaRmSRO6i5kCCz76OflKiBm0o4I5lTgNOoRLNeohi+Q5GeeIEMln7zwT37Lbl12Qcc7MOgmZT64pCxvLNi9ji7UVLMZ+Edl0siwkbgEo4t8WMPDe2zakww0AFlCFLfUtoWByx0ZA64SKVNnLTy351Smm2q3k7sSpaNtZLeU1+QMBMoqoB0vFnUiV0vBg4DHJhiE0A08vPSxTWsDcU8XyWEn+3hNPCYJIh5Li3vmqRqYg2YRkzBvH011+t7f6OVfR7+IiVb1LFAmv1xZXag==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=ericsson.com; dmarc=pass action=none header.from=ericsson.com;
+ dkim=pass header.d=ericsson.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=MkAcUBqp5VHwZ7+RisSAvVFxwKZDmUjSh6P44Wd0st0=;
+ b=olXSteVhDx3yJ87XwJJAo0RyukceXFU6THCcH4jdV9qKBH6aenoVgoWAPKlZWJcKMQt8eEx8Z+5lcCoz7IMTlbprWucZ2qcz5gbUjYMp4xON6bKSYEHlVi44AEbbBb2WIM6LErG4Fn/SeEGMbX6Fl8IuWVgFE6UikaI95BA3m9s=
+Received: from CH2PR15MB3575.namprd15.prod.outlook.com (10.255.156.17) by
+ CH2PR15MB3621.namprd15.prod.outlook.com (52.132.231.95) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2474.24; Mon, 25 Nov 2019 14:01:20 +0000
+Received: from CH2PR15MB3575.namprd15.prod.outlook.com
+ ([fe80::c7b:65ae:ad5e:50d0]) by CH2PR15MB3575.namprd15.prod.outlook.com
+ ([fe80::c7b:65ae:ad5e:50d0%5]) with mapi id 15.20.2474.023; Mon, 25 Nov 2019
+ 14:01:20 +0000
+To: John Rutherford <john.rutherford@dektech.com.au>,
+ "tipc-discussion@lists.sourceforge.net"
+ <tipc-discussion@lists.sourceforge.net>
+Thread-Topic: [tipc-discussion] [net] tipc: fix link name length check
+Thread-Index: AQHVo1qq6eneVCKPQU6No4CheKxSsKeb6tpw
+Date: Mon, 25 Nov 2019 14:01:20 +0000
+Message-ID: <CH2PR15MB3575437D3CAE0E199461559B9A4A0@CH2PR15MB3575.namprd15.prod.outlook.com>
+References: <20191125063512.13592-1-john.rutherford@dektech.com.au>
+In-Reply-To: <20191125063512.13592-1-john.rutherford@dektech.com.au>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=jon.maloy@ericsson.com; 
+x-originating-ip: [24.225.233.31]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 05f68cdc-fb2b-4074-f1e4-08d771aff2fd
+x-ms-traffictypediagnostic: CH2PR15MB3621:
+x-ms-exchange-purlcount: 1
+x-ld-processed: 92e84ceb-fbfd-47ab-be52-080c6b87953f,ExtAddr
+x-microsoft-antispam-prvs: <CH2PR15MB362130647202075B5B3170A99A4A0@CH2PR15MB3621.namprd15.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1051;
+x-forefront-prvs: 0232B30BBC
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(346002)(366004)(396003)(39860400002)(376002)(199004)(189003)(13464003)(7736002)(71200400001)(446003)(74316002)(2906002)(5660300002)(3846002)(86362001)(6506007)(53546011)(52536014)(99286004)(966005)(11346002)(256004)(14454004)(316002)(6116002)(110136005)(66066001)(2501003)(6246003)(33656002)(186003)(66446008)(76116006)(64756008)(6436002)(26005)(66556008)(55016002)(66476007)(8676002)(81156014)(81166006)(478600001)(66946007)(229853002)(9686003)(305945005)(7696005)(6306002)(25786009)(8936002)(71190400001)(76176011)(44832011)(102836004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR15MB3621;
+ H:CH2PR15MB3575.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: ericsson.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: EXPJIT0OjuNva7WhBM6/z6uejITj9+aQSz1Dcg4TU7+stnwnndbB+dc+h8rWUxwuS7NtXPSiCWyuFoxput4abBDwFlGZMlsHO4AEOdSzLmdW4OGZYM/BfwT5aGUHo8LxH4yc2Z6wNTKaSRKRae5ckHniDnka6uIWJbNCQdvgLSan7wTuzbk996pHrWWo+yIO7QCHNm6qhBqevhlGYi4EqvFbQwW0EYXbMQW6UHawN0mmFVu0FfiQQBZMrQxwqt2lFm8djGF2PlM784llCjZ5amUdcUBRVYwqsXpL941Gn8ze6xk1MXF+Nmyq/G28zFJK33KONKYKhbH/8VOIZajH5Vo0Cf6MzqU+g+f9MDO3Iskzm2zC77z+GNLiTgQpfrcCwgACrkCIzxDYnF73MszvFhJlAu45YHNNI5lKDeblojpvrVPb2wgM667aGEe89MUuYVevHA7jUjpBv+sXPohb+lDRDLJRCXPEtY5M8PrCrAE=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Content-Language: en-us
-Thread-Index: AQOR/MOD0tOccC9d7K74CmrUvuwQ/gFvCY7ipBdhpoA=
-X-Spam-Score: -0.2 (/)
+X-OriginatorOrg: ericsson.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 05f68cdc-fb2b-4074-f1e4-08d771aff2fd
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Nov 2019 14:01:20.5119 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: O2lf/JWQIv89DdExdThPrjgpbqhJAhvSwEcpIPEVD4X2B8HHRWXzu8Zo+WFtNiSScmr6ei8S1pm8/4KQpjUlVw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR15MB3621
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [40.107.73.65 listed in list.dnswl.org]
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: dektech.com.au]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [210.10.221.142 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -93,10 +130,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.1 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1iZ9iH-00CzG0-MQ
-Subject: Re: [tipc-discussion] [net] tipc: fix memory leak in socket
- streaming
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+X-Headers-End: 1iZFQz-004vVF-Hx
+Subject: Re: [tipc-discussion] [net] tipc: fix link name length check
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,69 +144,69 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+From: Jon Maloy via tipc-discussion <tipc-discussion@lists.sourceforge.net>
+Reply-To: Jon Maloy <jon.maloy@ericsson.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-SGkgVHVuZywKCk9raWUsIGdvdCBpdC4gSSBsb3N0IHRyYWNrIHdoZW4geW91ciBwYXRjaCB3YXMg
-c2VudCBpbiBBdWd1c3QuLi4g4pi5LgpBbnl3YXksIEkgdGhpbmsgeW91IGNhbiBjb25zaWRlciBt
-eSBjb21taXQgbWVzc2FnZSB3aGljaCBoaWdobGlnaHRzIHRoaXMgYXMgYSBtZW1vcnkgbGVhayBp
-c3N1ZSBzZXJpb3VzbHkuCgpCUi9UdW9uZwoKLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KRnJv
-bTogdHVuZyBxdWFuZyBuZ3V5ZW4gPHR1bmcucS5uZ3V5ZW5AZGVrdGVjaC5jb20uYXU+IApTZW50
-OiBNb25kYXksIE5vdmVtYmVyIDI1LCAyMDE5IDM6MjMgUE0KVG86ICdUdW9uZyBMaWVuJyA8dHVv
-bmcudC5saWVuQGRla3RlY2guY29tLmF1PjsgdGlwYy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZv
-cmdlLm5ldDsgam9uLm1hbG95QGVyaWNzc29uLmNvbTsgbWFsb3lAZG9uam9ubi5jb207IHlpbmcu
-eHVlQHdpbmRyaXZlci5jb20KU3ViamVjdDogUkU6IFt0aXBjLWRpc2N1c3Npb25dIFtuZXRdIHRp
-cGM6IGZpeCBtZW1vcnkgbGVhayBpbiBzb2NrZXQgc3RyZWFtaW5nCgpIaSBUdW9uZywKCkkgZml4
-ZWQgaXQgaW4gdGhpcyBjb21taXQgIlt0aXBjLWRpc2N1c3Npb25dIFtuZXQgdjEgMi8zXSB0aXBj
-OiBmaXggd3JvbmcKc29ja2V0IHJlZmVyZW5jZSBjb3VudGVyIGFmdGVyIHRpcGNfc2tfdGltZW91
-dCgpIHJldHVybnMiIGJ1dCBJIGhhdmUgbm90CnNlbnQgdG8gRGF2aWQgeWV0LgpJIGludGVuZGVk
-IHRvIHNlbmQgaXQgaW4gYSBzZXJpZXMgb2YgcGF0Y2ggZm9yIGZpeGluZyBidWdzIGF0IHNvY2tl
-dCBsYXllci4KClRoYW5rcy4KCkJlc3QgcmVnYXJkcywKVHVuZyBOZ3V5ZW4KCi0tLS0tT3JpZ2lu
-YWwgTWVzc2FnZS0tLS0tCkZyb206IFR1b25nIExpZW4gPHR1b25nLnQubGllbkBkZWt0ZWNoLmNv
-bS5hdT4gClNlbnQ6IE1vbmRheSwgTm92ZW1iZXIgMjUsIDIwMTkgMzoxMyBQTQpUbzogdGlwYy1k
-aXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldDsgam9uLm1hbG95QGVyaWNzc29uLmNvbTsK
-bWFsb3lAZG9uam9ubi5jb207IHlpbmcueHVlQHdpbmRyaXZlci5jb20KU3ViamVjdDogW3RpcGMt
-ZGlzY3Vzc2lvbl0gW25ldF0gdGlwYzogZml4IG1lbW9yeSBsZWFrIGluIHNvY2tldCBzdHJlYW1p
-bmcKCkluIGNhc2Ugb2Ygc3RyZWFtIHNvY2tldHMsIGEgcGVyLXNvY2tldCB0aW1lciBpcyBzZXQg
-dXAgZm9yIGVpdGhlciB0aGUKU1lOIGF0dGVtcHQgb3IgY29ubmVjdGlvbiBzdXBlcnZpc2lvbiBt
-ZWNoYW5pc20uIFdoZW4gdGhlIHNvY2tldCB0aW1lcgpleHBpcmVzLCBhbiBhcHByb3ByaWF0ZSBh
-Y3Rpb24gKGkuZS4gc2VuZGluZyBTWU4gb3IgUFJPQkUgbWVzc2FnZSkKd291bGQgYmUgdGFrZW4g
-anVzdCBpbiB0aGUgY2FzZSB0aGUgc29ja2V0IGlzIG5vdCBiZWluZyBvd25lZCBieSB1c2VyCihl
-LmcuIHZpYSB0aGUgJ2xvY2tfc29jaygpJykuCgpJbiB0aGUgbGF0dGVyIGNhc2UsIHRoZXJlIGlz
-IG5vdGhpbmcgYnV0IHRoZSB0aW1lciBpcyByZS1zY2hlZHVsZWQgZm9yCmEgc2hvcnQgcGVyaW9k
-IG9mIHRpbWUgKH4gNTBtcykgdG8gdHJ5IGFnYWluLiBUaGUgZnVuY3Rpb24ganVzdCBtYWtlcyBh
-CidyZXR1cm4nIGltbWVkaWF0ZWx5IHdpdGhvdXQgZGVjcmVhc2luZyB0aGUgc29ja2V0ICdyZWZj
-bnQnIHdoaWNoIHdhcwpoZWxkIGluIGFkdmFuY2UgZm9yIHRoZSB0aW1lciBjYWxsYmFjayBpdHNl
-bGYhIFRoZSBzYW1lIGhhcHBlbnMgaWYgYXQKdGhlIG5leHQgdGltZSwgdGhlIHNvY2tldCBpcyBz
-dGlsbCBidXN5Li4uCgpBcyBhIHJlc3VsdCwgdGhlIHNvY2tldCAncmVmY250JyBpcyBpbmNyZWFz
-ZWQgd2l0aG91dCBkZWNyZWFzaW5nLCBzbwp0aGUgc29jayBvYmplY3QgY2Fubm90IGJlIGZyZWVk
-IGF0IGFsbCAoZHVlIHRvICdyZWZjbnQnICE9IDApIGV2ZW4gd2hlbgp0aGUgY29ubmVjdGlvbiBp
-cyBjbG9zZWQgYW5kIHVzZXIgcmVsZWFzZXMgYWxsIHJlbGF0ZWQgcmVzb3VyY2VzLgoKVGhlIG1l
-bW9yeSBsZWFrIGlzIGhhcmQgdG8gZGV0ZWN0IGJlY2F1c2UgdGhlIHByb2JlIGludGVydmFsIGlz
-IHNldCB0bwoxIGhvdXIgc2luY2UgdGhlIGNvbm5lY3Rpb24gaXMgZXN0YWJsaXNoZWQsIGJ1dCBp
-biB0aGUgY2FzZSBvZiBhIFNZTgphdHRlbXB0LCB0aGF0IGNhbiBiZSBtdWNoIG1vcmUgbGlrZWx5
-LgoKVGhlIGNvbW1pdCBmaXhlcyB0aGUgYnVnIGJ5IGNhbGxpbmcgdGhlICdzb2NrX3B1dCgpJyBp
-biB0aGUgY2FzZQptZW50aW9uZWQgYWJvdmUsIHRoZW4gdGhlIHNvY2tldCAncmVmY250JyB3aWxs
-IGJlIGluY3JlYXNlZCAmIGRlY3JlYXNlZApjb3JyZWN0bHkgYW5kIHRoZSBzb2NrIG9iamVjdCBj
-YW4gYmUgcmVsZWFzZWQgbGF0ZXIuCgpGaXhlczogMGQ1ZmNlYmYzYzM3ICgidGlwYzogcmVmYWN0
-b3IgdGlwY19za190aW1lb3V0KCkgZnVuY3Rpb24iKQpTaWduZWQtb2ZmLWJ5OiBUdW9uZyBMaWVu
-IDx0dW9uZy50LmxpZW5AZGVrdGVjaC5jb20uYXU+Ci0tLQogbmV0L3RpcGMvc29ja2V0LmMgfCA0
-ICsrKy0KIDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKCmRp
-ZmYgLS1naXQgYS9uZXQvdGlwYy9zb2NrZXQuYyBiL25ldC90aXBjL3NvY2tldC5jCmluZGV4IGEx
-YzhkNzIyY2EyMC4uZDY3YzM3NDdkMmMzIDEwMDY0NAotLS0gYS9uZXQvdGlwYy9zb2NrZXQuYwor
-KysgYi9uZXQvdGlwYy9zb2NrZXQuYwpAQCAtMjc1Nyw3ICsyNzU3LDcgQEAgc3RhdGljIHZvaWQg
-dGlwY19za190aW1lb3V0KHN0cnVjdCB0aW1lcl9saXN0ICp0KQogCWlmIChzb2NrX293bmVkX2J5
-X3VzZXIoc2spKSB7CiAJCXNrX3Jlc2V0X3RpbWVyKHNrLCAmc2stPnNrX3RpbWVyLCBqaWZmaWVz
-ICsgSFogLyAyMCk7CiAJCWJoX3VubG9ja19zb2NrKHNrKTsKLQkJcmV0dXJuOworCQlnb3RvIGV4
-aXQ7CiAJfQogCiAJaWYgKHNrLT5za19zdGF0ZSA9PSBUSVBDX0VTVEFCTElTSEVEKQpAQCAtMjc3
-NSw2ICsyNzc1LDggQEAgc3RhdGljIHZvaWQgdGlwY19za190aW1lb3V0KHN0cnVjdCB0aW1lcl9s
-aXN0ICp0KQogCQl0aXBjX2Rlc3RfcHVzaCgmdHNrLT5jb25nX2xpbmtzLCBwbm9kZSwgMCk7CiAJ
-CXRzay0+Y29uZ19saW5rX2NudCA9IDE7CiAJfQorCitleGl0OgogCXNvY2tfcHV0KHNrKTsKIH0K
-IAotLSAKMi4xMy43CgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCnRpcGMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKdGlwYy1kaXNjdXNzaW9uQGxpc3Rz
-LnNvdXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9saXN0cy9saXN0
-aW5mby90aXBjLWRpc2N1c3Npb24KCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCnRpcGMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKdGlwYy1kaXNjdXNz
-aW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9s
-aXN0cy9saXN0aW5mby90aXBjLWRpc2N1c3Npb24K
+Acked-by: Jon
+
+> -----Original Message-----
+> From: john.rutherford@dektech.com.au <john.rutherford@dektech.com.au>
+> Sent: 25-Nov-19 01:35
+> To: tipc-discussion@lists.sourceforge.net
+> Subject: [tipc-discussion] [net] tipc: fix link name length check
+> 
+> From: John Rutherford <john.rutherford@dektech.com.au>
+> 
+> In commit 4f07b80c9733 ("tipc: check msg->req data len in
+> tipc_nl_compat_bearer_disable") the same patch code was copied into
+> routines: tipc_nl_compat_bearer_disable(),
+> tipc_nl_compat_link_stat_dump() and tipc_nl_compat_link_reset_stats().
+> The two link routine occurrences should have been modified to check
+> the maximum link name length and not bearer name length.
+> 
+> Fixes: 4f07b80c9733 ("tipc: check msg->reg data len in tipc_nl_compat_bearer_disable")
+> Signed-off-by: John Rutherford <john.rutherford@dektech.com.au>
+> ---
+>  net/tipc/netlink_compat.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/net/tipc/netlink_compat.c b/net/tipc/netlink_compat.c
+> index e135d4e11231..d4d2928424e2 100644
+> --- a/net/tipc/netlink_compat.c
+> +++ b/net/tipc/netlink_compat.c
+> @@ -550,7 +550,7 @@ static int tipc_nl_compat_link_stat_dump(struct tipc_nl_compat_msg *msg,
+>  	if (len <= 0)
+>  		return -EINVAL;
+> 
+> -	len = min_t(int, len, TIPC_MAX_BEARER_NAME);
+> +	len = min_t(int, len, TIPC_MAX_LINK_NAME);
+>  	if (!string_is_valid(name, len))
+>  		return -EINVAL;
+> 
+> @@ -822,7 +822,7 @@ static int tipc_nl_compat_link_reset_stats(struct tipc_nl_compat_cmd_doit
+> *cmd,
+>  	if (len <= 0)
+>  		return -EINVAL;
+> 
+> -	len = min_t(int, len, TIPC_MAX_BEARER_NAME);
+> +	len = min_t(int, len, TIPC_MAX_LINK_NAME);
+>  	if (!string_is_valid(name, len))
+>  		return -EINVAL;
+> 
+> --
+> 2.11.0
+> 
+> 
+> 
+> _______________________________________________
+> tipc-discussion mailing list
+> tipc-discussion@lists.sourceforge.net
+> https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+
+_______________________________________________
+tipc-discussion mailing list
+tipc-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tipc-discussion
