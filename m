@@ -2,35 +2,35 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCCEF128C44
-	for <lists+tipc-discussion@lfdr.de>; Sun, 22 Dec 2019 03:26:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27825128C46
+	for <lists+tipc-discussion@lfdr.de>; Sun, 22 Dec 2019 03:26:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:Sender:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BMxdYi5xzF5bK7QmI6kFv6CSl6TD8ZTKdmeElXl/ZR4=; b=RhW2aoizrNdhSbQ87KuljlX9w
-	wYG3pLL1p9IP1OG3JWcnxGaBBI9h6GP9WZfT/d8LeDe0STkgUs5RswEQGip3wtrw1inODgCGhWt0X
-	YZkr8JXx1uAZ5Z+LevsRku8jW6lZharVOzVgDd/bJ/UYztryyFsggYJK4ROCioB0PM8l8=;
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	 bh=WywUwLiIVB3Wp5nTvh9gjj0PC1L3dji4VLuWOZOf3qs=; b=GjDEuosJ6OXJCkBJ8pGvXD3kA
+	h7wPcViYdmnOZpOUA0eAgSm26EJgYEdHihljTuHtk0u5QFRVZ3oe/lx/H60fxpT5w2/7gM2UQvgkk
+	+wqnPZaSVwsI8nNxjJALfpPVZkxPBBhgFWOpUZRiuPolBxmeJvhkJBqf+sZazxk3TBnxA=;
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iiqwv-0004jc-IB; Sun, 22 Dec 2019 02:26:29 +0000
+	id 1iiqwx-00044z-BB; Sun, 22 Dec 2019 02:26:31 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jon.maloy@ericsson.com>) id 1iiqwp-0004ix-Tf
- for tipc-discussion@lists.sourceforge.net; Sun, 22 Dec 2019 02:26:23 +0000
+ (envelope-from <jon.maloy@ericsson.com>) id 1iiqwv-00044l-Jd
+ for tipc-discussion@lists.sourceforge.net; Sun, 22 Dec 2019 02:26:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:MIME-Version:References:In-Reply-To:
  Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=+rWLm4qe/geEoquTENa3zOzh+G7Wy1pM8ehckVe/2Kc=; b=QPcMYN3aqwq7EAjCriMBrO4Zz9
- uvwmOyt/f9vRcPr8Ff26cyxjM/aDuukCtLj3MIvlXz5Lw3uxYkuBlv2/hvCvEO4HYB2DzJZbwioGZ
- nNdaazsQP+91ZZTvYeDE/KMBi+qUuUzqPtwWr4EjIcjUbN0lLwkrKn0CSrlW1BovitTI=;
+ bh=Mrr9j9bJmaRQXdVXONUHKPdGlgG2Ll3CngLZRKAu4tQ=; b=ELe7N1maSeGFtgwmLf5VxinSm1
+ oVFYPnR2bZnlnu4DChbpLspoW2r+gSvraa7hZIn4FzmPaxus/TBzZ/mn3mUVjgKOmhYR9+d3dn2xu
+ fHE4cwXiKHIVm7TGlTBwxTvGzMFx1aOHtPp/VC26GuNz7yOv8WWrIa5EmeelrjZmZ04Y=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:
@@ -38,22 +38,22 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=+rWLm4qe/geEoquTENa3zOzh+G7Wy1pM8ehckVe/2Kc=; b=hIwPKrmdG8QcHbPs7EHErbao6x
- 3VQAHoYbjFwDM+F1qYrK4yWrg2pDFb5jRpd/XrKhkxLrxIIbp3Fq8iShJWj1Z9a/SyYPx3dlCHc77
- EjAB3mVIsY9jgJDJl07pnCWHUSoSDKuMbJScYJ/MbbLzDavyJgCeE7Ws175z/hJoXkeo=;
-Received: from mail-eopbgr60065.outbound.protection.outlook.com ([40.107.6.65]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ bh=Mrr9j9bJmaRQXdVXONUHKPdGlgG2Ll3CngLZRKAu4tQ=; b=ENVPT/F4aUmnzXvYvZEBi9xjbr
+ xJudf7wetMO0CRa5MpscU0JXxi0ie5APKUJFDwwSoG54eN4g0DwLCjq0lKNuxa80/hkJ4qMAlN7lA
+ 4kCDROH0ARhpWDml1ybF8slb1aoK/FrVrTzoVet8NKrOdWOH1S6N1X1TUVtI8R4EHzcM=;
+Received: from mail-eopbgr50080.outbound.protection.outlook.com ([40.107.5.80]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1iiqwk-00CFOx-GL
- for tipc-discussion@lists.sourceforge.net; Sun, 22 Dec 2019 02:26:23 +0000
+ id 1iiqwo-00C6TG-On
+ for tipc-discussion@lists.sourceforge.net; Sun, 22 Dec 2019 02:26:28 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=kxPjtXDFqddwPEcCH4rZ/7npkj0Z4H8GqhXUpIfkn1CXiuCbOugdjIOns+1oZ0UKDKrYCwo74iXWrpansp9F51V1luYGwVt1zTi9dw9HfAQamYbvKnh1GOlnV42MSknFWAADkT51MIWLCyAOAR9qFuyR22SUsrSvjVZvFBYWnvWP/+71U7XJAPwke0upHsO5WyZTkvIHVunBdh9ZzxLYKW65z+dpa0UlIPWSzd9EDvSckLeDgyeMLzm0Q2dL74sZy3MMartJ6QNEhaSeYPTPmyRmhts9LjJdY3IKUfPa/jLtWpYV9x712u4c7gNRHkPwT0xYU2pS2Lm/EOlBEBl6jQ==
+ b=P7gDE79mLUT209drxQGKRn5utOWz9Ng5Mu/8NwIFHz6DSIwHhXzXBmzRzdPFmjN6BPb+ZBFkTIq70vUfqZozf6Ead2VgZznBVIZ/2pUd9CFu1ug/2CkqFxnqzjWP2NNnLnErUtKdNhis4AXtWHJGllxUDRGFKnqLjGQjkD7E+7C/ATK3uY9h3Iq1BR+IsadebjUqlQm+EskLsDpZBR9EMb0VJ/PwRk8Ztk07+LRt8CUZcaJHiQzmKO9qhynIrpDXIqXZxBfTXBkiULV5EmR63+YSBTL6DmHKx0DiOA6qNKjvAtwXMAzvywgmmqBOKz2oHA3d18l5tgGic1+F8Jsc5Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+rWLm4qe/geEoquTENa3zOzh+G7Wy1pM8ehckVe/2Kc=;
- b=L/2016oFJ24T13vguqW2VvrTOtHwvAdrkgWZ4ITDCFWXl0l1n6UB1vZqXZTolUlZXOB4BiD96AUfQjvzzWswGyvo+/towrRhl8hKrFL7cY1G8JnGx89Pk33tEMKW1/pfAKTnzff9xI/bgRUAFUcxKatIjQtFfSkLA+VyvJ4AWMEmrqLmVuhYcoA5eMD77rn4L/bj/UlYjj3fl1dL5gL8oyVpx+pbqKaVqZAE8F6pGBP5FP3OFzHpJDxDVMQlW7QXnzgX40A2g2u8g1jRUDh2+bnU+xLpU5DPVmjvJ1Z5qlrzHH9SKBs8fpwUVAtG+gm63e76uwT4mO74ZcYToerh2g==
+ bh=Mrr9j9bJmaRQXdVXONUHKPdGlgG2Ll3CngLZRKAu4tQ=;
+ b=ASE4bj93S280tLzb3fGufPY4go8VNFXltM3DKPFKbt1bZW8JXJghrhjYiNw65wT+XUxUbXJYh7eF/ZHTWIlm+E205HZ7M93PQTzLxu4mhczWZ9SmstWrh2bC+qIUd3m8TsuINIO/rYlelRBeTO8RNgVPI9IBI+mP0SQNHIicp5y/DJt0QUTNrr+9g2c9ExXpvAlx2fUbO0gnnP6o5AaLo+SFA67pSozEX+27tD0+CU2WfQ8kHj0JIICjW6Y2CxMPMi1OsoJ3N2bXmbXY3gyRUkMwN0RkLQmG6LnllT+tq/MmvLqXMzboci+LgZ3JLtAjPz+/KjrdZo7WMDJ/GIiUog==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  192.176.1.74) smtp.rcpttodomain=lists.sourceforge.net
  smtp.mailfrom=ericsson.com; dmarc=pass (p=reject sp=none pct=100) action=none
@@ -61,18 +61,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
  s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+rWLm4qe/geEoquTENa3zOzh+G7Wy1pM8ehckVe/2Kc=;
- b=dKzMo7F4iuzuVRsQoyAxFYDm97htbyNQTypIvrDEhmm5R02ozQcTJaK8Dg95WmFKcfVRzwUj080jasEcm/fv0+xv7hRP6YVc8eOy5dougDNWjDte+PfrlucB3KJZ00+BZCuUE1JWmW6fa+jWqNJdVgbrRkvOocClvxvznyNdkMU=
-Received: from AM5PR0701CA0052.eurprd07.prod.outlook.com (2603:10a6:203:2::14)
- by DB6PR0701MB2632.eurprd07.prod.outlook.com (2603:10a6:4:21::17)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2581.10; Sun, 22 Dec
- 2019 02:26:11 +0000
-Received: from HE1EUR02FT022.eop-EUR02.prod.protection.outlook.com
- (2a01:111:f400:7e05::206) by AM5PR0701CA0052.outlook.office365.com
- (2603:10a6:203:2::14) with Microsoft SMTP Server (version=TLS1_2,
+ bh=Mrr9j9bJmaRQXdVXONUHKPdGlgG2Ll3CngLZRKAu4tQ=;
+ b=vA3IPL8BRJ4unjCpmD5A0SWZh2sckWjcKCkJU/rOwT2/3Eo7SVDoPSLdNCKsW9emaDXRrNGhTAgLSkugyt/NAV71th7XMIDRNw7FVida5xzah6zdfgHSm4tZMRtYOcinbrZk64tGX+ZWs//YsNDyjljcxeiCsy1JX+3HOR5g3BE=
+Received: from DB6PR07CA0085.eurprd07.prod.outlook.com (2603:10a6:6:2b::23) by
+ DB7PR07MB5864.eurprd07.prod.outlook.com (2603:10a6:10:5a::14) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2581.10; Sun, 22 Dec 2019 02:26:12 +0000
+Received: from AM5EUR02FT048.eop-EUR02.prod.protection.outlook.com
+ (2a01:111:f400:7e1e::200) by DB6PR07CA0085.outlook.office365.com
+ (2603:10a6:6:2b::23) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2581.6 via Frontend
- Transport; Sun, 22 Dec 2019 02:26:11 +0000
+ Transport; Sun, 22 Dec 2019 02:26:12 +0000
 Authentication-Results: spf=pass (sender IP is 192.176.1.74)
  smtp.mailfrom=ericsson.com; lists.sourceforge.net; dkim=none (message not
  signed) header.d=none;lists.sourceforge.net; dmarc=pass action=none
@@ -82,11 +82,11 @@ Received-SPF: Pass (protection.outlook.com: domain of ericsson.com designates
  receiver=protection.outlook.com; 
  client-ip=192.176.1.74; helo=oa.msg.ericsson.com;
 Received: from oa.msg.ericsson.com (192.176.1.74) by
- HE1EUR02FT022.mail.protection.outlook.com (10.152.10.78) with Microsoft SMTP
+ AM5EUR02FT048.mail.protection.outlook.com (10.152.9.215) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2559.14 via Frontend Transport; Sun, 22 Dec 2019 02:26:10 +0000
+ 15.20.2559.14 via Frontend Transport; Sun, 22 Dec 2019 02:26:12 +0000
 Received: from ESESSMB503.ericsson.se (153.88.183.164) by
- ESESBMR505.ericsson.se (153.88.183.201) with Microsoft SMTP Server
+ ESESSMR501.ericsson.se (153.88.183.108) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
  15.1.1713.5; Sun, 22 Dec 2019 03:26:10 +0100
 Received: from tipsy.lab.linux.ericsson.se (153.88.183.153) by
@@ -97,35 +97,35 @@ To: <tipc-discussion@lists.sourceforge.net>,
  <hoang.h.le@dektech.com.au>, <jon.maloy@ericsson.com>,
  <tuong.t.lien@dektech.com.au>, <ying.xue@windriver.com>,
  <lucien.xin@gmail.com>, lxin.redhat
-Date: Sun, 22 Dec 2019 03:26:04 +0100
-Message-ID: <1576981569-27482-3-git-send-email-jon.maloy@ericsson.com>
+Date: Sun, 22 Dec 2019 03:26:05 +0100
+Message-ID: <1576981569-27482-4-git-send-email-jon.maloy@ericsson.com>
 X-Mailer: git-send-email 2.1.4
 In-Reply-To: <1576981569-27482-1-git-send-email-jon.maloy@ericsson.com>
 References: <1576981569-27482-1-git-send-email-jon.maloy@ericsson.com>
 MIME-Version: 1.0
 X-EOPAttributedMessage: 0
 X-Forefront-Antispam-Report: CIP:192.176.1.74; IPV:; CTRY:SE; EFV:NLI; SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(39860400002)(136003)(376002)(346002)(189003)(199004)(70586007)(70206006)(7636002)(8936002)(336012)(44832011)(2616005)(426003)(36756003)(110136005)(86362001)(316002)(956004)(246002)(26005)(8676002)(2906002)(186003)(478600001)(356004)(6666004)(15650500001)(5660300002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB6PR0701MB2632; H:oa.msg.ericsson.com; FPR:;
+ SFS:(10009020)(4636009)(39860400002)(396003)(346002)(376002)(136003)(189003)(199004)(44832011)(110136005)(26005)(478600001)(186003)(2906002)(36756003)(426003)(246002)(956004)(5660300002)(2616005)(70206006)(70586007)(7636002)(336012)(316002)(86362001)(8676002)(8936002)(6666004)(356004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR07MB5864; H:oa.msg.ericsson.com; FPR:;
  SPF:Pass; LANG:en; PTR:office365.se.ericsson.net; MX:1; A:1; 
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 311a3a2f-b084-433e-4822-08d786864f29
-X-MS-TrafficTypeDiagnostic: DB6PR0701MB2632:
+X-MS-Office365-Filtering-Correlation-Id: a2586b59-c24b-43d0-138a-08d78686502f
+X-MS-TrafficTypeDiagnostic: DB7PR07MB5864:
 X-LD-Processed: 92e84ceb-fbfd-47ab-be52-080c6b87953f,ExtAddr
-X-Microsoft-Antispam-PRVS: <DB6PR0701MB263259EE62B1C2AE1AF5C3379A2F0@DB6PR0701MB2632.eurprd07.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
+X-Microsoft-Antispam-PRVS: <DB7PR07MB58648DC4B51A8E708630F7CB9A2F0@DB7PR07MB5864.eurprd07.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:480;
 X-Forefront-PRVS: 02596AB7DA
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 8BsDeUAIFXsLQZZpfCBMg9v6VvCAFw8d9hDdZWgU2aQ4TJ4bQ/H32s37bxLtXHowbwPuGNj6hcXWmH74ikyEa3XJQMHGVyDZrD6pEHTC3fyDUxU5fK4cJAi1yLtjkmWvvffx/tEzPwwcmiIaGf9iW/uu/zqF6t3cegvLG6W41/hT/ncU5BGuU0okosU6qPyIDsnciZW3+Di5xZKXGVHZpc5qRPSx/weSwChn74IM4M/WkiiONYDI5EZkUtAed4iftwrP8Ot0cugfXSqCINCi/MTsFRJxFQrSDCRT7ipDKf+WpbROVDXbk1QGln0R5PgXgW0wMIBBGq8pDjnLbKp85JQQjS7qGmlSuy7ofZYWRhzdWiRo31SVYzhVSLEefMQ8x1fggaBgqEy8ct+pyaTrjt1h0bz5MR8astZOsM24mtQlZPzg+p7fA+/dGMcbuuLf
+X-Microsoft-Antispam-Message-Info: yf2c4vYStnapAWGuIAHbB1j6I5VIemUf5gKYFno7OpYkJzqa3P0TkRTjjjbC6wfA9Y72tL6RjqPb/gtsQ5jpIIIBy2/oxe5s79HnhqlVxzWxjq2vPukYEiNpV4p0vs16IjC7VCfPOI9f2zJRMLJ5XdI6OVb1b5urB2GEQ/h5cZIugLcA2xR2TbMCQ4PO5EeQDl95lJ5mGM0WVrHklyFg8WUdWVR/oOc2IEyjsMVhLkHAs7o4zphQZ6KKUnis7yymcDQz+tf5j4jaULG/ByoJI/YdgdCiJCskWUv3pTmuP0zJzo9dDcnO5Df82IF32qw0PAQsRicMsqeU1LsGHqW6V/9ir1ET9+RQsaFt1O8NGbGnGLbtkIu7quqPudaUjOD//3Es7w3gCJDswMTaFvkr7a504NOHwiBy3D+Hw0vchWLHoLEmmSdbbEIIJ7f5a8Uw
 X-OriginatorOrg: ericsson.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Dec 2019 02:26:10.7749 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 311a3a2f-b084-433e-4822-08d786864f29
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Dec 2019 02:26:12.4696 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a2586b59-c24b-43d0-138a-08d78686502f
 X-MS-Exchange-CrossTenant-Id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=92e84ceb-fbfd-47ab-be52-080c6b87953f; Ip=[192.176.1.74];
  Helo=[oa.msg.ericsson.com]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0701MB2632
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR07MB5864
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
@@ -134,7 +134,7 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: ericsson.com]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.6.65 listed in list.dnswl.org]
+ trust [40.107.5.80 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -143,9 +143,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Headers-End: 1iiqwk-00CFOx-GL
-Subject: [tipc-discussion] [net-next 1/6] tipc: change size of stream
- message chunks
+X-Headers-End: 1iiqwo-00C6TG-On
+Subject: [tipc-discussion] [net-next 2/6] Revert "tipc: set default MTU for
+ UDP media"
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -163,67 +163,84 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-When a stream socket sends a message larger than TIPC_MAX_USER_MSG_SIZE
-(66k) it subdivides it into "chunks" of that very size. However, this
-is not the optimal size, as we have seen that throughput tends to
-decrease for very large messages. A chunk size of 16k gives a more
-stable, message size independent throughput. Hence we change this value
-now.
+This reverts commit a4dfa72d0acd1c99a160e25c099849ae37ad13fd
 
-Note however that this value can be changed only for stream sockets,
-since this the only socket type which can reasseble the chunks without
-considering message delimitation at the receiving side.
+The above change turned out to be too aggressive, as it sometimes
+overwhelms the virtio ring buffer and leads it to block all
+transmsssion during up to 30 seconds. The basic problem is that the
+link congestion control algorithm is only considering the transmission
+queue length, disregarding the fact that each "packet" in the queue now
+may correspond to a dozen actual network packets.
+
+We will introduce a better solution to this in a later commit.
 
 Signed-off-by: Jon Maloy <jon.maloy@ericsson.com>
 ---
- net/tipc/msg.h    | 1 +
- net/tipc/socket.c | 7 ++++++-
- 2 files changed, 7 insertions(+), 1 deletion(-)
+ include/uapi/linux/tipc_config.h | 5 -----
+ net/tipc/link.c                  | 4 ++--
+ net/tipc/udp_media.c             | 4 ++--
+ 3 files changed, 4 insertions(+), 9 deletions(-)
 
-diff --git a/net/tipc/msg.h b/net/tipc/msg.h
-index 6d466eb..e4c13f2 100644
---- a/net/tipc/msg.h
-+++ b/net/tipc/msg.h
-@@ -98,6 +98,7 @@ struct plist;
- #define MAX_H_SIZE                60	/* Largest possible TIPC header size */
+diff --git a/include/uapi/linux/tipc_config.h b/include/uapi/linux/tipc_config.h
+index 4dfc056..15a3219 100644
+--- a/include/uapi/linux/tipc_config.h
++++ b/include/uapi/linux/tipc_config.h
+@@ -185,11 +185,6 @@
+ #define TIPC_DEF_LINK_WIN 50
+ #define TIPC_MAX_LINK_WIN 8191
  
- #define MAX_MSG_SIZE (MAX_H_SIZE + TIPC_MAX_USER_MSG_SIZE)
-+#define TIPC_MSG_CHUNK_SIZE     16384
- #define FB_MTU                  3744
- #define TIPC_MEDIA_INFO_OFFSET	5
+-/*
+- * Default MTU for UDP media
+- */
+-
+-#define TIPC_DEF_LINK_UDP_MTU 14000
  
-diff --git a/net/tipc/socket.c b/net/tipc/socket.c
-index 41688da..884dad5 100644
---- a/net/tipc/socket.c
-+++ b/net/tipc/socket.c
-@@ -104,6 +104,7 @@ struct tipc_sock {
- 	struct list_head cong_links;
- 	struct list_head publications;
- 	u32 pub_count;
-+	u32 chunk_size;
- 	atomic_t dupl_rcvcnt;
- 	u16 conn_timeout;
- 	bool probe_unacked;
-@@ -502,6 +503,10 @@ static int tipc_sk_create(struct net *net, struct socket *sock,
- 	sk->sk_write_space = tipc_write_space;
- 	sk->sk_destruct = tipc_sock_destruct;
- 	tsk->conn_timeout = CONN_TIMEOUT_DEFAULT;
-+	if (sock->type == SOCK_STREAM)
-+		tsk->chunk_size = TIPC_MSG_CHUNK_SIZE;
-+	else
-+		tsk->chunk_size = TIPC_MAX_USER_MSG_SIZE;
- 	tsk->group_is_open = true;
- 	atomic_set(&tsk->dupl_rcvcnt, 0);
+ struct tipc_node_info {
+ 	__be32 addr;			/* network address of node */
+diff --git a/net/tipc/link.c b/net/tipc/link.c
+index 467c53a..2531f94 100644
+--- a/net/tipc/link.c
++++ b/net/tipc/link.c
+@@ -527,7 +527,7 @@ bool tipc_link_create(struct net *net, char *if_name, int bearer_id,
+  * tipc_link_bc_create - create new link to be used for broadcast
+  * @n: pointer to associated node
+  * @mtu: mtu to be used initially if no peers
+- * @window: send window to be used
++ * @window: packet window to be used as base for send window
+  * @inputq: queue to put messages ready for delivery
+  * @namedq: queue to put binding table update messages ready for delivery
+  * @link: return value, pointer to put the created link
+@@ -2267,7 +2267,7 @@ int tipc_link_bc_sync_rcv(struct tipc_link *l, struct tipc_msg *hdr,
  
-@@ -1527,7 +1532,7 @@ static int __tipc_sendstream(struct socket *sock, struct msghdr *m, size_t dlen)
- 					 tipc_sk_connected(sk)));
- 		if (unlikely(rc))
- 			break;
--		send = min_t(size_t, dlen - sent, TIPC_MAX_USER_MSG_SIZE);
-+		send = min_t(size_t, dlen - sent, tsk->chunk_size);
- 		blocks = tsk->snd_backlog;
- 		if (tsk->oneway++ >= 4 && send <= maxnagle) {
- 			rc = tipc_msg_append(hdr, m, send, maxnagle, txq);
+ 	l->stats.recv_nacks++;
+ 
+-	/* Ignore if peers_snd_nxt goes beyond receive window */
++	/* Ignore if peers_snd_nxt goes beyond receive packet window */
+ 	if (more(peers_snd_nxt, l->rcv_nxt + l->window))
+ 		return rc;
+ 
+diff --git a/net/tipc/udp_media.c b/net/tipc/udp_media.c
+index d6620ad5..dcc4ba7 100644
+--- a/net/tipc/udp_media.c
++++ b/net/tipc/udp_media.c
+@@ -731,7 +731,8 @@ static int tipc_udp_enable(struct net *net, struct tipc_bearer *b,
+ 			err = -EINVAL;
+ 			goto err;
+ 		}
+-		b->mtu = b->media->mtu;
++		b->mtu = dev->mtu - sizeof(struct iphdr)
++			- sizeof(struct udphdr);
+ #if IS_ENABLED(CONFIG_IPV6)
+ 	} else if (local.proto == htons(ETH_P_IPV6)) {
+ 		udp_conf.family = AF_INET6;
+@@ -830,7 +831,6 @@ struct tipc_media udp_media_info = {
+ 	.tolerance	= TIPC_DEF_LINK_TOL,
+ 	.min_win	= TIPC_DEF_LINK_WIN,
+ 	.max_win	= TIPC_DEF_LINK_WIN,
+-	.mtu		= TIPC_DEF_LINK_UDP_MTU,
+ 	.type_id	= TIPC_MEDIA_TYPE_UDP,
+ 	.hwaddr_len	= 0,
+ 	.name		= "udp"
 -- 
 2.1.4
 
