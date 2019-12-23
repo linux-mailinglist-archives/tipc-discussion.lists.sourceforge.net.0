@@ -2,143 +2,91 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67EAB128C6B
-	for <lists+tipc-discussion@lfdr.de>; Sun, 22 Dec 2019 04:00:40 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:To:Sender:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/c6oGgzC+oqif/E1j7IzK3ygHmBU+4qY20f4tytTuJg=; b=YzjI6GT2SBZl+Lq1su7G4kKLt
-	5d0sBkbnyoWpQk1a81/KTjf4aZjTNmYUn5LM1Fn4DHlGCHqjwD+KiSTTq4C+RLEIBZkqpQGratb9/
-	4TGSJuRg5gABvAzU3CW/oCNinm4yWa1Pvj0Y3mitvKr9BG0uSmcKhmRKL6QQM8m8gBqOE=;
+	by mail.lfdr.de (Postfix) with ESMTPS id E13921295AC
+	for <lists+tipc-discussion@lfdr.de>; Mon, 23 Dec 2019 12:49:00 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1iirTw-0000by-5h; Sun, 22 Dec 2019 03:00:36 +0000
+	id 1ijMCn-00063d-5m; Mon, 23 Dec 2019 11:48:57 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jon.maloy@ericsson.com>) id 1iirTt-0000bk-Iw
- for tipc-discussion@lists.sourceforge.net; Sun, 22 Dec 2019 03:00:33 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1ijMCk-00063N-Jc
+ for tipc-discussion@lists.sourceforge.net; Mon, 23 Dec 2019 11:48:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:MIME-Version:References:In-Reply-To:
- Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Message-ID:Date:Subject:In-Reply-To:References:Cc:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=MjhQSr32SUmZdN8bPRA8gZ0Sb/zizb3jvNH+yqXJncQ=; b=HzmIjUtBC4rclGMDxobEbluLax
- FqUuTzA9lUhRHtALCAE5p7UGAdKVls4yYaw5+X5fqFIkQ7tHMnu+3EwS/Xdnn9av2pAZ/Sj7B1WPI
- 5btp2SdfQXGKU5cXqSppFkpc9uGi1humyFO6NmBarWlc/aYXQIF6EInCv7k17HmTk7pI=;
+ bh=xyKjdodIcdJ0/SN1cCc7vsjhm18y4w9oXqzShY1XHMY=; b=BCUMCVz5JieAQrinasmN6PR533
+ cX8C1oJFoI5UaRtPlqfeCJCs/Z8NwcBi8Guy26ZZvmWCMwLKbSB8uEeuR7QAhiid24ddS8nsx2vyw
+ la6TKNvvjVXvpg9PyjVKiGfhXuNEN6Rgh7jjyDG41FG99tMySskgfn9zlGpSHcOPLOhE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:
- To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:
+ Subject:In-Reply-To:References:Cc:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=MjhQSr32SUmZdN8bPRA8gZ0Sb/zizb3jvNH+yqXJncQ=; b=fTBnrXicMTaSjfgdssgTMLuBfq
- NhUjTpagKK9Gc4MRVh+koCgEAZZ2Swj0VuGbZE5a+iaUUtj5211TrXkeaOM8wK99YM7ljv9sWmYtN
- oUlO2yvS0OzOfqmkYm9lo6iGfG82LWcLqbZ80+m1URT7AUEnWLsGQ1dU/hx1M2SnGLQc=;
-Received: from mail-eopbgr60065.outbound.protection.outlook.com ([40.107.6.65]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ bh=xyKjdodIcdJ0/SN1cCc7vsjhm18y4w9oXqzShY1XHMY=; b=SJcvrla0MtSQnYDZhSDQogcYcx
+ Gh5viVdipiZ/rF+fDuD+Z2ilHLvKiWL0FtNt5iboxcauVWGorjzCO1DBi5sznW2fhZ97OOqg8jfF9
+ 4LlMlxvnYmNCVmF3ZZzVt+yngSWeDmN4RqihykS5iC+AeoopB6C7mTjtu9Onw7afiRx8=;
+Received: from f0-dek.dektech.com.au ([210.10.221.142]
+ helo=mail.dektech.com.au)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1iirTm-00CFym-4n
- for tipc-discussion@lists.sourceforge.net; Sun, 22 Dec 2019 03:00:33 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BmYFwIdRuxKm1Fj9xPW74oK/OhxQyhdDTXg2PYBmiktk/0oCDYBYivGy6vMeQ9UfvfurZ9F3lqGZ40Jnu2rkQ2TQsAA5ReXuaY+Hlk0HOrEyjURmRfOnHa/k3Ycv1m/tm21fDS6g5t3w8i1Yjwqf+NMrO//YxV175OsoLP1P/bRy+rMbZsOFK2Xh6M50DHbCyCmjh+51Y6drfBJ9wpsyxHOC8Ey7yeRDYwPwqKHlTk/bKsmQ9Hq2evGsW4WRz7Sqg8YM5sKc1kfBIwtZj/AmXm58vH4ehfyGK3SBs2Xxm6Z3G0kg5iUZuT4kxIkW7bxp76aQ9ij7bmw0d6UMZB8HaA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=MjhQSr32SUmZdN8bPRA8gZ0Sb/zizb3jvNH+yqXJncQ=;
- b=VSwhv5A2+STyWEMTsgkxTDRNDYLeeC/dy+tpHlrpyDDfc8WCHX5hesT7vcDxgdymXtSkw9lzDLv/SieFWa/9d+1UJpUR1kfDEWt/y3MgOjG+R+6vkjwRZGjPgNXmH75j/2RP5fpoRkW6WAg7/5eiq31L++YMbULcMbvd/B840C2iGCr1qgCgYo3Kq/sEMWtxExBJ0TRlDsi/xtXH8wghRgRc47bGrBzfbG7Tx3jT+2NXqURJazKtT3KEGvlACedQkXBhKRlR2FNj6ALHJZs2WZ4Ek8aEly8bDCu44atsEqnjsCe+4jSLvJqG/xrhsw+OWrVqj8Nh18MqHxWUomNPUw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 192.176.1.74) smtp.rcpttodomain=lists.sourceforge.net
- smtp.mailfrom=ericsson.com; dmarc=pass (p=reject sp=none pct=100) action=none
- header.from=ericsson.com; dkim=none (message not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ericsson.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=MjhQSr32SUmZdN8bPRA8gZ0Sb/zizb3jvNH+yqXJncQ=;
- b=VDgCFJC1tUi4ABtBVaDM1wSUW635mWAKSJEi44RzD4XdhdEA54BOMTqqNrIYW1oO1Hf0WU774mhXMxeEyB5UXZZ1sw7ucFCDgkjzL+lGhPJGapyjUcKATQP2N+oPmaprhSfgQtHFn99CCDBIrU16Cq4dHWoVBca9+Bi74Sl2Dhg=
-Received: from DB6PR07CA0094.eurprd07.prod.outlook.com (2603:10a6:6:2b::32) by
- DB7PR07MB4585.eurprd07.prod.outlook.com (2603:10a6:5:2b::28) with
- Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2559.12; Sun, 22 Dec 2019 02:26:14 +0000
-Received: from VE1EUR02FT047.eop-EUR02.prod.protection.outlook.com
- (2a01:111:f400:7e06::202) by DB6PR07CA0094.outlook.office365.com
- (2603:10a6:6:2b::32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2581.7 via Frontend
- Transport; Sun, 22 Dec 2019 02:26:14 +0000
-Authentication-Results: spf=pass (sender IP is 192.176.1.74)
- smtp.mailfrom=ericsson.com; lists.sourceforge.net; dkim=none (message not
- signed) header.d=none;lists.sourceforge.net; dmarc=pass action=none
- header.from=ericsson.com;
-Received-SPF: Pass (protection.outlook.com: domain of ericsson.com designates
- 192.176.1.74 as permitted sender)
- receiver=protection.outlook.com; 
- client-ip=192.176.1.74; helo=oa.msg.ericsson.com;
-Received: from oa.msg.ericsson.com (192.176.1.74) by
- VE1EUR02FT047.mail.protection.outlook.com (10.152.13.237) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2559.14 via Frontend Transport; Sun, 22 Dec 2019 02:26:14 +0000
-Received: from ESESBMB501.ericsson.se (153.88.183.168) by
- ESESSMR502.ericsson.se (153.88.183.110) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
- 15.1.1713.5; Sun, 22 Dec 2019 03:26:12 +0100
-Received: from ESESSMB503.ericsson.se (153.88.183.164) by
- ESESBMB501.ericsson.se (153.88.183.168) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
- 15.1.1713.5; Sun, 22 Dec 2019 03:26:10 +0100
-Received: from tipsy.lab.linux.ericsson.se (153.88.183.153) by
- smtp.internal.ericsson.com (153.88.183.191) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Sun, 22 Dec 2019 03:26:10 +0100
-To: <tipc-discussion@lists.sourceforge.net>,
- <parthasarathy.bhuvaragan@gmail.com>, <tung.q.nguyen@dektech.com.au>,
- <hoang.h.le@dektech.com.au>, <jon.maloy@ericsson.com>,
- <tuong.t.lien@dektech.com.au>, <ying.xue@windriver.com>,
- <lucien.xin@gmail.com>, lxin.redhat
-Date: Sun, 22 Dec 2019 03:26:08 +0100
-Message-ID: <1576981569-27482-7-git-send-email-jon.maloy@ericsson.com>
-X-Mailer: git-send-email 2.1.4
-In-Reply-To: <1576981569-27482-1-git-send-email-jon.maloy@ericsson.com>
-References: <1576981569-27482-1-git-send-email-jon.maloy@ericsson.com>
+ id 1ijMCg-00D0qA-AM
+ for tipc-discussion@lists.sourceforge.net; Mon, 23 Dec 2019 11:48:54 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.dektech.com.au (Postfix) with ESMTP id 2302B4C2CB;
+ Mon, 23 Dec 2019 22:48:40 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
+ h=content-language:x-mailer:content-transfer-encoding
+ :content-type:content-type:mime-version:message-id:date:date
+ :subject:subject:in-reply-to:references:from:from:received
+ :received:received; s=mail_dkim; t=1577101719; bh=VhI9juoQeSNY7d
+ jER/zzmlfab2sVUxPp0ZD2yTJnkvM=; b=GQ7NPYaetasvjTTb1T5gG0HYyDrkCc
+ pBREG8Wg+hEhoYQyrLxfGHodNkXAHMLQxBoaPjIDNSS+RY/uU3pnPx9kT5eqqj8b
+ 5cRsaUj12tYMT00ORWArextIMpizJffUJrsZQDc8J6BuZR5MXorCQNzJxn7qBh18
+ jHnePE9QMw7K0=
+X-Virus-Scanned: amavisd-new at dektech.com.au
+Received: from mail.dektech.com.au ([127.0.0.1])
+ by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id BsTtKeGCIsDd; Mon, 23 Dec 2019 22:48:39 +1100 (AEDT)
+Received: from mail.dektech.com.au (localhost [127.0.0.1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.dektech.com.au (Postfix) with ESMTPS id 880304C2CF;
+ Mon, 23 Dec 2019 22:48:39 +1100 (AEDT)
+Received: from VNLAP288VNPC (unknown [14.161.14.188])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id 3BA284C2CB;
+ Mon, 23 Dec 2019 22:48:38 +1100 (AEDT)
+From: "Tuong Lien Tong" <tuong.t.lien@dektech.com.au>
+To: "'Jon Maloy'" <jon.maloy@ericsson.com>, <tipc-dek@dektech.com.au>,
+ <tipc-discussion@lists.sourceforge.net>
+References: <20191210114737.26371-1-tuong.t.lien@dektech.com.au>
+ <CY4PR15MB13176361E704056DB2A814459A520@CY4PR15MB1317.namprd15.prod.outlook.com>
+ <DB6PR07MB427791EE7B55AB971C22095F9A2C0@DB6PR07MB4277.eurprd07.prod.outlook.com>
+ <DB6PR07MB427747FC6B2FF72C5EA6E2869A2C0@DB6PR07MB4277.eurprd07.prod.outlook.com>
+In-Reply-To: <DB6PR07MB427747FC6B2FF72C5EA6E2869A2C0@DB6PR07MB4277.eurprd07.prod.outlook.com>
+Date: Mon, 23 Dec 2019 18:48:36 +0700
+Message-ID: <06bf01d5b986$eab27da0$c01778e0$@dektech.com.au>
 MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-Forefront-Antispam-Report: CIP:192.176.1.74; IPV:; CTRY:SE; EFV:NLI; SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(396003)(39860400002)(346002)(376002)(199004)(189003)(2616005)(36756003)(26005)(7636002)(316002)(110136005)(356004)(8676002)(86362001)(956004)(8936002)(478600001)(2906002)(5660300002)(246002)(70206006)(70586007)(426003)(336012)(30864003)(44832011)(186003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR07MB4585; H:oa.msg.ericsson.com; FPR:;
- SPF:Pass; LANG:en; PTR:office365.se.ericsson.net; A:1; MX:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 5a710114-6a09-4809-84f5-08d78686512f
-X-MS-TrafficTypeDiagnostic: DB7PR07MB4585:
-X-LD-Processed: 92e84ceb-fbfd-47ab-be52-080c6b87953f,ExtAddr
-X-Microsoft-Antispam-PRVS: <DB7PR07MB45851BD37E455D4932318CAD9A2F0@DB7PR07MB4585.eurprd07.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:3173;
-X-Forefront-PRVS: 02596AB7DA
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: FfaH+acz9iEhCPorNFGUU1SWbmtP37FjME9P8CQIJ/m8ZcQInM5/6kLz8+QDOHzQ7VIeoo+vtxBRmdVlBsPKHk2vr8pXrT00/xlYYjbNMqic86k5U6330ThAW+v/On49FdYg76gx/o097dCZJUWe/WAyvRpeR0ifx4q0cyevwuUETakljiFecXj/l8P9coXxoL0gEzdZ8vJm/1wgxs5gs+4MztY8bfsiyA3C5wPhz66bLw7fXpuE1H/1kuW5gc/HpZAxn2GvzIxFDiEJJNCpxjRwRdvuc5FSLeBcohG04MYcUmD8wzez2Y9E4lRMpMGC0KJME07XVgyEJeJcRoMsFbbcgwIqTFXaNxGfZ74wkDM1I7Fn0MwTKenSYnTbJB4Vj8Xt+sF7YGYEzIYIXTxUu2INL0PvyctfjEt5EL8diJBSUMgji9x71aoJefYNg2Lb
-X-OriginatorOrg: ericsson.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Dec 2019 02:26:14.1252 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5a710114-6a09-4809-84f5-08d78686512f
-X-MS-Exchange-CrossTenant-Id: 92e84ceb-fbfd-47ab-be52-080c6b87953f
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=92e84ceb-fbfd-47ab-be52-080c6b87953f; Ip=[192.176.1.74];
- Helo=[oa.msg.ericsson.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR07MB4585
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQIntNtoljVhP8PHUAfIvZGomvjlmAMhHeh0AcUMOeQCNU17p6bqvdlQ
+Content-Language: en-us
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: ericsson.com]
+ for more information. [URIs: dektech.com.au]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.6.65 listed in list.dnswl.org]
+ trust [210.10.221.142 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -146,9 +94,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Headers-End: 1iirTm-00CFym-4n
-Subject: [tipc-discussion] [net-next 5/6] tipc: introduce GSO
+X-Headers-End: 1ijMCg-00D0qA-AM
+Subject: Re: [tipc-discussion] [PATCH RFC] tipc: add automatic rekeying for
+ TIPC encryption
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -160,787 +108,552 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Jon Maloy via tipc-discussion <tipc-discussion@lists.sourceforge.net>
-Reply-To: Jon Maloy <jon.maloy@ericsson.com>
+Cc: 'Xin Long' <lxin@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-We introduce a generic GSO solution that works well both with TIPC/UDP
-and L2 bearers. his code does not by itself give any performance
-improvementsf, but it is a very useful framework for achieving
-such improvemnts in later commits.
+Hi Jon,
 
-Signed-off-by: Jon Maloy <jon.maloy@ericsson.com>
----
- net/tipc/bcast.c     |  16 +--
- net/tipc/bearer.c    |  29 +++++
- net/tipc/link.c      |  44 ++++---
- net/tipc/msg.c       | 331 ++++++++++++++++++++++++++++++---------------------
- net/tipc/msg.h       |  18 ++-
- net/tipc/node.c      |   1 +
- net/tipc/socket.c    |  14 +--
- net/tipc/udp_media.c |   4 +-
- 8 files changed, 286 insertions(+), 171 deletions(-)
+Please see my comments below.
 
-diff --git a/net/tipc/bcast.c b/net/tipc/bcast.c
-index 42e01e9..c5654d6 100644
---- a/net/tipc/bcast.c
-+++ b/net/tipc/bcast.c
-@@ -360,14 +360,14 @@ static int tipc_mcast_send_sync(struct net *net, struct sk_buff *skb,
- /* tipc_mcast_xmit - deliver message to indicated destination nodes
-  *                   and to identified node local sockets
-  * @net: the applicable net namespace
-- * @pkts: chain of buffers containing message
-+ * @xmitq: list containing message buffer
-  * @method: send method to be used
-  * @dests: destination nodes for message.
-  * @cong_link_cnt: returns number of encountered congested destination links
-  * Consumes buffer chain.
-  * Returns 0 if success, otherwise errno
-  */
--int tipc_mcast_xmit(struct net *net, struct sk_buff_head *pkts,
-+int tipc_mcast_xmit(struct net *net, struct sk_buff_head *xmitq,
- 		    struct tipc_mc_method *method, struct tipc_nlist *dests,
- 		    u16 *cong_link_cnt)
- {
-@@ -380,8 +380,8 @@ int tipc_mcast_xmit(struct net *net, struct sk_buff_head *pkts,
- 	skb_queue_head_init(&inputq);
- 	__skb_queue_head_init(&localq);
- 
--	/* Clone packets before they are consumed by next call */
--	if (dests->local && !tipc_msg_reassemble(pkts, &localq)) {
-+	/* Clone message before it is consumed by xmit call */
-+	if (dests->local && !tipc_msg_clone(xmitq, &localq)) {
- 		rc = -ENOMEM;
- 		goto exit;
- 	}
-@@ -389,7 +389,7 @@ int tipc_mcast_xmit(struct net *net, struct sk_buff_head *pkts,
- 	if (dests->remote) {
- 		tipc_bcast_select_xmit_method(net, dests->remote, method);
- 
--		skb = skb_peek(pkts);
-+		skb = skb_peek(xmitq);
- 		hdr = buf_msg(skb);
- 		if (msg_user(hdr) == MSG_FRAGMENTER)
- 			hdr = msg_inner_hdr(hdr);
-@@ -401,9 +401,9 @@ int tipc_mcast_xmit(struct net *net, struct sk_buff_head *pkts,
- 					     dests, cong_link_cnt);
- 
- 		if (method->rcast)
--			rc = tipc_rcast_xmit(net, pkts, dests, cong_link_cnt);
-+			rc = tipc_rcast_xmit(net, xmitq, dests, cong_link_cnt);
- 		else
--			rc = tipc_bcast_xmit(net, pkts, cong_link_cnt);
-+			rc = tipc_bcast_xmit(net, xmitq, cong_link_cnt);
- 	}
- 
- 	if (dests->local) {
-@@ -412,7 +412,7 @@ int tipc_mcast_xmit(struct net *net, struct sk_buff_head *pkts,
- 	}
- exit:
- 	/* This queue should normally be empty by now */
--	__skb_queue_purge(pkts);
-+	__skb_queue_purge(xmitq);
- 	return rc;
- }
- 
-diff --git a/net/tipc/bearer.c b/net/tipc/bearer.c
-index 34ca7b7..9477e31 100644
---- a/net/tipc/bearer.c
-+++ b/net/tipc/bearer.c
-@@ -229,6 +229,19 @@ void tipc_bearer_remove_dest(struct net *net, u32 bearer_id, u32 dest)
- 	rcu_read_unlock();
- }
- 
-+static struct sk_buff *tipc_gso_segment(struct sk_buff *skb,
-+					netdev_features_t features)
-+{
-+	int tnl_hlen = skb->inner_mac_header - SKB_GSO_CB(skb)->mac_offset;
-+	struct sk_buff_head segs;
-+
-+	__skb_queue_head_init(&segs);
-+	if (!tipc_skb_segment_all(skb, tnl_hlen, &segs))
-+		return ERR_PTR(-EINVAL);
-+	skb_peek_tail(&segs)->next = NULL;
-+	return __skb_peek(&segs);
-+}
-+
- /**
-  * tipc_enable_bearer - enable bearer with the given name
-  */
-@@ -475,6 +488,9 @@ int tipc_l2_send_msg(struct net *net, struct sk_buff *skb,
- 	skb_reset_network_header(skb);
- 	skb->dev = dev;
- 	skb->protocol = htons(ETH_P_TIPC);
-+	skb_set_inner_protocol(skb, htons(ETH_P_TIPC));
-+	if (msg_user(buf_msg(skb)) == MSG_FRAGMENTER)
-+		skb_shinfo(skb)->gso_type = SKB_GSO_DODGY;
- 	dev_hard_header(skb, dev, ETH_P_TIPC, dest->value,
- 			dev->dev_addr, skb->len);
- 	dev_queue_xmit(skb);
-@@ -686,13 +702,26 @@ static struct notifier_block notifier = {
- 	.priority	= 0,
- };
- 
-+static struct packet_offload tipc_offload = {
-+	.type = htons(ETH_P_TIPC),
-+	.priority = 0,
-+	.callbacks = {
-+		.gso_segment = tipc_gso_segment,
-+		.gro_receive = NULL,
-+		.gro_complete = NULL,
-+		},
-+	.list = {0,},
-+};
-+
- int tipc_bearer_setup(void)
- {
-+	dev_add_offload(&tipc_offload);
- 	return register_netdevice_notifier(&notifier);
- }
- 
- void tipc_bearer_cleanup(void)
- {
-+	dev_remove_offload(&tipc_offload);
- 	unregister_netdevice_notifier(&notifier);
- }
- 
-diff --git a/net/tipc/link.c b/net/tipc/link.c
-index e205347..8455fd1 100644
---- a/net/tipc/link.c
-+++ b/net/tipc/link.c
-@@ -980,18 +980,10 @@ int tipc_link_xmit(struct tipc_link *l, struct sk_buff_head *list,
- 	int imp = msg_importance(hdr);
- 	unsigned int mss = tipc_link_mss(l);
- 	unsigned int cwin = l->window;
--	unsigned int mtu = l->mtu;
- 	unsigned int pktcnt;
- 	bool new_bundle;
- 	int rc = 0;
- 
--	if (unlikely(msg_size(hdr) > mtu)) {
--		pr_warn("Too large msg, purging xmit list %d %d %d %d %d!\n",
--			skb_queue_len(list), msg_user(hdr),
--			msg_type(hdr), msg_size(hdr), mtu);
--		__skb_queue_purge(list);
--		return -EMSGSIZE;
--	}
- 	/* Allow oversubscription of one data msg per source at congestion */
- 	if (unlikely(l->backlog[imp].len >= l->backlog[imp].limit)) {
- 		if (imp == TIPC_SYSTEM_IMPORTANCE) {
-@@ -1224,7 +1216,12 @@ static int tipc_link_bc_retrans(struct tipc_link *l, struct tipc_link *r,
- 		if (time_before(jiffies, TIPC_SKB_CB(skb)->nxt_retr))
- 			continue;
- 		TIPC_SKB_CB(skb)->nxt_retr = TIPC_BC_RETR_LIM;
--		_skb = pskb_copy(skb, GFP_ATOMIC);
-+		if (msg_user(hdr) == MSG_FRAGMENTER) {
-+			skb->priority = TC_PRIO_CONTROL;
-+			tipc_skb_segment(skb, 0, from, to, xmitq);
-+			continue;
-+		}
-+		_skb = __pskb_copy(skb, LL_MAX_HEADER + MIN_H_SIZE, GFP_ATOMIC);
- 		if (!_skb)
- 			return 0;
- 		_skb->priority = TC_PRIO_CONTROL;
-@@ -1478,28 +1475,29 @@ static int tipc_link_advance_transmq(struct tipc_link *l, u16 acked, u16 gap,
- 				     struct sk_buff_head *xmitq)
- {
- 	struct sk_buff *skb, *_skb, *tmp;
--	struct tipc_msg *hdr;
-+	struct tipc_msg *hdr, *_hdr;
- 	u16 bc_ack = l->bc_rcvlink->rcv_nxt - 1;
- 	bool retransmitted = false;
- 	u16 ack = l->rcv_nxt - 1;
- 	bool passed = false;
-+	u16 first, last, n = 0;
- 	u16 released = 0;
--	u16 seqno, n = 0;
- 	int pktcnt;
- 	int rc = 0;
- 
- 	skb_queue_walk_safe(&l->transmq, skb, tmp) {
--		seqno = msg_last_seqno(buf_msg(skb));
--
-+		hdr = buf_msg(skb);
-+		first = msg_seqno(hdr);
-+		last = msg_last_seqno(hdr);
- next_gap_ack:
--		if (less_eq(seqno, acked)) {
-+		if (!more(last, acked)) {
- 			/* release skb */
- 			pktcnt = msg_pktcnt(buf_msg(skb));
- 			__skb_unlink(skb, &l->transmq);
- 			kfree_skb(skb);
- 			l->transmq_len -= pktcnt;
- 			released += pktcnt;
--		} else if (less_eq(seqno, acked + gap)) {
-+		} else if (!more(first, acked) && !more(acked + gap, last)) {
- 			/* First, check if repeated retrans failures occurs? */
- 			if (!passed && link_retransmit_failure(l, l, &rc))
- 				return rc;
-@@ -1509,12 +1507,20 @@ static int tipc_link_advance_transmq(struct tipc_link *l, u16 acked, u16 gap,
- 			if (time_before(jiffies, TIPC_SKB_CB(skb)->nxt_retr))
- 				continue;
- 			TIPC_SKB_CB(skb)->nxt_retr = TIPC_UC_RETR_TIME;
--			_skb = pskb_copy(skb, GFP_ATOMIC);
-+			if (msg_user(hdr) == MSG_FRAGMENTER) {
-+				skb->priority = TC_PRIO_CONTROL;
-+				tipc_skb_segment(skb, 0, acked, acked + gap, xmitq);
-+				l->stats.retransmitted++;
-+				retransmitted = true;
-+				continue;
-+			}
-+			_skb = __pskb_copy(skb, LL_MAX_HEADER + MIN_H_SIZE,
-+					   GFP_ATOMIC);
- 			if (!_skb)
- 				continue;
--			hdr = buf_msg(_skb);
--			msg_set_ack(hdr, ack);
--			msg_set_bcast_ack(hdr, bc_ack);
-+			_hdr = buf_msg(_skb);
-+			msg_set_ack(_hdr, ack);
-+			msg_set_bcast_ack(_hdr, bc_ack);
- 			_skb->priority = TC_PRIO_CONTROL;
- 			__skb_queue_tail(xmitq, _skb);
- 			l->stats.retransmitted++;
-diff --git a/net/tipc/msg.c b/net/tipc/msg.c
-index a70d8a9..3c36ba2 100644
---- a/net/tipc/msg.c
-+++ b/net/tipc/msg.c
-@@ -141,7 +141,6 @@ int tipc_buf_append(struct sk_buff **headbuf, struct sk_buff **buf)
- 
- 	if (!frag)
- 		goto err;
--
- 	msg = buf_msg(frag);
- 	fragid = msg_type(msg);
- 	frag->next = NULL;
-@@ -167,7 +166,6 @@ int tipc_buf_append(struct sk_buff **headbuf, struct sk_buff **buf)
- 
- 	if (!head)
- 		goto err;
--
- 	if (skb_try_coalesce(head, frag, &headstolen, &delta)) {
- 		kfree_skb_partial(frag, headstolen);
- 	} else {
-@@ -368,115 +366,90 @@ int tipc_msg_fragment(struct sk_buff *skb, const struct tipc_msg *hdr,
- 
- /**
-  * tipc_msg_build - create buffer chain containing specified header and data
-- * @mhdr: Message header, to be prepended to data
-+ * @hdr: TIPC message header, to be prepended to data
-  * @m: User message
-- * @dsz: Total length of user data
-- * @pktmax: Max packet size that can be used
-- * @list: Buffer or chain of buffers to be returned to caller
-+ * @dlen: Total length of user data
-+ * @mtu: Max packet size that can be used
-+ * @xmitq: Buffer or chain of buffers to be returned to caller
-  *
-  * Note that the recursive call we are making here is safe, since it can
-  * logically go only one further level down.
-  *
-  * Returns message data size or errno: -ENOMEM, -EFAULT
-  */
--int tipc_msg_build(struct tipc_msg *mhdr, struct msghdr *m, int offset,
--		   int dsz, int pktmax, struct sk_buff_head *list)
-+int tipc_msg_build(struct tipc_msg *hdr, struct msghdr *m, int dlen,
-+		   int mtu, struct sk_buff_head *list)
- {
--	int mhsz = msg_hdr_sz(mhdr);
--	struct tipc_msg pkthdr;
--	int msz = mhsz + dsz;
--	int pktrem = pktmax;
--	struct sk_buff *skb;
--	int drem = dsz;
--	int pktno = 1;
--	char *pktpos;
--	int pktsz;
--	int rc;
--
--	msg_set_size(mhdr, msz);
--
--	/* No fragmentation needed? */
--	if (likely(msz <= pktmax)) {
--		skb = tipc_buf_acquire(msz, GFP_KERNEL);
--
--		/* Fall back to smaller MTU if node local message */
--		if (unlikely(!skb)) {
--			if (pktmax != MAX_MSG_SIZE)
--				return -ENOMEM;
--			rc = tipc_msg_build(mhdr, m, offset, dsz, FB_MTU, list);
--			if (rc != dsz)
--				return rc;
--			if (tipc_msg_assemble(list))
--				return dsz;
--			return -ENOMEM;
--		}
--		skb_orphan(skb);
--		__skb_queue_tail(list, skb);
--		skb_copy_to_linear_data(skb, mhdr, mhsz);
--		pktpos = skb->data + mhsz;
--		if (copy_from_iter_full(pktpos, dsz, &m->msg_iter))
--			return dsz;
--		rc = -EFAULT;
--		goto error;
-+	struct sk_buff *skb = NULL;
-+	int hlen = msg_hdr_sz(hdr);
-+	struct tipc_msg *seghdr;
-+	int mlen = hlen + dlen;
-+	unsigned char *pos;
-+	skb_frag_t *frag;
-+	int left = dlen;
-+	int copy, rc, i;
-+	int mss;
-+
-+	msg_set_size(hdr, mlen);
-+
-+	/* This also covers node internal messages */
-+	if (mlen <= mtu)
-+		skb = alloc_skb_fclone(BUF_HEADROOM + mlen, GFP_KERNEL);
-+
-+	if (!skb) {
-+		skb = alloc_skb_with_frags(BUF_HEADROOM + hlen, dlen,
-+					   PAGE_ALLOC_COSTLY_ORDER,
-+					   &rc, GFP_KERNEL);
-+		if (!skb)
-+			goto error;
- 	}
- 
--	/* Prepare reusable fragment header */
--	tipc_msg_init(msg_prevnode(mhdr), &pkthdr, MSG_FRAGMENTER,
--		      FIRST_FRAGMENT, INT_H_SIZE, msg_destnode(mhdr));
--	msg_set_size(&pkthdr, pktmax);
--	msg_set_fragm_no(&pkthdr, pktno);
--	msg_set_pktcnt(&pkthdr, 1);
--	msg_set_importance(&pkthdr, msg_importance(mhdr));
--
--	/* Prepare first fragment */
--	skb = tipc_buf_acquire(pktmax, GFP_KERNEL);
--	if (!skb)
--		return -ENOMEM;
--	skb_orphan(skb);
- 	__skb_queue_tail(list, skb);
--	pktpos = skb->data;
--	skb_copy_to_linear_data(skb, &pkthdr, INT_H_SIZE);
--	pktpos += INT_H_SIZE;
--	pktrem -= INT_H_SIZE;
--	skb_copy_to_linear_data_offset(skb, INT_H_SIZE, mhdr, mhsz);
--	pktpos += mhsz;
--	pktrem -= mhsz;
--
--	do {
--		if (drem < pktrem)
--			pktrem = drem;
--
--		if (!copy_from_iter_full(pktpos, pktrem, &m->msg_iter)) {
--			rc = -EFAULT;
-+	skb_reserve(skb, BUF_HEADROOM);
-+	skb_copy_to_linear_data(skb, hdr, hlen);
-+	skb->len = hlen;
-+	skb->tail += hlen;
-+
-+	if (skb_tailroom(skb) >= dlen) {
-+		pos = skb->data + hlen;
-+		if (!copy_from_iter_full(pos, dlen, &m->msg_iter))
- 			goto error;
--		}
--		drem -= pktrem;
--
--		if (!drem)
--			break;
-+		skb->len += dlen;
-+		skb->tail += dlen;
-+		return dlen;
-+	}
- 
--		/* Prepare new fragment: */
--		if (drem < (pktmax - INT_H_SIZE))
--			pktsz = drem + INT_H_SIZE;
--		else
--			pktsz = pktmax;
--		skb = tipc_buf_acquire(pktsz, GFP_KERNEL);
--		if (!skb) {
--			rc = -ENOMEM;
-+	for (copy = 0, i = 0; left; left -= copy, i++) {
-+		frag = &skb_shinfo(skb)->frags[i];
-+		pos = page_address(frag->bv_page) + frag->bv_offset;
-+		copy = skb_frag_size(frag) < left ? skb_frag_size(frag) : left;
-+		if (!copy_from_iter_full(pos, copy, &m->msg_iter))
- 			goto error;
--		}
--		skb_orphan(skb);
--		__skb_queue_tail(list, skb);
--		msg_set_type(&pkthdr, FRAGMENT);
--		msg_set_size(&pkthdr, pktsz);
--		msg_set_fragm_no(&pkthdr, ++pktno);
--		skb_copy_to_linear_data(skb, &pkthdr, INT_H_SIZE);
--		pktpos = skb->data + INT_H_SIZE;
--		pktrem = pktsz - INT_H_SIZE;
--
--	} while (1);
--	msg_set_type(buf_msg(skb), LAST_FRAGMENT);
--	return dsz;
-+		skb->len += copy;
-+		skb->data_len += copy;
-+	}
-+
-+	if (mlen <= mtu)
-+		return dlen;
-+
-+	/* Add outer header and prepare buffer for GSO */
-+	skb_push(skb, INT_H_SIZE);
-+	seghdr = buf_msg(skb);
-+	tipc_msg_init(msg_prevnode(hdr), seghdr, MSG_FRAGMENTER,
-+		      FIRST_FRAGMENT, INT_H_SIZE, msg_destnode(hdr));
-+	msg_set_size(seghdr, INT_H_SIZE + mlen);
-+	msg_set_fragm_no(seghdr, 1);
-+	msg_set_importance(seghdr, msg_importance(hdr));
-+	skb_reset_inner_mac_header(skb);
-+	skb_reset_inner_network_header(skb);
-+	skb_set_inner_transport_header(skb, INT_H_SIZE);
-+	mss = mtu - INT_H_SIZE;
-+	skb_shinfo(skb)->gso_size = mss;
-+	skb_shinfo(skb)->gso_segs = mlen / mss + !!(mlen % mss);
-+	msg_set_pktcnt(seghdr, skb_shinfo(skb)->gso_segs);
-+	skb->ip_summed = CHECKSUM_UNNECESSARY;
-+	skb->encapsulation = 1;
-+	return dlen;
- error:
- 	__skb_queue_purge(list);
- 	__skb_queue_head_init(list);
-@@ -632,14 +605,13 @@ bool tipc_msg_extract(struct sk_buff *skb, struct sk_buff **iskb, int *pos)
-  * Replaces consumed buffer with new one when successful
-  * Returns true if success, otherwise false
-  */
-+
- bool tipc_msg_reverse(u32 own_node,  struct sk_buff **skb, int err)
- {
- 	struct sk_buff *_skb = *skb;
- 	struct tipc_msg *_hdr, *hdr;
- 	int hlen, dlen;
- 
--	if (skb_linearize(_skb))
--		goto exit;
- 	_hdr = buf_msg(_skb);
- 	dlen = min_t(uint, msg_data_sz(_hdr), MAX_FORWARD_SIZE);
- 	hlen = msg_hdr_sz(_hdr);
-@@ -661,8 +633,11 @@ bool tipc_msg_reverse(u32 own_node,  struct sk_buff **skb, int err)
- 	*skb = tipc_buf_acquire(hlen + dlen, GFP_ATOMIC);
- 	if (!*skb)
- 		goto exit;
-+
- 	memcpy((*skb)->data, _skb->data, msg_hdr_sz(_hdr));
- 	memcpy((*skb)->data + hlen, msg_data(_hdr), dlen);
-+	hdr = buf_msg(*skb);
-+	msg_set_hdr_sz(hdr, hlen);
- 
- 	/* Build reverse header in new buffer */
- 	hdr = buf_msg(*skb);
-@@ -767,44 +742,20 @@ bool tipc_msg_assemble(struct sk_buff_head *list)
- 	return false;
- }
- 
--/* tipc_msg_reassemble() - clone a buffer chain of fragments and
-- *                         reassemble the clones into one message
-+/* tipc_msg_clone() - clone a multicast message in 'list' for local destination
-+ *                    sockets, strip off fragment header and add clone to rcvq
-  */
--bool tipc_msg_reassemble(struct sk_buff_head *list, struct sk_buff_head *rcvq)
-+bool tipc_msg_clone(struct sk_buff_head *list, struct sk_buff_head *rcvq)
- {
--	struct sk_buff *skb, *_skb;
--	struct sk_buff *frag = NULL;
--	struct sk_buff *head = NULL;
--	int hdr_len;
--
--	/* Copy header if single buffer */
--	if (skb_queue_len(list) == 1) {
--		skb = skb_peek(list);
--		hdr_len = skb_headroom(skb) + msg_hdr_sz(buf_msg(skb));
--		_skb = __pskb_copy(skb, hdr_len, GFP_ATOMIC);
--		if (!_skb)
--			return false;
--		__skb_queue_tail(rcvq, _skb);
--		return true;
--	}
-+	struct sk_buff *skb;
- 
--	/* Clone all fragments and reassemble */
--	skb_queue_walk(list, skb) {
--		frag = skb_clone(skb, GFP_ATOMIC);
--		if (!frag)
--			goto error;
--		frag->next = NULL;
--		if (tipc_buf_append(&head, &frag))
--			break;
--		if (!head)
--			goto error;
--	}
--	__skb_queue_tail(rcvq, frag);
-+	skb = skb_clone(skb_peek(list), GFP_KERNEL);
-+	if (!skb)
-+		return false;
-+	__skb_queue_tail(rcvq, skb);
-+	if (msg_user(buf_msg(skb)) == MSG_FRAGMENTER)
-+		skb_pull(skb, INT_H_SIZE);
- 	return true;
--error:
--	pr_warn("Failed do clone local mcast rcv buffer\n");
--	kfree_skb(head);
--	return false;
- }
- 
- bool tipc_msg_pskb_copy(u32 dst, struct sk_buff_head *msg,
-@@ -868,6 +819,10 @@ void tipc_skb_queue_copy(struct sk_buff_head *from,
- 	struct sk_buff *skb, *__skb;
- 
- 	skb_queue_walk(from, skb) {
-+		if (msg_user(buf_msg(skb)) == MSG_FRAGMENTER) {
-+			tipc_skb_segment_all(skb, 0, to);
-+			continue;
-+		}
- 		__skb = pskb_copy(skb, GFP_ATOMIC);
- 		if (!__skb)
- 			break;
-@@ -911,3 +866,113 @@ int tipc_skb_queue_fragment(struct sk_buff_head *skbq, int pktmax,
- 	skb_queue_splice_tail_init(&tmpq, skbq);
- 	return rc;
- }
-+
-+int tipc_skb_segment(struct sk_buff *skb, int tnl_hlen, u16 from,
-+		     u16 to, struct sk_buff_head *segs)
-+{
-+	struct skb_shared_info *shinfo = skb_shinfo(skb);
-+	unsigned char *tnl_hdr = skb->data - tnl_hlen;
-+	struct tipc_msg *hdr = buf_msg(skb);
-+	skb_frag_t *frag = &shinfo->frags[0];
-+	int frag_pos = frag->bv_offset;
-+	struct tipc_msg *seg_hdr = NULL;
-+	skb_frag_t *seg_frag = NULL;
-+	int mss = shinfo->gso_size;
-+	struct sk_buff *seg = NULL;
-+	unsigned int hlen = msg_hdr_sz(hdr);
-+	unsigned int left = msg_data_sz(hdr);
-+	unsigned int mtyp, ihlen, dlen;
-+	unsigned int seg_left = mss;
-+	u16 seqno = msg_seqno(hdr);
-+	int fragno = 0;
-+	int segno = 1;
-+
-+	if (more(from, msg_last_seqno(hdr)))
-+		return 0;
-+
-+	if (less(from, seqno))
-+		from = seqno;
-+
-+	if (more(to, msg_last_seqno(hdr)))
-+		to = msg_last_seqno(hdr);
-+
-+	while (!more(seqno, to)) {
-+		/* Calculate but don't add segments until seqno == from */
-+		if (!less(seqno,  from)) {
-+			if (seqno == from) {
-+				mtyp = FIRST_FRAGMENT;
-+				ihlen = msg_hdr_sz(msg_inner_hdr(hdr));
-+			} else {
-+				mtyp = FRAGMENT;
-+				ihlen = 0;
-+			}
-+			seg = alloc_skb(BUF_HEADROOM + ihlen, GFP_ATOMIC);
-+			if (!seg)
-+				goto exit;
-+			__skb_queue_tail(segs, seg);
-+			seg->priority = skb->priority;
-+			skb_reserve(seg, BUF_HEADROOM - (tnl_hlen + hlen));
-+			skb_reset_mac_header(seg);
-+			skb_copy_to_linear_data(seg, tnl_hdr,
-+						tnl_hlen + hlen + ihlen);
-+			skb_put(seg, tnl_hlen + hlen + ihlen);
-+			skb_pull(seg, tnl_hlen);
-+			skb_reset_inner_mac_header(seg);
-+			skb_reset_inner_network_header(seg);
-+			skb_reset_inner_transport_header(seg);
-+			seg->ip_summed = CHECKSUM_UNNECESSARY;
-+			skb_reset_network_header(seg);
-+			skb_reset_transport_header(seg);
-+			seg->dev = skb->dev;
-+			seg->protocol = skb->protocol;
-+			skb_set_inner_protocol(seg, htons(ETH_P_TIPC));
-+			seg_hdr = buf_msg(seg);
-+			seg_left = left < mss ? left : mss;
-+			seg_left -= ihlen;
-+			left -= ihlen;
-+			msg_set_size(seg_hdr, hlen + ihlen + seg_left);
-+			msg_set_fragm_no(seg_hdr, segno);
-+			msg_set_seqno(seg_hdr, seqno);
-+			msg_set_type(seg_hdr, mtyp);
-+			msg_set_pktcnt(seg_hdr, 1);
-+			seg_frag = &skb_shinfo(seg)->frags[0];
-+
-+			/* MAC and INET GSO behave differently regarding this */
-+			if (tnl_hlen == sizeof(struct ethhdr))
-+				skb_push(seg, tnl_hlen);
-+		}
-+		while (seg_left) {
-+			dlen = min(seg_left, skb_frag_size(frag) - frag_pos);
-+			if (seg) {
-+				page_ref_inc(frag->bv_page);
-+				seg_frag->bv_page = frag->bv_page;
-+				skb_shinfo(seg)->nr_frags++;
-+				seg_frag->bv_len = dlen;
-+				seg_frag->bv_offset = frag_pos;
-+				seg->len += dlen;
-+				seg->data_len += dlen;
-+				seg->truesize += dlen;
-+			}
-+			frag_pos += dlen;
-+			seg_left -= dlen;
-+			left -= dlen;
-+			if (frag_pos < skb_frag_size(frag))
-+				continue;
-+			if (++fragno > shinfo->nr_frags) {
-+				pr_warn("msg_segment leaving prematurely\n");
-+				goto exit;
-+			}
-+			frag++;
-+			frag_pos = frag->bv_offset;
-+			seg_frag++;
-+		};
-+		segno++;
-+		seqno++;
-+		seg = NULL;
-+	}
-+
-+	if (!left && seg_hdr)
-+		msg_set_type(seg_hdr, LAST_FRAGMENT);
-+exit:
-+	return skb_queue_len(segs);
-+}
-diff --git a/net/tipc/msg.h b/net/tipc/msg.h
-index 1b5c8c8..8391581 100644
---- a/net/tipc/msg.h
-+++ b/net/tipc/msg.h
-@@ -1131,13 +1131,13 @@ bool tipc_msg_try_bundle(struct sk_buff *tskb, struct sk_buff **skb, u32 mss,
- bool tipc_msg_extract(struct sk_buff *skb, struct sk_buff **iskb, int *pos);
- int tipc_msg_fragment(struct sk_buff *skb, const struct tipc_msg *hdr,
- 		      int pktmax, struct sk_buff_head *frags);
--int tipc_msg_build(struct tipc_msg *mhdr, struct msghdr *m,
--		   int offset, int dsz, int mtu, struct sk_buff_head *list);
-+int tipc_msg_build(struct tipc_msg *hdr, struct msghdr *m, int dlen,
-+		   int mtu, struct sk_buff_head *list);
- int tipc_msg_append(struct tipc_msg *hdr, struct msghdr *m, int dlen,
- 		    int mss, struct sk_buff_head *txq);
- bool tipc_msg_lookup_dest(struct net *net, struct sk_buff *skb, int *err);
- bool tipc_msg_assemble(struct sk_buff_head *list);
--bool tipc_msg_reassemble(struct sk_buff_head *list, struct sk_buff_head *rcvq);
-+bool tipc_msg_clone(struct sk_buff_head *list, struct sk_buff_head *rcvq);
- bool tipc_msg_pskb_copy(u32 dst, struct sk_buff_head *msg,
- 			struct sk_buff_head *cpy);
- void __tipc_skb_queue_sorted(struct sk_buff_head *list, u16 seqno,
-@@ -1146,6 +1146,18 @@ bool tipc_msg_skb_clone(struct sk_buff_head *msg, struct sk_buff_head *cpy);
- void tipc_skb_queue_copy(struct sk_buff_head *from, struct sk_buff_head *to);
- int tipc_skb_queue_fragment(struct sk_buff_head *skbq, int pktmax,
- 			     int *pktcnt, bool frag_supp, int mtyp);
-+int tipc_skb_segment(struct sk_buff *skb, int tnl_hlen, u16 from, u16 to,
-+		     struct sk_buff_head *segs);
-+
-+static inline int tipc_skb_segment_all(struct sk_buff *skb, int tnl_hlen,
-+				       struct sk_buff_head *segs)
-+{
-+	u16 from = msg_seqno(buf_msg(skb));
-+	u16 to = from + skb_shinfo(skb)->gso_segs - 1;
-+
-+	return tipc_skb_segment(skb, tnl_hlen, from, to, segs);
-+}
-+
- static inline u16 buf_seqno(struct sk_buff *skb)
- {
- 	return msg_seqno(buf_msg(skb));
-diff --git a/net/tipc/node.c b/net/tipc/node.c
-index 99b28b6..4d23942 100644
---- a/net/tipc/node.c
-+++ b/net/tipc/node.c
-@@ -1865,6 +1865,7 @@ static bool tipc_node_check_state(struct tipc_node *n, struct sk_buff *skb,
- 	int usr = msg_user(hdr);
- 	int mtyp = msg_type(hdr);
- 	u16 oseqno = msg_seqno(hdr);
-+	u16 iseqno = msg_seqno(msg_inner_hdr(hdr));
- 	u16 exp_pkts = msg_msgcnt(hdr);
- 	u16 rcv_nxt, syncpt, dlv_nxt, inputq_len;
- 	int state = n->state;
-diff --git a/net/tipc/socket.c b/net/tipc/socket.c
-index 884dad5..5dc26f5 100644
---- a/net/tipc/socket.c
-+++ b/net/tipc/socket.c
-@@ -844,8 +844,8 @@ static int tipc_sendmcast(struct  socket *sock, struct tipc_name_seq *seq,
- 	msg_set_nameupper(hdr, seq->upper);
- 
- 	/* Build message as chain of buffers */
--	__skb_queue_head_init(&pkts);
--	rc = tipc_msg_build(hdr, msg, 0, dlen, mtu, &pkts);
-+	skb_queue_head_init(&pkts);
-+	rc = tipc_msg_build(hdr, msg, dlen, mtu, &pkts);
- 
- 	/* Send message if build was successful */
- 	if (unlikely(rc == dlen)) {
-@@ -888,9 +888,9 @@ static int tipc_send_group_msg(struct net *net, struct tipc_sock *tsk,
- 	msg_set_grp_bc_seqno(hdr, bc_snd_nxt);
- 
- 	/* Build message as chain of buffers */
--	__skb_queue_head_init(&pkts);
-+	skb_queue_head_init(&pkts);
- 	mtu = tipc_node_get_mtu(net, dnode, tsk->portid, false);
--	rc = tipc_msg_build(hdr, m, 0, dlen, mtu, &pkts);
-+	rc = tipc_msg_build(hdr, m, dlen, mtu, &pkts);
- 	if (unlikely(rc != dlen))
- 		return rc;
- 
-@@ -1094,7 +1094,7 @@ static int tipc_send_group_bcast(struct socket *sock, struct msghdr *m,
- 
- 	/* Build message as chain of buffers */
- 	__skb_queue_head_init(&pkts);
--	rc = tipc_msg_build(hdr, m, 0, dlen, mtu, &pkts);
-+	rc = tipc_msg_build(hdr, m, dlen, mtu, &pkts);
- 	if (unlikely(rc != dlen))
- 		return rc;
- 
-@@ -1452,7 +1452,7 @@ static int __tipc_sendmsg(struct socket *sock, struct msghdr *m, size_t dlen)
- 
- 	__skb_queue_head_init(&pkts);
- 	mtu = tipc_node_get_mtu(net, dnode, tsk->portid, false);
--	rc = tipc_msg_build(hdr, m, 0, dlen, mtu, &pkts);
-+	rc = tipc_msg_build(hdr, m, dlen, mtu, &pkts);
- 	if (unlikely(rc != dlen))
- 		return rc;
- 	if (unlikely(syn && !tipc_msg_skb_clone(&pkts, &sk->sk_write_queue))) {
-@@ -1546,7 +1546,7 @@ static int __tipc_sendstream(struct socket *sock, struct msghdr *m, size_t dlen)
- 			}
- 			tsk->expect_ack = true;
- 		} else {
--			rc = tipc_msg_build(hdr, m, sent, send, maxpkt, txq);
-+			rc = tipc_msg_build(hdr, m, send, maxpkt, txq);
- 			if (unlikely(rc != send))
- 				break;
- 			blocks += tsk_inc(tsk, send + MIN_H_SIZE);
-diff --git a/net/tipc/udp_media.c b/net/tipc/udp_media.c
-index dcc4ba7..974d260 100644
---- a/net/tipc/udp_media.c
-+++ b/net/tipc/udp_media.c
-@@ -181,7 +181,9 @@ static int tipc_udp_xmit(struct net *net, struct sk_buff *skb,
- 			}
- 			dst_cache_set_ip4(cache, &rt->dst, fl.saddr);
- 		}
--
-+		if (msg_user(buf_msg(skb)) == MSG_FRAGMENTER)
-+			skb_shinfo(skb)->gso_type = SKB_GSO_UDP_TUNNEL;
-+		skb->dev = rt->dst.dev;
- 		ttl = ip4_dst_hoplimit(&rt->dst);
- 		udp_tunnel_xmit_skb(rt, ub->ubsock->sk, skb, src->ipv4.s_addr,
- 				    dst->ipv4.s_addr, 0, ttl, 0, src->port,
--- 
-2.1.4
+BR/Tuong
+
+-----Original Message-----
+From: Jon Maloy <jon.maloy@ericsson.com> 
+Sent: Saturday, December 21, 2019 11:03 PM
+To: Tuong Tong Lien <tuong.t.lien@dektech.com.au>; tipc-dek@dektech.com.au; tipc-discussion@lists.sourceforge.net
+Cc: Xin Long <lucien.xin@gmail.com>; Xin Long <lxin@redhat.com>; 'Ying Xue' <ying.xue@windriver.com>
+Subject: RE: [PATCH RFC] tipc: add automatic rekeying for TIPC encryption
+
+Adding tipc-discusson to the recipient list of this disacussion.
+
+///jon
+
+> -----Original Message-----
+> From: Jon Maloy
+> Sent: 21-Dec-19 10:56
+> To: Tuong Lien <tuong.t.lien@dektech.com.au>; tipc-dek@dektech.com.au
+> Subject: RE: [PATCH RFC] tipc: add automatic rekeying for TIPC encryption
+> 
+> Hi Tuong,
+> I am getting more and more ambivalent about this.
+> Before introducing this we must weigh the pro and cons correctly:
+> 
+> Pros:
+> - It will give less time for a sniffer to crack the key, since we change it often.
+> - If a sniffer cracks a key, he only gets access to messages from the node owning that key, not the whole
+> cluster.
+
+[Tuong]: - implicit authentication (since the initial key for a node or the cluster is set by user...).
+
+> 
+> Cons:
+> - Larger code footprint.
+> - No forward security. If a sniffer gets hold of a node key, he can listen forever, as you have already noted.
+[Tuong]: Yes and this can be vital from a security perspective!
+
+> - New nodes cannot be added to the cluster unless there is a way for the user land framework to read the
+> current key on each node and distribute to the new node.
+> - What happens when a node restarts, and forgets about all current keys, both its own and those of its
+> peers.
+> 
+> The last two bullets are showstoppers,  in my view. We must find a way to add/re-insert nodes as easily as
+> we do now, at least.
+[Tuong]: The last two bullets are actually the same, so the trouble lies here as to how a "new" VM joins the cluster.
+
+> 
+> This means we must come back to the solution with a "master"  cluster key. 
+> I suspect a typical user will just aim for adding the key or keys to
+> the cluster configuration file, and at a maximum update that key at regular intervals.
+> 
+> So, maybe, apart from the 'current' node key we also keep a 'cluster'  master key that can always be used
+> for attaching new nodes, but allow for this to be updated via the tipc tool.
+
+[Tuong]: This will require changes/updates to the current key handling mechanism since we support automatic key switching but at a time there is only one active key for TX & RX and it never "remembers" or hold any keys for others purpose...
+
+I have an idea that we can turn it into a simple "rule" here: when a new VM joins the cluster, a new key will have to be generated & set for the entire cluster incl. the new VM(s) by user (or the framework which had set the initial key in advance...). The automatic key switching will then take over to make the new key active and the new VM(s) can join the cluster as well, this is what we have already supported... Later on, the automatic rekeying will start to work for all the VMs in the cluster as by this patch...
+In this way, we can also solve the authentication issue which could happen in the 2nd model (- where a key agreement protocol like DH or ECDH has to be used to establish a secure communication channel first...).
+What do you think?
+
+> The user may then, of he wants, replace/update this key at regular intervals.
+> At the same time this key must be reserved for new/restarting nodes only, and not be permitted for use by
+> existing nodes which already are using 'current' keys.
+> 
+> This would at least make it somewhat more acceptable for the user than the current approach.
+> 
+> Regards
+> ///jon
+> 
+> 
+> 
+> 
+> > -----Original Message-----
+> > From: Jon Maloy
+> > Sent: 18-Dec-19 19:33
+> > To: Tuong Lien <tuong.t.lien@dektech.com.au>; tipc-dek@dektech.com.au
+> > Subject: RE: [PATCH RFC] tipc: add automatic rekeying for TIPC encryption
+> >
+> > I have a couple comments below, but in general it looks good.
+> > So, after some hesitation I suggest you send this to tipc-discussion for further review.
+> >
+> > ///jon
+> >
+> >
+> > > -----Original Message-----
+> > > From: Tuong Lien <tuong.t.lien@dektech.com.au>
+> > > Sent: 10-Dec-19 06:48
+> > > To: Jon Maloy <jon.maloy@ericsson.com>; tipc-dek@dektech.com.au
+> > > Subject: [PATCH RFC] tipc: add automatic rekeying for TIPC encryption
+> > >
+> > > This commit adds functionality for TIPC encryption to automatically
+> > > generate a new symmetric key and attach as new TX key for the own node.
+> > > The new key will also be distributed to peer nodes and set as RX keys,
+> > > i.e. the per-node key mode. This process of rekeying will be repeated,
+> > > for example every ~ 10 minutes (from the time a certain key becomes
+> > > active), so new session keys will be created and applied regularly to
+> > > the cluster.
+> > >
+> > > Since the key exchange needs a secure communication channel in advance,
+> > > the commit simplifies this by only starting with an initial key (either
+> > > in cluster or per-node key mode) which is set by user first (e.g. via
+> > > the "tipc node set key ..." command), so the entire cluster is already
+> > > secure and authenticated. After that, the rekeying will be scheduled as
+> > > said above.
+> > >
+> > > Also, the key exchange utilizes the broadcast link which is reliable.
+> > > And, the key switching with no impact on traffic is already supported
+> > > by the previous commit.
+> > >
+> > > ----------------------------------------------
+> > > Note: this solution has two issues:
+> > > - No forward secrecy
+> > > - how a new VM joins the cluster...?
+> >
+> > We still need a framework for distributing the initial key for a new node, but it will probably be simpler
+> > than before since we don't need to distribute keys regularly.
+> >
+> > > ----------------------------------------------
+> > >
+> > > Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
+> > > ---
+> > >  net/tipc/bcast.c  |   4 +-
+> > >  net/tipc/bcast.h  |   2 +
+> > >  net/tipc/crypto.c | 195 +++++++++++++++++++++++++++++++++++++++++++++++++++++-
+> > >  net/tipc/crypto.h |   1 +
+> > >  net/tipc/link.c   |   3 +
+> > >  net/tipc/msg.h    |   1 +
+> > >  net/tipc/node.c   |   8 +++
+> > >  net/tipc/node.h   |   1 +
+> > >  8 files changed, 211 insertions(+), 4 deletions(-)
+> > >
+> > > diff --git a/net/tipc/bcast.c b/net/tipc/bcast.c
+> > > index 55aeba681cf4..330b683f335e 100644
+> > > --- a/net/tipc/bcast.c
+> > > +++ b/net/tipc/bcast.c
+> > > @@ -249,8 +249,8 @@ static void tipc_bcast_select_xmit_method(struct net *net, int dests,
+> > >   * Consumes the buffer chain.
+> > >   * Returns 0 if success, otherwise errno: -EHOSTUNREACH,-EMSGSIZE
+> > >   */
+> > > -static int tipc_bcast_xmit(struct net *net, struct sk_buff_head *pkts,
+> > > -			   u16 *cong_link_cnt)
+> > > +int tipc_bcast_xmit(struct net *net, struct sk_buff_head *pkts,
+> > > +		    u16 *cong_link_cnt)
+> > >  {
+> > >  	struct tipc_link *l = tipc_bc_sndlink(net);
+> > >  	struct sk_buff_head xmitq;
+> > > diff --git a/net/tipc/bcast.h b/net/tipc/bcast.h
+> > > index 9e847d9617d3..f095a2ac27cb 100644
+> > > --- a/net/tipc/bcast.h
+> > > +++ b/net/tipc/bcast.h
+> > > @@ -89,6 +89,8 @@ void tipc_bcast_toggle_rcast(struct net *net, bool supp);
+> > >  int tipc_mcast_xmit(struct net *net, struct sk_buff_head *pkts,
+> > >  		    struct tipc_mc_method *method, struct tipc_nlist *dests,
+> > >  		    u16 *cong_link_cnt);
+> > > +int tipc_bcast_xmit(struct net *net, struct sk_buff_head *pkts,
+> > > +		    u16 *cong_link_cnt);
+> > >  int tipc_bcast_rcv(struct net *net, struct tipc_link *l, struct sk_buff *skb);
+> > >  void tipc_bcast_ack_rcv(struct net *net, struct tipc_link *l,
+> > >  			struct tipc_msg *hdr);
+> > > diff --git a/net/tipc/crypto.c b/net/tipc/crypto.c
+> > > index 990a872cec46..b415c9adf14d 100644
+> > > --- a/net/tipc/crypto.c
+> > > +++ b/net/tipc/crypto.c
+> > > @@ -36,12 +36,17 @@
+> > >
+> > >  #include <crypto/aead.h>
+> > >  #include <crypto/aes.h>
+> > > +#include <crypto/rng.h>
+> > >  #include "crypto.h"
+> > > +#include "msg.h"
+> > > +#include "bcast.h"
+> > >
+> > >  #define TIPC_TX_PROBE_LIM	msecs_to_jiffies(1000) /* > 1s */
+> > >  #define TIPC_TX_LASTING_LIM	msecs_to_jiffies(120000) /* 2 mins */
+> > >  #define TIPC_RX_ACTIVE_LIM	msecs_to_jiffies(3000) /* 3s */
+> > >  #define TIPC_RX_PASSIVE_LIM	msecs_to_jiffies(180000) /* 3 mins */
+> > > +#define TIPC_REKEYING_TIME	msecs_to_jiffies(600000) /* 10 mins */
+> > > +
+> > >  #define TIPC_MAX_TFMS_DEF	10
+> > >  #define TIPC_MAX_TFMS_LIM	1000
+> > >
+> > > @@ -132,6 +137,7 @@ struct tipc_tfm {
+> > >   * @mode: crypto mode is applied to the key
+> > >   * @hint[]: a hint for user key
+> > >   * @rcu: struct rcu_head
+> > > + * @keylen: the aead key length
+> > >   * @seqno: the key seqno (cluster scope)
+> > >   * @refcnt: the key reference counter
+> > >   */
+> > > @@ -146,6 +152,7 @@ struct tipc_aead {
+> > >  	u8 mode;
+> > >  	char hint[TIPC_AEAD_HINT_LEN + 1];
+> > >  	struct rcu_head rcu;
+> > > +	unsigned int keylen;
+> > >
+> > >  	atomic64_t seqno ____cacheline_aligned;
+> > >  	refcount_t refcnt ____cacheline_aligned;
+> > > @@ -172,6 +179,8 @@ struct tipc_crypto_stats {
+> > >   * @timer1: general timer 1 (jiffies)
+> > >   * @timer2: general timer 1 (jiffies)
+> > >   * @lock: tipc_key lock
+> > > + * @work: delayed work for rekeying
+> > > + * @skey: session key
+> > >   */
+> > >  struct tipc_crypto {
+> > >  	struct net *net;
+> > > @@ -186,6 +195,8 @@ struct tipc_crypto {
+> > >  	unsigned long timer1;
+> > >  	unsigned long timer2;
+> > >  	spinlock_t lock; /* crypto lock */
+> > > +	struct delayed_work work;
+> > > +	struct tipc_aead_key *skey;
+> > >
+> > >  } ____cacheline_aligned;
+> > >
+> > > @@ -210,6 +221,8 @@ static void tipc_aead_users_inc(struct tipc_aead __rcu *aead, int lim);
+> > >  static void tipc_aead_users_dec(struct tipc_aead __rcu *aead, int lim);
+> > >  static void tipc_aead_users_set(struct tipc_aead __rcu *aead, int val);
+> > >  static struct crypto_aead *tipc_aead_tfm_next(struct tipc_aead *aead);
+> > > +static struct tipc_aead_key *tipc_aead_key_generate(unsigned int keylen);
+> > > +static int tipc_aead_key_distribute(struct net *net, struct tipc_aead_key *skey);
+> > >  static int tipc_aead_init(struct tipc_aead **aead, struct tipc_aead_key *ukey,
+> > >  			  u8 mode);
+> > >  static int tipc_aead_clone(struct tipc_aead **dst, struct tipc_aead *src);
+> > > @@ -251,6 +264,7 @@ static char *tipc_crypto_key_dump(struct tipc_crypto *c, char *buf);
+> > >  static char *tipc_key_change_dump(struct tipc_key old, struct tipc_key new,
+> > >  				  char *buf);
+> > >  #endif
+> > > +static void tipc_crypto_rekey(struct work_struct *work);
+> > >
+> > >  #define key_next(cur) ((cur) % KEY_MAX + 1)
+> > >
+> > > @@ -506,6 +520,7 @@ static int tipc_aead_init(struct tipc_aead **aead, struct tipc_aead_key *ukey,
+> > >  	tmp->mode = mode;
+> > >  	tmp->cloned = NULL;
+> > >  	tmp->authsize = TIPC_AES_GCM_TAG_SIZE;
+> > > +	tmp->keylen = ukey->keylen;
+> > >  	memcpy(&tmp->salt, ukey->key + keylen, TIPC_AES_GCM_SALT_SIZE);
+> > >  	atomic_set(&tmp->users, 0);
+> > >  	atomic64_set(&tmp->seqno, 0);
+> > > @@ -1368,8 +1383,9 @@ int tipc_crypto_start(struct tipc_crypto **crypto, struct net *net,
+> > >  	c->timer1 = jiffies;
+> > >  	c->timer2 = jiffies;
+> > >  	spin_lock_init(&c->lock);
+> > > -	*crypto = c;
+> > > +	INIT_DELAYED_WORK(&c->work, tipc_crypto_rekey);
+> > >
+> > > +	*crypto = c;
+> > >  	return 0;
+> > >  }
+> > >
+> > > @@ -1382,6 +1398,10 @@ void tipc_crypto_stop(struct tipc_crypto **crypto)
+> > >  	if (!*crypto)
+> > >  		return;
+> > >
+> > > +	/* Cancel any rekeying work */
+> > > +	c = *crypto;
+> > > +	cancel_delayed_work_sync(&c->work);
+> > > +
+> > >  	rcu_read_lock();
+> > >  	/* RX stopping? => decrease TX key users if any */
+> > >  	is_rx = !!((*crypto)->node);
+> > > @@ -1397,7 +1417,6 @@ void tipc_crypto_stop(struct tipc_crypto **crypto)
+> > >  	}
+> > >
+> > >  	/* Release AEAD keys */
+> > > -	c = *crypto;
+> > >  	for (k = KEY_MIN; k <= KEY_MAX; k++)
+> > >  		tipc_aead_put(rcu_dereference(c->aead[k]));
+> > >  	rcu_read_unlock();
+> > > @@ -1442,6 +1461,9 @@ void tipc_crypto_timeout(struct tipc_crypto *rx)
+> > >  	pr_info("TX(%s): key %d is activated!\n", tipc_own_id_string(tx->net),
+> > >  		key.pending);
+> > >
+> > > +	/* Schedule rekeying */
+> > > +	schedule_delayed_work(&tx->work, TIPC_REKEYING_TIME);
+> > > +
+> > >  s1:
+> > >  	spin_unlock(&tx->lock);
+> > >
+> > > @@ -1984,3 +2006,172 @@ static char *tipc_key_change_dump(struct tipc_key old, struct tipc_key
+> > > new,
+> > >  	return buf;
+> > >  }
+> > >  #endif
+> > > +
+> > > +static struct tipc_aead_key *tipc_aead_key_generate(unsigned int keylen)
+> > > +{
+> > > +	struct tipc_aead_key *skey;
+> > > +	int rc;
+> > > +
+> > > +	if (!keylen)
+> > > +		return NULL;
+> > > +
+> > > +	skey = kmalloc(sizeof(*skey) + keylen, GFP_ATOMIC);
+> > > +	skey->keylen = keylen;
+> > > +	strcpy(skey->alg_name, "gcm(aes)");
+> > > +
+> > > +	/* Obtain a key via the default RNG (like ECC) */
+> > > +	rc = crypto_get_default_rng();
+> > > +	if (unlikely(rc))
+> > > +		goto exit;
+> > > +
+> > > +	rc = crypto_rng_get_bytes(crypto_default_rng, skey->key, keylen);
+> > > +	crypto_put_default_rng();
+> > > +	if (unlikely(rc))
+> > > +		goto exit;
+> > > +
+> > > +	return skey;
+> > > +
+> > > +exit:
+> > > +	kfree(skey);
+> > > +	return NULL;
+> > > +}
+> > > +
+> > > +static int tipc_aead_key_distribute(struct net *net, struct tipc_aead_key *skey)
+> > > +{
+> > > +	struct sk_buff_head pkts;
+> > > +	struct tipc_msg *hdr;
+> > > +	struct sk_buff *skb;
+> > > +	__be32 keylen = htonl(skey->keylen);
+> > > +	u16 size, cong_link_cnt;
+> > > +	u8 *data;
+> > > +	int rc;
+> > > +
+> > > +	size = tipc_aead_key_size(skey);
+> > > +	skb = tipc_buf_acquire(INT_H_SIZE + size, GFP_ATOMIC);
+> > > +	if (!skb)
+> > > +		return -ENOMEM;
+> > > +
+> > > +	hdr = buf_msg(skb);
+> > > +	tipc_msg_init(tipc_own_addr(net), hdr, KEY_EXCHANGER, 0,
+> > > +		      INT_H_SIZE, 0);
+> > > +
+> > > +	msg_set_non_seq(hdr, 1);
+> > > +	msg_set_size(hdr, INT_H_SIZE + size);
+> > > +
+> > > +	data = msg_data(hdr);
+> > > +	memcpy(data, skey->alg_name, TIPC_AEAD_ALG_NAME);
+> > > +	memcpy(data + TIPC_AEAD_ALG_NAME, (u8 *)&keylen, sizeof(__be32));
+> > > +	memcpy(data + TIPC_AEAD_ALG_NAME + sizeof(__be32), skey->key,
+> > > +	       skey->keylen);
+> > > +
+> > > +	__skb_queue_head_init(&pkts);
+> > > +	__skb_queue_tail(&pkts, skb);
+> > > +	rc = tipc_bcast_xmit(net, &pkts, &cong_link_cnt);
+> > > +
+> > > +	return rc;
+> > > +}
+> > > +
+> > > +int tipc_aead_key_rcv(struct net *net, struct sk_buff *skb)
+> > > +{
+> > > +	struct tipc_msg *hdr = buf_msg(skb);
+> > > +	struct tipc_crypto *rx;
+> > > +	u16 size = msg_data_sz(hdr);
+> > > +	u8 *data = msg_data(hdr);
+> > > +	unsigned int keylen;
+> > > +	int rc = 0;
+> > > +
+> > > +	rx = tipc_node_crypto_rx_by_addr(net, msg_prevnode(hdr));
+> > > +	if (unlikely(!rx || rx->skey)) {
+> > > +		pr_err("RX(%s): no RX or one key has received\n",
+> > > +		       (rx) ? tipc_node_get_id_str(rx->node) : "-");
+> > > +		rc = -EKEYREJECTED;
+> > > +		goto exit;
+> > > +	}
+> > > +
+> > > +	/* Sanity check */
+> > > +	keylen = ntohl(*((__be32*)(data + TIPC_AEAD_ALG_NAME)));
+> > > +	if (unlikely(size != sizeof(struct tipc_aead_key) + keylen)) {
+> > > +		pr_err("RX(%s): key is not valid, keylen %d, size %d\n",
+> > > +		       tipc_node_get_id_str(rx->node), keylen, size);
+> > > +		rc = -EFAULT;
+> > > +		goto exit;
+> > > +	}
+> > > +
+> > > +	/* Allocate memory for the key */
+> > > +	rx->skey = kmalloc(size, GFP_ATOMIC);
+> > > +	if (unlikely(!rx->skey)) {
+> > > +		pr_err("RX(%s): no memory for session key\n",
+> > > +		       tipc_node_get_id_str(rx->node));
+> > > +		rc = -ENOMEM;
+> > > +		goto exit;
+> > > +	}
+> > > +
+> > > +	/* Copy key from msg data */
+> > > +	rx->skey->keylen = keylen;
+> > > +	memcpy(rx->skey->alg_name, data, TIPC_AEAD_ALG_NAME);
+> > > +	memcpy(rx->skey->key, data + TIPC_AEAD_ALG_NAME + sizeof(__be32),
+> > > +	       rx->skey->keylen);
+> > > +
+> > > +	/* Schedule key attaching on this RX */
+> > > +	schedule_delayed_work(&rx->work, 0);
+> > > +
+> > > +exit:
+> > > +	if (rx)
+> > > +		tipc_node_put(rx->node);
+> > > +	kfree_skb(skb);
+> > > +	return rc;
+> > > +}
+> > > +
+> > > +static void tipc_crypto_rekey(struct work_struct *work)
+> > > +{
+> > > +	struct delayed_work *delayed_work = to_delayed_work(work);
+> > > +	struct tipc_crypto *c = container_of(delayed_work, struct tipc_crypto,
+> > > +					     work);
+> > > +	struct tipc_aead *aead;
+> > > +	struct tipc_key key;
+> > > +	unsigned int keylen = 0;
+> > > +	int rc;
+> > > +
+> > > +	/* Generate new session key for TX crypto if not yet */
+> > > +	if (!c->node && !c->skey) {
+> > > +		/* Make sure we had a TX key active i.e. secured channel */
+> > > +		key = c->key;
+> > > +		if (!key.active || key.pending)
+> > > +			return;
+> > > +
+> > > +		rcu_read_lock();
+> > > +		aead = tipc_aead_get(c->aead[key.active]);
+> > > +		if (aead) {
+> > > +			keylen = aead->keylen;
+> > > +			tipc_aead_put(aead);
+> > > +		}
+> > > +		rcu_read_unlock();
+> > > +
+> > > +		/* Generate new key */
+> > > +		c->skey = tipc_aead_key_generate(keylen);
+> > > +		if (unlikely(!c->skey))
+> > > +			goto retry;
+> > > +
+> > > +		/* Distribute key to peers */
+> > > +		rc = tipc_aead_key_distribute(c->net, c->skey);
+> > > +		if (unlikely(rc)) {
+> > > +			kfree(c->skey);
+> > > +			c->skey = NULL;
+> > > +			goto retry;
+> > > +		}
+> > > +	}
+> > > +
+> > > +	/* Attach the new key to TX/RX */
+> > > +	BUG_ON(!c->skey);
+> >
+> > BUG_ON() in production code is always frowned upon.
+> > Better a warning and (if possible) continue with the old key.
+> >
+> >
+> > > +	rc = tipc_crypto_key_init(c, c->skey, PER_NODE_KEY);
+> > > +	if (unlikely(rc == -ENOMEM || rc == -EBUSY))
+> > > +		goto retry;
+> > > +
+> > > +	kfree(c->skey);
+> > > +	c->skey = NULL;
+> > > +	return;
+> > > +
+> > > +retry:
+> > > +	/* Let's try again after 1 min */
+> > > +	schedule_delayed_work(&c->work, msecs_to_jiffies(60000));
+> > > +}
+> > > diff --git a/net/tipc/crypto.h b/net/tipc/crypto.h
+> > > index c3de769f49e8..d222fcafa88d 100644
+> > > --- a/net/tipc/crypto.h
+> > > +++ b/net/tipc/crypto.h
+> > > @@ -161,6 +161,7 @@ int tipc_crypto_key_init(struct tipc_crypto *c, struct tipc_aead_key *ukey,
+> > >  			 u8 mode);
+> > >  void tipc_crypto_key_flush(struct tipc_crypto *c);
+> > >  int tipc_aead_key_validate(struct tipc_aead_key *ukey);
+> > > +int tipc_aead_key_rcv(struct net *net, struct sk_buff *skb);
+> > >  bool tipc_ehdr_validate(struct sk_buff *skb);
+> > >
+> > >  #endif /* _TIPC_CRYPTO_H */
+> > > diff --git a/net/tipc/link.c b/net/tipc/link.c
+> > > index 24d4d10756d3..6e153f5d3a68 100644
+> > > --- a/net/tipc/link.c
+> > > +++ b/net/tipc/link.c
+> > > @@ -1217,6 +1217,9 @@ static bool tipc_data_input(struct tipc_link *l, struct sk_buff *skb,
+> > >  	case MSG_FRAGMENTER:
+> > >  	case BCAST_PROTOCOL:
+> > >  		return false;
+> > > +	case KEY_EXCHANGER:
+> > > +		tipc_aead_key_rcv(l->net, skb);
+> > > +		return true;
+> > >  	default:
+> > >  		pr_warn("Dropping received illegal msg type\n");
+> > >  		kfree_skb(skb);
+> > > diff --git a/net/tipc/msg.h b/net/tipc/msg.h
+> > > index 6d466ebdb64f..227fb708c32c 100644
+> > > --- a/net/tipc/msg.h
+> > > +++ b/net/tipc/msg.h
+> > > @@ -82,6 +82,7 @@ struct plist;
+> > >  #define  NAME_DISTRIBUTOR     11
+> > >  #define  MSG_FRAGMENTER       12
+> > >  #define  LINK_CONFIG          13
+> > > +#define  KEY_EXCHANGER        14
+> > >  #define  SOCK_WAKEUP          14       /* pseudo user */
+> > >  #define  TOP_SRV              15       /* pseudo user */
+> > >
+> > > diff --git a/net/tipc/node.c b/net/tipc/node.c
+> > > index ab04e00cb95b..19a560cfb10f 100644
+> > > --- a/net/tipc/node.c
+> > > +++ b/net/tipc/node.c
+> > > @@ -276,6 +276,14 @@ struct tipc_crypto *tipc_node_crypto_rx_by_list(struct list_head *pos)
+> > >  {
+> > >  	return container_of(pos, struct tipc_node, list)->crypto_rx;
+> > >  }
+> > > +
+> > > +struct tipc_crypto *tipc_node_crypto_rx_by_addr(struct net *net, u32 addr)
+> > > +{
+> > > +	struct tipc_node *n;
+> > > +
+> > > +	n = tipc_node_find(net, addr);
+> > > +	return (n) ? n->crypto_rx : NULL;
+> > > +}
+> > >  #endif
+> > >
+> > >  void tipc_node_free(struct rcu_head *rp)
+> > > diff --git a/net/tipc/node.h b/net/tipc/node.h
+> > > index a6803b449a2c..7b52a2a2b855 100644
+> > > --- a/net/tipc/node.h
+> > > +++ b/net/tipc/node.h
+> > > @@ -83,6 +83,7 @@ struct tipc_node *tipc_node_create(struct net *net, u32 addr, u8 *peer_id,
+> > >  #ifdef CONFIG_TIPC_CRYPTO
+> >
+> > #ifdefs directly in the code never looks good, and  should be avoided.
+> > I think you in many cases can replace the #ifdef sections with macros, and put the #ifdef inside the
+> macro.
+> > This would of course require another patch, since we already have some such sections in the existing
+> code.
+> >
+> > >  struct tipc_crypto *tipc_node_crypto_rx(struct tipc_node *__n);
+> > >  struct tipc_crypto *tipc_node_crypto_rx_by_list(struct list_head *pos);
+> > > +struct tipc_crypto *tipc_node_crypto_rx_by_addr(struct net *net, u32 addr);
+> > >  #endif
+> > >  u32 tipc_node_try_addr(struct net *net, u8 *id, u32 addr);
+> > >  void tipc_node_check_dest(struct net *net, u32 onode, u8 *peer_id128,
+> > > --
+> > > 2.13.7
+
 
 
 
