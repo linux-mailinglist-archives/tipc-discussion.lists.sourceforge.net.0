@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C304612A7D8
-	for <lists+tipc-discussion@lfdr.de>; Wed, 25 Dec 2019 13:50:37 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC30D12A846
+	for <lists+tipc-discussion@lfdr.de>; Wed, 25 Dec 2019 14:49:02 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1ik67U-0004XL-US; Wed, 25 Dec 2019 12:50:32 +0000
+	id 1ik721-0002ra-AF; Wed, 25 Dec 2019 13:48:57 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Ying.Xue@windriver.com>) id 1ik67T-0004X9-6J
- for tipc-discussion@lists.sourceforge.net; Wed, 25 Dec 2019 12:50:31 +0000
+ (envelope-from <Ying.Xue@windriver.com>) id 1ik720-0002rQ-BO
+ for tipc-discussion@lists.sourceforge.net; Wed, 25 Dec 2019 13:48:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
  :In-Reply-To:References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=7QxNwN0s0AFpAax8xPqVvb8LSy0ysz9ix15C0H3Mkns=; b=lrgXeFZCwEjpq+fN6oN0VuvtLp
- hRnKWlJFcXcdh1BnAy1Oq7D+FKsUjwF0fMgVQm7zMhDivtWmluaa+lePeti36BK7gFg1c6SM+mXK6
- xTSaTMqotT8idNgtxFnMR/bp1LbECgcvKF2y+oPv9pNnCewQs2PwFVnxvoOZY2vOUKZU=;
+ bh=aDhp1LceIr6tGmXwwll2pAjx9i7fAzNVIEy8wpqDqbw=; b=N42p9Bbi57/mQh7iztk8FavDaT
+ 1ijv3pFh9t4MHuyE3vNP3hDabbz3rnyNN7trBCj9rykPHG7NWh6h6IA8GSyXTWIncY85OwLTBP3i6
+ dyNzHuYGukp9eUUOsT35AuAwm96osKlf3izXIZF2NQ5bnHoUC1Z5pXYfngETI8G8jwoU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
@@ -29,33 +29,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=7QxNwN0s0AFpAax8xPqVvb8LSy0ysz9ix15C0H3Mkns=; b=TkHrA29h9eNFg9TUFnrwBep2hL
- llydUmIu0xEYmifeJlQMuA81sPQ5YKxMjHp9VDN3jUDm6KP5Hr01J0m68XsjCG5B/U3lsMT+k7nVS
- L0OfDlwUvXWGyItel7Kg99WDexwPVHMsrEsRSgoDts/KYbWBlKQ3UZdrfEqFj2VqOJvg=;
-Received: from mail5.windriver.com ([192.103.53.11] helo=mail5.wrs.com)
+ bh=aDhp1LceIr6tGmXwwll2pAjx9i7fAzNVIEy8wpqDqbw=; b=Zh9nLbmWwqiurkOoqEX3F9UvtB
+ JpQHHsMBEN6IzbGi27m+coq8k0VjtdLGFndFzqh5uuChdEWe02zAuwadT8TgqrMDqqt3eUwp6g7Zh
+ RRnnOC4sdxyVY8UHmQdV/1VscvYw+tN6pof9tnCdgXfXAg/qtIRGR1vlo0WuBUjo5u9U=;
+Received: from mail1.windriver.com ([147.11.146.13])
  by sfi-mx-4.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1ik67P-00F5dr-Ey
- for tipc-discussion@lists.sourceforge.net; Wed, 25 Dec 2019 12:50:31 +0000
-Received: from ALA-HCA.corp.ad.wrs.com (ala-hca.corp.ad.wrs.com
- [147.11.189.40])
- by mail5.wrs.com (8.15.2/8.15.2) with ESMTPS id xBPCmsA7024043
+ (TLSv1.1:ECDHE-RSA-AES256-SHA:256) (Exim 4.92.2) id 1ik71w-00F74Y-IW
+ for tipc-discussion@lists.sourceforge.net; Wed, 25 Dec 2019 13:48:56 +0000
+Received: from ALA-HCB.corp.ad.wrs.com (ala-hcb.corp.ad.wrs.com
+ [147.11.189.41])
+ by mail1.windriver.com (8.15.2/8.15.2) with ESMTPS id xBPDmUXD022640
  (version=TLSv1 cipher=AES256-SHA bits=256 verify=FAIL);
- Wed, 25 Dec 2019 04:49:16 -0800
+ Wed, 25 Dec 2019 05:48:32 -0800 (PST)
 Received: from ALA-MBD.corp.ad.wrs.com ([169.254.3.80]) by
- ALA-HCA.corp.ad.wrs.com ([147.11.189.40]) with mapi id 14.03.0468.000; Wed,
- 25 Dec 2019 04:49:03 -0800
+ ALA-HCB.corp.ad.wrs.com ([147.11.189.41]) with mapi id 14.03.0468.000; Wed,
+ 25 Dec 2019 05:48:09 -0800
 From: "Xue, Ying" <Ying.Xue@windriver.com>
 To: Tuong Lien <tuong.t.lien@dektech.com.au>,
  "tipc-discussion@lists.sourceforge.net"
  <tipc-discussion@lists.sourceforge.net>, "jon.maloy@ericsson.com"
  <jon.maloy@ericsson.com>, "maloy@donjonn.com" <maloy@donjonn.com>
-Thread-Topic: [net] tipc: fix link overflow issue at socket shutdown
-Thread-Index: AQHVukIqASzSpfQI3UGTivPRda3ZeafKzrYQ
-Date: Wed, 25 Dec 2019 12:49:02 +0000
-Message-ID: <25A14D9CFAB7B34FB9440F90AFD35233013CB14F51@ALA-MBD.corp.ad.wrs.com>
-References: <20191224100834.30179-1-tuong.t.lien@dektech.com.au>
-In-Reply-To: <20191224100834.30179-1-tuong.t.lien@dektech.com.au>
+Thread-Topic: [net] tipc: fix wrong connect() return code
+Thread-Index: AQHVujEE8zHX3Bm0bU+JX1bM/NfoPKfK3twg
+Date: Wed, 25 Dec 2019 13:48:08 +0000
+Message-ID: <25A14D9CFAB7B34FB9440F90AFD35233013CB15029@ALA-MBD.corp.ad.wrs.com>
+References: <20191224080551.28379-1-tuong.t.lien@dektech.com.au>
+In-Reply-To: <20191224080551.28379-1-tuong.t.lien@dektech.com.au>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -71,9 +70,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  for more information. [URIs: dektech.com.au]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-X-Headers-End: 1ik67P-00F5dr-Ey
-Subject: Re: [tipc-discussion] [net] tipc: fix link overflow issue at socket
- shutdown
+X-Headers-End: 1ik71w-00F74Y-IW
+Subject: Re: [tipc-discussion] [net] tipc: fix wrong connect() return code
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,137 +87,75 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Acked-by Ying Xue <ying.xue@windriver.com>
+Probably below change is more easily understandable:
+
+diff --git a/net/tipc/socket.c b/net/tipc/socket.c
+index 6552f98..358cc55 100644
+--- a/net/tipc/socket.c
++++ b/net/tipc/socket.c
+@@ -2435,7 +2435,7 @@ static int tipc_wait_for_connect(struct socket *sock, long *timeo_p)
+                done = sk_wait_event(sk, timeo_p,
+                                     sk->sk_state != TIPC_CONNECTING, &wait);
+                remove_wait_queue(sk_sleep(sk), &wait);
+-       } while (!done);
++       } while (!done || sk->sk_err);
+        return 0;
+ }
 
 -----Original Message-----
 From: Tuong Lien [mailto:tuong.t.lien@dektech.com.au] 
-Sent: Tuesday, December 24, 2019 6:09 PM
+Sent: Tuesday, December 24, 2019 4:06 PM
 To: tipc-discussion@lists.sourceforge.net; jon.maloy@ericsson.com; maloy@donjonn.com; Xue, Ying
-Subject: [net] tipc: fix link overflow issue at socket shutdown
+Subject: [net] tipc: fix wrong connect() return code
 
-When a socket is suddenly shutdown or released, it will reject all the
-unreceived messages in its receive queue. This applies to a connected
-socket too, whereas there is only one 'FIN' message required to be sent
-back to its peer in this case.
+The current 'tipc_wait_for_connect()' function makes a loop and waits
+for the condition 'sk->sk_state != TIPC_CONNECTING' to conclude if the
+connecting has done. However, when the condition is met, it always
+returns '0' even in the case the connecting was actually failed (e.g.
+refused because the server socket has closed...) and the socket state
+was set to 'TIPC_DISCONNECTING'.
+This results in a wrong return code for the 'connect()' call from user,
+making it believe that the connection is established and goes ahead
+with more actions e.g. building & sending a message but then finally
+gets an unexpected result (e.g. '-EPIPE').
 
-In case there are many messages in the queue and/or some connections
-with such messages are shutdown at the same time, the link layer will
-easily get overflowed at the 'TIPC_SYSTEM_IMPORTANCE' backlog level
-because of the message rejections. As a result, the link will be taken
-down. Moreover, immediately when the link is re-established, the socket
-layer can continue to reject the messages and the same issue happens...
-
-The commit refactors the '__tipc_shutdown()' function to only send one
-'FIN' in the situation mentioned above. For the connectionless case, it
-is unavoidable but usually there is no rejections for such socket
-messages because they are 'dest-droppable' by default.
-
-In addition, the new code makes the other socket states clear
-(e.g.'TIPC_LISTEN') and treats as a separate case to avoid misbehaving.
-
---------------
-v2: completely refactor the function;
-    cover the other socket states;
-    fix a memleak issue (- reported by 'Hoang Huu Le').
---------------
+This commit fixes the issue by returning the corresponding error code
+if any when the wait process is waken up.
 
 Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
 ---
- net/tipc/socket.c | 53 ++++++++++++++++++++++++++++++++---------------------
- 1 file changed, 32 insertions(+), 21 deletions(-)
+ net/tipc/socket.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
 diff --git a/net/tipc/socket.c b/net/tipc/socket.c
-index 41688da233ab..aa0ffd0dba50 100644
+index 8b1daf3634b0..2e5faf89ef80 100644
 --- a/net/tipc/socket.c
 +++ b/net/tipc/socket.c
-@@ -287,12 +287,12 @@ static void tipc_sk_respond(struct sock *sk, struct sk_buff *skb, int err)
-  *
-  * Caller must hold socket lock
-  */
--static void tsk_rej_rx_queue(struct sock *sk)
-+static void tsk_rej_rx_queue(struct sock *sk, int error)
+@@ -2428,7 +2428,7 @@ static int tipc_wait_for_connect(struct socket *sock, long *timeo_p)
  {
- 	struct sk_buff *skb;
+ 	DEFINE_WAIT_FUNC(wait, woken_wake_function);
+ 	struct sock *sk = sock->sk;
+-	int done;
++	int done = 0;
  
- 	while ((skb = __skb_dequeue(&sk->sk_receive_queue)))
--		tipc_sk_respond(sk, skb, TIPC_ERR_NO_PORT);
-+		tipc_sk_respond(sk, skb, error);
+ 	do {
+ 		int err = sock_error(sk);
+@@ -2438,12 +2438,14 @@ static int tipc_wait_for_connect(struct socket *sock, long *timeo_p)
+ 			return -ETIMEDOUT;
+ 		if (signal_pending(current))
+ 			return sock_intr_errno(*timeo_p);
++		if (done)
++			return 0;
+ 
+ 		add_wait_queue(sk_sleep(sk), &wait);
+ 		done = sk_wait_event(sk, timeo_p,
+ 				     sk->sk_state != TIPC_CONNECTING, &wait);
+ 		remove_wait_queue(sk_sleep(sk), &wait);
+-	} while (!done);
++	} while (1);
+ 	return 0;
  }
  
- static bool tipc_sk_connected(struct sock *sk)
-@@ -545,34 +545,45 @@ static void __tipc_shutdown(struct socket *sock, int error)
- 	/* Remove pending SYN */
- 	__skb_queue_purge(&sk->sk_write_queue);
- 
--	/* Reject all unreceived messages, except on an active connection
--	 * (which disconnects locally & sends a 'FIN+' to peer).
--	 */
--	while ((skb = __skb_dequeue(&sk->sk_receive_queue)) != NULL) {
--		if (TIPC_SKB_CB(skb)->bytes_read) {
--			kfree_skb(skb);
--			continue;
--		}
--		if (!tipc_sk_type_connectionless(sk) &&
--		    sk->sk_state != TIPC_DISCONNECTING) {
--			tipc_set_sk_state(sk, TIPC_DISCONNECTING);
--			tipc_node_remove_conn(net, dnode, tsk->portid);
--		}
--		tipc_sk_respond(sk, skb, error);
-+	/* Remove partial received buffer if any */
-+	skb = skb_peek(&sk->sk_receive_queue);
-+	if (skb && TIPC_SKB_CB(skb)->bytes_read) {
-+		__skb_unlink(skb, &sk->sk_receive_queue);
-+		kfree_skb(skb);
- 	}
- 
--	if (tipc_sk_type_connectionless(sk))
-+	/* Reject all unreceived messages if connectionless */
-+	if (tipc_sk_type_connectionless(sk)) {
-+		tsk_rej_rx_queue(sk, error);
- 		return;
-+	}
- 
--	if (sk->sk_state != TIPC_DISCONNECTING) {
-+	switch (sk->sk_state) {
-+	case TIPC_CONNECTING:
-+	case TIPC_ESTABLISHED:
-+		tipc_set_sk_state(sk, TIPC_DISCONNECTING);
-+		tipc_node_remove_conn(net, dnode, tsk->portid);
-+		/* Send a FIN+/- to its peer */
-+		skb = __skb_dequeue(&sk->sk_receive_queue);
-+		if (skb) {
-+			__skb_queue_purge(&sk->sk_receive_queue);
-+			tipc_sk_respond(sk, skb, error);
-+			break;
-+		}
- 		skb = tipc_msg_create(TIPC_CRITICAL_IMPORTANCE,
- 				      TIPC_CONN_MSG, SHORT_H_SIZE, 0, dnode,
- 				      tsk_own_node(tsk), tsk_peer_port(tsk),
- 				      tsk->portid, error);
- 		if (skb)
- 			tipc_node_xmit_skb(net, skb, dnode, tsk->portid);
--		tipc_node_remove_conn(net, dnode, tsk->portid);
--		tipc_set_sk_state(sk, TIPC_DISCONNECTING);
-+		break;
-+	case TIPC_LISTEN:
-+		/* Reject all SYN messages */
-+		tsk_rej_rx_queue(sk, error);
-+		break;
-+	default:
-+		__skb_queue_purge(&sk->sk_receive_queue);
-+		break;
- 	}
- }
- 
-@@ -2639,7 +2650,7 @@ static int tipc_accept(struct socket *sock, struct socket *new_sock, int flags,
- 	 * Reject any stray messages received by new socket
- 	 * before the socket lock was taken (very, very unlikely)
- 	 */
--	tsk_rej_rx_queue(new_sk);
-+	tsk_rej_rx_queue(new_sk, TIPC_ERR_NO_PORT);
- 
- 	/* Connect new socket to it's peer */
- 	tipc_sk_finish_conn(new_tsock, msg_origport(msg), msg_orignode(msg));
 -- 
 2.13.7
 
