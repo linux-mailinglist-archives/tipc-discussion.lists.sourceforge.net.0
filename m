@@ -2,123 +2,98 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9733C17A654
-	for <lists+tipc-discussion@lfdr.de>; Thu,  5 Mar 2020 14:27:01 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5609F17AEA3
+	for <lists+tipc-discussion@lfdr.de>; Thu,  5 Mar 2020 20:01:34 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1j9qWc-0007Q0-TL; Thu, 05 Mar 2020 13:26:54 +0000
+	id 1j9vkM-00056I-J0; Thu, 05 Mar 2020 19:01:26 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Ying.Xue@windriver.com>) id 1j9qWa-0007Pr-UP
- for tipc-discussion@lists.sourceforge.net; Thu, 05 Mar 2020 13:26:53 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1j9vkI-000564-DH
+ for tipc-discussion@lists.sourceforge.net; Thu, 05 Mar 2020 19:01:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=2HEWp32UE2RdIHhbWJ60TNJIT2bYy98KvSiqdkKsa1g=; b=VXgU74lbCCwiXjcaD0yXyP0gCD
- muvLGMaoqMUSNk3Y4NkFyeZzGxF0BqXY/4Ycku8+efudJQOAGgfBBQ9idTEBjVNGp0HUGQYjME8cX
- FsEbbrY9NL7y8GxwliKGrHJCRd/v6Nob1ghnuKxC3usXq8vOitFLSK++n8PXWTP+oMAY=;
+ d=sourceforge.net; s=x; h=Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=FCe6cEPIQVRUQ2zWYUigqQ4gna0iVW0GJFWKX0JtO+4=; b=cfBzmF7TWdq/W4kVL5d3ea2cy
+ 37ibasr7Xh10dzLqbi8CMB+G3CiVs/lf/gC/9vKUWsuYqsZiMXydOCeSZ6rDqjI6ZXdaIkTYhIghx
+ AaUlOUGrVz+tSkGXj4CZxpEPq7s6prailOe1Yqp5EYylPq/wgC+z0s4pVYyUPk64YBt5A=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
- References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+ h=Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:
+ Subject:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=2HEWp32UE2RdIHhbWJ60TNJIT2bYy98KvSiqdkKsa1g=; b=RWB2nGuxBRL+2eo2J6Ha5VPIg+
- mBwYZBXBSv5uBTIQRKvUedXoTKakwh/8GxivGlob5UA4C97cy7vR3vZKry7dxtsm1OOFeHMajm9WH
- khzmYuZkV58iIsPhNgAjilvXwf0maABGwj55R5G3p8xIj6nRIb4Noh6AAsyY+ESsMn+Q=;
-Received: from mail-co1nam11on2047.outbound.protection.outlook.com
- ([40.107.220.47] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1j9qWY-00E02b-6P
- for tipc-discussion@lists.sourceforge.net; Thu, 05 Mar 2020 13:26:52 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=eKZ4faipqho6J4rVXaZkyFe1fjMcwQTK0ZsssgYBxJuskfpTTRHu1ZJWCxUeAogDKdinOue8a5hbb6z/tJ61fNgFwvZLDQW2L4JNYkyVcenxCJoYCqVDvDr2w4BublDvS+jFp1sjqxsOH1XA7l1qoASpOkmbbq0bBcwk+u7qEU5fjXJoxzmFdc+Vls7TpK5aDOvaHvwgCs5AhjObMBGbEqvJ6LRCYWUbR9VNtHGkcqmQpbic5sACQagbg3NKf47oEhCIdYiykHI4xG91HxmRubw+ifzXkn+YlGqJaWrOzagaB9n/8CyONt0UDvDYwR2ZrjwVkIGOrOLxMslPkThSqQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2HEWp32UE2RdIHhbWJ60TNJIT2bYy98KvSiqdkKsa1g=;
- b=n0DVHQkTcK5dcE3O9OC7dCRZW/0WCZMvZS/cj194HyyBepdQKp/RdA06kcZRVqq8X/OQ7MYH6f4qPDjfco+hS4y4U+hj+O2UXlZOHqwDk6JnUQ1yF3aZB01sp/vI3CMcW3Qehl5apYHIptCON9APjnOINci08MOMWuk0FCxi++VSk4v1w2OD0cPI6PMvE35CXFLkVgJKdlYWyDU3tlNv55DrYHI1c1OXdrcdQ0DFz3sycEJLZlFacne4nTJlyRuJDKPfkOpEM6VhXlwmJ9IUtEBX8ntw7UQLrTA7p34dKkhIDA/6J557mLpzt9T19HxQ9AMj0Eod3yteS4Rfi44smg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=windriver.com; dmarc=pass action=none
- header.from=windriver.com; dkim=pass header.d=windriver.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=windriversystems.onmicrosoft.com;
- s=selector2-windriversystems-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2HEWp32UE2RdIHhbWJ60TNJIT2bYy98KvSiqdkKsa1g=;
- b=Neu5ccuATRa7lq/MxoPfNTSug31gtujHtAAQQGpz5L8t79yT0+CEaSkZJgOR9jJCzcsmFtWINSz4URTOg2FYHHP7I0YJxPYWXyPQBdbxBOg1kSD2YKXGGeDRjTfIG81V5TKaz3pUP11C78Q/g0kc6qVqCNMlu777jPLqk7AP3qE=
-Received: from BY5PR11MB3894.namprd11.prod.outlook.com (2603:10b6:a03:18c::20)
- by BY5PR11MB4037.namprd11.prod.outlook.com (2603:10b6:a03:188::13)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2772.18; Thu, 5 Mar
- 2020 12:52:17 +0000
-Received: from BY5PR11MB3894.namprd11.prod.outlook.com
- ([fe80::541:f9ad:2745:e289]) by BY5PR11MB3894.namprd11.prod.outlook.com
- ([fe80::541:f9ad:2745:e289%6]) with mapi id 15.20.2772.019; Thu, 5 Mar 2020
- 12:52:17 +0000
-From: "Xue, Ying" <Ying.Xue@windriver.com>
-To: Hoang Le <hoang.h.le@dektech.com.au>, "jmaloy@redhat.com"
- <jmaloy@redhat.com>, "maloy@donjonn.com" <maloy@donjonn.com>,
+ bh=FCe6cEPIQVRUQ2zWYUigqQ4gna0iVW0GJFWKX0JtO+4=; b=aGo0clP46FIXyMHJZLqAtQulbc
+ F826olCJRp7ixseVOc9XWKJcsQ8RwlhWAHCT+Eo6BqZM2efccccTO5qGKv8fm4IWrImEQ0Jm8k+6w
+ 2cmabmBsUwS8MsWd4OzCVl29+BSAr/PGCoxL1YzCj4tkT/xasy4WEo7l9XKtmSanRms8=;
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
+ id 1j9vkA-000zQZ-OO
+ for tipc-discussion@lists.sourceforge.net; Thu, 05 Mar 2020 19:01:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1583434868;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=FCe6cEPIQVRUQ2zWYUigqQ4gna0iVW0GJFWKX0JtO+4=;
+ b=YFWQqou8Lom4o/qLBw9JxbBg+ggY3WxOf2JD/mN9Q48pR80MiEjlGIfa+g/aI7Jel+Lucu
+ Wb2wOA/6VxVFAJKqVAlA0/eYmDoCSprlZ9WRZtuzNiPg95mLLr16ZD6anSGOXfzqXISUr/
+ f4cGi7Uq8O4Bpkon+jGLB9vj99hP9Cc=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-368-UUneTxLjMtKX5Djsq4sMPg-1; Thu, 05 Mar 2020 14:01:05 -0500
+X-MC-Unique: UUneTxLjMtKX5Djsq4sMPg-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 158DE800D4E;
+ Thu,  5 Mar 2020 19:01:04 +0000 (UTC)
+Received: from jmaloy.remote.csb (ovpn-125-109.rdu2.redhat.com [10.10.125.109])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id E2AC228998;
+ Thu,  5 Mar 2020 19:01:00 +0000 (UTC)
+To: "Xue, Ying" <Ying.Xue@windriver.com>, Hoang Le
+ <hoang.h.le@dektech.com.au>, "maloy@donjonn.com" <maloy@donjonn.com>,
  "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>, "Xue, Ying" <Ying.Xue@windriver.com>
-Thread-Topic: [net-next] tipc: simplify trivial boolean return
-Thread-Index: AQHV6HJHeXEIt2IokkKbnoJmDGy0Pqg6CL/w
-Date: Thu, 5 Mar 2020 12:52:17 +0000
-Message-ID: <BY5PR11MB3894EBF643E5EA21C7DE8A9084E20@BY5PR11MB3894.namprd11.prod.outlook.com>
+ <tipc-discussion@lists.sourceforge.net>
 References: <20200221044859.5391-1-hoang.h.le@dektech.com.au>
-In-Reply-To: <20200221044859.5391-1-hoang.h.le@dektech.com.au>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Ying.Xue@windriver.com; 
-x-originating-ip: [147.11.252.42]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: f3aa35b7-c3fb-4e18-af62-08d7c1040968
-x-ms-traffictypediagnostic: BY5PR11MB4037:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BY5PR11MB4037DFEB0B4903B3E1BA862E84E20@BY5PR11MB4037.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1468;
-x-forefront-prvs: 03333C607F
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(376002)(346002)(39850400004)(396003)(366004)(189003)(199004)(55016002)(81166006)(8936002)(9686003)(81156014)(4744005)(5660300002)(66946007)(33656002)(86362001)(66446008)(66556008)(66476007)(8676002)(64756008)(76116006)(71200400001)(110136005)(7696005)(186003)(52536014)(53546011)(316002)(2906002)(26005)(478600001)(6506007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BY5PR11MB4037;
- H:BY5PR11MB3894.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: windriver.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 0aDHxb435hMHhAFXRotU20ww9PFeOehkoCHim4BoFWRYZ3l9JDECosBPf6nIDQ6zN2jOX9mybs+xVx7WDnvJyh+aYgbORhqxofnrBzTwEcaKfbnMa89t8v+2QGZR1t6h9nNvBKWw0LTouRP3WfQXRmkb8YiXyCU+lmcCRahYTaC8wh5q8olA8ICH5i52jmgnJaH8ROdOwaC8oorZlunAo8Gvztn7GaUigS9ACFQL2dwTRv7Fb6P33nxujWG2sAfGRmPEfid6kYoY8KgbpksPoRIsrdUPuoua1ec4WgE8azPn+reiU1tLel8hJtRxrHvRAH4jCjvvrwk4Z+s+/s1hpttDvwXzbq8z3/AZY6D0VeGc/TJtg4+gwcFMA48AKlw7D2NYFZuifwd3ua2f8FMwA4grNe5YSoLqAfkjLHchdD2KS7FR79g9P/p+QuB/RwDB
-x-ms-exchange-antispam-messagedata: FkegRtr7fHWUQPGPwMc5/v6mUyBjz4GSMXMIU5tfOUmTh51x0dx0bAE3EUU4btCdfW8wFRY3YaN+1ZnCCVzz8k4XBXYwhZZB8RJcBmXSpiJhsPPisNIj5SagZ/Yf5xGwf6UGL0HK8jYIhW70VQyrvg==
+ <BY5PR11MB3894EBF643E5EA21C7DE8A9084E20@BY5PR11MB3894.namprd11.prod.outlook.com>
+From: Jon Maloy <jmaloy@redhat.com>
+Message-ID: <647a95bc-2a5c-9183-b302-d6697ee17e29@redhat.com>
+Date: Thu, 5 Mar 2020 14:01:00 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-X-OriginatorOrg: windriver.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f3aa35b7-c3fb-4e18-af62-08d7c1040968
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Mar 2020 12:52:17.6790 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 8ddb2873-a1ad-4a18-ae4e-4644631433be
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: tUmhT7vVvh+CQAFyn27LIxTr3f8LiyD86FAIIz5UQM0hkAVypUZE6JnQA+6N1WHvg/uDpRALASUwALO6rX2awA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR11MB4037
-X-Spam-Score: -0.0 (/)
+In-Reply-To: <BY5PR11MB3894EBF643E5EA21C7DE8A9084E20@BY5PR11MB3894.namprd11.prod.outlook.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+X-Spam-Score: 1.6 (+)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.220.47 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.7 HTML_IMAGE_ONLY_20     BODY: HTML: images with 1600-2000 bytes of words
+ 1.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1j9qWY-00E02b-6P
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+X-Headers-End: 1j9vkA-000zQZ-OO
+X-Content-Filtered-By: Mailman/MimeDel 2.1.21
 Subject: Re: [tipc-discussion] [net-next] tipc: simplify trivial boolean
  return
 X-BeenThere: tipc-discussion@lists.sourceforge.net
@@ -132,44 +107,45 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Acked-by: Ying Xue <ying.xue@windriver.com>
+Acked-by: Jon Maloy <jmaloy@redhat.com>
 
------Original Message-----
-From: Hoang Le [mailto:hoang.h.le@dektech.com.au] 
-Sent: Friday, February 21, 2020 12:49 PM
-To: jmaloy@redhat.com; maloy@donjonn.com; tipc-discussion@lists.sourceforge.net; Xue, Ying
-Subject: [net-next] tipc: simplify trivial boolean return
+On 3/5/20 7:52 AM, Xue, Ying wrote:
+> Acked-by: Ying Xue <ying.xue@windriver.com>
+>
+> -----Original Message-----
+> From: Hoang Le [mailto:hoang.h.le@dektech.com.au]
+> Sent: Friday, February 21, 2020 12:49 PM
+> To: jmaloy@redhat.com; maloy@donjonn.com; tipc-discussion@lists.sourceforge.net; Xue, Ying
+> Subject: [net-next] tipc: simplify trivial boolean return
+>
+> Checking and returning 'true' boolean is useless as it will be
+> returning at end of function
+>
+> Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
+> ---
+>   net/tipc/msg.c | 3 ---
+>   1 file changed, 3 deletions(-)
+>
+> diff --git a/net/tipc/msg.c b/net/tipc/msg.c
+> index 0d515d20b056..4d0e0bdd997b 100644
+> --- a/net/tipc/msg.c
+> +++ b/net/tipc/msg.c
+> @@ -736,9 +736,6 @@ bool tipc_msg_lookup_dest(struct net *net, struct sk_buff *skb, int *err)
+>   	msg_set_destport(msg, dport);
+>   	*err = TIPC_OK;
+>   
+> -	if (!skb_cloned(skb))
+> -		return true;
+> -
+>   	return true;
+>   }
+>   
 
-Checking and returning 'true' boolean is useless as it will be
-returning at end of function
-
-Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
----
- net/tipc/msg.c | 3 ---
- 1 file changed, 3 deletions(-)
-
-diff --git a/net/tipc/msg.c b/net/tipc/msg.c
-index 0d515d20b056..4d0e0bdd997b 100644
---- a/net/tipc/msg.c
-+++ b/net/tipc/msg.c
-@@ -736,9 +736,6 @@ bool tipc_msg_lookup_dest(struct net *net, struct sk_buff *skb, int *err)
- 	msg_set_destport(msg, dport);
- 	*err = TIPC_OK;
- 
--	if (!skb_cloned(skb))
--		return true;
--
- 	return true;
- }
- 
 -- 
-2.20.1
-
-
 
 _______________________________________________
 tipc-discussion mailing list
