@@ -2,97 +2,101 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DB7F1815E7
-	for <lists+tipc-discussion@lfdr.de>; Wed, 11 Mar 2020 11:34:19 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56BA3181B82
+	for <lists+tipc-discussion@lfdr.de>; Wed, 11 Mar 2020 15:39:51 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jBygp-0005ZJ-DA; Wed, 11 Mar 2020 10:34:15 +0000
+	id 1jC2WR-0007Us-D6; Wed, 11 Mar 2020 14:39:47 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1jBygo-0005Yv-2F
- for tipc-discussion@lists.sourceforge.net; Wed, 11 Mar 2020 10:34:14 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1jC2WQ-0007Ui-0i
+ for tipc-discussion@lists.sourceforge.net; Wed, 11 Mar 2020 14:39:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :Message-ID:Date:Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=AaxdyI9mSGxeSnVaavTyTDXzFWqrQMwNI8NfkcGJQTI=; b=SuJIgGpY7MYUg7SWNJkVhA+476
- h/jySJ+DT664JwWTZ5gT5RgcPQzeAnE4oDkZi3nnGtPVzIEdGf4tRgD5HXw08SGGuQGAferzn0r3D
- Rp24FBMA7ZrbY9aJ0S4LScYL0ZUalK/T1AgWJm65ZTtH7k5vpA9P1GdQ/e4gb9SBKeN4=;
+ d=sourceforge.net; s=x; h=Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=y+Ya+uts2CYLd6znJrbRoxQR2kW8iK8Mk3P58wzWv14=; b=QNIcu9/j4CVbDrrVd2s/afYM5
+ CgqNKRO8KP6GXeFmMOFR87SZRCcmHYqywoUnTKa83PSX9Kloqxvc4scgWkjITlfpWciiRWruQc5X2
+ mb+xnjffajliLmGf8/v+XtvBbOnyVTYvaZ2FbuaamkQE0Bzu4dYuqc551dJpoiFrk1538=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:
- Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:Content-ID:
+ h=Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:
+ Subject:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=AaxdyI9mSGxeSnVaavTyTDXzFWqrQMwNI8NfkcGJQTI=; b=Vamlo5i53YpTBswa2DxtZz2jp7
- CoJEu4lL0/tx+jdGH9qiB3LzhaemlDlGJ6hwE2a03V324YTF3jtf918bPQzSNsx2CDRt6Z/Q4juEM
- IbSkE16MPCwwkDBKN5hXS+Fy2R6f9SqchuJDOJbR+qcndaDcm9SvTSksibf9EWdITnF4=;
-Received: from f0-dek.dektech.com.au ([210.10.221.142]
- helo=mail.dektech.com.au)
+ bh=y+Ya+uts2CYLd6znJrbRoxQR2kW8iK8Mk3P58wzWv14=; b=CK1hlMf8j+aAFmj7blzIThkygq
+ Aw7oZ892MXM0ep2pldVI1jILDYJxg0I5JUt7Pk5rlOLWBWqKaZq5IuZ5RbuYeigTarxVrnIm0gzyI
+ MsXnzYL5+G+uEzGK/jbl/Yl+7yj+D/KmJQInWPztJqxH5cFlQHR/ctdnRmq7wGNyJ/4k=;
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1jBygk-004euD-Cm
- for tipc-discussion@lists.sourceforge.net; Wed, 11 Mar 2020 10:34:13 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.dektech.com.au (Postfix) with ESMTP id CC7A44B098;
- Wed, 11 Mar 2020 21:34:02 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
- h=content-language:x-mailer:content-transfer-encoding
- :content-type:content-type:mime-version:message-id:date:date
- :subject:subject:in-reply-to:references:from:from:received
- :received:received; s=mail_dkim; t=1583922842; bh=t7yb8kidebXGZt
- uth8Lo0guzmFcNcdTf5pVKCg0hOTc=; b=mCsO4x7IopG760ImBTHnnSL1jOIpwj
- 4PAri9lLScu63jLp11wJ5kYF3d90vo4Tk+AIbrovIV5jWBWQ/QIY8bhBsGDn8N/Q
- v17RZ7cLfQl1kiCMDoCJN1BORY6bwTAyx71TOXUZmjXDTogt0mb/PUy292ZP/2co
- xf9ZVLl8K69qw=
-X-Virus-Scanned: amavisd-new at dektech.com.au
-Received: from mail.dektech.com.au ([127.0.0.1])
- by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id rcTSVeq5zVe2; Wed, 11 Mar 2020 21:34:02 +1100 (AEDT)
-Received: from mail.dektech.com.au (localhost [127.0.0.1])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
+ id 1jC2WK-004nXX-Ep
+ for tipc-discussion@lists.sourceforge.net; Wed, 11 Mar 2020 14:39:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1583937573;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=y+Ya+uts2CYLd6znJrbRoxQR2kW8iK8Mk3P58wzWv14=;
+ b=dIKoAz9QZL7iFZKkPRBKgU7yiep+D8EI+bnm6XihoqftXZMrnhVidx0/8CIaC05tnJhJjJ
+ 8C4w+cZRkzcUP3CZ61jCRks95bddz2+Fet+R4jHZ5fbnBzxfkmabXpbrE1LBwQbxLm6Hcj
+ GN5cCmIc0Ble78ZZBnkjsNNjmLj2GMQ=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-60-QFYk-1RDPdO2r6UOqdgHMw-1; Wed, 11 Mar 2020 10:39:30 -0400
+X-MC-Unique: QFYk-1RDPdO2r6UOqdgHMw-1
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPS id 866D34D73D;
- Wed, 11 Mar 2020 21:34:02 +1100 (AEDT)
-Received: from VNLAP288VNPC (unknown [14.161.14.188])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPSA id DD1524B098;
- Wed, 11 Mar 2020 21:34:01 +1100 (AEDT)
-From: "Tuong Lien Tong" <tuong.t.lien@dektech.com.au>
-To: <tipc-discussion@lists.sourceforge.net>, "'Jon Maloy'" <jmaloy@redhat.com>
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5C93C477;
+ Wed, 11 Mar 2020 14:39:29 +0000 (UTC)
+Received: from jmaloy.remote.csb (ovpn-125-109.rdu2.redhat.com [10.10.125.109])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 6DD1590A0E;
+ Wed, 11 Mar 2020 14:39:28 +0000 (UTC)
+To: Tuong Lien Tong <tuong.t.lien@dektech.com.au>,
+ tipc-discussion@lists.sourceforge.net
 References: <1582098115-29092-1-git-send-email-tuong.t.lien@dektech.com.au>
-In-Reply-To: <1582098115-29092-1-git-send-email-tuong.t.lien@dektech.com.au>
-Date: Wed, 11 Mar 2020 17:34:00 +0700
-Message-ID: <2ab401d5f790$94dde8e0$be99baa0$@dektech.com.au>
+ <2ab401d5f790$94dde8e0$be99baa0$@dektech.com.au>
+From: Jon Maloy <jmaloy@redhat.com>
+Message-ID: <d1136731-a885-14ce-5e90-ae95480bf09f@redhat.com>
+Date: Wed, 11 Mar 2020 10:39:27 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQFV7MOnhZ6x+tHGh9hgdwg+h8hsCqlDR2NQ
-Content-Language: en-us
-X-Spam-Score: -0.1 (/)
+In-Reply-To: <2ab401d5f790$94dde8e0$be99baa0$@dektech.com.au>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+X-Spam-Score: 0.9 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: dektech.com.au]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [210.10.221.142 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1jBygk-004euD-Cm
-Subject: [tipc-discussion] FW: [PATCH] ptts: fix tipcTS failure in case of
- latency
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: dektech.com.au]
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+X-Headers-End: 1jC2WK-004nXX-Ep
+X-Content-Filtered-By: Mailman/MimeDel 2.1.21
+Subject: Re: [tipc-discussion] FW: [PATCH] ptts: fix tipcTS failure in case
+ of latency
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -104,81 +108,53 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Resend this... It seemed to be dropped somehow...
-
-BR/Tuong
-
------Original Message-----
-From: Tuong Lien <tuong.t.lien@dektech.com.au> 
-Sent: Wednesday, February 19, 2020 2:42 PM
-To: tipc-discussion@lists.sourceforge.net; jmaloy@redhat.com
-Cc: tipc-dek@dektech.com.au; Tuong Lien <tuong.t.lien@dektech.com.au>
-Subject: [PATCH] ptts: fix tipcTS failure in case of latency
-
-The 'ptts' test keeps failed when testing under high traffic with some
-network latency. This is because the 'tipcTS' server side doesn't wait
-long enough at its 'select()' call, just 1s+ and gets timeout. The
-time variable is also not re-initiated after the 1st timeout, so the
-next attempts just return shortly i.e. timeout = 0:
-
-./tipcTS -v
-...
-Received on 0 sockets in subtest 6, expected 2
-Received on 0 sockets in subtest 6, expected 2
-Received on 0 sockets in subtest 6, expected 2
-===>Finished SubTest 7: received 0 msgs of sz -1 at 2 sockets (40 per
-socket)
-TEST FAILED Received wrong number of multicast messages
-
-The commit fixes the issue by increasing the timeout value to 3s and also
-re-initiating it correctly.
-
-Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
----
- test/ptts/tipc_ts_server.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/test/ptts/tipc_ts_server.c b/test/ptts/tipc_ts_server.c
-index 3a2f96f..e102c94 100644
---- a/test/ptts/tipc_ts_server.c
-+++ b/test/ptts/tipc_ts_server.c
-@@ -610,7 +610,7 @@ void server_mcast
- 		rcvbuf = malloc(66000);
- 	buf = rcvbuf;
- 	recvSyncTIPC (TS_SYNC_ID_3);	/* wait for client to tell us to
-start */
--	timeout.tv_sec  = 1;
-+	timeout.tv_sec  = 3;
- 	timeout.tv_usec = 0;
- 	dbg1("===>Starting SubTest %d\n", st);
- 
-@@ -625,12 +625,12 @@ void server_mcast
- 		while (sk_cnt < exp_sks ) {
- 			fds = *readfds;			
- 			num_ready = select(FD_SETSIZE, &fds, NULL, NULL,
-&timeout);
-+			timeout.tv_sec  = 3;
- 			if (!num_ready) {
- 				printf("Received on %u sockets in subtest
-%u, expected %u\n",
- 				       sk_cnt, st, exp_num[numSubTest]);
- 				break;
- 			}
--			timeout.tv_sec  = 1;
- 			for (i = 0; i < TIPC_MCAST_SOCKETS; i++) {
- 				
- 				if(!FD_ISSET(sd[i], &fds))
--- 
-2.1.4
-
-
-
-
-_______________________________________________
-tipc-discussion mailing list
-tipc-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+TG9va3MgZ29vZC4KTm90IHN1cmUgaWYgdGhpcyBpcyBuZWVkZWTCoCBmb3IgdXRpbHMsIGJ1dCBz
+dGlsbDoKQWNrZWQtYnk6IEpvbiBNYWxveSA8am1hbG95QHJlZGhhdC5jb20+CgovLy9qb24KCk9u
+IDMvMTEvMjAgNjozNCBBTSwgVHVvbmcgTGllbiBUb25nIHdyb3RlOgo+IFJlc2VuZCB0aGlzLi4u
+IEl0IHNlZW1lZCB0byBiZSBkcm9wcGVkIHNvbWVob3cuLi4KPgo+IEJSL1R1b25nCj4KPiAtLS0t
+LU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+IEZyb206IFR1b25nIExpZW4gPHR1b25nLnQubGllbkBk
+ZWt0ZWNoLmNvbS5hdT4KPiBTZW50OiBXZWRuZXNkYXksIEZlYnJ1YXJ5IDE5LCAyMDIwIDI6NDIg
+UE0KPiBUbzogdGlwYy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldDsgam1hbG95QHJl
+ZGhhdC5jb20KPiBDYzogdGlwYy1kZWtAZGVrdGVjaC5jb20uYXU7IFR1b25nIExpZW4gPHR1b25n
+LnQubGllbkBkZWt0ZWNoLmNvbS5hdT4KPiBTdWJqZWN0OiBbUEFUQ0hdIHB0dHM6IGZpeCB0aXBj
+VFMgZmFpbHVyZSBpbiBjYXNlIG9mIGxhdGVuY3kKPgo+IFRoZSAncHR0cycgdGVzdCBrZWVwcyBm
+YWlsZWQgd2hlbiB0ZXN0aW5nIHVuZGVyIGhpZ2ggdHJhZmZpYyB3aXRoIHNvbWUKPiBuZXR3b3Jr
+IGxhdGVuY3kuIFRoaXMgaXMgYmVjYXVzZSB0aGUgJ3RpcGNUUycgc2VydmVyIHNpZGUgZG9lc24n
+dCB3YWl0Cj4gbG9uZyBlbm91Z2ggYXQgaXRzICdzZWxlY3QoKScgY2FsbCwganVzdCAxcysgYW5k
+IGdldHMgdGltZW91dC4gVGhlCj4gdGltZSB2YXJpYWJsZSBpcyBhbHNvIG5vdCByZS1pbml0aWF0
+ZWQgYWZ0ZXIgdGhlIDFzdCB0aW1lb3V0LCBzbyB0aGUKPiBuZXh0IGF0dGVtcHRzIGp1c3QgcmV0
+dXJuIHNob3J0bHkgaS5lLiB0aW1lb3V0ID0gMDoKPgo+IC4vdGlwY1RTIC12Cj4gLi4uCj4gUmVj
+ZWl2ZWQgb24gMCBzb2NrZXRzIGluIHN1YnRlc3QgNiwgZXhwZWN0ZWQgMgo+IFJlY2VpdmVkIG9u
+IDAgc29ja2V0cyBpbiBzdWJ0ZXN0IDYsIGV4cGVjdGVkIDIKPiBSZWNlaXZlZCBvbiAwIHNvY2tl
+dHMgaW4gc3VidGVzdCA2LCBleHBlY3RlZCAyCj4gPT09PkZpbmlzaGVkIFN1YlRlc3QgNzogcmVj
+ZWl2ZWQgMCBtc2dzIG9mIHN6IC0xIGF0IDIgc29ja2V0cyAoNDAgcGVyCj4gc29ja2V0KQo+IFRF
+U1QgRkFJTEVEIFJlY2VpdmVkIHdyb25nIG51bWJlciBvZiBtdWx0aWNhc3QgbWVzc2FnZXMKPgo+
+IFRoZSBjb21taXQgZml4ZXMgdGhlIGlzc3VlIGJ5IGluY3JlYXNpbmcgdGhlIHRpbWVvdXQgdmFs
+dWUgdG8gM3MgYW5kIGFsc28KPiByZS1pbml0aWF0aW5nIGl0IGNvcnJlY3RseS4KPgo+IFNpZ25l
+ZC1vZmYtYnk6IFR1b25nIExpZW4gPHR1b25nLnQubGllbkBkZWt0ZWNoLmNvbS5hdT4KPiAtLS0K
+PiAgIHRlc3QvcHR0cy90aXBjX3RzX3NlcnZlci5jIHwgNCArKy0tCj4gICAxIGZpbGUgY2hhbmdl
+ZCwgMiBpbnNlcnRpb25zKCspLCAyIGRlbGV0aW9ucygtKQo+Cj4gZGlmZiAtLWdpdCBhL3Rlc3Qv
+cHR0cy90aXBjX3RzX3NlcnZlci5jIGIvdGVzdC9wdHRzL3RpcGNfdHNfc2VydmVyLmMKPiBpbmRl
+eCAzYTJmOTZmLi5lMTAyYzk0IDEwMDY0NAo+IC0tLSBhL3Rlc3QvcHR0cy90aXBjX3RzX3NlcnZl
+ci5jCj4gKysrIGIvdGVzdC9wdHRzL3RpcGNfdHNfc2VydmVyLmMKPiBAQCAtNjEwLDcgKzYxMCw3
+IEBAIHZvaWQgc2VydmVyX21jYXN0Cj4gICAJCXJjdmJ1ZiA9IG1hbGxvYyg2NjAwMCk7Cj4gICAJ
+YnVmID0gcmN2YnVmOwo+ICAgCXJlY3ZTeW5jVElQQyAoVFNfU1lOQ19JRF8zKTsJLyogd2FpdCBm
+b3IgY2xpZW50IHRvIHRlbGwgdXMgdG8KPiBzdGFydCAqLwo+IC0JdGltZW91dC50dl9zZWMgID0g
+MTsKPiArCXRpbWVvdXQudHZfc2VjICA9IDM7Cj4gICAJdGltZW91dC50dl91c2VjID0gMDsKPiAg
+IAlkYmcxKCI9PT0+U3RhcnRpbmcgU3ViVGVzdCAlZFxuIiwgc3QpOwo+ICAgCj4gQEAgLTYyNSwx
+MiArNjI1LDEyIEBAIHZvaWQgc2VydmVyX21jYXN0Cj4gICAJCXdoaWxlIChza19jbnQgPCBleHBf
+c2tzICkgewo+ICAgCQkJZmRzID0gKnJlYWRmZHM7CQkJCj4gICAJCQludW1fcmVhZHkgPSBzZWxl
+Y3QoRkRfU0VUU0laRSwgJmZkcywgTlVMTCwgTlVMTCwKPiAmdGltZW91dCk7Cj4gKwkJCXRpbWVv
+dXQudHZfc2VjICA9IDM7Cj4gICAJCQlpZiAoIW51bV9yZWFkeSkgewo+ICAgCQkJCXByaW50Zigi
+UmVjZWl2ZWQgb24gJXUgc29ja2V0cyBpbiBzdWJ0ZXN0Cj4gJXUsIGV4cGVjdGVkICV1XG4iLAo+
+ICAgCQkJCSAgICAgICBza19jbnQsIHN0LCBleHBfbnVtW251bVN1YlRlc3RdKTsKPiAgIAkJCQli
+cmVhazsKPiAgIAkJCX0KPiAtCQkJdGltZW91dC50dl9zZWMgID0gMTsKPiAgIAkJCWZvciAoaSA9
+IDA7IGkgPCBUSVBDX01DQVNUX1NPQ0tFVFM7IGkrKykgewo+ICAgCQkJCQo+ICAgCQkJCWlmKCFG
+RF9JU1NFVChzZFtpXSwgJmZkcykpCgotLSAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCnRpcGMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKdGlwYy1kaXNj
+dXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5l
+dC9saXN0cy9saXN0aW5mby90aXBjLWRpc2N1c3Npb24K
