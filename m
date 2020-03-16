@@ -2,63 +2,65 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06C6B18727F
-	for <lists+tipc-discussion@lfdr.de>; Mon, 16 Mar 2020 19:39:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1F3F1873A2
+	for <lists+tipc-discussion@lfdr.de>; Mon, 16 Mar 2020 20:51:17 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jDudp-0002wH-M5; Mon, 16 Mar 2020 18:39:09 +0000
+	id 1jDvlV-000643-I6; Mon, 16 Mar 2020 19:51:09 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1jDudo-0002w8-2p
- for tipc-discussion@lists.sourceforge.net; Mon, 16 Mar 2020 18:39:08 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1jDvlU-00063w-F9
+ for tipc-discussion@lists.sourceforge.net; Mon, 16 Mar 2020 19:51:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Mkt5TuHEK/p0E867adb8/WAoRlblvDQ9BDP3mZDkmMs=; b=UNV4k1HY5FU6vUhvcvFf9O3Mk
- C6DIYd/fThhX3AnC4dXJ6dgbcf5mWHHmwhU+IZyY33njn2wsKmuRykZoFdm7YdIQh1npRjGE3jOsm
- 7QuDT3dMKWiYftTQQLV0mIVuXpNHL3+mULdEfZDShOfzpna4F5B6aRhO298oHqmT7VuP4=;
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:References:To:From:Subject:Sender:Reply-To:Cc:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=l8aE7RAHb5Yj322m2SzrQWPQvGZ6e3Q/rBQfC5uzfK0=; b=MMqITiI0+J/d/FyZzgOG2KISto
+ lc2eEERU74uPCwHOJOpgLOpmk6GqWE9FQTPFnXx82RDNU1P0QVbFIfWVuyFBb1bVLycCP7gd3mH3d
+ UFwkv1Fd6w+Ea1/5MtsXnUUILv7pRrRGWPYko493mD1YMwsf+ZtqF7wavfBLAQcUGFzs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:
- Subject:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:References:To:From:Subject:Sender:Reply-To:Cc:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=Mkt5TuHEK/p0E867adb8/WAoRlblvDQ9BDP3mZDkmMs=; b=aeMuHyQ1lehcCCAMVxIDh9SrM8
- ccHN9Rrs0GOqxHD1ZoSzQKVKxBOkBuMEUz0FW2y9EPvgGsdzMfn1bX3LeB2fQePRCF1tjRNDpwcwN
- ZsOkw56+HuJGeUY+DRVj/n6YIYtYD9FgSrMq6ezc2S3IzICynIUYLMTcJDglQUCfckKc=;
+ bh=l8aE7RAHb5Yj322m2SzrQWPQvGZ6e3Q/rBQfC5uzfK0=; b=CT8czCGyhigsRE5ERIbFC9Incv
+ nfF7T0IN4+uPwUQZSD43VH/qrnkfuNZktq2hdYGOss/Z1MXQIrZcMNsj9M84rrtUjbL2aUNUpquUx
+ KDHLS2jk/uY92En03gR8Nmge5D5bx2SIJeV8J0socEa5oRQ0/THQF+LxcbIeIYBqcMhA=;
 Received: from us-smtp-delivery-74.mimecast.com ([216.205.24.74])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1jDude-003DKN-Vb
- for tipc-discussion@lists.sourceforge.net; Mon, 16 Mar 2020 18:39:07 +0000
+ id 1jDvlQ-00CiBG-M2
+ for tipc-discussion@lists.sourceforge.net; Mon, 16 Mar 2020 19:51:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584383929;
+ s=mimecast20190719; t=1584388258;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=Mkt5TuHEK/p0E867adb8/WAoRlblvDQ9BDP3mZDkmMs=;
- b=DcVdQ9LXqdUrfpsIjrt2+jNKpmv2tJuPAu+VG0jlXc0TbwlSc/3Uw+gBvZDnY23ok6vN/0
- Nj898o6x3XfNojH7xR5uZaO229GxhUtOayP8n76M6NsHE3Tx/2JfmkBH/5i/JXixCFiwuP
- gXYy+U2sXj02pqkTFpAsjLGrIdF9fTM=
+ bh=l8aE7RAHb5Yj322m2SzrQWPQvGZ6e3Q/rBQfC5uzfK0=;
+ b=Rh/hshtQYOM0dKu3D6TUs6fRLURJW3Ke1HJ+a3jtIWnu2si7JUto1RfjazFqCZqiJA77R7
+ nVyaUmAkv1uM2zFh/xEDdlPL/C0F/nvuyN4YDeB6Ll0sX1GoQ2SVU1o/3FEbp7XXTOKzTG
+ JVCG3AowfweZDcVRyKydN/fAirOy3ug=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-231-dhbGQTteOlmCKZmZF9Izcg-1; Mon, 16 Mar 2020 14:20:08 -0400
-X-MC-Unique: dhbGQTteOlmCKZmZF9Izcg-1
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
+ us-mta-274-cckZ-8d6MaKwvS_1-RD1yA-1; Mon, 16 Mar 2020 15:49:18 -0400
+X-MC-Unique: cckZ-8d6MaKwvS_1-RD1yA-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5571E10A2679;
- Mon, 16 Mar 2020 18:18:13 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 851E28017CC;
+ Mon, 16 Mar 2020 19:49:17 +0000 (UTC)
 Received: from [10.10.125.13] (ovpn-125-13.rdu2.redhat.com [10.10.125.13])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 943AF93535;
- Mon, 16 Mar 2020 18:18:09 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 788C819756;
+ Mon, 16 Mar 2020 19:49:14 +0000 (UTC)
+From: Jon Maloy <jmaloy@redhat.com>
 To: Tuong Lien Tong <tuong.t.lien@dektech.com.au>,
  tipc-discussion@lists.sourceforge.net, maloy@donjonn.com,
  ying.xue@windriver.com, lxin@redhat.com
@@ -66,18 +68,18 @@ References: <20200313104728.2330-1-tuong.t.lien@dektech.com.au>
  <20200313104728.2330-2-tuong.t.lien@dektech.com.au>
  <04f76feb-d16d-b599-9945-fdbc8ce429ab@redhat.com>
  <00d101d5fb85$47d8f280$d78ad780$@dektech.com.au>
-From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <88ca6a29-462d-119a-edc8-98417b3c686a@redhat.com>
-Date: Mon, 16 Mar 2020 14:18:08 -0400
+ <88ca6a29-462d-119a-edc8-98417b3c686a@redhat.com>
+Message-ID: <198bb001-b384-c9ca-f5e1-cb5c6725fa57@redhat.com>
+Date: Mon, 16 Mar 2020 15:49:13 -0400
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <00d101d5fb85$47d8f280$d78ad780$@dektech.com.au>
+In-Reply-To: <88ca6a29-462d-119a-edc8-98417b3c686a@redhat.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
-X-Spam-Score: 1.0 (+)
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
@@ -85,19 +87,17 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: donjonn.com]
+ for more information. [URIs: dektech.com.au]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
- 0.1 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1jDude-003DKN-Vb
-X-Content-Filtered-By: Mailman/MimeDel 2.1.21
+ 0.6 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1jDvlQ-00CiBG-M2
 Subject: Re: [tipc-discussion] [PATCH RFC 1/2] tipc: add Gap ACK blocks
  support for broadcast link
 X-BeenThere: tipc-discussion@lists.sourceforge.net
@@ -111,2128 +111,862 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset="windows-1252"; Format="flowed"
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-
-
-On 3/16/20 7:23 AM, Tuong Lien Tong wrote:
->
-> Hi Jon,
->
-> I don=92t think that is because of retransmissions=85 also the =91time=92 =
-
-> command will only measure the program=92s execution time, not the whole =
-
-> system or kernel (nor a retransmission by kernel). I have repeated the =
-
-> experiments and collected some statistics, so we can see things more =
-
-> clearly:
->
-> With the patch:
->
-> 	=
-
->
-> Without the patch:
->
-> # time tipc-pipe --mc --rdm --data_size 123 --data_num 1500000
->
-> real *0m 52.97s*
->
-> user=A0=A0=A0 0m 1.12s
->
-> sys=A0=A0=A0=A0 0m 17.35s
->
-> # # tipc l st sh
->
-> Link <broadcast-link>
->
-> =A0 Window:50 packets
->
-> =A0 RX packets:0 fragments:0/0 bundles:0/0
->
-> =A0 TX packets:836930 fragments:0/0 bundles:98095/761165
->
-> =A0 RX naks:0 defs:0 dups:0
->
-> =A0 TX naks:0 acks:0 retrans:43874
->
-> =A0 Congestion link:296=A0 Send queue max:0 avg:0
->
-> 	=
-
->
-> # time tipc-pipe --mc --rdm --data_size 123 --data_num 1500000
->
-> real *5m 21.75s*
->
-> user=A0=A0=A0 0m 0.67s
->
-> sys=A0=A0=A0=A0 0m 2.13s
->
-> # tipc l st sh
->
-> Link <broadcast-link>
->
-> =A0 Window:50 packets
->
-> =A0 RX packets:0 fragments:0/0 bundles:0/0
->
-> =A0 TX packets:218031 fragments:0/0 bundles:184629/1466598
->
-> =A0 RX naks:0 defs:0 dups:0
->
-> =A0 TX naks:0 acks:0 retrans:13235
->
-> =A0 Congestion link:1923=A0 Send queue max:0 avg:0
->
-> Yes, we had much more retransmissions but its ratio was really better: =
-
-> 5.24% vs. 6.07%! In fact, we had fewer bundles due to less congestion=85
->
-I see. The much lower occurrence of bundling explains it. The CPU has to =
-
-drive
-more than half of the messages individually down through the stack, =
-
-something
-taking much more cycles of course.
-
-> Testing with a large message data size, we can see the difference more =
-
-> accurately:
->
-> With the patch:
->
-> 	=
-
->
-> Without the patch:
->
-> time tipc-pipe --mc --rdm --data_size 1000 --data_num 1500000
->
-> real *1m 6.81s*
->
-> user=A0=A0=A0 0m 3.03s
->
-> sys=A0=A0=A0=A0 0m 37.22s
->
-> # tipc l st sh
->
-> Link <broadcast-link>
->
-> =A0 Window:50 packets
->
-> =A0 RX packets:0 fragments:0/0 bundles:0/0
->
-> =A0 TX packets:1500000 fragments:0/0 bundles:0/0
->
-> =A0 RX naks:0 defs:0 dups:0
->
-> =A0 TX naks:0 acks:0 retrans:*79505* //~ 5.30%
->
-> =A0 Congestion link:249=A0 Send queue max:0 avg:0
->
-> 	=
-
->
-> # time tipc-pipe --mc --rdm --data_size 1000 --data_num 1500000
->
-> ^CCommand terminated by signal 2=A0=A0 //I terminated it...
->
-> real *35m 53.35s*
->
-> user=A0=A0=A0 0m 1.41s
->
-> sys=A0=A0=A0=A0 0m 8.36s
->
-> # tipc l st sh
->
-> Link <broadcast-link>
->
-> =A0 Window:50 packets
->
-> =A0 RX packets:0 fragments:0/0 bundles:0/0
->
-> =A0 TX packets:1364457 fragments:0/0 bundles:0/0
->
-> =A0 RX naks:0 defs:0 dups:0
->
-> =A0 TX naks:0 acks:0 retrans:*90282* =A0//~6.62%
->
-> =A0 Congestion link:11348=A0 Send queue max:0 avg:0
->
-> Actually, we can explain your concern as follows: with the patch, the =
-
-> =91transmq=92 is advanced faster, so sending messages is less likely to =
-
-> face link congestion or window. That means, the program will not have =
-
-> any =91relax=92 time but get involved in message xmit-ing to the link, l2 =
-
-> layers=85 directly and it=92s counted as the =91sys=92 time. In contrary, =
-
-> without the patch, the program =91send()=92 calls will shortly be returne=
-d =
-
-> because of link congestions and just have to wait + retry, but that=92s =
-
-> user part! Obviously, the =91time=92 doesn=92t cover everything here, =
-
-> especially the kernel work to complete the whole process (which is I =
-
-> believe also better with the patch=85), but what's interesting is still =
-
-> the real time that user will notice?
->
-The improvement shown here is truly impressive. However, you are only =
-
-showing tipc-pipe with small messages. How does this look when you send =
-
-full-size 66k messages? How does it scale when the number of =
-
-destinations grows up to tens or even hundreds? I am particularly =
-
-concerned that the use of unicast retransmission may become a =
-
-sub-optimization if the number of destinations is large.
-
-///jon
-
-> BR/Tuong
->
-> *From:* Jon Maloy <jmaloy@redhat.com>
-> *Sent:* Friday, March 13, 2020 10:47 PM
-> *To:* Tuong Lien <tuong.t.lien@dektech.com.au>; =
-
-> tipc-discussion@lists.sourceforge.net; maloy@donjonn.com; =
-
-> ying.xue@windriver.com
-> *Subject:* Re: [PATCH RFC 1/2] tipc: add Gap ACK blocks support for =
-
-> broadcast link
->
-> On 3/13/20 6:47 AM, Tuong Lien wrote:
->
->     As achieved through commit 9195948fbf34 ("tipc: improve TIPC throughp=
-ut
->
->     by Gap ACK blocks"), we apply the same mechanism for the broadcast li=
-nk
->
->     as well. The 'Gap ACK blocks' data field in a 'PROTOCOL/STATE_MSG' wi=
-ll
->
->     consist of two parts built for both the broadcast and unicast types:
->
->       31=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 16 15=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A00
->
->     +-------------+-------------+-------------+-------------+
->
->     |=A0 bgack_cnt=A0 |=A0 ugack_cnt=A0 |=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 len=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |
->
->     +-------------+-------------+-------------+-------------+=A0 -
->
->     |=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 gap=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 |=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ack=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
- |=A0=A0 |
->
->     +-------------+-------------+-------------+-------------+=A0=A0=A0 > =
-bc gacks
->
->     :=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0 :=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0 :=A0=A0 |
->
->     +-------------+-------------+-------------+-------------+=A0 -
->
->     |=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 gap=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 |=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ack=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
- |=A0=A0 |
->
->     +-------------+-------------+-------------+-------------+=A0=A0=A0 > =
-uc gacks
->
->     :=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0 :=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0 :=A0=A0 |
->
->     +-------------+-------------+-------------+-------------+=A0 -
->
->     which is "automatically" backward-compatible.
->
->     We also increase the max number of Gap ACK blocks to 128, allowing up=
-to
->
->     64 blocks per type (total buffer size =3D 516 bytes).
->
->     Besides, the 'tipc_link_advance_transmq()' function is refactored whi=
-ch
->
->     is applicable for both the unicast and broadcast cases now, so some o=
-ld
->
->     functions can be removed and the code is optimized.
->
->     With the patch, TIPC broadcast is more robust regardless of packet lo=
-ss
->
->     or disorder, latency, ... in the underlying network. Its performance =
-is
->
->     boost up significantly.
->
->     For example, experiment with a 5% packet loss rate results:
->
->     $ time tipc-pipe --mc --rdm --data_size 123 --data_num 1500000
->
->     real=A0=A0=A0 0m 42.46s
->
->     user=A0=A0=A0 0m 1.16s
->
->     sys=A0=A0=A0=A0 0m 17.67s
->
->     Without the patch:
->
->     $ time tipc-pipe --mc --rdm --data_size 123 --data_num 1500000
->
->     real=A0=A0=A0 5m 28.80s
->
->     user=A0=A0=A0 0m 0.85s
->
->     sys=A0=A0=A0=A0 0m 3.62s
->
-> Can you explain this? To me it seems like the elapsed time is reduced
-> with a factor 328.8/42.46=3D7.7, while we are consuming significantly
-> more CPU to achieve this. Doesn't that mean that we have much more
-> retransmissions which are consuming CPU? Or is there some other
-> explanation?
->
-> ///jon
->
->
->     Signed-off-by: Tuong Lien<tuong.t.lien@dektech.com.au>  <mailto:tuong=
-.t.lien@dektech.com.au>
->
->     ---
->
->       net/tipc/bcast.c |=A0=A0 9 +-
->
->       net/tipc/link.c=A0 | 440 +++++++++++++++++++++++++++++++++---------=
--------------
->
->       net/tipc/link.h=A0 |=A0=A0 7 +-
->
->       net/tipc/msg.h=A0=A0 |=A0 14 +-
->
->       net/tipc/node.c=A0 |=A0 10 +-
->
->       5 files changed, 295 insertions(+), 185 deletions(-)
->
->     diff --git a/net/tipc/bcast.c b/net/tipc/bcast.c
->
->     index 4c20be08b9c4..3ce690a96ee9 100644
->
->     --- a/net/tipc/bcast.c
->
->     +++ b/net/tipc/bcast.c
->
->     @@ -474,7 +474,7 @@ void tipc_bcast_ack_rcv(struct net *net, struct t=
-ipc_link *l,
->
->        __skb_queue_head_init(&xmitq);
->
->       =
-
->
->      =A0 tipc_bcast_lock(net);
->
->     - tipc_link_bc_ack_rcv(l, acked, &xmitq);
->
->     + tipc_link_bc_ack_rcv(l, acked, 0, NULL, &xmitq);
->
->        tipc_bcast_unlock(net);
->
->       =
-
->
->      =A0 tipc_bcbase_xmit(net, &xmitq);
->
->     @@ -492,6 +492,7 @@ int tipc_bcast_sync_rcv(struct net *net, struct t=
-ipc_link *l,
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 struct tipc_msg *hdr)
->
->       {
->
->        struct sk_buff_head *inputq =3D &tipc_bc_base(net)->inputq;
->
->     + struct tipc_gap_ack_blks *ga;
->
->        struct sk_buff_head xmitq;
->
->        int rc =3D 0;
->
->       =
-
->
->     @@ -501,8 +502,10 @@ int tipc_bcast_sync_rcv(struct net *net, struct =
-tipc_link *l,
->
->        if (msg_type(hdr) !=3D STATE_MSG) {
->
->       =A0=A0=A0=A0=A0=A0=A0 tipc_link_bc_init_rcv(l, hdr);
->
->        } else if (!msg_bc_ack_invalid(hdr)) {
->
->     -=A0=A0=A0=A0=A0=A0=A0 tipc_link_bc_ack_rcv(l, msg_bcast_ack(hdr), &x=
-mitq);
->
->     -=A0=A0=A0=A0=A0=A0=A0 rc =3D tipc_link_bc_sync_rcv(l, hdr, &xmitq);
->
->     +=A0=A0=A0=A0=A0=A0=A0 tipc_get_gap_ack_blks(&ga, l, hdr, false);
->
->     +=A0=A0=A0=A0=A0=A0=A0 rc =3D tipc_link_bc_ack_rcv(l, msg_bcast_ack(h=
-dr),
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0 =A0 msg_bc_gap(hdr), ga, &xmitq);
->
->     +=A0=A0=A0=A0=A0=A0=A0 rc |=3D tipc_link_bc_sync_rcv(l, hdr, &xmitq);
->
->        }
->
->        tipc_bcast_unlock(net);
->
->       =
-
->
->     diff --git a/net/tipc/link.c b/net/tipc/link.c
->
->     index 467c53a1fb5c..6198b6d89a69 100644
->
->     --- a/net/tipc/link.c
->
->     +++ b/net/tipc/link.c
->
->     @@ -188,6 +188,8 @@ struct tipc_link {
->
->        /* Broadcast */
->
->        u16 ackers;
->
->        u16 acked;
->
->     + u16 last_gap;
->
->     + struct tipc_gap_ack_blks *last_ga;
->
->        struct tipc_link *bc_rcvlink;
->
->        struct tipc_link *bc_sndlink;
->
->        u8 nack_state;
->
->     @@ -249,11 +251,14 @@ static int tipc_link_build_nack_msg(struct tipc=
-_link *l,
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0=A0struct sk_buff_head *xmitq);
->
->       static void tipc_link_build_bc_init_msg(struct tipc_link *l,
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0 struct sk_buff_head *xmitq);
->
->     -static int tipc_link_release_pkts(struct tipc_link *l, u16 to);
->
->     -static u16 tipc_build_gap_ack_blks(struct tipc_link *l, void *data, =
-u16 gap);
->
->     -static int tipc_link_advance_transmq(struct tipc_link *l, u16 acked,=
- u16 gap,
->
->     +static u8 __tipc_build_gap_ack_blks(struct tipc_gap_ack_blks *ga,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0 struct tipc_link *l, u8 start_index);
->
->     +static u16 tipc_build_gap_ack_blks(struct tipc_link *l, struct tipc_=
-msg *hdr);
->
->     +static int tipc_link_advance_transmq(struct tipc_link *l, struct tip=
-c_link *r,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0=A0 u16 acked, u16 gap,
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0=A0=A0struct tipc_gap_ack_blks *ga,
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0=A0 struct sk_buff_head *xmitq);
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0=A0 struct sk_buff_head *xmitq,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0=A0 bool *retransmitted, int *rc);
->
->       static void tipc_link_update_cwin(struct tipc_link *l, int released,
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0bool retransmitted);
->
->       /*
->
->     @@ -370,7 +375,7 @@ void tipc_link_remove_bc_peer(struct tipc_link *s=
-nd_l,
->
->        snd_l->ackers--;
->
->        rcv_l->bc_peer_is_up =3D true;
->
->        rcv_l->state =3D LINK_ESTABLISHED;
->
->     - tipc_link_bc_ack_rcv(rcv_l, ack, xmitq);
->
->     + tipc_link_bc_ack_rcv(rcv_l, ack, 0, NULL, xmitq);
->
->        trace_tipc_link_reset(rcv_l, TIPC_DUMP_ALL, "bclink removed!");
->
->        tipc_link_reset(rcv_l);
->
->        rcv_l->state =3D LINK_RESET;
->
->     @@ -784,8 +789,6 @@ bool tipc_link_too_silent(struct tipc_link *l)
->
->        return (l->silent_intv_cnt + 2 > l->abort_limit);
->
->       }
->
->       =
-
->
->     -static int tipc_link_bc_retrans(struct tipc_link *l, struct tipc_lin=
-k *r,
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 u16 from, u16 to, struct sk_buff_head *xmitq);
->
->       /* tipc_link_timeout - perform periodic task as instructed from nod=
-e timeout
->
->      =A0 */
->
->       int tipc_link_timeout(struct tipc_link *l, struct sk_buff_head *xmi=
-tq)
->
->     @@ -948,6 +951,9 @@ void tipc_link_reset(struct tipc_link *l)
->
->        l->snd_nxt_state =3D 1;
->
->        l->rcv_nxt_state =3D 1;
->
->        l->acked =3D 0;
->
->     + l->last_gap =3D 0;
->
->     + kfree(l->last_ga);
->
->     + l->last_ga =3D NULL;
->
->        l->silent_intv_cnt =3D 0;
->
->        l->rst_cnt =3D 0;
->
->        l->bc_peer_is_up =3D false;
->
->     @@ -1183,68 +1189,14 @@ static bool link_retransmit_failure(struct ti=
-pc_link *l, struct tipc_link *r,
->
->       =
-
->
->      =A0 if (link_is_bc_sndlink(l)) {
->
->       =A0=A0=A0=A0=A0=A0=A0 r->state =3D LINK_RESET;
->
->     -=A0=A0=A0=A0=A0=A0=A0 *rc =3D TIPC_LINK_DOWN_EVT;
->
->     +=A0=A0=A0=A0=A0=A0=A0 *rc |=3D TIPC_LINK_DOWN_EVT;
->
->        } else {
->
->     -=A0=A0=A0=A0=A0=A0=A0 *rc =3D tipc_link_fsm_evt(l, LINK_FAILURE_EVT);
->
->     +=A0=A0=A0=A0=A0=A0=A0 *rc |=3D tipc_link_fsm_evt(l, LINK_FAILURE_EVT=
-);
->
->        }
->
->       =
-
->
->      =A0 return true;
->
->       }
->
->       =
-
->
->     -/* tipc_link_bc_retrans() - retransmit zero or more packets
->
->     - * @l: the link to transmit on
->
->     - * @r: the receiving link ordering the retransmit. Same as l if unic=
-ast
->
->     - * @from: retransmit from (inclusive) this sequence number
->
->     - * @to: retransmit to (inclusive) this sequence number
->
->     - * xmitq: queue for accumulating the retransmitted packets
->
->     - */
->
->     -static int tipc_link_bc_retrans(struct tipc_link *l, struct tipc_lin=
-k *r,
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 u16 from, u16 to, struct sk_buff_head *xmitq)
->
->     -{
->
->     - struct sk_buff *_skb, *skb =3D skb_peek(&l->transmq);
->
->     - u16 bc_ack =3D l->bc_rcvlink->rcv_nxt - 1;
->
->     - u16 ack =3D l->rcv_nxt - 1;
->
->     - int retransmitted =3D 0;
->
->     - struct tipc_msg *hdr;
->
->     - int rc =3D 0;
->
->     -
->
->     - if (!skb)
->
->     -=A0=A0=A0=A0=A0=A0=A0 return 0;
->
->     - if (less(to, from))
->
->     -=A0=A0=A0=A0=A0=A0=A0 return 0;
->
->     -
->
->     - trace_tipc_link_retrans(r, from, to, &l->transmq);
->
->     -
->
->     - if (link_retransmit_failure(l, r, &rc))
->
->     -=A0=A0=A0=A0=A0=A0=A0 return rc;
->
->     -
->
->     - skb_queue_walk(&l->transmq, skb) {
->
->     -=A0=A0=A0=A0=A0=A0=A0 hdr =3D buf_msg(skb);
->
->     -=A0=A0=A0=A0=A0=A0=A0 if (less(msg_seqno(hdr), from))
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 continue;
->
->     -=A0=A0=A0=A0=A0=A0=A0 if (more(msg_seqno(hdr), to))
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 break;
->
->     -=A0=A0=A0=A0=A0=A0=A0 if (time_before(jiffies, TIPC_SKB_CB(skb)->nxt=
-_retr))
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 continue;
->
->     -=A0=A0=A0=A0=A0=A0=A0 TIPC_SKB_CB(skb)->nxt_retr =3D TIPC_BC_RETR_LI=
-M;
->
->     -=A0=A0=A0=A0=A0=A0=A0 _skb =3D pskb_copy(skb, GFP_ATOMIC);
->
->     -=A0=A0=A0=A0=A0=A0=A0 if (!_skb)
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return 0;
->
->     -=A0=A0=A0=A0=A0=A0=A0 hdr =3D buf_msg(_skb);
->
->     -=A0=A0=A0=A0=A0=A0=A0 msg_set_ack(hdr, ack);
->
->     -=A0=A0=A0=A0=A0=A0=A0 msg_set_bcast_ack(hdr, bc_ack);
->
->     -=A0=A0=A0=A0=A0=A0=A0 _skb->priority =3D TC_PRIO_CONTROL;
->
->     -=A0=A0=A0=A0=A0=A0=A0 __skb_queue_tail(xmitq, _skb);
->
->     -=A0=A0=A0=A0=A0=A0=A0 l->stats.retransmitted++;
->
->     -=A0=A0=A0=A0=A0=A0=A0 retransmitted++;
->
->     -=A0=A0=A0=A0=A0=A0=A0 /* Increase actual retrans counter & mark firs=
-t time */
->
->     -=A0=A0=A0=A0=A0=A0=A0 if (!TIPC_SKB_CB(skb)->retr_cnt++)
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 TIPC_SKB_CB(skb)->retr=
-_stamp =3D jiffies;
->
->     - }
->
->     - tipc_link_update_cwin(l, 0, retransmitted);
->
->     - return 0;
->
->     -}
->
->     -
->
->       /* tipc_data_input - deliver data and name distr msgs to upper layer
->
->      =A0 *
->
->      =A0 * Consumes buffer if message is of right type
->
->     @@ -1402,46 +1354,71 @@ static int tipc_link_tnl_rcv(struct tipc_link=
- *l, struct sk_buff *skb,
->
->        return rc;
->
->       }
->
->       =
-
->
->     -static int tipc_link_release_pkts(struct tipc_link *l, u16 acked)
->
->     -{
->
->     - int released =3D 0;
->
->     - struct sk_buff *skb, *tmp;
->
->     -
->
->     - skb_queue_walk_safe(&l->transmq, skb, tmp) {
->
->     -=A0=A0=A0=A0=A0=A0=A0 if (more(buf_seqno(skb), acked))
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 break;
->
->     -=A0=A0=A0=A0=A0=A0=A0 __skb_unlink(skb, &l->transmq);
->
->     -=A0=A0=A0=A0=A0=A0=A0 kfree_skb(skb);
->
->     -=A0=A0=A0=A0=A0=A0=A0 released++;
->
->     +/**
->
->     + * tipc_get_gap_ack_blks - get Gap ACK blocks from PROTOCOL/STATE_MSG
->
->     + * @ga: returned pointer to the Gap ACK blocks if any
->
->     + * @l: the tipc link
->
->     + * @hdr: the PROTOCOL/STATE_MSG header
->
->     + * @uc: desired Gap ACK blocks type, i.e. unicast (=3D 1) or broadca=
-st (=3D 0)
->
->     + *
->
->     + * Return: the total Gap ACK blocks size
->
->     + */
->
->     +u16 tipc_get_gap_ack_blks(struct tipc_gap_ack_blks **ga, struct tipc=
-_link *l,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0 struct tipc_msg *h=
-dr, bool uc)
->
->     +{
->
->     + struct tipc_gap_ack_blks *p;
->
->     + u16 sz =3D 0;
->
->     +
->
->     + /* Does peer support the Gap ACK blocks feature? */
->
->     + if (l->peer_caps & TIPC_GAP_ACK_BLOCK) {
->
->     +=A0=A0=A0=A0=A0=A0=A0 p =3D (struct tipc_gap_ack_blks *)msg_data(hdr=
-);
->
->     +=A0=A0=A0=A0=A0=A0=A0 sz =3D ntohs(p->len);
->
->     +=A0=A0=A0=A0=A0=A0=A0 /* Sanity check */
->
->     +=A0=A0=A0=A0=A0=A0=A0 if (sz =3D=3D tipc_gap_ack_blks_sz(p->ugack_cn=
-t + p->bgack_cnt)) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* Good, check if the =
-desired type exists */
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if ((uc && p->ugack_cn=
-t) || (!uc && p->bgack_cnt))
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 goto ok;
->
->     +=A0=A0=A0=A0=A0=A0=A0 /* Backward compatible: peer might not support=
- bc, but uc? */
->
->     +=A0=A0=A0=A0=A0=A0=A0 } else if (uc && sz =3D=3D tipc_gap_ack_blks_s=
-z(p->ugack_cnt)) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (p->ugack_cnt) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 p->bgack_cnt =3D 0;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 goto ok;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
->
->     +=A0=A0=A0=A0=A0=A0=A0 }
->
->        }
->
->     - return released;
->
->     + /* Other cases: ignore! */
->
->     + p =3D NULL;
->
->     +
->
->     +ok:
->
->     + *ga =3D p;
->
->     + return sz;
->
->       }
->
->       =
-
->
->     -/* tipc_build_gap_ack_blks - build Gap ACK blocks
->
->     - * @l: tipc link that data have come with gaps in sequence if any
->
->     - * @data: data buffer to store the Gap ACK blocks after built
->
->     - *
->
->     - * returns the actual allocated memory size
->
->     - */
->
->     -static u16 tipc_build_gap_ack_blks(struct tipc_link *l, void *data, =
-u16 gap)
->
->     +static u8 __tipc_build_gap_ack_blks(struct tipc_gap_ack_blks *ga,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0 struct tipc_link *l, u8 start_index)
->
->       {
->
->     + struct tipc_gap_ack *gacks =3D &ga->gacks[start_index];
->
->        struct sk_buff *skb =3D skb_peek(&l->deferdq);
->
->     - struct tipc_gap_ack_blks *ga =3D data;
->
->     - u16 len, expect, seqno =3D 0;
->
->     + u16 expect, seqno =3D 0;
->
->        u8 n =3D 0;
->
->       =
-
->
->     - if (!skb || !gap)
->
->     -=A0=A0=A0=A0=A0=A0=A0 goto exit;
->
->     + if (!skb)
->
->     +=A0=A0=A0=A0=A0=A0=A0 return 0;
->
->       =
-
->
->      =A0 expect =3D buf_seqno(skb);
->
->        skb_queue_walk(&l->deferdq, skb) {
->
->       =A0=A0=A0=A0=A0=A0=A0 seqno =3D buf_seqno(skb);
->
->       =A0=A0=A0=A0=A0=A0=A0 if (unlikely(more(seqno, expect))) {
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ga->gacks[n].ack =3D h=
-tons(expect - 1);
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ga->gacks[n].gap =3D h=
-tons(seqno - expect);
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (++n >=3D MAX_GAP_A=
-CK_BLKS) {
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 pr_info_ratelimited("Too few Gap ACK blocks!\n");
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 goto exit;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 gacks[n].ack =3D htons=
-(expect - 1);
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 gacks[n].gap =3D htons=
-(seqno - expect);
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (++n >=3D MAX_GAP_A=
-CK_BLKS / 2) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 char buf[TIPC_MAX_LINK_NAME];
->
->     +
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 pr_info_ratelimited("Gacks on %s: %d, ql: %d!\n",
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0=A0=A0 tipc_link_name_e=
-xt(l, buf),
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0=A0=A0 n,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0=A0=A0 skb_queue_len(&l=
-->deferdq));
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 return n;
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
->
->       =A0=A0=A0=A0=A0=A0=A0 } else if (unlikely(less(seqno, expect))) {
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 pr_warn("Unexpected s=
-kb in deferdq!\n");
->
->     @@ -1451,14 +1428,57 @@ static u16 tipc_build_gap_ack_blks(struct tip=
-c_link *l, void *data, u16 gap)
->
->        }
->
->       =
-
->
->      =A0 /* last block */
->
->     - ga->gacks[n].ack =3D htons(seqno);
->
->     - ga->gacks[n].gap =3D 0;
->
->     + gacks[n].ack =3D htons(seqno);
->
->     + gacks[n].gap =3D 0;
->
->        n++;
->
->     + return n;
->
->     +}
->
->       =
-
->
->     -exit:
->
->     - len =3D tipc_gap_ack_blks_sz(n);
->
->     +/* tipc_build_gap_ack_blks - build Gap ACK blocks
->
->     + * @l: tipc unicast link
->
->     + * @hdr: the tipc message buffer to store the Gap ACK blocks after b=
-uilt
->
->     + *
->
->     + * The function builds Gap ACK blocks for both the unicast & broadca=
-st receiver
->
->     + * links of a certain peer, the buffer after built has the network d=
-ata format
->
->     + * as follows:
->
->     + *=A0 31=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0 16 15=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A00
->
->     + * +-------------+-------------+-------------+-------------+
->
->     + * |=A0 bgack_cnt=A0 |=A0 ugack_cnt=A0 |=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0 len=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |
->
->     + * +-------------+-------------+-------------+-------------+=A0 -
->
->     + * |=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 gap=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0 |=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ack=A0=A0=A0 =A0=A0=A0=A0=A0=A0=
-=A0=A0|=A0=A0 |
->
->     + * +-------------+-------------+-------------+-------------+=A0=A0=
-=A0 > bc gacks
->
->     + * :=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0 :=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0 :=A0=A0 |
->
->     + * +-------------+-------------+-------------+-------------+=A0 -
->
->     + * |=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 gap=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0 |=A0 =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0ack=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 |=A0=A0 |
->
->     + * +-------------+-------------+-------------+-------------+=A0=A0=
-=A0 > uc gacks
->
->     + * :=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0 :=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0 :=A0=A0 |
->
->     + * +-------------+-------------+-------------+-------------+=A0 -
->
->     + * (See struct tipc_gap_ack_blks)
->
->     + *
->
->     + * returns the actual allocated memory size
->
->     + */
->
->     +static u16 tipc_build_gap_ack_blks(struct tipc_link *l, struct tipc_=
-msg *hdr)
->
->     +{
->
->     + struct tipc_link *bcl =3D l->bc_rcvlink;
->
->     + struct tipc_gap_ack_blks *ga;
->
->     + u16 len;
->
->     +
->
->     + ga =3D (struct tipc_gap_ack_blks *)msg_data(hdr);
->
->     +
->
->     + /* Start with broadcast link first */
->
->     + tipc_bcast_lock(bcl->net);
->
->     + msg_set_bcast_ack(hdr, bcl->rcv_nxt - 1);
->
->     + msg_set_bc_gap(hdr, link_bc_rcv_gap(bcl));
->
->     + ga->bgack_cnt =3D __tipc_build_gap_ack_blks(ga, bcl, 0);
->
->     + tipc_bcast_unlock(bcl->net);
->
->     +
->
->     + /* Now for unicast link, but an explicit NACK only (???) */
->
->     + ga->ugack_cnt =3D (msg_seq_gap(hdr)) ?
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 __tipc_build_gap_ack_b=
-lks(ga, l, ga->bgack_cnt) : 0;
->
->     +
->
->     + /* Total len */
->
->     + len =3D tipc_gap_ack_blks_sz(ga->bgack_cnt + ga->ugack_cnt);
->
->        ga->len =3D htons(len);
->
->     - ga->gack_cnt =3D n;
->
->        return len;
->
->       }
->
->       =
-
->
->     @@ -1466,47 +1486,111 @@ static u16 tipc_build_gap_ack_blks(struct ti=
-pc_link *l, void *data, u16 gap)
->
->      =A0 *=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
- =A0=A0=A0=A0=A0=A0 acked packets, also doing retransmissions if
->
->      =A0 *=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
- =A0=A0=A0=A0=A0=A0 gaps found
->
->      =A0 * @l: tipc link with transmq queue to be advanced
->
->     + * @r: tipc link "receiver" i.e. in case of broadcast (=3D "l" if un=
-icast)
->
->      =A0 * @acked: seqno of last packet acked by peer without any gaps be=
-fore
->
->      =A0 * @gap: # of gap packets
->
->      =A0 * @ga: buffer pointer to Gap ACK blocks from peer
->
->      =A0 * @xmitq: queue for accumulating the retransmitted packets if any
->
->     + * @retransmitted: returned boolean value if a retransmission is rea=
-lly issued
->
->     + * @rc: returned code e.g. TIPC_LINK_DOWN_EVT if a repeated retransm=
-it failures
->
->     + *=A0=A0=A0=A0=A0 happens (- unlikely case)
->
->      =A0 *
->
->     - * In case of a repeated retransmit failures, the call will return s=
-hortly
->
->     - * with a returned code (e.g. TIPC_LINK_DOWN_EVT)
->
->     + * Return: the number of packets released from the link transmq
->
->      =A0 */
->
->     -static int tipc_link_advance_transmq(struct tipc_link *l, u16 acked,=
- u16 gap,
->
->     +static int tipc_link_advance_transmq(struct tipc_link *l, struct tip=
-c_link *r,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0=A0 u16 acked, u16 gap,
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0=A0=A0struct tipc_gap_ack_blks *ga,
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0=A0 struct sk_buff_head *xmitq)
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0=A0 struct sk_buff_head *xmitq,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0=A0 bool *retransmitted, int *rc)
->
->       {
->
->     + struct tipc_gap_ack_blks *last_ga =3D r->last_ga, *this_ga =3D NULL;
->
->     + struct tipc_gap_ack *gacks =3D NULL;
->
->        struct sk_buff *skb, *_skb, *tmp;
->
->        struct tipc_msg *hdr;
->
->     + u32 qlen =3D skb_queue_len(&l->transmq);
->
->     + u16 nacked =3D acked, ngap =3D gap, gack_cnt =3D 0;
->
->        u16 bc_ack =3D l->bc_rcvlink->rcv_nxt - 1;
->
->     - bool retransmitted =3D false;
->
->        u16 ack =3D l->rcv_nxt - 1;
->
->     - bool passed =3D false;
->
->     - u16 released =3D 0;
->
->        u16 seqno, n =3D 0;
->
->     - int rc =3D 0;
->
->     + u16 end =3D r->acked, start =3D end, offset =3D r->last_gap;
->
->     + u16 si =3D (last_ga) ? last_ga->start_index : 0;
->
->     + bool is_uc =3D !link_is_bc_sndlink(l);
->
->     + bool bc_has_acked =3D false;
->
->     +
->
->     + trace_tipc_link_retrans(r, acked + 1, acked + gap, &l->transmq);
->
->     +
->
->     + /* Determine Gap ACK blocks if any for the particular link */
->
->     + if (ga && is_uc) {
->
->     +=A0=A0=A0=A0=A0=A0=A0 /* Get the Gap ACKs, uc part */
->
->     +=A0=A0=A0=A0=A0=A0=A0 gack_cnt =3D ga->ugack_cnt;
->
->     +=A0=A0=A0=A0=A0=A0=A0 gacks =3D &ga->gacks[ga->bgack_cnt];
->
->     + } else if (ga) {
->
->     +=A0=A0=A0=A0=A0=A0=A0 /* Copy the Gap ACKs, bc part, for later renew=
-al if needed */
->
->     +=A0=A0=A0=A0=A0=A0=A0 this_ga =3D kmemdup(ga, tipc_gap_ack_blks_sz(g=
-a->bgack_cnt),
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0 GFP_ATOMIC);
->
->     +=A0=A0=A0=A0=A0=A0=A0 if (likely(this_ga)) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 this_ga->start_index =
-=3D 0;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* Start with the bc G=
-ap ACKs */
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 gack_cnt =3D this_ga->=
-bgack_cnt;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 gacks =3D &this_ga->ga=
-cks[0];
->
->     +=A0=A0=A0=A0=A0=A0=A0 } else {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* Hmm, we can get in =
-trouble..., simply ignore it */
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 pr_warn_ratelimited("I=
-gnoring bc Gap ACKs, no memory\n");
->
->     +=A0=A0=A0=A0=A0=A0=A0 }
->
->     + }
->
->       =
-
->
->     + /* Advance the link transmq */
->
->        skb_queue_walk_safe(&l->transmq, skb, tmp) {
->
->       =A0=A0=A0=A0=A0=A0=A0 seqno =3D buf_seqno(skb);
->
->       =
-
->
->      =A0next_gap_ack:
->
->     -=A0=A0=A0=A0=A0=A0=A0 if (less_eq(seqno, acked)) {
->
->     +=A0=A0=A0=A0=A0=A0=A0 if (less_eq(seqno, nacked)) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (is_uc)
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 goto release;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* Skip packets peer h=
-as already acked */
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (!more(seqno, r->ac=
-ked))
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 continue;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* Get the next of las=
-t Gap ACK blocks */
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 while (more(seqno, end=
-)) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 if (!last_ga || si >=3D last_ga->bgack_cnt)
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0 break;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 start =3D end + offset + 1;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 end =3D ntohs(last_ga->gacks[si].ack);
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 offset =3D ntohs(last_ga->gacks[si].gap);
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 si++;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 WARN_ONCE(more(start, end) ||
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0 =A0 (!offset &&
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0 =A0=A0 si < last_ga->bgack_cnt) ||
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0 =A0 si > MAX_GAP_ACK_BLKS,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0 =A0 "Corrupted Gap ACK: %d %d %d %d %d\n",
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0 =A0 start, end, offset, si,
->
->     +=A0=A0=A0=A0=A0=A0=A0 =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0 =A0 last_ga->bgack_cnt);
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* Check against the l=
-ast Gap ACK block */
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (in_range(seqno, st=
-art, end))
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 continue;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* Update/release the =
-packet peer is acking */
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 bc_has_acked =3D true;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (--TIPC_SKB_CB(skb)=
-->ackers)
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 continue;
->
->     +release:
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* release skb */
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 __skb_unlink(skb, &l-=
->transmq);
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 kfree_skb(skb);
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 released++;
->
->     -=A0=A0=A0=A0=A0=A0=A0 } else if (less_eq(seqno, acked + gap)) {
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* First, check if rep=
-eated retrans failures occurs? */
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (!passed && link_re=
-transmit_failure(l, l, &rc))
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 return rc;
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 passed =3D true;
->
->     -
->
->     +=A0=A0=A0=A0=A0=A0=A0 } else if (less_eq(seqno, nacked + ngap)) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* First gap: check if=
- repeated retrans failures? */
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (unlikely(seqno =3D=
-=3D acked + 1 &&
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0=A0=A0=A0 link_retransmit_failure(l, r, rc))) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 /* Ignore this bc Gap ACKs if any */
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 kfree(this_ga);
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 this_ga =3D NULL;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 break;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* retransmit skb if =
-unrestricted*/
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (time_before(jiffi=
-es, TIPC_SKB_CB(skb)->nxt_retr))
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 continue;
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 TIPC_SKB_CB(skb)->nxt_=
-retr =3D TIPC_UC_RETR_TIME;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 TIPC_SKB_CB(skb)->nxt_=
-retr =3D (is_uc) ?
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0 TIPC_UC_RETR_TIME : TIPC_BC_RETR_LIM;
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 _skb =3D pskb_copy(sk=
-b, GFP_ATOMIC);
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (!_skb)
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 continue;
->
->     @@ -1516,25 +1600,50 @@ static int tipc_link_advance_transmq(struct t=
-ipc_link *l, u16 acked, u16 gap,
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 _skb->priority =3D TC=
-_PRIO_CONTROL;
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 __skb_queue_tail(xmit=
-q, _skb);
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 l->stats.retransmitte=
-d++;
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 retransmitted =3D true;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 *retransmitted =3D tru=
-e;
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* Increase actual re=
-trans counter & mark first time */
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (!TIPC_SKB_CB(skb)=
-->retr_cnt++)
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 TIPC_SKB_CB(skb)->retr_stamp =3D jiffies;
->
->       =A0=A0=A0=A0=A0=A0=A0 } else {
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* retry with Gap ACK=
- blocks if any */
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (!ga || n >=3D ga->=
-gack_cnt)
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (n >=3D gack_cnt)
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 break;
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 acked =3D ntohs(ga->ga=
-cks[n].ack);
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 gap =3D ntohs(ga->gack=
-s[n].gap);
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 nacked =3D ntohs(gacks=
-[n].ack);
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ngap =3D ntohs(gacks[n=
-].gap);
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 n++;
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 goto next_gap_ack;
->
->       =A0=A0=A0=A0=A0=A0=A0 }
->
->        }
->
->     - if (released || retransmitted)
->
->     -=A0=A0=A0=A0=A0=A0=A0 tipc_link_update_cwin(l, released, retransmitt=
-ed);
->
->     - if (released)
->
->     -=A0=A0=A0=A0=A0=A0=A0 tipc_link_advance_backlog(l, xmitq);
->
->     - return 0;
->
->     +
->
->     + /* Renew last Gap ACK blocks for bc if needed */
->
->     + if (bc_has_acked) {
->
->     +=A0=A0=A0=A0=A0=A0=A0 if (this_ga) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 kfree(last_ga);
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 r->last_ga =3D this_ga;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 r->last_gap =3D gap;
->
->     +=A0=A0=A0=A0=A0=A0=A0 } else if (last_ga) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (less(acked, start)=
-) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 si--;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 offset =3D start - acked - 1;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 } else if (less(acked,=
- end)) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 acked =3D end;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (si < last_ga->bgac=
-k_cnt) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 last_ga->start_index =3D si;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 r->last_gap =3D offset;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 } else {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 kfree(last_ga);
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 r->last_ga =3D NULL;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 r->last_gap =3D 0;
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
->
->     +=A0=A0=A0=A0=A0=A0=A0 } else {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 r->last_gap =3D 0;
->
->     +=A0=A0=A0=A0=A0=A0=A0 }
->
->     +=A0=A0=A0=A0=A0=A0=A0 r->acked =3D acked;
->
->     + } else {
->
->     +=A0=A0=A0=A0=A0=A0=A0 kfree(this_ga);
->
->     + }
->
->     + return skb_queue_len(&l->transmq) - qlen;
->
->       }
->
->       =
-
->
->      =A0/* tipc_link_build_state_msg: prepare link state message for tran=
-smission
->
->     @@ -1651,7 +1760,8 @@ int tipc_link_rcv(struct tipc_link *l, struct s=
-k_buff *skb,
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 kfree_skb(skb);
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 break;
->
->       =A0=A0=A0=A0=A0=A0=A0 }
->
->     -=A0=A0=A0=A0=A0=A0=A0 released +=3D tipc_link_release_pkts(l, msg_ac=
-k(hdr));
->
->     +=A0=A0=A0=A0=A0=A0=A0 released +=3D tipc_link_advance_transmq(l, l, =
-msg_ack(hdr), 0,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0=A0=A0=A0=A0 NULL, NULL=
-, NULL, NULL);
->
->       =
-
->
->      =A0=A0=A0=A0=A0=A0=A0=A0 /* Defer delivery if sequence gap */
->
->       =A0=A0=A0=A0=A0=A0=A0 if (unlikely(seqno !=3D rcv_nxt)) {
->
->     @@ -1739,7 +1849,7 @@ static void tipc_link_build_proto_msg(struct ti=
-pc_link *l, int mtyp, bool probe,
->
->       =A0=A0=A0=A0=A0=A0=A0 msg_set_probe(hdr, probe);
->
->       =A0=A0=A0=A0=A0=A0=A0 msg_set_is_keepalive(hdr, probe || probe_repl=
-y);
->
->       =A0=A0=A0=A0=A0=A0=A0 if (l->peer_caps & TIPC_GAP_ACK_BLOCK)
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 glen =3D tipc_build_ga=
-p_ack_blks(l, data, rcvgap);
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 glen =3D tipc_build_ga=
-p_ack_blks(l, hdr);
->
->       =A0=A0=A0=A0=A0=A0=A0 tipc_mon_prep(l->net, data + glen, &dlen, mst=
-ate, l->bearer_id);
->
->       =A0=A0=A0=A0=A0=A0=A0 msg_set_size(hdr, INT_H_SIZE + glen + dlen);
->
->       =A0=A0=A0=A0=A0=A0=A0 skb_trim(skb, INT_H_SIZE + glen + dlen);
->
->     @@ -2027,20 +2137,19 @@ static int tipc_link_proto_rcv(struct tipc_li=
-nk *l, struct sk_buff *skb,
->
->       {
->
->        struct tipc_msg *hdr =3D buf_msg(skb);
->
->        struct tipc_gap_ack_blks *ga =3D NULL;
->
->     - u16 rcvgap =3D 0;
->
->     - u16 ack =3D msg_ack(hdr);
->
->     - u16 gap =3D msg_seq_gap(hdr);
->
->     + bool reply =3D msg_probe(hdr), retransmitted =3D false;
->
->     + u16 dlen =3D msg_data_sz(hdr), glen =3D 0;
->
->        u16 peers_snd_nxt =3D=A0 msg_next_sent(hdr);
->
->        u16 peers_tol =3D msg_link_tolerance(hdr);
->
->        u16 peers_prio =3D msg_linkprio(hdr);
->
->     + u16 gap =3D msg_seq_gap(hdr);
->
->     + u16 ack =3D msg_ack(hdr);
->
->        u16 rcv_nxt =3D l->rcv_nxt;
->
->     - u16 dlen =3D msg_data_sz(hdr);
->
->     + u16 rcvgap =3D 0;
->
->        int mtyp =3D msg_type(hdr);
->
->     - bool reply =3D msg_probe(hdr);
->
->     - u16 glen =3D 0;
->
->     - void *data;
->
->     + int rc =3D 0, released;
->
->        char *if_name;
->
->     - int rc =3D 0;
->
->     + void *data;
->
->       =
-
->
->      =A0 trace_tipc_proto_rcv(skb, false, l->name);
->
->        if (tipc_link_is_blocked(l) || !xmitq)
->
->     @@ -2137,13 +2246,7 @@ static int tipc_link_proto_rcv(struct tipc_lin=
-k *l, struct sk_buff *skb,
->
->       =A0=A0=A0=A0=A0=A0=A0 }
->
->       =
-
->
->      =A0=A0=A0=A0=A0=A0=A0=A0 /* Receive Gap ACK blocks from peer if any =
-*/
->
->     -=A0=A0=A0=A0=A0=A0=A0 if (l->peer_caps & TIPC_GAP_ACK_BLOCK) {
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ga =3D (struct tipc_ga=
-p_ack_blks *)data;
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 glen =3D ntohs(ga->len=
-);
->
->     - =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 /* sanity check: if fail=
-ed, ignore Gap ACK blocks */
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (glen !=3D tipc_gap=
-_ack_blks_sz(ga->gack_cnt))
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 ga =3D NULL;
->
->     -=A0=A0=A0=A0=A0=A0=A0 }
->
->     +=A0=A0=A0=A0=A0=A0=A0 glen =3D tipc_get_gap_ack_blks(&ga, l, hdr, tr=
-ue);
->
->       =
-
->
->      =A0=A0=A0=A0=A0=A0=A0=A0 tipc_mon_rcv(l->net, data + glen, dlen - gl=
-en, l->addr,
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0=A0=A0=A0=A0&l->mo=
-n_state, l->bearer_id);
->
->     @@ -2158,9 +2261,14 @@ static int tipc_link_proto_rcv(struct tipc_lin=
-k *l, struct sk_buff *skb,
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 tipc_link_build_proto=
-_msg(l, STATE_MSG, 0, reply,
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0=A0rcvgap, 0, 0, xmitq);
->
->       =
-
->
->     -=A0=A0=A0=A0=A0=A0=A0 rc |=3D tipc_link_advance_transmq(l, ack, gap,=
- ga, xmitq);
->
->     +=A0=A0=A0=A0=A0=A0=A0 released =3D tipc_link_advance_transmq(l, l, a=
-ck, gap, ga, xmitq,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0=A0=A0=A0 &retransmitte=
-d, &rc);
->
->       =A0=A0=A0=A0=A0=A0=A0 if (gap)
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 l->stats.recv_nacks++;
->
->     +=A0=A0=A0=A0=A0=A0=A0 if (released || retransmitted)
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 tipc_link_update_cwin(=
-l, released, retransmitted);
->
->     +=A0=A0=A0=A0=A0=A0=A0 if (released)
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 tipc_link_advance_back=
-log(l, xmitq);
->
->       =A0=A0=A0=A0=A0=A0=A0 if (unlikely(!skb_queue_empty(&l->wakeupq)))
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 link_prepare_wakeup(l=
-);
->
->        }
->
->     @@ -2246,10 +2354,7 @@ void tipc_link_bc_init_rcv(struct tipc_link *l=
-, struct tipc_msg *hdr)
->
->       int tipc_link_bc_sync_rcv(struct tipc_link *l, struct tipc_msg *hdr,
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0=A0struct sk_buff_=
-head *xmitq)
->
->       {
->
->     - struct tipc_link *snd_l =3D l->bc_sndlink;
->
->        u16 peers_snd_nxt =3D msg_bc_snd_nxt(hdr);
->
->     - u16 from =3D msg_bcast_ack(hdr) + 1;
->
->     - u16 to =3D from + msg_bc_gap(hdr) - 1;
->
->        int rc =3D 0;
->
->       =
-
->
->      =A0 if (!link_is_up(l))
->
->     @@ -2271,8 +2376,6 @@ int tipc_link_bc_sync_rcv(struct tipc_link *l, =
-struct tipc_msg *hdr,
->
->        if (more(peers_snd_nxt, l->rcv_nxt + l->window))
->
->       =A0=A0=A0=A0=A0=A0=A0 return rc;
->
->       =
-
->
->     - rc =3D tipc_link_bc_retrans(snd_l, l, from, to, xmitq);
->
->     -
->
->        l->snd_nxt =3D peers_snd_nxt;
->
->        if (link_bc_rcv_gap(l))
->
->       =A0=A0=A0=A0=A0=A0=A0 rc |=3D TIPC_LINK_SND_STATE;
->
->     @@ -2307,38 +2410,28 @@ int tipc_link_bc_sync_rcv(struct tipc_link *l=
-, struct tipc_msg *hdr,
->
->        return 0;
->
->       }
->
->       =
-
->
->     -void tipc_link_bc_ack_rcv(struct tipc_link *l, u16 acked,
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0 struct sk_buff_hea=
-d *xmitq)
->
->     +int tipc_link_bc_ack_rcv(struct tipc_link *r, u16 acked, u16 gap,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0  struct tipc_gap_ack_b=
-lks *ga,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0  struct sk_buff_head *=
-xmitq)
->
->       {
->
->     - struct sk_buff *skb, *tmp;
->
->     - struct tipc_link *snd_l =3D l->bc_sndlink;
->
->     + struct tipc_link *l =3D r->bc_sndlink;
->
->     + bool unused =3D false;
->
->     + int rc =3D 0;
->
->       =
-
->
->     - if (!link_is_up(l) || !l->bc_peer_is_up)
->
->     -=A0=A0=A0=A0=A0=A0=A0 return;
->
->     + if (!link_is_up(r) || !r->bc_peer_is_up)
->
->     +=A0=A0=A0=A0=A0=A0=A0 return 0;
->
->       =
-
->
->     - if (!more(acked, l->acked))
->
->     -=A0=A0=A0=A0=A0=A0=A0 return;
->
->     + if (less(acked, r->acked) || (acked =3D=3D r->acked && !gap && !ga))
->
->     +=A0=A0=A0=A0=A0=A0=A0 return 0;
->
->       =
-
->
->     - trace_tipc_link_bc_ack(l, l->acked, acked, &snd_l->transmq);
->
->     - /* Skip over packets peer has already acked */
->
->     - skb_queue_walk(&snd_l->transmq, skb) {
->
->     -=A0=A0=A0=A0=A0=A0=A0 if (more(buf_seqno(skb), l->acked))
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 break;
->
->     - }
->
->     + trace_tipc_link_bc_ack(r, r->acked, acked, &l->transmq);
->
->     + tipc_link_advance_transmq(l, r, acked, gap, ga, xmitq, &unused, &rc=
-);
->
->       =
-
->
->     - /* Update/release the packets peer is acking now */
->
->     - skb_queue_walk_from_safe(&snd_l->transmq, skb, tmp) {
->
->     -=A0=A0=A0=A0=A0=A0=A0 if (more(buf_seqno(skb), acked))
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 break;
->
->     -=A0=A0=A0=A0=A0=A0=A0 if (!--TIPC_SKB_CB(skb)->ackers) {
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 __skb_unlink(skb, &snd=
-_l->transmq);
->
->     - =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 kfree_skb(skb);
->
->     -=A0=A0=A0=A0=A0=A0=A0 }
->
->     - }
->
->     - l->acked =3D acked;
->
->     - tipc_link_advance_backlog(snd_l, xmitq);
->
->     - if (unlikely(!skb_queue_empty(&snd_l->wakeupq)))
->
->     -=A0=A0=A0=A0=A0=A0=A0 link_prepare_wakeup(snd_l);
->
->     + tipc_link_advance_backlog(l, xmitq);
->
->     + if (unlikely(!skb_queue_empty(&l->wakeupq)))
->
->     +=A0=A0=A0=A0=A0=A0=A0 link_prepare_wakeup(l);
->
->     +
->
->     + return rc;
->
->       }
->
->       =
-
->
->      =A0/* tipc_link_bc_nack_rcv(): receive broadcast nack message
->
->     @@ -2366,8 +2459,7 @@ int tipc_link_bc_nack_rcv(struct tipc_link *l, =
-struct sk_buff *skb,
->
->       =A0=A0=A0=A0=A0=A0=A0 return 0;
->
->       =
-
->
->      =A0 if (dnode =3D=3D tipc_own_addr(l->net)) {
->
->     -=A0=A0=A0=A0=A0=A0=A0 tipc_link_bc_ack_rcv(l, acked, xmitq);
->
->     -=A0=A0=A0=A0=A0=A0=A0 rc =3D tipc_link_bc_retrans(l->bc_sndlink, l, =
-from, to, xmitq);
->
->     +=A0=A0=A0=A0=A0=A0=A0 rc =3D tipc_link_bc_ack_rcv(l, acked, to - ack=
-ed, NULL, xmitq);
->
->       =A0=A0=A0=A0=A0=A0=A0 l->stats.recv_nacks++;
->
->       =A0=A0=A0=A0=A0=A0=A0 return rc;
->
->        }
->
->     diff --git a/net/tipc/link.h b/net/tipc/link.h
->
->     index d3c1c3fc1659..0a0fa7350722 100644
->
->     --- a/net/tipc/link.h
->
->     +++ b/net/tipc/link.h
->
->     @@ -143,8 +143,11 @@ int tipc_link_bc_peers(struct tipc_link *l);
->
->       void tipc_link_set_mtu(struct tipc_link *l, int mtu);
->
->       int tipc_link_mtu(struct tipc_link *l);
->
->       int tipc_link_mss(struct tipc_link *l);
->
->     -void tipc_link_bc_ack_rcv(struct tipc_link *l, u16 acked,
->
->     -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0 struct sk_buff_hea=
-d *xmitq);
->
->     +u16 tipc_get_gap_ack_blks(struct tipc_gap_ack_blks **ga, struct tipc=
-_link *l,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =A0 struct tipc_msg *h=
-dr, bool uc);
->
->     +int tipc_link_bc_ack_rcv(struct tipc_link *l, u16 acked, u16 gap,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0  struct tipc_gap_ack_b=
-lks *ga,
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0  struct sk_buff_head *=
-xmitq);
->
->       void tipc_link_build_bc_sync_msg(struct tipc_link *l,
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0struct sk_buff_head *xmitq);
->
->       void tipc_link_bc_init_rcv(struct tipc_link *l, struct tipc_msg *hd=
-r);
->
->     diff --git a/net/tipc/msg.h b/net/tipc/msg.h
->
->     index 6d466ebdb64f..9a38f9c9d6eb 100644
->
->     --- a/net/tipc/msg.h
->
->     +++ b/net/tipc/msg.h
->
->     @@ -160,20 +160,26 @@ struct tipc_gap_ack {
->
->       =
-
->
->      =A0/* struct tipc_gap_ack_blks
->
->      =A0 * @len: actual length of the record
->
->     - * @gack_cnt: number of Gap ACK blocks in the record
->
->     + * @bgack_cnt: number of Gap ACK blocks for broadcast in the record
->
->     + * @ugack_cnt: number of Gap ACK blocks for unicast (following the b=
-roadcast
->
->     + *=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ones)
->
->     + * @start_index: starting index for "valid" broadcast Gap ACK blocks
->
->      =A0 * @gacks: array of Gap ACK blocks
->
->      =A0 */
->
->       struct tipc_gap_ack_blks {
->
->        __be16 len;
->
->     - u8 gack_cnt;
->
->     - u8 reserved;
->
->     + union {
->
->     +=A0=A0=A0=A0=A0=A0=A0 u8 ugack_cnt;
->
->     +=A0=A0=A0=A0=A0=A0=A0 u8 start_index;
->
->     + };
->
->     + u8 bgack_cnt;
->
->        struct tipc_gap_ack gacks[];
->
->       };
->
->       =
-
->
->      =A0#define tipc_gap_ack_blks_sz(n) (sizeof(struct tipc_gap_ack_blks)=
- + \
->
->       =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 =A0sizeof(struct tipc_gap_ack) * (n))
->
->       =
-
->
->     -#define MAX_GAP_ACK_BLKS=A0=A0=A0=A0=A0=A0 32
->
->     +#define MAX_GAP_ACK_BLKS=A0=A0=A0=A0=A0=A0 128
->
->       #define MAX_GAP_ACK_BLKS_SZ=A0=A0=A0 tipc_gap_ack_blks_sz(MAX_GAP_A=
-CK_BLKS)
->
->       =
-
->
->      =A0static inline struct tipc_msg *buf_msg(struct sk_buff *skb)
->
->     diff --git a/net/tipc/node.c b/net/tipc/node.c
->
->     index 0c88778c88b5..eb6b62de81a7 100644
->
->     --- a/net/tipc/node.c
->
->     +++ b/net/tipc/node.c
->
->     @@ -2069,10 +2069,16 @@ void tipc_rcv(struct net *net, struct sk_buff=
- *skb, struct tipc_bearer *b)
->
->        le =3D &n->links[bearer_id];
->
->       =
-
->
->      =A0 /* Ensure broadcast reception is in synch with peer's send state=
- */
->
->     - if (unlikely(usr =3D=3D LINK_PROTOCOL))
->
->     + if (unlikely(usr =3D=3D LINK_PROTOCOL)) {
->
->     +=A0=A0=A0=A0=A0=A0=A0 if (unlikely(skb_linearize(skb))) {
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 tipc_node_put(n);
->
->     +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 goto discard;
->
->     +=A0=A0=A0=A0=A0=A0=A0 }
->
->     +=A0=A0=A0=A0=A0=A0=A0 hdr =3D buf_msg(skb);
->
->       =A0=A0=A0=A0=A0=A0=A0 tipc_node_bc_sync_rcv(n, hdr, bearer_id, &xmi=
-tq);
->
->     - else if (unlikely(tipc_link_acked(n->bc_entry.link) !=3D bc_ack))
->
->     + } else if (unlikely(tipc_link_acked(n->bc_entry.link) !=3D bc_ack))=
- {
->
->       =A0=A0=A0=A0=A0=A0=A0 tipc_bcast_ack_rcv(net, n->bc_entry.link, hdr=
-);
->
->     + }
->
->       =
-
->
->      =A0 /* Receive packet directly if conditions permit */
->
->        tipc_node_read_lock(n);
->
-> -- =
-
->
-
-
-_______________________________________________
-tipc-discussion mailing list
-tipc-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+CgpPbiAzLzE2LzIwIDI6MTggUE0sIEpvbiBNYWxveSB3cm90ZToKPgo+Cj4gT24gMy8xNi8yMCA3
+OjIzIEFNLCBUdW9uZyBMaWVuIFRvbmcgd3JvdGU6Cj4+ClsuLi5dCj4+Cj4gVGhlIGltcHJvdmVt
+ZW50IHNob3duIGhlcmUgaXMgdHJ1bHkgaW1wcmVzc2l2ZS4gSG93ZXZlciwgeW91IGFyZSBvbmx5
+IAo+IHNob3dpbmcgdGlwYy1waXBlIHdpdGggc21hbGwgbWVzc2FnZXMuIEhvdyBkb2VzIHRoaXMg
+bG9vayB3aGVuIHlvdSAKPiBzZW5kIGZ1bGwtc2l6ZSA2NmsgbWVzc2FnZXM/IEhvdyBkb2VzIGl0
+IHNjYWxlIHdoZW4gdGhlIG51bWJlciBvZiAKPiBkZXN0aW5hdGlvbnMgZ3Jvd3MgdXAgdG8gdGVu
+cyBvciBldmVuIGh1bmRyZWRzPyBJIGFtIHBhcnRpY3VsYXJseSAKPiBjb25jZXJuZWQgdGhhdCB0
+aGUgdXNlIG9mIHVuaWNhc3QgcmV0cmFuc21pc3Npb24gbWF5IGJlY29tZSBhIAo+IHN1Yi1vcHRp
+bWl6YXRpb24gaWYgdGhlIG51bWJlciBvZiBkZXN0aW5hdGlvbnMgaXMgbGFyZ2UuCj4KPiAvLy9q
+b24KWW91IHNob3VsZCB0cnkgdGhlICJtdWx0aWNhc3RfYmxhc3QiIHByb2dyYW0gdW5kZXIgdGlw
+Yy11dGlscy90ZXN0LiBUaGF0IAp3aWxsIGdpdmUgeW91Cm51bWJlcnMgYm90aCBvbiB0aHJvdWdo
+cHV0IGFuZCBsb3NzIHJhdGVzIGFzIHlvdSBsZXQgdGhlIG51bWJlciBvZiBub2Rlcwpncm93LgoK
+Ly8vam9uCgo+Cj4+IEJSL1R1b25nCj4+Cj4+ICpGcm9tOiogSm9uIE1hbG95IDxqbWFsb3lAcmVk
+aGF0LmNvbT4KPj4gKlNlbnQ6KiBGcmlkYXksIE1hcmNoIDEzLCAyMDIwIDEwOjQ3IFBNCj4+ICpU
+bzoqIFR1b25nIExpZW4gPHR1b25nLnQubGllbkBkZWt0ZWNoLmNvbS5hdT47IAo+PiB0aXBjLWRp
+c2N1c3Npb25AbGlzdHMuc291cmNlZm9yZ2UubmV0OyBtYWxveUBkb25qb25uLmNvbTsgCj4+IHlp
+bmcueHVlQHdpbmRyaXZlci5jb20KPj4gKlN1YmplY3Q6KiBSZTogW1BBVENIIFJGQyAxLzJdIHRp
+cGM6IGFkZCBHYXAgQUNLIGJsb2NrcyBzdXBwb3J0IGZvciAKPj4gYnJvYWRjYXN0IGxpbmsKPj4K
+Pj4gT24gMy8xMy8yMCA2OjQ3IEFNLCBUdW9uZyBMaWVuIHdyb3RlOgo+Pgo+PiDCoMKgwqAgQXMg
+YWNoaWV2ZWQgdGhyb3VnaCBjb21taXQgOTE5NTk0OGZiZjM0ICgidGlwYzogaW1wcm92ZSBUSVBD
+IAo+PiB0aHJvdWdocHV0Cj4+Cj4+IMKgwqDCoCBieSBHYXAgQUNLIGJsb2NrcyIpLCB3ZSBhcHBs
+eSB0aGUgc2FtZSBtZWNoYW5pc20gZm9yIHRoZSAKPj4gYnJvYWRjYXN0IGxpbmsKPj4KPj4gwqDC
+oMKgIGFzIHdlbGwuIFRoZSAnR2FwIEFDSyBibG9ja3MnIGRhdGEgZmllbGQgaW4gYSAKPj4gJ1BS
+T1RPQ09ML1NUQVRFX01TRycgd2lsbAo+Pgo+PiDCoMKgwqAgY29uc2lzdCBvZiB0d28gcGFydHMg
+YnVpbHQgZm9yIGJvdGggdGhlIGJyb2FkY2FzdCBhbmQgdW5pY2FzdCB0eXBlczoKPj4KPj4gwqDC
+oMKgwqDCoCAzMcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIDE2
+IDE1wqDCoMKgwqDCoMKgwqDCoMKgwqAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAwCj4+Cj4+
+IMKgwqDCoCArLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0rLS0tLS0t
+LS0tLS0tLSsKPj4KPj4gwqDCoMKgIHzCoCBiZ2Fja19jbnTCoCB8wqAgdWdhY2tfY250wqAgfMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqAgbGVuwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8Cj4+Cj4+IMKg
+wqDCoCArLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0rLS0tLS0tLS0t
+LS0tLSvCoCAtCj4+Cj4+IMKgwqDCoCB8wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBnYXDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgIHzCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGFja8KgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgfCB8Cj4+Cj4+IMKgwqDCoCArLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tKy0t
+LS0tLS0tLS0tLS0rLS0tLS0tLS0tLS0tLSsgPiBiYyBnYWNrcwo+Pgo+PiDCoMKgwqAgOsKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgOsKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgOiB8Cj4+Cj4+IMKg
+wqDCoCArLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0rLS0tLS0tLS0t
+LS0tLSvCoCAtCj4+Cj4+IMKgwqDCoCB8wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBnYXDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgIHzCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGFja8KgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgfCB8Cj4+Cj4+IMKgwqDCoCArLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tKy0t
+LS0tLS0tLS0tLS0rLS0tLS0tLS0tLS0tLSsgPiB1YyBnYWNrcwo+Pgo+PiDCoMKgwqAgOsKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgOsKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgOiB8Cj4+Cj4+IMKg
+wqDCoCArLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0rLS0tLS0tLS0t
+LS0tLSvCoCAtCj4+Cj4+IMKgwqDCoCB3aGljaCBpcyAiYXV0b21hdGljYWxseSIgYmFja3dhcmQt
+Y29tcGF0aWJsZS4KPj4KPj4gwqDCoMKgIFdlIGFsc28gaW5jcmVhc2UgdGhlIG1heCBudW1iZXIg
+b2YgR2FwIEFDSyBibG9ja3MgdG8gMTI4LCAKPj4gYWxsb3dpbmcgdXB0bwo+Pgo+PiDCoMKgwqAg
+NjQgYmxvY2tzIHBlciB0eXBlICh0b3RhbCBidWZmZXIgc2l6ZSA9IDUxNiBieXRlcykuCj4+Cj4+
+IMKgwqDCoCBCZXNpZGVzLCB0aGUgJ3RpcGNfbGlua19hZHZhbmNlX3RyYW5zbXEoKScgZnVuY3Rp
+b24gaXMgcmVmYWN0b3JlZCAKPj4gd2hpY2gKPj4KPj4gwqDCoMKgIGlzIGFwcGxpY2FibGUgZm9y
+IGJvdGggdGhlIHVuaWNhc3QgYW5kIGJyb2FkY2FzdCBjYXNlcyBub3csIHNvIAo+PiBzb21lIG9s
+ZAo+Pgo+PiDCoMKgwqAgZnVuY3Rpb25zIGNhbiBiZSByZW1vdmVkIGFuZCB0aGUgY29kZSBpcyBv
+cHRpbWl6ZWQuCj4+Cj4+IMKgwqDCoCBXaXRoIHRoZSBwYXRjaCwgVElQQyBicm9hZGNhc3QgaXMg
+bW9yZSByb2J1c3QgcmVnYXJkbGVzcyBvZiAKPj4gcGFja2V0IGxvc3MKPj4KPj4gwqDCoMKgIG9y
+IGRpc29yZGVyLCBsYXRlbmN5LCAuLi4gaW4gdGhlIHVuZGVybHlpbmcgbmV0d29yay4gSXRzIAo+
+PiBwZXJmb3JtYW5jZSBpcwo+Pgo+PiDCoMKgwqAgYm9vc3QgdXAgc2lnbmlmaWNhbnRseS4KPj4K
+Pj4gwqDCoMKgIEZvciBleGFtcGxlLCBleHBlcmltZW50IHdpdGggYSA1JSBwYWNrZXQgbG9zcyBy
+YXRlIHJlc3VsdHM6Cj4+Cj4+IMKgwqDCoCAkIHRpbWUgdGlwYy1waXBlIC0tbWMgLS1yZG0gLS1k
+YXRhX3NpemUgMTIzIC0tZGF0YV9udW0gMTUwMDAwMAo+Pgo+PiDCoMKgwqAgcmVhbMKgwqDCoCAw
+bSA0Mi40NnMKPj4KPj4gwqDCoMKgIHVzZXLCoMKgwqAgMG0gMS4xNnMKPj4KPj4gwqDCoMKgIHN5
+c8KgwqDCoMKgIDBtIDE3LjY3cwo+Pgo+PiDCoMKgwqAgV2l0aG91dCB0aGUgcGF0Y2g6Cj4+Cj4+
+IMKgwqDCoCAkIHRpbWUgdGlwYy1waXBlIC0tbWMgLS1yZG0gLS1kYXRhX3NpemUgMTIzIC0tZGF0
+YV9udW0gMTUwMDAwMAo+Pgo+PiDCoMKgwqAgcmVhbMKgwqDCoCA1bSAyOC44MHMKPj4KPj4gwqDC
+oMKgIHVzZXLCoMKgwqAgMG0gMC44NXMKPj4KPj4gwqDCoMKgIHN5c8KgwqDCoMKgIDBtIDMuNjJz
+Cj4+Cj4+IENhbiB5b3UgZXhwbGFpbiB0aGlzPyBUbyBtZSBpdCBzZWVtcyBsaWtlIHRoZSBlbGFw
+c2VkIHRpbWUgaXMgcmVkdWNlZAo+PiB3aXRoIGEgZmFjdG9yIDMyOC44LzQyLjQ2PTcuNywgd2hp
+bGUgd2UgYXJlIGNvbnN1bWluZyBzaWduaWZpY2FudGx5Cj4+IG1vcmUgQ1BVIHRvIGFjaGlldmUg
+dGhpcy4gRG9lc24ndCB0aGF0IG1lYW4gdGhhdCB3ZSBoYXZlIG11Y2ggbW9yZQo+PiByZXRyYW5z
+bWlzc2lvbnMgd2hpY2ggYXJlIGNvbnN1bWluZyBDUFU/IE9yIGlzIHRoZXJlIHNvbWUgb3RoZXIK
+Pj4gZXhwbGFuYXRpb24/Cj4+Cj4+IC8vL2pvbgo+Pgo+Pgo+PiDCoMKgwqAgU2lnbmVkLW9mZi1i
+eTogVHVvbmcgTGllbjx0dW9uZy50LmxpZW5AZGVrdGVjaC5jb20uYXU+IAo+PiA8bWFpbHRvOnR1
+b25nLnQubGllbkBkZWt0ZWNoLmNvbS5hdT4KPj4KPj4gwqDCoMKgIC0tLQo+Pgo+PiDCoMKgwqDC
+oMKgIG5ldC90aXBjL2JjYXN0LmMgfMKgwqAgOSArLQo+Pgo+PiDCoMKgwqDCoMKgIG5ldC90aXBj
+L2xpbmsuY8KgIHwgNDQwIAo+PiArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKystLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tCj4+Cj4+IMKgwqDCoMKgwqAgbmV0L3RpcGMvbGluay5owqAgfMKg
+wqAgNyArLQo+Pgo+PiDCoMKgwqDCoMKgIG5ldC90aXBjL21zZy5owqDCoCB8wqAgMTQgKy0KPj4K
+Pj4gwqDCoMKgwqDCoCBuZXQvdGlwYy9ub2RlLmPCoCB8wqAgMTAgKy0KPj4KPj4gwqDCoMKgwqDC
+oCA1IGZpbGVzIGNoYW5nZWQsIDI5NSBpbnNlcnRpb25zKCspLCAxODUgZGVsZXRpb25zKC0pCj4+
+Cj4+IMKgwqDCoCBkaWZmIC0tZ2l0IGEvbmV0L3RpcGMvYmNhc3QuYyBiL25ldC90aXBjL2JjYXN0
+LmMKPj4KPj4gwqDCoMKgIGluZGV4IDRjMjBiZTA4YjljNC4uM2NlNjkwYTk2ZWU5IDEwMDY0NAo+
+Pgo+PiDCoMKgwqAgLS0tIGEvbmV0L3RpcGMvYmNhc3QuYwo+Pgo+PiDCoMKgwqAgKysrIGIvbmV0
+L3RpcGMvYmNhc3QuYwo+Pgo+PiDCoMKgwqAgQEAgLTQ3NCw3ICs0NzQsNyBAQCB2b2lkIHRpcGNf
+YmNhc3RfYWNrX3JjdihzdHJ1Y3QgbmV0ICpuZXQsIAo+PiBzdHJ1Y3QgdGlwY19saW5rICpsLAo+
+Pgo+PiDCoMKgwqDCoMKgwqAgX19za2JfcXVldWVfaGVhZF9pbml0KCZ4bWl0cSk7Cj4+Cj4+Cj4+
+IMKgwqDCoMKgIMKgIHRpcGNfYmNhc3RfbG9jayhuZXQpOwo+Pgo+PiDCoMKgwqAgLSB0aXBjX2xp
+bmtfYmNfYWNrX3JjdihsLCBhY2tlZCwgJnhtaXRxKTsKPj4KPj4gwqDCoMKgICsgdGlwY19saW5r
+X2JjX2Fja19yY3YobCwgYWNrZWQsIDAsIE5VTEwsICZ4bWl0cSk7Cj4+Cj4+IMKgwqDCoMKgwqDC
+oCB0aXBjX2JjYXN0X3VubG9jayhuZXQpOwo+Pgo+Pgo+PiDCoMKgwqDCoCDCoCB0aXBjX2JjYmFz
+ZV94bWl0KG5ldCwgJnhtaXRxKTsKPj4KPj4gwqDCoMKgIEBAIC00OTIsNiArNDkyLDcgQEAgaW50
+IHRpcGNfYmNhc3Rfc3luY19yY3Yoc3RydWN0IG5ldCAqbmV0LCAKPj4gc3RydWN0IHRpcGNfbGlu
+ayAqbCwKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgc3Ry
+dWN0IHRpcGNfbXNnICpoZHIpCj4+Cj4+IMKgwqDCoMKgwqAgewo+Pgo+PiDCoMKgwqDCoMKgwqAg
+c3RydWN0IHNrX2J1ZmZfaGVhZCAqaW5wdXRxID0gJnRpcGNfYmNfYmFzZShuZXQpLT5pbnB1dHE7
+Cj4+Cj4+IMKgwqDCoCArIHN0cnVjdCB0aXBjX2dhcF9hY2tfYmxrcyAqZ2E7Cj4+Cj4+IMKgwqDC
+oMKgwqDCoCBzdHJ1Y3Qgc2tfYnVmZl9oZWFkIHhtaXRxOwo+Pgo+PiDCoMKgwqDCoMKgwqAgaW50
+IHJjID0gMDsKPj4KPj4KPj4gwqDCoMKgIEBAIC01MDEsOCArNTAyLDEwIEBAIGludCB0aXBjX2Jj
+YXN0X3N5bmNfcmN2KHN0cnVjdCBuZXQgKm5ldCwgCj4+IHN0cnVjdCB0aXBjX2xpbmsgKmwsCj4+
+Cj4+IMKgwqDCoMKgwqDCoCBpZiAobXNnX3R5cGUoaGRyKSAhPSBTVEFURV9NU0cpIHsKPj4KPj4g
+wqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDCoCB0aXBjX2xpbmtfYmNfaW5pdF9yY3YobCwgaGRyKTsK
+Pj4KPj4gwqDCoMKgwqDCoMKgIH0gZWxzZSBpZiAoIW1zZ19iY19hY2tfaW52YWxpZChoZHIpKSB7
+Cj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqAgdGlwY19saW5rX2JjX2Fja19yY3YobCwgbXNn
+X2JjYXN0X2FjayhoZHIpLCAmeG1pdHEpOwo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgIHJj
+ID0gdGlwY19saW5rX2JjX3N5bmNfcmN2KGwsIGhkciwgJnhtaXRxKTsKPj4KPj4gwqDCoMKgICvC
+oMKgwqDCoMKgwqDCoCB0aXBjX2dldF9nYXBfYWNrX2Jsa3MoJmdhLCBsLCBoZHIsIGZhbHNlKTsK
+Pj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoCByYyA9IHRpcGNfbGlua19iY19hY2tfcmN2KGws
+IG1zZ19iY2FzdF9hY2soaGRyKSwKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgwqAgbXNnX2JjX2dhcChoZHIp
+LCBnYSwgJnhtaXRxKTsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoCByYyB8PSB0aXBjX2xp
+bmtfYmNfc3luY19yY3YobCwgaGRyLCAmeG1pdHEpOwo+Pgo+PiDCoMKgwqDCoMKgwqAgfQo+Pgo+
+PiDCoMKgwqDCoMKgwqAgdGlwY19iY2FzdF91bmxvY2sobmV0KTsKPj4KPj4KPj4gwqDCoMKgIGRp
+ZmYgLS1naXQgYS9uZXQvdGlwYy9saW5rLmMgYi9uZXQvdGlwYy9saW5rLmMKPj4KPj4gwqDCoMKg
+IGluZGV4IDQ2N2M1M2ExZmI1Yy4uNjE5OGI2ZDg5YTY5IDEwMDY0NAo+Pgo+PiDCoMKgwqAgLS0t
+IGEvbmV0L3RpcGMvbGluay5jCj4+Cj4+IMKgwqDCoCArKysgYi9uZXQvdGlwYy9saW5rLmMKPj4K
+Pj4gwqDCoMKgIEBAIC0xODgsNiArMTg4LDggQEAgc3RydWN0IHRpcGNfbGluayB7Cj4+Cj4+IMKg
+wqDCoMKgwqDCoCAvKiBCcm9hZGNhc3QgKi8KPj4KPj4gwqDCoMKgwqDCoMKgIHUxNiBhY2tlcnM7
+Cj4+Cj4+IMKgwqDCoMKgwqDCoCB1MTYgYWNrZWQ7Cj4+Cj4+IMKgwqDCoCArIHUxNiBsYXN0X2dh
+cDsKPj4KPj4gwqDCoMKgICsgc3RydWN0IHRpcGNfZ2FwX2Fja19ibGtzICpsYXN0X2dhOwo+Pgo+
+PiDCoMKgwqDCoMKgwqAgc3RydWN0IHRpcGNfbGluayAqYmNfcmN2bGluazsKPj4KPj4gwqDCoMKg
+wqDCoMKgIHN0cnVjdCB0aXBjX2xpbmsgKmJjX3NuZGxpbms7Cj4+Cj4+IMKgwqDCoMKgwqDCoCB1
+OCBuYWNrX3N0YXRlOwo+Pgo+PiDCoMKgwqAgQEAgLTI0OSwxMSArMjUxLDE0IEBAIHN0YXRpYyBp
+bnQgdGlwY19saW5rX2J1aWxkX25hY2tfbXNnKHN0cnVjdCAKPj4gdGlwY19saW5rICpsLAo+Pgo+
+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqAgwqDCoMKgwqBzdHJ1Y3Qgc2tfYnVmZl9oZWFkICp4bWl0cSk7Cj4+Cj4+IMKgwqDCoMKgwqAg
+c3RhdGljIHZvaWQgdGlwY19saW5rX2J1aWxkX2JjX2luaXRfbXNnKHN0cnVjdCB0aXBjX2xpbmsg
+KmwsCj4+Cj4+IMKgwqDCoMKgwqAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHN0cnVjdCBza19idWZmX2hlYWQgKnhtaXRxKTsKPj4K
+Pj4gwqDCoMKgIC1zdGF0aWMgaW50IHRpcGNfbGlua19yZWxlYXNlX3BrdHMoc3RydWN0IHRpcGNf
+bGluayAqbCwgdTE2IHRvKTsKPj4KPj4gwqDCoMKgIC1zdGF0aWMgdTE2IHRpcGNfYnVpbGRfZ2Fw
+X2Fja19ibGtzKHN0cnVjdCB0aXBjX2xpbmsgKmwsIHZvaWQgCj4+ICpkYXRhLCB1MTYgZ2FwKTsK
+Pj4KPj4gwqDCoMKgIC1zdGF0aWMgaW50IHRpcGNfbGlua19hZHZhbmNlX3RyYW5zbXEoc3RydWN0
+IHRpcGNfbGluayAqbCwgdTE2IAo+PiBhY2tlZCwgdTE2IGdhcCwKPj4KPj4gwqDCoMKgICtzdGF0
+aWMgdTggX190aXBjX2J1aWxkX2dhcF9hY2tfYmxrcyhzdHJ1Y3QgdGlwY19nYXBfYWNrX2Jsa3Mg
+KmdhLAo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgwqDCoMKgIHN0cnVjdCB0aXBjX2xpbmsgKmwsIHU4IHN0YXJ0X2luZGV4KTsKPj4K
+Pj4gwqDCoMKgICtzdGF0aWMgdTE2IHRpcGNfYnVpbGRfZ2FwX2Fja19ibGtzKHN0cnVjdCB0aXBj
+X2xpbmsgKmwsIHN0cnVjdCAKPj4gdGlwY19tc2cgKmhkcik7Cj4+Cj4+IMKgwqDCoCArc3RhdGlj
+IGludCB0aXBjX2xpbmtfYWR2YW5jZV90cmFuc21xKHN0cnVjdCB0aXBjX2xpbmsgKmwsIHN0cnVj
+dCAKPj4gdGlwY19saW5rICpyLAo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgwqDCoMKgwqAgdTE2IGFja2VkLCB1MTYgZ2FwLAo+Pgo+
+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqAgwqDCoMKgwqDCoHN0cnVjdCB0aXBjX2dhcF9hY2tfYmxrcyAqZ2EsCj4+Cj4+IMKgwqDCoCAt
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCDCoMKgwqDCoCBz
+dHJ1Y3Qgc2tfYnVmZl9oZWFkICp4bWl0cSk7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCDCoMKgwqDCoCBzdHJ1Y3Qgc2tfYnVmZl9o
+ZWFkICp4bWl0cSwKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgIMKgwqDCoMKgIGJvb2wgKnJldHJhbnNtaXR0ZWQsIGludCAqcmMpOwo+
+Pgo+PiDCoMKgwqDCoMKgIHN0YXRpYyB2b2lkIHRpcGNfbGlua191cGRhdGVfY3dpbihzdHJ1Y3Qg
+dGlwY19saW5rICpsLCBpbnQgCj4+IHJlbGVhc2VkLAo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgwqDCoGJvb2wgcmV0cmFuc21p
+dHRlZCk7Cj4+Cj4+IMKgwqDCoMKgwqAgLyoKPj4KPj4gwqDCoMKgIEBAIC0zNzAsNyArMzc1LDcg
+QEAgdm9pZCB0aXBjX2xpbmtfcmVtb3ZlX2JjX3BlZXIoc3RydWN0IAo+PiB0aXBjX2xpbmsgKnNu
+ZF9sLAo+Pgo+PiDCoMKgwqDCoMKgwqAgc25kX2wtPmFja2Vycy0tOwo+Pgo+PiDCoMKgwqDCoMKg
+wqAgcmN2X2wtPmJjX3BlZXJfaXNfdXAgPSB0cnVlOwo+Pgo+PiDCoMKgwqDCoMKgwqAgcmN2X2wt
+PnN0YXRlID0gTElOS19FU1RBQkxJU0hFRDsKPj4KPj4gwqDCoMKgIC0gdGlwY19saW5rX2JjX2Fj
+a19yY3YocmN2X2wsIGFjaywgeG1pdHEpOwo+Pgo+PiDCoMKgwqAgKyB0aXBjX2xpbmtfYmNfYWNr
+X3JjdihyY3ZfbCwgYWNrLCAwLCBOVUxMLCB4bWl0cSk7Cj4+Cj4+IMKgwqDCoMKgwqDCoCB0cmFj
+ZV90aXBjX2xpbmtfcmVzZXQocmN2X2wsIFRJUENfRFVNUF9BTEwsICJiY2xpbmsgcmVtb3ZlZCEi
+KTsKPj4KPj4gwqDCoMKgwqDCoMKgIHRpcGNfbGlua19yZXNldChyY3ZfbCk7Cj4+Cj4+IMKgwqDC
+oMKgwqDCoCByY3ZfbC0+c3RhdGUgPSBMSU5LX1JFU0VUOwo+Pgo+PiDCoMKgwqAgQEAgLTc4NCw4
+ICs3ODksNiBAQCBib29sIHRpcGNfbGlua190b29fc2lsZW50KHN0cnVjdCB0aXBjX2xpbmsgKmwp
+Cj4+Cj4+IMKgwqDCoMKgwqDCoCByZXR1cm4gKGwtPnNpbGVudF9pbnR2X2NudCArIDIgPiBsLT5h
+Ym9ydF9saW1pdCk7Cj4+Cj4+IMKgwqDCoMKgwqAgfQo+Pgo+Pgo+PiDCoMKgwqAgLXN0YXRpYyBp
+bnQgdGlwY19saW5rX2JjX3JldHJhbnMoc3RydWN0IHRpcGNfbGluayAqbCwgc3RydWN0IAo+PiB0
+aXBjX2xpbmsgKnIsCj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoCB1MTYgZnJvbSwgdTE2IHRvLCBzdHJ1Y3Qgc2tfYnVmZl9oZWFkIAo+
+PiAqeG1pdHEpOwo+Pgo+PiDCoMKgwqDCoMKgIC8qIHRpcGNfbGlua190aW1lb3V0IC0gcGVyZm9y
+bSBwZXJpb2RpYyB0YXNrIGFzIGluc3RydWN0ZWQgZnJvbSAKPj4gbm9kZSB0aW1lb3V0Cj4+Cj4+
+IMKgwqDCoMKgIMKgICovCj4+Cj4+IMKgwqDCoMKgwqAgaW50IHRpcGNfbGlua190aW1lb3V0KHN0
+cnVjdCB0aXBjX2xpbmsgKmwsIHN0cnVjdCBza19idWZmX2hlYWQgCj4+ICp4bWl0cSkKPj4KPj4g
+wqDCoMKgIEBAIC05NDgsNiArOTUxLDkgQEAgdm9pZCB0aXBjX2xpbmtfcmVzZXQoc3RydWN0IHRp
+cGNfbGluayAqbCkKPj4KPj4gwqDCoMKgwqDCoMKgIGwtPnNuZF9ueHRfc3RhdGUgPSAxOwo+Pgo+
+PiDCoMKgwqDCoMKgwqAgbC0+cmN2X254dF9zdGF0ZSA9IDE7Cj4+Cj4+IMKgwqDCoMKgwqDCoCBs
+LT5hY2tlZCA9IDA7Cj4+Cj4+IMKgwqDCoCArIGwtPmxhc3RfZ2FwID0gMDsKPj4KPj4gwqDCoMKg
+ICsga2ZyZWUobC0+bGFzdF9nYSk7Cj4+Cj4+IMKgwqDCoCArIGwtPmxhc3RfZ2EgPSBOVUxMOwo+
+Pgo+PiDCoMKgwqDCoMKgwqAgbC0+c2lsZW50X2ludHZfY250ID0gMDsKPj4KPj4gwqDCoMKgwqDC
+oMKgIGwtPnJzdF9jbnQgPSAwOwo+Pgo+PiDCoMKgwqDCoMKgwqAgbC0+YmNfcGVlcl9pc191cCA9
+IGZhbHNlOwo+Pgo+PiDCoMKgwqAgQEAgLTExODMsNjggKzExODksMTQgQEAgc3RhdGljIGJvb2wg
+Cj4+IGxpbmtfcmV0cmFuc21pdF9mYWlsdXJlKHN0cnVjdCB0aXBjX2xpbmsgKmwsIHN0cnVjdCB0
+aXBjX2xpbmsgKnIsCj4+Cj4+Cj4+IMKgwqDCoMKgIMKgIGlmIChsaW5rX2lzX2JjX3NuZGxpbmso
+bCkpIHsKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDCoCByLT5zdGF0ZSA9IExJTktfUkVT
+RVQ7Cj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqAgKnJjID0gVElQQ19MSU5LX0RPV05fRVZU
+Owo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgICpyYyB8PSBUSVBDX0xJTktfRE9XTl9FVlQ7
+Cj4+Cj4+IMKgwqDCoMKgwqDCoCB9IGVsc2Ugewo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKg
+ICpyYyA9IHRpcGNfbGlua19mc21fZXZ0KGwsIExJTktfRkFJTFVSRV9FVlQpOwo+Pgo+PiDCoMKg
+wqAgK8KgwqDCoMKgwqDCoMKgICpyYyB8PSB0aXBjX2xpbmtfZnNtX2V2dChsLCBMSU5LX0ZBSUxV
+UkVfRVZUKTsKPj4KPj4gwqDCoMKgwqDCoMKgIH0KPj4KPj4KPj4gwqDCoMKgwqAgwqAgcmV0dXJu
+IHRydWU7Cj4+Cj4+IMKgwqDCoMKgwqAgfQo+Pgo+Pgo+PiDCoMKgwqAgLS8qIHRpcGNfbGlua19i
+Y19yZXRyYW5zKCkgLSByZXRyYW5zbWl0IHplcm8gb3IgbW9yZSBwYWNrZXRzCj4+Cj4+IMKgwqDC
+oCAtICogQGw6IHRoZSBsaW5rIHRvIHRyYW5zbWl0IG9uCj4+Cj4+IMKgwqDCoCAtICogQHI6IHRo
+ZSByZWNlaXZpbmcgbGluayBvcmRlcmluZyB0aGUgcmV0cmFuc21pdC4gU2FtZSBhcyBsIGlmIAo+
+PiB1bmljYXN0Cj4+Cj4+IMKgwqDCoCAtICogQGZyb206IHJldHJhbnNtaXQgZnJvbSAoaW5jbHVz
+aXZlKSB0aGlzIHNlcXVlbmNlIG51bWJlcgo+Pgo+PiDCoMKgwqAgLSAqIEB0bzogcmV0cmFuc21p
+dCB0byAoaW5jbHVzaXZlKSB0aGlzIHNlcXVlbmNlIG51bWJlcgo+Pgo+PiDCoMKgwqAgLSAqIHht
+aXRxOiBxdWV1ZSBmb3IgYWNjdW11bGF0aW5nIHRoZSByZXRyYW5zbWl0dGVkIHBhY2tldHMKPj4K
+Pj4gwqDCoMKgIC0gKi8KPj4KPj4gwqDCoMKgIC1zdGF0aWMgaW50IHRpcGNfbGlua19iY19yZXRy
+YW5zKHN0cnVjdCB0aXBjX2xpbmsgKmwsIHN0cnVjdCAKPj4gdGlwY19saW5rICpyLAo+Pgo+PiDC
+oMKgwqAgLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdTE2
+IGZyb20sIHUxNiB0bywgc3RydWN0IHNrX2J1ZmZfaGVhZCAKPj4gKnhtaXRxKQo+Pgo+PiDCoMKg
+wqAgLXsKPj4KPj4gwqDCoMKgIC0gc3RydWN0IHNrX2J1ZmYgKl9za2IsICpza2IgPSBza2JfcGVl
+aygmbC0+dHJhbnNtcSk7Cj4+Cj4+IMKgwqDCoCAtIHUxNiBiY19hY2sgPSBsLT5iY19yY3ZsaW5r
+LT5yY3Zfbnh0IC0gMTsKPj4KPj4gwqDCoMKgIC0gdTE2IGFjayA9IGwtPnJjdl9ueHQgLSAxOwo+
+Pgo+PiDCoMKgwqAgLSBpbnQgcmV0cmFuc21pdHRlZCA9IDA7Cj4+Cj4+IMKgwqDCoCAtIHN0cnVj
+dCB0aXBjX21zZyAqaGRyOwo+Pgo+PiDCoMKgwqAgLSBpbnQgcmMgPSAwOwo+Pgo+PiDCoMKgwqAg
+LQo+Pgo+PiDCoMKgwqAgLSBpZiAoIXNrYikKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoCBy
+ZXR1cm4gMDsKPj4KPj4gwqDCoMKgIC0gaWYgKGxlc3ModG8sIGZyb20pKQo+Pgo+PiDCoMKgwqAg
+LcKgwqDCoMKgwqDCoMKgIHJldHVybiAwOwo+Pgo+PiDCoMKgwqAgLQo+Pgo+PiDCoMKgwqAgLSB0
+cmFjZV90aXBjX2xpbmtfcmV0cmFucyhyLCBmcm9tLCB0bywgJmwtPnRyYW5zbXEpOwo+Pgo+PiDC
+oMKgwqAgLQo+Pgo+PiDCoMKgwqAgLSBpZiAobGlua19yZXRyYW5zbWl0X2ZhaWx1cmUobCwgciwg
+JnJjKSkKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoCByZXR1cm4gcmM7Cj4+Cj4+IMKgwqDC
+oCAtCj4+Cj4+IMKgwqDCoCAtIHNrYl9xdWV1ZV93YWxrKCZsLT50cmFuc21xLCBza2IpIHsKPj4K
+Pj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoCBoZHIgPSBidWZfbXNnKHNrYik7Cj4+Cj4+IMKgwqDC
+oCAtwqDCoMKgwqDCoMKgwqAgaWYgKGxlc3MobXNnX3NlcW5vKGhkciksIGZyb20pKQo+Pgo+PiDC
+oMKgwqAgLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjb250aW51ZTsKPj4KPj4gwqDC
+oMKgIC3CoMKgwqDCoMKgwqDCoCBpZiAobW9yZShtc2dfc2Vxbm8oaGRyKSwgdG8pKQo+Pgo+PiDC
+oMKgwqAgLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBicmVhazsKPj4KPj4gwqDCoMKg
+IC3CoMKgwqDCoMKgwqDCoCBpZiAodGltZV9iZWZvcmUoamlmZmllcywgVElQQ19TS0JfQ0Ioc2ti
+KS0+bnh0X3JldHIpKQo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oCBjb250aW51ZTsKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoCBUSVBDX1NLQl9DQihza2Ip
+LT5ueHRfcmV0ciA9IFRJUENfQkNfUkVUUl9MSU07Cj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKg
+wqAgX3NrYiA9IHBza2JfY29weShza2IsIEdGUF9BVE9NSUMpOwo+Pgo+PiDCoMKgwqAgLcKgwqDC
+oMKgwqDCoMKgIGlmICghX3NrYikKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgcmV0dXJuIDA7Cj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqAgaGRyID0gYnVm
+X21zZyhfc2tiKTsKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoCBtc2dfc2V0X2FjayhoZHIs
+IGFjayk7Cj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqAgbXNnX3NldF9iY2FzdF9hY2soaGRy
+LCBiY19hY2spOwo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgIF9za2ItPnByaW9yaXR5ID0g
+VENfUFJJT19DT05UUk9MOwo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgIF9fc2tiX3F1ZXVl
+X3RhaWwoeG1pdHEsIF9za2IpOwo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgIGwtPnN0YXRz
+LnJldHJhbnNtaXR0ZWQrKzsKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoCByZXRyYW5zbWl0
+dGVkKys7Cj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqAgLyogSW5jcmVhc2UgYWN0dWFsIHJl
+dHJhbnMgY291bnRlciAmIG1hcmsgZmlyc3QgdGltZSAqLwo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKg
+wqDCoMKgIGlmICghVElQQ19TS0JfQ0Ioc2tiKS0+cmV0cl9jbnQrKykKPj4KPj4gwqDCoMKgIC3C
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgVElQQ19TS0JfQ0Ioc2tiKS0+cmV0cl9zdGFt
+cCA9IGppZmZpZXM7Cj4+Cj4+IMKgwqDCoCAtIH0KPj4KPj4gwqDCoMKgIC0gdGlwY19saW5rX3Vw
+ZGF0ZV9jd2luKGwsIDAsIHJldHJhbnNtaXR0ZWQpOwo+Pgo+PiDCoMKgwqAgLSByZXR1cm4gMDsK
+Pj4KPj4gwqDCoMKgIC19Cj4+Cj4+IMKgwqDCoCAtCj4+Cj4+IMKgwqDCoMKgwqAgLyogdGlwY19k
+YXRhX2lucHV0IC0gZGVsaXZlciBkYXRhIGFuZCBuYW1lIGRpc3RyIG1zZ3MgdG8gdXBwZXIgCj4+
+IGxheWVyCj4+Cj4+IMKgwqDCoMKgIMKgICoKPj4KPj4gwqDCoMKgwqAgwqAgKiBDb25zdW1lcyBi
+dWZmZXIgaWYgbWVzc2FnZSBpcyBvZiByaWdodCB0eXBlCj4+Cj4+IMKgwqDCoCBAQCAtMTQwMiw0
+NiArMTM1NCw3MSBAQCBzdGF0aWMgaW50IHRpcGNfbGlua190bmxfcmN2KHN0cnVjdCAKPj4gdGlw
+Y19saW5rICpsLCBzdHJ1Y3Qgc2tfYnVmZiAqc2tiLAo+Pgo+PiDCoMKgwqDCoMKgwqAgcmV0dXJu
+IHJjOwo+Pgo+PiDCoMKgwqDCoMKgIH0KPj4KPj4KPj4gwqDCoMKgIC1zdGF0aWMgaW50IHRpcGNf
+bGlua19yZWxlYXNlX3BrdHMoc3RydWN0IHRpcGNfbGluayAqbCwgdTE2IGFja2VkKQo+Pgo+PiDC
+oMKgwqAgLXsKPj4KPj4gwqDCoMKgIC0gaW50IHJlbGVhc2VkID0gMDsKPj4KPj4gwqDCoMKgIC0g
+c3RydWN0IHNrX2J1ZmYgKnNrYiwgKnRtcDsKPj4KPj4gwqDCoMKgIC0KPj4KPj4gwqDCoMKgIC0g
+c2tiX3F1ZXVlX3dhbGtfc2FmZSgmbC0+dHJhbnNtcSwgc2tiLCB0bXApIHsKPj4KPj4gwqDCoMKg
+IC3CoMKgwqDCoMKgwqDCoCBpZiAobW9yZShidWZfc2Vxbm8oc2tiKSwgYWNrZWQpKQo+Pgo+PiDC
+oMKgwqAgLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBicmVhazsKPj4KPj4gwqDCoMKg
+IC3CoMKgwqDCoMKgwqDCoCBfX3NrYl91bmxpbmsoc2tiLCAmbC0+dHJhbnNtcSk7Cj4+Cj4+IMKg
+wqDCoCAtwqDCoMKgwqDCoMKgwqAga2ZyZWVfc2tiKHNrYik7Cj4+Cj4+IMKgwqDCoCAtwqDCoMKg
+wqDCoMKgwqAgcmVsZWFzZWQrKzsKPj4KPj4gwqDCoMKgICsvKioKPj4KPj4gwqDCoMKgICsgKiB0
+aXBjX2dldF9nYXBfYWNrX2Jsa3MgLSBnZXQgR2FwIEFDSyBibG9ja3MgZnJvbSAKPj4gUFJPVE9D
+T0wvU1RBVEVfTVNHCj4+Cj4+IMKgwqDCoCArICogQGdhOiByZXR1cm5lZCBwb2ludGVyIHRvIHRo
+ZSBHYXAgQUNLIGJsb2NrcyBpZiBhbnkKPj4KPj4gwqDCoMKgICsgKiBAbDogdGhlIHRpcGMgbGlu
+awo+Pgo+PiDCoMKgwqAgKyAqIEBoZHI6IHRoZSBQUk9UT0NPTC9TVEFURV9NU0cgaGVhZGVyCj4+
+Cj4+IMKgwqDCoCArICogQHVjOiBkZXNpcmVkIEdhcCBBQ0sgYmxvY2tzIHR5cGUsIGkuZS4gdW5p
+Y2FzdCAoPSAxKSBvciAKPj4gYnJvYWRjYXN0ICg9IDApCj4+Cj4+IMKgwqDCoCArICoKPj4KPj4g
+wqDCoMKgICsgKiBSZXR1cm46IHRoZSB0b3RhbCBHYXAgQUNLIGJsb2NrcyBzaXplCj4+Cj4+IMKg
+wqDCoCArICovCj4+Cj4+IMKgwqDCoCArdTE2IHRpcGNfZ2V0X2dhcF9hY2tfYmxrcyhzdHJ1Y3Qg
+dGlwY19nYXBfYWNrX2Jsa3MgKipnYSwgc3RydWN0IAo+PiB0aXBjX2xpbmsgKmwsCj4+Cj4+IMKg
+wqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIMKgIHN0cnVjdCB0aXBjX21zZyAq
+aGRyLCBib29sIHVjKQo+Pgo+PiDCoMKgwqAgK3sKPj4KPj4gwqDCoMKgICsgc3RydWN0IHRpcGNf
+Z2FwX2Fja19ibGtzICpwOwo+Pgo+PiDCoMKgwqAgKyB1MTYgc3ogPSAwOwo+Pgo+PiDCoMKgwqAg
+Kwo+Pgo+PiDCoMKgwqAgKyAvKiBEb2VzIHBlZXIgc3VwcG9ydCB0aGUgR2FwIEFDSyBibG9ja3Mg
+ZmVhdHVyZT8gKi8KPj4KPj4gwqDCoMKgICsgaWYgKGwtPnBlZXJfY2FwcyAmIFRJUENfR0FQX0FD
+S19CTE9DSykgewo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgIHAgPSAoc3RydWN0IHRpcGNf
+Z2FwX2Fja19ibGtzICopbXNnX2RhdGEoaGRyKTsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDC
+oCBzeiA9IG50b2hzKHAtPmxlbik7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqAgLyogU2Fu
+aXR5IGNoZWNrICovCj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqAgaWYgKHN6ID09IHRpcGNf
+Z2FwX2Fja19ibGtzX3N6KHAtPnVnYWNrX2NudCArIAo+PiBwLT5iZ2Fja19jbnQpKSB7Cj4+Cj4+
+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC8qIEdvb2QsIGNoZWNrIGlm
+IHRoZSBkZXNpcmVkIHR5cGUgZXhpc3RzICovCj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgIGlmICgodWMgJiYgcC0+dWdhY2tfY250KSB8fCAoIXVjICYmIHAtPmJn
+YWNrX2NudCkpCj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCBnb3RvIG9rOwo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgIC8qIEJh
+Y2t3YXJkIGNvbXBhdGlibGU6IHBlZXIgbWlnaHQgbm90IHN1cHBvcnQgYmMsIGJ1dCAKPj4gdWM/
+ICovCj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqAgfSBlbHNlIGlmICh1YyAmJiBzeiA9PSAK
+Pj4gdGlwY19nYXBfYWNrX2Jsa3Nfc3oocC0+dWdhY2tfY250KSkgewo+Pgo+PiDCoMKgwqAgK8Kg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpZiAocC0+dWdhY2tfY250KSB7Cj4+Cj4+IMKg
+wqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwLT5i
+Z2Fja19jbnQgPSAwOwo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqAgZ290byBvazsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqAgfQo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgIH0KPj4KPj4gwqDC
+oMKgwqDCoMKgIH0KPj4KPj4gwqDCoMKgIC0gcmV0dXJuIHJlbGVhc2VkOwo+Pgo+PiDCoMKgwqAg
+KyAvKiBPdGhlciBjYXNlczogaWdub3JlISAqLwo+Pgo+PiDCoMKgwqAgKyBwID0gTlVMTDsKPj4K
+Pj4gwqDCoMKgICsKPj4KPj4gwqDCoMKgICtvazoKPj4KPj4gwqDCoMKgICsgKmdhID0gcDsKPj4K
+Pj4gwqDCoMKgICsgcmV0dXJuIHN6Owo+Pgo+PiDCoMKgwqDCoMKgIH0KPj4KPj4KPj4gwqDCoMKg
+IC0vKiB0aXBjX2J1aWxkX2dhcF9hY2tfYmxrcyAtIGJ1aWxkIEdhcCBBQ0sgYmxvY2tzCj4+Cj4+
+IMKgwqDCoCAtICogQGw6IHRpcGMgbGluayB0aGF0IGRhdGEgaGF2ZSBjb21lIHdpdGggZ2FwcyBp
+biBzZXF1ZW5jZSBpZiBhbnkKPj4KPj4gwqDCoMKgIC0gKiBAZGF0YTogZGF0YSBidWZmZXIgdG8g
+c3RvcmUgdGhlIEdhcCBBQ0sgYmxvY2tzIGFmdGVyIGJ1aWx0Cj4+Cj4+IMKgwqDCoCAtICoKPj4K
+Pj4gwqDCoMKgIC0gKiByZXR1cm5zIHRoZSBhY3R1YWwgYWxsb2NhdGVkIG1lbW9yeSBzaXplCj4+
+Cj4+IMKgwqDCoCAtICovCj4+Cj4+IMKgwqDCoCAtc3RhdGljIHUxNiB0aXBjX2J1aWxkX2dhcF9h
+Y2tfYmxrcyhzdHJ1Y3QgdGlwY19saW5rICpsLCB2b2lkIAo+PiAqZGF0YSwgdTE2IGdhcCkKPj4K
+Pj4gwqDCoMKgICtzdGF0aWMgdTggX190aXBjX2J1aWxkX2dhcF9hY2tfYmxrcyhzdHJ1Y3QgdGlw
+Y19nYXBfYWNrX2Jsa3MgKmdhLAo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgwqDCoMKgIHN0cnVjdCB0aXBjX2xpbmsgKmwsIHU4IHN0
+YXJ0X2luZGV4KQo+Pgo+PiDCoMKgwqDCoMKgIHsKPj4KPj4gwqDCoMKgICsgc3RydWN0IHRpcGNf
+Z2FwX2FjayAqZ2Fja3MgPSAmZ2EtPmdhY2tzW3N0YXJ0X2luZGV4XTsKPj4KPj4gwqDCoMKgwqDC
+oMKgIHN0cnVjdCBza19idWZmICpza2IgPSBza2JfcGVlaygmbC0+ZGVmZXJkcSk7Cj4+Cj4+IMKg
+wqDCoCAtIHN0cnVjdCB0aXBjX2dhcF9hY2tfYmxrcyAqZ2EgPSBkYXRhOwo+Pgo+PiDCoMKgwqAg
+LSB1MTYgbGVuLCBleHBlY3QsIHNlcW5vID0gMDsKPj4KPj4gwqDCoMKgICsgdTE2IGV4cGVjdCwg
+c2Vxbm8gPSAwOwo+Pgo+PiDCoMKgwqDCoMKgwqAgdTggbiA9IDA7Cj4+Cj4+Cj4+IMKgwqDCoCAt
+IGlmICghc2tiIHx8ICFnYXApCj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqAgZ290byBleGl0
+Owo+Pgo+PiDCoMKgwqAgKyBpZiAoIXNrYikKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoCBy
+ZXR1cm4gMDsKPj4KPj4KPj4gwqDCoMKgwqAgwqAgZXhwZWN0ID0gYnVmX3NlcW5vKHNrYik7Cj4+
+Cj4+IMKgwqDCoMKgwqDCoCBza2JfcXVldWVfd2FsaygmbC0+ZGVmZXJkcSwgc2tiKSB7Cj4+Cj4+
+IMKgwqDCoMKgwqAgwqDCoMKgwqDCoMKgwqAgc2Vxbm8gPSBidWZfc2Vxbm8oc2tiKTsKPj4KPj4g
+wqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDCoCBpZiAodW5saWtlbHkobW9yZShzZXFubywgZXhwZWN0
+KSkpIHsKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZ2EtPmdh
+Y2tzW25dLmFjayA9IGh0b25zKGV4cGVjdCAtIDEpOwo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoCBnYS0+Z2Fja3Nbbl0uZ2FwID0gaHRvbnMoc2Vxbm8gLSBleHBl
+Y3QpOwo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpZiAoKytu
+ID49IE1BWF9HQVBfQUNLX0JMS1MpIHsKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHByX2luZm9fcmF0ZWxpbWl0ZWQoIlRvbyBmZXcg
+R2FwIEFDSyAKPj4gYmxvY2tzIVxuIik7Cj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBnb3RvIGV4aXQ7Cj4+Cj4+IMKgwqDCoCArwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGdhY2tzW25dLmFjayA9IGh0b25zKGV4cGVjdCAt
+IDEpOwo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBnYWNrc1tu
+XS5nYXAgPSBodG9ucyhzZXFubyAtIGV4cGVjdCk7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgIGlmICgrK24gPj0gTUFYX0dBUF9BQ0tfQkxLUyAvIDIpIHsKPj4K
+Pj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+IGNoYXIgYnVmW1RJUENfTUFYX0xJTktfTkFNRV07Cj4+Cj4+IMKgwqDCoCArCj4+Cj4+IMKgwqDC
+oCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwcl9pbmZv
+X3JhdGVsaW1pdGVkKCJHYWNrcyBvbiAlczogJWQsIAo+PiBxbDogJWQhXG4iLAo+Pgo+PiDCoMKg
+wqAgKyB0aXBjX2xpbmtfbmFtZV9leHQobCwgYnVmKSwKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgIMKgwqDCoCBuLAo+Pgo+PiDCoMKgwqAgKyBza2JfcXVldWVfbGVuKCZsLT5kZWZl
+cmRxKSk7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCByZXR1cm4gbjsKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgfQo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgIH0gZWxzZSBpZiAo
+dW5saWtlbHkobGVzcyhzZXFubywgZXhwZWN0KSkpIHsKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcHJfd2FybigiVW5leHBlY3RlZCBza2IgaW4gZGVmZXJk
+cSFcbiIpOwo+Pgo+PiDCoMKgwqAgQEAgLTE0NTEsMTQgKzE0MjgsNTcgQEAgc3RhdGljIHUxNiB0
+aXBjX2J1aWxkX2dhcF9hY2tfYmxrcyhzdHJ1Y3QgCj4+IHRpcGNfbGluayAqbCwgdm9pZCAqZGF0
+YSwgdTE2IGdhcCkKPj4KPj4gwqDCoMKgwqDCoMKgIH0KPj4KPj4KPj4gwqDCoMKgwqAgwqAgLyog
+bGFzdCBibG9jayAqLwo+Pgo+PiDCoMKgwqAgLSBnYS0+Z2Fja3Nbbl0uYWNrID0gaHRvbnMoc2Vx
+bm8pOwo+Pgo+PiDCoMKgwqAgLSBnYS0+Z2Fja3Nbbl0uZ2FwID0gMDsKPj4KPj4gwqDCoMKgICsg
+Z2Fja3Nbbl0uYWNrID0gaHRvbnMoc2Vxbm8pOwo+Pgo+PiDCoMKgwqAgKyBnYWNrc1tuXS5nYXAg
+PSAwOwo+Pgo+PiDCoMKgwqDCoMKgwqAgbisrOwo+Pgo+PiDCoMKgwqAgKyByZXR1cm4gbjsKPj4K
+Pj4gwqDCoMKgICt9Cj4+Cj4+Cj4+IMKgwqDCoCAtZXhpdDoKPj4KPj4gwqDCoMKgIC0gbGVuID0g
+dGlwY19nYXBfYWNrX2Jsa3Nfc3oobik7Cj4+Cj4+IMKgwqDCoCArLyogdGlwY19idWlsZF9nYXBf
+YWNrX2Jsa3MgLSBidWlsZCBHYXAgQUNLIGJsb2Nrcwo+Pgo+PiDCoMKgwqAgKyAqIEBsOiB0aXBj
+IHVuaWNhc3QgbGluawo+Pgo+PiDCoMKgwqAgKyAqIEBoZHI6IHRoZSB0aXBjIG1lc3NhZ2UgYnVm
+ZmVyIHRvIHN0b3JlIHRoZSBHYXAgQUNLIGJsb2NrcyAKPj4gYWZ0ZXIgYnVpbHQKPj4KPj4gwqDC
+oMKgICsgKgo+Pgo+PiDCoMKgwqAgKyAqIFRoZSBmdW5jdGlvbiBidWlsZHMgR2FwIEFDSyBibG9j
+a3MgZm9yIGJvdGggdGhlIHVuaWNhc3QgJiAKPj4gYnJvYWRjYXN0IHJlY2VpdmVyCj4+Cj4+IMKg
+wqDCoCArICogbGlua3Mgb2YgYSBjZXJ0YWluIHBlZXIsIHRoZSBidWZmZXIgYWZ0ZXIgYnVpbHQg
+aGFzIHRoZSAKPj4gbmV0d29yayBkYXRhIGZvcm1hdAo+Pgo+PiDCoMKgwqAgKyAqIGFzIGZvbGxv
+d3M6Cj4+Cj4+IMKgwqDCoCArICrCoCAzMcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgIDE2IDE1wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAwCj4+Cj4+IMKgwqDCoCArICogKy0tLS0tLS0tLS0tLS0rLS0tLS0tLS0tLS0tLSst
+LS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0rCj4+Cj4+IMKgwqDCoCArICogfMKgIGJnYWNrX2Nu
+dMKgIHzCoCB1Z2Fja19jbnTCoCB8wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBsZW4gfAo+Pgo+PiDC
+oMKgwqAgKyAqICstLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0rLS0tLS0tLS0tLS0tLSstLS0t
+LS0tLS0tLS0tK8KgIC0KPj4KPj4gwqDCoMKgICsgKiB8wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBn
+YXDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHzCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGFjayDCoMKg
+wqDCoMKgwqDCoMKgfMKgwqAgfAo+Pgo+PiDCoMKgwqAgKyAqICstLS0tLS0tLS0tLS0tKy0tLS0t
+LS0tLS0tLS0rLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tKyA+IAo+PiBiYyBnYWNrcwo+Pgo+
+PiDCoMKgwqAgKyAqIDrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgIDogOsKgwqAgfAo+Pgo+PiDCoMKgwqAgKyAqICstLS0tLS0tLS0tLS0tKy0tLS0t
+LS0tLS0tLS0rLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tK8KgIC0KPj4KPj4gwqDCoMKgICsg
+KiB8wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBnYXDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHzCoCDC
+oMKgwqDCoMKgwqDCoMKgwqDCoGFjayB8wqDCoCB8Cj4+Cj4+IMKgwqDCoCArICogKy0tLS0tLS0t
+LS0tLS0rLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0rID4gCj4+IHVj
+IGdhY2tzCj4+Cj4+IMKgwqDCoCArICogOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqAgOiA6wqDCoCB8Cj4+Cj4+IMKgwqDCoCArICogKy0tLS0tLS0t
+LS0tLS0rLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0rwqAgLQo+Pgo+
+PiDCoMKgwqAgKyAqIChTZWUgc3RydWN0IHRpcGNfZ2FwX2Fja19ibGtzKQo+Pgo+PiDCoMKgwqAg
+KyAqCj4+Cj4+IMKgwqDCoCArICogcmV0dXJucyB0aGUgYWN0dWFsIGFsbG9jYXRlZCBtZW1vcnkg
+c2l6ZQo+Pgo+PiDCoMKgwqAgKyAqLwo+Pgo+PiDCoMKgwqAgK3N0YXRpYyB1MTYgdGlwY19idWls
+ZF9nYXBfYWNrX2Jsa3Moc3RydWN0IHRpcGNfbGluayAqbCwgc3RydWN0IAo+PiB0aXBjX21zZyAq
+aGRyKQo+Pgo+PiDCoMKgwqAgK3sKPj4KPj4gwqDCoMKgICsgc3RydWN0IHRpcGNfbGluayAqYmNs
+ID0gbC0+YmNfcmN2bGluazsKPj4KPj4gwqDCoMKgICsgc3RydWN0IHRpcGNfZ2FwX2Fja19ibGtz
+ICpnYTsKPj4KPj4gwqDCoMKgICsgdTE2IGxlbjsKPj4KPj4gwqDCoMKgICsKPj4KPj4gwqDCoMKg
+ICsgZ2EgPSAoc3RydWN0IHRpcGNfZ2FwX2Fja19ibGtzICopbXNnX2RhdGEoaGRyKTsKPj4KPj4g
+wqDCoMKgICsKPj4KPj4gwqDCoMKgICsgLyogU3RhcnQgd2l0aCBicm9hZGNhc3QgbGluayBmaXJz
+dCAqLwo+Pgo+PiDCoMKgwqAgKyB0aXBjX2JjYXN0X2xvY2soYmNsLT5uZXQpOwo+Pgo+PiDCoMKg
+wqAgKyBtc2dfc2V0X2JjYXN0X2FjayhoZHIsIGJjbC0+cmN2X254dCAtIDEpOwo+Pgo+PiDCoMKg
+wqAgKyBtc2dfc2V0X2JjX2dhcChoZHIsIGxpbmtfYmNfcmN2X2dhcChiY2wpKTsKPj4KPj4gwqDC
+oMKgICsgZ2EtPmJnYWNrX2NudCA9IF9fdGlwY19idWlsZF9nYXBfYWNrX2Jsa3MoZ2EsIGJjbCwg
+MCk7Cj4+Cj4+IMKgwqDCoCArIHRpcGNfYmNhc3RfdW5sb2NrKGJjbC0+bmV0KTsKPj4KPj4gwqDC
+oMKgICsKPj4KPj4gwqDCoMKgICsgLyogTm93IGZvciB1bmljYXN0IGxpbmssIGJ1dCBhbiBleHBs
+aWNpdCBOQUNLIG9ubHkgKD8/PykgKi8KPj4KPj4gwqDCoMKgICsgZ2EtPnVnYWNrX2NudCA9ICht
+c2dfc2VxX2dhcChoZHIpKSA/Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgIF9fdGlwY19idWlsZF9nYXBfYWNrX2Jsa3MoZ2EsIGwsIGdhLT5iZ2Fja19jbnQpIAo+
+PiA6IDA7Cj4+Cj4+IMKgwqDCoCArCj4+Cj4+IMKgwqDCoCArIC8qIFRvdGFsIGxlbiAqLwo+Pgo+
+PiDCoMKgwqAgKyBsZW4gPSB0aXBjX2dhcF9hY2tfYmxrc19zeihnYS0+YmdhY2tfY250ICsgZ2Et
+PnVnYWNrX2NudCk7Cj4+Cj4+IMKgwqDCoMKgwqDCoCBnYS0+bGVuID0gaHRvbnMobGVuKTsKPj4K
+Pj4gwqDCoMKgIC0gZ2EtPmdhY2tfY250ID0gbjsKPj4KPj4gwqDCoMKgwqDCoMKgIHJldHVybiBs
+ZW47Cj4+Cj4+IMKgwqDCoMKgwqAgfQo+Pgo+Pgo+PiDCoMKgwqAgQEAgLTE0NjYsNDcgKzE0ODYs
+MTExIEBAIHN0YXRpYyB1MTYgCj4+IHRpcGNfYnVpbGRfZ2FwX2Fja19ibGtzKHN0cnVjdCB0aXBj
+X2xpbmsgKmwsIHZvaWQgKmRhdGEsIHUxNiBnYXApCj4+Cj4+IMKgwqDCoMKgIMKgICrCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgwqDCoMKgwqDCoMKgIGFja2VkIHBh
+Y2tldHMsIGFsc28gZG9pbmcgCj4+IHJldHJhbnNtaXNzaW9ucyBpZgo+Pgo+PiDCoMKgwqDCoCDC
+oCAqwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIMKgwqDCoMKgwqDC
+oCBnYXBzIGZvdW5kCj4+Cj4+IMKgwqDCoMKgIMKgICogQGw6IHRpcGMgbGluayB3aXRoIHRyYW5z
+bXEgcXVldWUgdG8gYmUgYWR2YW5jZWQKPj4KPj4gwqDCoMKgICsgKiBAcjogdGlwYyBsaW5rICJy
+ZWNlaXZlciIgaS5lLiBpbiBjYXNlIG9mIGJyb2FkY2FzdCAoPSAibCIgaWYgCj4+IHVuaWNhc3Qp
+Cj4+Cj4+IMKgwqDCoMKgIMKgICogQGFja2VkOiBzZXFubyBvZiBsYXN0IHBhY2tldCBhY2tlZCBi
+eSBwZWVyIHdpdGhvdXQgYW55IGdhcHMgCj4+IGJlZm9yZQo+Pgo+PiDCoMKgwqDCoCDCoCAqIEBn
+YXA6ICMgb2YgZ2FwIHBhY2tldHMKPj4KPj4gwqDCoMKgwqAgwqAgKiBAZ2E6IGJ1ZmZlciBwb2lu
+dGVyIHRvIEdhcCBBQ0sgYmxvY2tzIGZyb20gcGVlcgo+Pgo+PiDCoMKgwqDCoCDCoCAqIEB4bWl0
+cTogcXVldWUgZm9yIGFjY3VtdWxhdGluZyB0aGUgcmV0cmFuc21pdHRlZCBwYWNrZXRzIGlmIGFu
+eQo+Pgo+PiDCoMKgwqAgKyAqIEByZXRyYW5zbWl0dGVkOiByZXR1cm5lZCBib29sZWFuIHZhbHVl
+IGlmIGEgcmV0cmFuc21pc3Npb24gaXMgCj4+IHJlYWxseSBpc3N1ZWQKPj4KPj4gwqDCoMKgICsg
+KiBAcmM6IHJldHVybmVkIGNvZGUgZS5nLiBUSVBDX0xJTktfRE9XTl9FVlQgaWYgYSByZXBlYXRl
+ZCAKPj4gcmV0cmFuc21pdCBmYWlsdXJlcwo+Pgo+PiDCoMKgwqAgKyAqwqDCoMKgwqDCoCBoYXBw
+ZW5zICgtIHVubGlrZWx5IGNhc2UpCj4+Cj4+IMKgwqDCoMKgIMKgICoKPj4KPj4gwqDCoMKgIC0g
+KiBJbiBjYXNlIG9mIGEgcmVwZWF0ZWQgcmV0cmFuc21pdCBmYWlsdXJlcywgdGhlIGNhbGwgd2ls
+bCAKPj4gcmV0dXJuIHNob3J0bHkKPj4KPj4gwqDCoMKgIC0gKiB3aXRoIGEgcmV0dXJuZWQgY29k
+ZSAoZS5nLiBUSVBDX0xJTktfRE9XTl9FVlQpCj4+Cj4+IMKgwqDCoCArICogUmV0dXJuOiB0aGUg
+bnVtYmVyIG9mIHBhY2tldHMgcmVsZWFzZWQgZnJvbSB0aGUgbGluayB0cmFuc21xCj4+Cj4+IMKg
+wqDCoMKgIMKgICovCj4+Cj4+IMKgwqDCoCAtc3RhdGljIGludCB0aXBjX2xpbmtfYWR2YW5jZV90
+cmFuc21xKHN0cnVjdCB0aXBjX2xpbmsgKmwsIHUxNiAKPj4gYWNrZWQsIHUxNiBnYXAsCj4+Cj4+
+IMKgwqDCoCArc3RhdGljIGludCB0aXBjX2xpbmtfYWR2YW5jZV90cmFuc21xKHN0cnVjdCB0aXBj
+X2xpbmsgKmwsIHN0cnVjdCAKPj4gdGlwY19saW5rICpyLAo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgwqDCoMKgwqAgdTE2IGFja2Vk
+LCB1MTYgZ2FwLAo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqAgwqDCoMKgwqDCoHN0cnVjdCB0aXBjX2dhcF9hY2tfYmxrcyAqZ2Es
+Cj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoCDCoMKgwqDCoCBzdHJ1Y3Qgc2tfYnVmZl9oZWFkICp4bWl0cSkKPj4KPj4gwqDCoMKgICvC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIMKgwqDCoMKgIHN0
+cnVjdCBza19idWZmX2hlYWQgKnhtaXRxLAo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgwqDCoMKgwqAgYm9vbCAqcmV0cmFuc21pdHRl
+ZCwgaW50ICpyYykKPj4KPj4gwqDCoMKgwqDCoCB7Cj4+Cj4+IMKgwqDCoCArIHN0cnVjdCB0aXBj
+X2dhcF9hY2tfYmxrcyAqbGFzdF9nYSA9IHItPmxhc3RfZ2EsICp0aGlzX2dhID0gTlVMTDsKPj4K
+Pj4gwqDCoMKgICsgc3RydWN0IHRpcGNfZ2FwX2FjayAqZ2Fja3MgPSBOVUxMOwo+Pgo+PiDCoMKg
+wqDCoMKgwqAgc3RydWN0IHNrX2J1ZmYgKnNrYiwgKl9za2IsICp0bXA7Cj4+Cj4+IMKgwqDCoMKg
+wqDCoCBzdHJ1Y3QgdGlwY19tc2cgKmhkcjsKPj4KPj4gwqDCoMKgICsgdTMyIHFsZW4gPSBza2Jf
+cXVldWVfbGVuKCZsLT50cmFuc21xKTsKPj4KPj4gwqDCoMKgICsgdTE2IG5hY2tlZCA9IGFja2Vk
+LCBuZ2FwID0gZ2FwLCBnYWNrX2NudCA9IDA7Cj4+Cj4+IMKgwqDCoMKgwqDCoCB1MTYgYmNfYWNr
+ID0gbC0+YmNfcmN2bGluay0+cmN2X254dCAtIDE7Cj4+Cj4+IMKgwqDCoCAtIGJvb2wgcmV0cmFu
+c21pdHRlZCA9IGZhbHNlOwo+Pgo+PiDCoMKgwqDCoMKgwqAgdTE2IGFjayA9IGwtPnJjdl9ueHQg
+LSAxOwo+Pgo+PiDCoMKgwqAgLSBib29sIHBhc3NlZCA9IGZhbHNlOwo+Pgo+PiDCoMKgwqAgLSB1
+MTYgcmVsZWFzZWQgPSAwOwo+Pgo+PiDCoMKgwqDCoMKgwqAgdTE2IHNlcW5vLCBuID0gMDsKPj4K
+Pj4gwqDCoMKgIC0gaW50IHJjID0gMDsKPj4KPj4gwqDCoMKgICsgdTE2IGVuZCA9IHItPmFja2Vk
+LCBzdGFydCA9IGVuZCwgb2Zmc2V0ID0gci0+bGFzdF9nYXA7Cj4+Cj4+IMKgwqDCoCArIHUxNiBz
+aSA9IChsYXN0X2dhKSA/IGxhc3RfZ2EtPnN0YXJ0X2luZGV4IDogMDsKPj4KPj4gwqDCoMKgICsg
+Ym9vbCBpc191YyA9ICFsaW5rX2lzX2JjX3NuZGxpbmsobCk7Cj4+Cj4+IMKgwqDCoCArIGJvb2wg
+YmNfaGFzX2Fja2VkID0gZmFsc2U7Cj4+Cj4+IMKgwqDCoCArCj4+Cj4+IMKgwqDCoCArIHRyYWNl
+X3RpcGNfbGlua19yZXRyYW5zKHIsIGFja2VkICsgMSwgYWNrZWQgKyBnYXAsICZsLT50cmFuc21x
+KTsKPj4KPj4gwqDCoMKgICsKPj4KPj4gwqDCoMKgICsgLyogRGV0ZXJtaW5lIEdhcCBBQ0sgYmxv
+Y2tzIGlmIGFueSBmb3IgdGhlIHBhcnRpY3VsYXIgbGluayAqLwo+Pgo+PiDCoMKgwqAgKyBpZiAo
+Z2EgJiYgaXNfdWMpIHsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoCAvKiBHZXQgdGhlIEdh
+cCBBQ0tzLCB1YyBwYXJ0ICovCj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqAgZ2Fja19jbnQg
+PSBnYS0+dWdhY2tfY250Owo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgIGdhY2tzID0gJmdh
+LT5nYWNrc1tnYS0+YmdhY2tfY250XTsKPj4KPj4gwqDCoMKgICsgfSBlbHNlIGlmIChnYSkgewo+
+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgIC8qIENvcHkgdGhlIEdhcCBBQ0tzLCBiYyBwYXJ0
+LCBmb3IgbGF0ZXIgcmVuZXdhbCBpZiAKPj4gbmVlZGVkICovCj4+Cj4+IMKgwqDCoCArwqDCoMKg
+wqDCoMKgwqAgdGhpc19nYSA9IGttZW1kdXAoZ2EsIHRpcGNfZ2FwX2Fja19ibGtzX3N6KGdhLT5i
+Z2Fja19jbnQpLAo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqAgwqAgR0ZQX0FUT01JQyk7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKg
+wqAgaWYgKGxpa2VseSh0aGlzX2dhKSkgewo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCB0aGlzX2dhLT5zdGFydF9pbmRleCA9IDA7Cj4+Cj4+IMKgwqDCoCArwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC8qIFN0YXJ0IHdpdGggdGhlIGJjIEdhcCBBQ0tz
+ICovCj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGdhY2tfY250
+ID0gdGhpc19nYS0+YmdhY2tfY250Owo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCBnYWNrcyA9ICZ0aGlzX2dhLT5nYWNrc1swXTsKPj4KPj4gwqDCoMKgICvCoMKg
+wqDCoMKgwqDCoCB9IGVsc2Ugewo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoCAvKiBIbW0sIHdlIGNhbiBnZXQgaW4gdHJvdWJsZS4uLiwgc2ltcGx5IGlnbm9yZSAK
+Pj4gaXQgKi8KPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcHJf
+d2Fybl9yYXRlbGltaXRlZCgiSWdub3JpbmcgYmMgR2FwIEFDS3MsIG5vIAo+PiBtZW1vcnlcbiIp
+Owo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgIH0KPj4KPj4gwqDCoMKgICsgfQo+Pgo+Pgo+
+PiDCoMKgwqAgKyAvKiBBZHZhbmNlIHRoZSBsaW5rIHRyYW5zbXEgKi8KPj4KPj4gwqDCoMKgwqDC
+oMKgIHNrYl9xdWV1ZV93YWxrX3NhZmUoJmwtPnRyYW5zbXEsIHNrYiwgdG1wKSB7Cj4+Cj4+IMKg
+wqDCoMKgwqAgwqDCoMKgwqDCoMKgwqAgc2Vxbm8gPSBidWZfc2Vxbm8oc2tiKTsKPj4KPj4KPj4g
+wqDCoMKgwqAgwqBuZXh0X2dhcF9hY2s6Cj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqAgaWYg
+KGxlc3NfZXEoc2Vxbm8sIGFja2VkKSkgewo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgIGlm
+IChsZXNzX2VxKHNlcW5vLCBuYWNrZWQpKSB7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgIGlmIChpc191YykKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGdvdG8gcmVsZWFzZTsKPj4KPj4gwqDCoMKg
+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgLyogU2tpcCBwYWNrZXRzIHBlZXIgaGFz
+IGFscmVhZHkgYWNrZWQgKi8KPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqAgaWYgKCFtb3JlKHNlcW5vLCByLT5hY2tlZCkpCj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjb250aW51ZTsKPj4KPj4gwqDC
+oMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgLyogR2V0IHRoZSBuZXh0IG9mIGxh
+c3QgR2FwIEFDSyBibG9ja3MgKi8KPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgd2hpbGUgKG1vcmUoc2Vxbm8sIGVuZCkpIHsKPj4KPj4gwqDCoMKgICvCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGlmICghbGFzdF9nYSB8fCBz
+aSA+PSBsYXN0X2dhLT5iZ2Fja19jbnQpCj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGJyZWFrOwo+Pgo+PiDC
+oMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgc3Rh
+cnQgPSBlbmQgKyBvZmZzZXQgKyAxOwo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZW5kID0gbnRvaHMobGFzdF9nYS0+Z2Fja3Nbc2ld
+LmFjayk7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCBvZmZzZXQgPSBudG9ocyhsYXN0X2dhLT5nYWNrc1tzaV0uZ2FwKTsKPj4KPj4g
+wqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHNp
+Kys7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoCBXQVJOX09OQ0UobW9yZShzdGFydCwgZW5kKSB8fAo+Pgo+PiDCoMKgwqAgK8KgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCDC
+oCAoIW9mZnNldCAmJgo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCDCoMKgIHNpIDwgbGFzdF9nYS0+YmdhY2tf
+Y250KSB8fAo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCDCoCBzaSA+IE1BWF9HQVBfQUNLX0JMS1MsCj4+Cj4+
+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgIMKgICJDb3JydXB0ZWQgR2FwIEFDSzogJWQgJWQgJWQgJWQgCj4+ICVkXG4i
+LAo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoCDCoCBzdGFydCwgZW5kLCBvZmZzZXQsIHNpLAo+Pgo+PiDCoMKg
+wqAgK8KgwqDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgIMKgIGxhc3RfZ2EtPmJnYWNrX2NudCk7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgIH0KPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgLyogQ2hlY2sgYWdhaW5zdCB0aGUgbGFzdCBHYXAgQUNLIGJsb2NrICovCj4+Cj4+
+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGlmIChpbl9yYW5nZShzZXFu
+bywgc3RhcnQsIGVuZCkpCj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoCBjb250aW51ZTsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqAgLyogVXBkYXRlL3JlbGVhc2UgdGhlIHBhY2tldCBwZWVyIGlzIGFj
+a2luZyAqLwo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBiY19o
+YXNfYWNrZWQgPSB0cnVlOwo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoCBpZiAoLS1USVBDX1NLQl9DQihza2IpLT5hY2tlcnMpCj4+Cj4+IMKgwqDCoCArwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjb250aW51ZTsKPj4KPj4g
+wqDCoMKgICtyZWxlYXNlOgo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoCAvKiByZWxlYXNlIHNrYiAqLwo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoCBfX3NrYl91bmxpbmsoc2tiLCAmbC0+dHJhbnNtcSk7Cj4+Cj4+IMKg
+wqDCoMKgwqAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGtmcmVlX3NrYihza2IpOwo+
+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZWxlYXNlZCsrOwo+
+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgIH0gZWxzZSBpZiAobGVzc19lcShzZXFubywgYWNr
+ZWQgKyBnYXApKSB7Cj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+IC8qIEZpcnN0LCBjaGVjayBpZiByZXBlYXRlZCByZXRyYW5zIGZhaWx1cmVzIAo+PiBvY2N1cnM/
+ICovCj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGlmICghcGFz
+c2VkICYmIGxpbmtfcmV0cmFuc21pdF9mYWlsdXJlKGwsIGwsICZyYykpCj4+Cj4+IMKgwqDCoCAt
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gcmM7
+Cj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHBhc3NlZCA9IHRy
+dWU7Cj4+Cj4+IMKgwqDCoCAtCj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqAgfSBlbHNlIGlm
+IChsZXNzX2VxKHNlcW5vLCBuYWNrZWQgKyBuZ2FwKSkgewo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAvKiBGaXJzdCBnYXA6IGNoZWNrIGlmIHJlcGVhdGVkIHJl
+dHJhbnMgCj4+IGZhaWx1cmVzPyAqLwo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCBpZiAodW5saWtlbHkoc2Vxbm8gPT0gYWNrZWQgKyAxICYmCj4+Cj4+IMKgwqDC
+oCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCDCoMKgwqDC
+oCBsaW5rX3JldHJhbnNtaXRfZmFpbHVyZShsLCByLCByYykpKSB7Cj4+Cj4+IMKgwqDCoCArwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAvKiBJZ25vcmUgdGhp
+cyBiYyBHYXAgQUNLcyBpZiBhbnkgKi8KPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGtmcmVlKHRoaXNfZ2EpOwo+Pgo+PiDCoMKgwqAg
+K8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdGhpc19nYSA9
+IE5VTEw7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCBicmVhazsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqAgfQo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAv
+KiByZXRyYW5zbWl0IHNrYiBpZiB1bnJlc3RyaWN0ZWQqLwo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpZiAodGltZV9iZWZvcmUoamlmZmllcywgCj4+IFRJ
+UENfU0tCX0NCKHNrYiktPm54dF9yZXRyKSkKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNvbnRpbnVlOwo+Pgo+PiDCoMKgwqAg
+LcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBUSVBDX1NLQl9DQihza2IpLT5ueHRfcmV0
+ciA9IFRJUENfVUNfUkVUUl9USU1FOwo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCBUSVBDX1NLQl9DQihza2IpLT5ueHRfcmV0ciA9IChpc191YykgPwo+Pgo+PiDC
+oMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCBUSVBDX1VDX1JFVFJfVElNRSA6IAo+PiBUSVBDX0JDX1JFVFJfTElNOwo+Pgo+
+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBfc2tiID0gcHNrYl9j
+b3B5KHNrYiwgR0ZQX0FUT01JQyk7Cj4+Cj4+IMKgwqDCoMKgwqAgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgIGlmICghX3NrYikKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNvbnRpbnVlOwo+Pgo+PiDCoMKgwqAgQEAg
+LTE1MTYsMjUgKzE2MDAsNTAgQEAgc3RhdGljIGludCAKPj4gdGlwY19saW5rX2FkdmFuY2VfdHJh
+bnNtcShzdHJ1Y3QgdGlwY19saW5rICpsLCB1MTYgYWNrZWQsIHUxNiBnYXAsCj4+Cj4+IMKgwqDC
+oMKgwqAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIF9za2ItPnByaW9yaXR5ID0gVENf
+UFJJT19DT05UUk9MOwo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoCBfX3NrYl9xdWV1ZV90YWlsKHhtaXRxLCBfc2tiKTsKPj4KPj4gwqDCoMKgwqDCoCDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgbC0+c3RhdHMucmV0cmFuc21pdHRlZCsrOwo+Pgo+
+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZXRyYW5zbWl0dGVkID0g
+dHJ1ZTsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgKnJldHJh
+bnNtaXR0ZWQgPSB0cnVlOwo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoCAvKiBJbmNyZWFzZSBhY3R1YWwgcmV0cmFucyBjb3VudGVyICYgbWFyayBmaXJzdCAK
+Pj4gdGltZSAqLwo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oCBpZiAoIVRJUENfU0tCX0NCKHNrYiktPnJldHJfY250KyspCj4+Cj4+IMKgwqDCoMKgwqAgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBUSVBDX1NLQl9DQihz
+a2IpLT5yZXRyX3N0YW1wID0gamlmZmllczsKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDC
+oCB9IGVsc2Ugewo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oCAvKiByZXRyeSB3aXRoIEdhcCBBQ0sgYmxvY2tzIGlmIGFueSAqLwo+Pgo+PiDCoMKgwqAgLcKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpZiAoIWdhIHx8IG4gPj0gZ2EtPmdhY2tfY250
+KQo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpZiAobiA+PSBn
+YWNrX2NudCkKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgIGJyZWFrOwo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCBhY2tlZCA9IG50b2hzKGdhLT5nYWNrc1tuXS5hY2spOwo+Pgo+PiDCoMKgwqAg
+LcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBnYXAgPSBudG9ocyhnYS0+Z2Fja3Nbbl0u
+Z2FwKTsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgbmFja2Vk
+ID0gbnRvaHMoZ2Fja3Nbbl0uYWNrKTsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgbmdhcCA9IG50b2hzKGdhY2tzW25dLmdhcCk7Cj4+Cj4+IMKgwqDCoMKgwqAg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIG4rKzsKPj4KPj4gwqDCoMKgwqDCoCDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZ290byBuZXh0X2dhcF9hY2s7Cj4+Cj4+IMKgwqDC
+oMKgwqAgwqDCoMKgwqDCoMKgwqAgfQo+Pgo+PiDCoMKgwqDCoMKgwqAgfQo+Pgo+PiDCoMKgwqAg
+LSBpZiAocmVsZWFzZWQgfHwgcmV0cmFuc21pdHRlZCkKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKg
+wqDCoCB0aXBjX2xpbmtfdXBkYXRlX2N3aW4obCwgcmVsZWFzZWQsIHJldHJhbnNtaXR0ZWQpOwo+
+Pgo+PiDCoMKgwqAgLSBpZiAocmVsZWFzZWQpCj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqAg
+dGlwY19saW5rX2FkdmFuY2VfYmFja2xvZyhsLCB4bWl0cSk7Cj4+Cj4+IMKgwqDCoCAtIHJldHVy
+biAwOwo+Pgo+PiDCoMKgwqAgKwo+Pgo+PiDCoMKgwqAgKyAvKiBSZW5ldyBsYXN0IEdhcCBBQ0sg
+YmxvY2tzIGZvciBiYyBpZiBuZWVkZWQgKi8KPj4KPj4gwqDCoMKgICsgaWYgKGJjX2hhc19hY2tl
+ZCkgewo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgIGlmICh0aGlzX2dhKSB7Cj4+Cj4+IMKg
+wqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGtmcmVlKGxhc3RfZ2EpOwo+Pgo+
+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByLT5sYXN0X2dhID0gdGhp
+c19nYTsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgci0+bGFz
+dF9nYXAgPSBnYXA7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqAgfSBlbHNlIGlmIChsYXN0
+X2dhKSB7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGlmIChs
+ZXNzKGFja2VkLCBzdGFydCkpIHsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHNpLS07Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBvZmZzZXQgPSBzdGFydCAtIGFja2Vk
+IC0gMTsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfSBlbHNl
+IGlmIChsZXNzKGFja2VkLCBlbmQpKSB7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBhY2tlZCA9IGVuZDsKPj4KPj4gwqDCoMKgICvC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfQo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoCBpZiAoc2kgPCBsYXN0X2dhLT5iZ2Fja19jbnQpIHsKPj4KPj4g
+wqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGxh
+c3RfZ2EtPnN0YXJ0X2luZGV4ID0gc2k7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByLT5sYXN0X2dhcCA9IG9mZnNldDsKPj4KPj4g
+wqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfSBlbHNlIHsKPj4KPj4gwqDC
+oMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGtmcmVl
+KGxhc3RfZ2EpOwo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqAgci0+bGFzdF9nYSA9IE5VTEw7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByLT5sYXN0X2dhcCA9IDA7Cj4+
+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIH0KPj4KPj4gwqDCoMKg
+ICvCoMKgwqDCoMKgwqDCoCB9IGVsc2Ugewo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCByLT5sYXN0X2dhcCA9IDA7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKg
+wqAgfQo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgIHItPmFja2VkID0gYWNrZWQ7Cj4+Cj4+
+IMKgwqDCoCArIH0gZWxzZSB7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqAga2ZyZWUodGhp
+c19nYSk7Cj4+Cj4+IMKgwqDCoCArIH0KPj4KPj4gwqDCoMKgICsgcmV0dXJuIHNrYl9xdWV1ZV9s
+ZW4oJmwtPnRyYW5zbXEpIC0gcWxlbjsKPj4KPj4gwqDCoMKgwqDCoCB9Cj4+Cj4+Cj4+IMKgwqDC
+oMKgIMKgLyogdGlwY19saW5rX2J1aWxkX3N0YXRlX21zZzogcHJlcGFyZSBsaW5rIHN0YXRlIG1l
+c3NhZ2UgZm9yIAo+PiB0cmFuc21pc3Npb24KPj4KPj4gwqDCoMKgIEBAIC0xNjUxLDcgKzE3NjAs
+OCBAQCBpbnQgdGlwY19saW5rX3JjdihzdHJ1Y3QgdGlwY19saW5rICpsLCAKPj4gc3RydWN0IHNr
+X2J1ZmYgKnNrYiwKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqAga2ZyZWVfc2tiKHNrYik7Cj4+Cj4+IMKgwqDCoMKgwqAgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgIGJyZWFrOwo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgIH0KPj4KPj4g
+wqDCoMKgIC3CoMKgwqDCoMKgwqDCoCByZWxlYXNlZCArPSB0aXBjX2xpbmtfcmVsZWFzZV9wa3Rz
+KGwsIG1zZ19hY2soaGRyKSk7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqAgcmVsZWFzZWQg
+Kz0gdGlwY19saW5rX2FkdmFuY2VfdHJhbnNtcShsLCBsLCAKPj4gbXNnX2FjayhoZHIpLCAwLAo+
+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgwqDCoMKgwqDCoCBOVUxMLCBOVUxMLCBO
+VUxMLCAKPj4gTlVMTCk7Cj4+Cj4+Cj4+IMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgwqAgLyogRGVm
+ZXIgZGVsaXZlcnkgaWYgc2VxdWVuY2UgZ2FwICovCj4+Cj4+IMKgwqDCoMKgwqAgwqDCoMKgwqDC
+oMKgwqAgaWYgKHVubGlrZWx5KHNlcW5vICE9IHJjdl9ueHQpKSB7Cj4+Cj4+IMKgwqDCoCBAQCAt
+MTczOSw3ICsxODQ5LDcgQEAgc3RhdGljIHZvaWQgCj4+IHRpcGNfbGlua19idWlsZF9wcm90b19t
+c2coc3RydWN0IHRpcGNfbGluayAqbCwgaW50IG10eXAsIGJvb2wgcHJvYmUsCj4+Cj4+IMKgwqDC
+oMKgwqAgwqDCoMKgwqDCoMKgwqAgbXNnX3NldF9wcm9iZShoZHIsIHByb2JlKTsKPj4KPj4gwqDC
+oMKgwqDCoCDCoMKgwqDCoMKgwqDCoCBtc2dfc2V0X2lzX2tlZXBhbGl2ZShoZHIsIHByb2JlIHx8
+IHByb2JlX3JlcGx5KTsKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDCoCBpZiAobC0+cGVl
+cl9jYXBzICYgVElQQ19HQVBfQUNLX0JMT0NLKQo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoCBnbGVuID0gdGlwY19idWlsZF9nYXBfYWNrX2Jsa3MobCwgZGF0YSwg
+cmN2Z2FwKTsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZ2xl
+biA9IHRpcGNfYnVpbGRfZ2FwX2Fja19ibGtzKGwsIGhkcik7Cj4+Cj4+IMKgwqDCoMKgwqAgwqDC
+oMKgwqDCoMKgwqAgdGlwY19tb25fcHJlcChsLT5uZXQsIGRhdGEgKyBnbGVuLCAmZGxlbiwgbXN0
+YXRlLCAKPj4gbC0+YmVhcmVyX2lkKTsKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDCoCBt
+c2dfc2V0X3NpemUoaGRyLCBJTlRfSF9TSVpFICsgZ2xlbiArIGRsZW4pOwo+Pgo+PiDCoMKgwqDC
+oMKgIMKgwqDCoMKgwqDCoMKgIHNrYl90cmltKHNrYiwgSU5UX0hfU0laRSArIGdsZW4gKyBkbGVu
+KTsKPj4KPj4gwqDCoMKgIEBAIC0yMDI3LDIwICsyMTM3LDE5IEBAIHN0YXRpYyBpbnQgdGlwY19s
+aW5rX3Byb3RvX3JjdihzdHJ1Y3QgCj4+IHRpcGNfbGluayAqbCwgc3RydWN0IHNrX2J1ZmYgKnNr
+YiwKPj4KPj4gwqDCoMKgwqDCoCB7Cj4+Cj4+IMKgwqDCoMKgwqDCoCBzdHJ1Y3QgdGlwY19tc2cg
+KmhkciA9IGJ1Zl9tc2coc2tiKTsKPj4KPj4gwqDCoMKgwqDCoMKgIHN0cnVjdCB0aXBjX2dhcF9h
+Y2tfYmxrcyAqZ2EgPSBOVUxMOwo+Pgo+PiDCoMKgwqAgLSB1MTYgcmN2Z2FwID0gMDsKPj4KPj4g
+wqDCoMKgIC0gdTE2IGFjayA9IG1zZ19hY2soaGRyKTsKPj4KPj4gwqDCoMKgIC0gdTE2IGdhcCA9
+IG1zZ19zZXFfZ2FwKGhkcik7Cj4+Cj4+IMKgwqDCoCArIGJvb2wgcmVwbHkgPSBtc2dfcHJvYmUo
+aGRyKSwgcmV0cmFuc21pdHRlZCA9IGZhbHNlOwo+Pgo+PiDCoMKgwqAgKyB1MTYgZGxlbiA9IG1z
+Z19kYXRhX3N6KGhkciksIGdsZW4gPSAwOwo+Pgo+PiDCoMKgwqDCoMKgwqAgdTE2IHBlZXJzX3Nu
+ZF9ueHQgPcKgIG1zZ19uZXh0X3NlbnQoaGRyKTsKPj4KPj4gwqDCoMKgwqDCoMKgIHUxNiBwZWVy
+c190b2wgPSBtc2dfbGlua190b2xlcmFuY2UoaGRyKTsKPj4KPj4gwqDCoMKgwqDCoMKgIHUxNiBw
+ZWVyc19wcmlvID0gbXNnX2xpbmtwcmlvKGhkcik7Cj4+Cj4+IMKgwqDCoCArIHUxNiBnYXAgPSBt
+c2dfc2VxX2dhcChoZHIpOwo+Pgo+PiDCoMKgwqAgKyB1MTYgYWNrID0gbXNnX2FjayhoZHIpOwo+
+Pgo+PiDCoMKgwqDCoMKgwqAgdTE2IHJjdl9ueHQgPSBsLT5yY3Zfbnh0Owo+Pgo+PiDCoMKgwqAg
+LSB1MTYgZGxlbiA9IG1zZ19kYXRhX3N6KGhkcik7Cj4+Cj4+IMKgwqDCoCArIHUxNiByY3ZnYXAg
+PSAwOwo+Pgo+PiDCoMKgwqDCoMKgwqAgaW50IG10eXAgPSBtc2dfdHlwZShoZHIpOwo+Pgo+PiDC
+oMKgwqAgLSBib29sIHJlcGx5ID0gbXNnX3Byb2JlKGhkcik7Cj4+Cj4+IMKgwqDCoCAtIHUxNiBn
+bGVuID0gMDsKPj4KPj4gwqDCoMKgIC0gdm9pZCAqZGF0YTsKPj4KPj4gwqDCoMKgICsgaW50IHJj
+ID0gMCwgcmVsZWFzZWQ7Cj4+Cj4+IMKgwqDCoMKgwqDCoCBjaGFyICppZl9uYW1lOwo+Pgo+PiDC
+oMKgwqAgLSBpbnQgcmMgPSAwOwo+Pgo+PiDCoMKgwqAgKyB2b2lkICpkYXRhOwo+Pgo+Pgo+PiDC
+oMKgwqDCoCDCoCB0cmFjZV90aXBjX3Byb3RvX3Jjdihza2IsIGZhbHNlLCBsLT5uYW1lKTsKPj4K
+Pj4gwqDCoMKgwqDCoMKgIGlmICh0aXBjX2xpbmtfaXNfYmxvY2tlZChsKSB8fCAheG1pdHEpCj4+
+Cj4+IMKgwqDCoCBAQCAtMjEzNywxMyArMjI0Niw3IEBAIHN0YXRpYyBpbnQgdGlwY19saW5rX3By
+b3RvX3JjdihzdHJ1Y3QgCj4+IHRpcGNfbGluayAqbCwgc3RydWN0IHNrX2J1ZmYgKnNrYiwKPj4K
+Pj4gwqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDCoCB9Cj4+Cj4+Cj4+IMKgwqDCoMKgIMKgwqDCoMKg
+wqDCoMKgwqAgLyogUmVjZWl2ZSBHYXAgQUNLIGJsb2NrcyBmcm9tIHBlZXIgaWYgYW55ICovCj4+
+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqAgaWYgKGwtPnBlZXJfY2FwcyAmIFRJUENfR0FQX0FD
+S19CTE9DSykgewo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBn
+YSA9IChzdHJ1Y3QgdGlwY19nYXBfYWNrX2Jsa3MgKilkYXRhOwo+Pgo+PiDCoMKgwqAgLcKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBnbGVuID0gbnRvaHMoZ2EtPmxlbik7Cj4+Cj4+IMKg
+wqDCoCAtIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgLyogc2FuaXR5IGNoZWNrOiBpZiBm
+YWlsZWQsIGlnbm9yZSBHYXAgQUNLIAo+PiBibG9ja3MgKi8KPj4KPj4gwqDCoMKgIC3CoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaWYgKGdsZW4gIT0gdGlwY19nYXBfYWNrX2Jsa3Nfc3oo
+Z2EtPmdhY2tfY250KSkKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgIGdhID0gTlVMTDsKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDC
+oCB9Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqAgZ2xlbiA9IHRpcGNfZ2V0X2dhcF9hY2tf
+YmxrcygmZ2EsIGwsIGhkciwgdHJ1ZSk7Cj4+Cj4+Cj4+IMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKg
+wqAgdGlwY19tb25fcmN2KGwtPm5ldCwgZGF0YSArIGdsZW4sIGRsZW4gLSBnbGVuLCBsLT5hZGRy
+LAo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCDCoMKgwqDC
+oMKgJmwtPm1vbl9zdGF0ZSwgbC0+YmVhcmVyX2lkKTsKPj4KPj4gwqDCoMKgIEBAIC0yMTU4LDkg
+KzIyNjEsMTQgQEAgc3RhdGljIGludCB0aXBjX2xpbmtfcHJvdG9fcmN2KHN0cnVjdCAKPj4gdGlw
+Y19saW5rICpsLCBzdHJ1Y3Qgc2tfYnVmZiAqc2tiLAo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB0aXBjX2xpbmtfYnVpbGRfcHJvdG9fbXNnKGwsIFNUQVRF
+X01TRywgMCwgcmVwbHksCj4+Cj4+IMKgwqDCoMKgwqAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCDCoMKg
+cmN2Z2FwLCAwLCAwLCB4bWl0cSk7Cj4+Cj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqAgcmMg
+fD0gdGlwY19saW5rX2FkdmFuY2VfdHJhbnNtcShsLCBhY2ssIGdhcCwgZ2EsIHhtaXRxKTsKPj4K
+Pj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoCByZWxlYXNlZCA9IHRpcGNfbGlua19hZHZhbmNlX3Ry
+YW5zbXEobCwgbCwgYWNrLCBnYXAsIGdhLCAKPj4geG1pdHEsCj4+Cj4+IMKgwqDCoCArICZyZXRy
+YW5zbWl0dGVkLCAmcmMpOwo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgIGlmIChnYXAp
+Cj4+Cj4+IMKgwqDCoMKgwqAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGwtPnN0YXRz
+LnJlY3ZfbmFja3MrKzsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoCBpZiAocmVsZWFzZWQg
+fHwgcmV0cmFuc21pdHRlZCkKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqAgdGlwY19saW5rX3VwZGF0ZV9jd2luKGwsIHJlbGVhc2VkLCByZXRyYW5zbWl0dGVkKTsK
+Pj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoCBpZiAocmVsZWFzZWQpCj4+Cj4+IMKgwqDCoCAr
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHRpcGNfbGlua19hZHZhbmNlX2JhY2tsb2co
+bCwgeG1pdHEpOwo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgIGlmICh1bmxpa2VseSgh
+c2tiX3F1ZXVlX2VtcHR5KCZsLT53YWtldXBxKSkpCj4+Cj4+IMKgwqDCoMKgwqAgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgIGxpbmtfcHJlcGFyZV93YWtldXAobCk7Cj4+Cj4+IMKgwqDC
+oMKgwqDCoCB9Cj4+Cj4+IMKgwqDCoCBAQCAtMjI0NiwxMCArMjM1NCw3IEBAIHZvaWQgdGlwY19s
+aW5rX2JjX2luaXRfcmN2KHN0cnVjdCAKPj4gdGlwY19saW5rICpsLCBzdHJ1Y3QgdGlwY19tc2cg
+KmhkcikKPj4KPj4gwqDCoMKgwqDCoCBpbnQgdGlwY19saW5rX2JjX3N5bmNfcmN2KHN0cnVjdCB0
+aXBjX2xpbmsgKmwsIHN0cnVjdCB0aXBjX21zZyAKPj4gKmhkciwKPj4KPj4gwqDCoMKgwqDCoCDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgwqDCoHN0cnVjdCBza19idWZmX2hlYWQgKnht
+aXRxKQo+Pgo+PiDCoMKgwqDCoMKgIHsKPj4KPj4gwqDCoMKgIC0gc3RydWN0IHRpcGNfbGluayAq
+c25kX2wgPSBsLT5iY19zbmRsaW5rOwo+Pgo+PiDCoMKgwqDCoMKgwqAgdTE2IHBlZXJzX3NuZF9u
+eHQgPSBtc2dfYmNfc25kX254dChoZHIpOwo+Pgo+PiDCoMKgwqAgLSB1MTYgZnJvbSA9IG1zZ19i
+Y2FzdF9hY2soaGRyKSArIDE7Cj4+Cj4+IMKgwqDCoCAtIHUxNiB0byA9IGZyb20gKyBtc2dfYmNf
+Z2FwKGhkcikgLSAxOwo+Pgo+PiDCoMKgwqDCoMKgwqAgaW50IHJjID0gMDsKPj4KPj4KPj4gwqDC
+oMKgwqAgwqAgaWYgKCFsaW5rX2lzX3VwKGwpKQo+Pgo+PiDCoMKgwqAgQEAgLTIyNzEsOCArMjM3
+Niw2IEBAIGludCB0aXBjX2xpbmtfYmNfc3luY19yY3Yoc3RydWN0IHRpcGNfbGluayAKPj4gKmws
+IHN0cnVjdCB0aXBjX21zZyAqaGRyLAo+Pgo+PiDCoMKgwqDCoMKgwqAgaWYgKG1vcmUocGVlcnNf
+c25kX254dCwgbC0+cmN2X254dCArIGwtPndpbmRvdykpCj4+Cj4+IMKgwqDCoMKgwqAgwqDCoMKg
+wqDCoMKgwqAgcmV0dXJuIHJjOwo+Pgo+Pgo+PiDCoMKgwqAgLSByYyA9IHRpcGNfbGlua19iY19y
+ZXRyYW5zKHNuZF9sLCBsLCBmcm9tLCB0bywgeG1pdHEpOwo+Pgo+PiDCoMKgwqAgLQo+Pgo+PiDC
+oMKgwqDCoMKgwqAgbC0+c25kX254dCA9IHBlZXJzX3NuZF9ueHQ7Cj4+Cj4+IMKgwqDCoMKgwqDC
+oCBpZiAobGlua19iY19yY3ZfZ2FwKGwpKQo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKg
+IHJjIHw9IFRJUENfTElOS19TTkRfU1RBVEU7Cj4+Cj4+IMKgwqDCoCBAQCAtMjMwNywzOCArMjQx
+MCwyOCBAQCBpbnQgdGlwY19saW5rX2JjX3N5bmNfcmN2KHN0cnVjdCAKPj4gdGlwY19saW5rICps
+LCBzdHJ1Y3QgdGlwY19tc2cgKmhkciwKPj4KPj4gwqDCoMKgwqDCoMKgIHJldHVybiAwOwo+Pgo+
+PiDCoMKgwqDCoMKgIH0KPj4KPj4KPj4gwqDCoMKgIC12b2lkIHRpcGNfbGlua19iY19hY2tfcmN2
+KHN0cnVjdCB0aXBjX2xpbmsgKmwsIHUxNiBhY2tlZCwKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqAgwqAgc3RydWN0IHNrX2J1ZmZfaGVhZCAqeG1pdHEpCj4+Cj4+
+IMKgwqDCoCAraW50IHRpcGNfbGlua19iY19hY2tfcmN2KHN0cnVjdCB0aXBjX2xpbmsgKnIsIHUx
+NiBhY2tlZCwgdTE2IGdhcCwKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoCBzdHJ1Y3QgdGlwY19nYXBfYWNrX2Jsa3MgKmdhLAo+Pgo+PiDCoMKgwqAgK8KgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHN0cnVjdCBza19idWZmX2hlYWQgKnhtaXRxKQo+
+Pgo+PiDCoMKgwqDCoMKgIHsKPj4KPj4gwqDCoMKgIC0gc3RydWN0IHNrX2J1ZmYgKnNrYiwgKnRt
+cDsKPj4KPj4gwqDCoMKgIC0gc3RydWN0IHRpcGNfbGluayAqc25kX2wgPSBsLT5iY19zbmRsaW5r
+Owo+Pgo+PiDCoMKgwqAgKyBzdHJ1Y3QgdGlwY19saW5rICpsID0gci0+YmNfc25kbGluazsKPj4K
+Pj4gwqDCoMKgICsgYm9vbCB1bnVzZWQgPSBmYWxzZTsKPj4KPj4gwqDCoMKgICsgaW50IHJjID0g
+MDsKPj4KPj4KPj4gwqDCoMKgIC0gaWYgKCFsaW5rX2lzX3VwKGwpIHx8ICFsLT5iY19wZWVyX2lz
+X3VwKQo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgIHJldHVybjsKPj4KPj4gwqDCoMKgICsg
+aWYgKCFsaW5rX2lzX3VwKHIpIHx8ICFyLT5iY19wZWVyX2lzX3VwKQo+Pgo+PiDCoMKgwqAgK8Kg
+wqDCoMKgwqDCoMKgIHJldHVybiAwOwo+Pgo+Pgo+PiDCoMKgwqAgLSBpZiAoIW1vcmUoYWNrZWQs
+IGwtPmFja2VkKSkKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoCByZXR1cm47Cj4+Cj4+IMKg
+wqDCoCArIGlmIChsZXNzKGFja2VkLCByLT5hY2tlZCkgfHwgKGFja2VkID09IHItPmFja2VkICYm
+ICFnYXAgJiYgIWdhKSkKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoCByZXR1cm4gMDsKPj4K
+Pj4KPj4gwqDCoMKgIC0gdHJhY2VfdGlwY19saW5rX2JjX2FjayhsLCBsLT5hY2tlZCwgYWNrZWQs
+ICZzbmRfbC0+dHJhbnNtcSk7Cj4+Cj4+IMKgwqDCoCAtIC8qIFNraXAgb3ZlciBwYWNrZXRzIHBl
+ZXIgaGFzIGFscmVhZHkgYWNrZWQgKi8KPj4KPj4gwqDCoMKgIC0gc2tiX3F1ZXVlX3dhbGsoJnNu
+ZF9sLT50cmFuc21xLCBza2IpIHsKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoCBpZiAobW9y
+ZShidWZfc2Vxbm8oc2tiKSwgbC0+YWNrZWQpKQo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoCBicmVhazsKPj4KPj4gwqDCoMKgIC0gfQo+Pgo+PiDCoMKgwqAgKyB0
+cmFjZV90aXBjX2xpbmtfYmNfYWNrKHIsIHItPmFja2VkLCBhY2tlZCwgJmwtPnRyYW5zbXEpOwo+
+Pgo+PiDCoMKgwqAgKyB0aXBjX2xpbmtfYWR2YW5jZV90cmFuc21xKGwsIHIsIGFja2VkLCBnYXAs
+IGdhLCB4bWl0cSwgJnVudXNlZCwgCj4+ICZyYyk7Cj4+Cj4+Cj4+IMKgwqDCoCAtIC8qIFVwZGF0
+ZS9yZWxlYXNlIHRoZSBwYWNrZXRzIHBlZXIgaXMgYWNraW5nIG5vdyAqLwo+Pgo+PiDCoMKgwqAg
+LSBza2JfcXVldWVfd2Fsa19mcm9tX3NhZmUoJnNuZF9sLT50cmFuc21xLCBza2IsIHRtcCkgewo+
+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgIGlmIChtb3JlKGJ1Zl9zZXFubyhza2IpLCBhY2tl
+ZCkpCj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGJyZWFrOwo+
+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgIGlmICghLS1USVBDX1NLQl9DQihza2IpLT5hY2tl
+cnMpIHsKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgX19za2Jf
+dW5saW5rKHNrYiwgJnNuZF9sLT50cmFuc21xKTsKPj4KPj4gwqDCoMKgIC0gwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoCBrZnJlZV9za2Ioc2tiKTsKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKg
+wqDCoCB9Cj4+Cj4+IMKgwqDCoCAtIH0KPj4KPj4gwqDCoMKgIC0gbC0+YWNrZWQgPSBhY2tlZDsK
+Pj4KPj4gwqDCoMKgIC0gdGlwY19saW5rX2FkdmFuY2VfYmFja2xvZyhzbmRfbCwgeG1pdHEpOwo+
+Pgo+PiDCoMKgwqAgLSBpZiAodW5saWtlbHkoIXNrYl9xdWV1ZV9lbXB0eSgmc25kX2wtPndha2V1
+cHEpKSkKPj4KPj4gwqDCoMKgIC3CoMKgwqDCoMKgwqDCoCBsaW5rX3ByZXBhcmVfd2FrZXVwKHNu
+ZF9sKTsKPj4KPj4gwqDCoMKgICsgdGlwY19saW5rX2FkdmFuY2VfYmFja2xvZyhsLCB4bWl0cSk7
+Cj4+Cj4+IMKgwqDCoCArIGlmICh1bmxpa2VseSghc2tiX3F1ZXVlX2VtcHR5KCZsLT53YWtldXBx
+KSkpCj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqAgbGlua19wcmVwYXJlX3dha2V1cChsKTsK
+Pj4KPj4gwqDCoMKgICsKPj4KPj4gwqDCoMKgICsgcmV0dXJuIHJjOwo+Pgo+PiDCoMKgwqDCoMKg
+IH0KPj4KPj4KPj4gwqDCoMKgwqAgwqAvKiB0aXBjX2xpbmtfYmNfbmFja19yY3YoKTogcmVjZWl2
+ZSBicm9hZGNhc3QgbmFjayBtZXNzYWdlCj4+Cj4+IMKgwqDCoCBAQCAtMjM2Niw4ICsyNDU5LDcg
+QEAgaW50IHRpcGNfbGlua19iY19uYWNrX3JjdihzdHJ1Y3QgdGlwY19saW5rIAo+PiAqbCwgc3Ry
+dWN0IHNrX2J1ZmYgKnNrYiwKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDCoMKgwqDCoCByZXR1cm4g
+MDsKPj4KPj4KPj4gwqDCoMKgwqAgwqAgaWYgKGRub2RlID09IHRpcGNfb3duX2FkZHIobC0+bmV0
+KSkgewo+Pgo+PiDCoMKgwqAgLcKgwqDCoMKgwqDCoMKgIHRpcGNfbGlua19iY19hY2tfcmN2KGws
+IGFja2VkLCB4bWl0cSk7Cj4+Cj4+IMKgwqDCoCAtwqDCoMKgwqDCoMKgwqAgcmMgPSB0aXBjX2xp
+bmtfYmNfcmV0cmFucyhsLT5iY19zbmRsaW5rLCBsLCBmcm9tLCB0bywgCj4+IHhtaXRxKTsKPj4K
+Pj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoCByYyA9IHRpcGNfbGlua19iY19hY2tfcmN2KGwsIGFj
+a2VkLCB0byAtIGFja2VkLCBOVUxMLCAKPj4geG1pdHEpOwo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDC
+oMKgwqDCoMKgIGwtPnN0YXRzLnJlY3ZfbmFja3MrKzsKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDC
+oMKgwqDCoCByZXR1cm4gcmM7Cj4+Cj4+IMKgwqDCoMKgwqDCoCB9Cj4+Cj4+IMKgwqDCoCBkaWZm
+IC0tZ2l0IGEvbmV0L3RpcGMvbGluay5oIGIvbmV0L3RpcGMvbGluay5oCj4+Cj4+IMKgwqDCoCBp
+bmRleCBkM2MxYzNmYzE2NTkuLjBhMGZhNzM1MDcyMiAxMDA2NDQKPj4KPj4gwqDCoMKgIC0tLSBh
+L25ldC90aXBjL2xpbmsuaAo+Pgo+PiDCoMKgwqAgKysrIGIvbmV0L3RpcGMvbGluay5oCj4+Cj4+
+IMKgwqDCoCBAQCAtMTQzLDggKzE0MywxMSBAQCBpbnQgdGlwY19saW5rX2JjX3BlZXJzKHN0cnVj
+dCB0aXBjX2xpbmsgKmwpOwo+Pgo+PiDCoMKgwqDCoMKgIHZvaWQgdGlwY19saW5rX3NldF9tdHUo
+c3RydWN0IHRpcGNfbGluayAqbCwgaW50IG10dSk7Cj4+Cj4+IMKgwqDCoMKgwqAgaW50IHRpcGNf
+bGlua19tdHUoc3RydWN0IHRpcGNfbGluayAqbCk7Cj4+Cj4+IMKgwqDCoMKgwqAgaW50IHRpcGNf
+bGlua19tc3Moc3RydWN0IHRpcGNfbGluayAqbCk7Cj4+Cj4+IMKgwqDCoCAtdm9pZCB0aXBjX2xp
+bmtfYmNfYWNrX3JjdihzdHJ1Y3QgdGlwY19saW5rICpsLCB1MTYgYWNrZWQsCj4+Cj4+IMKgwqDC
+oCAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIMKgIHN0cnVjdCBza19idWZmX2hlYWQg
+KnhtaXRxKTsKPj4KPj4gwqDCoMKgICt1MTYgdGlwY19nZXRfZ2FwX2Fja19ibGtzKHN0cnVjdCB0
+aXBjX2dhcF9hY2tfYmxrcyAqKmdhLCBzdHJ1Y3QgCj4+IHRpcGNfbGluayAqbCwKPj4KPj4gwqDC
+oMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgwqAgc3RydWN0IHRpcGNfbXNnICpo
+ZHIsIGJvb2wgdWMpOwo+Pgo+PiDCoMKgwqAgK2ludCB0aXBjX2xpbmtfYmNfYWNrX3JjdihzdHJ1
+Y3QgdGlwY19saW5rICpsLCB1MTYgYWNrZWQsIHUxNiBnYXAsCj4+Cj4+IMKgwqDCoCArwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgc3RydWN0IHRpcGNfZ2FwX2Fja19ibGtzICpnYSwK
+Pj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3Qgc2tf
+YnVmZl9oZWFkICp4bWl0cSk7Cj4+Cj4+IMKgwqDCoMKgwqAgdm9pZCB0aXBjX2xpbmtfYnVpbGRf
+YmNfc3luY19tc2coc3RydWN0IHRpcGNfbGluayAqbCwKPj4KPj4gwqDCoMKgwqDCoCDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIMKgc3RydWN0IHNrX2J1ZmZf
+aGVhZCAqeG1pdHEpOwo+Pgo+PiDCoMKgwqDCoMKgIHZvaWQgdGlwY19saW5rX2JjX2luaXRfcmN2
+KHN0cnVjdCB0aXBjX2xpbmsgKmwsIHN0cnVjdCB0aXBjX21zZyAKPj4gKmhkcik7Cj4+Cj4+IMKg
+wqDCoCBkaWZmIC0tZ2l0IGEvbmV0L3RpcGMvbXNnLmggYi9uZXQvdGlwYy9tc2cuaAo+Pgo+PiDC
+oMKgwqAgaW5kZXggNmQ0NjZlYmRiNjRmLi45YTM4ZjljOWQ2ZWIgMTAwNjQ0Cj4+Cj4+IMKgwqDC
+oCAtLS0gYS9uZXQvdGlwYy9tc2cuaAo+Pgo+PiDCoMKgwqAgKysrIGIvbmV0L3RpcGMvbXNnLmgK
+Pj4KPj4gwqDCoMKgIEBAIC0xNjAsMjAgKzE2MCwyNiBAQCBzdHJ1Y3QgdGlwY19nYXBfYWNrIHsK
+Pj4KPj4KPj4gwqDCoMKgwqAgwqAvKiBzdHJ1Y3QgdGlwY19nYXBfYWNrX2Jsa3MKPj4KPj4gwqDC
+oMKgwqAgwqAgKiBAbGVuOiBhY3R1YWwgbGVuZ3RoIG9mIHRoZSByZWNvcmQKPj4KPj4gwqDCoMKg
+IC0gKiBAZ2Fja19jbnQ6IG51bWJlciBvZiBHYXAgQUNLIGJsb2NrcyBpbiB0aGUgcmVjb3JkCj4+
+Cj4+IMKgwqDCoCArICogQGJnYWNrX2NudDogbnVtYmVyIG9mIEdhcCBBQ0sgYmxvY2tzIGZvciBi
+cm9hZGNhc3QgaW4gdGhlIHJlY29yZAo+Pgo+PiDCoMKgwqAgKyAqIEB1Z2Fja19jbnQ6IG51bWJl
+ciBvZiBHYXAgQUNLIGJsb2NrcyBmb3IgdW5pY2FzdCAoZm9sbG93aW5nIAo+PiB0aGUgYnJvYWRj
+YXN0Cj4+Cj4+IMKgwqDCoCArICrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgb25lcykKPj4KPj4g
+wqDCoMKgICsgKiBAc3RhcnRfaW5kZXg6IHN0YXJ0aW5nIGluZGV4IGZvciAidmFsaWQiIGJyb2Fk
+Y2FzdCBHYXAgQUNLIAo+PiBibG9ja3MKPj4KPj4gwqDCoMKgwqAgwqAgKiBAZ2Fja3M6IGFycmF5
+IG9mIEdhcCBBQ0sgYmxvY2tzCj4+Cj4+IMKgwqDCoMKgIMKgICovCj4+Cj4+IMKgwqDCoMKgwqAg
+c3RydWN0IHRpcGNfZ2FwX2Fja19ibGtzIHsKPj4KPj4gwqDCoMKgwqDCoMKgIF9fYmUxNiBsZW47
+Cj4+Cj4+IMKgwqDCoCAtIHU4IGdhY2tfY250Owo+Pgo+PiDCoMKgwqAgLSB1OCByZXNlcnZlZDsK
+Pj4KPj4gwqDCoMKgICsgdW5pb24gewo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgIHU4IHVn
+YWNrX2NudDsKPj4KPj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoCB1OCBzdGFydF9pbmRleDsKPj4K
+Pj4gwqDCoMKgICsgfTsKPj4KPj4gwqDCoMKgICsgdTggYmdhY2tfY250Owo+Pgo+PiDCoMKgwqDC
+oMKgwqAgc3RydWN0IHRpcGNfZ2FwX2FjayBnYWNrc1tdOwo+Pgo+PiDCoMKgwqDCoMKgIH07Cj4+
+Cj4+Cj4+IMKgwqDCoMKgIMKgI2RlZmluZSB0aXBjX2dhcF9hY2tfYmxrc19zeihuKSAoc2l6ZW9m
+KHN0cnVjdCAKPj4gdGlwY19nYXBfYWNrX2Jsa3MpICsgXAo+Pgo+PiDCoMKgwqDCoMKgIMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgwqBzaXplb2Yoc3RydWN0
+IHRpcGNfZ2FwX2FjaykgKiAobikpCj4+Cj4+Cj4+IMKgwqDCoCAtI2RlZmluZSBNQVhfR0FQX0FD
+S19CTEtTwqDCoMKgwqDCoMKgIDMyCj4+Cj4+IMKgwqDCoCArI2RlZmluZSBNQVhfR0FQX0FDS19C
+TEtTwqDCoMKgwqDCoMKgIDEyOAo+Pgo+PiDCoMKgwqDCoMKgICNkZWZpbmUgTUFYX0dBUF9BQ0tf
+QkxLU19TWsKg77+977+9IAo+PiB0aXBjX2dhcF9hY2tfYmxrc19zeihNQVhfR0FQX0FDS19CTEtT
+KQo+Pgo+Pgo+PiDCoMKgwqDCoCDCoHN0YXRpYyBpbmxpbmUgc3RydWN0IHRpcGNfbXNnICpidWZf
+bXNnKHN0cnVjdCBza19idWZmICpza2IpCj4+Cj4+IMKgwqDCoCBkaWZmIC0tZ2l0IGEvbmV0L3Rp
+cGMvbm9kZS5jIGIvbmV0L3RpcGMvbm9kZS5jCj4+Cj4+IMKgwqDCoCBpbmRleCAwYzg4Nzc4Yzg4
+YjUuLmViNmI2MmRlODFhNyAxMDA2NDQKPj4KPj4gwqDCoMKgIC0tLSBhL25ldC90aXBjL25vZGUu
+Ywo+Pgo+PiDCoMKgwqAgKysrIGIvbmV0L3RpcGMvbm9kZS5jCj4+Cj4+IMKgwqDCoCBAQCAtMjA2
+OSwxMCArMjA2OSwxNiBAQCB2b2lkIHRpcGNfcmN2KHN0cnVjdCBuZXQgKm5ldCwgc3RydWN0IAo+
+PiBza19idWZmICpza2IsIHN0cnVjdCB0aXBjX2JlYXJlciAqYikKPj4KPj4gwqDCoMKgwqDCoMKg
+IGxlID0gJm4tPmxpbmtzW2JlYXJlcl9pZF07Cj4+Cj4+Cj4+IMKgwqDCoMKgIMKgIC8qIEVuc3Vy
+ZSBicm9hZGNhc3QgcmVjZXB0aW9uIGlzIGluIHN5bmNoIHdpdGggcGVlcidzIHNlbmQgCj4+IHN0
+YXRlICovCj4+Cj4+IMKgwqDCoCAtIGlmICh1bmxpa2VseSh1c3IgPT0gTElOS19QUk9UT0NPTCkp
+Cj4+Cj4+IMKgwqDCoCArIGlmICh1bmxpa2VseSh1c3IgPT0gTElOS19QUk9UT0NPTCkpIHsKPj4K
+Pj4gwqDCoMKgICvCoMKgwqDCoMKgwqDCoCBpZiAodW5saWtlbHkoc2tiX2xpbmVhcml6ZShza2Ip
+KSkgewo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB0aXBjX25v
+ZGVfcHV0KG4pOwo+Pgo+PiDCoMKgwqAgK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBn
+b3RvIGRpc2NhcmQ7Cj4+Cj4+IMKgwqDCoCArwqDCoMKgwqDCoMKgwqAgfQo+Pgo+PiDCoMKgwqAg
+K8KgwqDCoMKgwqDCoMKgIGhkciA9IGJ1Zl9tc2coc2tiKTsKPj4KPj4gwqDCoMKgwqDCoCDCoMKg
+wqDCoMKgwqDCoCB0aXBjX25vZGVfYmNfc3luY19yY3YobiwgaGRyLCBiZWFyZXJfaWQsICZ4bWl0
+cSk7Cj4+Cj4+IMKgwqDCoCAtIGVsc2UgaWYgKHVubGlrZWx5KHRpcGNfbGlua19hY2tlZChuLT5i
+Y19lbnRyeS5saW5rKSAhPSBiY19hY2spKQo+Pgo+PiDCoMKgwqAgKyB9IGVsc2UgaWYgKHVubGlr
+ZWx5KHRpcGNfbGlua19hY2tlZChuLT5iY19lbnRyeS5saW5rKSAhPSAKPj4gYmNfYWNrKSkgewo+
+Pgo+PiDCoMKgwqDCoMKgIMKgwqDCoMKgwqDCoMKgIHRpcGNfYmNhc3RfYWNrX3JjdihuZXQsIG4t
+PmJjX2VudHJ5LmxpbmssIGhkcik7Cj4+Cj4+IMKgwqDCoCArIH0KPj4KPj4KPj4gwqDCoMKgwqAg
+wqAgLyogUmVjZWl2ZSBwYWNrZXQgZGlyZWN0bHkgaWYgY29uZGl0aW9ucyBwZXJtaXQgKi8KPj4K
+Pj4gwqDCoMKgwqDCoMKgIHRpcGNfbm9kZV9yZWFkX2xvY2sobik7Cj4+Cj4+IC0tIAo+Pgo+Cj4K
+PiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IHRpcGMt
+ZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKPiB0aXBjLWRpc2N1c3Npb25AbGlzdHMuc291cmNlZm9y
+Z2UubmV0Cj4gaHR0cHM6Ly9saXN0cy5zb3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vdGlw
+Yy1kaXNjdXNzaW9uCj4KCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KdGlwYy1kaXNjdXNzaW9uIG1haWxpbmcgbGlzdAp0aXBjLWRpc2N1c3Npb25AbGlz
+dHMuc291cmNlZm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNlZm9yZ2UubmV0L2xpc3RzL2xp
+c3RpbmZvL3RpcGMtZGlzY3Vzc2lvbgo=
