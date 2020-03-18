@@ -2,95 +2,96 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25C0F188D53
-	for <lists+tipc-discussion@lfdr.de>; Tue, 17 Mar 2020 19:38:15 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFAF1189513
+	for <lists+tipc-discussion@lfdr.de>; Wed, 18 Mar 2020 05:50:31 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jEH6Q-0007r4-UN; Tue, 17 Mar 2020 18:38:10 +0000
+	id 1jEQew-0004kR-L6; Wed, 18 Mar 2020 04:50:26 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1jEH6P-0007qw-2m
- for tipc-discussion@lists.sourceforge.net; Tue, 17 Mar 2020 18:38:09 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1jEQet-0004k4-TS
+ for tipc-discussion@lists.sourceforge.net; Wed, 18 Mar 2020 04:50:23 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Message-ID:Date:Subject:In-Reply-To:References:Cc:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=bj4RuHlMwTSxsFIRWgLRn6dHerPGfZP1+KZJ2XrfUo0=; b=C4tROw1GkBBUkNXPcz7rWwm3v3
- 1H9lKGPLoiiNdDo8ypPLO20BsR+ZvjsFj3CUK9zsZYCbJ5Cno/BH4yxk06c+l8UiAQgoicKkMNSjQ
- 5LedocZW/PFVkOHY69eZky+Gd8ijvwlZkBy+b3zmZW0fQmb+U76nkhY+oJ50XJ+iD7LU=;
+ bh=CvPdjeKI5JezxKIWWXgWxTLMea9OIRAqPUB1gxRAb1Q=; b=kl+l0PEYUBwPiemodOLBjC8Ruy
+ 6XoPCo5k/QVnEtIvRbvaWRmP07z8w+OiuRvpRYsiP50yBx7u4h54zgqiQH4nOenAyExp5CpDwMWsX
+ yNm299P2VvvK9JdncwD/VTT84Toe11yEEXzT9WAQKR2e5doffjcbh+3KMBf7k8xM/9Kg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:
+ Subject:In-Reply-To:References:Cc:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=bj4RuHlMwTSxsFIRWgLRn6dHerPGfZP1+KZJ2XrfUo0=; b=aSMOu1mdKA2C4be8AZAzYVw8/R
- 6ZfCDblJUQJe825kEfW20xeQL1eobxufMASnKOrftpod4SSnjjOQRD6Xf7cA5OhJ1LQ2hu0X1atr1
- AEFUlwTAgSWDpBRIQSxSo4oKlM5n27jj2divZVmYGWAC1Zohoru7D1XhdToYRBQNNpj8=;
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+ bh=CvPdjeKI5JezxKIWWXgWxTLMea9OIRAqPUB1gxRAb1Q=; b=NdXTgtmHuErWSU86BRjGQC2Q+J
+ Nx1Tn/7uxmaEbMVIZeN3tYQU+u9vgWfeRaOJD2e/oyxbc+pmYEpQPleVf2XfTjg0W63FB6dj+MeeK
+ RDyD5idkvHb+a82McClI56rVDQY0ozXTTjYZjKu0CIl49bpYJxESyIYuOWTjAU4J9lIM=;
+Received: from f0-dek.dektech.com.au ([210.10.221.142]
+ helo=mail.dektech.com.au)
  by sfi-mx-4.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1jEH6I-00Drla-Gz
- for tipc-discussion@lists.sourceforge.net; Tue, 17 Mar 2020 18:38:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584470275;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=bj4RuHlMwTSxsFIRWgLRn6dHerPGfZP1+KZJ2XrfUo0=;
- b=F2nNVkgQW5sw9Stc2dp26Deuvgdh5IFrh7THsrfY21d6GMRI9cwmeo3f31GIs7lgTfSpwJ
- VafWt1UQUMf0ptWyWy9J4p1sV0/H3jHR5uaMfZEvDAbR2sDWe8/XjWIp5RegkuXRNYQszf
- 8+XM20gEQURJswZiTgQPF5ZvS9RaOhU=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-150-tal0yGD-MzCCcu0NYt9DmA-1; Tue, 17 Mar 2020 14:37:54 -0400
-X-MC-Unique: tal0yGD-MzCCcu0NYt9DmA-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1jEQem-00FtdI-CT
+ for tipc-discussion@lists.sourceforge.net; Wed, 18 Mar 2020 04:50:23 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.dektech.com.au (Postfix) with ESMTP id 0FAE84B335;
+ Wed, 18 Mar 2020 15:50:08 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
+ h=content-language:x-mailer:content-transfer-encoding
+ :content-type:content-type:mime-version:message-id:date:date
+ :subject:subject:in-reply-to:references:from:from:received
+ :received:received; s=mail_dkim; t=1584507007; bh=vnIQpFHg0Ypu2c
+ D3HKUdox2WY6OZ22nSN/vxSRyDOpY=; b=Inyffe3JH79oi4zTUAo15dfu4/95Mx
+ 4j47HDFK3rB/P1zMV0WYlsTY4DExpysaeFD3DqQ2PU7J0ptg5ZzDJC0fji1HOIes
+ eQd057wpaJJ6EDmyPBg97KHYLYkqZ4nuaDaCf3NMM0qI8hsmyX/27kcsoThGsxkW
+ +qbzT7niTwFWY=
+X-Virus-Scanned: amavisd-new at dektech.com.au
+Received: from mail.dektech.com.au ([127.0.0.1])
+ by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id lIlZQOgu2IGr; Wed, 18 Mar 2020 15:50:07 +1100 (AEDT)
+Received: from mail.dektech.com.au (localhost [127.0.0.1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id D5457800EB6;
- Tue, 17 Mar 2020 18:37:52 +0000 (UTC)
-Received: from [10.10.112.60] (ovpn-112-60.rdu2.redhat.com [10.10.112.60])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 6B7EF19C58;
- Tue, 17 Mar 2020 18:37:51 +0000 (UTC)
-To: Tuong Lien Tong <tuong.t.lien@dektech.com.au>,
- 'Jon Maloy' <jon.maloy@ericsson.com>, 'Jon Maloy' <maloy@donjonn.com>
+ by mail.dektech.com.au (Postfix) with ESMTPS id 55F874B336;
+ Wed, 18 Mar 2020 15:50:07 +1100 (AEDT)
+Received: from VNLAP288VNPC (unknown [14.161.14.188])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id 202264B335;
+ Wed, 18 Mar 2020 15:50:05 +1100 (AEDT)
+From: "Tuong Lien Tong" <tuong.t.lien@dektech.com.au>
+To: "'Jon Maloy'" <jmaloy@redhat.com>, "'Jon Maloy'" <jon.maloy@ericsson.com>,
+ "'Jon Maloy'" <maloy@donjonn.com>
 References: <1575246751-23238-1-git-send-email-jon.maloy@ericsson.com>
  <1575246751-23238-4-git-send-email-jon.maloy@ericsson.com>
  <022f01d5fc4a$967558f0$c3600ad0$@dektech.com.au>
-From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <17a00b52-ef0e-f26b-a178-9093869d25a7@redhat.com>
-Date: Tue, 17 Mar 2020 14:37:50 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ <17a00b52-ef0e-f26b-a178-9093869d25a7@redhat.com>
+In-Reply-To: <17a00b52-ef0e-f26b-a178-9093869d25a7@redhat.com>
+Date: Wed, 18 Mar 2020 11:50:00 +0700
+Message-ID: <025f01d5fce0$b22523f0$166f6bd0$@dektech.com.au>
 MIME-Version: 1.0
-In-Reply-To: <022f01d5fc4a$967558f0$c3600ad0$@dektech.com.au>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-Mailer: Microsoft Outlook 16.0
+Content-Language: en-us
+Thread-Index: AQMX0HZSpNOOSugVxZj39FS3/AoP9gGIv5EPAj9DZ3kCiHPSYKWXk+IA
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [63.128.21.74 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ trust [210.10.221.142 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
- 0.5 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1jEH6I-00Drla-Gz
+ 1.0 FORGED_SPF_HELO        No description available.
+ -0.5 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1jEQem-00FtdI-CT
 Subject: Re: [tipc-discussion] [net-next 3/3] tipc: introduce variable
  window congestion control
 X-BeenThere: tipc-discussion@lists.sourceforge.net
@@ -106,9 +107,48 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>,
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
 Cc: mohan.krishna.ghanta.krishnamurthy@ericsson.com,
  tipc-discussion@lists.sourceforge.net
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
+
+Hi Jon,
+
+Ok, that makes sense (but we should have covered the case a broadcast packet is released too...).
+However, I have another concern about the logic here:
+
+> +	/* Enter fast recovery */
+> +	if (unlikely(retransmitted)) {
+> +		l->ssthresh = max_t(u16, l->window / 2, 300);
+> +		l->window = l->ssthresh;
+> +		return;
+> +	}
+
+What will if we have a retransmission when it's still in the slow-start phase? For example:
+l->ssthresh = 300
+l-> window = 60
+==> retransmitted = true, then: l->ssthresh = 300; l->window = 300???
+
+This looks not correct?
+Should it be:
+
+> +	/* Enter fast recovery */
+> +	if (unlikely(retransmitted)) {
+> +		l->ssthresh = max_t(u16, l->window / 2, 300);
+> -		l->window = l->ssthresh;
+> +		l->window = min_t(u16, l->window, l->ssthresh);
+> +		return;
+> +	}
+
+So will fix the issue with broadcast case as well?
+
+BR/Tuong
+
+-----Original Message-----
+From: Jon Maloy <jmaloy@redhat.com> 
+Sent: Wednesday, March 18, 2020 1:38 AM
+To: Tuong Lien Tong <tuong.t.lien@dektech.com.au>; 'Jon Maloy' <jon.maloy@ericsson.com>; 'Jon Maloy' <maloy@donjonn.com>
+Cc: tipc-discussion@lists.sourceforge.net; mohan.krishna.ghanta.krishnamurthy@ericsson.com
+Subject: Re: [tipc-discussion] [net-next 3/3] tipc: introduce variable window congestion control
 
 
 
@@ -249,6 +289,7 @@ l->max_win to remedy this.
 > tipc-discussion@lists.sourceforge.net
 > https://lists.sourceforge.net/lists/listinfo/tipc-discussion
 >
+
 
 
 
