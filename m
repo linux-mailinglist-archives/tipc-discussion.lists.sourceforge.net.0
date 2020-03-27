@@ -2,98 +2,90 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 064EE192E4F
-	for <lists+tipc-discussion@lfdr.de>; Wed, 25 Mar 2020 17:38:01 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 389B81956A7
+	for <lists+tipc-discussion@lfdr.de>; Fri, 27 Mar 2020 12:56:56 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jH92R-0000Fc-3G; Wed, 25 Mar 2020 16:37:55 +0000
+	id 1jHnbY-0003yU-3m; Fri, 27 Mar 2020 11:56:52 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1jH92P-0000FP-5q
- for tipc-discussion@lists.sourceforge.net; Wed, 25 Mar 2020 16:37:53 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1jHnbX-0003yH-8q
+ for tipc-discussion@lists.sourceforge.net; Fri, 27 Mar 2020 11:56:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=qcLsukKw8/a7t6nrETrgsr7lxGdZl43G9PZ6zd3aNHQ=; b=leNRcz9leib32YqZALwG7W5f4y
- XWG0hfX/TceSpigHFrMEcM/nEXrhMgiDQWwP2r8+Ix8r+5vGfBsAJLNht0wqBcR3uJuMmcDTcvKHr
- jbw6JekZJUXMWP2SACmPlYnVQE4ZcR9UnXcaFtdM971jEvt7qk3IOhEXI1BKiaoGdcn8=;
+ bh=YjIrq/7dyB2/KyDVmYbBZ4ZzSKlF/Z7Ugoh3i8wnDLM=; b=X8n+jfzTlFScODiTYHuo4SZ4xg
+ ypl6uAMOvAOcXSziz3/iy4MNnR0CePmdHYd6KvqfN1LzJ0flP94RskqbvEP8I8Pn+sh/yutWrFEbB
+ L+VkQ6OzguRys94ehlJqRwcZdtQ+zmB4DoJvnbr1SqgDPl7ZsGYSptO26O7VAcK3pjYQ=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ h=Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:MIME-Version:
+ Content-Type:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=qcLsukKw8/a7t6nrETrgsr7lxGdZl43G9PZ6zd3aNHQ=; b=TPzMQULdTtXUD0C8YCigO4ePAy
- SeMFdiUm1RDPhtZvC+myiOy/Jg8cf3N3RNrVMQfOA73XXWcG2nteB93g4wNKm3lKo0jKwK1y8e5HO
- 9UITm0GraQT0U/MHNHPTAzx2olpNBwUtltspcdQaRbYX666B7ppFP3qHGMh0qVPFUzWU=;
-Received: from us-smtp-delivery-74.mimecast.com ([216.205.24.74])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1jH92J-00GjLq-Ji
- for tipc-discussion@lists.sourceforge.net; Wed, 25 Mar 2020 16:37:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1585154261;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=qcLsukKw8/a7t6nrETrgsr7lxGdZl43G9PZ6zd3aNHQ=;
- b=MY+iqxBkWjikkaeiKJEzwz/bmqQl+WX8prCp3im3A32UxnY0xalRNL27xKQKFOZd0L3EgI
- QBKcbITbaNBQRE5JFp0BXfepluapfoQSWINZmryW4HE7NhV/5x0IGqAxMxDh732Lt1UUGJ
- ssD1eqyNS50pkp16EuB9QgxLzKJcU5s=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-31-xiYL-hHXPqaBVnWB7hsa1g-1; Wed, 25 Mar 2020 12:37:37 -0400
-X-MC-Unique: xiYL-hHXPqaBVnWB7hsa1g-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ bh=YjIrq/7dyB2/KyDVmYbBZ4ZzSKlF/Z7Ugoh3i8wnDLM=; b=IifpDsbQ6EVTk7V/32x70jpsxm
+ DsudqjwdicOfux1rlL004eTNwiiM2zB7rQKii4uaeoYYI+oeuT2P+2rO2neU8w58RyIOX0agh3/Du
+ AQ6xThd0n+XJvIn3JmLM3lTomwVomGg+Ti8guU79gauxLPp77ANWNE/QOpJE9RQ+tpI0=;
+Received: from f0-dek.dektech.com.au ([210.10.221.142]
+ helo=mail.dektech.com.au)
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1jHnbU-00A0GH-JA
+ for tipc-discussion@lists.sourceforge.net; Fri, 27 Mar 2020 11:56:51 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.dektech.com.au (Postfix) with ESMTP id 793294E58E;
+ Fri, 27 Mar 2020 22:56:38 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
+ h=x-mailer:message-id:date:date:subject:subject:from:from
+ :received:received:received; s=mail_dkim; t=1585310198; bh=g0joG
+ tlAbvEXLuxl0uSX7dyI+8E5u+o7cSFasgxTa18=; b=CwCUbfcXy52FjdZW66AmB
+ ZqF9yDSbiIc7Vd8Xqk/7HCK+74EIo45I4DE3LlIzHF0aXv/TU7RNkIxAfmz++/GM
+ 7JfAaRxGwgKCSZ/RNzvjO3W+CIGYx1lfik7Tuz8aisFGYUoF41gnyzzIx/FZyol6
+ RArRHeYwfaVDfW8cy/az8E=
+X-Virus-Scanned: amavisd-new at dektech.com.au
+Received: from mail.dektech.com.au ([127.0.0.1])
+ by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id xUEDo_R4uHV6; Fri, 27 Mar 2020 22:56:38 +1100 (AEDT)
+Received: from mail.dektech.com.au (localhost [127.0.0.1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 88C558017CC;
- Wed, 25 Mar 2020 16:37:34 +0000 (UTC)
-Received: from [10.10.120.60] (ovpn-120-60.rdu2.redhat.com [10.10.120.60])
- by smtp.corp.redhat.com (Postfix) with ESMTP id C8E135DA7B;
- Wed, 25 Mar 2020 16:37:33 +0000 (UTC)
-To: Hoang Le <hoang.h.le@dektech.com.au>, tipc-dek@dektech.com.au,
- maloy@donjonn.com, tipc-discussion@lists.sourceforge.net
-References: <20200325074326.11399-1-hoang.h.le@dektech.com.au>
-From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <d77d26a5-7ee7-fa7f-dd3b-45bde7700ba0@redhat.com>
-Date: Wed, 25 Mar 2020 12:37:27 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
-MIME-Version: 1.0
-In-Reply-To: <20200325074326.11399-1-hoang.h.le@dektech.com.au>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+ by mail.dektech.com.au (Postfix) with ESMTPS id 8766A4E590;
+ Fri, 27 Mar 2020 22:56:37 +1100 (AEDT)
+Received: from localhost.localdomain (unknown [183.80.119.139])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id A82C34E58E;
+ Fri, 27 Mar 2020 22:56:35 +1100 (AEDT)
+From: Tuong Lien <tuong.t.lien@dektech.com.au>
+To: jmaloy@redhat.com, maloy@donjonn.com, ying.xue@windriver.com,
+ tipc-discussion@lists.sourceforge.net
+Date: Fri, 27 Mar 2020 18:56:26 +0700
+Message-Id: <20200327115628.3269-1-tuong.t.lien@dektech.com.au>
+X-Mailer: git-send-email 2.13.7
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [216.205.24.74 listed in list.dnswl.org]
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: dektech.com.au]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [210.10.221.142 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Headers-End: 1jH92J-00GjLq-Ji
-Subject: Re: [tipc-discussion] [net-next] tipc: Add a missing case of
- TIPC_DIRECT_MSG type
+X-Headers-End: 1jHnbU-00A0GH-JA
+Subject: [tipc-discussion] [PATCH RFC 2/4] tipc: add back link trace events
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -105,78 +97,88 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: tipc-dek@dektech.com.au
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
+In the previous commit ("tipc: add Gap ACK blocks support for broadcast
+link"), we have removed the following link trace events due to the code
+changes:
 
+- tipc_link_bc_ack
+- tipc_link_retrans
 
-On 3/25/20 3:43 AM, Hoang Le wrote:
-> In the commit f73b12812a3d
-> ("tipc: improve throughput between nodes in netns"), we're missing a check
-> to handle TIPC_DIRECT_MSG type, it's still using old sending mechanism for
-> this message type. So, throughput improvement is not significant as
-> expected.
->
-> Besides that, when sending a large message with that type, we're also
-> handle wrong receiving queue, it should be enqueued in socket receiving
-> instead of multicast messages.
->
-> Fix this by adding the missing case for TIPC_DIRECT_MSG.
->
-> Fixes: f73b12812a3d ("tipc: improve throughput between nodes in netns")
-> Reported-by: Tuong Lien <tuong.t.lien@dektech.com.au>
-> Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
-> ---
->   net/tipc/msg.h    | 5 +++++
->   net/tipc/node.c   | 3 ++-
->   net/tipc/socket.c | 2 +-
->   3 files changed, 8 insertions(+), 2 deletions(-)
->
-> diff --git a/net/tipc/msg.h b/net/tipc/msg.h
-> index 6d466ebdb64f..871feadbbc19 100644
-> --- a/net/tipc/msg.h
-> +++ b/net/tipc/msg.h
-> @@ -394,6 +394,11 @@ static inline u32 msg_connected(struct tipc_msg *m)
->   	return msg_type(m) == TIPC_CONN_MSG;
->   }
->   
-> +static inline u32 msg_direct(struct tipc_msg *m)
-> +{
-> +	return msg_type(m) == TIPC_DIRECT_MSG;
-> +}
-> +
->   static inline u32 msg_errcode(struct tipc_msg *m)
->   {
->   	return msg_bits(m, 1, 25, 0xf);
-> diff --git a/net/tipc/node.c b/net/tipc/node.c
-> index 0c88778c88b5..10292c942384 100644
-> --- a/net/tipc/node.c
-> +++ b/net/tipc/node.c
-> @@ -1586,7 +1586,8 @@ static void tipc_lxc_xmit(struct net *peer_net, struct sk_buff_head *list)
->   	case TIPC_MEDIUM_IMPORTANCE:
->   	case TIPC_HIGH_IMPORTANCE:
->   	case TIPC_CRITICAL_IMPORTANCE:
-> -		if (msg_connected(hdr) || msg_named(hdr)) {
-> +		if (msg_connected(hdr) || msg_named(hdr) ||
-> +		    msg_direct(hdr)) {
->   			tipc_loopback_trace(peer_net, list);
->   			spin_lock_init(&list->lock);
->   			tipc_sk_rcv(peer_net, list);
-> diff --git a/net/tipc/socket.c b/net/tipc/socket.c
-> index 693e8902161e..87466607097f 100644
-> --- a/net/tipc/socket.c
-> +++ b/net/tipc/socket.c
-> @@ -1461,7 +1461,7 @@ static int __tipc_sendmsg(struct socket *sock, struct msghdr *m, size_t dlen)
->   	}
->   
->   	__skb_queue_head_init(&pkts);
-> -	mtu = tipc_node_get_mtu(net, dnode, tsk->portid, false);
-> +	mtu = tipc_node_get_mtu(net, dnode, tsk->portid, true);
->   	rc = tipc_msg_build(hdr, m, 0, dlen, mtu, &pkts);
->   	if (unlikely(rc != dlen))
->   		return rc;
-Acked-by: Jon Maloy <jmaloy@redhat.com>
+This commit adds them back along with some minor changes to adapt to
+the new code.
+
+Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
+---
+ net/tipc/link.c  |  3 +++
+ net/tipc/trace.h | 13 ++++++++-----
+ 2 files changed, 11 insertions(+), 5 deletions(-)
+
+diff --git a/net/tipc/link.c b/net/tipc/link.c
+index 1b60ba665504..405ccf597e59 100644
+--- a/net/tipc/link.c
++++ b/net/tipc/link.c
+@@ -1517,6 +1517,8 @@ static int tipc_link_advance_transmq(struct tipc_link *l, struct tipc_link *r,
+ 	bool is_uc = !link_is_bc_sndlink(l);
+ 	bool bc_has_acked = false;
+ 
++	trace_tipc_link_retrans(r, acked + 1, acked + gap, &l->transmq);
++
+ 	/* Determine Gap ACK blocks if any for the particular link */
+ 	if (ga && is_uc) {
+ 		/* Get the Gap ACKs, uc part */
+@@ -2423,6 +2425,7 @@ int tipc_link_bc_ack_rcv(struct tipc_link *r, u16 acked, u16 gap,
+ 	if (less(acked, r->acked) || (acked == r->acked && !gap && !ga))
+ 		return 0;
+ 
++	trace_tipc_link_bc_ack(r, acked, gap, &l->transmq);
+ 	tipc_link_advance_transmq(l, r, acked, gap, ga, xmitq, &unused, &rc);
+ 
+ 	tipc_link_advance_backlog(l, xmitq);
+diff --git a/net/tipc/trace.h b/net/tipc/trace.h
+index 4d8e00483afc..e7535ab75255 100644
+--- a/net/tipc/trace.h
++++ b/net/tipc/trace.h
+@@ -299,8 +299,10 @@ DECLARE_EVENT_CLASS(tipc_link_transmq_class,
+ 		__entry->from = f;
+ 		__entry->to = t;
+ 		__entry->len = skb_queue_len(tq);
+-		__entry->fseqno = msg_seqno(buf_msg(skb_peek(tq)));
+-		__entry->lseqno = msg_seqno(buf_msg(skb_peek_tail(tq)));
++		__entry->fseqno = __entry->len ?
++				  msg_seqno(buf_msg(skb_peek(tq))) : 0;
++		__entry->lseqno = __entry->len ?
++				  msg_seqno(buf_msg(skb_peek_tail(tq))) : 0;
+ 	),
+ 
+ 	TP_printk("<%s> retrans req: [%u-%u] transmq: %u [%u-%u]\n",
+@@ -308,15 +310,16 @@ DECLARE_EVENT_CLASS(tipc_link_transmq_class,
+ 		  __entry->len, __entry->fseqno, __entry->lseqno)
+ );
+ 
+-DEFINE_EVENT(tipc_link_transmq_class, tipc_link_retrans,
++DEFINE_EVENT_CONDITION(tipc_link_transmq_class, tipc_link_retrans,
+ 	TP_PROTO(struct tipc_link *r, u16 f, u16 t, struct sk_buff_head *tq),
+-	TP_ARGS(r, f, t, tq)
++	TP_ARGS(r, f, t, tq),
++	TP_CONDITION(less_eq(f, t))
+ );
+ 
+ DEFINE_EVENT_PRINT(tipc_link_transmq_class, tipc_link_bc_ack,
+ 	TP_PROTO(struct tipc_link *r, u16 f, u16 t, struct sk_buff_head *tq),
+ 	TP_ARGS(r, f, t, tq),
+-	TP_printk("<%s> acked: [%u-%u] transmq: %u [%u-%u]\n",
++	TP_printk("<%s> acked: %u gap: %u transmq: %u [%u-%u]\n",
+ 		  __entry->name, __entry->from, __entry->to,
+ 		  __entry->len, __entry->fseqno, __entry->lseqno)
+ );
+-- 
+2.13.7
 
 
 
