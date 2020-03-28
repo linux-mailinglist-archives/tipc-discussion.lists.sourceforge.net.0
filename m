@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44B0E19637C
-	for <lists+tipc-discussion@lfdr.de>; Sat, 28 Mar 2020 05:03:44 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0BF0196380
+	for <lists+tipc-discussion@lfdr.de>; Sat, 28 Mar 2020 05:03:51 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jI2hA-0004Gm-En; Sat, 28 Mar 2020 04:03:40 +0000
+	id 1jI2hI-00057h-Hq; Sat, 28 Mar 2020 04:03:48 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1jI2h9-0004Ga-BQ
- for tipc-discussion@lists.sourceforge.net; Sat, 28 Mar 2020 04:03:39 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1jI2hF-00057F-HT
+ for tipc-discussion@lists.sourceforge.net; Sat, 28 Mar 2020 04:03:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=References:In-Reply-To:Message-Id:Date:Subject:Cc:
  To:From:Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=YjIrq/7dyB2/KyDVmYbBZ4ZzSKlF/Z7Ugoh3i8wnDLM=; b=S3XIXVDrCq7NzC26+O9PRVuq3j
- 58lCNSn3GiSGTWjCCI2FsXbv1CE5RlFrSafeFJc8/+NRXZtyHwmqilP6HGXHdyY0mfVpgKywheeTM
- kZKZVTY2SnYYRdz1ghdYvPRpELDcfrnftlRiblSIVc4Y9b2rVXaHU7OGWtrmcMpCwGys=;
+ bh=OwBx2G7R71Q4AI0XPUtWGcFxe+YULLFfoxqRNvKHeIk=; b=LRmFCCcPJbgH+KP94TOj72Z8np
+ Kl/dqpgfBSoD0xz+Ei0sj2z6aIPFR5EFKzBBXaW2Kim91WX5TDIwJX2o1VIXURUbmtVjP9ern3d8D
+ 3rtbHMXJTmPCSMyKDdXB5uyZS5neI5V9ZOlg9CUNMy/UQjYEqYxZxiP+qqPXJA8Oq4r0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To
@@ -29,48 +29,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=YjIrq/7dyB2/KyDVmYbBZ4ZzSKlF/Z7Ugoh3i8wnDLM=; b=HZKNLvJvCMHfdnbQ0gubE9D23Z
- K/jGsbFYiR8OnlxqJuB9T75fj3JMtJz66VGhXuUL3WYFAyxjnz1f+P6TMAVrrJ7Zfao5+3OPTr+oV
- kyRFfRmafHF4zZhCwnbYBoh/6Ke8LMSZTB3JEQj/QGi7IuRdyaIrt7E2AsYhcAw5z2Ks=;
+ bh=OwBx2G7R71Q4AI0XPUtWGcFxe+YULLFfoxqRNvKHeIk=; b=T8uhvS5AzItZL0eACAuM2ZSjq7
+ r3tqHelYk0mv0ECVINFpPLQPp2ItzcCj9AJygqqVZxoiqJi8PG9Ag8f81ETY1ywt/rEHTEwwjeqkA
+ t7nqHvGj86XXoAKZTl1CLoGhgtfubhxPWXa2MtpzTP3DaLxuB0BqSZcSKLlqQ7jKxBrY=;
 Received: from f0-dek.dektech.com.au ([210.10.221.142]
  helo=mail.dektech.com.au)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1jI2h4-00B1Uv-TT
- for tipc-discussion@lists.sourceforge.net; Sat, 28 Mar 2020 04:03:39 +0000
+ id 1jI2hC-003okF-JM
+ for tipc-discussion@lists.sourceforge.net; Sat, 28 Mar 2020 04:03:45 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.dektech.com.au (Postfix) with ESMTP id 5D30B4E5CF;
- Sat, 28 Mar 2020 15:03:28 +1100 (AEDT)
+ by mail.dektech.com.au (Postfix) with ESMTP id B21234E5D3;
+ Sat, 28 Mar 2020 15:03:30 +1100 (AEDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=dektech.com.au;
  h=references:in-reply-to:x-mailer:message-id:date:date:subject
  :subject:from:from:received:received:received; s=mail_dkim; t=
- 1585368208; bh=g0joGtlAbvEXLuxl0uSX7dyI+8E5u+o7cSFasgxTa18=; b=A
- WYiB7ckYGSHzXyTT6FrUB9Rx/aLZrj4wEE6Dphxfx/nx6HjD2kc2C/AtdRgnxkTO
- r9YXeJ/Jbn0R/C0B1espImm9meDooG5S0S3uacDHLSELAeLDFHTnKvnN4sVPaFd3
- mp8gitd7J+4tojd/B8IR2PxIQMQgkwskCsN0y09+QA=
+ 1585368210; bh=W2haYL5FXMKlx7W3NWwSLW/UIdB49Fe/WHcn9/9bGJM=; b=e
+ AMMcjS5CMo6d5KXa9S7p1PUid98XQsTpCxcYxy2o1X5ItFqqwrNFIfX78QibSjXj
+ XMaYu6CjfYmkHCtT6M4TpYq133HyGv5fEVWBqr7WsmQSpiAS57TKAyn6p2rkf61l
+ mZNHBpeeoercX/5ManunXMHpsriXIORMYJFNv3iWN0=
 X-Virus-Scanned: amavisd-new at dektech.com.au
 Received: from mail.dektech.com.au ([127.0.0.1])
  by localhost (mail2.dektech.com.au [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id 5ubsDm-56FzC; Sat, 28 Mar 2020 15:03:28 +1100 (AEDT)
+ with ESMTP id dOl8zIewGpsm; Sat, 28 Mar 2020 15:03:30 +1100 (AEDT)
 Received: from mail.dektech.com.au (localhost [127.0.0.1])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPS id 42FA94E5D3;
- Sat, 28 Mar 2020 15:03:28 +1100 (AEDT)
+ by mail.dektech.com.au (Postfix) with ESMTPS id 93DA04E5D1;
+ Sat, 28 Mar 2020 15:03:30 +1100 (AEDT)
 Received: from localhost.localdomain (unknown [183.80.119.139])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.dektech.com.au (Postfix) with ESMTPSA id 695374E5CF;
- Sat, 28 Mar 2020 15:03:26 +1100 (AEDT)
+ by mail.dektech.com.au (Postfix) with ESMTPSA id BD3014E5D3;
+ Sat, 28 Mar 2020 15:03:28 +1100 (AEDT)
 From: Tuong Lien <tuong.t.lien@dektech.com.au>
 To: jmaloy@redhat.com, maloy@donjonn.com, ying.xue@windriver.com,
  tipc-discussion@lists.sourceforge.net
-Date: Sat, 28 Mar 2020 11:03:07 +0700
-Message-Id: <20200328040309.4656-3-tuong.t.lien@dektech.com.au>
+Date: Sat, 28 Mar 2020 11:03:08 +0700
+Message-Id: <20200328040309.4656-4-tuong.t.lien@dektech.com.au>
 X-Mailer: git-send-email 2.13.7
 In-Reply-To: <20200328040309.4656-1-tuong.t.lien@dektech.com.au>
 References: <20200328040309.4656-1-tuong.t.lien@dektech.com.au>
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
@@ -87,8 +87,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  0.1 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1jI2h4-00B1Uv-TT
-Subject: [tipc-discussion] [PATCH RFC 2/4] tipc: add back link trace events
+X-Headers-End: 1jI2hC-003okF-JM
+Subject: [tipc-discussion] [PATCH RFC 3/4] tipc: enable broadcast retrans
+ via unicast
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,80 +107,189 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-In the previous commit ("tipc: add Gap ACK blocks support for broadcast
-link"), we have removed the following link trace events due to the code
-changes:
+In some environment, broadcast traffic is suppressed at high rate (i.e.
+a kind of bandwidth limit setting). When it is applied, TIPC broadcast
+can still run successfully. However, when it comes to a high load, some
+packets will be dropped first and TIPC tries to retransmit them but the
+packet retransmission is intentionally broadcast too, so making things
+worse and not helpful at all.
 
-- tipc_link_bc_ack
-- tipc_link_retrans
+This commit enables the broadcast retransmission via unicast which only
+retransmits packets to the specific peer that has really reported a gap
+i.e. not broadcasting to all nodes in the cluster, so will prevent from
+being suppressed, and also reduce some overheads on the other peers due
+to duplicates, finally improve the overall TIPC broadcast performance.
 
-This commit adds them back along with some minor changes to adapt to
-the new code.
+Note: the functionality can be turned on/off via the sysctl file:
+
+echo 1 > /proc/sys/net/tipc/bc_retruni
+echo 0 > /proc/sys/net/tipc/bc_retruni
+
+Default is '0', i.e. the broadcast retransmission still works as usual.
 
 Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
 ---
- net/tipc/link.c  |  3 +++
- net/tipc/trace.h | 13 ++++++++-----
- 2 files changed, 11 insertions(+), 5 deletions(-)
+ net/tipc/bcast.c  | 11 ++++++++---
+ net/tipc/bcast.h  |  4 +++-
+ net/tipc/link.c   |  8 +++++---
+ net/tipc/link.h   |  3 ++-
+ net/tipc/node.c   |  2 +-
+ net/tipc/sysctl.c |  9 ++++++++-
+ 6 files changed, 27 insertions(+), 10 deletions(-)
 
+diff --git a/net/tipc/bcast.c b/net/tipc/bcast.c
+index 3ce690a96ee9..50a16f8bebd9 100644
+--- a/net/tipc/bcast.c
++++ b/net/tipc/bcast.c
+@@ -46,6 +46,7 @@
+ #define BCLINK_WIN_MIN      32	/* bcast minimum link window size */
+ 
+ const char tipc_bclink_name[] = "broadcast-link";
++unsigned long sysctl_tipc_bc_retruni __read_mostly;
+ 
+ /**
+  * struct tipc_bc_base - base structure for keeping broadcast send state
+@@ -474,7 +475,7 @@ void tipc_bcast_ack_rcv(struct net *net, struct tipc_link *l,
+ 	__skb_queue_head_init(&xmitq);
+ 
+ 	tipc_bcast_lock(net);
+-	tipc_link_bc_ack_rcv(l, acked, 0, NULL, &xmitq);
++	tipc_link_bc_ack_rcv(l, acked, 0, NULL, &xmitq, NULL);
+ 	tipc_bcast_unlock(net);
+ 
+ 	tipc_bcbase_xmit(net, &xmitq);
+@@ -489,7 +490,8 @@ void tipc_bcast_ack_rcv(struct net *net, struct tipc_link *l,
+  * RCU is locked, no other locks set
+  */
+ int tipc_bcast_sync_rcv(struct net *net, struct tipc_link *l,
+-			struct tipc_msg *hdr)
++			struct tipc_msg *hdr,
++			struct sk_buff_head *retrq)
+ {
+ 	struct sk_buff_head *inputq = &tipc_bc_base(net)->inputq;
+ 	struct tipc_gap_ack_blks *ga;
+@@ -503,8 +505,11 @@ int tipc_bcast_sync_rcv(struct net *net, struct tipc_link *l,
+ 		tipc_link_bc_init_rcv(l, hdr);
+ 	} else if (!msg_bc_ack_invalid(hdr)) {
+ 		tipc_get_gap_ack_blks(&ga, l, hdr, false);
++		if (!sysctl_tipc_bc_retruni)
++			retrq = &xmitq;
+ 		rc = tipc_link_bc_ack_rcv(l, msg_bcast_ack(hdr),
+-					  msg_bc_gap(hdr), ga, &xmitq);
++					  msg_bc_gap(hdr), ga, &xmitq,
++					  retrq);
+ 		rc |= tipc_link_bc_sync_rcv(l, hdr, &xmitq);
+ 	}
+ 	tipc_bcast_unlock(net);
+diff --git a/net/tipc/bcast.h b/net/tipc/bcast.h
+index 9e847d9617d3..97d3cf9d3e4d 100644
+--- a/net/tipc/bcast.h
++++ b/net/tipc/bcast.h
+@@ -45,6 +45,7 @@ struct tipc_nl_msg;
+ struct tipc_nlist;
+ struct tipc_nitem;
+ extern const char tipc_bclink_name[];
++extern unsigned long sysctl_tipc_bc_retruni;
+ 
+ #define TIPC_METHOD_EXPIRE msecs_to_jiffies(5000)
+ 
+@@ -93,7 +94,8 @@ int tipc_bcast_rcv(struct net *net, struct tipc_link *l, struct sk_buff *skb);
+ void tipc_bcast_ack_rcv(struct net *net, struct tipc_link *l,
+ 			struct tipc_msg *hdr);
+ int tipc_bcast_sync_rcv(struct net *net, struct tipc_link *l,
+-			struct tipc_msg *hdr);
++			struct tipc_msg *hdr,
++			struct sk_buff_head *retrq);
+ int tipc_nl_add_bc_link(struct net *net, struct tipc_nl_msg *msg);
+ int tipc_nl_bc_link_set(struct net *net, struct nlattr *attrs[]);
+ int tipc_bclink_reset_stats(struct net *net);
 diff --git a/net/tipc/link.c b/net/tipc/link.c
-index 1b60ba665504..405ccf597e59 100644
+index 405ccf597e59..3071e46f029a 100644
 --- a/net/tipc/link.c
 +++ b/net/tipc/link.c
-@@ -1517,6 +1517,8 @@ static int tipc_link_advance_transmq(struct tipc_link *l, struct tipc_link *r,
- 	bool is_uc = !link_is_bc_sndlink(l);
- 	bool bc_has_acked = false;
+@@ -375,7 +375,7 @@ void tipc_link_remove_bc_peer(struct tipc_link *snd_l,
+ 	snd_l->ackers--;
+ 	rcv_l->bc_peer_is_up = true;
+ 	rcv_l->state = LINK_ESTABLISHED;
+-	tipc_link_bc_ack_rcv(rcv_l, ack, 0, NULL, xmitq);
++	tipc_link_bc_ack_rcv(rcv_l, ack, 0, NULL, xmitq, NULL);
+ 	trace_tipc_link_reset(rcv_l, TIPC_DUMP_ALL, "bclink removed!");
+ 	tipc_link_reset(rcv_l);
+ 	rcv_l->state = LINK_RESET;
+@@ -2413,7 +2413,8 @@ int tipc_link_bc_sync_rcv(struct tipc_link *l, struct tipc_msg *hdr,
  
-+	trace_tipc_link_retrans(r, acked + 1, acked + gap, &l->transmq);
-+
- 	/* Determine Gap ACK blocks if any for the particular link */
- 	if (ga && is_uc) {
- 		/* Get the Gap ACKs, uc part */
-@@ -2423,6 +2425,7 @@ int tipc_link_bc_ack_rcv(struct tipc_link *r, u16 acked, u16 gap,
- 	if (less(acked, r->acked) || (acked == r->acked && !gap && !ga))
+ int tipc_link_bc_ack_rcv(struct tipc_link *r, u16 acked, u16 gap,
+ 			 struct tipc_gap_ack_blks *ga,
+-			 struct sk_buff_head *xmitq)
++			 struct sk_buff_head *xmitq,
++			 struct sk_buff_head *retrq)
+ {
+ 	struct tipc_link *l = r->bc_sndlink;
+ 	bool unused = false;
+@@ -2460,7 +2461,8 @@ int tipc_link_bc_nack_rcv(struct tipc_link *l, struct sk_buff *skb,
  		return 0;
  
-+	trace_tipc_link_bc_ack(r, acked, gap, &l->transmq);
- 	tipc_link_advance_transmq(l, r, acked, gap, ga, xmitq, &unused, &rc);
+ 	if (dnode == tipc_own_addr(l->net)) {
+-		rc = tipc_link_bc_ack_rcv(l, acked, to - acked, NULL, xmitq);
++		rc = tipc_link_bc_ack_rcv(l, acked, to - acked, NULL, xmitq,
++					  xmitq);
+ 		l->stats.recv_nacks++;
+ 		return rc;
+ 	}
+diff --git a/net/tipc/link.h b/net/tipc/link.h
+index 0a0fa7350722..4d0768cf91d5 100644
+--- a/net/tipc/link.h
++++ b/net/tipc/link.h
+@@ -147,7 +147,8 @@ u16 tipc_get_gap_ack_blks(struct tipc_gap_ack_blks **ga, struct tipc_link *l,
+ 			  struct tipc_msg *hdr, bool uc);
+ int tipc_link_bc_ack_rcv(struct tipc_link *l, u16 acked, u16 gap,
+ 			 struct tipc_gap_ack_blks *ga,
+-			 struct sk_buff_head *xmitq);
++			 struct sk_buff_head *xmitq,
++			 struct sk_buff_head *retrq);
+ void tipc_link_build_bc_sync_msg(struct tipc_link *l,
+ 				 struct sk_buff_head *xmitq);
+ void tipc_link_bc_init_rcv(struct tipc_link *l, struct tipc_msg *hdr);
+diff --git a/net/tipc/node.c b/net/tipc/node.c
+index eb6b62de81a7..917ad3920fac 100644
+--- a/net/tipc/node.c
++++ b/net/tipc/node.c
+@@ -1771,7 +1771,7 @@ static void tipc_node_bc_sync_rcv(struct tipc_node *n, struct tipc_msg *hdr,
+ 	struct tipc_link *ucl;
+ 	int rc;
  
- 	tipc_link_advance_backlog(l, xmitq);
-diff --git a/net/tipc/trace.h b/net/tipc/trace.h
-index 4d8e00483afc..e7535ab75255 100644
---- a/net/tipc/trace.h
-+++ b/net/tipc/trace.h
-@@ -299,8 +299,10 @@ DECLARE_EVENT_CLASS(tipc_link_transmq_class,
- 		__entry->from = f;
- 		__entry->to = t;
- 		__entry->len = skb_queue_len(tq);
--		__entry->fseqno = msg_seqno(buf_msg(skb_peek(tq)));
--		__entry->lseqno = msg_seqno(buf_msg(skb_peek_tail(tq)));
-+		__entry->fseqno = __entry->len ?
-+				  msg_seqno(buf_msg(skb_peek(tq))) : 0;
-+		__entry->lseqno = __entry->len ?
-+				  msg_seqno(buf_msg(skb_peek_tail(tq))) : 0;
- 	),
+-	rc = tipc_bcast_sync_rcv(n->net, n->bc_entry.link, hdr);
++	rc = tipc_bcast_sync_rcv(n->net, n->bc_entry.link, hdr, xmitq);
  
- 	TP_printk("<%s> retrans req: [%u-%u] transmq: %u [%u-%u]\n",
-@@ -308,15 +310,16 @@ DECLARE_EVENT_CLASS(tipc_link_transmq_class,
- 		  __entry->len, __entry->fseqno, __entry->lseqno)
- );
+ 	if (rc & TIPC_LINK_DOWN_EVT) {
+ 		tipc_node_reset_links(n);
+diff --git a/net/tipc/sysctl.c b/net/tipc/sysctl.c
+index 58ab3d6dcdce..97a6264a2993 100644
+--- a/net/tipc/sysctl.c
++++ b/net/tipc/sysctl.c
+@@ -36,7 +36,7 @@
+ #include "core.h"
+ #include "trace.h"
+ #include "crypto.h"
+-
++#include "bcast.h"
+ #include <linux/sysctl.h>
  
--DEFINE_EVENT(tipc_link_transmq_class, tipc_link_retrans,
-+DEFINE_EVENT_CONDITION(tipc_link_transmq_class, tipc_link_retrans,
- 	TP_PROTO(struct tipc_link *r, u16 f, u16 t, struct sk_buff_head *tq),
--	TP_ARGS(r, f, t, tq)
-+	TP_ARGS(r, f, t, tq),
-+	TP_CONDITION(less_eq(f, t))
- );
+ static struct ctl_table_header *tipc_ctl_hdr;
+@@ -75,6 +75,13 @@ static struct ctl_table tipc_table[] = {
+ 		.extra1         = SYSCTL_ONE,
+ 	},
+ #endif
++	{
++		.procname	= "bc_retruni",
++		.data		= &sysctl_tipc_bc_retruni,
++		.maxlen		= sizeof(sysctl_tipc_bc_retruni),
++		.mode		= 0644,
++		.proc_handler	= proc_doulongvec_minmax,
++	},
+ 	{}
+ };
  
- DEFINE_EVENT_PRINT(tipc_link_transmq_class, tipc_link_bc_ack,
- 	TP_PROTO(struct tipc_link *r, u16 f, u16 t, struct sk_buff_head *tq),
- 	TP_ARGS(r, f, t, tq),
--	TP_printk("<%s> acked: [%u-%u] transmq: %u [%u-%u]\n",
-+	TP_printk("<%s> acked: %u gap: %u transmq: %u [%u-%u]\n",
- 		  __entry->name, __entry->from, __entry->to,
- 		  __entry->len, __entry->fseqno, __entry->lseqno)
- );
 -- 
 2.13.7
 
