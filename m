@@ -2,112 +2,113 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 025541A74D0
-	for <lists+tipc-discussion@lfdr.de>; Tue, 14 Apr 2020 09:30:45 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95B531A753D
+	for <lists+tipc-discussion@lfdr.de>; Tue, 14 Apr 2020 09:54:36 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jOG1o-0002p3-0T; Tue, 14 Apr 2020 07:30:40 +0000
+	id 1jOGOu-0001Ro-Og; Tue, 14 Apr 2020 07:54:32 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1jOG1l-0002or-OE
- for tipc-discussion@lists.sourceforge.net; Tue, 14 Apr 2020 07:30:38 +0000
+ (envelope-from <hoang.h.le@dektech.com.au>) id 1jOGOt-0001Rc-Fn
+ for tipc-discussion@lists.sourceforge.net; Tue, 14 Apr 2020 07:54:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Message-Id:Date:Subject:
- Cc:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=VdxwfW5pqtrFF+DStCbu0ADgC+N02Jd5LOxh6Mu2xCY=; b=PlogQjjadPNmzZYHf0QntJsw6T
- zRkqaweEdskceVGrvEF7F9ZhqxGb4btuO9qzsJMGenH8gaI4X0Or7jKT185ikoHtvTYdsdDf4H357
- C9FveY6Sx4W0usze1odTGkkMhgv+1GSU9OsWGG9bhcd7upGMUdg40dHNb9zqLyOCskwM=;
+ bh=zqebJCzZ1OqkN32754FJuTYLYZsGSNRUxy5odhhGX6k=; b=Oh1AWAGlOlU7Y+6T0hbHFaDVER
+ uvpGFoBNCsKrEz9WkCRVRn3er5JGA2Sog7TEfj1b3lfM7P1ku/PNBpTYCjlAldcMAI8g3tf7yFM14
+ 4KELDCeWtFJFO14TO4kvCiYaDNHzO16CiAX3oVTAB/K+Q1TTFp7kNssIhG79i7/lguwg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Type:Message-Id:Date:Subject:Cc:To:From:Sender:
- Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=VdxwfW5pqtrFF+DStCbu0ADgC+N02Jd5LOxh6Mu2xCY=; b=X
- f80Zq4VYIpWfGGe6aW+HeOFSeduGOWxzb9KPQ+1mZfc11dPKOBmWOoneR6N5ZVgWaVbsAhYjz+f+V
- 3R6U/yqjqJdus5SG9eK++IMkgzMHDOjt+K6LOBizMpyXau5R5CfhlqVvv9WzaO1V8hiBrjaNaQtcE
- f+dknTIEoyVmW0QA=;
-Received: from mail-eopbgr60115.outbound.protection.outlook.com
- ([40.107.6.115] helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=zqebJCzZ1OqkN32754FJuTYLYZsGSNRUxy5odhhGX6k=; b=XD7S2qUqWpdBH2rUb7Cha2cVW1
+ frtQWRl8qpbtQF79KfX2y+xfdOHqFQHNw9GTMFBl/W2Reb96A/IhI5zAVIJ399sH6EG3LFTnWypaS
+ 37T6P+FCDxbbXFFgdtkjb1Ng75Cnpp1HAuO8nMifHzSvHo4jEQ4C8WWRgb/F8U2U4Sro=;
+Received: from mail-eopbgr50098.outbound.protection.outlook.com ([40.107.5.98]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1jOG1b-00FUlq-Je
- for tipc-discussion@lists.sourceforge.net; Tue, 14 Apr 2020 07:30:37 +0000
+ id 1jOGOo-00FW8A-ET
+ for tipc-discussion@lists.sourceforge.net; Tue, 14 Apr 2020 07:54:31 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=TYd4tEEORLMamOHZtuYBwc63AWG8ga1P4uI8vwuubeCkrXgCbMEKGvHb9HSynex4SCinymKNAnpOV2o5g4e3G7IwwP6akx3mVsixz7Q9iqB+lFHPmN/gxeu3XOs8d/YWTSeSXyQBllFRqUbOSu5wLc8RXeUBGoZMJNiFiRcTtCG58850Q4Uu6YvnJesCrEZLE41vwHQqxIXl8QpEbEWxhe6haSGXqK4RhOcKpDHCKDEOxlDXlHapyZtPwEL0jCuIVLfsnLMjQgWGJxa8ZKof/e0O0xvcIGW9kwync9XZHpzb4NNcn6SyK1pM6sOxMnROdP8ct2U3/li6W5jrU7yJjA==
+ b=ZLtwgFvgpmCH6YIewj0K5KrMncx2Z/h9+WMiQ3vhh+0R32xIqtivma+E/hfx/Tc+8Y8zVOTv0+SOjpQbhlGmQrmw9xXgXuzna7Gigz9Agxej9aPTthtmOMKWzF/MZAUzWkzgdw7M76VkNhK3/F4907GbNL1icEIEYlDnBP8fB5RUOPjS5H4ytMSIDVcNqJnhEvzvuq9geySS1TiZdLJxdNIZtqgQJ+DlUI/oycZ6Q/JIj61eOt0sly80B4ncUJ3XSMrJDjbG+N03ejDdwUu28Okd4PsDdMBbVi4X/jbWPnbdkrh9vpuUfW5YSls+FbMIES9+bkI5EkI4kYSWjLY+mw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=VdxwfW5pqtrFF+DStCbu0ADgC+N02Jd5LOxh6Mu2xCY=;
- b=H83N+uK143RGt+9wE7px4t0z1+i/dSTFmlqzbF3hXKhB4D48azgJERaueHulpTiQdIE5YFlvDpVXxPLHeiRagdS74N+Oe4lo60drXdJI5VL4rk/o9ei1VWa03hSpotseoawPIn2YbOTpzAVqWmlRl34M7FewvcV3jPlAjH+eQymhmVj/EhLeG5vHAL6ksWrkuvFbjqcfsSUBMiJg3v8xz6rhWO8DQ9qMazG95Ulh3okmA892o6h8uGezjWRgSVeZjNQAK21YpistqXBLirAGcJPRIR03CMCkNnacfuBMeJHw9+bYGjB5uJUhANY9Fvg4yw86tC+8JCIxTZCc1KrQiQ==
+ bh=zqebJCzZ1OqkN32754FJuTYLYZsGSNRUxy5odhhGX6k=;
+ b=C4HLgeo1qTXDI90RGl+fwR7SrVjx7kXb8uaMIJn8XXEV0vEi5QFE6CbZpgzzRJmFV52pa7oJQluXuxI3XkbZRVLwwRmZlamy9LYbPAdsD9BuTPvlgf/PhkpPbxrIxNNSfuiRP6gE6NCaDLlnwDhT5ZuJHof4aTcZqhQCRSvmPyYM8M71UCwM7NRebyrMNpeQCpceopdosUsSs9zeYHJhbDLwcY4qlBURBXsGi/IC2eU+Yu2dxAVXk5CwfSWust5Q9fxU4MfDO8q5osmAV4lyERteoZfPMDZreVdPaaZAywEOtbcDu1hiQXigMs9SqdfllpJS3Cqn8uoDH+KnzOEzUw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=dektech.com.au; dmarc=pass action=none
  header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=VdxwfW5pqtrFF+DStCbu0ADgC+N02Jd5LOxh6Mu2xCY=;
- b=YDi2Y0X/M0PmW/9WWburjio8kOTCn8LMJ430HdBgoQ3NXRnQB00JdhodmXCB6gTFoLnqmje8O65v62oktqcICOWfkut1ElikR54YIIPEneB/0a/HzkQ+G2GkChZPW99x1FCLZlQxoYM6u7EgMXVfrmI1Bf1p3dIjePoPhbIUWZM=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=tuong.t.lien@dektech.com.au; 
-Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com (2603:10a6:209:5::28)
- by AM6PR0502MB3831.eurprd05.prod.outlook.com (2603:10a6:209:c::20)
+ bh=zqebJCzZ1OqkN32754FJuTYLYZsGSNRUxy5odhhGX6k=;
+ b=Xlr/wDjq6/kEhtQg+JbT/YM806OzytPSFgHSdvrxhx5ni0uSS+g5hCEBbTAMcBt+rfYJKR5jL7jwcGQ6yFkQn92zEH6zSin5+Al/ospchecATfmMEfAXD7Hm9gvDNCdTfNFyovhfQZJps6vsmNzvMCwigNOfUQ8NTGhn9vPHtoc=
+Received: from VI1PR05MB4605.eurprd05.prod.outlook.com (2603:10a6:802:61::21)
+ by VI1PR05MB3278.eurprd05.prod.outlook.com (2603:10a6:802:1f::28)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2900.28; Tue, 14 Apr
- 2020 07:30:20 +0000
-Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com
- ([fe80::5941:e5bd:759c:dd8c]) by AM6PR0502MB3925.eurprd05.prod.outlook.com
- ([fe80::5941:e5bd:759c:dd8c%6]) with mapi id 15.20.2900.028; Tue, 14 Apr 2020
- 07:30:20 +0000
-From: Tuong Lien <tuong.t.lien@dektech.com.au>
-To: jmaloy@redhat.com, maloy@donjonn.com, ying.xue@windriver.com,
- tipc-discussion@lists.sourceforge.net
-Date: Tue, 14 Apr 2020 14:30:11 +0700
-Message-Id: <20200414073011.18322-1-tuong.t.lien@dektech.com.au>
-X-Mailer: git-send-email 2.13.7
-X-ClientProxiedBy: HK0PR03CA0108.apcprd03.prod.outlook.com
- (2603:1096:203:b0::24) To AM6PR0502MB3925.eurprd05.prod.outlook.com
- (2603:10a6:209:5::28)
-MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from dektech.com.au (113.22.229.239) by
- HK0PR03CA0108.apcprd03.prod.outlook.com (2603:1096:203:b0::24) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2900.15 via Frontend Transport; Tue, 14 Apr 2020 07:30:18 +0000
-X-Mailer: git-send-email 2.13.7
-X-Originating-IP: [113.22.229.239]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 02211681-2b74-4623-5694-08d7e045af84
-X-MS-TrafficTypeDiagnostic: AM6PR0502MB3831:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM6PR0502MB3831DA03CBF106858E9D1DA0E2DA0@AM6PR0502MB3831.eurprd05.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:5236;
-X-Forefront-PRVS: 0373D94D15
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR0502MB3925.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ 2020 07:54:17 +0000
+Received: from VI1PR05MB4605.eurprd05.prod.outlook.com
+ ([fe80::31c3:5db4:2b4a:fcec]) by VI1PR05MB4605.eurprd05.prod.outlook.com
+ ([fe80::31c3:5db4:2b4a:fcec%5]) with mapi id 15.20.2900.028; Tue, 14 Apr 2020
+ 07:54:17 +0000
+From: Hoang Huu Le <hoang.h.le@dektech.com.au>
+To: Tuong Tong Lien <tuong.t.lien@dektech.com.au>, "jmaloy@redhat.com"
+ <jmaloy@redhat.com>, "maloy@donjonn.com" <maloy@donjonn.com>,
+ "ying.xue@windriver.com" <ying.xue@windriver.com>,
+ "tipc-discussion@lists.sourceforge.net"
+ <tipc-discussion@lists.sourceforge.net>
+Thread-Topic: [PATCH RFC] tipc: make peer node cleanup timer configurable
+Thread-Index: AQHWEi6Ne6y4y9QKEUaMNfvHpyhXAah4OkaA
+Date: Tue, 14 Apr 2020 07:54:17 +0000
+Message-ID: <VI1PR05MB4605B70151F8D024B8F76D7AF1DA0@VI1PR05MB4605.eurprd05.prod.outlook.com>
+References: <20200414073011.18322-1-tuong.t.lien@dektech.com.au>
+In-Reply-To: <20200414073011.18322-1-tuong.t.lien@dektech.com.au>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=hoang.h.le@dektech.com.au; 
+x-originating-ip: [115.77.48.208]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 0c1c128d-7100-4839-49c0-08d7e049089a
+x-ms-traffictypediagnostic: VI1PR05MB3278:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR05MB32783D6BCCD8199D58E015C7F1DA0@VI1PR05MB3278.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6108;
+x-forefront-prvs: 0373D94D15
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VI1PR05MB4605.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(10019020)(346002)(396003)(39840400004)(136003)(366004)(376002)(16526019)(55016002)(103116003)(7696005)(316002)(52116002)(1076003)(26005)(36756003)(2906002)(8676002)(956004)(81156014)(2616005)(66476007)(8936002)(478600001)(186003)(66946007)(66556008)(6666004)(86362001)(107886003)(5660300002)(4326008);
+ SFS:(10019020)(396003)(376002)(39840400004)(136003)(346002)(366004)(66446008)(33656002)(5660300002)(64756008)(66556008)(66476007)(107886003)(110136005)(9686003)(316002)(478600001)(52536014)(76116006)(66946007)(4326008)(71200400001)(2906002)(86362001)(26005)(8676002)(55016002)(81156014)(8936002)(53546011)(7696005)(6506007)(186003);
  DIR:OUT; SFP:1102; 
-Received-SPF: None (protection.outlook.com: dektech.com.au does not designate
+received-spf: None (protection.outlook.com: dektech.com.au does not designate
  permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: OBtWUH8XcM1nC2I5HCN+Ei7J2j/Gfch2nfB3P4gMnvx1AoJ25e+GprAExnpcOz3+axSUqgqT7hLfb0kVP5RW6/oXMVXzCKNvIFf33BSo1fODl0xyvnix++P5VVbSOmUY+8/vx2Z4cRNZM1lnDaMxlvPB/MSnRLFEvRGKzCfEW4B9Sf01E6O0K1OF3rmnuCDFt+gCNCxbcFtnBdfkGf+pTkb9CuGHh5cjeitUZNM3Ee2J3Udl3zv7hdbxZtshtiXyIttulZOe/u9bXMNBrF2O4dutp7faOhCBuA0mfHivK6FxFHKFk3i7/sfeLd40nT6jtiE+/SRhOlK6duaIPX24ZR0xvAe9i2Kglv+1ydrDCAhOhk4xzQ54UgMu8437sYwabCaVPhNTJngQ7Q7CHhambrz6RxATvAnOZ04n2qZo02WbYEwhfgyKffw75VA7VgIi
-X-MS-Exchange-AntiSpam-MessageData: O54kQFHVjybzfKsTQsspYyWfzwBu5I8IqhdTJlhLPJ2YtHgjFxMz4utQyskyE4icrEpg+rtpth08UTzQGgrtM4yA/l/of7Ua63XfHQPgr/G13s2MReHdq2vKtvMnlZNxGh5s1IdbIJao4MUT1mJnFg==
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: lvD9WUiujOxAiu/R/9IGocS0iaoU2fYiTLGWXLaDA7ABhu07Q8qur++6luWRnYh6x0OVEyyx5kbKsv1ezvJ9QRBEUAkdiNNbCNCtUUf31gx2IFhBmE5okBkxbuaGpunqYsWfMAc8IAca9pZrUfg8iVgBszX0Cta1eSV2uuioSrdAn7Bp5j98N4BgWJvjjbNt9QN4akugWvOzma/jkwuENksp0+/gBGEuKsdcqFYWCSbhgoWgadtqMEbgXG2J0idVUwX4Du5/FTSoCcrWZ0SczZEX9RNnZi/4IkPHupE2xLVfmEkb4GwryVV74jawe48pevGVW9YKxOtQ0iN04d0la13oGbtbHSAciJs9drHkMg5+fq7+6G6TxllGMTfNgLBznG4vh9+z9HM0f1oL0yfSNAXFCTpvGi4hKPlsDaSY3mbM1UxuclkQmv95VLDAzNzm
+x-ms-exchange-antispam-messagedata: fOeMALheIICyLwd7QHWX/bBLYkj3InDLnd/3dNs6QOXdK8JQ1scexQnBMSqKM9g0sfsi5TbueOiKRDg0F26zI8DEzw0d/yjVlh5/xndEOrvAXTeR9B3CJWRVqpXAuwCuFdI6td8EPbR1RFZFQVA7WA==
+MIME-Version: 1.0
 X-OriginatorOrg: dektech.com.au
-X-MS-Exchange-CrossTenant-Network-Message-Id: 02211681-2b74-4623-5694-08d7e045af84
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Apr 2020 07:30:20.1593 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: lVdBySdgxfVYZVIUh7xsgMJmC5bCVRLpAy3ZGezAjmtcXS2bUrxfxOmpXYhs3yDClz1FTIqJ8T+UU2GupwxghFvGR3zCPiZ31b9mvVdJ1TQ=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0502MB3831
-X-Spam-Score: -0.9 (/)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0c1c128d-7100-4839-49c0-08d7e049089a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Apr 2020 07:54:17.5959 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 1957ea50-0dd8-4360-8db0-c9530df996b2
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: cjBJNafYr9wH+JwE/OM3TpZ+KY9uUDnQ0ReiCC25e+Ytv/EWdA12oQIRzvSqahcm6pAV+VyukRTXLXe+rk10HiJq7PwgZ8gb+n9S3U9/qFY=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB3278
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
@@ -115,9 +116,7 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: dektech.com.au]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.6.115 listed in list.dnswl.org]
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.6.115 listed in wl.mailspike.net]
+ trust [40.107.5.98 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -125,10 +124,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
-X-Headers-End: 1jOG1b-00FUlq-Je
-Subject: [tipc-discussion] [PATCH RFC] tipc: make peer node cleanup timer
- configurable
+X-Headers-End: 1jOGOo-00FW8A-ET
+Subject: Re: [tipc-discussion] [PATCH RFC] tipc: make peer node cleanup
+ timer configurable
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -140,10 +138,24 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: tipc-dek@dektech.com.au
+Cc: tipc-dek <tipc-dek@dektech.com.au>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
+
+Hi Tuong,
+
+The  'node_cleanup' is not clear in meaning.  I'd prefer using 'node_cleanup_time_secs'.
+I think we should use 'milliseconds' for more popular than 'seconds' in proc/sysctl.
+
+Regards,
+Hoang
+-----Original Message-----
+From: Tuong Tong Lien <tuong.t.lien@dektech.com.au> 
+Sent: Tuesday, April 14, 2020 2:30 PM
+To: jmaloy@redhat.com; maloy@donjonn.com; ying.xue@windriver.com; tipc-discussion@lists.sourceforge.net
+Cc: tipc-dek <tipc-dek@dektech.com.au>
+Subject: [PATCH RFC] tipc: make peer node cleanup timer configurable
 
 Since commit 6a939f365bdb ("tipc: Auto removal of peer down node
 instance"), a peer node instance is automatically clean up after 5 mins
