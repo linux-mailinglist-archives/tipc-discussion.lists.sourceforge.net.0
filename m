@@ -2,88 +2,129 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65A391BB39D
-	for <lists+tipc-discussion@lfdr.de>; Tue, 28 Apr 2020 03:53:39 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D9681BB95D
+	for <lists+tipc-discussion@lfdr.de>; Tue, 28 Apr 2020 10:58:54 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jTFRH-0001hT-ES; Tue, 28 Apr 2020 01:53:35 +0000
+	id 1jTM4o-0004UX-7w; Tue, 28 Apr 2020 08:58:50 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1jTFRG-0001hM-P5
- for tipc-discussion@lists.sourceforge.net; Tue, 28 Apr 2020 01:53:34 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1jTM4m-0004UQ-G7
+ for tipc-discussion@lists.sourceforge.net; Tue, 28 Apr 2020 08:58:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Message-Id:Date:Subject:
+ Cc:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=WxJhqDMuWTc4OE7+HO4kFS2howOi5r0nD+0uaeibTPw=; b=TiuT/7r4/9HnIE6fIq5CsKNA43
- DT81o5LD2frRalo6C6AUb9v3PvLfNIcKD1nYRVC/WdDo6zdAVZnobVsdvbd2rqGYq1kNUGbh6TtG0
- /3rltupUweiSmtfiEdk9w47dvjXL/RYTRlc9aUiZgvMTRiSptr3l2fZZLnQMqb3k1WhA=;
+ bh=+J/rR6QuPbytcXxxvS70BIBAeobH7naU8rOVFtKvanM=; b=JpVYNPrXhmLD0M5n2nSeml6+OJ
+ Ditu1Rn9LMcHVdyPHhUOeMTvVJ6lOF8BXquZhmLCsynLvOejmRALp41yarY4OyLFyPOx3/VwY04gY
+ bYlMcTJthGX1fhGdA9cRe3fO0P8K03PH4qzau8nMnS/3+2qvwpHdmxJW/KqbIydysztQ=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:
- Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
+ h=MIME-Version:Content-Type:Message-Id:Date:Subject:Cc:To:From:Sender:
+ Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
  :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=WxJhqDMuWTc4OE7+HO4kFS2howOi5r0nD+0uaeibTPw=; b=M
- W6iibBC17cxiw9Kbyvkyj2WVSk8y8I68jo7LtG3qIILT5srjggKmRFuRH3gOzAuOnIWeeFCSFDPnq
- uJiBT1T21sAlCAK1MNZefn/NlxN3TuYffuUD+Iw2IPeO473BlH85nBpS/zz9sjWazJoA7TLdgqFC+
- yJnOl74Y2/u49POc=;
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1jTFRB-000gC7-VO
- for tipc-discussion@lists.sourceforge.net; Tue, 28 Apr 2020 01:53:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588038803;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=WxJhqDMuWTc4OE7+HO4kFS2howOi5r0nD+0uaeibTPw=;
- b=azCVZ24eWtCsAiTx7Ylzt4mbp3qeS7VM/LElRWI3lzT6VXjFL4vAHiz/I1+zkQRMtWMd7s
- Z4rhvZgHXV6DVMtQ2tjt8WCexiitIZN7ZMzlfnMczvA4QPzWVOXMFgMQwOtHuLpvEUkf2V
- REsUIyy0wgxhLjMPNr57jpOL+k8JrR8=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-372-B1_uKYN6Ob2_brSGTzoICw-1; Mon, 27 Apr 2020 21:53:21 -0400
-X-MC-Unique: B1_uKYN6Ob2_brSGTzoICw-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8FB5D800C78;
- Tue, 28 Apr 2020 01:53:19 +0000 (UTC)
-Received: from f31.redhat.com (ovpn-112-203.rdu2.redhat.com [10.10.112.203])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 5EC9D5C1B2;
- Tue, 28 Apr 2020 01:53:16 +0000 (UTC)
-From: jmaloy@redhat.com
-To: tipc-discussion@lists.sourceforge.net
-Date: Mon, 27 Apr 2020 21:53:15 -0400
-Message-Id: <20200428015315.591224-1-jmaloy@redhat.com>
+ List-Owner:List-Archive; bh=+J/rR6QuPbytcXxxvS70BIBAeobH7naU8rOVFtKvanM=; b=g
+ 3/RZuwqaVb2hfXTIIQsxkpavOcah+Pk9SoxYccioV7W6k4JdUgE75ZmF/yFHn8y0V6v6Wt4A+BzMg
+ z4bKXkfQZADz+y4VrpW2cczKG+h+CuaoGr8qV7G0WuavtTpwrbbvy7wbUd1ydHjWSjYxZGzAbLfTc
+ JWhOmJb2CimAWvEY=;
+Received: from mail-eopbgr10115.outbound.protection.outlook.com
+ ([40.107.1.115] helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1jTM4h-00Ds8z-FX
+ for tipc-discussion@lists.sourceforge.net; Tue, 28 Apr 2020 08:58:48 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=DlZEN4D/GoTw0EWFbAYvuJkU3SV6VL/HWv3TkqTfoLlf2+/TOL6B+7t79q+2UbQCDtlBxpoV4Rsps5GtXTmwBvMTOf5ptpMTYV1zGSgCbHcYo/6R3Z2Qdv6/t0i+U838plhNVhzRABUBszkyXXpNErJ4lrI1p4WrN/oTaWaWfxj92zUJwz0iL6VUk/W7pSpVo7QIdmgiqLQW2pP7gk5ZRyHB8MWWXpfn+BeO0pSgVhBWyv5dIaKHKPfxoQiqvVGP2HEYb4W5Y/Y/8v0/GxGpWfSaORPfqmE05j0SLO9NXXpdebF2YYfho88BmxE4eV34FCbMhA9atyu6lAsZngtCvg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=+J/rR6QuPbytcXxxvS70BIBAeobH7naU8rOVFtKvanM=;
+ b=R93hKXvdrVGVbVF5wfdsjvqMCTzIZMTJCgW8yjMEQHKLyajd69c8ODy3rqQfg1AigBgl2DbM5ELl0G0olBR/SZhVjANcnz+YtD88dJWiv+53baq0MX0+xqGYMWvKDXUy9+AWGc+J6R+TB2duTjOZXK6LRlJT2+RiLsDq1nr3liMs2tnVR8mkbHI1eBo8C0dq1Pczuyev4442KNEPkCacbc38xfww+BhOHiD4kQEAEB7V45HKQO5cHZO63AxUtHZK50WEBbrUTBIj98FYp/ZkfvoDcqmkYOvBq6qgNHoTfXLPUOp4EcIxBQaqxnQoOR6AKGHv4uN+R6yGFes0XiTFSg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=dektech.com.au; dmarc=pass action=none
+ header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=+J/rR6QuPbytcXxxvS70BIBAeobH7naU8rOVFtKvanM=;
+ b=oXj14nuwUmBwi/dNKDlNACN5iz4FMsUrAgn93SZgsW4gpihYaGLZC1QtzCZzKgEmLum1+H+pmZU1hFrcP3k2ziVEPAygGVVY5yMvk4MVCPn1Wfbg4zVpDX4ZGOxqYisXEl5E8jHV83RO9LH9jhI9FtdrCjpLTikDDB6a+y9XiTQ=
+Authentication-Results: redhat.com; dkim=none (message not signed)
+ header.d=none;redhat.com; dmarc=none action=none header.from=dektech.com.au;
+Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com (2603:10a6:209:5::28)
+ by AM6PR0502MB3893.eurprd05.prod.outlook.com (2603:10a6:209:b::26)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Tue, 28 Apr
+ 2020 08:58:36 +0000
+Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com
+ ([fe80::5941:e5bd:759c:dd8c]) by AM6PR0502MB3925.eurprd05.prod.outlook.com
+ ([fe80::5941:e5bd:759c:dd8c%6]) with mapi id 15.20.2937.023; Tue, 28 Apr 2020
+ 08:58:35 +0000
+From: Tuong Lien <tuong.t.lien@dektech.com.au>
+To: jmaloy@redhat.com, maloy@donjonn.com, ying.xue@windriver.com,
+ tipc-discussion@lists.sourceforge.net
+Date: Tue, 28 Apr 2020 15:58:26 +0700
+Message-Id: <20200428085826.15412-1-tuong.t.lien@dektech.com.au>
+X-Mailer: git-send-email 2.13.7
+X-ClientProxiedBy: SG2PR06CA0168.apcprd06.prod.outlook.com
+ (2603:1096:1:1e::22) To AM6PR0502MB3925.eurprd05.prod.outlook.com
+ (2603:10a6:209:5::28)
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from dektech.com.au (14.161.14.188) by
+ SG2PR06CA0168.apcprd06.prod.outlook.com (2603:1096:1:1e::22) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.2937.13 via Frontend Transport; Tue, 28 Apr 2020 08:58:33 +0000
+X-Mailer: git-send-email 2.13.7
+X-Originating-IP: [14.161.14.188]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 734860cd-e001-4fe7-0b91-08d7eb5255ca
+X-MS-TrafficTypeDiagnostic: AM6PR0502MB3893:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <AM6PR0502MB3893A07E3CBD0904168E8E9EE2AC0@AM6PR0502MB3893.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:1388;
+X-Forefront-PRVS: 0387D64A71
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM6PR0502MB3925.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(346002)(396003)(366004)(376002)(136003)(39850400004)(478600001)(186003)(956004)(2616005)(66556008)(5660300002)(66946007)(1076003)(66476007)(16526019)(107886003)(36756003)(316002)(2906002)(6666004)(103116003)(55016002)(86362001)(8936002)(26005)(8676002)(7696005)(4326008)(81156014)(52116002);
+ DIR:OUT; SFP:1102; 
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: bw3m21nYwJUNDh+9PokAEEacbxOAZ3LA3uMT0Mhn4/sMp/nK6wLDvp1Wl54v6/NJwKrxiPxhZHIgihnJJ0J2NEcJq0PF6KGINXtN9Ba1jTOC5D//Wr/zlYCcQCmcEcFJZQk2sCPFQqXEge+Hbi2Axqz18WkaHBckxOqKwOP7ny4hLhFpz/ff9Dhy8sBHLG8GPEBj3VSr8rTjr49ndG/kpps1S/9FFe+2W+jseXjpWCc3b6OoLfAINXUV9tKX9aWral2s2sWpq8ScXTW5fRwzSedL8XHPM+2RN8GZyzbn1NGF7JpblvNwnTg0NjSnCLCaI9e7GzYO+Pe1EOsCBaE35+Lfi6JmZI7Yst+Mampvhgt+r66DCtVRIe2VxyFlG5P3czfNflu4NzbWyXU56xMhFqiaZWq1csOUR6BZldJO7vaoISvDkZQr5nm2TboWQV9D
+X-MS-Exchange-AntiSpam-MessageData: 92QLqlO0ZMejK5zcfcqdorIg+a1GU1904XN2VQU1Qrw3v1+Qp4TTFemmm0LdJBzgmfsu6mm3AntnURVPs1/wWYsxLNCR7UHegi0ZOe1438hfRS8WTFfgh5RGFlVsynuITaIJ3nX53WXsOsj7g903Vh3Cvjd1TFNrV2iR0POZ7EHJ466uRVS+SgEQjk8qH8LEfjrBsXLsUE5B5D9el+G8I8mBGu9FzEf/j5EgWiKkEasf/34zdAFrXAsGAdnaVRpwAET4QAd51EhR91faS0z5TbzaffAEF6nPFT4bW+CsheyBwiklPzLpasi6h681NZPNNZtYQfwRvf8xk9OkRzBHlk03SSO43uCnTMC/L1ObOHv/zpvQ3L4KeH6YEikzztDKumQAUy7Tavp4EM7FNiMHsDnVdp1nz8suTPn99e4E+cSw3bP75gQwEGOGHfTaPfCYoD9llrE+r0zAdF9TvVhsTOoGHZFIb4v5CrbRG8n0bJRhZz/g752FJxt7UJc1snLSORI9dFst0rBbc2HuJc+fa5bahopeN1bn5RCl2INrG1sOAm/5raSArXACG2XbHPfKQ8M/IuJ/rCsRbPKV/Ire6n67gMx2aQFAyof0Upmop8INm5OiVglL7C/OewRbOyiE0LDliSOEChDDIrWT8kRnDjbHygnqLPgxeRQRWAP33rGQ66DIIfT/LW4MfT/GI0LUGqfH1T0cADj3oWQ12zPE6hqtXb8UOAU/23vAbAXv9g5NXIobYQRUM4ypG/aJrfqU5ikfLLPJzOGpvCwyP+axVq8PC+apOWFiiLQj5mHbgrM=
+X-OriginatorOrg: dektech.com.au
+X-MS-Exchange-CrossTenant-Network-Message-Id: 734860cd-e001-4fe7-0b91-08d7eb5255ca
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Apr 2020 08:58:35.8782 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: YXzOU3rWQ2ZdKlEn92qe4mZAyf0mJaNMlV7gXlHNvpcuJ3UKhJ5+uH+pkI5k3lXUhnsA4XGzBi0o/veS6G7Wy+J7XvZnbxwk9Kk+ukHf+wo=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0502MB3893
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [205.139.110.61 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.1.115 listed in wl.mailspike.net]
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: dektech.com.au]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Headers-End: 1jTFRB-000gC7-VO
-Subject: [tipc-discussion] [RFC PATCH] tipc: define TIPC version 3 address
- types
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+X-Headers-End: 1jTM4h-00Ds8z-FX
+Subject: [tipc-discussion] [net] tipc: fix partial topology connection
+ closure
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,139 +136,53 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: xinl@redhat.com
+Cc: tipc-dek@dektech.com.au
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-From: Jon Maloy <jmaloy@redhat.com>
+When an application connects to the TIPC topology server and subscribes
+to some services, a new connection is created along with some objects -
+'tipc_subscription' to store related data correspondingly...
+However, there is one omission in the connection handling that when the
+connection or application is orderly shutdown (e.g. via SIGQUIT, etc.),
+the connection is not closed in kernel, the 'tipc_subscription' objects
+are not freed too.
+This results in:
+- The maximum number of subscriptions (65535) will be reached soon, new
+subscriptions will be rejected;
+- TIPC module cannot be removed (unless the objectes are somehow forced
+to release first);
 
-TIPC would be more attractive in a modern user environment such
-as Kubernetes if it could provide a larger address range.
+The commit fixes the issue by closing the connection if the 'recvmsg()'
+returns '0' i.e. when the peer is shutdown gracefully. It also includes
+the other unexpected cases.
 
-Advantages:
-- Users could directly use UUIDs, strings or other values as service
-  instances types and instances.
-- No more risk of collisions between randomly selected service types
-
-The effect on the TIPC implementation and protocol would be significant,
-but this is still worth considering.
+Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
 ---
- include/linux/socket.h     |  5 ++-
- include/uapi/linux/tipc3.h | 79 ++++++++++++++++++++++++++++++++++++++
- 2 files changed, 82 insertions(+), 2 deletions(-)
- create mode 100644 include/uapi/linux/tipc3.h
+ net/tipc/topsrv.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/include/linux/socket.h b/include/linux/socket.h
-index 54338fac45cb..ff2268ceedaf 100644
---- a/include/linux/socket.h
-+++ b/include/linux/socket.h
-@@ -209,8 +209,8 @@ struct ucred {
- 				 * reuses AF_INET address family
- 				 */
- #define AF_XDP		44	/* XDP sockets			*/
--
--#define AF_MAX		45	/* For now.. */
-+#define AF_TIPC3	45	/* TIPC version 3 sockets	*/
-+#define AF_MAX		46	/* For now.. */
+diff --git a/net/tipc/topsrv.c b/net/tipc/topsrv.c
+index ad78f7cff379..c364335623ab 100644
+--- a/net/tipc/topsrv.c
++++ b/net/tipc/topsrv.c
+@@ -405,10 +405,11 @@ static int tipc_conn_rcv_from_sock(struct tipc_conn *con)
+ 		read_lock_bh(&sk->sk_callback_lock);
+ 		ret = tipc_conn_rcv_sub(srv, con, &s);
+ 		read_unlock_bh(&sk->sk_callback_lock);
++		if (!ret)
++			return 0;
+ 	}
+-	if (ret < 0)
+-		tipc_conn_close(con);
  
- /* Protocol families, same as address families. */
- #define PF_UNSPEC	AF_UNSPEC
-@@ -260,6 +260,7 @@ struct ucred {
- #define PF_QIPCRTR	AF_QIPCRTR
- #define PF_SMC		AF_SMC
- #define PF_XDP		AF_XDP
-+#define PF_TIPC3	AF_TIPC3
- #define PF_MAX		AF_MAX
++	tipc_conn_close(con);
+ 	return ret;
+ }
  
- /* Maximum queue length specifiable by listen.  */
-diff --git a/include/uapi/linux/tipc3.h b/include/uapi/linux/tipc3.h
-new file mode 100644
-index 000000000000..0d385bc41b66
---- /dev/null
-+++ b/include/uapi/linux/tipc3.h
-@@ -0,0 +1,79 @@
-+/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-3-Clause) */
-+/*
-+ * include/uapi/linux/tipc3.h: Header for TIPC v3 socket interface
-+ *
-+ * Copyright (c) 2020 Red Hat Inc
-+ * All rights reserved.
-+ *
-+ * Redistribution and use in source and binary forms, with or without
-+ * modification, are permitted provided that the following conditions are met:
-+ *
-+ * 1. Redistributions of source code must retain the above copyright
-+ *    notice, this list of conditions and the following disclaimer.
-+ * 2. Redistributions in binary form must reproduce the above copyright
-+ *    notice, this list of conditions and the following disclaimer in the
-+ *    documentation and/or other materials provided with the distribution.
-+ * 3. Neither the names of the copyright holders nor the names of its
-+ *    contributors may be used to endorse or promote products derived from
-+ *    this software without specific prior written permission.
-+ *
-+ * Alternatively, this software may be distributed under the terms of the
-+ * GNU General Public License ("GPL") version 2 as published by the Free
-+ * Software Foundation.
-+ *
-+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-+ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-+ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-+ * POSSIBILITY OF SUCH DAMAGE.
-+ */
-+
-+#ifndef _LINUX_TIPC3_H_
-+#define _LINUX_TIPC3_H_
-+
-+#include <linux/types.h>
-+#include <linux/sockios.h>
-+#include <linux/tipc.h>
-+
-+struct tipc3_addr {
-+	__u8[16] type;      /* zero if socket address */
-+	__u8[16] instance;  /* port if socket address */
-+	__u8[16] node;      /* zero if whole cluster */
-+};
-+
-+struct tipc3_subscr {
-+	__u8[16] type;
-+	__u8[16] lower;
-+	__u8[16] upper;
-+	__u8[16] node;
-+	__u32 timeout;			/* subscription duration (in ms) */
-+	__u32 filter;			/* bitmask of filter options */
-+	__u8 usr_handle[16];		/* available for subscriber use */
-+};
-+
-+struct tipc3_event {
-+	__u8[16] lower;		        /* matching range */
-+	__u8[16] upper;		        /*    "      "    */
-+	struct tipc3_addr socket;	/* associated socket */
-+	struct tipc2_subscr sub;	/* associated subscription */
-+	__u32 event;			/* event type */
-+};
-+
-+struct sockaddr_tipc3 {
-+	unsigned short family;
-+	bool mcast;
-+	struct tipc3_addr addr;
-+};
-+
-+struct tipc3_group_req {
-+	struct tipc3_addr addr;
-+	__u32 flags;
-+};
-+
-+#endif
 -- 
-2.25.1
+2.13.7
 
 
 
