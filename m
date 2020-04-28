@@ -2,86 +2,88 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D2121ACF9E
-	for <lists+tipc-discussion@lfdr.de>; Thu, 16 Apr 2020 20:27:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65A391BB39D
+	for <lists+tipc-discussion@lfdr.de>; Tue, 28 Apr 2020 03:53:39 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jP9EA-00044e-Tq; Thu, 16 Apr 2020 18:27:06 +0000
+	id 1jTFRH-0001hT-ES; Tue, 28 Apr 2020 01:53:35 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Andy.Stec@infinite.com>) id 1jP9E9-00044T-Dn
- for tipc-discussion@lists.sourceforge.net; Thu, 16 Apr 2020 18:27:05 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1jTFRG-0001hM-P5
+ for tipc-discussion@lists.sourceforge.net; Tue, 28 Apr 2020 01:53:34 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Message-ID:Date:Subject:
- To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=NNFfgJgYW2A7F89Nu5b9ZobdxLKR7Bhek7PCxHDn5Fo=; b=MrOcqbHLqlgaigpfVpv6X6BVW2
- NXhk8I3GF6LUvyYMo2hny1AVIvtIBP9RGJna3P42RrW6+JqeM6a/XBdNyzvDBBPmkNZBfzX2YOqDC
- JxzPIks4UvZWjXLEx+kSf5VIDFXgqk9WF/k06eQJdPizQ32RFMLt4GvXvgzOz082hukY=;
+ bh=WxJhqDMuWTc4OE7+HO4kFS2howOi5r0nD+0uaeibTPw=; b=TiuT/7r4/9HnIE6fIq5CsKNA43
+ DT81o5LD2frRalo6C6AUb9v3PvLfNIcKD1nYRVC/WdDo6zdAVZnobVsdvbd2rqGYq1kNUGbh6TtG0
+ /3rltupUweiSmtfiEdk9w47dvjXL/RYTRlc9aUiZgvMTRiSptr3l2fZZLnQMqb3k1WhA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Type:Message-ID:Date:Subject:To:From:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:
+ Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=NNFfgJgYW2A7F89Nu5b9ZobdxLKR7Bhek7PCxHDn5Fo=; b=b
- 8yOVB2tS1fMIqlY89yiDyrN6k/CrykWppYY5Rd62UNTOOroQGWwW+SCg59t8JoUynDQDkgJq0v/iu
- WEvhsnBw/04+Bx2PToeWFdJmWra5PA7ttK7Rli8KXYSJrReSR55rkt+biPX2xmu0bnQ9j1KqeJgtx
- BnfWIB6kf090vXHc=;
-Received: from mx5.infinite.com ([115.114.49.32] helo=emailgw.infinite.com)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1jP9E6-0048eL-8f
- for tipc-discussion@lists.sourceforge.net; Thu, 16 Apr 2020 18:27:05 +0000
-IronPort-SDR: 67HzgYQ1FHETAwzfKcAsUwfmuD2pgeof2GDYwsl1YErfpx7qilOp4WPAu8K1o7eQ5bOqCn3Iwp
- W9HPjecnpskG7AsnbPO6hbqzTJmIF2UGtadM6NSsDEmeEqLBd72d6iWwisMHjJiWhZvqHGVr6I
- ZXoGfaMZozisnNwVfDKajOQ9QJ3t0JoY0Tv6d48+8X0DU1sCazGV0GUVnwZiP8uVzx9zE7lJJF
- dJdMazmTzFgQvzP9zHf79dU4VSzImzOJaF+fEFBoSGuEX9iQ1a6DXp/5JwAxAiKiE0YivYet6E
- qAM=
-X-IronPort-AV: E=Sophos;i="5.72,391,1580754600"; d="scan'208,217";a="3140843"
-Received: from unknown (HELO ICSBLRM02.infics.com) ([192.168.0.112])
- by emailgw.infinite.com with ESMTP/TLS/ECDHE-RSA-AES128-SHA256;
- 16 Apr 2020 23:40:12 +0530
-Received: from ICUSM01.infics.com (10.51.1.23) by ICSBLRM02.infics.com
- (192.168.0.112) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Thu, 16 Apr
- 2020 23:40:10 +0530
-Received: from ICUSM01.infics.com (10.51.1.23) by ICUSM01.infics.com
- (10.51.1.23) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Thu, 16 Apr
- 2020 13:10:08 -0500
-Received: from ICUSM01.infics.com ([fe80::2933:de0b:8e32:7dcd]) by
- ICUSM01.infics.com ([fe80::2933:de0b:8e32:7dcd%12]) with mapi id
- 15.00.1497.000; Thu, 16 Apr 2020 13:10:08 -0500
-From: Andy Stec <Andy.Stec@infinite.com>
-To: "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>
-Thread-Topic: No reply detected from Netlink
-Thread-Index: AQHWFBoxP4YOv6m9RUyxCC3CbWWj0Q==
-Date: Thu, 16 Apr 2020 18:10:08 +0000
-Message-ID: <1587060672642.1104@infinite.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [192.168.0.156]
+ List-Owner:List-Archive; bh=WxJhqDMuWTc4OE7+HO4kFS2howOi5r0nD+0uaeibTPw=; b=M
+ W6iibBC17cxiw9Kbyvkyj2WVSk8y8I68jo7LtG3qIILT5srjggKmRFuRH3gOzAuOnIWeeFCSFDPnq
+ uJiBT1T21sAlCAK1MNZefn/NlxN3TuYffuUD+Iw2IPeO473BlH85nBpS/zz9sjWazJoA7TLdgqFC+
+ yJnOl74Y2/u49POc=;
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
+ id 1jTFRB-000gC7-VO
+ for tipc-discussion@lists.sourceforge.net; Tue, 28 Apr 2020 01:53:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1588038803;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=WxJhqDMuWTc4OE7+HO4kFS2howOi5r0nD+0uaeibTPw=;
+ b=azCVZ24eWtCsAiTx7Ylzt4mbp3qeS7VM/LElRWI3lzT6VXjFL4vAHiz/I1+zkQRMtWMd7s
+ Z4rhvZgHXV6DVMtQ2tjt8WCexiitIZN7ZMzlfnMczvA4QPzWVOXMFgMQwOtHuLpvEUkf2V
+ REsUIyy0wgxhLjMPNr57jpOL+k8JrR8=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-372-B1_uKYN6Ob2_brSGTzoICw-1; Mon, 27 Apr 2020 21:53:21 -0400
+X-MC-Unique: B1_uKYN6Ob2_brSGTzoICw-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8FB5D800C78;
+ Tue, 28 Apr 2020 01:53:19 +0000 (UTC)
+Received: from f31.redhat.com (ovpn-112-203.rdu2.redhat.com [10.10.112.203])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 5EC9D5C1B2;
+ Tue, 28 Apr 2020 01:53:16 +0000 (UTC)
+From: jmaloy@redhat.com
+To: tipc-discussion@lists.sourceforge.net
+Date: Mon, 27 Apr 2020 21:53:15 -0400
+Message-Id: <20200428015315.591224-1-jmaloy@redhat.com>
 MIME-Version: 1.0
-X-Spam-Score: 1.0 (+)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: infinite.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 HTML_MESSAGE           BODY: HTML included in message
-X-Headers-End: 1jP9E6-0048eL-8f
-X-Content-Filtered-By: Mailman/MimeDel 2.1.21
-Subject: [tipc-discussion] No reply detected from Netlink
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+X-Headers-End: 1jTFRB-000gC7-VO
+Subject: [tipc-discussion] [RFC PATCH] tipc: define TIPC version 3 address
+ types
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,71 +95,141 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: xinl@redhat.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-After upgrading from Redhat 7.7 to 7.8 (kernel 3.10.0-1127.el7.x86_64) we're getting "no reply detected from Netlink" when issuing any tipc-config command.  Here's the stack trace:
+From: Jon Maloy <jmaloy@redhat.com>
 
+TIPC would be more attractive in a modern user environment such
+as Kubernetes if it could provide a larger address range.
 
-5819  execve("/usr/sbin/tipc-config", ["/usr/sbin/tipc-config", "-netid=56", "-a=1.1.10", "-be=eth:eth0"], 0x7ffe9d102928 /* 18 vars */) = 0
-5819  brk(NULL)                         = 0xd39000
-5819  mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f211c3de000
-5819  access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
-5819  open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
-5819  fstat(3, {st_mode=S_IFREG|0644, st_size=58850, ...}) = 0
-5819  mmap(NULL, 58850, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f211c3cf000
-5819  close(3)                          = 0
-5819  open("/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
-5819  read(3, "\x7f\x45\x4c\x46\x02\x01\x01\x03\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x3e\x00\x01\x00\x00\x00\x60\x26\x02\x00\x00\x00\x00\x00\x40\x00\x00\x00\x00\x00\x00\x00\x10\xd4\x20\x00\x00\x00\x00\x00\x00\x00\x00\x00\x40\x00\x38\x00\x0a\x00\x40\x00\x4b\x00\x4a\x00\x06\x00\x00\x00\x05\x00\x00\x00\x40\x00\x00\x00\x00\x00\x00\x00\x40\x00\x00\x00\x00\x00\x00\x00\x40\x00\x00\x00\x00\x00\x00\x00\x30\x02\x00\x00"..., 832) = 832
-5819  fstat(3, {st_mode=S_IFREG|0755, st_size=2156240, ...}) = 0
-5819  mmap(NULL, 3985920, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f211bdf0000
-5819  mprotect(0x7f211bfb3000, 2097152, PROT_NONE) = 0
-5819  mmap(0x7f211c1b3000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c3000) = 0x7f211c1b3000
-5819  mmap(0x7f211c1b9000, 16896, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f211c1b9000
-5819  close(3)                          = 0
-5819  mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f211c3ce000
-5819  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f211c3cc000
-5819  arch_prctl(ARCH_SET_FS, 0x7f211c3cc740) = 0
-5819  mprotect(0x7f211c1b3000, 16384, PROT_READ) = 0
-5819  mprotect(0x605000, 4096, PROT_READ) = 0
-5819  mprotect(0x7f211c3df000, 4096, PROT_READ) = 0
-5819  munmap(0x7f211c3cf000, 58850)     = 0
-5819  socket(AF_TIPC, SOCK_RDM, 0)      = 3
-5819  getsockname(3, {sa_family=AF_TIPC, sa_data="\x03\x00\x03\x00\x40\x9b\x00\x00\x00\x00\x00\x00\x00\x00"}, [16]) = 0
-5819  close(3)                          = 0
-5819  socket(AF_TIPC, SOCK_RDM, 0)      = 3
-5819  getsockname(3, {sa_family=AF_TIPC, sa_data="\x03\x00\x03\x00\x48\x9b\x00\x00\x00\x00\x00\x00\x00\x00"}, [16]) = 0
-5819  close(3)                          = 0
-5819  brk(NULL)                         = 0xd39000
-5819  brk(0xd5a000)                     = 0xd5a000
-5819  brk(NULL)                         = 0xd5a000
-5819  getpid()                          = 5819
-5819  socket(AF_NETLINK, SOCK_DGRAM, NETLINK_GENERIC) = 3
-5819  bind(3, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 0
-5819  setsockopt(3, SOL_SOCKET, SO_SNDBUF, [32768], 4) = 0
-5819  setsockopt(3, SOL_SOCKET, SO_RCVBUF, [32768], 4) = 0
-5819  write(3, "\x20\x00\x00\x00\x10\x00\x01\x00\x00\x00\x00\x00\xbb\x16\x00\x00\x03\x00\x00\x00\x09\x00\x02\x00\x54\x49\x50\x43\x00\x00\x00\x00", 32) = 32
-5819  poll([{fd=3, events=POLLIN|POLLPRI|POLLRDNORM|POLLWRNORM|POLLRDBAND|POLLWRBAND|POLLERR|POLLHUP|POLLNVAL|POLLMSG|POLLREMOVE|POLLRDHUP|POLL_BUSY_LOOP|0x4800}], 1, 3000) = 1 ([{fd=3, revents=POLLIN|POLLRDNORM|POLLWRNORM|POLLWRBAND}])
-5819  recvfrom(3, {{len=88, type=nlctrl, flags=0, seq=0, pid=5819}, "\x01\x02\x00\x00\x09\x00\x02\x00\x54\x49\x50\x43\x00\x00\x00\x00\x06\x00\x01\x00\x1b\x00\x00\x00\x08\x00\x03\x00\x01\x00\x00\x00\x08\x00\x04\x00\x08\x00\x00\x00\x08\x00\x05\x00\x00\x00\x00\x00\x18\x00\x06\x00\x14\x00\x01\x00\x08\x00\x01\x00\x01\x00\x00\x00\x08\x00\x02\x00\x02\x00\x00\x00"}, 276, 0, NULL, NULL) = 88
-5819  close(3)                          = 0
-5819  socket(AF_NETLINK, SOCK_DGRAM, NETLINK_GENERIC) = 3
-5819  bind(3, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 0
-5819  setsockopt(3, SOL_SOCKET, SO_SNDBUF, [32768], 4) = 0
-5819  setsockopt(3, SOL_SOCKET, SO_RCVBUF, [32768], 4) = 0
-5819  write(3, "\x24\x00\x00\x00\x1b\x00\x01\x00\x00\x00\x00\x00\xbb\x16\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x0b\x80\x00\x00\x00\x08\x00\x02\x00\x00\x00\x38", 36) = 36
-5819  poll([{fd=3, events=POLLIN|POLLPRI|POLLRDNORM|POLLWRNORM|POLLRDBAND|POLLWRBAND|POLLERR|POLLHUP|POLLNVAL|POLLMSG|POLLREMOVE|POLLRDHUP|POLL_BUSY_LOOP|0x4800}], 1, 3000) = 1 ([{fd=3, revents=POLLWRNORM|POLLWRBAND}])
-5819  fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 0), ...}) = 0
-5819  mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f211c3dd000
-5819  write(1, "no reply detected from Netlink\n", 31) = 31
-5819  exit_group(1)                     = ?
-5819  +++ exited with 1 +++
+Advantages:
+- Users could directly use UUIDs, strings or other values as service
+  instances types and instances.
+- No more risk of collisions between randomly selected service types
 
-This e-mail contains PRIVILEGED AND CONFIDENTIAL INFORMATION intended solely for the use of the addressee(s). If you are not the intended recipient, please notify so to the sender by e-mail and delete the original message. In such cases, please notify us immediately at info@infinite.com . Further, you are not to copy, disclose, or distribute this e-mail or its contents to any unauthorized person(s). Any such actions are considered unlawful. This e-mail may contain viruses. Infinite has taken every reasonable precaution to minimize this risk, but is not liable for any damage you may sustain as a result of any virus in this e-mail. You should carry out your own virus checks before opening the e-mail or attachments. Infinite reserves the right to monitor and review the content of all messages sent to or from this e-mail address. Messages sent to or from this e-mail address may be stored on the Infinite e-mail system. 
+The effect on the TIPC implementation and protocol would be significant,
+but this is still worth considering.
+---
+ include/linux/socket.h     |  5 ++-
+ include/uapi/linux/tipc3.h | 79 ++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 82 insertions(+), 2 deletions(-)
+ create mode 100644 include/uapi/linux/tipc3.h
 
+diff --git a/include/linux/socket.h b/include/linux/socket.h
+index 54338fac45cb..ff2268ceedaf 100644
+--- a/include/linux/socket.h
++++ b/include/linux/socket.h
+@@ -209,8 +209,8 @@ struct ucred {
+ 				 * reuses AF_INET address family
+ 				 */
+ #define AF_XDP		44	/* XDP sockets			*/
+-
+-#define AF_MAX		45	/* For now.. */
++#define AF_TIPC3	45	/* TIPC version 3 sockets	*/
++#define AF_MAX		46	/* For now.. */
  
+ /* Protocol families, same as address families. */
+ #define PF_UNSPEC	AF_UNSPEC
+@@ -260,6 +260,7 @@ struct ucred {
+ #define PF_QIPCRTR	AF_QIPCRTR
+ #define PF_SMC		AF_SMC
+ #define PF_XDP		AF_XDP
++#define PF_TIPC3	AF_TIPC3
+ #define PF_MAX		AF_MAX
+ 
+ /* Maximum queue length specifiable by listen.  */
+diff --git a/include/uapi/linux/tipc3.h b/include/uapi/linux/tipc3.h
+new file mode 100644
+index 000000000000..0d385bc41b66
+--- /dev/null
++++ b/include/uapi/linux/tipc3.h
+@@ -0,0 +1,79 @@
++/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-3-Clause) */
++/*
++ * include/uapi/linux/tipc3.h: Header for TIPC v3 socket interface
++ *
++ * Copyright (c) 2020 Red Hat Inc
++ * All rights reserved.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions are met:
++ *
++ * 1. Redistributions of source code must retain the above copyright
++ *    notice, this list of conditions and the following disclaimer.
++ * 2. Redistributions in binary form must reproduce the above copyright
++ *    notice, this list of conditions and the following disclaimer in the
++ *    documentation and/or other materials provided with the distribution.
++ * 3. Neither the names of the copyright holders nor the names of its
++ *    contributors may be used to endorse or promote products derived from
++ *    this software without specific prior written permission.
++ *
++ * Alternatively, this software may be distributed under the terms of the
++ * GNU General Public License ("GPL") version 2 as published by the Free
++ * Software Foundation.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
++ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
++ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
++ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
++ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
++ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
++ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
++ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
++ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
++ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
++ * POSSIBILITY OF SUCH DAMAGE.
++ */
++
++#ifndef _LINUX_TIPC3_H_
++#define _LINUX_TIPC3_H_
++
++#include <linux/types.h>
++#include <linux/sockios.h>
++#include <linux/tipc.h>
++
++struct tipc3_addr {
++	__u8[16] type;      /* zero if socket address */
++	__u8[16] instance;  /* port if socket address */
++	__u8[16] node;      /* zero if whole cluster */
++};
++
++struct tipc3_subscr {
++	__u8[16] type;
++	__u8[16] lower;
++	__u8[16] upper;
++	__u8[16] node;
++	__u32 timeout;			/* subscription duration (in ms) */
++	__u32 filter;			/* bitmask of filter options */
++	__u8 usr_handle[16];		/* available for subscriber use */
++};
++
++struct tipc3_event {
++	__u8[16] lower;		        /* matching range */
++	__u8[16] upper;		        /*    "      "    */
++	struct tipc3_addr socket;	/* associated socket */
++	struct tipc2_subscr sub;	/* associated subscription */
++	__u32 event;			/* event type */
++};
++
++struct sockaddr_tipc3 {
++	unsigned short family;
++	bool mcast;
++	struct tipc3_addr addr;
++};
++
++struct tipc3_group_req {
++	struct tipc3_addr addr;
++	__u32 flags;
++};
++
++#endif
+-- 
+2.25.1
 
-***INFINITE******** End of Disclaimer********INFINITE********
+
 
 _______________________________________________
 tipc-discussion mailing list
