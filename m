@@ -2,116 +2,116 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A76161C5482
-	for <lists+tipc-discussion@lfdr.de>; Tue,  5 May 2020 13:36:14 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAA5F1C87BA
+	for <lists+tipc-discussion@lfdr.de>; Thu,  7 May 2020 13:13:24 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jVvru-00021z-Sc; Tue, 05 May 2020 11:36:10 +0000
+	id 1jWeSv-0000EX-2N; Thu, 07 May 2020 11:13:21 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1jVvrt-00021a-67
- for tipc-discussion@lists.sourceforge.net; Tue, 05 May 2020 11:36:09 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1jWeSt-0000EP-BS
+ for tipc-discussion@lists.sourceforge.net; Thu, 07 May 2020 11:13:19 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Message-Id:Date:Subject:
+ Cc:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=gyKuKRPc8FMciLyWPSMICOtWvr7JqggbLF4WhfwhKnI=; b=RbuvPk1FaOShn9FjFeFM/55IwK
- HHnCUkiBdVFQS+SlPkGXL4ZlO22cAkK49ZxM8qwUqPK1lL7Piz8MLO4tPJoVBH6uCJi4xDEw2VV2G
- ocdgMU7Gu/1WU1SLxem6j1xwgmvHI5GmaqKCyZMZtdWoM+Yga5JC3j/7ttkftcbtABCQ=;
+ bh=xfobDmC6PmoHqhNc1LX/gQ4kKFVxgxRUDg2oeOTEZtY=; b=T41JFW5d2K28NWbnLJjsKbWtLB
+ QUVGnYxoZvZXGJHSq9xfsF5vCnUCMiuofpLjcYqkn7hd0SP5ZUEqV/LtZOL6xJzYd8a86ESUtkSQ9
+ /M5SGqKxU1LlVogxKTpQh4WSOaoPt8Srj45hvwQQwLkHknvpyBUg9CXzmMhGkyRbS1og=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
- References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=gyKuKRPc8FMciLyWPSMICOtWvr7JqggbLF4WhfwhKnI=; b=MdadVThAcNWC5sFXOZiJV1Gx5O
- r4WmcTHLzTuPKG0vW9rv9YC8m7Ld1BJlfg8WBhQLvO1I/7a8O4/cD5maWjev9mN5E0AGbMBeGAVpY
- 0jgJ9k7P6KFjo7uGavc4SxhkkNCHnCVQ8muwHx8uzYvG0bYAE7US8SpU84fJs3xCte24=;
-Received: from mail-vi1eur05on2120.outbound.protection.outlook.com
- ([40.107.21.120] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ h=MIME-Version:Content-Type:Message-Id:Date:Subject:Cc:To:From:Sender:
+ Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=xfobDmC6PmoHqhNc1LX/gQ4kKFVxgxRUDg2oeOTEZtY=; b=W
+ bOWMkZysokymPmWaoci9pOClJKJTKsKOR0253QuESX+KMFBuXT4/BjzMnwdHb5l1CPzgHw5QmsPn8
+ hIqXBB1zWHJ32TzC5qD6YGltFRWh9lsFBtqCdvvoQIMQOWPZ4idSn78BlUE8UNRzRcjbF4a2tc2QT
+ ni4MyZvriUoaZWkY=;
+Received: from mail-eopbgr50126.outbound.protection.outlook.com
+ ([40.107.5.126] helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1jVvrl-00ECV0-1o
- for tipc-discussion@lists.sourceforge.net; Tue, 05 May 2020 11:36:09 +0000
+ id 1jWeSn-00E6tO-GO
+ for tipc-discussion@lists.sourceforge.net; Thu, 07 May 2020 11:13:19 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=fKWkdlfQPtSJzQJSTixTHe2lpWEURenDZ6nQ3SEUbFKSafXjjvWh6A0IJPKgJXvcLA2i3zzpmf3TaspOTZfwYK+EqzVYq4CjH0dmyBINyfn1gxvU7PNJZ0pbYZ003gQxGOgxthnBibon86QoIxqvJaXDSxvFOJLJfrrg0vZxT+ysVpUKqnOB8XGQFTLIqg7DRuasP/RYK2ud+Or6iwyBRH5KhbQICzDS8KaPGwCq9IdXi6+MgBSWMvN2Rx6wUqyaHUOvTCti4PqPUHlxaYgMlsHY3EbM+II6fXAg5qjakEnVoVSWnb/y0v9vI23ROsWzPnoR3/ar+Xux+OgujR0UkA==
+ b=byUI474824UgavR7aeTB3ryC5IrCdMLkTriqoPceAG/FwPBFqG1c8n+DqyzS9d7xCnxPvPmKWTGBoVKY6bRWb4OqdqVZoI5JUndNZf5qwtbjjRGQkFAEInk+dxpgcn/Yk9qjHynqLlO8GbWfc72OstvEkXryhBdW8gdIHuqCLhwZF+1FpW9GU3FjDp7CowUlMSR03ic7CUE1IwEptt+vPIv37wGjxfgASilI0INy2dq71djAHGjF1BMmqF8BztwnmKZUVrWfUPEetX/gdZgv14DmVjMHNPTgvwEq9PNP1QuZzUg1Io8M/EiVgQxYNd+893Re0tINJPXNbktfW/kwGQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=gyKuKRPc8FMciLyWPSMICOtWvr7JqggbLF4WhfwhKnI=;
- b=moaoH4BMJTb/dQXwn1iu//i3o9klhK0GOr6KykpY9Z5CdCZks5rp2iiXXrrvhgFM+cifZx8+UqFSvcNoi5rvea6A/7813X9C0OEHiz2opEjZ7CmG5kohIDXlsYPXdMSacPlOqrEXLgWyYdOibj9wzKdvwDTFCbCWG1Z861dbSrT7zN1fFymhn1gHhlLO6FNwysIlWK5YWVGMlIlpc25slT6xZoAecSJ7N/9nR5O8V5yPN4vJVODo61oKq9l7m0CpGPYwwa1mtCddR6naociIuqBbFM9EYeoqQnFnafSGKPBZoYTSfMbgs+Qw56cLCIY6ADSb8PWpXdr0m4rsCZkjQQ==
+ bh=xfobDmC6PmoHqhNc1LX/gQ4kKFVxgxRUDg2oeOTEZtY=;
+ b=GoAlEA/cv9KWEpU/rXT4nx/e9UYcHQRSalw5VO+dYqLboBrylmmqEG325agfTkSaIOoloCovvqBuIEDyG0Q7FcSWdLrYOPZVEzD9+WC3AECNNDEJfg+bFSYpWlw8yKbglaEpuTBzbQtoDq7kO2zlI53Y/FCvR5LtVbR3jqXVaG4j8TvC9ETRN0mvFDr8EwsgDBJkgUFRB7NweDM/TAVF79KElicgyzRwrWk+O4i5+Q62NZnftpFSBXPu/OBaqXCCeAyMmgaFyiNoYKhY7o7DL10noE/S1J5HJGCfBFesIwfUrcbTAOIW8WHCuy137xgxUqL9vN2J7sGwmdOHztUnuQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=dektech.com.au; dmarc=pass action=none
  header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=gyKuKRPc8FMciLyWPSMICOtWvr7JqggbLF4WhfwhKnI=;
- b=GVTrxDOsyWL2v7z0pHOQ+nyP6r2nTYz647ZwCaKyjDLROqLqfVVD9Of/I1lBA3VoCLO54JFBn1+7bU03XHxHXfU0ic/n1aYu3NLHnrwb6zI0ceW4QkOjrs9DVcfTknjcAvNY7bYHXp3nbdX7fZUR80sM+1KoclxiANeNhTl7pfA=
+ bh=xfobDmC6PmoHqhNc1LX/gQ4kKFVxgxRUDg2oeOTEZtY=;
+ b=qTpRPYJshMKZsowzGh6TjE6ZuBNGAOWCohuUtpHf29cZydSyLCFA2ZbXSRdtGfQD3Vh1cj1fcXL+olbX//RGrbKRGcHE5qe2u3by+mOazLh86njxtoNLviLwlFX2yUyNsvUrux8IL6DQefZytWpPyWtLPUNvUuihZqwe4uuRGgg=
+Authentication-Results: redhat.com; dkim=none (message not signed)
+ header.d=none;redhat.com; dmarc=none action=none header.from=dektech.com.au;
 Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com (2603:10a6:209:5::28)
- by AM6PR0502MB3623.eurprd05.prod.outlook.com (2603:10a6:209:8::32)
+ by AM6PR0502MB3877.eurprd05.prod.outlook.com (2603:10a6:209:3::19)
  with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.29; Tue, 5 May
- 2020 11:35:52 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.20; Thu, 7 May
+ 2020 11:13:02 +0000
 Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com
  ([fe80::5941:e5bd:759c:dd8c]) by AM6PR0502MB3925.eurprd05.prod.outlook.com
- ([fe80::5941:e5bd:759c:dd8c%6]) with mapi id 15.20.2958.030; Tue, 5 May 2020
- 11:35:51 +0000
-From: Tuong Tong Lien <tuong.t.lien@dektech.com.au>
-To: Jon Maloy <jmaloy@redhat.com>, "maloy@donjonn.com" <maloy@donjonn.com>,
- "ying.xue@windriver.com" <ying.xue@windriver.com>,
- "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>
-Thread-Topic: [RFC PATCH 2/2] tipc: add test for Nagle algorithm effectiveness
-Thread-Index: AQHWIgcpWe+1jPuZ2Umd/vEaWaSqhaiYO1UAgAEhM1A=
-Date: Tue, 5 May 2020 11:35:51 +0000
-Message-ID: <AM6PR0502MB392585A3B371B03F82580B01E2A70@AM6PR0502MB3925.eurprd05.prod.outlook.com>
-References: <20200504112826.11186-1-tuong.t.lien@dektech.com.au>
- <20200504112826.11186-3-tuong.t.lien@dektech.com.au>
- <57d3ed20-3bbd-e0ac-ff02-a03ee611cb25@redhat.com>
-In-Reply-To: <57d3ed20-3bbd-e0ac-ff02-a03ee611cb25@redhat.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: redhat.com; dkim=none (message not signed)
- header.d=none;redhat.com; dmarc=none action=none header.from=dektech.com.au;
-x-originating-ip: [14.161.14.188]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 993560dd-ccb5-4ffc-9d7e-08d7f0e87740
-x-ms-traffictypediagnostic: AM6PR0502MB3623:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR0502MB3623B024BA2DB1C27586BFB3E2A70@AM6PR0502MB3623.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 0394259C80
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: fq4vtpiFCOD/sq3rKATGWqaJpP6fcPj29Y5bnUaLzQsPuEajGZGHW+fo/BDBfWXdIIy/ZNabNPd9jKNBfdeGsi1prkxmVrXR/PdvYM0xCsV8L7giqzBWjRHZiv7gpfiXcUq2CerSi3QSOVf4Cze5sy+SPDRzcugE9UvNq45eC4LG9qDyP9OmafstmV7GQYWjeQJ1i2SQvOXXeCrhOMNrPor6o9lQPXRfzuIUbbh0TeFtIix+LNfFW6L+zVySJzR7An2FSN+otF08HTHfel7JcbYXdRyzA9oXhAAfK+HR2/rIVHtcW7Q6AYKnhP/nNQvfcmRg3ebZImgtltBELp3zgxWPICuowyeKPpw2GKP4uUxxg+i2V8rKyJEH9h8g2apar1NwJ1xT7/nEusda57hHzt7PekkB40YJYkqrS5xmZk5jNjZkInjMbTNYVMyZfds/RjeX8EiOvcaLppGH8+MBKmI6EWqDayQpIC8EuHp+XOhLH5ZsP4Mxp2CynCQiL25TueBBZXuW2AF42qRhm+QSbA==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ ([fe80::5941:e5bd:759c:dd8c%6]) with mapi id 15.20.2979.027; Thu, 7 May 2020
+ 11:13:02 +0000
+From: Tuong Lien <tuong.t.lien@dektech.com.au>
+To: jmaloy@redhat.com, maloy@donjonn.com, ying.xue@windriver.com,
+ tipc-discussion@lists.sourceforge.net
+Date: Thu,  7 May 2020 18:12:47 +0700
+Message-Id: <20200507111249.8760-1-tuong.t.lien@dektech.com.au>
+X-Mailer: git-send-email 2.13.7
+X-ClientProxiedBy: TY2PR06CA0034.apcprd06.prod.outlook.com
+ (2603:1096:404:2e::22) To AM6PR0502MB3925.eurprd05.prod.outlook.com
+ (2603:10a6:209:5::28)
+MIME-Version: 1.0
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from dektech.com.au (14.161.14.188) by
+ TY2PR06CA0034.apcprd06.prod.outlook.com (2603:1096:404:2e::22) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.2979.27 via Frontend Transport; Thu, 7 May 2020 11:12:59 +0000
+X-Mailer: git-send-email 2.13.7
+X-Originating-IP: [14.161.14.188]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: ab0d0e1b-738a-4732-c818-08d7f2779b77
+X-MS-TrafficTypeDiagnostic: AM6PR0502MB3877:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <AM6PR0502MB38770DF7E5D17497A8A29CB2E2A50@AM6PR0502MB3877.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:6108;
+X-Forefront-PRVS: 03965EFC76
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: X4HiLk8AlNA8A7IVsrv2nH+4UyHk60tUZj0pK2SaqhjOFSQqwNMUM9PgLkPr1lc6yp72MhVI1KzV73/cj9IVXtiYcMV16TbIQ77aXfqzyeVvG84f9e2i2RCuqlqze5L+/RcSAUc8jTP43Pn3OBDaX8N2bkpRINd7P+C6CzdHbvxRFjSCHGmBq7aBWTvs6cE4zCpPD2i6pd0I0ywVucpsg4YVtQGaAxaS3aD4p8JJg5E03EhcerIK5gyU4tZgZb4L3QPjXu3df2onkUGZnDw33R2N2T7NM1aCH4SlZT3BKz3PizIXGArPwnYM+frXyV6x7et6jlf5Y4nvYYTNDt8CXB49j2odlVVwNYeOgUoSLzXo9xkfO8on9oALsnh/7HKgoj4jbPfeYRfYv1y6cj+4YOu7rTqeZTUy9gSGyiLGhVWvXfcZKgfCuwGEYxPzD96bTTIhEYMeP0NtNRHDbygdL2drZ4ee8hSy/uSifEnp+eXGWTJtL3hwzMpGZ0gxZA0APhPHfTaqRuc6redO2fPXPg==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:AM6PR0502MB3925.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(39850400004)(136003)(396003)(366004)(376002)(346002)(33430700001)(64756008)(316002)(86362001)(8676002)(52536014)(33656002)(26005)(66556008)(508600001)(66476007)(76116006)(53546011)(6506007)(107886003)(4326008)(2906002)(66946007)(9686003)(55016002)(8936002)(186003)(5660300002)(33440700001)(66446008)(7696005)(71200400001)(110136005);
+ SFS:(376002)(396003)(39850400004)(136003)(366004)(346002)(33430700001)(7696005)(66476007)(66556008)(52116002)(8676002)(1076003)(66946007)(33440700001)(103116003)(2616005)(8936002)(316002)(5660300002)(6666004)(956004)(508600001)(4744005)(36756003)(83280400001)(83320400001)(83290400001)(26005)(55016002)(186003)(2906002)(4326008)(83310400001)(83300400001)(16526019)(107886003)(86362001);
  DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata: cN2DDyPXpcKDDSUY12lUloh0o/Q462aIDVvTCUWv39M3HZDq5U/ay/u7IJqHMkksFjBz+CSCeztgyftyx2yGHAm1EvbhdpfHRwBm9/XoDLlUUyBQlNCzpBJ6f7lLXDDN8NJzgAvPtyM1wckGZX+QDYUV/fGuJlSR4lBHrFMprV4Zfd1MaeJ9adOCJuOhAD3c2/v1XMs9617/XRsBKWjQ2bRjEhzLdIQUeNZs766fFVY31K2cZEBBFFuj9rzsW+bSAjIgYcQjvDZraiRGjTGiot2MZDz179KXBxUKxZ6i76Xd3/BnJpYK1lum8WHkdhwmiuOvmzmCVj81X553jo7M6uS4Vxo7yoP1/qQ8++Hb/YS4YV4KsoDZQdbBl2kRaAipXztQc+9hGzsH/tRhHXyKuzG+JgVMvuEhwK2n/Rj8t7KoRzBeLDBaoubYZAMFJIskpkieJ8LvorKZj03BeWIdmNs7eCEwaBG+2S2uv8VWED5Qc6KWNrJuYwvpyiUJlBxNZYcVzz6GocNYaEmrRXX3TwGd6vS83zASIq60vs7DYHG40IdAS7CHrYmLSP+9oITfQqAW4wCoBAKFJKgAaupZgy6A0crH2WjUqDreh+04pR0eMQYBqpckQJk1m9Xz6QMwDropngvtxK/vY8ZLry4dVsD+hiDFCR0Cc5g7f32ru9vOYdeKc4E3uptT23qlfdYPArDq8PbDXargWfNJ0/tZflPIEnJnsncPk1BXXFLimM0mOdIAZakEvv8EOUwQRcOxjwyjqoevc1/5Gz4JO+n/PDMqDOUD+OZYfe2DfsvfsZI=
-MIME-Version: 1.0
+X-MS-Exchange-AntiSpam-MessageData: eU6VhR+TCwkh3jtGUYWO0ROzEVAcWppUOnKuAiE1EjI476FUpC51scNljnRGmrqFhgDb974C2n8zSVoTt34/ScH+a9Gv9tOE/OcL0Y2cHgVqTRX6FAGObuUe8V3XgVrzj/JomGwwvzh/JyaDPG/55yBpZWRJIEl7LkvHh/B0C82Ozi9O5ngrcewBkJWN3s8M6yBsteeAhfYolX8/AckeNrv4fMKffgLi8C8lEpjwsNFG67XxrFF2MQXQs/LnbW5vYmvBoLFsNd3GOEkA6aZTlrBtPGMBQFXDEpUzJiNTGRTx36nwrTOsqZIx8xBhweB0ITETk6Pkwc5prTls8Q8hlgPu5dFQuXfdMFHYYqTv834PpGndGczQNqOvVjQmuD/Dzr300uGgEQY3u6i1Q3k/VIUBI4sLd2YnTMjW4ByEaQ8OfA/Fe2P2WkWVcimIOsqqBNDSOnStr7By+0BBnOs/U/FhNCDbKOwEAFiaNPJBRsVAcrI6ea7dkb6LDJQh8eNZmeHYhrthw31bXWEpr0XEfmwsHWFXJGY2F/k4BzDBeojI3lMFyl0k1ywBHWSO74CkMNGuypckDXFSDkdh4GeUdisUQRStr7VSwY2mFn9Xc10QyZha5zIke71GXnOYZrLu4bKlaV+469mLBUUDfAndYro+eYeUSz2lBR2tgXmw8r+GHMaSCbSuVlvo3vqc5qH+l2EY6ezYnp3fNeYZNg/jEbwIfF/LA5qWnnlg8ys9jqZnY/UUcE++64hNQB2fioRfIR3pcd6EKA+F0Yd1R3YPAg67+Nt93vFKwtBczTl5KR4=
 X-OriginatorOrg: dektech.com.au
-X-MS-Exchange-CrossTenant-Network-Message-Id: 993560dd-ccb5-4ffc-9d7e-08d7f0e87740
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 May 2020 11:35:51.7977 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 1957ea50-0dd8-4360-8db0-c9530df996b2
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: hVuTyagSnHU/VLoOLYwINSMBOzT+u0/bm3J0AUChUd9uB9/t8hxte7Q9+vT2S4fFw98gkoI2kcNJiFhdidgRJ7RrnWmBVOnnizoyyphHYK0=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0502MB3623
+X-MS-Exchange-CrossTenant-Network-Message-Id: ab0d0e1b-738a-4732-c818-08d7f2779b77
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 May 2020 11:13:02.4280 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: P0oL4DZ/77psBJfsofB7aPJC9lb0isbCEuG7V7BsRkg5YJupujXrGhbrsqRlC3hGErx4CxEwGIvKyTKRZ3FcAxoPeWr3d0JBDqSbZugtl2c=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0502MB3877
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [40.107.5.126 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.21.120 listed in wl.mailspike.net]
+ [40.107.5.126 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -119,9 +119,11 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1jVvrl-00ECV0-1o
-Subject: Re: [tipc-discussion] [RFC PATCH 2/2] tipc: add test for Nagle
- algorithm effectiveness
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.0 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1jWeSn-00E6tO-GO
+Subject: [tipc-discussion] [net 0/2] tipc: fix a couple issues with service
+ subscriptions
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -133,278 +135,29 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: tipc-dek <tipc-dek@dektech.com.au>
+Cc: tipc-dek@dektech.com.au
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
+Hi Jon, all,
 
------Original Message-----
-From: Jon Maloy <jmaloy@redhat.com> 
-Sent: Tuesday, May 5, 2020 1:13 AM
-To: Tuong Tong Lien <tuong.t.lien@dektech.com.au>; maloy@donjonn.com; ying.xue@windriver.com; tipc-discussion@lists.sourceforge.net
-Cc: tipc-dek <tipc-dek@dektech.com.au>
-Subject: Re: [RFC PATCH 2/2] tipc: add test for Nagle algorithm effectiveness
+There are a couple of issues with our service subscriptions and here is
+the bug fixes, please help review before I send to net.
 
-
-
-On 5/4/20 7:28 AM, Tuong Lien wrote:
-> When streaming in Nagle mode, we try to bundle small messages from user
-> as many as possible if there is one outstanding buffer, i.e. not ACK-ed
-> by the receiving side, which helps boost up the overall throughput. So,
-> the algorithm's effectiveness really depends on when Nagle ACK comes or
-> what the specific network latency (RTT) is, compared to the user's
-> message sending rate.
->
-> In a bad case, the user's sending rate is low or the network latency is
-> small, there will not be many bundles, so making a Nagle ACK or waiting
-> for it is not meaningful.
-> For example: a user sends its messages every 100ms and the RTT is 50ms,
-> then for each messages, we require one Nagle ACK but then there is only
-> one user message sent without any bundles.
->
-> In a better case, even if we have a few bundles (e.g. the RTT = 300ms),
-> but now the user sends messages in medium size, then there will not be
-> any difference at all, that says 3 x 1000-byte data messages if bundled
-> will still result in 3 bundles with MTU = 1500.
->
-> When Nagle is ineffective, the delay in user message sending is clearly
-> wasted instead of sending directly.
->
-> Besides, adding Nagle ACKs will consume some processor load on both the
-> sending and receiving sides.
->
-> This commit adds a test on the effectiveness of the Nagle algorithm for
-> an individual connection in the network on which it actually runs.
-> Particularly, upon receipt of a Nagle ACK we will compare the number of
-> bundles in the backlog queue to the number of user messages which would
-> be sent directly without Nagle. If the ratio is good (e.g. >= 2), Nagle
-> mode will be kept for further message sending. Otherwise, we will leave
-> Nagle and put a 'penalty' on the connection, so it will have to spend
-> more 'one-way' messages before being able to re-enter Nagle.
->
-> In addition, the 'ack-required' bit is only set when really needed that
-> the number of Nagle ACKs will be reduced during Nagle mode.
->
-> Testing with benchmark showed that with the patch, there was not much
-> difference in throughput for small messages since the tool continuously
-> sends messages without a break, so Nagle would still take in effect.
->
-> Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
-> ---
->   net/tipc/msg.c    |  3 ---
->   net/tipc/msg.h    | 14 +++++++++++--
->   net/tipc/socket.c | 60 ++++++++++++++++++++++++++++++++++++++++++++-----------
->   3 files changed, 60 insertions(+), 17 deletions(-)
->
-> diff --git a/net/tipc/msg.c b/net/tipc/msg.c
-> index 69d68512300a..732cd95b5c75 100644
-> --- a/net/tipc/msg.c
-> +++ b/net/tipc/msg.c
-> @@ -235,9 +235,6 @@ int tipc_msg_append(struct tipc_msg *_hdr, struct msghdr *m, int dlen,
->   			msg_set_size(hdr, MIN_H_SIZE);
->   			__skb_queue_tail(txq, skb);
->   			total += 1;
-> -			if (prev)
-> -				msg_set_ack_required(buf_msg(prev), 0);
-> -			msg_set_ack_required(hdr, 1);
->   		}
->   		hdr = buf_msg(skb);
->   		curr = msg_blocks(hdr);
-> diff --git a/net/tipc/msg.h b/net/tipc/msg.h
-> index 5f37a611e8c9..44543892af11 100644
-> --- a/net/tipc/msg.h
-> +++ b/net/tipc/msg.h
-> @@ -340,9 +340,19 @@ static inline int msg_ack_required(struct tipc_msg *m)
->   	return msg_bits(m, 0, 18, 1);
->   }
->   
-> -static inline void msg_set_ack_required(struct tipc_msg *m, u32 d)
-> +static inline void msg_set_ack_required(struct tipc_msg *m)
->   {
-> -	msg_set_bits(m, 0, 18, 1, d);
-> +	msg_set_bits(m, 0, 18, 1, 1);
-> +}
-> +
-> +static inline int msg_nagle_ack(struct tipc_msg *m)
-> +{
-> +	return msg_bits(m, 0, 18, 1);
-> +}
-> +
-> +static inline void msg_set_nagle_ack(struct tipc_msg *m)
-> +{
-> +	msg_set_bits(m, 0, 18, 1, 1);
->   }
->   
->   static inline bool msg_is_rcast(struct tipc_msg *m)
-> diff --git a/net/tipc/socket.c b/net/tipc/socket.c
-> index 4e71774528ad..93b0a6159cb1 100644
-> --- a/net/tipc/socket.c
-> +++ b/net/tipc/socket.c
-> @@ -119,7 +119,10 @@ struct tipc_sock {
->   	struct rcu_head rcu;
->   	struct tipc_group *group;
->   	u32 oneway;
-> +	u32 nagle_start;
->   	u16 snd_backlog;
-> +	u16 msg_acc;
-> +	u16 pkt_cnt;
->   	bool expect_ack;
->   	bool nodelay;
->   	bool group_is_open;
-> @@ -143,7 +146,7 @@ static int tipc_sk_insert(struct tipc_sock *tsk);
->   static void tipc_sk_remove(struct tipc_sock *tsk);
->   static int __tipc_sendstream(struct socket *sock, struct msghdr *m, size_t dsz);
->   static int __tipc_sendmsg(struct socket *sock, struct msghdr *m, size_t dsz);
-> -static void tipc_sk_push_backlog(struct tipc_sock *tsk);
-> +static void tipc_sk_push_backlog(struct tipc_sock *tsk, bool nagle_ack);
->   
->   static const struct proto_ops packet_ops;
->   static const struct proto_ops stream_ops;
-> @@ -474,6 +477,7 @@ static int tipc_sk_create(struct net *net, struct socket *sock,
->   	tsk = tipc_sk(sk);
->   	tsk->max_pkt = MAX_PKT_DEFAULT;
->   	tsk->maxnagle = 0;
-> +	tsk->nagle_start = 4;
->   	INIT_LIST_HEAD(&tsk->publications);
->   	INIT_LIST_HEAD(&tsk->cong_links);
->   	msg = &tsk->phdr;
-> @@ -541,7 +545,7 @@ static void __tipc_shutdown(struct socket *sock, int error)
->   					    !tsk_conn_cong(tsk)));
->   
->   	/* Push out delayed messages if in Nagle mode */
-> -	tipc_sk_push_backlog(tsk);
-> +	tipc_sk_push_backlog(tsk, false);
->   	/* Remove pending SYN */
->   	__skb_queue_purge(&sk->sk_write_queue);
->   
-> @@ -1252,14 +1256,37 @@ void tipc_sk_mcast_rcv(struct net *net, struct sk_buff_head *arrvq,
->   /* tipc_sk_push_backlog(): send accumulated buffers in socket write queue
->    *                         when socket is in Nagle mode
->    */
-> -static void tipc_sk_push_backlog(struct tipc_sock *tsk)
-> +static void tipc_sk_push_backlog(struct tipc_sock *tsk, bool nagle_ack)
->   {
->   	struct sk_buff_head *txq = &tsk->sk.sk_write_queue;
-> +	struct sk_buff *skb = skb_peek_tail(txq);
->   	struct net *net = sock_net(&tsk->sk);
->   	u32 dnode = tsk_peer_node(tsk);
-> -	struct sk_buff *skb = skb_peek(txq);
->   	int rc;
->   
-> +	if (nagle_ack) {
-> +		tsk->pkt_cnt += skb_queue_len(txq);
-> +		if (!tsk->pkt_cnt || tsk->msg_acc / tsk->pkt_cnt < 2) {
-> +			tsk->oneway = 0;
-> +			if (tsk->nagle_start < 1000)
-> +				tsk->nagle_start *= 2;
-> +			tsk->expect_ack = false;
-> +			pr_debug("tsk %10u: bad nagle %u -> %u, next start %u!\n",
-> +				 tsk->portid, tsk->msg_acc, tsk->pkt_cnt,
-> +				 tsk->nagle_start);
-> +		} else {
-> +			tsk->nagle_start = 4;
-> +			if (skb) {
-> +				msg_set_ack_required(buf_msg(skb));
-> +				tsk->expect_ack = true;
-> +			} else {
-> +				tsk->expect_ack = false;
-> +			}
-> +		}
-> +		tsk->msg_acc = 0;
-> +		tsk->pkt_cnt = 0;
-> +	}
-> +
->   	if (!skb || tsk->cong_link_cnt)
->   		return;
->   
-> @@ -1267,9 +1294,10 @@ static void tipc_sk_push_backlog(struct tipc_sock *tsk)
->   	if (msg_is_syn(buf_msg(skb)))
->   		return;
->   
-> +	if (tsk->msg_acc)
-> +		tsk->pkt_cnt += skb_queue_len(txq);
->   	tsk->snt_unacked += tsk->snd_backlog;
->   	tsk->snd_backlog = 0;
-> -	tsk->expect_ack = true;
->   	rc = tipc_node_xmit(net, txq, dnode, tsk->portid);
->   	if (rc == -ELINKCONG)
->   		tsk->cong_link_cnt = 1;
-> @@ -1322,8 +1350,7 @@ static void tipc_sk_conn_proto_rcv(struct tipc_sock *tsk, struct sk_buff *skb,
->   		return;
->   	} else if (mtyp == CONN_ACK) {
->   		was_cong = tsk_conn_cong(tsk);
-> -		tsk->expect_ack = false;
-> -		tipc_sk_push_backlog(tsk);
-> +		tipc_sk_push_backlog(tsk, msg_nagle_ack(hdr));
->   		tsk->snt_unacked -= msg_conn_ack(hdr);
->   		if (tsk->peer_caps & TIPC_BLOCK_FLOWCTL)
->   			tsk->snd_win = msg_adv_win(hdr);
-> @@ -1544,17 +1571,24 @@ static int __tipc_sendstream(struct socket *sock, struct msghdr *m, size_t dlen)
->   			break;
->   		send = min_t(size_t, dlen - sent, TIPC_MAX_USER_MSG_SIZE);
->   		blocks = tsk->snd_backlog;
-> -		if (tsk->oneway++ >= 4 && send <= maxnagle) {
-> +		if (tsk->oneway++ >= tsk->nagle_start && send <= maxnagle) {
->   			rc = tipc_msg_append(hdr, m, send, maxnagle, txq);
->   			if (unlikely(rc < 0))
->   				break;
->   			blocks += rc;
-> +			tsk->msg_acc++;
->   			if (blocks <= 64 && tsk->expect_ack) {
->   				tsk->snd_backlog = blocks;
->   				sent += send;
->   				break;
-> +			} else if (blocks > 64) {
-> +				tsk->pkt_cnt += skb_queue_len(txq);
-> +			} else {
-> +				msg_set_ack_required(buf_msg(skb_peek_tail(txq)));
-> +				tsk->expect_ack = true;
-> +				tsk->msg_acc = 0;
-> +				tsk->pkt_cnt = 0;
->   			}
-> -			tsk->expect_ack = true;
->   		} else {
->   			rc = tipc_msg_build(hdr, m, sent, send, maxpkt, txq);
->   			if (unlikely(rc != send))
-> @@ -2092,7 +2126,7 @@ static void tipc_sk_proto_rcv(struct sock *sk,
->   		smp_wmb();
->   		tsk->cong_link_cnt--;
->   		wakeup = true;
-> -		tipc_sk_push_backlog(tsk);
-> +		tipc_sk_push_backlog(tsk, false);
->   		break;
->   	case GROUP_PROTOCOL:
->   		tipc_group_proto_rcv(grp, &wakeup, hdr, inputq, xmitq);
-> @@ -2181,7 +2215,7 @@ static bool tipc_sk_filter_connect(struct tipc_sock *tsk, struct sk_buff *skb,
->   		return false;
->   	case TIPC_ESTABLISHED:
->   		if (!skb_queue_empty(&sk->sk_write_queue))
-> -			tipc_sk_push_backlog(tsk);
-> +			tipc_sk_push_backlog(tsk, false);
->   		/* Accept only connection-based messages sent by peer */
->   		if (likely(con_msg && !err && pport == oport &&
->   			   pnode == onode)) {
-> @@ -2189,8 +2223,10 @@ static bool tipc_sk_filter_connect(struct tipc_sock *tsk, struct sk_buff *skb,
->   				struct sk_buff *skb;
->   
->   				skb = tipc_sk_build_ack(tsk);
-> -				if (skb)
-> +				if (skb) {
-> +					msg_set_nagle_ack(buf_msg(skb));
->   					__skb_queue_tail(xmitq, skb);
-> +				}
->   			}
->   			return true;
->   		}
-Nice job. Does this even solve the latency problem you had observed at 
-customer site?
-
-[Tuong]: Yes, after applying these two patches, they didn't observe the increase in latency or CPU load in their tests (even though Nagle was still enabled in some way).
+Thanks a lot!
 
 BR/Tuong
 
-Acked-by: Jon Maloy <jmaloy@redhat.com>
+Tuong Lien (2):
+  tipc: fix memory leak in service subscripting
+  tipc: fix failed service subscription deletion
+
+ net/tipc/topsrv.c | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
+
+-- 
+2.13.7
 
 
 
