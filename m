@@ -2,127 +2,130 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B0C71CB2AA
-	for <lists+tipc-discussion@lfdr.de>; Fri,  8 May 2020 17:17:33 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24A0D1CCFEB
+	for <lists+tipc-discussion@lfdr.de>; Mon, 11 May 2020 04:59:28 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jX4ki-0003HW-7P; Fri, 08 May 2020 15:17:28 +0000
+	id 1jXyf6-0006ju-4b; Mon, 11 May 2020 02:59:24 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Ying.Xue@windriver.com>) id 1jX4ka-0003H6-Ke
- for tipc-discussion@lists.sourceforge.net; Fri, 08 May 2020 15:17:20 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1jXyf4-0006jd-Ee
+ for tipc-discussion@lists.sourceforge.net; Mon, 11 May 2020 02:59:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Message-Id:Date:Subject:
+ Cc:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=6pJirHt2ccyYwLRILhxJDp/sljdvXIF6uWshHiDrpuM=; b=HercsltcQ/2r84JJ/Gm2nLNYEZ
- cK4IR7Iv0KJjfZ22OXlLwutp/4jBUDaJBpFG6eDJhJFnDeqhO6gAg7IWdnSb6DqQnKReJWHlgpEqx
- CglREnRlJ5AxEvx8kYdbXmRSX47D/hmpN65H7/4bBa0i6vDrJnsnvFCQVOSiXCUSSL4g=;
+ bh=SwRTp0GnWlmy7CGaPU32UB/VasF7SgIGrsjnprPnqzE=; b=a+iYofjWcQjG66k44Y3wdErSOu
+ RkYeB7nMK79Lzh/XhGN/oTq+cXHwIiolfn/PjtyYckuLKy0Eg5lxDJAORLXIrDCt9pxM74xdmNZXB
+ cU+2BSnqOe0d1KFmg37C5B1cjZphMKqVAuFV9YZTzdd1tQWXdDBk+S4si4YjmZN/1enc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
- References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=6pJirHt2ccyYwLRILhxJDp/sljdvXIF6uWshHiDrpuM=; b=eyWWp2at0zMuMweLiG4Wor1uuc
- BJEzezhJ9b7/b8PHxVoe2WPob2j7r+716X11oKdXawOAF4HubFPoGC+UTL/R2pA4HZ8/KUBvV33/0
- kdE47xl+c7bEJrxB5xmyb+vKRh1ACGWxAPtbEyEKYvXmLrKqf6Sxr3czC+fQ2+oV4hWs=;
-Received: from mail-bn7nam10on2084.outbound.protection.outlook.com
- ([40.107.92.84] helo=NAM10-BN7-obe.outbound.protection.outlook.com)
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ h=MIME-Version:Content-Type:Message-Id:Date:Subject:Cc:To:From:Sender:
+ Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=SwRTp0GnWlmy7CGaPU32UB/VasF7SgIGrsjnprPnqzE=; b=K
+ QNoRzDrskdk2xuhHajXDI8CvsN+H2EjdkidODtmHDYcFk5hIOSwVTEe0xYMuCebBX86nSbRpQES74
+ ovX1YlclOUUNDaY1opRV7JGtiQrDfFdsH2imwB40AmLz9rbrglngafoLndXcvEDho2XP0ePl6OWo3
+ hew3oQJJV28rHrJY=;
+Received: from mail-am6eur05on2093.outbound.protection.outlook.com
+ ([40.107.22.93] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1jX4kT-00Cgzh-6o
- for tipc-discussion@lists.sourceforge.net; Fri, 08 May 2020 15:17:18 +0000
+ id 1jXyex-003NO2-1k
+ for tipc-discussion@lists.sourceforge.net; Mon, 11 May 2020 02:59:22 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=P+a6G9pUAVJe6OySJBLJ5OjzfnFhNcbdslvHeUCnT34W2HGUPD+Y7Tm02h2E3CE9EDAdPdCNoA21wDJ+B4mS0lYdkBqNWxg3ypbqCG64TJyjG6/4vO8v4B/3v4l1UIpRFeLO/nk+jRNatzUjK0WVUbZpzcRVJyXYXPcFG1K68coBsl6klKdExnNxw4EGEB5N/TI4fZQ8wH1SUP2CoGyW45/yJzc+0v4jbaVS0Mc3CqSH6siytT5EhyHvJWFJWmsot/1qIMTw9Mbd103Di+ZR8EN8IKGlvjUUYoHeyadY7KS2b4erM+ZLUnswWLnowDvrBuawjgblEZs4adrGj5cNAg==
+ b=nkQ3vWiVkVbrFdQ//Movm7uQdtR8dR+kLdSvRP5lt/Dx236+c0Y/Ou2+7Zm7jOY4hYy5sGlS68qrngijvBry0r7iYki48+7b514CDa/N4WOAx/3+awN9kjKKja78S4D/fTmd97/diM4BLYVq/21GKkbkgj2hlzn8BzCysDvHdMZd+oVgtALr1D0lwaQztj2NjGt8low8Vikg52yUnnQa8MqwWQn8bN502NhVDPrwzp+eWG/RNksxzWXowokGc+T+DhWGyclF0oTrSenXfxBb6KuONAPWWNKuVee7wD4PrpaiCXu/Uwvdz+bjiJoB6j9+Hexl9RwhIljPI7N/MsjWpw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6pJirHt2ccyYwLRILhxJDp/sljdvXIF6uWshHiDrpuM=;
- b=PGrd5gaw+vgE83lKDjCfCWOGjKv6sujaX4WUhoif9pRgIpqDbT39GH0UXbx6aprVI6v8Pv/mrZFjQyGPiQgKilsoNLbdkkvDyqZ25ZaU0aJYRWOFtWyk73vYT5sQVza36uG6rXhgW5+riPagkeBTUxL4s6tZxUs4ad/t1o8Mor3+uf4LtfxpowOzXmOKLkHyuPQTvKuaMTNVpw0bVO39dFSBh0i9TJFrA22F4xC1Cx3i3F/5GaizXIG0Pd4yKtEXq9OK6NSCGEmF0NlLSFO69dCsJNigIZJoCc//bEvipUIXDsQC3CFO7C2skUH3wHOE3jt7F6zKMersXpB6QAy5og==
+ bh=SwRTp0GnWlmy7CGaPU32UB/VasF7SgIGrsjnprPnqzE=;
+ b=DF5Xtsciw75k4r9fcCi/FTlqewXY6OqYTAMHwYF5U142dWDb0TQgam/dpyoaB3EviTrHAy9DdtRYTB3Q0DLE8nxk7okiFLMHYn3yE9mDmb58zgwVMe8unfyUAmU82bFD10SVtgGTtP0ZJwQS78X3o3FLRyOP7dNTnkoO1SK2NxrLVLN9LbvbGhCuxdr1whYMy0tAtZ2qvJS8c9O0l7waZQCbFZZ1k5wYXE4cllV52CHzaZWNoJZ81DgrkmZzoOLKUF1n8EH36pvm4zJ7pQfTh2vu7KL9CAOngjsEDVTQeuSSf+UE6XhYHrM0gTXeixcDTgFM4GskccaKHfIT1ATFvQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=windriver.com; dmarc=pass action=none
- header.from=windriver.com; dkim=pass header.d=windriver.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=windriversystems.onmicrosoft.com;
- s=selector2-windriversystems-onmicrosoft-com;
+ smtp.mailfrom=dektech.com.au; dmarc=pass action=none
+ header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
+ s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6pJirHt2ccyYwLRILhxJDp/sljdvXIF6uWshHiDrpuM=;
- b=bklbgo4nKLqpyH2UwtHt6R8l4dAyhZ3Weh8uKZYrodB+6+qVOdihQ63u9jB219yAZK2pDFHP/SKPjKJHbD+8FBEpPnlX7JdlHUQXJdFH913bovRXIG/Nm7A0KlD61v3bRGtz1ooe853ZP59Pasqxtkmn8/hHGij3ZfyVgiDm8X4=
-Received: from BY5PR11MB3894.namprd11.prod.outlook.com (2603:10b6:a03:18c::20)
- by BY5PR11MB4038.namprd11.prod.outlook.com (2603:10b6:a03:18c::33)
+ bh=SwRTp0GnWlmy7CGaPU32UB/VasF7SgIGrsjnprPnqzE=;
+ b=ke8raRS3x0aqgwNwUy8noS2KT5sPnz9u0jnF94JLcMuAzqLIMX1HC/6RQ3avTrwxxlmS7jQ+CXAkGAIBMDhr+N3B4LohKHfvgEzjTeV9uyxjVSpuT6gAuj7RQKj+Tb8VYRxcDHbwYB3/efW/hG06TlW9ycSiF/Tc8V37XeBbyw0=
+Authentication-Results: redhat.com; dkim=none (message not signed)
+ header.d=none;redhat.com; dmarc=none action=none header.from=dektech.com.au;
+Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com (2603:10a6:209:5::28)
+ by AM6PR0502MB4008.eurprd05.prod.outlook.com (2603:10a6:209:1e::16)
  with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.20; Fri, 8 May
- 2020 14:43:41 +0000
-Received: from BY5PR11MB3894.namprd11.prod.outlook.com
- ([fe80::cdc3:c78d:773a:7dc3]) by BY5PR11MB3894.namprd11.prod.outlook.com
- ([fe80::cdc3:c78d:773a:7dc3%7]) with mapi id 15.20.2958.035; Fri, 8 May 2020
- 14:43:41 +0000
-From: "Xue, Ying" <Ying.Xue@windriver.com>
-To: Tuong Lien <tuong.t.lien@dektech.com.au>, "jmaloy@redhat.com"
- <jmaloy@redhat.com>, "maloy@donjonn.com" <maloy@donjonn.com>,
- "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>
-Thread-Topic: [RFC PATCH 1/2] tipc: fix large latency in smart Nagle streaming
-Thread-Index: AQHWIgczYoDke52rBE6vJpXxhcMqOqieSVVg
-Date: Fri, 8 May 2020 14:43:41 +0000
-Message-ID: <BY5PR11MB3894E4C56D34E5F76F884CC184A20@BY5PR11MB3894.namprd11.prod.outlook.com>
-References: <20200504112826.11186-1-tuong.t.lien@dektech.com.au>
- <20200504112826.11186-2-tuong.t.lien@dektech.com.au>
-In-Reply-To: <20200504112826.11186-2-tuong.t.lien@dektech.com.au>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dektech.com.au; dkim=none (message not signed)
- header.d=none;dektech.com.au; dmarc=none action=none
- header.from=windriver.com;
-x-originating-ip: [147.11.252.42]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: b4ac5d5a-c7f2-4ab9-a82c-08d7f35e33b2
-x-ms-traffictypediagnostic: BY5PR11MB4038:
-x-microsoft-antispam-prvs: <BY5PR11MB4038A1B17BD694DD96A6245484A20@BY5PR11MB4038.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5797;
-x-forefront-prvs: 039735BC4E
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: iq1cYtqj2Lb/TEmukt6PjJAT+JL96K2P5eiAN0pAPGFm2X1uOBsUnxz7YYdY9yAw7c8N3DeXC5B3MOpswb+8oLLMOEUkMCel4cq8DoIxPYNOa2X2q/GFESgIcZ3WD3KopazTTcz+uA8Tw2iVXqi5DvGaKscJvTfI6JIs6kxzVDZ8PAYN/LcMcFFjaL/7c7Cg9QrCOuAjgIKlCHPg0XNsm2EMCQzd6H1jCOFk6VBLlUdDt9VVuqoem+5Lv3nQARRf3aRRk1Czi/c65fYbecH8c9D1zndZd9+pO+5Y6y91VPTT0wsZ7hyqbr5XBHbm5vgwQKHvDLXwpsDvpmT0SmM3s1GfoTHOXln9iAYFYv0SaZe8DTL0wJhukFBfde8C/4kH3v6wKZN+IMKNvSPfSGiQ1DjxflwD1aHWzVRPRAoAvtsXDAL38CIUgm/AaQGjZ6E6OHtCL6EbfPigpmg5CLZm1Ff0S0TxYYA530HLujM+IcRxP9hznZjRgflDSZ6Mzjywz7XsT7x6CnTcoZkJkARDHw==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:BY5PR11MB3894.namprd11.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(366004)(136003)(396003)(376002)(39850400004)(346002)(33430700001)(76116006)(6506007)(8676002)(33656002)(110136005)(316002)(2906002)(52536014)(83300400001)(478600001)(33440700001)(83320400001)(83290400001)(83280400001)(83310400001)(86362001)(66556008)(66946007)(71200400001)(64756008)(66476007)(8936002)(66446008)(9686003)(7696005)(186003)(26005)(4326008)(55016002)(4744005)(5660300002);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: xBUs8ovPvjo8Kw7U90X7OOmC+nhsub6EF/lmNJNFYJujZ8OCiiLtg1tJdULnv6gwDrHXNUQ2IN6g4BQJfCqzE7O6ktXYWP2+WGhd7S+tGBlSG87EN3UwZNNfe1hOeUzuDcI3dMPWg8v/M9R5Dew9i4Fd/aLNrmLzInVTvQ9hA0ohTaP8CqQMsxKRh3aLKA4XDlXGmKycd4uJLWqW+UFRgnh2sar0KD1Bcxhb5Hogy3qWdByoNixddWhSvC8pnO87DvFVg2xmRjKtNfyZB3TQDiuAlQ8wljdmH1Mby9ZAnGdZ4VJ2dCX9Y7ovvUOagq4iwvWoH9gprCsROeris0vIpvOWzbFmVjZFXsQzyhv4wgmLMbSNhflejGeZPra0pJosSxj6IfmtVn3462DgG17jTnINPEkU36mg2COEBIbu4Za71cegIAEMv3hwk0wpopPHyoXhzU8EngrVGMGXXfuO8/4QwPDs2eoHK3/vtAkTWDmDlVEI5Zmj62EpoZTSfRAM
-x-ms-exchange-transport-forked: True
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.35; Mon, 11 May
+ 2020 02:58:56 +0000
+Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com
+ ([fe80::5941:e5bd:759c:dd8c]) by AM6PR0502MB3925.eurprd05.prod.outlook.com
+ ([fe80::5941:e5bd:759c:dd8c%6]) with mapi id 15.20.2979.033; Mon, 11 May 2020
+ 02:58:56 +0000
+From: Tuong Lien <tuong.t.lien@dektech.com.au>
+To: jmaloy@redhat.com, maloy@donjonn.com, ying.xue@windriver.com,
+ tipc-discussion@lists.sourceforge.net
+Date: Mon, 11 May 2020 09:58:48 +0700
+Message-Id: <20200511025848.4434-1-tuong.t.lien@dektech.com.au>
+X-Mailer: git-send-email 2.13.7
+X-ClientProxiedBy: HK2P15301CA0002.APCP153.PROD.OUTLOOK.COM
+ (2603:1096:202:1::12) To AM6PR0502MB3925.eurprd05.prod.outlook.com
+ (2603:10a6:209:5::28)
 MIME-Version: 1.0
-X-OriginatorOrg: windriver.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b4ac5d5a-c7f2-4ab9-a82c-08d7f35e33b2
-X-MS-Exchange-CrossTenant-originalarrivaltime: 08 May 2020 14:43:41.4067 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 8ddb2873-a1ad-4a18-ae4e-4644631433be
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 6dGDr0EcsbTgtEoOsMrFpp90gNLzwUlyhY3mYgSK/UGwD5IAaXxIEcFHaI/Jwz2+adRB6SD/ABT2YDcXATDTDg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR11MB4038
-X-Spam-Score: -0.0 (/)
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from dektech.com.au (14.161.14.188) by
+ HK2P15301CA0002.APCP153.PROD.OUTLOOK.COM (2603:1096:202:1::12) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.3021.2 via Frontend Transport; Mon, 11 May 2020 02:58:54 +0000
+X-Mailer: git-send-email 2.13.7
+X-Originating-IP: [14.161.14.188]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 77d42cb5-4e32-4110-cdd3-08d7f5573eab
+X-MS-TrafficTypeDiagnostic: AM6PR0502MB4008:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <AM6PR0502MB4008DAFE3CBFC230D72F76DEE2A10@AM6PR0502MB4008.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:510;
+X-Forefront-PRVS: 04004D94E2
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: FDtZAzuEYODgQmICtKKd5lxj34JuF7FpHTZ75SbNCuMTtesPX3CyV/Ml3XAm4vMQ2KNHJCkC4GHorNd4fq/n1FGRbWQCeZsXt1atdtbxKDknJmRsX1BdeA685RtNO167bfB902JtZPqIiuG5GhoM0j4SwWN7CIVsf3npAvhquB8jHfBGPKZh899aa2iBpgHqkw7byTfSWG5jqNT1SeAbasq7HMBXY1bq/sa0KC2/SoWRAWK37TD1oMSdokVwnam+g6mjKaAblKTssAeFhtKFXgyMTPVouzDVgWdDkV6Pd3Nv6mQqddsicRXVXcq404Egus8so7RvgRGQHTItX04kAEqq3u9UyFPFKv0S11/27Cndm4tntnW9S3a4PGMu/GgELTHp39xG1miiFcACFsAxHPcSkY2doXS7epFg4JuB5F1JB0RQHOggQh07UQ+yAxSRo76Jlviyez/etCcGOrCfu3At9JoBukJRrQZkI8vyzKnaTvD7yncBy6z0soWeKvjJfZQS3NhSlYwInVBbUoiwEA==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM6PR0502MB3925.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(39840400004)(136003)(376002)(346002)(396003)(366004)(33430700001)(66946007)(5660300002)(66556008)(66476007)(33440700001)(103116003)(4326008)(16526019)(186003)(26005)(7696005)(52116002)(6666004)(2616005)(956004)(1076003)(55016002)(316002)(8936002)(86362001)(478600001)(8676002)(2906002)(107886003)(36756003);
+ DIR:OUT; SFP:1102; 
+X-MS-Exchange-AntiSpam-MessageData: +7bRK1kckXdDu3xuPn9kH488Z6B8G6B337dRYaB3raLNWzxqSn5XYXiwCrJCR/PKPbu/uNSVfYhs1nJHMlF8StSO6e8FPmw0Gp5yob7zG6rVmWHn/BWbZFiBe4qliOGqJUQv1/B7mRepdelU++Y5ZmfJemBugaPKLxMNg39Ci+u7b8TE+9+v00enNkp6xHTeRB1ft2DnyjMhkJFHIcXE75neKJ2A/hRm2yPGTswJ4eUVivPWFTWWnAnpKXZom7XF16IHy0OUfYm5VOOeHGuWXIdlievDtGDMPQRi1AZgxigj1uf+NzXgVmODgoy42DEnHGOorqamgGHRutxLz30u9wUoCEFSxb74/ecQ9FzO0cj+yK7N/nUsWMbXf8vWHF2ITyR6LDJPwwnqDQIWkB2q6AeEu+186hLu2zYlHCCtBQ2FoMNVeIBphVzrYBCHIA9xfIiBUdjEvmsRugxM+WN+Kj/gU42XqY/bmVaG3Pejh4Q=
+X-OriginatorOrg: dektech.com.au
+X-MS-Exchange-CrossTenant-Network-Message-Id: 77d42cb5-4e32-4110-cdd3-08d7f5573eab
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 May 2020 02:58:56.2109 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 2owfWtvDDVI3CUKNWrDGz7UKgxz6KfaHoZkxG0/MglYR/GWwQUHm3/jgVSFPqxNj/PlFPO9w0oZAqeNAa2a1xLsTMznTH7vzWCpow+sv5DA=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0502MB4008
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.92.84 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.92.84 listed in list.dnswl.org]
+ [40.107.22.93 listed in wl.mailspike.net]
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: dektech.com.au]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1jX4kT-00Cgzh-6o
-Subject: Re: [tipc-discussion] [RFC PATCH 1/2] tipc: fix large latency in
- smart Nagle streaming
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.0 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1jXyex-003NO2-1k
+Subject: [tipc-discussion] [net] tipc: fix failed service subscription
+ deletion
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -134,20 +137,89 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: "tipc-dek@dektech.com.au" <tipc-dek@dektech.com.au>
+Cc: tipc-dek@dektech.com.au
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-@@ -2011,7 +2021,7 @@ static int tipc_recvstream(struct socket *sock, struct msghdr *m,
+When a service subscription is expired or canceled by user, it needs to
+be deleted from the subscription list, so that new subscriptions can be
+registered (max = 65535 per net). However, there are two issues in code
+that can cause such an unused subscription to persist:
+
+1) The 'tipc_conn_delete_sub()' has a loop on the subscription list but
+it makes a break shortly when the 1st subscription differs from the one
+specified, so the subscription will not be deleted.
+
+2) In case a subscription is canceled, the code to remove the
+'TIPC_SUB_CANCEL' flag from the subscription filter does not work if it
+is a local subscription (i.e. the little endian isn't involved). So, it
+will be no matches when looking for the subscription to delete later.
+
+The subscription(s) will be removed eventually when the user terminates
+its topology connection but that could be a long time later. Meanwhile,
+the number of available subscriptions may be exhausted.
+
+This commit fixes the two issues above, so as needed a subscription can
+be deleted correctly.
+
+v2: define a new macro to write sub field value (- Jon's comment)
+
+Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
+---
+ net/tipc/subscr.h | 10 ++++++++++
+ net/tipc/topsrv.c |  7 +++----
+ 2 files changed, 13 insertions(+), 4 deletions(-)
+
+diff --git a/net/tipc/subscr.h b/net/tipc/subscr.h
+index aa015c233898..6ebbec1bedd1 100644
+--- a/net/tipc/subscr.h
++++ b/net/tipc/subscr.h
+@@ -96,6 +96,16 @@ void tipc_sub_get(struct tipc_subscription *subscription);
+ 		(swap_ ? swab32(val__) : val__);			\
+ 	})
  
- 		/* Send connection flow control advertisement when applicable */
- 		tsk->rcv_unacked += tsk_inc(tsk, hlen + dlen);
--		if (ack || tsk->rcv_unacked >= tsk->rcv_win / TIPC_ACK_RATE)
-+		if (tsk->rcv_unacked >= tsk->rcv_win / TIPC_ACK_RATE)
- 			tipc_sk_send_ack(tsk);
++/* tipc_sub_write - write val_ to field_ of struct sub_ in user endian format
++ */
++#define tipc_sub_write(sub_, field_, val_)				\
++	({								\
++		struct tipc_subscr *sub__ = sub_;			\
++		u32 val__ = val_;					\
++		int swap_ = !((sub__)->filter & TIPC_FILTER_MASK);	\
++		(sub__)->field_ = swap_ ? swab32(val__) : val__;	\
++	})
++
+ /* tipc_evt_write - write val_ to field_ of struct evt_ in user endian format
+  */
+ #define tipc_evt_write(evt_, field_, val_)				\
+diff --git a/net/tipc/topsrv.c b/net/tipc/topsrv.c
+index 931c426673c0..fb6d06eee29f 100644
+--- a/net/tipc/topsrv.c
++++ b/net/tipc/topsrv.c
+@@ -237,8 +237,6 @@ static void tipc_conn_delete_sub(struct tipc_conn *con, struct tipc_subscr *s)
+ 		if (!s || !memcmp(s, &sub->evt.s, sizeof(*s))) {
+ 			tipc_sub_unsubscribe(sub);
+ 			atomic_dec(&tn->subscription_count);
+-		} else if (s) {
+-			break;
+ 		}
+ 	}
+ 	spin_unlock_bh(&con->sub_lock);
+@@ -362,9 +360,10 @@ static int tipc_conn_rcv_sub(struct tipc_topsrv *srv,
+ {
+ 	struct tipc_net *tn = tipc_net(srv->net);
+ 	struct tipc_subscription *sub;
++	u32 s_filter = tipc_sub_read(s, filter);
  
-Beside tipc_recvstream(), we also need to make the same change in tipc_recvmsg().
+-	if (tipc_sub_read(s, filter) & TIPC_SUB_CANCEL) {
+-		s->filter &= __constant_ntohl(~TIPC_SUB_CANCEL);
++	if (s_filter & TIPC_SUB_CANCEL) {
++		tipc_sub_write(s, filter, s_filter & ~TIPC_SUB_CANCEL);
+ 		tipc_conn_delete_sub(con, s);
+ 		return 0;
+ 	}
+-- 
+2.13.7
 
 
 
