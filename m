@@ -2,129 +2,70 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 456F21E1EDE
-	for <lists+tipc-discussion@lfdr.de>; Tue, 26 May 2020 11:41:21 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C1381E3236
+	for <lists+tipc-discussion@lfdr.de>; Wed, 27 May 2020 00:17:26 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jdW5F-00035i-P6; Tue, 26 May 2020 09:41:17 +0000
+	id 1jdhst-0003NT-CL; Tue, 26 May 2020 22:17:19 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1jdW5F-00035X-2H
- for tipc-discussion@lists.sourceforge.net; Tue, 26 May 2020 09:41:17 +0000
+ (envelope-from <davem@davemloft.net>) id 1jdhsr-0003NM-OH
+ for tipc-discussion@lists.sourceforge.net; Tue, 26 May 2020 22:17:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Message-Id:Date:Subject:
- Cc:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Mime-Version
+ :References:In-Reply-To:From:Subject:Cc:To:Message-Id:Date:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hNr3QO7rC4hoqJ+dsh1HpuPfnO8BgTP/4FB9r/LLJw0=; b=enmk0rqHaRJ/gSa6/++X2Kvpvj
- fhe2y7hZXjUySu7Vvbg2XT0ZZcnyFlef6rUsbqNNkyFtb1qlarwl/tBsfXzvaG9WNIOIRnpHgWd0D
- ng4VbiyujbDf8M+p7Wx1YO1skUc/jagqjK1HbH6sP2t6zytpxxiQX8YQOv57pZBCgGR4=;
+ bh=Mca9V3WfjdGbrfr2oECsxnGbtK476wmGZrBEMmOvcb8=; b=id6FncAouX0Dln200qmWLMm/Aj
+ 2ECJjgSl8NVg7KtLizfXrRYxwS73GdBkIHJtRw5KMLvttMBiWylgBW0nyK9Y3iCXGWd7XuVPMixL2
+ +gAOgsnzDoAALs6qZ2w5D8p2yYPYG5zHlaCQuTXaMFBAv7+kIutQWsjMOokCWkWneuu0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Type:Message-Id:Date:Subject:Cc:To:From:Sender:
- Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=hNr3QO7rC4hoqJ+dsh1HpuPfnO8BgTP/4FB9r/LLJw0=; b=P
- k1delyGglFZFpAZR14asas1UsqQxjgM2gBcQoNeC3SIb7g5zrPxBZr3yzdqasYX20vX8dDveoKimd
- kWBoyl+hkCE+4qz5DIFQr8UL1xBymhLKEV2Z/vLxjGgeZB2hgzPp3wY6MrCNN0faundvcVo/Dg1XZ
- 1xecvhj69MSdMGNs=;
-Received: from mail-db8eur05on2117.outbound.protection.outlook.com
- ([40.107.20.117] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ h=Content-Transfer-Encoding:Content-Type:Mime-Version:References:
+ In-Reply-To:From:Subject:Cc:To:Message-Id:Date:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=Mca9V3WfjdGbrfr2oECsxnGbtK476wmGZrBEMmOvcb8=; b=FBgJ0t54usNdBVzMdBhX2csaHd
+ yuQYeJAwZLFU8BLLUACXqtEkIw+XBGgOCQLslxe1V2dbiAP3yZ6WQSFihuhHHR9uRo5MunUlTtD4i
+ FVKYY0igHB7NZvLcrUzGYhyiEFjM1snP5R+gGE7XClmX5gmYH9WTHo492XolVf61wb5o=;
+Received: from shards.monkeyblade.net ([23.128.96.9])
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1jdW59-00DPjW-D0
- for tipc-discussion@lists.sourceforge.net; Tue, 26 May 2020 09:41:17 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=e3Tjp/8m+0T1X8N4yU0mVEkKI3r9UVxdV0aYL3GLUgSsh1588rAUPgf7gW25bNmTAqpeBkGtfP6eoMtNsgxvlSlYbeTxAEtmkO6IxRT9tNK8oj2i37NdBoe4NccI9ENdcw4gkVrvS+IwhTL9KnO/PBzKdW5u1hwpkxvyr05gxM+hgKxKFwHKHAbB3Yf/HB0+XB5+BYw41FYHUu8DtzfOh7nd74XU23d6JEdnUeswMP58uAjbDhXVTjD99yjHN9toyCRpsTE9YOC56LC4c6bxnATYf71crj0EmNyvgIgHJ5MmZtD8J11SLpyL9rK0S3hfflsUnFykSDCteiuBNsPMKQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hNr3QO7rC4hoqJ+dsh1HpuPfnO8BgTP/4FB9r/LLJw0=;
- b=eqD0P9rrsCgMm0/hxKspIQLrHDGvlAn6gO4tveWrawz2blGdb5qB8Dgqq2w/gkYQYvTLvZpsgIxQlDqhjoTrDEH49LN9BFpVhHZ5GoY1Baje83Un8Hri1ZFWk3q9BQMdQAkc2UwiQ5Usnn078IwZGA4p7iMCwximRSnVNTfVnVzy5cploh3bajYSTLTg9NgnwaVhrZqJSi/HaL5pJvJ/1iz+PZ9XwZsKzaIZvej5XfxoVZVbo2ngIWy3M24rilMyeqyxvn4KxOzcU24ZjJjlmS0v3wwFF13XsFEoV7fNvFBRGciKw2yQR8udhbB+pYstMk7P1ANZ6bIY5i8aXiZXJg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=dektech.com.au; dmarc=pass action=none
- header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hNr3QO7rC4hoqJ+dsh1HpuPfnO8BgTP/4FB9r/LLJw0=;
- b=KiAYleKcAFPOhmXqpquRRR1NSGAyQvRm3WALIdlLhVylHU0yd2KCb7vdBqSdX0E81lWaWchOqF5SggAktT6KXgN/hOVQsje0plDFaFX9FUb0WMNDDXZf2OpRgAFnSvDwHm2Rz25vUL9deeo/KbUkEQDFDFg+NDJE+9Z59nOQm1I=
-Authentication-Results: gmail.com; dkim=none (message not signed)
- header.d=none;gmail.com; dmarc=none action=none header.from=dektech.com.au;
-Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com (2603:10a6:209:5::28)
- by AM6PR0502MB3830.eurprd05.prod.outlook.com (2603:10a6:209:11::14)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.27; Tue, 26 May
- 2020 09:41:03 +0000
-Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com
- ([fe80::4d5f:2ab:5a66:deaf]) by AM6PR0502MB3925.eurprd05.prod.outlook.com
- ([fe80::4d5f:2ab:5a66:deaf%7]) with mapi id 15.20.3021.029; Tue, 26 May 2020
- 09:41:03 +0000
-From: Tuong Lien <tuong.t.lien@dektech.com.au>
-To: dsahern@gmail.com, jmaloy@redhat.com, maloy@donjonn.com,
- ying.xue@windriver.com, netdev@vger.kernel.org
-Date: Tue, 26 May 2020 16:40:55 +0700
-Message-Id: <20200526094055.17526-1-tuong.t.lien@dektech.com.au>
-X-Mailer: git-send-email 2.13.7
-X-ClientProxiedBy: HK2PR03CA0059.apcprd03.prod.outlook.com
- (2603:1096:202:17::29) To AM6PR0502MB3925.eurprd05.prod.outlook.com
- (2603:10a6:209:5::28)
-MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from dektech.com.au (14.161.14.188) by
- HK2PR03CA0059.apcprd03.prod.outlook.com (2603:1096:202:17::29) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.3045.8 via Frontend Transport; Tue, 26 May 2020 09:41:00 +0000
-X-Mailer: git-send-email 2.13.7
-X-Originating-IP: [14.161.14.188]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 7921957b-8f90-4f84-a10f-08d80158e77d
-X-MS-TrafficTypeDiagnostic: AM6PR0502MB3830:
-X-Microsoft-Antispam-PRVS: <AM6PR0502MB383071CA10D81A18235683DDE2B00@AM6PR0502MB3830.eurprd05.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:127;
-X-Forefront-PRVS: 041517DFAB
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: Z2Zwq0Yu3eelAaHenUxAiIwcnu3/Ay6J8oRR1rsLIbmkB4Q05xYGOLuCOm/Y5hR7qTRLrVNKx6H/XnVFhrcvIHFoq62BgiQRjsQzjMLM0ylE+ipshh3gdJoIwFn3JqhbeNK9DABkxSbPoZybkLBMJF17pNSquLC2V0lGLK41i8/Qj2G3PJdcAVdYDz7qADWNUiIqBUftWl7ZEjM2kih0eSYKMvNio3ay6YjnUYilWlA5z3s9wfEXVRehyeyvT4Kbqz6gS+66wEYwTin7eBi5Vh7LmPbcGulK8V5WwPmhrgBbyIzpG6eDJN74FePN/SkE
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR0502MB3925.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(346002)(376002)(39850400004)(396003)(136003)(366004)(36756003)(1076003)(6666004)(2906002)(2616005)(478600001)(956004)(66946007)(66556008)(66476007)(26005)(316002)(7696005)(52116002)(4326008)(16526019)(186003)(55016002)(86362001)(8936002)(8676002)(5660300002)(103116003);
- DIR:OUT; SFP:1102; 
-X-MS-Exchange-AntiSpam-MessageData: aqNv3IDrW8jHGJN+4Z7+4Uwc1mh6jpcA06y/EGx+W+wxw5Uuu7hWP33CC91lNz4AuOPh4BlzNwSV5OR7KeGq35CxWnzULWzNa0LU2BgtqH00DXQk+7RWt/JTHMonRNET8ZdNP5fyI3ZF7c6B03fwux+ZQXPO7AU2yeK/X0vST7tdX6BdqmKAQ580NKDHze1O9hLj6A7aQQAt0No39LmJ52q7JY0beQmR5qMCdFxPV1EpDkoLQFgClhg8T8I99QVbXItE/kjANO26jC65vJ9Hnwpkwk5Q5isP1Fgh3o6qXk3WPbwM8DvA2lA8KINuvnnP2D7vzYSCGLs6KD9hqahNGmZlnWf5s1XU2SObKxHqizqfQ37kBLw7ebhEJVKAN7iSvZ8vhKeFxqR+f6fajm2Zp06W5ADSp+bwLbUCkIdbbANAmE5VS/WzavFT15wwOkIAMnbzf/MIG1o+SyiUcZ5x8o+24LDhe+YinFTboOzHqHs=
-X-OriginatorOrg: dektech.com.au
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7921957b-8f90-4f84-a10f-08d80158e77d
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 May 2020 09:41:02.9073 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: S3CB4S6XOm5aN31VRiEf6zbNIu8l+FZfO32dZFGnldlNLvGKXe9O5hSmhfVjZBjYtTpEBmSckPi7ZicYOvTOUqfvkDcDwmkcMPVCihFhLCg=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0502MB3830
-X-Spam-Score: -0.3 (/)
+ id 1jdhso-00H76g-Nk
+ for tipc-discussion@lists.sourceforge.net; Tue, 26 May 2020 22:17:17 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 4E2B3120ED4BE;
+ Tue, 26 May 2020 15:17:08 -0700 (PDT)
+Date: Tue, 26 May 2020 15:17:07 -0700 (PDT)
+Message-Id: <20200526.151707.1906193590139471783.davem@davemloft.net>
+To: tuong.t.lien@dektech.com.au
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20200526093838.17421-1-tuong.t.lien@dektech.com.au>
+References: <20200526093838.17421-1-tuong.t.lien@dektech.com.au>
+X-Mailer: Mew version 6.8 on Emacs 26.3
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Tue, 26 May 2020 15:17:08 -0700 (PDT)
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: dektech.com.au]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.20.117 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
- -0.2 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1jdW59-00DPjW-D0
-Subject: [tipc-discussion] [iproute2-next] tipc: enable printing of
- broadcast rcv link stats
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.4 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1jdhso-00H76g-Nk
+Subject: Re: [tipc-discussion] [net-next 0/5] tipc: add some improvements
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -136,172 +77,27 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: tipc-discussion@lists.sourceforge.net
+Cc: tipc-discussion@lists.sourceforge.net, netdev@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-This commit allows printing the statistics of a broadcast-receiver link
-using the same tipc command, but with additional 'link' options:
+From: Tuong Lien <tuong.t.lien@dektech.com.au>
+Date: Tue, 26 May 2020 16:38:33 +0700
 
-$ tipc link stat show --help
-Usage: tipc link stat show [ link { LINK | SUBSTRING | all } ]
+> This series adds some improvements to TIPC.
+> 
+> The first patch improves the TIPC broadcast's performance with the 'Gap
+> ACK blocks' mechanism similar to unicast before, while the others give
+> support on tracing & statistics for broadcast links, and an alternative
+> to carry broadcast retransmissions via unicast which might be useful in
+> some cases.
+> 
+> Besides, the Nagle algorithm can now automatically 'adjust' itself
+> depending on the specific network condition a stream connection runs by
+> the last patch.
 
-With:
-+ 'LINK'      : print the stats of the specific link 'LINK';
-+ 'SUBSTRING' : print the stats of all the links having the 'SUBSTRING'
-                in name;
-+ 'all'       : print all the links' stats incl. the broadcast-receiver
-                ones;
-
-Also, a link stats can be reset in the usual way by specifying the link
-name in command.
-
-For example:
-
-$ tipc l st sh l br
-Link <broadcast-link>
-  Window:50 packets
-  RX packets:0 fragments:0/0 bundles:0/0
-  TX packets:5011125 fragments:4968774/149643 bundles:38402/307061
-  RX naks:781484 defs:0 dups:0
-  TX naks:0 acks:0 retrans:330259
-  Congestion link:50657  Send queue max:0 avg:0
-
-Link <broadcast-link:1001001>
-  Window:50 packets
-  RX packets:95146 fragments:95040/1980 bundles:1/2
-  TX packets:0 fragments:0/0 bundles:0/0
-  RX naks:380938 defs:83962 dups:403
-  TX naks:8362 acks:0 retrans:170662
-  Congestion link:0  Send queue max:0 avg:0
-
-Link <broadcast-link:1001002>
-  Window:50 packets
-  RX packets:0 fragments:0/0 bundles:0/0
-  TX packets:0 fragments:0/0 bundles:0/0
-  RX naks:400546 defs:0 dups:0
-  TX naks:0 acks:0 retrans:159597
-  Congestion link:0  Send queue max:0 avg:0
-
-$ tipc l st sh l 1001002
-Link <1001003:data0-1001002:data0>
-  ACTIVE  MTU:1500  Priority:10  Tolerance:1500 ms  Window:50 packets
-  RX packets:99546 fragments:0/0 bundles:33/877
-  TX packets:629 fragments:0/0 bundles:35/828
-  TX profile sample:8 packets average:390 octets
-  0-64:75% -256:0% -1024:0% -4096:25% -16384:0% -32768:0% -66000:0%
-  RX states:488714 probes:7397 naks:0 defs:4 dups:5
-  TX states:27734 probes:18016 naks:5 acks:2305 retrans:0
-  Congestion link:0  Send queue max:0 avg:0
-
-Link <broadcast-link:1001002>
-  Window:50 packets
-  RX packets:0 fragments:0/0 bundles:0/0
-  TX packets:0 fragments:0/0 bundles:0/0
-  RX naks:400546 defs:0 dups:0
-  TX naks:0 acks:0 retrans:159597
-  Congestion link:0  Send queue max:0 avg:0
-
-$ tipc l st re l broadcast-link:1001002
-
-$ tipc l st sh l broadcast-link:1001002
-Link <broadcast-link:1001002>
-  Window:50 packets
-  RX packets:0 fragments:0/0 bundles:0/0
-  TX packets:0 fragments:0/0 bundles:0/0
-  RX naks:0 defs:0 dups:0
-  TX naks:0 acks:0 retrans:0
-  Congestion link:0  Send queue max:0 avg:0
-
-Acked-by: Ying Xue <ying.xue@windriver.com>
-Acked-by: Jon Maloy <jmaloy@redhat.com>
-Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
----
- tipc/link.c | 25 +++++++++++++++++--------
- 1 file changed, 17 insertions(+), 8 deletions(-)
-
-diff --git a/tipc/link.c b/tipc/link.c
-index e123c186..ba77a201 100644
---- a/tipc/link.c
-+++ b/tipc/link.c
-@@ -334,7 +334,7 @@ static int _show_link_stat(const char *name, struct nlattr *attrs[],
- 
- 	open_json_object(NULL);
- 
--	print_string(PRINT_ANY, "link", "\nLink <%s>\n", name);
-+	print_string(PRINT_ANY, "link", "Link <%s>\n", name);
- 	print_string(PRINT_JSON, "state", "", NULL);
- 	open_json_array(PRINT_JSON, NULL);
- 	if (attrs[TIPC_NLA_LINK_ACTIVE])
-@@ -433,7 +433,7 @@ static int _show_link_stat(const char *name, struct nlattr *attrs[],
- 			   mnl_attr_get_u32(stats[TIPC_NLA_STATS_LINK_CONGS]));
- 	print_uint(PRINT_ANY, "send queue max", "  Send queue max:%u",
- 			   mnl_attr_get_u32(stats[TIPC_NLA_STATS_MAX_QUEUE]));
--	print_uint(PRINT_ANY, "avg", " avg:%u\n",
-+	print_uint(PRINT_ANY, "avg", " avg:%u\n\n",
- 			   mnl_attr_get_u32(stats[TIPC_NLA_STATS_AVG_QUEUE]));
- 
- 	close_json_object();
-@@ -496,7 +496,7 @@ static int _show_bc_link_stat(const char *name, struct nlattr *prop[],
- 			   mnl_attr_get_u32(stats[TIPC_NLA_STATS_LINK_CONGS]));
- 	print_uint(PRINT_ANY, "send queue max", "  Send queue max:%u",
- 			   mnl_attr_get_u32(stats[TIPC_NLA_STATS_MAX_QUEUE]));
--	print_uint(PRINT_ANY, "avg", " avg:%u\n",
-+	print_uint(PRINT_ANY, "avg", " avg:%u\n\n",
- 			   mnl_attr_get_u32(stats[TIPC_NLA_STATS_AVG_QUEUE]));
- 	close_json_object();
- 
-@@ -527,8 +527,10 @@ static int link_stat_show_cb(const struct nlmsghdr *nlh, void *data)
- 
- 	name = mnl_attr_get_str(attrs[TIPC_NLA_LINK_NAME]);
- 
--	/* If a link is passed, skip all but that link */
--	if (link && (strcmp(name, link) != 0))
-+	/* If a link is passed, skip all but that link.
-+	 * Support a substring matching as well.
-+	 */
-+	if (link && !strstr(name, link))
- 		return MNL_CB_OK;
- 
- 	if (attrs[TIPC_NLA_LINK_BROADCAST]) {
-@@ -540,7 +542,7 @@ static int link_stat_show_cb(const struct nlmsghdr *nlh, void *data)
- 
- static void cmd_link_stat_show_help(struct cmdl *cmdl)
- {
--	fprintf(stderr, "Usage: %s link stat show [ link LINK ]\n",
-+	fprintf(stderr, "Usage: %s link stat show [ link { LINK | SUBSTRING | all } ]\n",
- 		cmdl->argv[0]);
- }
- 
-@@ -554,6 +556,7 @@ static int cmd_link_stat_show(struct nlmsghdr *nlh, const struct cmd *cmd,
- 		{ "link",		OPT_KEYVAL,	NULL },
- 		{ NULL }
- 	};
-+	struct nlattr *attrs;
- 	int err = 0;
- 
- 	if (help_flag) {
-@@ -571,8 +574,14 @@ static int cmd_link_stat_show(struct nlmsghdr *nlh, const struct cmd *cmd,
- 		return -EINVAL;
- 
- 	opt = get_opt(opts, "link");
--	if (opt)
--		link = opt->val;
-+	if (opt) {
-+		if (strcmp(opt->val, "all"))
-+			link = opt->val;
-+		/* Set the flag to dump all bc links */
-+		attrs = mnl_attr_nest_start(nlh, TIPC_NLA_LINK);
-+		mnl_attr_put(nlh, TIPC_NLA_LINK_BROADCAST, 0, NULL);
-+		mnl_attr_nest_end(nlh, attrs);
-+	}
- 
- 	new_json_obj(json);
- 	err = msg_dumpit(nlh, link_stat_show_cb, link);
--- 
-2.13.7
-
+Series applied, thanks.
 
 
 _______________________________________________
