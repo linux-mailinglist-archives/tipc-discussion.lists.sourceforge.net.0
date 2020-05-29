@@ -2,85 +2,98 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFB941E81E7
-	for <lists+tipc-discussion@lfdr.de>; Fri, 29 May 2020 17:34:34 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 681CE1E834D
+	for <lists+tipc-discussion@lfdr.de>; Fri, 29 May 2020 18:11:44 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jeh1j-0005Is-32; Fri, 29 May 2020 15:34:31 +0000
+	id 1jehbg-0006un-6I; Fri, 29 May 2020 16:11:40 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1jeh1h-0005IZ-Px
- for tipc-discussion@lists.sourceforge.net; Fri, 29 May 2020 15:34:29 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1jehbe-0006ud-Fl
+ for tipc-discussion@lists.sourceforge.net; Fri, 29 May 2020 16:11:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=vW3pZOBpJZElF0ORjCCGB8PbewMe33+xTfiwskDxxnM=; b=QFq++dI95GyHXYzMxPajBo/Qa6
- UtYYq4WrMpWM0UxjIjLgYmFTQ6RqD1ddrlShQ5nut7oeqapfhxV/iHryEOgcm0DWc9LiYwY9vlwCR
- oHn7Mr7MpiLg+I7KKvO8DEJbaFkl/PhFeMN59tfuQC06giwHdewwBs+h0ofThIPOX3gM=;
+ d=sourceforge.net; s=x; h=Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:From:To:References:Subject:Sender:Reply-To:Cc:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=bcR9kjm53LlUuqbGtad4wkD9TxiEEGAB1o1lvCy+xgo=; b=VMTLOniXdVMczgtYgY9q2POSO
+ 2H6HRU3BkafHiuu4nUKsjVyO25yrTnxyPYbS7mQyQMfZBEjYKa3aXJ4XP98IDho7Tndt1kaO5pt4A
+ VPo2kvSTW897FE+7sqKNgYZBJARF2OBJQcc/iMP3tS5BLCKpCZ7Q5mAbcNpDpI9e+RStQ=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:
- Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=vW3pZOBpJZElF0ORjCCGB8PbewMe33+xTfiwskDxxnM=; b=L
- vsX0sRKQgZQGu2bHXM8hGwLhy4KavsjFEoKcxOnQ68E0Et1l21Ki8kZn7PKsoyVzgy9KJForVsTPv
- e1pQEnMabehDqM08QFhEKZkCrjQP3HaU8o+0x2vl+5FOP6tZhTeuBdImnMe6wls9+EF75wW5L96rH
- nSI1t00PcZAjEFZk=;
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+ h=Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:To:References:
+ Subject:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=bcR9kjm53LlUuqbGtad4wkD9TxiEEGAB1o1lvCy+xgo=; b=X+RsCTio91TT3KgxdKuxI12LD2
+ hKUG7AW/hhL6s8fV6X0xFN60Bx8bbO95XVd/n79BN2juouQxLa6M5NXpuUePi61Gy1Q33y7xE1hfk
+ PjXQpX2aPbhMHMi9ITdEbJSNm9zBTTWeqvuSttXHxE1htA0euSmuAFwyZMMHkd7x755o=;
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1jeh1f-00CSqy-IW
- for tipc-discussion@lists.sourceforge.net; Fri, 29 May 2020 15:34:29 +0000
+ id 1jehbc-00CVZA-4E
+ for tipc-discussion@lists.sourceforge.net; Fri, 29 May 2020 16:11:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1590766458;
+ s=mimecast20190719; t=1590768690;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=vW3pZOBpJZElF0ORjCCGB8PbewMe33+xTfiwskDxxnM=;
- b=C10pr8eSOxZOrz5GGO9DY2SvbG0c/8UyD5z/1SzRvpHx0CJ2SKOzVQAA0r0N3ZVQeSigSa
- eAWdQJWJlYMTnIDdk9lRX8681kQgbCVZkWEt02+7wpq3853U2gexPE2rggX9rFgrHLXb6F
- ArKney6JiMu+/W1hrVk36g72Ew+aV+4=
+ to:to:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=bcR9kjm53LlUuqbGtad4wkD9TxiEEGAB1o1lvCy+xgo=;
+ b=TZVmNqr+LzJIEJCHc0ywnlULS22lnBfHyD2pYkuoHBbLr9ksRsufTETXQ28phmT0/8LhgY
+ HTJhScXHHnLpLeU+allfPA3zKXlrOR98lKYW+M+qPfliTzCou5WwJBVgSulp+Qg1u5pfZD
+ lIodgqtV5kQeM06zyfh81crSY9Hp3eI=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-39-99NgaaNLMRafVgflj2R66g-1; Fri, 29 May 2020 11:34:11 -0400
-X-MC-Unique: 99NgaaNLMRafVgflj2R66g-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
+ us-mta-77-M_zU-OdnO3GsEH2qa5juZw-1; Fri, 29 May 2020 12:11:25 -0400
+X-MC-Unique: M_zU-OdnO3GsEH2qa5juZw-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id EFDAA18A8246;
- Fri, 29 May 2020 15:34:09 +0000 (UTC)
-Received: from f31.redhat.com (ovpn-117-121.rdu2.redhat.com [10.10.117.121])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 775C95D9F3;
- Fri, 29 May 2020 15:34:08 +0000 (UTC)
-From: jmaloy@redhat.com
-To: tipc-discussion@lists.sourceforge.net
-Date: Fri, 29 May 2020 11:34:08 -0400
-Message-Id: <20200529153408.1843975-1-jmaloy@redhat.com>
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id F2673107ACCA;
+ Fri, 29 May 2020 16:11:23 +0000 (UTC)
+Received: from [10.10.117.121] (ovpn-117-121.rdu2.redhat.com [10.10.117.121])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id CD85E7B91F;
+ Fri, 29 May 2020 16:11:22 +0000 (UTC)
+References: <1eac4d66-759e-a38c-f19d-23082e3d34c4@redhat.com>
+To: "tipc-discussion@lists.sourceforge.net"
+ <tipc-discussion@lists.sourceforge.net>,
+ "tipc-dek@dektech.com.au" <tipc-dek@dektech.com.au>,
+ Tuong Lien Tong <tuong.t.lien@dektech.com.au>,
+ Xin Long <lucien.xin@gmail.com>,
+ tung quang nguyen <tung.q.nguyen@dektech.com.au>,
+ Ying Xue <ying.xue@windriver.com>
+From: Jon Maloy <jmaloy@redhat.com>
+X-Forwarded-Message-Id: <1eac4d66-759e-a38c-f19d-23082e3d34c4@redhat.com>
+Message-ID: <e32be325-18ed-df5a-5522-84fd663c6bcd@redhat.com>
+Date: Fri, 29 May 2020 12:11:21 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+In-Reply-To: <1eac4d66-759e-a38c-f19d-23082e3d34c4@redhat.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
-X-Spam-Score: -0.1 (/)
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [207.211.31.81 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [207.211.31.81 listed in list.dnswl.org]
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: dektech.com.au]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [207.211.31.120 listed in wl.mailspike.net]
+ 1.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -88,8 +101,11 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  not necessarily valid
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Headers-End: 1jeh1f-00CSqy-IW
-Subject: [tipc-discussion] [ ] tipc: update a binding service via broadcast
+ -0.5 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1jehbc-00CVZA-4E
+X-Content-Filtered-By: Mailman/MimeDel 2.1.21
+Subject: [tipc-discussion] Fwd: Re: FW: [PATCH 2/2] tipc: update a binding
+ service via broadcast
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,555 +117,263 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: xinl@redhat.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-From: Hoang Huu Le <hoang.h.le@dektech.com.au>
-
-Currently, updating binding table (add service binding to
-name table/withdraw a service binding) is being sent over replicast.
-However, if we are scaling up clusters to > 100 nodes/containers this
-method is less affection because of looping through nodes in a cluster one
-by one.
-
-It is worth to use broadcast to update a binding service. Then binding
-table updates in all nodes for one shot.
-
-The mechanism is backward compatible as sync message slient dropped.
-
-v2: resolve synchronization problem when switching from unicast to
-broadcast
-
-v5: - never use broadcast if there is a single node not understanding it
-    - always use broadcast otherwise
-    - ad sequence numbering to non-bulk messages
-
-Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
----
- net/tipc/bcast.c      |   4 +-
- net/tipc/bcast.h      |   2 +
- net/tipc/msg.h        |  40 +++++++++++++++
- net/tipc/name_distr.c | 113 +++++++++++++++++++++++++++++++-----------
- net/tipc/name_distr.h |   9 ++--
- net/tipc/name_table.c |   9 +++-
- net/tipc/name_table.h |   2 +
- net/tipc/node.c       |  28 ++++++++---
- net/tipc/node.h       |   8 +--
- 9 files changed, 170 insertions(+), 45 deletions(-)
-
-diff --git a/net/tipc/bcast.c b/net/tipc/bcast.c
-index 4c20be08b9c4..e3fce4c579c0 100644
---- a/net/tipc/bcast.c
-+++ b/net/tipc/bcast.c
-@@ -249,8 +249,8 @@ static void tipc_bcast_select_xmit_method(struct net *net, int dests,
-  * Consumes the buffer chain.
-  * Returns 0 if success, otherwise errno: -EHOSTUNREACH,-EMSGSIZE
-  */
--static int tipc_bcast_xmit(struct net *net, struct sk_buff_head *pkts,
--			   u16 *cong_link_cnt)
-+int tipc_bcast_xmit(struct net *net, struct sk_buff_head *pkts,
-+		    u16 *cong_link_cnt)
- {
- 	struct tipc_link *l = tipc_bc_sndlink(net);
- 	struct sk_buff_head xmitq;
-diff --git a/net/tipc/bcast.h b/net/tipc/bcast.h
-index 9e847d9617d3..f095a2ac27cb 100644
---- a/net/tipc/bcast.h
-+++ b/net/tipc/bcast.h
-@@ -89,6 +89,8 @@ void tipc_bcast_toggle_rcast(struct net *net, bool supp);
- int tipc_mcast_xmit(struct net *net, struct sk_buff_head *pkts,
- 		    struct tipc_mc_method *method, struct tipc_nlist *dests,
- 		    u16 *cong_link_cnt);
-+int tipc_bcast_xmit(struct net *net, struct sk_buff_head *pkts,
-+		    u16 *cong_link_cnt);
- int tipc_bcast_rcv(struct net *net, struct tipc_link *l, struct sk_buff *skb);
- void tipc_bcast_ack_rcv(struct net *net, struct tipc_link *l,
- 			struct tipc_msg *hdr);
-diff --git a/net/tipc/msg.h b/net/tipc/msg.h
-index 871feadbbc19..a0930d664958 100644
---- a/net/tipc/msg.h
-+++ b/net/tipc/msg.h
-@@ -409,6 +409,36 @@ static inline void msg_set_errcode(struct tipc_msg *m, u32 err)
- 	msg_set_bits(m, 1, 25, 0xf, err);
- }
- 
-+static inline void msg_set_bulk(struct tipc_msg *m)
-+{
-+	msg_set_bits(m, 1, 28, 0xf, 1);
-+}
-+
-+static inline u32 msg_is_bulk(struct tipc_msg *m)
-+{
-+	return msg_bits(m, 1, 28, 0xf);
-+}
-+
-+static inline void msg_set_last_bulk(struct tipc_msg *m)
-+{
-+	msg_set_bits(m, 1, 27, 0xf, 1);
-+}
-+
-+static inline u32 msg_is_last_bulk(struct tipc_msg *m)
-+{
-+	return msg_bits(m, 1, 27, 0xf);
-+}
-+
-+static inline void msg_set_non_legacy(struct tipc_msg *m)
-+{
-+	msg_set_bits(m, 1, 26, 0xf, 1);
-+}
-+
-+static inline u32 msg_is_legacy(struct tipc_msg *m)
-+{
-+	return !msg_bits(m, 1, 26, 0xf);
-+}
-+
- static inline u32 msg_reroute_cnt(struct tipc_msg *m)
- {
- 	return msg_bits(m, 1, 21, 0xf);
-@@ -538,6 +568,16 @@ static inline void msg_set_origport(struct tipc_msg *m, u32 p)
- 	msg_set_word(m, 4, p);
- }
- 
-+static inline u16 msg_named_seqno(struct tipc_msg *m)
-+{
-+	return msg_bits(m, 4, 0, 0xffff);
-+}
-+
-+static inline void msg_set_named_seqno(struct tipc_msg *m, u16 n)
-+{
-+	msg_set_bits(m, 4, 0, 0xffff, n);
-+}
-+
- static inline u32 msg_destport(struct tipc_msg *m)
- {
- 	return msg_word(m, 5);
-diff --git a/net/tipc/name_distr.c b/net/tipc/name_distr.c
-index 5feaf3b67380..c58b19418c42 100644
---- a/net/tipc/name_distr.c
-+++ b/net/tipc/name_distr.c
-@@ -102,7 +102,8 @@ struct sk_buff *tipc_named_publish(struct net *net, struct publication *publ)
- 		pr_warn("Publication distribution failure\n");
- 		return NULL;
- 	}
--
-+	msg_set_named_seqno(buf_msg(skb), nt->snd_nxt++);
-+	msg_set_non_legacy(buf_msg(skb));
- 	item = (struct distr_item *)msg_data(buf_msg(skb));
- 	publ_to_item(item, publ);
- 	return skb;
-@@ -114,8 +115,8 @@ struct sk_buff *tipc_named_publish(struct net *net, struct publication *publ)
- struct sk_buff *tipc_named_withdraw(struct net *net, struct publication *publ)
- {
- 	struct name_table *nt = tipc_name_table(net);
--	struct sk_buff *buf;
- 	struct distr_item *item;
-+	struct sk_buff *skb;
- 
- 	write_lock_bh(&nt->cluster_scope_lock);
- 	list_del(&publ->binding_node);
-@@ -123,15 +124,16 @@ struct sk_buff *tipc_named_withdraw(struct net *net, struct publication *publ)
- 	if (publ->scope == TIPC_NODE_SCOPE)
- 		return NULL;
- 
--	buf = named_prepare_buf(net, WITHDRAWAL, ITEM_SIZE, 0);
--	if (!buf) {
-+	skb = named_prepare_buf(net, WITHDRAWAL, ITEM_SIZE, 0);
-+	if (!skb) {
- 		pr_warn("Withdrawal distribution failure\n");
- 		return NULL;
- 	}
--
--	item = (struct distr_item *)msg_data(buf_msg(buf));
-+	msg_set_named_seqno(buf_msg(skb), nt->snd_nxt++);
-+	msg_set_non_legacy(buf_msg(skb));
-+	item = (struct distr_item *)msg_data(buf_msg(skb));
- 	publ_to_item(item, publ);
--	return buf;
-+	return skb;
- }
- 
- /**
-@@ -141,7 +143,7 @@ struct sk_buff *tipc_named_withdraw(struct net *net, struct publication *publ)
-  * @pls: linked list of publication items to be packed into buffer chain
-  */
- static void named_distribute(struct net *net, struct sk_buff_head *list,
--			     u32 dnode, struct list_head *pls)
-+			     u32 dnode, struct list_head *pls, u16 seqno)
- {
- 	struct publication *publ;
- 	struct sk_buff *skb = NULL;
-@@ -149,6 +151,7 @@ static void named_distribute(struct net *net, struct sk_buff_head *list,
- 	u32 msg_dsz = ((tipc_node_get_mtu(net, dnode, 0, false) - INT_H_SIZE) /
- 			ITEM_SIZE) * ITEM_SIZE;
- 	u32 msg_rem = msg_dsz;
-+	struct tipc_msg *hdr;
- 
- 	list_for_each_entry(publ, pls, binding_node) {
- 		/* Prepare next buffer: */
-@@ -159,8 +162,11 @@ static void named_distribute(struct net *net, struct sk_buff_head *list,
- 				pr_warn("Bulk publication failure\n");
- 				return;
- 			}
--			msg_set_bc_ack_invalid(buf_msg(skb), true);
--			item = (struct distr_item *)msg_data(buf_msg(skb));
-+			hdr = buf_msg(skb);
-+			msg_set_bc_ack_invalid(hdr, true);
-+			msg_set_bulk(hdr);
-+			msg_set_non_legacy(hdr);
-+			item = (struct distr_item *)msg_data(hdr);
- 		}
- 
- 		/* Pack publication into message: */
-@@ -176,24 +182,35 @@ static void named_distribute(struct net *net, struct sk_buff_head *list,
- 		}
- 	}
- 	if (skb) {
--		msg_set_size(buf_msg(skb), INT_H_SIZE + (msg_dsz - msg_rem));
-+		hdr = buf_msg(skb);
-+		msg_set_size(hdr, INT_H_SIZE + (msg_dsz - msg_rem));
- 		skb_trim(skb, INT_H_SIZE + (msg_dsz - msg_rem));
- 		__skb_queue_tail(list, skb);
- 	}
-+	hdr = buf_msg(skb_peek_tail(list));
-+	msg_set_last_bulk(hdr);
-+	msg_set_named_seqno(hdr, seqno);
- }
- 
- /**
-  * tipc_named_node_up - tell specified node about all publications by this node
-  */
--void tipc_named_node_up(struct net *net, u32 dnode)
-+void tipc_named_node_up(struct net *net, u32 dnode, u16 capabilities)
- {
- 	struct name_table *nt = tipc_name_table(net);
-+	struct tipc_net *tn = tipc_net(net);
- 	struct sk_buff_head head;
-+	u16 seqno;
- 
- 	__skb_queue_head_init(&head);
-+	spin_lock_bh(&tn->nametbl_lock);
-+	if (!(capabilities & TIPC_NAMED_BCAST))
-+		nt->rc_dests++;
-+	seqno = nt->snd_nxt;
-+	spin_unlock_bh(&tn->nametbl_lock);
- 
- 	read_lock_bh(&nt->cluster_scope_lock);
--	named_distribute(net, &head, dnode, &nt->cluster_scope);
-+	named_distribute(net, &head, dnode, &nt->cluster_scope, seqno);
- 	tipc_node_xmit(net, &head, dnode, 0);
- 	read_unlock_bh(&nt->cluster_scope_lock);
- }
-@@ -245,13 +262,21 @@ static void tipc_dist_queue_purge(struct net *net, u32 addr)
- 	spin_unlock_bh(&tn->nametbl_lock);
- }
- 
--void tipc_publ_notify(struct net *net, struct list_head *nsub_list, u32 addr)
-+void tipc_publ_notify(struct net *net, struct list_head *nsub_list,
-+		      u32 addr, u16 capabilities)
- {
-+	struct name_table *nt = tipc_name_table(net);
-+	struct tipc_net *tn = tipc_net(net);
-+
- 	struct publication *publ, *tmp;
- 
- 	list_for_each_entry_safe(publ, tmp, nsub_list, binding_node)
- 		tipc_publ_purge(net, publ, addr);
- 	tipc_dist_queue_purge(net, addr);
-+	spin_lock_bh(&tn->nametbl_lock);
-+	if (!(capabilities & TIPC_NAMED_BCAST))
-+		nt->rc_dests--;
-+	spin_unlock_bh(&tn->nametbl_lock);
- }
- 
- /**
-@@ -295,29 +320,59 @@ static bool tipc_update_nametbl(struct net *net, struct distr_item *i,
- 	return false;
- }
- 
-+struct sk_buff *tipc_named_dequeue(struct sk_buff_head *namedq,
-+				   u16 *rcv_nxt, bool *open)
-+{
-+	struct tipc_msg *hdr;
-+	struct sk_buff *skb;
-+	u16 seqno;
-+
-+	skb = __skb_dequeue(namedq);
-+	if (!skb)
-+		return NULL;
-+	skb_linearize(skb);
-+	hdr = buf_msg(skb);
-+	seqno = msg_named_seqno(hdr);
-+	if (msg_is_last_bulk(hdr)) {
-+		*rcv_nxt = seqno;
-+		*open = true;
-+	}
-+	if (msg_is_bulk(hdr) || msg_is_legacy(hdr))
-+		return skb;
-+
-+	/* Non-bulk messages may arrive in disorder: */
-+	if (!*open || more(*rcv_nxt, seqno)) {
-+		__skb_queue_tail(namedq, skb);
-+		return NULL;
-+	}
-+	if (less(*rcv_nxt, seqno)) {
-+		kfree_skb(skb);
-+		return NULL;
-+	}
-+	(*rcv_nxt)++;
-+	return skb;
-+}
-+
- /**
-  * tipc_named_rcv - process name table update messages sent by another node
-  */
--void tipc_named_rcv(struct net *net, struct sk_buff_head *inputq)
-+void tipc_named_rcv(struct net *net, struct sk_buff_head *namedq,
-+		    u16 *rcv_nxt, bool *open)
- {
--	struct tipc_net *tn = net_generic(net, tipc_net_id);
--	struct tipc_msg *msg;
-+	struct tipc_net *tn = tipc_net(net);
- 	struct distr_item *item;
--	uint count;
--	u32 node;
-+	struct tipc_msg *hdr;
- 	struct sk_buff *skb;
--	int mtype;
-+	u32 count, node = 0;
- 
- 	spin_lock_bh(&tn->nametbl_lock);
--	for (skb = skb_dequeue(inputq); skb; skb = skb_dequeue(inputq)) {
--		skb_linearize(skb);
--		msg = buf_msg(skb);
--		mtype = msg_type(msg);
--		item = (struct distr_item *)msg_data(msg);
--		count = msg_data_sz(msg) / ITEM_SIZE;
--		node = msg_orignode(msg);
-+	while ((skb = tipc_named_dequeue(namedq, rcv_nxt, open))) {
-+		hdr = buf_msg(skb);
-+		node = msg_orignode(hdr);
-+		item = (struct distr_item *)msg_data(hdr);
-+		count = msg_data_sz(hdr) / ITEM_SIZE;
- 		while (count--) {
--			tipc_update_nametbl(net, item, node, mtype);
-+			tipc_update_nametbl(net, item, node, msg_type(hdr));
- 			item++;
- 		}
- 		kfree_skb(skb);
-@@ -345,6 +400,6 @@ void tipc_named_reinit(struct net *net)
- 		publ->node = self;
- 	list_for_each_entry_rcu(publ, &nt->cluster_scope, binding_node)
- 		publ->node = self;
--
-+	nt->rc_dests = 0;
- 	spin_unlock_bh(&tn->nametbl_lock);
- }
-diff --git a/net/tipc/name_distr.h b/net/tipc/name_distr.h
-index 63fc73e0fa6c..092323158f06 100644
---- a/net/tipc/name_distr.h
-+++ b/net/tipc/name_distr.h
-@@ -67,11 +67,14 @@ struct distr_item {
- 	__be32 key;
- };
- 
-+void tipc_named_bcast(struct net *net, struct sk_buff *skb);
- struct sk_buff *tipc_named_publish(struct net *net, struct publication *publ);
- struct sk_buff *tipc_named_withdraw(struct net *net, struct publication *publ);
--void tipc_named_node_up(struct net *net, u32 dnode);
--void tipc_named_rcv(struct net *net, struct sk_buff_head *msg_queue);
-+void tipc_named_node_up(struct net *net, u32 dnode, u16 capabilities);
-+void tipc_named_rcv(struct net *net, struct sk_buff_head *namedq,
-+		    u16 *rcv_nxt, bool *open);
- void tipc_named_reinit(struct net *net);
--void tipc_publ_notify(struct net *net, struct list_head *nsub_list, u32 addr);
-+void tipc_publ_notify(struct net *net, struct list_head *nsub_list,
-+		      u32 addr, u16 capabilities);
- 
- #endif
-diff --git a/net/tipc/name_table.c b/net/tipc/name_table.c
-index 359b2bc888cf..2ac33d32edc2 100644
---- a/net/tipc/name_table.c
-+++ b/net/tipc/name_table.c
-@@ -729,6 +729,7 @@ struct publication *tipc_nametbl_publish(struct net *net, u32 type, u32 lower,
- 	struct tipc_net *tn = tipc_net(net);
- 	struct publication *p = NULL;
- 	struct sk_buff *skb = NULL;
-+	u32 rc_dests;
- 
- 	spin_lock_bh(&tn->nametbl_lock);
- 
-@@ -743,12 +744,14 @@ struct publication *tipc_nametbl_publish(struct net *net, u32 type, u32 lower,
- 		nt->local_publ_count++;
- 		skb = tipc_named_publish(net, p);
- 	}
-+	rc_dests = nt->rc_dests;
- exit:
- 	spin_unlock_bh(&tn->nametbl_lock);
- 
- 	if (skb)
--		tipc_node_broadcast(net, skb);
-+		tipc_node_broadcast(net, skb, rc_dests);
- 	return p;
-+
- }
- 
- /**
-@@ -762,6 +765,7 @@ int tipc_nametbl_withdraw(struct net *net, u32 type, u32 lower,
- 	u32 self = tipc_own_addr(net);
- 	struct sk_buff *skb = NULL;
- 	struct publication *p;
-+	u32 rc_dests;
- 
- 	spin_lock_bh(&tn->nametbl_lock);
- 
-@@ -775,10 +779,11 @@ int tipc_nametbl_withdraw(struct net *net, u32 type, u32 lower,
- 		pr_err("Failed to remove local publication {%u,%u,%u}/%u\n",
- 		       type, lower, upper, key);
- 	}
-+	rc_dests = nt->rc_dests;
- 	spin_unlock_bh(&tn->nametbl_lock);
- 
- 	if (skb) {
--		tipc_node_broadcast(net, skb);
-+		tipc_node_broadcast(net, skb, rc_dests);
- 		return 1;
- 	}
- 	return 0;
-diff --git a/net/tipc/name_table.h b/net/tipc/name_table.h
-index 728bc7016c38..8064e1986e2c 100644
---- a/net/tipc/name_table.h
-+++ b/net/tipc/name_table.h
-@@ -106,6 +106,8 @@ struct name_table {
- 	struct list_head cluster_scope;
- 	rwlock_t cluster_scope_lock;
- 	u32 local_publ_count;
-+	u32 rc_dests;
-+	u32 snd_nxt;
- };
- 
- int tipc_nl_name_table_dump(struct sk_buff *skb, struct netlink_callback *cb);
-diff --git a/net/tipc/node.c b/net/tipc/node.c
-index 803a3a6d0f50..df24b0650fde 100644
---- a/net/tipc/node.c
-+++ b/net/tipc/node.c
-@@ -75,6 +75,8 @@ struct tipc_bclink_entry {
- 	struct sk_buff_head arrvq;
- 	struct sk_buff_head inputq2;
- 	struct sk_buff_head namedq;
-+	u16 named_rcv_nxt;
-+	bool named_open;
- };
- 
- /**
-@@ -396,10 +398,10 @@ static void tipc_node_write_unlock(struct tipc_node *n)
- 	write_unlock_bh(&n->lock);
- 
- 	if (flags & TIPC_NOTIFY_NODE_DOWN)
--		tipc_publ_notify(net, publ_list, addr);
-+		tipc_publ_notify(net, publ_list, addr, n->capabilities);
- 
- 	if (flags & TIPC_NOTIFY_NODE_UP)
--		tipc_named_node_up(net, addr);
-+		tipc_named_node_up(net, addr, n->capabilities);
- 
- 	if (flags & TIPC_NOTIFY_LINK_UP) {
- 		tipc_mon_peer_up(net, addr, bearer_id);
-@@ -1729,12 +1731,23 @@ int tipc_node_distr_xmit(struct net *net, struct sk_buff_head *xmitq)
- 	return 0;
- }
- 
--void tipc_node_broadcast(struct net *net, struct sk_buff *skb)
-+void tipc_node_broadcast(struct net *net, struct sk_buff *skb, int rc_dests)
- {
-+	struct sk_buff_head xmitq;
- 	struct sk_buff *txskb;
- 	struct tipc_node *n;
-+	u16 dummy;
- 	u32 dst;
- 
-+	/* Use broadcast if all nodes support it */
-+	if (!rc_dests) {
-+		__skb_queue_head_init(&xmitq);
-+		__skb_queue_tail(&xmitq, skb);
-+		tipc_bcast_xmit(net, &xmitq, &dummy);
-+		return;
-+	}
-+
-+	/* Otherwise use legacy replicast method */
- 	rcu_read_lock();
- 	list_for_each_entry_rcu(n, tipc_nodes(net), list) {
- 		dst = n->addr;
-@@ -1749,7 +1762,6 @@ void tipc_node_broadcast(struct net *net, struct sk_buff *skb)
- 		tipc_node_xmit_skb(net, txskb, dst, 0);
- 	}
- 	rcu_read_unlock();
--
- 	kfree_skb(skb);
- }
- 
-@@ -1844,7 +1856,9 @@ static void tipc_node_bc_rcv(struct net *net, struct sk_buff *skb, int bearer_id
- 
- 	/* Handle NAME_DISTRIBUTOR messages sent from 1.7 nodes */
- 	if (!skb_queue_empty(&n->bc_entry.namedq))
--		tipc_named_rcv(net, &n->bc_entry.namedq);
-+		tipc_named_rcv(net, &n->bc_entry.namedq,
-+			       &n->bc_entry.named_rcv_nxt,
-+			       &n->bc_entry.named_open);
- 
- 	/* If reassembly or retransmission failure => reset all links to peer */
- 	if (rc & TIPC_LINK_DOWN_EVT)
-@@ -2109,7 +2123,9 @@ void tipc_rcv(struct net *net, struct sk_buff *skb, struct tipc_bearer *b)
- 		tipc_node_link_down(n, bearer_id, false);
- 
- 	if (unlikely(!skb_queue_empty(&n->bc_entry.namedq)))
--		tipc_named_rcv(net, &n->bc_entry.namedq);
-+		tipc_named_rcv(net, &n->bc_entry.namedq,
-+			       &n->bc_entry.named_rcv_nxt,
-+			       &n->bc_entry.named_open);
- 
- 	if (unlikely(!skb_queue_empty(&n->bc_entry.inputq1)))
- 		tipc_node_mcast_rcv(n);
-diff --git a/net/tipc/node.h b/net/tipc/node.h
-index a6803b449a2c..9f6f13f1604f 100644
---- a/net/tipc/node.h
-+++ b/net/tipc/node.h
-@@ -55,7 +55,8 @@ enum {
- 	TIPC_MCAST_RBCTL      = (1 << 7),
- 	TIPC_GAP_ACK_BLOCK    = (1 << 8),
- 	TIPC_TUNNEL_ENHANCED  = (1 << 9),
--	TIPC_NAGLE            = (1 << 10)
-+	TIPC_NAGLE            = (1 << 10),
-+	TIPC_NAMED_BCAST      = (1 << 11)
- };
- 
- #define TIPC_NODE_CAPABILITIES (TIPC_SYN_BIT           |  \
-@@ -68,7 +69,8 @@ enum {
- 				TIPC_MCAST_RBCTL       |   \
- 				TIPC_GAP_ACK_BLOCK     |   \
- 				TIPC_TUNNEL_ENHANCED   |   \
--				TIPC_NAGLE)
-+				TIPC_NAGLE             |   \
-+				TIPC_NAMED_BCAST)
- 
- #define INVALID_BEARER_ID -1
- 
-@@ -101,7 +103,7 @@ int tipc_node_xmit_skb(struct net *net, struct sk_buff *skb, u32 dest,
- 		       u32 selector);
- void tipc_node_subscribe(struct net *net, struct list_head *subscr, u32 addr);
- void tipc_node_unsubscribe(struct net *net, struct list_head *subscr, u32 addr);
--void tipc_node_broadcast(struct net *net, struct sk_buff *skb);
-+void tipc_node_broadcast(struct net *net, struct sk_buff *skb, int rc_dests);
- int tipc_node_add_conn(struct net *net, u32 dnode, u32 port, u32 peer_port);
- void tipc_node_remove_conn(struct net *net, u32 dnode, u32 port);
- int tipc_node_get_mtu(struct net *net, u32 addr, u32 sel, bool connected);
--- 
-2.25.1
-
-
-
-_______________________________________________
-tipc-discussion mailing list
-tipc-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+QWRkZWQgbW9yZSByZWNpcGllbnRzLgoKCi0tLS0tLS0tIEZvcndhcmRlZCBNZXNzYWdlIC0tLS0t
+LS0tClN1YmplY3Q6IAlSZTogRlc6IFtQQVRDSCAyLzJdIHRpcGM6IHVwZGF0ZSBhIGJpbmRpbmcg
+c2VydmljZSB2aWEgYnJvYWRjYXN0CkRhdGU6IAlGcmksIDI5IE1heSAyMDIwIDEyOjA4OjAyIC0w
+NDAwCkZyb206IAlKb24gTWFsb3kgPGptYWxveUByZWRoYXQuY29tPgpUbzogCUhvYW5nIEh1dSBM
+ZSA8aG9hbmcuaC5sZUBkZWt0ZWNoLmNvbS5hdT4sIG1hbG95QGRvbmpvbm4uY29tIAo8bWFsb3lA
+ZG9uam9ubi5jb20+CgoKCkhpIEhvYW5nLApTZWUgYmVsb3cuCgpPbiA1LzI3LzIwIDY6NDkgQU0s
+IEhvYW5nIEh1dSBMZSB3cm90ZToKPiBIaSBKb24sCj4KPiBJIGdvdCBEUkFGVCB2ZXJzaW9uIGJh
+c2Ugb24geW91ciBpZGVhIChhdHRhY2htZW50IGZpbGUpLgo+IEJ1dCBmcm9tIG15IHBvaW50LCB0
+aGlzIHZlcnNpb24gaW50cm9kdWNlIHRvbyBtdWNoIGNvZGUgaW1wbGVtZW50YXRpb24gCj4gYXQg
+c2VuZGluZyBzaWRlLgo+IEkgZG9uJ3QgdGhpbmsgdGhpcyBpcyBicmlnaHQgaWRlYSB0byBrZWVw
+IHJjYXN0X2xpc3QgYW5kIGJjYXN0X2xpc3QgaW4gCj4gdGhlIG5hbWUgdGFibGUuCj4gSSB0aGlu
+ayB3ZSBzaG91bGQgZmluZCBvdXQgYSBuZXcgd2F5IG9yIGp1c3QgaWdub3JlIHRoZSBmZWF0dXJl
+LgpZZXMsIHlvdSBhcmUgcmlnaHQuCkkgY2FtZSB1cCB3aXRoIGEgbmV3IGlkZWEsIHRvIGp1c3Qg
+YWRkIGEgc2VxdWVuY2UgbnVtYmVyIHRvIHRoZSAKYnJvYWRjYXN0L3JlcGxpY2FzdCBtZXNzYWdl
+cyBhbmQgcmUtb3JkZXIgdGhlbSBhdCByZWNlcHRpb24uIFRoaXMgZXZlbiAKaGFuZGxlcyB0aGUg
+Y2FzZSBpZiB0aGUgZmlyc3QgYnJvYWRjYXN0IG1lc3NhZ2UgYXJyaXZlcyBiZWZvcmUgdGhlIGZp
+cnN0IApidWxrIG1lc3NhZ2UsIHNvbWV0aGluZyB3ZSBoYXZlIG5vdCBhbnRpY2lwYXRlZCBiZWZv
+cmUuCkkgY291bGRuJ3QgcmVzaXN0IHRoZSB0ZW1wdGF0aW9uIHRyeWluZyB0byBjb2RlIGl0LCBh
+cyB5b3UgY2FuIHNlZSBpIHRoZSAKcGF0Y2ggSSBqdXN0IHNlbnQgb3V0LgpJdCBpcyB0b3RhbGx5
+IHVudGVzdGVkLCBJIGp1c3QgYWRkZWQgdGhlIGNvZGUgYXMgSSB0aG91Z2h0IGl0IHNob3VsZCBi
+ZSAKYW5kIG1hZGUgc3VyZSBpdCBjb21waWxlZC4KVGhlcmUgaXMgc3RpbGwgYSBsaXR0bGUgdG9v
+IG11Y2ggbmV3IGNvZGUgdG8gbXkgdGFzdGUsIGJ1dCB0aGlzIG1pZ2h0IGJlIAphIHdheSBmb3J3
+YXJkLgpQbGVhc2UgZ2l2ZSB5b3VyIGZlZWRiYWNrIG9uIHRoaXMuCgoKSSBhbHNvIG5vdGljZWQg
+YSBjb3VwbGUgb2YgdGhpbmdzIHdoaWxlIHdvcmtpbmcgd2l0aCB0aGlzOgoKMSkgVGhlcmUgaXMg
+c3RpbGwgYW4gJ2V4cGlyZXMnIGZpZWxkIGluIHRoZSB0aXBjX21jYXN0X21ldGhvZCwgYW5kIGl0
+IApzZWVtcyB0byBldmVuIGJlIGNvbnNpZGVyZWQgd2hlbiBzd2l0Y2hpbmcgYmNhc3QvcmNhc3Qu
+wqAgwqDCoCBUaGUgd2hvbGUgCnBvaW50IG9mIGFkZGluZyB0aGUgbWNhc3Qgc3luY2hyb25pemF0
+aW9uIG1lY2hhbmlzbSB3YXMgdG8gZ2V0IHJpZCBvZiAKdGhpcyBkZWxheS4gSGF2ZSB5b3UgdGVz
+dGVkIHRoYXQgc3luY3Jvbml6YXRpb24gcmVhbGx5IHdvcmtzIHdpdGhvdXQgdGhlIAonZXhwaXJl
+cycgPwoKMikgVGhlcmUgYXJlIHNvbWUgcmVtbmFudHMgb2Ygb2xkIGNvZGUgZm9yIHRoZSBuYW1l
+IHRhYmxlIGRpc3RfcXVldWUuIApUaGlzIGZ1bmN0aW9uYWxpdHkgd2FzIG1hZGUgcmVkdW5kYW50
+IGJ5IG1lIGF0IGxlYXN0IHR3byB5ZWFycyBhZ28sIHNvIAp0aGlzIHNob3VsZCBiZSBjbGVhbmVk
+IHVwLgoKMykgV2UgbWlnaHQgaGF2ZSBhIHBvdGVudGlhbCByYWNlIGNvbmRpdGlvbiB3aGVuIG5l
+dyBub2RlcyBjb21lIHVwLCBzbyAKdGhhdCBwdWJsaWNhdGlvbnMgYXJlIGRpc3RyaWJ1dGVkIHR3
+aWNlLgogwqAgwqAgYSkgQSBwdWJsaWNhdGlvbiBpcyBhZGRlZCB0byB0aGUgbmFtZSB0YWJsZSwg
+YW5kIHRoZSBuYW1lIHRhYmxlIApsb2NrIGlzIHJlbGVhc2VkLgogwqAgwqAgYikgQSBuZXcgbm9k
+ZSBjb21lcyB1cCwgYW5kIHRoZSBuZXcgcHVibGljYXRpb24gaXMgZGVsaXZlcmVkIGluIHRoZSAK
+YnVsayBtZXNzYWdlLgogwqAgwqAgYykgVGhlIGJyb2FkY2FzdCBvZiB0aGUgcHVibGljYXRpb24g
+Z29lcyBhaGVhZCBhbmQgc2VuZHMgaXQgb3V0IHRvIAphbGwgbm9kZXMsIGV2ZW4gdGhlIG9uZSB0
+aGF0IGp1c3QgY2FtZSB1cC4KIMKgwqDCoCBkKSBXZSBlbmQgdXAgd2l0aCBhIGRvdWJsZSBwdWJs
+aWNhdGlvbiBvbiBvbmUgb2YgdGhlIG5vZGVzLgogwqDCoMKgIGUpIE9uZSBvZiB0aG9zZSB3aWxs
+IGxpbmdlciBpbiB0aGUgbmFtZSB0YWJsZSBhZnRlciB0aGUgcHVibGljYXRpb24gCmlzIHdpdGhk
+cmF3bi4KIMKgwqDCoCBJIGhhdmUgbmV2ZXIgc2VlbiB0aGlzIGhhcHBlbiwgYW5kIG15IGFuYWx5
+c2lzIG1pZ2h0IGJlIHdyb25nLCBidXQgCnRvIG1lIHRoaXMgbG9va3MgbGlrZSBhIHBvc3NpYmxl
+IHNjZW5hcmlvLgogwqAgwqAgTm90ZSB0aGF0IG15IHBhdGNoIGRvZXNuJ3QgZml4IHRoaXMsIGJ1
+dCB3ZSBjb3VsZCBwb3NzaWJseSBhcnJhbmdlIAppdCBieSBhZGRpbmcgYSAnZGlzdHJpYnV0ZWQn
+IGZsYWcgaSB0aGUgcHVibGljYXRpb24gaXRlbSBvbiB0aGUgc2VuZGluZyAKc2lkZSwgc28gdGhh
+dCB0aGUgYnVsayBkaXN0cmlidXRpb24gd2lsbCBpZ25vcmUgaXQuCgpSZWdhcmRzCi8vL2pvbgoK
+Cj4KPiBSZWdhcmRzLAo+IEhvYW5nCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPiBGcm9t
+OiBKb24gTWFsb3kgPGptYWxveUByZWRoYXQuY29tPgo+IFNlbnQ6IFRodXJzZGF5LCBNYXkgMjEs
+IDIwMjAgOTo0NCBQTQo+IFRvOiBIb2FuZyBIdXUgTGUgPGhvYW5nLmgubGVAZGVrdGVjaC5jb20u
+YXU+OyBtYWxveUBkb25qb25uLmNvbQo+IFN1YmplY3Q6IFJlOiBGVzogW1BBVENIIDIvMl0gdGlw
+YzogdXBkYXRlIGEgYmluZGluZyBzZXJ2aWNlIHZpYSBicm9hZGNhc3QKPgo+IEhpLAo+IEkgaGF2
+ZSBvbmUgbW9yZSBjb21tZW50IGJlbG93LiBMb29raW5nIGZvcndhcmQgdG8geW91ciBmZWVkYmFj
+ay4KPiAvLy9qb24KPgo+Cj4gT24gNS8yMC8yMCA5OjAzIFBNLCBIb2FuZyBIdXUgTGUgd3JvdGU6
+Cj4+IFllYWgsIHRoYW5rcyBKb24uCj4+IEkgd2lsbCBpbnZlc3RpZ2F0ZSBtb3JlIG9uIHlvdXIg
+aWRlYSB3aGVuIEkgZmluaXNoIHRoZSBpc3N1ZSB3aXRoIGxhYiAKPj4gaW5mcmFzdHJ1Y3R1cmUu
+Cj4+Cj4+IEhvYW5nCj4+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tCj4+IEZyb206IEpvbiBN
+YWxveSA8am1hbG95QHJlZGhhdC5jb20+Cj4+IFNlbnQ6IFRodXJzZGF5LCBNYXkgMjEsIDIwMjAg
+NzoxMyBBTQo+PiBUbzogSG9hbmcgSHV1IExlIDxob2FuZy5oLmxlQGRla3RlY2guY29tLmF1Pjsg
+bWFsb3lAZG9uam9ubi5jb20KPj4gU3ViamVjdDogUmU6IEZXOiBbUEFUQ0ggMi8yXSB0aXBjOiB1
+cGRhdGUgYSBiaW5kaW5nIHNlcnZpY2UgdmlhIGJyb2FkY2FzdAo+Pgo+PiBIaSBIb2FuZywKPj4g
+QmVsb3cgSSB0cnkgdG8gc3VtbWFyaXplIG15IG5ld2VzdCBwcm9wb3NhbCBpbiByZWxhdGlvbiB0
+byB2MiBvZiB5b3VyIAo+PiBwYXRjaC4KPj4KPj4gMSkgVGhlIGJ1bGsgY2FuIGJlIHNlbnQganVz
+dCBhcyBpcyBkb25lIG5vdywgd2l0aCB0aGUgYWRkaXRpb24gdGhhdCB3ZQo+PiBhZGQgdGhlIE5P
+VF9MQVNUIGJpdCB0byB0aGUgaGVhZGVyLgo+PiAyKSBXZSBuZWVkIGEgbmV3IGNhcGFiaWxpdHkg
+Yml0IGlkZW50aWZ5aW5nIG5vZGVzIHdoaWNoIHN1cHBvcnQKPj4gYnJvYWRjYXN0IE5BTUVfRElT
+VFIuIEkgZG9uJ3Qgc2VlIHdlIGNhbiBqdXN0Cj4+IMKgwqDCoMKgIHJldXNlIFRJUENfTUNBU1Rf
+UkJDVEwsIGJlY2F1c2UgdGhlIHJlY2lwaWVudHMgbmVlZCB0byBoYXZlIGNvZGUKPj4gZm9yIGhh
+bmRsaW5nIGNvbmN1cnJlbnQKPj4gwqDCoMKgwqAgYnVsay9icm9hZGNhc3QgcmVjZXB0aW9ucy4g
+VGhpcyBiaXQgaXMgbm90IGFkZGVkIHRvIHRoZSBjbHVzdGVyCj4+IGNhcGFiaWxpdHkgd29yZC4K
+Pj4gMykgV2UgbmVlZCB0byBrZWVwIHR3byBzdHJ1Y3RzIG9mIHR5cGUgdGlwY19ubGlzdCBpbiB0
+aGUgbmFtZSB0YWJsZS4gT25lCj4+IGNvbnRhaW5zIHRpcGNfZGVzdCBzdHJ1Y3R1cmVzIGZvcgo+
+PiDCoCDCoCBhbGwgbm9kZXMgTk9UIHN1cHBvcnRpbmcgVElQQ19NQ0FTVF9OQU1FRElTVFIgKHJj
+YXN0X2xpc3QpLCBhbmQgdGhlCj4+IG90aGVyIHRob3NlIHdoaWNoIGRvIChiY2FzdF9saXN0KS4K
+Pj4KPj4KPj4gRm9yIG1vcmUgY29tbWVudHMgc2VlIGJlbG93Lgo+Pgo+Pgo+Pgo+PiBPbiA1LzEy
+LzIwIDY6MjIgQU0sIEhvYW5nIEh1dSBMZSB3cm90ZToKPj4+IEp1c3QgZm9yd2FyZCB0aGUgcGF0
+Y2ggSSBtZW50aW9uZWQuCj4+Pgo+Pj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPj4+IEZy
+b206IEhvYW5nIExlIDxob2FuZy5oLmxlQGRla3RlY2guY29tLmF1Pgo+Pj4gU2VudDogVHVlc2Rh
+eSwgTm92ZW1iZXIgMTksIDIwMTkgNTowMSBQTQo+Pj4gVG86IGpvbi5tYWxveUBlcmljc3Nvbi5j
+b207IG1hbG95QGRvbmpvbm4uY29tOyB0aXBjLWRla0BkZWt0ZWNoLmNvbS5hdQo+Pj4gU3ViamVj
+dDogW1BBVENIIDIvMl0gdGlwYzogdXBkYXRlIGEgYmluZGluZyBzZXJ2aWNlIHZpYSBicm9hZGNh
+c3QKPj4+Cj4+PiBDdXJyZW50bHksIHVwZGF0aW5nIGJpbmRpbmcgdGFibGUgKGFkZCBzZXJ2aWNl
+IGJpbmRpbmcgdG8KPj4+IG5hbWUgdGFibGUvd2l0aGRyYXcgYSBzZXJ2aWNlIGJpbmRpbmcpIGlz
+IGJlaW5nIHNlbnQgb3ZlciByZXBsaWNhc3QuCj4+PiBIb3dldmVyLCBpZiB3ZSBhcmUgc2NhbGlu
+ZyB1cCBjbHVzdGVycyB0byA+IDEwMCBub2Rlcy9jb250YWluZXJzIHRoaXMKPj4+IG1ldGhvZCBp
+cyBsZXNzIGFmZmVjdGlvbiBiZWNhdXNlIG9mIGxvb3BpbmcgdGhyb3VnaCBub2RlcyBpbiBhIAo+
+Pj4gY2x1c3RlciBvbmUKPj4+IGJ5IG9uZS4KPj4+Cj4+PiBJdCBpcyB3b3J0aCB0byB1c2UgYnJv
+YWRjYXN0IHRvIHVwZGF0ZSBhIGJpbmRpbmcgc2VydmljZS4gVGhlbiBiaW5kaW5nCj4+PiB0YWJs
+ZSB1cGRhdGVzIGluIGFsbCBub2RlcyBmb3Igb25lIHNob3QuCj4+Pgo+Pj4gVGhlIG1lY2hhbmlz
+bSBpcyBiYWNrd2FyZCBjb21wYXRpYmxlIGFzIHN5bmMgbWVzc2FnZSBzbGllbnQgZHJvcHBlZC4K
+Pj4+Cj4+PiB2MjogcmVzb2x2ZSBzeW5jaHJvbml6YXRpb24gcHJvYmxlbSB3aGVuIHN3aXRjaGlu
+ZyBmcm9tIHVuaWNhc3QgdG8KPj4+IGJyb2FkY2FzdAo+Pj4KPj4+IFNpZ25lZC1vZmYtYnk6IEhv
+YW5nIExlIDxob2FuZy5oLmxlQGRla3RlY2guY29tLmF1Pgo+Pj4gLS0tCj4+PiBuZXQvdGlwYy9i
+Y2FzdC5jIHwgMyArKy0KPj4+IG5ldC90aXBjL2xpbmsuYyB8IDYgKysrKysrCj4+PiBuZXQvdGlw
+Yy9uYW1lX3RhYmxlLmMgfCAzMyArKysrKysrKysrKysrKysrKysrKysrKysrKysrKystLS0KPj4+
+IG5ldC90aXBjL25hbWVfdGFibGUuaCB8IDQgKysrKwo+Pj4gbmV0L3RpcGMvbm9kZS5jIHwgMzIg
+KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKPj4+IG5ldC90aXBjL25vZGUuaCB8IDIg
+KysKPj4+IDYgZmlsZXMgY2hhbmdlZCwgNzYgaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMoLSkK
+Pj4+Cj4+PiBkaWZmIC0tZ2l0IGEvbmV0L3RpcGMvYmNhc3QuYyBiL25ldC90aXBjL2JjYXN0LmMK
+Pj4+IGluZGV4IGUwNmYwNWQ1NTUzNC4uNDRlZDQ4MWZlYzQ3IDEwMDY0NAo+Pj4gLS0tIGEvbmV0
+L3RpcGMvYmNhc3QuYwo+Pj4gKysrIGIvbmV0L3RpcGMvYmNhc3QuYwo+Pj4gQEAgLTMyNCw3ICsz
+MjQsOCBAQCBzdGF0aWMgaW50IHRpcGNfbWNhc3Rfc2VuZF9zeW5jKHN0cnVjdCBuZXQgKm5ldCwg
+Cj4+PiBzdHJ1Y3Qgc2tfYnVmZiAqc2tiLAo+Pj4gaGRyID0gYnVmX21zZyhza2IpOwo+Pj4gaWYg
+KG1zZ191c2VyKGhkcikgPT0gTVNHX0ZSQUdNRU5URVIpCj4+PiBoZHIgPSBtc2dfaW5uZXJfaGRy
+KGhkcik7Cj4+PiAtIGlmIChtc2dfdHlwZShoZHIpICE9IFRJUENfTUNBU1RfTVNHKQo+Pj4gKyBp
+ZiAobXNnX3VzZXIoaGRyKSAhPSBOQU1FX0RJU1RSSUJVVE9SICYmCj4+PiArIG1zZ190eXBlKGhk
+cikgIT0gVElQQ19NQ0FTVF9NU0cpCj4+PiByZXR1cm4gMDsKPj4+IC8qIEFsbG9jYXRlIGR1bW15
+IG1lc3NhZ2UgKi8KPj4+IGRpZmYgLS1naXQgYS9uZXQvdGlwYy9saW5rLmMgYi9uZXQvdGlwYy9s
+aW5rLmMKPj4+IGluZGV4IGZiNzIwMzEyMjhjOS4uYTJlOWE2NGQ1YTBmIDEwMDY0NAo+Pj4gLS0t
+IGEvbmV0L3RpcGMvbGluay5jCj4+PiArKysgYi9uZXQvdGlwYy9saW5rLmMKPj4+IEBAIC0xMTkw
+LDYgKzExOTAsOCBAQCBzdGF0aWMgYm9vbCB0aXBjX2RhdGFfaW5wdXQoc3RydWN0IHRpcGNfbGlu
+ayAKPj4+ICpsLCBzdHJ1Y3Qgc2tfYnVmZiAqc2tiLAo+Pj4gc3RydWN0IHNrX2J1ZmZfaGVhZCAq
+aW5wdXRxKQo+Pj4gewo+Pj4gc3RydWN0IHNrX2J1ZmZfaGVhZCAqbWNfaW5wdXRxID0gbC0+YmNf
+cmN2bGluay0+aW5wdXRxOwo+Pj4gKyBzdHJ1Y3QgbmFtZV90YWJsZSAqbnQgPSB0aXBjX25hbWVf
+dGFibGUobC0+bmV0KTsKPj4+ICsgc3RydWN0IHNrX2J1ZmZfaGVhZCAqZGVmbnEgPSAmbnQtPmRl
+ZmVyX25hbWVkcTsKPj4+IHN0cnVjdCB0aXBjX21zZyAqaGRyID0gYnVmX21zZyhza2IpOwo+Pj4g
+c3dpdGNoIChtc2dfdXNlcihoZHIpKSB7Cj4+PiBAQCAtMTIxMSw2ICsxMjEzLDEwIEBAIHN0YXRp
+YyBib29sIHRpcGNfZGF0YV9pbnB1dChzdHJ1Y3QgdGlwY19saW5rIAo+Pj4gKmwsIHN0cnVjdCBz
+a19idWZmICpza2IsCj4+PiBjYXNlIE5BTUVfRElTVFJJQlVUT1I6Cj4+PiBsLT5iY19yY3ZsaW5r
+LT5zdGF0ZSA9IExJTktfRVNUQUJMSVNIRUQ7Cj4+PiBza2JfcXVldWVfdGFpbChsLT5uYW1lZHEs
+IHNrYik7Cj4+PiArCj4+PiArIHNwaW5fbG9ja19iaCgmZGVmbnEtPmxvY2spOwo+Pj4gKyB0aXBj
+X21jYXN0X2ZpbHRlcl9tc2cobC0+bmV0LCBkZWZucSwgbC0+bmFtZWRxKTsKPj4gU2hvdWxkIG5v
+dCBiZSBuZWVkZWQgaGVyZS4KPj4gWW91IGNhbiBpbnN0ZWFkIGRvIHRoaXMgaW4gdGlwY19uYW1l
+ZF9yY3YoKSwgdXNpbmcgbC0+bmFtZWRxwqAgYXMgCj4+IGRlZmVycmVkIHF1ZXVlIGFuZCBjcmVh
+dGluZyBhbgo+PiB0ZW1wb3JhcnkgbmFtZWRxIHF1ZXVlIG9uIHRoZSBzdGFjayBmb3IgdGhlIG1l
+c3NhZ2VzIHJlYWR5IHRvIGJlIAo+PiBkZWxpdmVyZWQuCj4+IFdlIHNvcnQgdGhlIG1lc3NhZ2Vz
+IGluIHR3byBzdGVwczoKPj4gMSkgSWYgdGhlcmUgYXJlIGFueSBjaGFpbnMgb2YgYnVsayBtZXNz
+YWdlcywgd2Ugc29ydCB0aG9zZSBwZXIgc291cmNlIAo+PiBub2RlIGludG8gdGhlIHRlbXBvcmFy
+eSBuYW1lZHEgYW5kIGRlbGl2ZXIgdGhlbSBmaXJzdCwgd2hlbiBhIGNoYWluIAo+PiBpcyBjb21w
+bGV0ZS4KPj4gMikgSWYgd2UgZmluZCB0aGF0IGEgY2hhaW4gaXMgaW5jb21wbGV0ZSB3ZSBwdXNo
+IGl0IGJhY2sgdG8gdGhlIGhlYWQgCj4+IG9mIG4tPm5hbWVkcSBhbmQgcmV0dXJuIHdpdGhvdXQg
+ZnVydGhlciBhY3Rpb24uCj4+IDMpIFdoZW4gdGhlcmUgYXJlIG5vIGJ1bGsgbWVzc2FnZXMgbGVm
+dCBpbiBuLT5uYW1lZHEgd2UgY2FsbCAKPj4gdGlwY19tY2FzdF9maWx0ZXJfbXNncygpIHRvIHNv
+cnQgdGhlIHJlbWFpbmluZyBtZXNzYWdlcyBpbnRvIHRoZSAKPj4gdGVtcG9yYXJ5IG5hbWVkcSwg
+YXMgZmFyIGFzIHBvc3NpYmxlLCBhbmQgZGVsaXZlciB0aG9zZSB3aGljaCBhcmUgCj4+IHJlYWR5
+IHRvIGJlIGRlbGl2ZXJlZC4KPj4KPj4KPj4+ICsgc3Bpbl91bmxvY2tfYmgoJmRlZm5xLT5sb2Nr
+KTsKPj4+IHJldHVybiB0cnVlOwo+Pj4gY2FzZSBNU0dfQlVORExFUjoKPj4+IGNhc2UgVFVOTkVM
+X1BST1RPQ09MOgo+Pj4gZGlmZiAtLWdpdCBhL25ldC90aXBjL25hbWVfdGFibGUuYyBiL25ldC90
+aXBjL25hbWVfdGFibGUuYwo+Pj4gaW5kZXggNjZhNjVjMmNkYjIzLi41OTNkY2QxMTM1N2YgMTAw
+NjQ0Cj4+PiAtLS0gYS9uZXQvdGlwYy9uYW1lX3RhYmxlLmMKPj4+ICsrKyBiL25ldC90aXBjL25h
+bWVfdGFibGUuYwo+Pj4gQEAgLTYxNSw5ICs2MTUsMTEgQEAgc3RydWN0IHB1YmxpY2F0aW9uICp0
+aXBjX25hbWV0YmxfcHVibGlzaChzdHJ1Y3QgCj4+PiBuZXQgKm5ldCwgdTMyIHR5cGUsIHUzMiBs
+b3dlciwKPj4+IHN0cnVjdCB0aXBjX25ldCAqdG4gPSB0aXBjX25ldChuZXQpOwo+Pj4gc3RydWN0
+IHB1YmxpY2F0aW9uICpwID0gTlVMTDsKPj4+IHN0cnVjdCBza19idWZmICpza2IgPSBOVUxMOwo+
+Pj4gKyBib29sIHJjYXN0Owo+Pj4gc3Bpbl9sb2NrX2JoKCZ0bi0+bmFtZXRibF9sb2NrKTsKPj4+
+ICsgcmNhc3QgPSBudC0+cmNhc3Q7Cj4+PiBpZiAobnQtPmxvY2FsX3B1YmxfY291bnQgPj0gVElQ
+Q19NQVhfUFVCTCkgewo+Pj4gcHJfd2FybigiQmluZCBmYWlsZWQsIG1heCBsaW1pdCAldSByZWFj
+aGVkXG4iLCBUSVBDX01BWF9QVUJMKTsKPj4+IGdvdG8gZXhpdDsKPj4+IEBAIC02MzIsOCArNjM0
+LDE4IEBAIHN0cnVjdCBwdWJsaWNhdGlvbiAqdGlwY19uYW1ldGJsX3B1Ymxpc2goc3RydWN0IAo+
+Pj4gbmV0ICpuZXQsIHUzMiB0eXBlLCB1MzIgbG93ZXIsCj4+PiBleGl0Ogo+Pj4gc3Bpbl91bmxv
+Y2tfYmgoJnRuLT5uYW1ldGJsX2xvY2spOwo+Pj4gLSBpZiAoc2tiKQo+Pj4gLSB0aXBjX25vZGVf
+YnJvYWRjYXN0KG5ldCwgc2tiKTsKPj4gSGVyZSB3ZSBtYWtlIHR3byBjYWxscyB0byB0aXBjX21j
+YXN0X3htaXQoKSwgb25lIHdpdGggCj4+IG1ldGhvZC0+cmNhc3QvbWFuZGF0b3J5IGFuZCByY2Fz
+dF9saXN0LGlmIG5vdCBlbXB0eSwgYW5kIG9uZSB3aXRoIAo+PiBtZXRob2QtPmJjYXN0L21hbmRh
+dG9yeSBhbmQgYmNhc3RfbGlzdCwgaWYgbm90IGVtcHR5Lgo+IEFjdHVhbGx5LCB0aGUgbGF0dGVy
+IHNob3VsZCBub3QgYmUgbWFuZGF0b3J5LiBXZSBjYW4gZWFzaWx5IGltYWdpbmUgYQo+IHNpdHVh
+dGlvbiB3aGVyZSB3ZSBzdGFydCBvdXQgd2l0aCBvbmx5IGxlZ2FjeSBub2RlcywgYW5kIHRoZW4g
+dXBncmFkZSB0bwo+IGJjYXN0IG5vZGVzLCBvbmUgYnkgb25lLgo+Cj4gSW4gdGhlIGJlZ2lubmlu
+ZyB3ZSB3YW50IHRpcGNfbWNhc3RfeG1pdCgpIHRvIHNlbGVjdCByY2FzdCBldmVuIGZvciB0aGUK
+PiBiY2FzdCBub2RlcywgYW5kIHRoZW4sIGFzIHRoZWlyIHByb3BvcnRpb24gb2YgdGhlIGNsdXN0
+ZXIgZ3Jvd3MsIGl0Cj4gc2hvdWxkIHN3aXRjaCB0byBiY2FzdC4gVGhpcyBkb2VzIG1lYW4gdGhh
+dCB0aGUgbWV0aG9kIHN0cnVjdCBmb3IgYmNhc3QKPiBtdXN0IGJlIGtlcHQgYmV0d2VlbiB0aGUg
+Y2FsbHMuIEkuZS4sIGFub3RoZXIgbWVtYmVyIG9mIHN0cnVjdCBuYW1lX3RhYmxlLgo+Cj4gLy8v
+am9uCj4KPgo+PiBza2IgbXVzdCBvZiBjb3Vyc2UgYmUgY2xvbmVkIGlmIG5lY2Vzc2FyeS4KPj4K
+Pj4KPj4+ICsgaWYgKHNrYikgewo+Pj4gKyAvKiBVc2UgYnJvYWRjYXN0IGlmIGFsbCBub2RlcyBz
+dXBwb3J0IGJyb2FkY2FzdCBOQU1FX0RJU1RSICovCj4+PiArIGlmICh0aXBjX25ldChuZXQpLT5j
+YXBhYmlsaXRpZXMgJiBUSVBDX01DQVNUX1JCQ1RMKSB7Cj4+PiArIHRpcGNfbm9kZV9icm9hZGNh
+c3RfbmFtZWRfcHVibGlzaChuZXQsIHNrYiwgJnJjYXN0KTsKPj4+ICsgc3Bpbl9sb2NrX2JoKCZ0
+bi0+bmFtZXRibF9sb2NrKTsKPj4+ICsgbnQtPnJjYXN0ID0gcmNhc3Q7Cj4+PiArIHNwaW5fdW5s
+b2NrX2JoKCZ0bi0+bmFtZXRibF9sb2NrKTsKPj4+ICsgfSBlbHNlIHsKPj4+ICsgLyogT3RoZXJ3
+aXNlLCBiZSBiYWNrd2FyZHMgY29tcGF0aWJsZSAqLwo+Pj4gKyB0aXBjX25vZGVfYnJvYWRjYXN0
+KG5ldCwgc2tiKTsKPj4+ICsgfQo+PiBOb3QgbmVlZGVkIGFjY29yZGluZyB0byBhYm92ZS4KPj4+
+IHJldHVybiBwOwo+Pj4gfQo+Pj4gQEAgLTY0OCw4ICs2NjAsMTAgQEAgaW50IHRpcGNfbmFtZXRi
+bF93aXRoZHJhdyhzdHJ1Y3QgbmV0ICpuZXQsIHUzMiAKPj4+IHR5cGUsIHUzMiBsb3dlciwKPj4+
+IHUzMiBzZWxmID0gdGlwY19vd25fYWRkcihuZXQpOwo+Pj4gc3RydWN0IHNrX2J1ZmYgKnNrYiA9
+IE5VTEw7Cj4+PiBzdHJ1Y3QgcHVibGljYXRpb24gKnA7Cj4+PiArIGJvb2wgcmNhc3Q7Cj4+PiBz
+cGluX2xvY2tfYmgoJnRuLT5uYW1ldGJsX2xvY2spOwo+Pj4gKyByY2FzdCA9IG50LT5yY2FzdDsK
+Pj4+IHAgPSB0aXBjX25hbWV0YmxfcmVtb3ZlX3B1YmwobmV0LCB0eXBlLCBsb3dlciwgdXBwZXIs
+IHNlbGYsIGtleSk7Cj4+PiBpZiAocCkgewo+Pj4gQEAgLTY2NCw3ICs2NzgsMTYgQEAgaW50IHRp
+cGNfbmFtZXRibF93aXRoZHJhdyhzdHJ1Y3QgbmV0ICpuZXQsIHUzMiAKPj4+IHR5cGUsIHUzMiBs
+b3dlciwKPj4+IHNwaW5fdW5sb2NrX2JoKCZ0bi0+bmFtZXRibF9sb2NrKTsKPj4+IGlmIChza2Ip
+IHsKPj4+IC0gdGlwY19ub2RlX2Jyb2FkY2FzdChuZXQsIHNrYik7Cj4+PiArIC8qIFVzZSBicm9h
+ZGNhc3QgaWYgYWxsIG5vZGVzIHN1cHBvcnQgYnJvYWRjYXN0IE5BTUVfRElTVFIgKi8KPj4+ICsg
+aWYgKHRpcGNfbmV0KG5ldCktPmNhcGFiaWxpdGllcyAmIFRJUENfTUNBU1RfUkJDVEwpIHsKPj4+
+ICsgdGlwY19ub2RlX2Jyb2FkY2FzdF9uYW1lZF9wdWJsaXNoKG5ldCwgc2tiLCAmcmNhc3QpOwo+
+Pj4gKyBzcGluX2xvY2tfYmgoJnRuLT5uYW1ldGJsX2xvY2spOwo+Pj4gKyBudC0+cmNhc3QgPSBy
+Y2FzdDsKPj4+ICsgc3Bpbl91bmxvY2tfYmgoJnRuLT5uYW1ldGJsX2xvY2spOwo+Pj4gKyB9IGVs
+c2Ugewo+Pj4gKyAvKiBPdGhlcndpc2UsIGJlIGJhY2t3YXJkcyBjb21wYXRpYmxlICovCj4+PiAr
+IHRpcGNfbm9kZV9icm9hZGNhc3QobmV0LCBza2IpOwo+Pj4gKyB9Cj4+IE9uZSBvciB0d28gY2Fs
+bHMgdG8gdGlwY19tY2FzdF94bWl0KCksIGp1c3QgYXMgYWJvdmUuCj4+PiByZXR1cm4gMTsKPj4+
+IH0KPj4+IHJldHVybiAwOwo+Pj4gQEAgLTc0Niw2ICs3NjksOSBAQCBpbnQgdGlwY19uYW1ldGJs
+X2luaXQoc3RydWN0IG5ldCAqbmV0KQo+Pj4gSU5JVF9MSVNUX0hFQUQoJm50LT5jbHVzdGVyX3Nj
+b3BlKTsKPj4+IHJ3bG9ja19pbml0KCZudC0+Y2x1c3Rlcl9zY29wZV9sb2NrKTsKPj4+IHRuLT5u
+YW1ldGJsID0gbnQ7Cj4+PiArIC8qICdidWxrJyB1cGRhdGVkIG1lc3NhZ2VzIHZpYSB1bmljYXN0
+ICovCj4+PiArIG50LT5yY2FzdCA9IHRydWU7Cj4+PiArIHNrYl9xdWV1ZV9oZWFkX2luaXQoJm50
+LT5kZWZlcl9uYW1lZHEpOwo+PiBOb3QgbmVlZGVkLiBOb3csIG5vZGUtPm5hbWVkcSAqaXMqIHRo
+ZSBkZWZlcnJlZCBxdWV1ZS4KPj4+IHNwaW5fbG9ja19pbml0KCZ0bi0+bmFtZXRibF9sb2NrKTsK
+Pj4+IHJldHVybiAwOwo+Pj4gfQo+Pj4gQEAgLTc4NCw2ICs4MTAsNyBAQCB2b2lkIHRpcGNfbmFt
+ZXRibF9zdG9wKHN0cnVjdCBuZXQgKm5ldCkKPj4+ICogcHVibGljYXRpb25zLCB0aGVuIHJlbGVh
+c2UgdGhlIG5hbWUgdGFibGUKPj4+ICovCj4+PiBzcGluX2xvY2tfYmgoJnRuLT5uYW1ldGJsX2xv
+Y2spOwo+Pj4gKyBza2JfcXVldWVfcHVyZ2UoJm50LT5kZWZlcl9uYW1lZHEpOwo+Pj4gZm9yIChp
+ID0gMDsgaSA8IFRJUENfTkFNRVRCTF9TSVpFOyBpKyspIHsKPj4+IGlmIChobGlzdF9lbXB0eSgm
+bnQtPnNlcnZpY2VzW2ldKSkKPj4+IGNvbnRpbnVlOwo+Pj4gZGlmZiAtLWdpdCBhL25ldC90aXBj
+L25hbWVfdGFibGUuaCBiL25ldC90aXBjL25hbWVfdGFibGUuaAo+Pj4gaW5kZXggZjc5MDY2MzM0
+Y2M4Li5iOGNkZjJhMjlkNDggMTAwNjQ0Cj4+PiAtLS0gYS9uZXQvdGlwYy9uYW1lX3RhYmxlLmgK
+Pj4+ICsrKyBiL25ldC90aXBjL25hbWVfdGFibGUuaAo+Pj4gQEAgLTk1LDYgKzk1LDggQEAgc3Ry
+dWN0IHB1YmxpY2F0aW9uIHsKPj4+ICogLSB1c2VkIGJ5IG5hbWVfZGlzdHIgdG8gc2VuZCBidWxr
+IHVwZGF0ZXMgdG8gbmV3IG5vZGVzCj4+PiAqIC0gdXNlZCBieSBuYW1lX2Rpc3RyIGR1cmluZyBy
+ZS1pbml0IG9mIG5hbWUgdGFibGUKPj4+ICogQGxvY2FsX3B1YmxfY291bnQ6IG51bWJlciBvZiBw
+dWJsaWNhdGlvbnMgaXNzdWVkIGJ5IHRoaXMgbm9kZQo+Pj4gKyAqIEBkZWZlcl9uYW1lZHE6IHRl
+bXBvcmFyaWx5IHF1ZXVlIGZvciAnc3luY2hpbmcnIHVwZGF0ZQo+Pj4gKyAqIEByY2FzdDogcHJl
+dmlvdXMgbWV0aG9kIHVzZWQgdG8gcHVibGlzaC93aXRoZHJhdyBhIHNlcnZpY2UKPj4+ICovCj4+
+PiBzdHJ1Y3QgbmFtZV90YWJsZSB7Cj4+PiBzdHJ1Y3QgaGxpc3RfaGVhZCBzZXJ2aWNlc1tUSVBD
+X05BTUVUQkxfU0laRV07Cj4+PiBAQCAtMTAyLDYgKzEwNCw4IEBAIHN0cnVjdCBuYW1lX3RhYmxl
+IHsKPj4+IHN0cnVjdCBsaXN0X2hlYWQgY2x1c3Rlcl9zY29wZTsKPj4+IHJ3bG9ja190IGNsdXN0
+ZXJfc2NvcGVfbG9jazsKPj4+IHUzMiBsb2NhbF9wdWJsX2NvdW50Owo+Pj4gKyBzdHJ1Y3Qgc2tf
+YnVmZl9oZWFkIGRlZmVyX25hbWVkcTsKPj4+ICsgYm9vbCByY2FzdDsKPj4+IH07Cj4+PiBpbnQg
+dGlwY19ubF9uYW1lX3RhYmxlX2R1bXAoc3RydWN0IHNrX2J1ZmYgKnNrYiwgc3RydWN0IAo+Pj4g
+bmV0bGlua19jYWxsYmFjayAqY2IpOwo+Pj4gZGlmZiAtLWdpdCBhL25ldC90aXBjL25vZGUuYyBi
+L25ldC90aXBjL25vZGUuYwo+Pj4gaW5kZXggYWFmNTk1NjEzZTZlLi5iMDU4NjQ3ZmE3OGIgMTAw
+NjQ0Cj4+PiAtLS0gYS9uZXQvdGlwYy9ub2RlLmMKPj4+ICsrKyBiL25ldC90aXBjL25vZGUuYwo+
+Pj4gQEAgLTI5ODEsMyArMjk4MSwzNSBAQCB2b2lkIHRpcGNfbm9kZV9wcmVfY2xlYW51cF9uZXQo
+c3RydWN0IG5ldCAKPj4+ICpleGl0X25ldCkKPj4+IH0KPj4+IHJjdV9yZWFkX3VubG9jaygpOwo+
+Pj4gfQo+Pj4gKwo+Pj4gK2ludCB0aXBjX25vZGVfYnJvYWRjYXN0X25hbWVkX3B1Ymxpc2goc3Ry
+dWN0IG5ldCAqbmV0LCBzdHJ1Y3QgCj4+PiBza19idWZmICpza2IsCj4+PiArIGJvb2wgKnJjYXN0
+KQo+Pj4gK3sKPj4+ICsgc3RydWN0IHRpcGNfbWNfbWV0aG9kIG1ldGhvZCA9IHsucmNhc3QgPSAq
+cmNhc3R9Owo+Pj4gKyBzdHJ1Y3Qgc2tfYnVmZl9oZWFkIHhtaXRxOwo+Pj4gKyBzdHJ1Y3QgdGlw
+Y19ubGlzdCBkZXN0czsKPj4+ICsgc3RydWN0IHRpcGNfbm9kZSAqbjsKPj4+ICsgdTE2IGNvbmdf
+bGlua19jbnQ7Cj4+PiArIGludCByYyA9IDA7Cj4+PiArCj4+PiArIF9fc2tiX3F1ZXVlX2hlYWRf
+aW5pdCgmeG1pdHEpOwo+Pj4gKyBfX3NrYl9xdWV1ZV90YWlsKCZ4bWl0cSwgc2tiKTsKPj4+ICsK
+Pj4+ICsgdGlwY19ubGlzdF9pbml0KCZkZXN0cywgdGlwY19vd25fYWRkcihuZXQpKTsKPj4+ICsg
+cmN1X3JlYWRfbG9jaygpOwo+Pj4gKyBsaXN0X2Zvcl9lYWNoX2VudHJ5X3JjdShuLCB0aXBjX25v
+ZGVzKG5ldCksIGxpc3QpIHsKPj4+ICsgaWYgKGluX293bl9ub2RlKG5ldCwgbi0+YWRkcikpCj4+
+PiArIGNvbnRpbnVlOwo+Pj4gKyBpZiAoIW5vZGVfaXNfdXAobikpCj4+PiArIGNvbnRpbnVlOwo+
+Pj4gKyB0aXBjX25saXN0X2FkZCgmZGVzdHMsIG4tPmFkZHIpOwo+Pj4gKyB9Cj4+PiArIHJjdV9y
+ZWFkX3VubG9jaygpOwo+Pj4gKwo+Pj4gKyByYyA9IHRpcGNfbWNhc3RfeG1pdChuZXQsICZ4bWl0
+cSwgJm1ldGhvZCwgJmRlc3RzLCAmY29uZ19saW5rX2NudCk7Cj4+PiArICpyY2FzdCA9IG1ldGhv
+ZC5yY2FzdDsKPj4+ICsKPj4+ICsgdGlwY19ubGlzdF9wdXJnZSgmZGVzdHMpOwo+Pj4gKyBfX3Nr
+Yl9xdWV1ZV9wdXJnZSgmeG1pdHEpOwo+Pj4gKyByZXR1cm4gcmM7Cj4+PiArfQo+PiBOb3QgbmVl
+ZGVkIGFueSBtb3JlLgo+Pj4gZGlmZiAtLWdpdCBhL25ldC90aXBjL25vZGUuaCBiL25ldC90aXBj
+L25vZGUuaAo+Pj4gaW5kZXggYTY4MDNiNDQ5YTJjLi5kN2QxOWY5OTMyYjEgMTAwNjQ0Cj4+PiAt
+LS0gYS9uZXQvdGlwYy9ub2RlLmgKPj4+ICsrKyBiL25ldC90aXBjL25vZGUuaAo+Pj4gQEAgLTEy
+NCw0ICsxMjQsNiBAQCBpbnQgdGlwY19ubF9ub2RlX3NldF9rZXkoc3RydWN0IHNrX2J1ZmYgKnNr
+YiwgCj4+PiBzdHJ1Y3QgZ2VubF9pbmZvICppbmZvKTsKPj4+IGludCB0aXBjX25sX25vZGVfZmx1
+c2hfa2V5KHN0cnVjdCBza19idWZmICpza2IsIHN0cnVjdCBnZW5sX2luZm8gKmluZm8pOwo+Pj4g
+I2VuZGlmCj4+PiB2b2lkIHRpcGNfbm9kZV9wcmVfY2xlYW51cF9uZXQoc3RydWN0IG5ldCAqZXhp
+dF9uZXQpOwo+Pj4gK2ludCB0aXBjX25vZGVfYnJvYWRjYXN0X25hbWVkX3B1Ymxpc2goc3RydWN0
+IG5ldCAqbmV0LCBzdHJ1Y3QgCj4+PiBza19idWZmICpza2IsCj4+PiArIGJvb2wgKnJjYXN0KTsK
+Pj4+ICNlbmRpZgo+PiBUaGVyZSBtYXkgb2YgY291cnNlIGJlIGZsYXdzIG9yIHBvdGVudGlhbCBm
+b3IgaW1wcm92ZW1lbnRzIHRvIHRoaXMsIGJ1dAo+PiB0byBtZQo+PiB0aGlzIHNob3VsZCBzb2x2
+ZSBvdXIgcHJvYmxlbSB3aXRob3V0IHRvbyBtdWNoIG5ldyBjb21wbGV4aXR5IGFuZCBjb2RlLgo+
+Pgo+PiAvLy9qb24KPj4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwp0aXBjLWRpc2N1c3Npb24gbWFpbGluZyBsaXN0CnRpcGMtZGlzY3Vzc2lvbkBsaXN0
+cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlz
+dGluZm8vdGlwYy1kaXNjdXNzaW9uCg==
