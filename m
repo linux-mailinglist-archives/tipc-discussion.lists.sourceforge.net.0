@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 322611EB256
-	for <lists+tipc-discussion@lfdr.de>; Tue,  2 Jun 2020 01:46:21 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F7361EB34E
+	for <lists+tipc-discussion@lfdr.de>; Tue,  2 Jun 2020 04:19:44 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jfu8H-00061U-DT; Mon, 01 Jun 2020 23:46:17 +0000
+	id 1jfwWi-0001Cg-Hw; Tue, 02 Jun 2020 02:19:40 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <hoang.h.le@dektech.com.au>) id 1jfu8F-00060h-FY
- for tipc-discussion@lists.sourceforge.net; Mon, 01 Jun 2020 23:46:15 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1jfwWh-0001CS-6C
+ for tipc-discussion@lists.sourceforge.net; Tue, 02 Jun 2020 02:19:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
  :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=EoZSp+9PEtsv+oOSmSQRtHz0Ie0oKYVJ+giSN7GFaIo=; b=NHm7JK5TMTwtfG7UwueJc2fcB9
- gGeqr69RJgKUE8XqSI3f8on0GIpi53fN1mCiXDyV8dtsZPTm1ZjmCq2PTA54SfeIqVLEhf61q10ux
- wn2yckP+JzsVjw96ZeQvEdLmg8DmSLOGbFDwaV7zP4NJcFxHuH3G42WpFCI3j5xhzd9M=;
+ bh=boab0CUOzQF15fkNdsT7B/Ykuv+GA4EXnGkt6HUdgs8=; b=LlEKNTA0mANFnZhcGMWcyyIubB
+ FSUiUJ2iRCHvTp3Ab9VizdVeIbhWhMVaoIyyyEhNseDt21BnW9wD4uCtKw56TyXAZHsE2wMWvvrWJ
+ Qk4ENTyweOP0HhGqJK6Mi5ZgZpfU2UG+U0mEE9ROLqEdF2IoTo9swiOrpy/V8y+n50pk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
@@ -29,50 +29,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=EoZSp+9PEtsv+oOSmSQRtHz0Ie0oKYVJ+giSN7GFaIo=; b=JjtUZZk6pX7hwfeCgwVv26Yzwg
- mgxlbr9pGJ8YkgXE1hp6R3ZlCiCj50aPSfa5Osm75Eyec9sdS5LzskW3ztvjA14HlXlEvbzpZxndH
- PKs9Js7kdaRtmmudlEkuWRpWkQNIpa87s1j7j81b1CM+uJ92ClDYuWi2UzHZEyRvQlFk=;
-Received: from mail-eopbgr150135.outbound.protection.outlook.com
- ([40.107.15.135] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ bh=boab0CUOzQF15fkNdsT7B/Ykuv+GA4EXnGkt6HUdgs8=; b=dn0BX77GBuclZQxmxkeD5ABS4d
+ aC0nLG9KmxpFE1QSFXJJr4w/VPAF6lFAJ3V8dwP1MaqmvVGnsp0VgMwZbDqXV59YRIX5Sjnj/hCqE
+ NYBTRh5CMXwO5du7tgaN6WMkR6X6XnKtJJ0xQ6Wt+o3m3JRcvT15NfL124E3bCUP99IQ=;
+Received: from mail-vi1eur05on2111.outbound.protection.outlook.com
+ ([40.107.21.111] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1jfu88-008MGu-Js
- for tipc-discussion@lists.sourceforge.net; Mon, 01 Jun 2020 23:46:15 +0000
+ id 1jfwWb-005haL-SI
+ for tipc-discussion@lists.sourceforge.net; Tue, 02 Jun 2020 02:19:39 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=WGL27Kod5gpamN4HAbYMKGjNgFW5GZLs/fgO3Xg7o1tT7JTey5JiYXDnsgaqKINbcNKM+f1Mv047je6ZrTPcY2wg/W7hZeO1gnZdp8wwK19l9FhB+oBN/MB7l91j4NHWS1i+nj12gUOajXzPlHItJqP/CT16ds8CGcl3v7SKIJVVUZa6U9vjkEaZoXltUG781ZGXyMFflckoZSmlxKMq7+G4MSO55a9l6HDcTcUlTSJ4eBdmHWyI8q2/MlLh87SSRPZYnKE3447O/eNUvEmP1uDH/EUyARZRk+lf2Kh7WyJLBGpcyS5/6zvpIGaP5I7wN0aUU2rgNDRUDmaCCqWzQQ==
+ b=AeVp8wpilykT2XQquD6Jcdbu1HBSgS71zAAHkVk0E6VOfVVg7gyMHuAg6ZYkuoXN+hTJbi/G8qmdERsZ2lcGCR0sRbuW42HQ9UmguCDJkpvsReifbo6IjLPTPichufmdGkg1yyDYW2LZMRtyov1Ndd91uWVgG56RQ2Rta00TTxXUFJ4NcmGjqNuBNvOr36Fsn7RykQduzBhZnzEhOnWfcBrEMBcKGKKjOFgSKgNKObwL0vbdz6la52UZ/CJDIEIiGOtCVHtUUR0L/9b2Q+YWNHmEPtNAa/E5BLGd29DWNf3jONHrCH0C4J4b8pF2qUo8OLGnTrpyJKNAjX5B1EYyfQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EoZSp+9PEtsv+oOSmSQRtHz0Ie0oKYVJ+giSN7GFaIo=;
- b=NGpBC/9kkjlgT2n3knrJs9DlMdUUjN2LvbDyiPEv6BnRvqOazBrAK00RU25S476BGAx0AdREurr0Gwfbj4V7G9FAAANtCGijR95cL+jGB7xU4e+sosVBxxbKMj7vZDRYF9Hkt2exCLk8avHBIeSBGUUCI/NkyRZGhr6YvhdO+lqZi0d6fLM4u6ndlMn6Gn2dEvXLWYI7v6hCnQydIZs4Uwe+TF4Cv7/AovVpDaONptjDPDB19o6GnUAb39KPJL5dqZlDVIwUBNqVElpL2gVhXAly2oOFg4Gx1ZyNXm83mOX6oS2YRacPSiwXwNib0nAL6aZOUyoDwkFXpfIlME72wg==
+ bh=boab0CUOzQF15fkNdsT7B/Ykuv+GA4EXnGkt6HUdgs8=;
+ b=g9vwIOmsFjrMXAFDbfGHpPH6xk1f06YKeeB2HGMeco5Oh4mTTMm5EelBUieKCzulCnaS1qPDHa1MnUIugI2FuKKRjzEHmLUD3FSbp2lR3OYk/oRAuUXsAHrg28z1GyC171FOTJniDotm5GXiXjZA83W1PKywY/XnNXKxtscAq+eUlsUZzoRL5zT3VYTALCaKraf3tTxl3OkIzNmGx0L6+BdYeS2ARRkaVboJ36ipc1DhbLVg6b627FkUGfL/8I6H6trTk2ITgxlyHbd7DiCcebQ0yI+/iU3o/TsBlTpWuC+n5NhfupqSyeoVvRdRsUmHNLtwUVffeo/5VXX2e2jYoQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=dektech.com.au; dmarc=pass action=none
  header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EoZSp+9PEtsv+oOSmSQRtHz0Ie0oKYVJ+giSN7GFaIo=;
- b=NGpZOfR4qVmFhhF/rcLZ9EIdPbQjsYcXOW04exaOvVNaajg1ZWfg5Rc+0Nl95R+Q+Z1oRlPYK09yzv4RQdpdm1JyXOXitC/duIaa7D/J8Jos0sAYtQBCDkbl1qe1NjJruYEhoRq/3DfDSpkAipFiwa6o/Jce+vPqMu20xJjy3h0=
-Received: from DB6PR05MB4598.eurprd05.prod.outlook.com (2603:10a6:6:4d::19) by
- DB6PR05MB4552.eurprd05.prod.outlook.com (2603:10a6:6:4c::22) with
- Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3045.17; Mon, 1 Jun 2020 23:46:00 +0000
-Received: from DB6PR05MB4598.eurprd05.prod.outlook.com
- ([fe80::ad4d:99ad:217c:47b9]) by DB6PR05MB4598.eurprd05.prod.outlook.com
- ([fe80::ad4d:99ad:217c:47b9%5]) with mapi id 15.20.3045.024; Mon, 1 Jun 2020
- 23:46:00 +0000
-From: Hoang Huu Le <hoang.h.le@dektech.com.au>
-To: Jon Maloy <jmaloy@redhat.com>, "tipc-discussion@lists.sourceforge.net"
+ bh=boab0CUOzQF15fkNdsT7B/Ykuv+GA4EXnGkt6HUdgs8=;
+ b=CUQvR6s6aY0vqQtjH/aePu+a0TytKKVvOmv7P9ETlh0ZYlRWlZoEvI+n+vRD5z510JBlMsAbB8cqieJM3sSi8coAGSpNPuC3PwRU+obkE0DFHzIpGBn72h4SPbyB2ureYCogaahyHMvoGzEMNiRnboS8t5GQD+0PrMnDYUC5ysg=
+Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com (2603:10a6:209:5::28)
+ by AM6PR0502MB3927.eurprd05.prod.outlook.com (2603:10a6:209:7::23)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3045.19; Tue, 2 Jun
+ 2020 02:19:22 +0000
+Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com
+ ([fe80::4d5f:2ab:5a66:deaf]) by AM6PR0502MB3925.eurprd05.prod.outlook.com
+ ([fe80::4d5f:2ab:5a66:deaf%7]) with mapi id 15.20.3045.024; Tue, 2 Jun 2020
+ 02:19:22 +0000
+From: Tuong Tong Lien <tuong.t.lien@dektech.com.au>
+To: "jmaloy@redhat.com" <jmaloy@redhat.com>, "maloy@donjonn.com"
+ <maloy@donjonn.com>, "ying.xue@windriver.com" <ying.xue@windriver.com>,
+ "tipc-discussion@lists.sourceforge.net"
  <tipc-discussion@lists.sourceforge.net>
-Thread-Topic: [ ] tipc: update a binding service via broadcast
-Thread-Index: AQHWNc6fATO3DGDP/EOgR+bRGSU0PajDfPvAgAA63gCAALgv4A==
-Date: Mon, 1 Jun 2020 23:45:59 +0000
-Message-ID: <DB6PR05MB45983DFC9E1362F85690A2EAF18A0@DB6PR05MB4598.eurprd05.prod.outlook.com>
-References: <20200529153408.1843975-1-jmaloy@redhat.com>
- <VI1PR05MB4605AD04EB5324EA05D76EC1F18A0@VI1PR05MB4605.eurprd05.prod.outlook.com>
- <cece97ea-9fad-e323-78b6-448d72357e34@redhat.com>
-In-Reply-To: <cece97ea-9fad-e323-78b6-448d72357e34@redhat.com>
+Thread-Topic: [RFC PATCH] tipc: fix general protection fault in sendstream()
+Thread-Index: AQHWNOQQv1bjV+LR5EmNEX6oC5egO6jEmc5A
+Date: Tue, 2 Jun 2020 02:19:22 +0000
+Message-ID: <AM6PR0502MB3925B7FD244AB41F6ADF9637E28B0@AM6PR0502MB3925.eurprd05.prod.outlook.com>
+References: <20200528113506.30384-1-tuong.t.lien@dektech.com.au>
+In-Reply-To: <20200528113506.30384-1-tuong.t.lien@dektech.com.au>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -81,39 +81,35 @@ authentication-results: redhat.com; dkim=none (message not signed)
  header.d=none;redhat.com; dmarc=none action=none header.from=dektech.com.au;
 x-originating-ip: [14.161.14.188]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 461e435f-31d6-4ca0-772e-08d80685f009
-x-ms-traffictypediagnostic: DB6PR05MB4552:
+x-ms-office365-filtering-correlation-id: f8eb4703-6974-49c4-4e5e-08d8069b5d5e
+x-ms-traffictypediagnostic: AM6PR0502MB3927:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB6PR05MB455249AA868FA2D4DA27F1A7F18A0@DB6PR05MB4552.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6430;
-x-forefront-prvs: 0421BF7135
+x-microsoft-antispam-prvs: <AM6PR0502MB3927BEEE8B88507AF159F46BE28B0@AM6PR0502MB3927.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 0422860ED4
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: mtXDMk+NTWyPS8ZVVB8sgSipTYZyUVu6rqRhGze28dI8to5JnGas0mAzFAqJGIDfFoIgzWROFzWK9olNcaRma7VA02so5nTo4+NWhGYoemLft41f5kxkp5AmJFVApwY+lFiiWftgheN4vmRVRihqaZVWlkDdBX0HJDFuzzTGwoF1xT5Yyhkqxb63q0pUWqYbW43Lh9+DpePOrgonY/MEUSic6H4qqV5QNB0VRsUVf41naBZg/ERYnkuK9oG+/K1RzuAqn5PNIety9qtV+wf387RIDC8WeInZwKgOOWV00oFf9Pz6duAMbeubctRIftpvCqwSDREXYSqVgVsqX2o/sw==
+x-microsoft-antispam-message-info: nKIGsWzBLkCK8k2lF2/giow8bPJH5BOvSRKJ/3e7WOLh4dPuXERDzMunz/1NqDUcP/3YOUpQ7RXDPTjj+7WtICu2RhiM7aljTw4qyIWOnRaHR8G83irvUwIyQJjJsMXkZxHkC96qRifMpIptR1Gr+O/p7rK9YBQdehHGm8c4X+NNAGVJKDNCn+vxNjivSuFl9wQMJWijzNJyA1HpzpgV+bKFZ9DWo/NhFniQz70yg9BTtKvkA7QjX/htiKi0RiWtpIMZEOhL2Ld0rr7WfI/NinId8wS97zwpA/CwNY7slkk5i4xeYGcb6iJmFqPs42f5
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB6PR05MB4598.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ IPV:NLI; SFV:NSPM; H:AM6PR0502MB3925.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(136003)(346002)(396003)(39850400004)(366004)(376002)(478600001)(5660300002)(55016002)(9686003)(6506007)(54906003)(7696005)(110136005)(316002)(53546011)(15650500001)(64756008)(86362001)(2906002)(71200400001)(26005)(52536014)(83380400001)(186003)(4326008)(66446008)(33656002)(8676002)(76116006)(66946007)(66476007)(8936002)(66556008);
+ SFS:(396003)(136003)(39850400004)(346002)(366004)(376002)(26005)(66476007)(76116006)(186003)(4326008)(66946007)(9686003)(66556008)(66446008)(5660300002)(83380400001)(64756008)(71200400001)(55016002)(86362001)(52536014)(2906002)(8936002)(8676002)(316002)(110136005)(33656002)(7696005)(478600001)(54906003)(6506007)(53546011);
  DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata: 8KdyXeCJQsUEL2AhPjw/V9pLcyl/ju49I2FwOf0YBAc/MM/DwCszpHuHbsFow/MFMT7Y65BYJ4O917lsEqs+o0RGwXwoMLJdIeUJHYf7kMFgHe92DOwdwd3ioEIx5JXHcAn8ug7Wu7YTIDmZxHEdFJsmEDZP7uNkd9hkyUtjzJXWzXtt5IQdaPESj4FnmlHJ3H5+3dEZMI5Rscnz5ABr5EhbSD22hgKYNT1CEKqDeLUEX2BKuYDDXb4vnU0QWvjkyCc5mlh9/JbFNWyCjkeFvSJxBlkbq9fLCDD0Ljk6WYwTbKZrbcJByhNw+3gKTSOecubKDLPaWI8Sj/CqtX88XDIOHuCbXudLwjB0Zm6OqDdNjxlUdEFJ4I55T3aOpWAbtJAaUp+yQf7M6MQK0+QPAG1x9zj9zdWOkHMrYgP32jWujHpayiF4t9o3HLQyfpCFf7pAxHcBrz5ht2PgFNJw4Z6mn/xztrVe3AtmSrNZgBw=
+x-ms-exchange-antispam-messagedata: iBYuOAVJSzlzi6DHwjyo3BUHW9iHRLjpsfBVEeLm7lvquiK2hQOw+lBk9hQ3j0VOItmRTfDA2WBg5lmVXZw02nRgPyQGo+adk5ZSoTKLNnhGsFczNZotRIwdfBiAu0LgrXqoeTxNAAhUkHOF/+Oo+mTX17L0bitoRscJmboy5jFZykQjc/EJUxmWxwb6D64ULzvzwDe4nDfms7hX7qTNFyEF3p4AAN4b6Sr4pxu4Fh6OS48Gu0FqAwYXgOs4bOJoKJhGLIrEOOBcHrELyHsHWxDA4IMj0U6G6VaGrnffnWcVEjY8W8g8lesWs1XOCugfYBOcEZtQksaNroqQaVONPsQ+mInhmo/XlhEBeJB7tAVpUIg/TAVU8EtoGZtX9MjOuUffWxGrspPOF+TjiEN+zvSOXTfWxCAOJqHkBmsjIAT1OVwfMJFKIKiTPl7HmdeMB4kmXGmdEcSZLuhjWgP0AiMwP3I8lccfR0xNNBQC9PI=
 MIME-Version: 1.0
 X-OriginatorOrg: dektech.com.au
-X-MS-Exchange-CrossTenant-Network-Message-Id: 461e435f-31d6-4ca0-772e-08d80685f009
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Jun 2020 23:45:59.9165 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: f8eb4703-6974-49c4-4e5e-08d8069b5d5e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Jun 2020 02:19:22.8544 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 1957ea50-0dd8-4360-8db0-c9530df996b2
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 4709iqMLYinOvKgJ+fhBRobSTk2ElI3S/SaTV+k/bG78sFbuptKckonicrHkt8S+lFrSV218eO9YP3fy6YfQMuYhFLiDY87tguS2ydpcG+k=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR05MB4552
+X-MS-Exchange-CrossTenant-userprincipalname: 6BCt+if2zqzrKB53X1kHodcvli2TfsJTXo/+SuSdjMdp4CSjbOF/0hyvfVweocrZtvjPcZwtXvnjds26A9JcDYZAmVo98f5uvx8JaFOt3nU=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0502MB3927
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.15.135 listed in wl.mailspike.net]
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: donjonn.com]
+ [40.107.21.111 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -121,9 +117,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1jfu88-008MGu-Js
-Subject: Re: [tipc-discussion] [ ] tipc: update a binding service via
- broadcast
+X-Headers-End: 1jfwWb-005haL-SI
+Subject: Re: [tipc-discussion] [RFC PATCH] tipc: fix general protection
+ fault in sendstream()
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -135,139 +131,105 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: "xinl@redhat.com" <xinl@redhat.com>
+Cc: tipc-dek <tipc-dek@dektech.com.au>,
+ "davem@davemloft.net" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Hi Jon,
+Hi Jon, all,
 
-See my comment inline.
+Would you please look at this patch and give me your 'Acked-by' before I post it?
+I can see the patch from YueHaibing ("tipc: Fix NULL pointer dereference in __tipc_sendstream()") was applied, but this patch is needed nonetheless since it will also cover the other case as mentioned below.
 
-Hoang
+BR/Tuong
+
 -----Original Message-----
-From: Jon Maloy <jmaloy@redhat.com> 
-Sent: Monday, June 1, 2020 7:40 PM
-To: Hoang Huu Le <hoang.h.le@dektech.com.au>; tipc-discussion@lists.sourceforge.net
-Cc: Tung Quang Nguyen <tung.q.nguyen@dektech.com.au>; Tuong Tong Lien <tuong.t.lien@dektech.com.au>; maloy@donjonn.com; xinl@redhat.com; ying.xue@windriver.com; parthasarathy.bhuvaragan@gmail.com
-Subject: Re: [ ] tipc: update a binding service via broadcast
+From: Tuong Tong Lien <tuong.t.lien@dektech.com.au> 
+Sent: Thursday, May 28, 2020 6:35 PM
+To: jmaloy@redhat.com; maloy@donjonn.com; ying.xue@windriver.com; tipc-discussion@lists.sourceforge.net
+Cc: tipc-dek <tipc-dek@dektech.com.au>
+Subject: [RFC PATCH] tipc: fix general protection fault in sendstream()
 
-Hi Hoang.
-See below.
+syzbot found the following crash:
 
-On 6/1/20 5:33 AM, Hoang Huu Le wrote:
-> Hi Jon,
->
-> There is a concern in function tipc_node_broadcast.
-> See my comment inline.
->
-> Regards,
-> Hoang
-> -----Original Message-----
-> From: jmaloy@redhat.com <jmaloy@redhat.com>
-> Sent: Friday, May 29, 2020 10:34 PM
-> To: tipc-discussion@lists.sourceforge.net
-> Cc: Tung Quang Nguyen <tung.q.nguyen@dektech.com.au>; Hoang Huu Le <hoang.h.le@dektech.com.au>; Tuong Tong Lien <tuong.t.lien@dektech.com.au>; jmaloy@redhat.com; maloy@donjonn.com; xinl@redhat.com; ying.xue@windriver.com; parthasarathy.bhuvaragan@gmail.com
-> Subject: [ ] tipc: update a binding service via broadcast
->
-> From: Hoang Huu Le <hoang.h.le@dektech.com.au>
->
-> Currently, updating binding table (add service binding to
-> name table/withdraw a service binding) is being sent over replicast.
-> However, if we are scaling up clusters to > 100 nodes/containers this
-> method is less affection because of looping through nodes in a cluster one
-> by one.
-[...]
->   
-> +	/* Use broadcast if all nodes support it */
-> +	if (!rc_dests) {
-> +		__skb_queue_head_init(&xmitq);
-> +		__skb_queue_tail(&xmitq, skb);
-> +		tipc_bcast_xmit(net, &xmitq, &dummy);
-> +		return;
-> +	}
-> +
-> [Hoang]
-> We could not use 'rc_dests' to send as broadcast mode because of it is not fully broadcast supporting in the cluster.
-> As stated, if there is a node in the cluster not supporting broadcast mode, we need to use replicast instead.
-> That's why we introduced the feature "Smooth switch between replicast/broadcast in bcast.c" and a new command line to configure the broadcast link.
-> If we assume base on 'rc_dests' (i.e capability flags TIPC_NAMED_BCAST), probably 'forced replicast' configuration on broadcast link becomes useless. Then, destination nodes will be missed the publication item.
-You misunderstand this function. rc_dests is a *counter*, not a flag. It 
-counts the number of peer nodes that don't support TIPC_NAMED_BCAST, and 
-if this is non-zero, we use replicast. So this is safe.
+general protection fault, probably for non-canonical address 0xdffffc0000000019: 0000 [#1] PREEMPT SMP KASAN
+KASAN: null-ptr-deref in range [0x00000000000000c8-0x00000000000000cf]
+CPU: 1 PID: 7060 Comm: syz-executor394 Not tainted 5.7.0-rc6-syzkaller #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/01/2011
+RIP: 0010:__tipc_sendstream+0xbde/0x11f0 net/tipc/socket.c:1591
+Code: 00 00 00 00 48 39 5c 24 28 48 0f 44 d8 e8 fa 3e db f9 48 b8 00 00 00 00 00 fc ff df 48 8d bb c8 00 00 00 48 89 fa 48 c1 ea 03 <80> 3c 02 00 0f 85 e2 04 00 00 48 8b 9b c8 00 00 00 48 b8 00 00 00
+RSP: 0018:ffffc90003ef7818 EFLAGS: 00010202
+RAX: dffffc0000000000 RBX: 0000000000000000 RCX: ffffffff8797fd9d
+RDX: 0000000000000019 RSI: ffffffff8797fde6 RDI: 00000000000000c8
+RBP: ffff888099848040 R08: ffff88809a5f6440 R09: fffffbfff1860b4c
+R10: ffffffff8c305a5f R11: fffffbfff1860b4b R12: ffff88809984857e
+R13: 0000000000000000 R14: ffff888086aa4000 R15: 0000000000000000
+FS:  00000000009b4880(0000) GS:ffff8880ae700000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000000020000140 CR3: 00000000a7fdf000 CR4: 00000000001406e0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Call Trace:
+ tipc_sendstream+0x4c/0x70 net/tipc/socket.c:1533
+ sock_sendmsg_nosec net/socket.c:652 [inline]
+ sock_sendmsg+0xcf/0x120 net/socket.c:672
+ ____sys_sendmsg+0x32f/0x810 net/socket.c:2352
+ ___sys_sendmsg+0x100/0x170 net/socket.c:2406
+ __sys_sendmmsg+0x195/0x480 net/socket.c:2496
+ __do_sys_sendmmsg net/socket.c:2525 [inline]
+ __se_sys_sendmmsg net/socket.c:2522 [inline]
+ __x64_sys_sendmmsg+0x99/0x100 net/socket.c:2522
+ do_syscall_64+0xf6/0x7d0 arch/x86/entry/common.c:295
+ entry_SYSCALL_64_after_hwframe+0x49/0xb3
+RIP: 0033:0x440199
+...
 
-[Hoang] Yes, I know about this counter. What I'm considering about the L2 interface (e.g VXLAN) pseudo support broadcast (we discussed the topic a year ago), then, the sending side must be switching to replicast (method->force_bcast = true). But above likely forcing to use broadcast careless setting from broadcast/replicast from L2.
+This bug was bisected to commit 0a3e060f340d ("tipc: add test for Nagle
+algorithm effectiveness"). However, it is not the case, the trouble was
+in base that we can make an empty 'txq' queue after the
+'tipc_msg_append()' in Nagle mode, especially in the case, syzbot tried
+to send messages of zero data length!
 
-///jon
+The same crash can be reproduced even without the patch but at the link
+layer when it accesses the empty queue.
 
->
-> +	/* Otherwise use legacy replicast method */
->   	rcu_read_lock();
->   	list_for_each_entry_rcu(n, tipc_nodes(net), list) {
->   		dst = n->addr;
-> @@ -1749,7 +1762,6 @@ void tipc_node_broadcast(struct net *net, struct sk_buff *skb)
->   		tipc_node_xmit_skb(net, txskb, dst, 0);
->   	}
->   	rcu_read_unlock();
-> -
->   	kfree_skb(skb);
->   }
->   
-> @@ -1844,7 +1856,9 @@ static void tipc_node_bc_rcv(struct net *net, struct sk_buff *skb, int bearer_id
->   
->   	/* Handle NAME_DISTRIBUTOR messages sent from 1.7 nodes */
->   	if (!skb_queue_empty(&n->bc_entry.namedq))
-> -		tipc_named_rcv(net, &n->bc_entry.namedq);
-> +		tipc_named_rcv(net, &n->bc_entry.namedq,
-> +			       &n->bc_entry.named_rcv_nxt,
-> +			       &n->bc_entry.named_open);
->   
->   	/* If reassembly or retransmission failure => reset all links to peer */
->   	if (rc & TIPC_LINK_DOWN_EVT)
-> @@ -2109,7 +2123,9 @@ void tipc_rcv(struct net *net, struct sk_buff *skb, struct tipc_bearer *b)
->   		tipc_node_link_down(n, bearer_id, false);
->   
->   	if (unlikely(!skb_queue_empty(&n->bc_entry.namedq)))
-> -		tipc_named_rcv(net, &n->bc_entry.namedq);
-> +		tipc_named_rcv(net, &n->bc_entry.namedq,
-> +			       &n->bc_entry.named_rcv_nxt,
-> +			       &n->bc_entry.named_open);
->   
->   	if (unlikely(!skb_queue_empty(&n->bc_entry.inputq1)))
->   		tipc_node_mcast_rcv(n);
-> diff --git a/net/tipc/node.h b/net/tipc/node.h
-> index a6803b449a2c..9f6f13f1604f 100644
-> --- a/net/tipc/node.h
-> +++ b/net/tipc/node.h
-> @@ -55,7 +55,8 @@ enum {
->   	TIPC_MCAST_RBCTL      = (1 << 7),
->   	TIPC_GAP_ACK_BLOCK    = (1 << 8),
->   	TIPC_TUNNEL_ENHANCED  = (1 << 9),
-> -	TIPC_NAGLE            = (1 << 10)
-> +	TIPC_NAGLE            = (1 << 10),
-> +	TIPC_NAMED_BCAST      = (1 << 11)
->   };
->   
->   #define TIPC_NODE_CAPABILITIES (TIPC_SYN_BIT           |  \
-> @@ -68,7 +69,8 @@ enum {
->   				TIPC_MCAST_RBCTL       |   \
->   				TIPC_GAP_ACK_BLOCK     |   \
->   				TIPC_TUNNEL_ENHANCED   |   \
-> -				TIPC_NAGLE)
-> +				TIPC_NAGLE             |   \
-> +				TIPC_NAMED_BCAST)
->   
->   #define INVALID_BEARER_ID -1
->   
-> @@ -101,7 +103,7 @@ int tipc_node_xmit_skb(struct net *net, struct sk_buff *skb, u32 dest,
->   		       u32 selector);
->   void tipc_node_subscribe(struct net *net, struct list_head *subscr, u32 addr);
->   void tipc_node_unsubscribe(struct net *net, struct list_head *subscr, u32 addr);
-> -void tipc_node_broadcast(struct net *net, struct sk_buff *skb);
-> +void tipc_node_broadcast(struct net *net, struct sk_buff *skb, int rc_dests);
->   int tipc_node_add_conn(struct net *net, u32 dnode, u32 port, u32 peer_port);
->   void tipc_node_remove_conn(struct net *net, u32 dnode, u32 port);
->   int tipc_node_get_mtu(struct net *net, u32 addr, u32 sel, bool connected);
+The commit solves the issue by building at least one skb to go with the
+socket header and optional data section that may be empty like what we
+had with the 'tipc_msg_build()'.
+
+Reported-by: syzbot+8eac6d030e7807c21d32@syzkaller.appspotmail.com
+Fixes: c0bceb97db9e ("tipc: add smart nagle feature")
+Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
+---
+ net/tipc/msg.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/net/tipc/msg.c b/net/tipc/msg.c
+index 23809039dda1..604c03adabc2 100644
+--- a/net/tipc/msg.c
++++ b/net/tipc/msg.c
+@@ -221,7 +221,7 @@ int tipc_msg_append(struct tipc_msg *_hdr, struct msghdr *m, int dlen,
+ 	accounted = skb ? msg_blocks(buf_msg(skb)) : 0;
+ 	total = accounted;
+ 
+-	while (rem) {
++	do {
+ 		if (!skb || skb->len >= mss) {
+ 			prev = skb;
+ 			skb = tipc_buf_acquire(mss, GFP_KERNEL);
+@@ -246,7 +246,7 @@ int tipc_msg_append(struct tipc_msg *_hdr, struct msghdr *m, int dlen,
+ 		skb_put(skb, cpy);
+ 		rem -= cpy;
+ 		total += msg_blocks(hdr) - curr;
+-	}
++	} while (rem);
+ 	return total - accounted;
+ }
+ 
+-- 
+2.13.7
+
 
 
 _______________________________________________
