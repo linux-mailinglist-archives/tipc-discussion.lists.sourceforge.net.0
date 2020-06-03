@@ -2,66 +2,126 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0625C1EC4D4
-	for <lists+tipc-discussion@lfdr.de>; Wed,  3 Jun 2020 00:17:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 052461EC891
+	for <lists+tipc-discussion@lfdr.de>; Wed,  3 Jun 2020 07:06:36 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jgFDM-0001Eo-AQ; Tue, 02 Jun 2020 22:16:56 +0000
+	id 1jgLbk-0000vR-Gm; Wed, 03 Jun 2020 05:06:32 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <davem@davemloft.net>) id 1jgFDK-0001EY-RX
- for tipc-discussion@lists.sourceforge.net; Tue, 02 Jun 2020 22:16:54 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1jgLbi-0000v8-Db
+ for tipc-discussion@lists.sourceforge.net; Wed, 03 Jun 2020 05:06:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Mime-Version
- :References:In-Reply-To:From:Subject:Cc:To:Message-Id:Date:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Message-Id:Date:Subject:
+ Cc:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=MQ72pCnbkd5TZzAHCxPV7eXn3s+lq0WuA+VWsFONEVs=; b=cJdHPWcUO2wqMXyfgOX9RjqkJS
- 4jvXnhsII0/9MVsJc0yHtxWrUunoR6WhbQV9gMSOvB1pxb91TmaAuJTkr2pxEmaLohn6nXS9cM9/K
- be46h0VQ4R2RpHZzVDxO4zii86maqkIT9SBOLVaqlDGD54nRtns/weH/eyOu31M/05mg=;
+ bh=AGDHhH9hsPFOBCEFq/hUrHDr9zO2x6MATSyU2JpaKUQ=; b=H38+3W/QjtbBUDOTl22xvq0EoS
+ TG2Uq7eV4U3esyQCO+Qq8rDdyHxp68g8XhFE4o92N6QhNlJUJxDG/F6v28GAaZlqLdm28d2cIGX3v
+ TjtpmbFTOEufWdEdoNZ++HH8JfBdoeH5I2iTkExw98qIj9VR2aAbOd0TYtacGZ0feNWI=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:Mime-Version:References:
- In-Reply-To:From:Subject:Cc:To:Message-Id:Date:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=MQ72pCnbkd5TZzAHCxPV7eXn3s+lq0WuA+VWsFONEVs=; b=kXPvIo+ATpdCoWUq0fjKioun93
- I3rSTDciwzmjkf5qOFCpABBAOEcNaCtQbUGVdLCI1S+T6VFVplFAM/80o24PK/LI583BRTlte6tbr
- zRAdcl15GJ0hhwLNQPcttsc9n7DQ4X8G33PLyT3P2P+8RZGPPaZ7sFg1m9A6ll+v0FDU=;
-Received: from shards.monkeyblade.net ([23.128.96.9])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ h=MIME-Version:Content-Type:Message-Id:Date:Subject:Cc:To:From:Sender:
+ Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=AGDHhH9hsPFOBCEFq/hUrHDr9zO2x6MATSyU2JpaKUQ=; b=G
+ gYAzrDb3H5SBUJ9CsFL/BtSro9e2aTwjqw66aCUWJL6Fu6cxuW1q1f5VL0dnqI/xJZw4PLu3OQD0g
+ NN3LmgL00z/cNox23rZJIt42MyLY/OIiaubKpgH6EYbnG8ancCsWEOIZ9JcWd+SH8oRU+VC+c3AEx
+ JoQ0QQTBGmAmc6Mk=;
+Received: from mail-vi1eur05on2097.outbound.protection.outlook.com
+ ([40.107.21.97] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1jgFDG-0039bK-Uy
- for tipc-discussion@lists.sourceforge.net; Tue, 02 Jun 2020 22:16:54 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:477:9e51:a893:b0fe:602a])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 1ED2E1277B97C;
- Tue,  2 Jun 2020 15:16:34 -0700 (PDT)
-Date: Tue, 02 Jun 2020 15:16:30 -0700 (PDT)
-Message-Id: <20200602.151630.1855672322670645363.davem@davemloft.net>
-To: tuong.t.lien@dektech.com.au
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20200602044641.10535-1-tuong.t.lien@dektech.com.au>
-References: <20200602044641.10535-1-tuong.t.lien@dektech.com.au>
-X-Mailer: Mew version 6.8 on Emacs 26.3
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Tue, 02 Jun 2020 15:16:34 -0700 (PDT)
+ id 1jgLbb-0075n5-2l
+ for tipc-discussion@lists.sourceforge.net; Wed, 03 Jun 2020 05:06:30 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=RljspTh/J08iCv5FycCPMBRfGCFaebtKoPVULTuj4/td6fDZfHsIpQRZadBf8puQNJOIGiKuMOQqmZqF1sCQ+LnURoErJJiuQLx5bZXIKae9Ogk2otYNXKT/JE5Pcnye8zahA9/+XgA5L/MKpglMsnDnIOLTGwyuhm1lFUNSt3gzfvU2+nuvs5g7lQ5pd8Rv9xsSJ38BiVM0gjFSYcxTdzKStP+7vHmkihFsTmrvKiCPAWNDcHrWhATM7Gr0YrpsCkO3qjrIBEdNXKtRiOLWS2xZ9WqNnZgOBmTEh2qRuLBJzbabUvWHrxpzDHFq8Eax+rM6mRbHm1+oUzuT1EzDmA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=AGDHhH9hsPFOBCEFq/hUrHDr9zO2x6MATSyU2JpaKUQ=;
+ b=TW4owd6fguyebPUuDL7cWBt6d2QgxPl6UXAq/u1l2pb2Jsj/XSqeAJaJH+VgJh85FgHFviXmITCHEpu2pe0eDM7opel++e+IxUPbHE65FFcHCW3hlg7SGgWzb94izdERvHBnzKGH8uL0cZ2t/vCHHu5bFag6T6V5dwKYDRBrnznDfol6r3ogYQnRycHnbvlD7+ARRy/LTrfo19Fga7foYsFFrQyMM2LUHRUFmkOPh+8J+DmPj3i5mlnODnOiilWxaROKGNxVuvfZlXtuPUUsOX/9Nr0guSePANn8xpMftpWltKjiYKKaVXP51YspJy29aCyiPBVpJnJ4s6xUilSS/w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=dektech.com.au; dmarc=pass action=none
+ header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=AGDHhH9hsPFOBCEFq/hUrHDr9zO2x6MATSyU2JpaKUQ=;
+ b=D9eI7mp/SwzL999taKJQ235vA/q890nooFQ27m2iFtbYSSDFHxW9/vczrhD74oDD2yXjKnUavDaHp355YGWLmkxKp5csSzN8MQCeemWhshUxhSHvZF0iNt+Ejk01BP6G0ILuvABUgIKEaNZJTQVkGDpk5+J8tIwp+SMXGq9YHzU=
+Authentication-Results: davemloft.net; dkim=none (message not signed)
+ header.d=none;davemloft.net; dmarc=none action=none
+ header.from=dektech.com.au;
+Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com (2603:10a6:209:5::28)
+ by AM6PR0502MB3686.eurprd05.prod.outlook.com (2603:10a6:209:10::25)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3045.25; Wed, 3 Jun
+ 2020 05:06:15 +0000
+Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com
+ ([fe80::4d5f:2ab:5a66:deaf]) by AM6PR0502MB3925.eurprd05.prod.outlook.com
+ ([fe80::4d5f:2ab:5a66:deaf%7]) with mapi id 15.20.3045.024; Wed, 3 Jun 2020
+ 05:06:15 +0000
+From: Tuong Lien <tuong.t.lien@dektech.com.au>
+To: davem@davemloft.net, jmaloy@redhat.com, maloy@donjonn.com,
+ ying.xue@windriver.com, netdev@vger.kernel.org
+Date: Wed,  3 Jun 2020 12:06:01 +0700
+Message-Id: <20200603050601.19570-1-tuong.t.lien@dektech.com.au>
+X-Mailer: git-send-email 2.13.7
+X-ClientProxiedBy: TYAPR04CA0023.apcprd04.prod.outlook.com
+ (2603:1096:404:15::35) To AM6PR0502MB3925.eurprd05.prod.outlook.com
+ (2603:10a6:209:5::28)
+MIME-Version: 1.0
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from dektech.com.au (14.161.14.188) by
+ TYAPR04CA0023.apcprd04.prod.outlook.com (2603:1096:404:15::35) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.3066.18 via Frontend Transport; Wed, 3 Jun 2020 05:06:11 +0000
+X-Mailer: git-send-email 2.13.7
+X-Originating-IP: [14.161.14.188]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: e0312019-419c-47f6-2c24-08d8077bd6de
+X-MS-TrafficTypeDiagnostic: AM6PR0502MB3686:
+X-Microsoft-Antispam-PRVS: <AM6PR0502MB3686F871D8F1CBACCBFE735EE2880@AM6PR0502MB3686.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
+X-Forefront-PRVS: 04238CD941
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: cStKIZKRhV9yy9XZRhB9PJinw9JsJt273E3dk18Uda/fVxJz63/CkChmtDATw+kDmlrUZu007OA1g3gkdnRc+mQ2JNpvoMp/4BSrFTo2dwkl8hcok+iI+K+2m5mCCsAp+b72uwls3Hnjb5KMZRrgdts06xQDwledHlF9wDyWcWiQnYWceb9HZinPS2LsuOcWpVNsFXc+d7M9RWxlE3kMAZdEJikErBMDUbRQI65ZhgTJyBACd5UyYX2TCPJrqsgNlqubMS1pGGg6EbrrqDVxsSw3tVaoR5GZMdc2BZVQxVCCh9sCIZXE/XoEv3NFyiOl
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM6PR0502MB3925.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(39850400004)(396003)(366004)(376002)(346002)(136003)(5660300002)(1076003)(66946007)(66556008)(6666004)(66476007)(956004)(83380400001)(2616005)(16526019)(7696005)(86362001)(8936002)(8676002)(186003)(26005)(52116002)(2906002)(55016002)(4326008)(36756003)(103116003)(478600001)(316002);
+ DIR:OUT; SFP:1102; 
+X-MS-Exchange-AntiSpam-MessageData: rl5G9rgT1wSMwi9yc8Rzs09qK+KGlQt+kje7Fj1BcgSsPGyPcyouQUY4npvNvS83tS2l8jbpl5sxR9USp8sFUYQphFlhlILcIoSXyFFSictST5xtYd9m7P/VUUsm5jzFmcqe3DFH/a8KYzw6jMLGGop22R3nUWZiOlkQpvt0BZ0Ms8uOGz0rMuEmJAS8qFNdBZGW2rjKow6WycgMyPbPZ5/Eu1t3YzyuuQ9vs6xI3+U65X2K390yGU77eldE73JDh8usCPGLKxJpPqVSzjdQgOrfBt35Lgzvhi6keY/eTNtAP+ojFx8sMy8OrTBYK8O8MHRXHdLbDrUkXUjkx3I6A/PDoFptY/rT2z1u8isUCIS589Rl50uQycF/FRsqObM/qMYfe1zMIuFpbuiZ8718mfoGfkkJXrAPP6qHMTUssek08CbugxNpJ2Jd+IwG5IqrJT4XrJBDd9H6DNwgxdgD4xd9jU5Lc5wvZ+LnIfuCiEA=
+X-OriginatorOrg: dektech.com.au
+X-MS-Exchange-CrossTenant-Network-Message-Id: e0312019-419c-47f6-2c24-08d8077bd6de
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Jun 2020 05:06:14.9776 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: Q6CSuJiiFGZy44bfP5dTjOsrZSRks/JgmdZgFC5aTunCoFUKa3DfnajHGW9GH7gVPMQ0vv1Lv7+ktk6D1w3knnRse+FSzjca4Qr9jRHo7eA=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0502MB3686
 X-Spam-Score: -0.3 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.4 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1jgFDG-0039bK-Uy
-Subject: Re: [tipc-discussion] [net 0/2] tipc: revert two patches
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.21.97 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.2 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1jgLbb-0075n5-2l
+Subject: [tipc-discussion] [net-next] tipc: fix NULL pointer dereference in
+ streaming
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -73,23 +133,96 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: tipc-discussion@lists.sourceforge.net, netdev@vger.kernel.org
+Cc: tipc-discussion@lists.sourceforge.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-From: Tuong Lien <tuong.t.lien@dektech.com.au>
-Date: Tue,  2 Jun 2020 11:46:39 +0700
+syzbot found the following crash:
 
-> We revert two patches:
-> 
-> tipc: Fix potential tipc_node refcnt leak in tipc_rcv
-> tipc: Fix potential tipc_aead refcnt leak in tipc_crypto_rcv
-> 
-> which prevented TIPC encryption from working properly and caused kernel
-> panic.
+general protection fault, probably for non-canonical address 0xdffffc0000000019: 0000 [#1] PREEMPT SMP KASAN
+KASAN: null-ptr-deref in range [0x00000000000000c8-0x00000000000000cf]
+CPU: 1 PID: 7060 Comm: syz-executor394 Not tainted 5.7.0-rc6-syzkaller #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/01/2011
+RIP: 0010:__tipc_sendstream+0xbde/0x11f0 net/tipc/socket.c:1591
+Code: 00 00 00 00 48 39 5c 24 28 48 0f 44 d8 e8 fa 3e db f9 48 b8 00 00 00 00 00 fc ff df 48 8d bb c8 00 00 00 48 89 fa 48 c1 ea 03 <80> 3c 02 00 0f 85 e2 04 00 00 48 8b 9b c8 00 00 00 48 b8 00 00 00
+RSP: 0018:ffffc90003ef7818 EFLAGS: 00010202
+RAX: dffffc0000000000 RBX: 0000000000000000 RCX: ffffffff8797fd9d
+RDX: 0000000000000019 RSI: ffffffff8797fde6 RDI: 00000000000000c8
+RBP: ffff888099848040 R08: ffff88809a5f6440 R09: fffffbfff1860b4c
+R10: ffffffff8c305a5f R11: fffffbfff1860b4b R12: ffff88809984857e
+R13: 0000000000000000 R14: ffff888086aa4000 R15: 0000000000000000
+FS:  00000000009b4880(0000) GS:ffff8880ae700000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000000020000140 CR3: 00000000a7fdf000 CR4: 00000000001406e0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Call Trace:
+ tipc_sendstream+0x4c/0x70 net/tipc/socket.c:1533
+ sock_sendmsg_nosec net/socket.c:652 [inline]
+ sock_sendmsg+0xcf/0x120 net/socket.c:672
+ ____sys_sendmsg+0x32f/0x810 net/socket.c:2352
+ ___sys_sendmsg+0x100/0x170 net/socket.c:2406
+ __sys_sendmmsg+0x195/0x480 net/socket.c:2496
+ __do_sys_sendmmsg net/socket.c:2525 [inline]
+ __se_sys_sendmmsg net/socket.c:2522 [inline]
+ __x64_sys_sendmmsg+0x99/0x100 net/socket.c:2522
+ do_syscall_64+0xf6/0x7d0 arch/x86/entry/common.c:295
+ entry_SYSCALL_64_after_hwframe+0x49/0xb3
+RIP: 0033:0x440199
+...
 
-Series applied.
+This bug was bisected to commit 0a3e060f340d ("tipc: add test for Nagle
+algorithm effectiveness"). However, it is not the case, the trouble was
+from the base in the case of zero data length message sending, we would
+unexpectedly make an empty 'txq' queue after the 'tipc_msg_append()' in
+Nagle mode.
+
+A similar crash can be generated even without the bisected patch but at
+the link layer when it accesses the empty queue.
+
+We solve the issues by building at least one buffer to go with socket's
+header and an optional data section that may be empty like what we had
+with the 'tipc_msg_build()'.
+
+Note: the previous commit 4c21daae3dbc ("tipc: Fix NULL pointer
+dereference in __tipc_sendstream()") is obsoleted by this one since the
+'txq' will be never empty and the check of 'skb != NULL' is unnecessary
+but it is safe anyway.
+
+Reported-by: syzbot+8eac6d030e7807c21d32@syzkaller.appspotmail.com
+Fixes: c0bceb97db9e ("tipc: add smart nagle feature")
+Acked-by: Jon Maloy <jmaloy@redhat.com>
+Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
+---
+ net/tipc/msg.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/net/tipc/msg.c b/net/tipc/msg.c
+index c0afcd627c5e..046e4cb3acea 100644
+--- a/net/tipc/msg.c
++++ b/net/tipc/msg.c
+@@ -221,7 +221,7 @@ int tipc_msg_append(struct tipc_msg *_hdr, struct msghdr *m, int dlen,
+ 	accounted = skb ? msg_blocks(buf_msg(skb)) : 0;
+ 	total = accounted;
+ 
+-	while (rem) {
++	do {
+ 		if (!skb || skb->len >= mss) {
+ 			skb = tipc_buf_acquire(mss, GFP_KERNEL);
+ 			if (unlikely(!skb))
+@@ -245,7 +245,7 @@ int tipc_msg_append(struct tipc_msg *_hdr, struct msghdr *m, int dlen,
+ 		skb_put(skb, cpy);
+ 		rem -= cpy;
+ 		total += msg_blocks(hdr) - curr;
+-	}
++	} while (rem);
+ 	return total - accounted;
+ }
+ 
+-- 
+2.13.7
+
 
 
 _______________________________________________
