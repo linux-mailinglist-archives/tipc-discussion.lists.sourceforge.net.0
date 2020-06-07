@@ -2,97 +2,124 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D6E11EF88A
-	for <lists+tipc-discussion@lfdr.de>; Fri,  5 Jun 2020 15:03:12 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3E961F096B
+	for <lists+tipc-discussion@lfdr.de>; Sun,  7 Jun 2020 05:10:29 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jhC03-0004N4-Pq; Fri, 05 Jun 2020 13:03:07 +0000
+	id 1jhlhZ-0004eD-LW; Sun, 07 Jun 2020 03:10:25 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1jhC01-0004Mw-TQ
- for tipc-discussion@lists.sourceforge.net; Fri, 05 Jun 2020 13:03:06 +0000
+ (envelope-from <hoang.h.le@dektech.com.au>) id 1jhlhX-0004dw-KD
+ for tipc-discussion@lists.sourceforge.net; Sun, 07 Jun 2020 03:10:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=OjL5aPbzmJyaMrUYVfTwdrMln8oKfJ+zt+SrOU1ugc4=; b=nPfo9yzylsNv8ooza+4sGjYrx8
- J2hRg54snuAqIOzsfOUMS5OwP35+ClzPGqP6WNnhlQpOTzzo+mkWsR52x2LRJVvZ5bJi9g/jmZ2k5
- QBc4Z0qdHZAOoxNiEiTKIndjB7mAUgGQE9clfa7gY6DlUPGwXlQfXWjm4DzuUTBL5ki8=;
+ bh=mkEVzi7agqs2VXPuz2r8wBVC37t8qHdv2Tjw70a8dlk=; b=SpHcr+IG07//UF6BAJALyw3Cr1
+ /2Y8FuDzXz9W4Wov9AwCFnJmWnxAhq48daKfMYarJMwdrkugstod7kv9BWywcShPSt/38d+CpBeHb
+ o67b9r0aPlDbUKrQ1ZKO5heu0fHjokWz6MdYxpFkNM2ls+CAZGhcaDFOKdTId1i9flv8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:Content-ID:
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=OjL5aPbzmJyaMrUYVfTwdrMln8oKfJ+zt+SrOU1ugc4=; b=EksLbQxU6zaubhnr7QLXIF4gEn
- gTj1L2vedMMtjBRU2CZ/jCxC7nfoo5l8eQQFRlTn0VL7Dsup45OYPft+htl44yABZAQAXxrxBDMcw
- gAZWeXPqxut4bbOS4lWG9lP6YkFiMbyDZ6LfZzYgRreaHI5ElMJna4z1n7CL8MVxT0D8=;
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+ bh=mkEVzi7agqs2VXPuz2r8wBVC37t8qHdv2Tjw70a8dlk=; b=HiFxWpBQr93QrLugQaUlk0lYBd
+ b+8XKW2wgwps4NSx/OJkFemZ0+KjJkc/ZGAKXjDVfsJHD2VGoM1810fjEXvBKJhZjxay7YadXqp2p
+ r2k0059n7KzRIUf3bbujSjS74Q1uyv1cg+Ks3CO2uvIbDKq2EUr2Milo2KyODoIxINWc=;
+Received: from mail-eopbgr130105.outbound.protection.outlook.com
+ ([40.107.13.105] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1jhBzw-009sLo-OG
- for tipc-discussion@lists.sourceforge.net; Fri, 05 Jun 2020 13:03:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1591362167;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=OjL5aPbzmJyaMrUYVfTwdrMln8oKfJ+zt+SrOU1ugc4=;
- b=d54mQehzHUOCqWqTc+vb3ZkVcsRaDjGP+JryWUI8H/zjDU3evZu1KCTWe64+0ijgR8a+vI
- UNIUHW0mRm8rt5g+tYXPUA9g8KJI7+KmQvDUNeD5GFxidGUXrM1efb+picAyQbUS77zOwf
- HGHGjtmc6UFT4JVZ4RNaT3bxTPDM3QM=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-302-8eNp5hoOPtm6RsoTKOE2Uw-1; Fri, 05 Jun 2020 09:02:45 -0400
-X-MC-Unique: 8eNp5hoOPtm6RsoTKOE2Uw-1
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id D6D551854C57;
- Fri,  5 Jun 2020 13:02:43 +0000 (UTC)
-Received: from [10.10.117.121] (ovpn-117-121.rdu2.redhat.com [10.10.117.121])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 6291C62932;
- Fri,  5 Jun 2020 13:02:42 +0000 (UTC)
-To: Hoang Huu Le <hoang.h.le@dektech.com.au>, maloy@donjonn.com,
- ying.xue@windriver.com, tipc-discussion@lists.sourceforge.net
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1jhlhQ-00Bbgh-63
+ for tipc-discussion@lists.sourceforge.net; Sun, 07 Jun 2020 03:10:23 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=QvnpVGOTOe2gDqYtq4bsFzFEfe5CJJI1lNwNd9SgB3QRitdiBPi9FfGKNno6MBhHSLHGWNqodDQwY+8MROv9UPry+jLASmIHhRLvXvCpUzTQ7JPjQbGze5Mpk2F5UZQM4bI5JH50smlSZJPQNVqiGrOnF2RfTTjq2q+Vf0Mbezc3NFTFDyrP0aGvtFHYoYzdTZ+r0+9wb5tDGSHevM4Aw0U9+78tzyQ2z8EjgIFSvXgRH4RGMPBbXwqZPipwpfY+klX/SMiC9miDqPpdYgLdh9uYWadFVx1xj+GRFXR0ZpeoJi9OqMr84JhdizjVIF4TD3B3c2gqhFZdWGIyVfu/LQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mkEVzi7agqs2VXPuz2r8wBVC37t8qHdv2Tjw70a8dlk=;
+ b=JpTie7z6rAjghT4q5tFnqeosXhj2rID4c4SWFuCdMkdLxYWgtZwUo/Jp7bk6NYlF5ES3KwlHGesWVkAlWWYtxJSdbRu1brukO/Oql2f8b+KNk5wpCk8NBQ8H/z2YQwdCH3fcQky/zCkAEKtEydOsHDjT3BqfvSyMB60OvUa1q39cWq6QslankBc97Z6r+JQjwnhdPwVGo0UHLZIupWVMYp07P67zNB2Uv8556Gv3jSqKRkvC1tCL79ADjHMkWmV+Ko9x74JphY49gZ2VeGfedwzV0fwOx1Qbur4l5fVjTvj8y8FMvTXKMY3skfBNBNN4cWaRz1qR8K4BwSgTykWq2Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=dektech.com.au; dmarc=pass action=none
+ header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mkEVzi7agqs2VXPuz2r8wBVC37t8qHdv2Tjw70a8dlk=;
+ b=HJ16vZVUqU1zQxs1N/71l5stRKRYRaEEOAmzUaA23JNn/YP8ahVy3367siTL/Koi2PP7l8+fN08uasF8IjaACEuYy0xF9l/fDNG3SNqkIAtgcvL2/9/AK3l8yFPvXivqworEgYZ11KPgrjB5XgkYCja0jqqTFvQUTAAZ12+T/X0=
+Received: from VI1PR05MB4605.eurprd05.prod.outlook.com (2603:10a6:802:61::21)
+ by VI1PR05MB4125.eurprd05.prod.outlook.com (2603:10a6:803:4d::12)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.20; Sun, 7 Jun
+ 2020 03:10:02 +0000
+Received: from VI1PR05MB4605.eurprd05.prod.outlook.com
+ ([fe80::397e:56ce:f98:8220]) by VI1PR05MB4605.eurprd05.prod.outlook.com
+ ([fe80::397e:56ce:f98:8220%6]) with mapi id 15.20.3066.023; Sun, 7 Jun 2020
+ 03:10:02 +0000
+From: Hoang Huu Le <hoang.h.le@dektech.com.au>
+To: Jon Maloy <jmaloy@redhat.com>, "maloy@donjonn.com" <maloy@donjonn.com>,
+ "ying.xue@windriver.com" <ying.xue@windriver.com>,
+ "tipc-discussion@lists.sourceforge.net"
+ <tipc-discussion@lists.sourceforge.net>
+Thread-Topic: [next-net v6] tipc: update a binding service via broadcast
+Thread-Index: AQHWOw5CYZEbskJhw0Gj89pKpwHjBqjJ/RSAgAJ8+PA=
+Date: Sun, 7 Jun 2020 03:10:01 +0000
+Message-ID: <VI1PR05MB4605728F1F5CE529D5327784F1840@VI1PR05MB4605.eurprd05.prod.outlook.com>
 References: <20200605075212.18700-1-hoang.h.le@dektech.com.au>
-From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <19d16ffb-f229-5e30-b392-7ecc41721576@redhat.com>
-Date: Fri, 5 Jun 2020 09:02:41 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
-MIME-Version: 1.0
-In-Reply-To: <20200605075212.18700-1-hoang.h.le@dektech.com.au>
+ <19d16ffb-f229-5e30-b392-7ecc41721576@redhat.com>
+In-Reply-To: <19d16ffb-f229-5e30-b392-7ecc41721576@redhat.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: redhat.com; dkim=none (message not signed)
+ header.d=none;redhat.com; dmarc=none action=none header.from=dektech.com.au;
+x-originating-ip: [14.161.14.188]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f11af1a1-8e25-4016-976f-08d80a9044fe
+x-ms-traffictypediagnostic: VI1PR05MB4125:
+x-microsoft-antispam-prvs: <VI1PR05MB41254047F5679F52E4742264F1840@VI1PR05MB4125.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:261;
+x-forefront-prvs: 04270EF89C
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: HTIc/GNtouD9EeTGvuTpJfl5TXTWvrKR2X0q76LtWaAcaUB+3+O+4Xbfr9Hmx8Ef9EWV87ibdk+un7mCO5gfo5660rxsyWWQCLHdQsspMGhmjaa0nYlGqC8pzdQb2ooZHAodg+l1662xXxEqgAKNrgHHB5wy0sGdgOxfWOuilRlwNE62J2/mB8oZjshp5GO0KIIjFj+8n4MqHGMkKsB12kznna8XIcfugK7prCYiwWfvGHlLlMNhQlzmegcAk1cdHvHeXJBAwwKN9C7HqLevbCoAV2viMz6zlwzRfh0ZHR/YvFGr5fSdLmOWIzH6LiId
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VI1PR05MB4605.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(396003)(366004)(136003)(39830400003)(376002)(346002)(66946007)(66446008)(64756008)(9686003)(53546011)(83380400001)(8676002)(6506007)(26005)(66476007)(7696005)(55016002)(66556008)(30864003)(76116006)(33656002)(316002)(2906002)(15650500001)(110136005)(5660300002)(8936002)(186003)(71200400001)(86362001)(52536014)(478600001)(579004);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-antispam-messagedata: 08zjO14/HBHFqwR6ZKxGvMoeMAC6YwzV/zoj21FOdPufY36ZKCcndKb2cBlCHSCEAZ4ltG5Td+i7SELn03N4PJzkpBGa+dLv5H+l7XvJkZqakFhScB9QPp/OBQAOwPqsZAX4tY2/qwcdMviCxHqVGm3ipgBCZtn+d84tnSdqjK/zFlgF2rEd7fvZge7ImLbi1wCaXTDr7K/u6qZ++PH6RveFw3x8qPCd5pc+at8pZs7XiuwqZHAsT+L2DjN9ON/X4lBUpRNY/1LUWh1V/AZ1Xm78MWaz1DVjuvfv747bQ3lpQmu2f81kA+JOu5xZ3snV0Fg+vtSEEqe8evLH0h710lXleVcWocbqdqZBjyGGY+wxh7CZP8tANpEClSLXBTDUGMOZyieoafUJtgAIApMJ/BRd3Ftjg2empxhhd+YWxMhhOJp+QXl2cqiRBYmDUAu1VRc5KvAF8Qk/yCvguyjb2ktQm6Yw2nADXE1KMHxNcpY=
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-OriginatorOrg: dektech.com.au
+X-MS-Exchange-CrossTenant-Network-Message-Id: f11af1a1-8e25-4016-976f-08d80a9044fe
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Jun 2020 03:10:02.0809 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 1957ea50-0dd8-4360-8db0-c9530df996b2
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: PmsHfQGgO4qdshSyP1YjXDcaXDJCY9V+1XGXwgRA5ejqrgcdafQ9Pw+fCwBmkX6LUrlDE+r75J5cS27FVbhpTxs0n2VSTdl4lzDOy/ZXuP4=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB4125
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [205.139.110.120 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [205.139.110.120 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.13.105 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
  0.1 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1jhBzw-009sLo-OG
+X-Headers-End: 1jhlhQ-00Bbgh-63
 Subject: Re: [tipc-discussion] [next-net v6] tipc: update a binding service
  via broadcast
 X-BeenThere: tipc-discussion@lists.sourceforge.net
@@ -106,9 +133,15 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
+
+-----Original Message-----
+From: Jon Maloy <jmaloy@redhat.com> 
+Sent: Friday, June 5, 2020 8:03 PM
+To: Hoang Huu Le <hoang.h.le@dektech.com.au>; maloy@donjonn.com; ying.xue@windriver.com; tipc-discussion@lists.sourceforge.net
+Subject: Re: [next-net v6] tipc: update a binding service via broadcast
 
 
 
@@ -157,6 +190,8 @@ If you add the above three dashes before the version info that will not
 by accident be considered part of the commit log.
 But of course our internal versioning is irrelevant to David M, so you 
 should just remove this info before posting.
+[Hoang] Thanks Jon. Frankly, I didn't know that.
+
 > v2: resolve synchronization problem when switching from unicast to
 > broadcast
 >
@@ -473,6 +508,8 @@ should just remove this info before posting.
 > +			continue;
 Still not needed. This queue should be flushed in 
 tipc_node_lost_contact(), which I now see we don't do.
+[Hoang] Yes, that's right. I will verify and send it out.
+
 This has to e fixed too.
 ///jon
 > +		}
@@ -723,7 +760,6 @@ This has to e fixed too.
 >   int tipc_node_add_conn(struct net *net, u32 dnode, u32 port, u32 peer_port);
 >   void tipc_node_remove_conn(struct net *net, u32 dnode, u32 port);
 >   int tipc_node_get_mtu(struct net *net, u32 addr, u32 sel, bool connected);
-
 
 
 _______________________________________________
