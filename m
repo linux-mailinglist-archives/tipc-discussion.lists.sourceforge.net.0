@@ -2,108 +2,125 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22D051F1A29
-	for <lists+tipc-discussion@lfdr.de>; Mon,  8 Jun 2020 15:33:56 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4A5A1F328E
+	for <lists+tipc-discussion@lfdr.de>; Tue,  9 Jun 2020 05:28:19 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jiHuS-0007PE-Rx; Mon, 08 Jun 2020 13:33:52 +0000
+	id 1jiUvv-0007QB-Tf; Tue, 09 Jun 2020 03:28:15 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1jiHuR-0007Oz-HM
- for tipc-discussion@lists.sourceforge.net; Mon, 08 Jun 2020 13:33:51 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1jiUvu-0007Q3-9P
+ for tipc-discussion@lists.sourceforge.net; Tue, 09 Jun 2020 03:28:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=8yyqmee75G9URMkf40mY1CA6DZQko8dqew4YsZGxcok=; b=dyJlEG5JHSSzsAwfWWxUFlHW2r
- 28LfFJBGGQh+w06ni42PPfXahhqmYU2biL3NdBd0FpHPiQheO7+Z3fSebw+3akz53Etf0ikWeCTUy
- PMZK3xsnhW6Rt40zzCiXMN5o0J85WziYHfdy1R9ziuwquQu6C89cZmHc2HBuQ+nZJc0Q=;
+ bh=4yTp5bM5KvJ1ieJpjln5zVrYQaICOvHGP68qdW9td+g=; b=OpYBbZy2qTBz3RFImNQguCvqM6
+ 3r6JnTkg5TMrohluGf0QyUGnykuTqN0Aa4858N2SAbMl8/cY6BLHB/yeRTWSxjGZhy284FCC/CbcD
+ KLooyKyclQPLv/Ze+PI4Sn3tmt5AfPp8syMXBX7owX/iKPdlnvtnbV8pAyHdpGMOSap0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:Content-ID:
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=8yyqmee75G9URMkf40mY1CA6DZQko8dqew4YsZGxcok=; b=kQIy1WhHO3TmdHl26lOcgDYz19
- /iSey78R9QNeXsfyJZD/G9djjGJPxqd2alZIVS+XWGWAe4LjI8hasigW+i4DV/CCS/qzVo0jB2Xsu
- IdgwosAY1yvoYm8wRr/tKXom/VZy34kiJ/P0o/bl71wrav9YOj8esft5yZgSyAyk9zrk=;
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+ bh=4yTp5bM5KvJ1ieJpjln5zVrYQaICOvHGP68qdW9td+g=; b=WFoOz90DIQwXOGjq2t0+UGOkro
+ SqJMrhSM4rTpZZFeG0L3Hg37OX8iZMJr6+3KC1AgvRXDEtyPQtQNjdgXkBC2vImckVZPWJQQ/Tbl+
+ Atj1cyvyUjtqDTmXmmKE8F812ETN8miJk9usH9TtubxGF5oajjIjC9T5NfdElTZYyCOw=;
+Received: from mail-eopbgr130139.outbound.protection.outlook.com
+ ([40.107.13.139] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by sfi-mx-4.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1jiHuP-00GULT-6Y
- for tipc-discussion@lists.sourceforge.net; Mon, 08 Jun 2020 13:33:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1591623223;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=8yyqmee75G9URMkf40mY1CA6DZQko8dqew4YsZGxcok=;
- b=K8J5CbI+1WCAD0GqOeg6kYHOx4d9u807wn+sU1mloE+XjUTv8XZ6C5qKjGzvR9JGGutBkX
- eVbytIvgsNaSce5Ki+/FgdzDmq7fYnGMEcUWPtQAs9+hOXsiHs6WiVmy7ZUl+E1jt5/tyx
- NZxOJsXkndAgXqdRK4byxgiUWT4ifsg=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-329-zEnpKlbpM9KdPc08TeLLTw-1; Mon, 08 Jun 2020 09:33:41 -0400
-X-MC-Unique: zEnpKlbpM9KdPc08TeLLTw-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 47F8491183;
- Mon,  8 Jun 2020 13:33:14 +0000 (UTC)
-Received: from [10.10.113.13] (ovpn-113-13.rdu2.redhat.com [10.10.113.13])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 1C0F090321;
- Mon,  8 Jun 2020 13:33:12 +0000 (UTC)
-To: Hoang Huu Le <hoang.h.le@dektech.com.au>,
- "maloy@donjonn.com" <maloy@donjonn.com>,
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1jiUvn-00H9Ry-6F
+ for tipc-discussion@lists.sourceforge.net; Tue, 09 Jun 2020 03:28:14 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=IvctbbqDl2Ox1GjuAAL6OYig6z4HtvkA8saMi3iOObO3wKcZCeJhuOILSZAhDQaNAqQlDgEG5A9bmE9sPqdh/d0LD4A4F4I1Nn+rZa066mRRkFJM+4OK966Hn7ArH6mSzxIUhpgSQ9IcvytezuxnlTPcbtEQ6KsBpIo5dvKQvs3nMd2pDDS9dZg+WaPwrjhZhZfcOtmgiWKa82lfat0vQhwBQl1QKQXcH6e71fXICwkc1Dqgn/kEWI83Yt5K8qGcK0wRNMSmHycZKI154g1bHdDxqj9hAaiDrwi1IP031jyR/2bRnK0iZzupjtZdj+pCAfxY3WU7BhWGfl6i4pjozA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4yTp5bM5KvJ1ieJpjln5zVrYQaICOvHGP68qdW9td+g=;
+ b=myaD2CS3YQS+rJrUO8ls+uL3r1iPfL5d3vFFk3pKaq+LVsYuc2W1OOmtjy5gjEqr3QeIOn2HIf4BWEgx6mTqzPuOfrz5x6m5BywkyZ464jwHcaJW3YwJZzPvmaonsnrr90SjRafaqrJIJoRoXtVHYGw3K0vMBIl3J3MpTVXg2QUbBgbX8JX5CDjqKIQiAB7bz0PnDDy9+MPtabi3KvG2hVd/IJSboYdVK8hu1VL6/2rg6Dmeas5+fCEO2hyHktEBDHADmPSgXiZ67+CIB10CxXDbH4g0aJqKDCBZQdtYZ3M49h9VeMYibync6yqzTM1q0o/DWAZQ8ooIb06xMHkOAg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=dektech.com.au; dmarc=pass action=none
+ header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4yTp5bM5KvJ1ieJpjln5zVrYQaICOvHGP68qdW9td+g=;
+ b=q446W238Fqj0IGgO3QV111JYIe49wE4EqxlTPorENHU74Vt32sUQ6SvQ27H2I75waiX84399p6nPnqYb3OQ8xzwNl5A2PfWonqnGH8epJNMuWrj3w7oQlDoN8XwpHSy0xgfT5gqReV+g+5dEcgcpCTR0fjVxi1IeF1K6IAJV+iw=
+Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com (2603:10a6:209:5::28)
+ by AM6PR0502MB3654.eurprd05.prod.outlook.com (2603:10a6:209:9::15)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.20; Tue, 9 Jun
+ 2020 03:27:51 +0000
+Received: from AM6PR0502MB3925.eurprd05.prod.outlook.com
+ ([fe80::4d5f:2ab:5a66:deaf]) by AM6PR0502MB3925.eurprd05.prod.outlook.com
+ ([fe80::4d5f:2ab:5a66:deaf%7]) with mapi id 15.20.3066.023; Tue, 9 Jun 2020
+ 03:27:51 +0000
+From: Tuong Tong Lien <tuong.t.lien@dektech.com.au>
+To: Jon Maloy <jmaloy@redhat.com>, "maloy@donjonn.com" <maloy@donjonn.com>,
  "ying.xue@windriver.com" <ying.xue@windriver.com>,
  "tipc-discussion@lists.sourceforge.net"
  <tipc-discussion@lists.sourceforge.net>
-References: <20200605075212.18700-1-hoang.h.le@dektech.com.au>
- <19d16ffb-f229-5e30-b392-7ecc41721576@redhat.com>
- <VI1PR05MB4605728F1F5CE529D5327784F1840@VI1PR05MB4605.eurprd05.prod.outlook.com>
-From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <4086f94e-61a0-c7f5-42d5-d6b9d9cbe5c7@redhat.com>
-Date: Mon, 8 Jun 2020 09:33:12 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
-MIME-Version: 1.0
-In-Reply-To: <VI1PR05MB4605728F1F5CE529D5327784F1840@VI1PR05MB4605.eurprd05.prod.outlook.com>
+Thread-Topic: [net] tipc: fix kernel WARNING in tipc_msg_append()
+Thread-Index: AQHWPY0i775fxcnatU6cCdAH60h7cKjOseeAgADqulA=
+Date: Tue, 9 Jun 2020 03:27:51 +0000
+Message-ID: <AM6PR0502MB3925DEFF24C2F9F3A23733D8E2820@AM6PR0502MB3925.eurprd05.prod.outlook.com>
+References: <20200608120530.20690-1-tuong.t.lien@dektech.com.au>
+ <d42fb931-1bd4-a67d-2de3-ca02adc769dd@redhat.com>
+In-Reply-To: <d42fb931-1bd4-a67d-2de3-ca02adc769dd@redhat.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: redhat.com; dkim=none (message not signed)
+ header.d=none;redhat.com; dmarc=none action=none header.from=dektech.com.au;
+x-originating-ip: [14.161.14.188]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: edf79480-476b-4d21-ef0b-08d80c25174e
+x-ms-traffictypediagnostic: AM6PR0502MB3654:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM6PR0502MB3654573304E7DB77E304CF41E2820@AM6PR0502MB3654.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2733;
+x-forefront-prvs: 042957ACD7
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: GA8WXlB9/nwJ90BcitrF5GJ8Q3dXyA2mwww+S5zyyNcP0opY+VW7y5XOthxJe6hpIzOeWuDMh3srbIH55X1I6ZDZ1Ur+iqWtgUnIzSmqlYwiGD88Y13b0yJMx6Jo/Z1nwE76toEsWbD6NVg1pb3dpE8wzeaVDQkYsK6TKRWRhZKl9YfZNmrJCo3LrXwPgTlt07AwgTtmVQEmNsoXtWjbukrye+ZryaYjFs5GxcsDG3LfNHDVuQjIOmMipSNyBVimoEqSwmQF2HfhXeYynT26x87P2fZ4dd2Wf/3k99Eia7MZ1hMmKp94D83H+v21HW0e+7x22F12akOPvxJLRRk2Iw==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM6PR0502MB3925.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(136003)(376002)(346002)(39850400004)(396003)(366004)(71200400001)(7696005)(52536014)(5660300002)(86362001)(8676002)(6506007)(83380400001)(8936002)(4326008)(110136005)(107886003)(53546011)(33656002)(2906002)(9686003)(66476007)(186003)(316002)(26005)(66446008)(478600001)(66946007)(64756008)(76116006)(55016002)(66556008);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-antispam-messagedata: dqENipHOUEI0VraM/qq0sL0CswwffJGC9dDyG/S3KsTo8KFT5frEVrRiceCIpGiCVdWu1ADOX7U0s2cy7Qajp/IpiDgHcOgsPB7V42I5o1qFZNKepnzLU+jhjWMIA63j1ZJv6kXmK7Sd3ifnFnNP6YmK65qNBkBCuIkTf7YLcC7zXRvRpzBgi4Ycb1VUeREgFPJ/5eciMIWPdljdQJgvsv5kc1udV4XcSWxnFFK+nmPpLlvX8/ncZCY57stLB4DeFXVY8sYcm/De8X+PIA2OREMTPnR00Sn1R7TzuZsew6DLImsa86O19eRdHheEMoroxpKy0o0huYN/pjdl4f7CVjOMqkErO5KMuNuQsf2lHLHu8ksYLdizmx6VqVG+U9ak4Ct07L4XWNx2SAbDskArFUQFMe4teUvZuMsXX5DPWh0MXxluWfP18zKxT7I1GT4NGCzSdShui2RstTDDD3wseY2NlboKUf0B4H9mPc4w21w=
+MIME-Version: 1.0
+X-OriginatorOrg: dektech.com.au
+X-MS-Exchange-CrossTenant-Network-Message-Id: edf79480-476b-4d21-ef0b-08d80c25174e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Jun 2020 03:27:51.5238 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 1957ea50-0dd8-4360-8db0-c9530df996b2
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: hPJfEGzVtGPDfrQo8lG3Sir4lcgNTxkPRv/gN7ag0b5Y6kGbuA91A31e2JFBxSeVDzGfwaY+lNsRlfoD2UciXKq2fuyYMh8p1fIKLOKKii8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0502MB3654
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: dektech.com.au]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [207.211.31.120 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [207.211.31.120 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.13.139 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
- 0.0 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1jiHuP-00GULT-6Y
-Subject: Re: [tipc-discussion] [next-net v6] tipc: update a binding service
- via broadcast
+X-Headers-End: 1jiUvn-00H9Ry-6F
+Subject: Re: [tipc-discussion] [net] tipc: fix kernel WARNING in
+ tipc_msg_append()
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -115,308 +132,98 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: tipc-dek <tipc-dek@dektech.com.au>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
 
 
-On 6/6/20 11:10 PM, Hoang Huu Le wrote:
 > -----Original Message-----
 > From: Jon Maloy <jmaloy@redhat.com>
-> Sent: Friday, June 5, 2020 8:03 PM
-> To: Hoang Huu Le <hoang.h.le@dektech.com.au>; maloy@donjonn.com; ying.xue@windriver.com; tipc-discussion@lists.sourceforge.net
-> Subject: Re: [next-net v6] tipc: update a binding service via broadcast
->
->
->
-> On 6/5/20 3:52 AM, Hoang Huu Le wrote:
->> Currently, updating binding table (add service binding to
->> name table/withdraw a service binding) is being sent over replicast.
->> However, if we are scaling up clusters to > 100 nodes/containers this
->> method is less affection because of looping through nodes in a cluster one
->> by one.
-[...]
->> +		if (*open && (*rcv_nxt == seqno)) {
->> +			(*rcv_nxt)++;
->> +			__skb_unlink(skb, namedq);
->> +			return skb;
->> +		}
->> +
->> +		if (less(seqno, *rcv_nxt)) {
->> +			__skb_unlink(skb, namedq);
->> +			kfree_skb(skb);
->> +			continue;
-> Still not needed. This queue should be flushed in
-> tipc_node_lost_contact(), which I now see we don't do.
-> [Hoang] Yes, that's right. I will verify and send it out.
->
-> This has to e fixed too.
+> Sent: Monday, June 8, 2020 8:13 PM
+> To: Tuong Tong Lien <tuong.t.lien@dektech.com.au>; maloy@donjonn.com; ying.xue@windriver.com; tipc-
+> discussion@lists.sourceforge.net
+> Cc: tipc-dek <tipc-dek@dektech.com.au>
+> Subject: Re: [net] tipc: fix kernel WARNING in tipc_msg_append()
+> 
+> 
+> 
+> On 6/8/20 8:05 AM, Tuong Lien wrote:
+> > syzbot found the following issue:
+> >
+> > WARNING: CPU: 0 PID: 6808 at include/linux/thread_info.h:150 check_copy_size include/linux/thread_info.h:150 [inline]
+> > WARNING: CPU: 0 PID: 6808 at include/linux/thread_info.h:150 copy_from_iter include/linux/uio.h:144 [inline]
+> > WARNING: CPU: 0 PID: 6808 at include/linux/thread_info.h:150 tipc_msg_append+0x49a/0x5e0 net/tipc/msg.c:242
+> > Kernel panic - not syncing: panic_on_warn set ...
+> >
+> > This happens after commit 5e9eeccc58f3 ("tipc: fix NULL pointer
+> > dereference in streaming") that tried to build at least one buffer even
+> > when the message data length is zero... However, it now exposes another
+> > bug that the 'mss' can be zero and the 'cpy' will be negative, thus the
+> > above kernel WARNING will appear!
+> > The zero value of 'mss' is never expected because it means Nagle is not
+> > enabled for the socket (actually the socket type was 'SOCK_SEQPACKET'),
+> > so the function 'tipc_msg_append()' must not be called at all. But that
+> > was in this particular case since the message data length was zero, and
+> > the 'send <= maxnagle' check became true.
+> >
+> > We resolve the issue by explicitly checking if Nagle is enabled for the
+> > socket, i.e. 'maxnagle != 0' before calling the 'tipc_msg_append()'. In
+> > addition, we put a sanity check in the function to avoid calling the
+> > 'copy_from_iter()' with a negative size and doing an infinite loop.
+> >
+> > Reported-by: syzbot+75139a7d2605236b0b7f@syzkaller.appspotmail.com
+> > Fixes: c0bceb97db9e ("tipc: add smart nagle feature")
+> > Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
+> > ---
+> >   net/tipc/msg.c    | 5 +++--
+> >   net/tipc/socket.c | 3 ++-
+> >   2 files changed, 5 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/net/tipc/msg.c b/net/tipc/msg.c
+> > index 046e4cb3acea..ea3ebf35e0c2 100644
+> > --- a/net/tipc/msg.c
+> > +++ b/net/tipc/msg.c
+> > @@ -239,13 +239,14 @@ int tipc_msg_append(struct tipc_msg *_hdr, struct msghdr *m, int dlen,
+> >   		curr = msg_blocks(hdr);
+> >   		mlen = msg_size(hdr);
+> >   		cpy = min_t(int, rem, mss - mlen);
+> > -		if (cpy != copy_from_iter(skb->data + mlen, cpy, &m->msg_iter))
+> > +		if (cpy < 0 ||
+> You can probably just redeclare cpy (and mlen, rem) to u32 here.
 > ///jon
-I hate to admit it, but we might actually need this test after all. 
-Imagine that somebody has done 'publish' just after the broadcast link 
-came up (in tipc_bcast_add_peer()) , but before tipc_named_node_up() is 
-called. The context of those two calls is not atomic, so I think it is 
-possible that this publication might end up both in the bcast_link 
-backlog queue and in the bulk distribution.
-This publication message will have a named_seqno that is lower than the 
-agreed synch point, and should be dropped at reception.
+Yes, it should be 'unsigned', but the actual issue here is overflow, so if we use u32, we will still need to check if not > INT_MAX... Instead, I think we can just change the data type at the 'min_t()', such as:
+	cpy = min_t(unsinged int, rem, mss - mlen);
+Do you agree?
 
-Given the crucial role of the binding table for the overall TIPC 
-functionality I think it is better be safe than sorry here, and keep 
-this test.
+> > +		    cpy != copy_from_iter(skb->data + mlen, cpy, &m->msg_iter))
+> >   			return -EFAULT;
+> >   		msg_set_size(hdr, mlen + cpy);
+> >   		skb_put(skb, cpy);
+> >   		rem -= cpy;
+> >   		total += msg_blocks(hdr) - curr;
+> > -	} while (rem);
+> > +	} while (rem > 0);
+> >   	return total - accounted;
+> >   }
+> >
+> > diff --git a/net/tipc/socket.c b/net/tipc/socket.c
+> > index 26123f4177fd..a94f38333698 100644
+> > --- a/net/tipc/socket.c
+> > +++ b/net/tipc/socket.c
+> > @@ -1574,7 +1574,8 @@ static int __tipc_sendstream(struct socket *sock, struct msghdr *m, size_t dlen)
+> >   			break;
+> >   		send = min_t(size_t, dlen - sent, TIPC_MAX_USER_MSG_SIZE);
+> >   		blocks = tsk->snd_backlog;
+> > -		if (tsk->oneway++ >= tsk->nagle_start && send <= maxnagle) {
+> > +		if (tsk->oneway++ >= tsk->nagle_start && maxnagle &&
+> > +		    send <= maxnagle) {
+How about this? I believe this is a must because we never want to do Nagle stuffs for a non-Nagle socket (like SOCK_SEQPACKET).
 
-///jon
-
->> +		}
->> +	}
->> +	return NULL;
->> +}
->> +
->>    /**
->>     * tipc_named_rcv - process name table update messages sent by another node
->>     */
->> -void tipc_named_rcv(struct net *net, struct sk_buff_head *inputq)
->> +void tipc_named_rcv(struct net *net, struct sk_buff_head *namedq,
->> +		    u16 *rcv_nxt, bool *open)
->>    {
->> -	struct tipc_net *tn = net_generic(net, tipc_net_id);
->> -	struct tipc_msg *msg;
->> +	struct tipc_net *tn = tipc_net(net);
->>    	struct distr_item *item;
->> -	uint count;
->> -	u32 node;
->> +	struct tipc_msg *hdr;
->>    	struct sk_buff *skb;
->> -	int mtype;
->> +	u32 count, node = 0;
->>    
->>    	spin_lock_bh(&tn->nametbl_lock);
->> -	for (skb = skb_dequeue(inputq); skb; skb = skb_dequeue(inputq)) {
->> -		skb_linearize(skb);
->> -		msg = buf_msg(skb);
->> -		mtype = msg_type(msg);
->> -		item = (struct distr_item *)msg_data(msg);
->> -		count = msg_data_sz(msg) / ITEM_SIZE;
->> -		node = msg_orignode(msg);
->> +	while ((skb = tipc_named_dequeue(namedq, rcv_nxt, open))) {
->> +		hdr = buf_msg(skb);
->> +		node = msg_orignode(hdr);
->> +		item = (struct distr_item *)msg_data(hdr);
->> +		count = msg_data_sz(hdr) / ITEM_SIZE;
->>    		while (count--) {
->> -			tipc_update_nametbl(net, item, node, mtype);
->> +			tipc_update_nametbl(net, item, node, msg_type(hdr));
->>    			item++;
->>    		}
->>    		kfree_skb(skb);
->> @@ -345,6 +402,6 @@ void tipc_named_reinit(struct net *net)
->>    		publ->node = self;
->>    	list_for_each_entry_rcu(publ, &nt->cluster_scope, binding_node)
->>    		publ->node = self;
->> -
->> +	nt->rc_dests = 0;
->>    	spin_unlock_bh(&tn->nametbl_lock);
->>    }
->> diff --git a/net/tipc/name_distr.h b/net/tipc/name_distr.h
->> index 63fc73e0fa6c..092323158f06 100644
->> --- a/net/tipc/name_distr.h
->> +++ b/net/tipc/name_distr.h
->> @@ -67,11 +67,14 @@ struct distr_item {
->>    	__be32 key;
->>    };
->>    
->> +void tipc_named_bcast(struct net *net, struct sk_buff *skb);
->>    struct sk_buff *tipc_named_publish(struct net *net, struct publication *publ);
->>    struct sk_buff *tipc_named_withdraw(struct net *net, struct publication *publ);
->> -void tipc_named_node_up(struct net *net, u32 dnode);
->> -void tipc_named_rcv(struct net *net, struct sk_buff_head *msg_queue);
->> +void tipc_named_node_up(struct net *net, u32 dnode, u16 capabilities);
->> +void tipc_named_rcv(struct net *net, struct sk_buff_head *namedq,
->> +		    u16 *rcv_nxt, bool *open);
->>    void tipc_named_reinit(struct net *net);
->> -void tipc_publ_notify(struct net *net, struct list_head *nsub_list, u32 addr);
->> +void tipc_publ_notify(struct net *net, struct list_head *nsub_list,
->> +		      u32 addr, u16 capabilities);
->>    
->>    #endif
->> diff --git a/net/tipc/name_table.c b/net/tipc/name_table.c
->> index 359b2bc888cf..2ac33d32edc2 100644
->> --- a/net/tipc/name_table.c
->> +++ b/net/tipc/name_table.c
->> @@ -729,6 +729,7 @@ struct publication *tipc_nametbl_publish(struct net *net, u32 type, u32 lower,
->>    	struct tipc_net *tn = tipc_net(net);
->>    	struct publication *p = NULL;
->>    	struct sk_buff *skb = NULL;
->> +	u32 rc_dests;
->>    
->>    	spin_lock_bh(&tn->nametbl_lock);
->>    
->> @@ -743,12 +744,14 @@ struct publication *tipc_nametbl_publish(struct net *net, u32 type, u32 lower,
->>    		nt->local_publ_count++;
->>    		skb = tipc_named_publish(net, p);
->>    	}
->> +	rc_dests = nt->rc_dests;
->>    exit:
->>    	spin_unlock_bh(&tn->nametbl_lock);
->>    
->>    	if (skb)
->> -		tipc_node_broadcast(net, skb);
->> +		tipc_node_broadcast(net, skb, rc_dests);
->>    	return p;
->> +
->>    }
->>    
->>    /**
->> @@ -762,6 +765,7 @@ int tipc_nametbl_withdraw(struct net *net, u32 type, u32 lower,
->>    	u32 self = tipc_own_addr(net);
->>    	struct sk_buff *skb = NULL;
->>    	struct publication *p;
->> +	u32 rc_dests;
->>    
->>    	spin_lock_bh(&tn->nametbl_lock);
->>    
->> @@ -775,10 +779,11 @@ int tipc_nametbl_withdraw(struct net *net, u32 type, u32 lower,
->>    		pr_err("Failed to remove local publication {%u,%u,%u}/%u\n",
->>    		       type, lower, upper, key);
->>    	}
->> +	rc_dests = nt->rc_dests;
->>    	spin_unlock_bh(&tn->nametbl_lock);
->>    
->>    	if (skb) {
->> -		tipc_node_broadcast(net, skb);
->> +		tipc_node_broadcast(net, skb, rc_dests);
->>    		return 1;
->>    	}
->>    	return 0;
->> diff --git a/net/tipc/name_table.h b/net/tipc/name_table.h
->> index 728bc7016c38..8064e1986e2c 100644
->> --- a/net/tipc/name_table.h
->> +++ b/net/tipc/name_table.h
->> @@ -106,6 +106,8 @@ struct name_table {
->>    	struct list_head cluster_scope;
->>    	rwlock_t cluster_scope_lock;
->>    	u32 local_publ_count;
->> +	u32 rc_dests;
->> +	u32 snd_nxt;
->>    };
->>    
->>    int tipc_nl_name_table_dump(struct sk_buff *skb, struct netlink_callback *cb);
->> diff --git a/net/tipc/node.c b/net/tipc/node.c
->> index 803a3a6d0f50..ad8d7bce1f98 100644
->> --- a/net/tipc/node.c
->> +++ b/net/tipc/node.c
->> @@ -75,6 +75,8 @@ struct tipc_bclink_entry {
->>    	struct sk_buff_head arrvq;
->>    	struct sk_buff_head inputq2;
->>    	struct sk_buff_head namedq;
->> +	u16 named_rcv_nxt;
->> +	bool named_open;
->>    };
->>    
->>    /**
->> @@ -396,10 +398,10 @@ static void tipc_node_write_unlock(struct tipc_node *n)
->>    	write_unlock_bh(&n->lock);
->>    
->>    	if (flags & TIPC_NOTIFY_NODE_DOWN)
->> -		tipc_publ_notify(net, publ_list, addr);
->> +		tipc_publ_notify(net, publ_list, addr, n->capabilities);
->>    
->>    	if (flags & TIPC_NOTIFY_NODE_UP)
->> -		tipc_named_node_up(net, addr);
->> +		tipc_named_node_up(net, addr, n->capabilities);
->>    
->>    	if (flags & TIPC_NOTIFY_LINK_UP) {
->>    		tipc_mon_peer_up(net, addr, bearer_id);
->> @@ -1729,12 +1731,23 @@ int tipc_node_distr_xmit(struct net *net, struct sk_buff_head *xmitq)
->>    	return 0;
->>    }
->>    
->> -void tipc_node_broadcast(struct net *net, struct sk_buff *skb)
->> +void tipc_node_broadcast(struct net *net, struct sk_buff *skb, int rc_dests)
->>    {
->> +	struct sk_buff_head xmitq;
->>    	struct sk_buff *txskb;
->>    	struct tipc_node *n;
->> +	u16 dummy;
->>    	u32 dst;
->>    
->> +	/* Use broadcast if all nodes support it */
->> +	if (!rc_dests && tipc_bcast_get_mode(net) != BCLINK_MODE_RCAST) {
->> +		__skb_queue_head_init(&xmitq);
->> +		__skb_queue_tail(&xmitq, skb);
->> +		tipc_bcast_xmit(net, &xmitq, &dummy);
->> +		return;
->> +	}
->> +
->> +	/* Otherwise use legacy replicast method */
->>    	rcu_read_lock();
->>    	list_for_each_entry_rcu(n, tipc_nodes(net), list) {
->>    		dst = n->addr;
->> @@ -1749,7 +1762,6 @@ void tipc_node_broadcast(struct net *net, struct sk_buff *skb)
->>    		tipc_node_xmit_skb(net, txskb, dst, 0);
->>    	}
->>    	rcu_read_unlock();
->> -
->>    	kfree_skb(skb);
->>    }
->>    
->> @@ -1844,7 +1856,9 @@ static void tipc_node_bc_rcv(struct net *net, struct sk_buff *skb, int bearer_id
->>    
->>    	/* Handle NAME_DISTRIBUTOR messages sent from 1.7 nodes */
->>    	if (!skb_queue_empty(&n->bc_entry.namedq))
->> -		tipc_named_rcv(net, &n->bc_entry.namedq);
->> +		tipc_named_rcv(net, &n->bc_entry.namedq,
->> +			       &n->bc_entry.named_rcv_nxt,
->> +			       &n->bc_entry.named_open);
->>    
->>    	/* If reassembly or retransmission failure => reset all links to peer */
->>    	if (rc & TIPC_LINK_DOWN_EVT)
->> @@ -2109,7 +2123,9 @@ void tipc_rcv(struct net *net, struct sk_buff *skb, struct tipc_bearer *b)
->>    		tipc_node_link_down(n, bearer_id, false);
->>    
->>    	if (unlikely(!skb_queue_empty(&n->bc_entry.namedq)))
->> -		tipc_named_rcv(net, &n->bc_entry.namedq);
->> +		tipc_named_rcv(net, &n->bc_entry.namedq,
->> +			       &n->bc_entry.named_rcv_nxt,
->> +			       &n->bc_entry.named_open);
->>    
->>    	if (unlikely(!skb_queue_empty(&n->bc_entry.inputq1)))
->>    		tipc_node_mcast_rcv(n);
->> diff --git a/net/tipc/node.h b/net/tipc/node.h
->> index a6803b449a2c..9f6f13f1604f 100644
->> --- a/net/tipc/node.h
->> +++ b/net/tipc/node.h
->> @@ -55,7 +55,8 @@ enum {
->>    	TIPC_MCAST_RBCTL      = (1 << 7),
->>    	TIPC_GAP_ACK_BLOCK    = (1 << 8),
->>    	TIPC_TUNNEL_ENHANCED  = (1 << 9),
->> -	TIPC_NAGLE            = (1 << 10)
->> +	TIPC_NAGLE            = (1 << 10),
->> +	TIPC_NAMED_BCAST      = (1 << 11)
->>    };
->>    
->>    #define TIPC_NODE_CAPABILITIES (TIPC_SYN_BIT           |  \
->> @@ -68,7 +69,8 @@ enum {
->>    				TIPC_MCAST_RBCTL       |   \
->>    				TIPC_GAP_ACK_BLOCK     |   \
->>    				TIPC_TUNNEL_ENHANCED   |   \
->> -				TIPC_NAGLE)
->> +				TIPC_NAGLE             |   \
->> +				TIPC_NAMED_BCAST)
->>    
->>    #define INVALID_BEARER_ID -1
->>    
->> @@ -101,7 +103,7 @@ int tipc_node_xmit_skb(struct net *net, struct sk_buff *skb, u32 dest,
->>    		       u32 selector);
->>    void tipc_node_subscribe(struct net *net, struct list_head *subscr, u32 addr);
->>    void tipc_node_unsubscribe(struct net *net, struct list_head *subscr, u32 addr);
->> -void tipc_node_broadcast(struct net *net, struct sk_buff *skb);
->> +void tipc_node_broadcast(struct net *net, struct sk_buff *skb, int rc_dests);
->>    int tipc_node_add_conn(struct net *net, u32 dnode, u32 port, u32 peer_port);
->>    void tipc_node_remove_conn(struct net *net, u32 dnode, u32 port);
->>    int tipc_node_get_mtu(struct net *net, u32 addr, u32 sel, bool connected);
-
+> >   			rc = tipc_msg_append(hdr, m, send, maxnagle, txq);
+> >   			if (unlikely(rc < 0))
+> >   				break;
 
 
 _______________________________________________
