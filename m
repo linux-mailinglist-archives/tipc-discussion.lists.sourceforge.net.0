@@ -2,102 +2,100 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3DF72266C5
-	for <lists+tipc-discussion@lfdr.de>; Mon, 20 Jul 2020 18:06:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10FE0226DC1
+	for <lists+tipc-discussion@lfdr.de>; Mon, 20 Jul 2020 20:07:18 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1jxYIw-0005F1-Bs; Mon, 20 Jul 2020 16:06:14 +0000
+	id 1jxaC1-0002Py-42; Mon, 20 Jul 2020 18:07:13 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1jxYIu-0005Eu-Gv
- for tipc-discussion@lists.sourceforge.net; Mon, 20 Jul 2020 16:06:12 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1jxaBw-0002Pm-PB
+ for tipc-discussion@lists.sourceforge.net; Mon, 20 Jul 2020 18:07:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=wKdZtfTa6oWr0GGo9xR3V21inj+5mFzVkUlhaCGwWj0=; b=fo26EzPgxG02WgXAjXcD9hG0Q
- hNWJ4ystUKU3jT553MLAzgZ7Aoe6+/Cyd7TYOmtxuXJgL2TlGw4q2zciuZmi03j7Yc2l6cu58S1/Z
- +7cBVkMSnT5/12vLU3C1vn3yHKxMBHPx9A9fWcflCt9iNUZoVuYTWJyllGKdxkjnYMo6A=;
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=4wA/mUMSFJkRif2Ycg0M07tLWsVzSxo5D1d8gql6Lho=; b=FmHcmvkFV2hDmFZhM3ivaYXUtK
+ MhIesCbLOBHNm6553AF2ju/dwLSdWJegJxO34T8Zm8N1RvLWr/a2NiPANSN4GXxcROisMb5BkzVu+
+ N4LKtQERW3PaLKD+hQuzH/ifH2PiP9bpn2uKJsQVfnzGiOtYcLggk0WLkbB4Q5xCnY2Y=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:
- To:Subject:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=wKdZtfTa6oWr0GGo9xR3V21inj+5mFzVkUlhaCGwWj0=; b=GAlijtGEIjmVXbsyZkOMVZBGr7
- mGDZ181dOuSZoRw3gZ7Lk0/6y/AO9nWLOk0bumMuNZ4RrVtUUEviQDyZqq5p21y/9KtiHCvLoGDH6
- ruO40TbOKQ8fWsomcOyGSyXa4Vu34mqx0Yag6VJsICEdzTZsQuGJoxwhL5afRQFfVeIo=;
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ bh=4wA/mUMSFJkRif2Ycg0M07tLWsVzSxo5D1d8gql6Lho=; b=BOn8AE/s7GSerdIsJ6u9Po8gs1
+ YWpWcgBhy+DL3BETYcnIZhPBXZqZeTYqONxotY3HE7FFgLsGl0f7gbaJKLtTKhGvQh07QvugrB55H
+ GlIXaYH5KMd8oU/NsgB35klIAMSR9jC6mjccx+yG9prsAnXZ8ad1CjBhvKdfUcPqeX34=;
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1jxYIq-00Dzhb-Qp
- for tipc-discussion@lists.sourceforge.net; Mon, 20 Jul 2020 16:06:12 +0000
+ id 1jxaBt-001tp5-TU
+ for tipc-discussion@lists.sourceforge.net; Mon, 20 Jul 2020 18:07:07 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1595261155;
+ s=mimecast20190719; t=1595268419;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=wKdZtfTa6oWr0GGo9xR3V21inj+5mFzVkUlhaCGwWj0=;
- b=RjWyp3yBGutqMvA4IxFPp11jaLF3oIM8gJGhYHb+a16ZQTCwVtI6oZm4JipnGW6iYVC+id
- laViskNS8StMBJDTkl4GRy+e0R7ALT4ky7MWbnsWc9XIUXLa0ig1/d8JKiRY8QTeekyWRB
- iQujsiBNHXuR29H3ndhk+c1olboT7t4=
+ bh=4wA/mUMSFJkRif2Ycg0M07tLWsVzSxo5D1d8gql6Lho=;
+ b=Of0AT1L8EBNOsHXtvWqjju7uI98lIbszjV32JlMvlDiScZ6LqLm6KAoW9olSfMMqSYHO75
+ mI6Ujfah1phSYD6TdKb2I2NPm/BGCTTu+WoZ1QdqUopqGElxlsns1CW4FuGaKjh1DMYNLl
+ vjz+I9zbSt7JPrA4VYXBZ5Wv5mcOOsg=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-137-Mhdj46dxOpGgtqqnRd6HKQ-1; Mon, 20 Jul 2020 12:05:51 -0400
-X-MC-Unique: Mhdj46dxOpGgtqqnRd6HKQ-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
+ us-mta-244-zPwxlW8lNtG5pBY2ohTX5Q-1; Mon, 20 Jul 2020 14:06:46 -0400
+X-MC-Unique: zPwxlW8lNtG5pBY2ohTX5Q-1
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 2AC44100CC85;
- Mon, 20 Jul 2020 16:05:50 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id CC24F107ACCA;
+ Mon, 20 Jul 2020 18:06:44 +0000 (UTC)
 Received: from [10.10.112.227] (ovpn-112-227.rdu2.redhat.com [10.10.112.227])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 5DFD32DE60;
- Mon, 20 Jul 2020 16:05:48 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id D0EF260E3E;
+ Mon, 20 Jul 2020 18:06:43 +0000 (UTC)
 To: Tuong Lien <tuong.t.lien@dektech.com.au>, maloy@donjonn.com,
  ying.xue@windriver.com, tipc-discussion@lists.sourceforge.net
 References: <20200710101128.19713-1-tuong.t.lien@dektech.com.au>
- <20200710101128.19713-3-tuong.t.lien@dektech.com.au>
+ <20200710101128.19713-4-tuong.t.lien@dektech.com.au>
 From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <969b43d4-fca4-72e8-b0e4-cd32d24ec746@redhat.com>
-Date: Mon, 20 Jul 2020 12:05:47 -0400
+Message-ID: <18eadc23-584a-3f26-2976-456e2d3d26f9@redhat.com>
+Date: Mon, 20 Jul 2020 14:06:43 -0400
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <20200710101128.19713-3-tuong.t.lien@dektech.com.au>
+In-Reply-To: <20200710101128.19713-4-tuong.t.lien@dektech.com.au>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
-X-Spam-Score: 0.6 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [207.211.31.81 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [207.211.31.81 listed in wl.mailspike.net]
+ trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [205.139.110.120 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 NICE_REPLY_A           Looks like a legit reply (A)
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
- -0.3 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1jxYIq-00Dzhb-Qp
-X-Content-Filtered-By: Mailman/MimeDel 2.1.21
-Subject: Re: [tipc-discussion] [PATCH RFC 2/5] tipc: optimize key switching
- time and logic
+ 0.3 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1jxaBt-001tp5-TU
+Subject: Re: [tipc-discussion] [PATCH RFC 3/5] tipc: introduce encryption
+ master key
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,728 +108,460 @@ List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
 Cc: tipc-dek@dektech.com.au
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-
-
-On 7/10/20 6:11 AM, Tuong Lien wrote:
-> We reduce the lasting time for a pending TX key to be active as well as
-> for a passive RX key to be freed which generally helps speed up the key
-> switching. It is not expected to be too fast but should not be too slow
-> either. Also the key handling logic is simplified that a pending RX key
-> will be removed automatically if it is found not working after a number
-> of times; the probing for a pending TX key is now carried on a specific
-> message user ('LINK_PROTOCOL' or 'LINK_CONFIG') which is more efficient
-> than using a timer on broadcast messages, the timer is reserved for use
-> later as needed.
->
-> The kernel logs or 'pr***()' are now made as clear as possible to user.
-> Some prints are added, removed or changed to the debug-level. The
-> 'TIPC_CRYPTO_DEBUG' definition is removed, and the 'pr_debug()' is used
-> instead which will be much helpful in runtime.
->
-> Besides we also optimize the code in some other places as a preparation
-> for later commits.
->
-> This commit does not change the en/decryption functionalities.
->
-> Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
-> ---
->   net/tipc/crypto.c | 344 ++++++++++++++++++++++--------------------------------
->   1 file changed, 141 insertions(+), 203 deletions(-)
->
-> diff --git a/net/tipc/crypto.c b/net/tipc/crypto.c
-> index 1827ce4fac5d..f1046ab4bd01 100644
-> --- a/net/tipc/crypto.c
-> +++ b/net/tipc/crypto.c
-> @@ -38,10 +38,10 @@
->   #include <crypto/aes.h>
->   #include "crypto.h"
->   
-> -#define TIPC_TX_PROBE_LIM	msecs_to_jiffies(1000) /* > 1s */
-> -#define TIPC_TX_LASTING_LIM	msecs_to_jiffies(120000) /* 2 mins */
-> +#define TIPC_TX_LASTING_TIME	msecs_to_jiffies(10000) /* 10s */
->   #define TIPC_RX_ACTIVE_LIM	msecs_to_jiffies(3000) /* 3s */
-> -#define TIPC_RX_PASSIVE_LIM	msecs_to_jiffies(180000) /* 3 mins */
-> +#define TIPC_RX_PASSIVE_LIM	msecs_to_jiffies(15000) /* 15s */
-> +
->   #define TIPC_MAX_TFMS_DEF	10
->   #define TIPC_MAX_TFMS_LIM	1000
->   
-> @@ -144,7 +144,7 @@ struct tipc_aead {
->   	u32 salt;
->   	u8 authsize;
->   	u8 mode;
-> -	char hint[TIPC_AEAD_HINT_LEN + 1];
-> +	char hint[2 * TIPC_AEAD_HINT_LEN + 1];
->   	struct rcu_head rcu;
->   
->   	atomic64_t seqno ____cacheline_aligned;
-> @@ -168,9 +168,10 @@ struct tipc_crypto_stats {
->    * @key: the key states
->    * @working: the crypto is working or not
->    * @stats: the crypto statistics
-> + * @name: the crypto name
->    * @sndnxt: the per-peer sndnxt (TX)
->    * @timer1: general timer 1 (jiffies)
-> - * @timer2: general timer 1 (jiffies)
-> + * @timer2: general timer 2 (jiffies)
->    * @lock: tipc_key lock
->    */
->   struct tipc_crypto {
-> @@ -181,6 +182,7 @@ struct tipc_crypto {
->   	struct tipc_key key;
->   	u8 working:1;
->   	struct tipc_crypto_stats __percpu *stats;
-> +	char name[48];
->   
->   	atomic64_t sndnxt ____cacheline_aligned;
->   	unsigned long timer1;
-> @@ -239,18 +241,17 @@ static bool tipc_crypto_key_try_align(struct tipc_crypto *rx, u8 new_pending);
->   static struct tipc_aead *tipc_crypto_key_pick_tx(struct tipc_crypto *tx,
->   						 struct tipc_crypto *rx,
->   						 struct sk_buff *skb);
-> -static void tipc_crypto_key_synch(struct tipc_crypto *rx, u8 new_rx_active,
-> -				  struct tipc_msg *hdr);
-> +static void tipc_crypto_key_synch(struct tipc_crypto *rx, struct sk_buff *skb);
->   static int tipc_crypto_key_revoke(struct net *net, u8 tx_key);
->   static void tipc_crypto_rcv_complete(struct net *net, struct tipc_aead *aead,
->   				     struct tipc_bearer *b,
->   				     struct sk_buff **skb, int err);
->   static void tipc_crypto_do_cmd(struct net *net, int cmd);
->   static char *tipc_crypto_key_dump(struct tipc_crypto *c, char *buf);
-> -#ifdef TIPC_CRYPTO_DEBUG
->   static char *tipc_key_change_dump(struct tipc_key old, struct tipc_key new,
->   				  char *buf);
-> -#endif
-> +#define is_tx(crypto) (!(crypto)->node)
-> +#define is_rx(crypto) (!is_tx(crypto))
->   
->   #define key_next(cur) ((cur) % KEY_MAX + 1)
->   
-> @@ -290,7 +291,7 @@ int tipc_aead_key_validate(struct tipc_aead_key *ukey)
->   	if (unlikely(keylen != TIPC_AES_GCM_KEY_SIZE_128 &&
->   		     keylen != TIPC_AES_GCM_KEY_SIZE_192 &&
->   		     keylen != TIPC_AES_GCM_KEY_SIZE_256))
-> -		return -EINVAL;
-> +		return -EKEYREJECTED;
->   
->   	return 0;
->   }
-> @@ -501,9 +502,9 @@ static int tipc_aead_init(struct tipc_aead **aead, struct tipc_aead_key *ukey,
->   		return err;
->   	}
->   
-> -	/* Copy some chars from the user key as a hint */
-> -	memcpy(tmp->hint, ukey->key, TIPC_AEAD_HINT_LEN);
-> -	tmp->hint[TIPC_AEAD_HINT_LEN] = '\0';
-> +	/* Form a hex string of some last bytes as the key's hint */
-> +	bin2hex(tmp->hint, ukey->key + keylen - TIPC_AEAD_HINT_LEN,
-> +		TIPC_AEAD_HINT_LEN);
->   
->   	/* Initialize the other data */
->   	tmp->mode = mode;
-> @@ -663,13 +664,11 @@ static int tipc_aead_encrypt(struct tipc_aead *aead, struct sk_buff *skb,
->   	 * but there is no frag_list, it should be still fine!
->   	 * Otherwise, we must cow it to be a writable buffer with the tailroom.
->   	 */
-> -#ifdef TIPC_CRYPTO_DEBUG
->   	SKB_LINEAR_ASSERT(skb);
->   	if (tailen > skb_tailroom(skb)) {
-> -		pr_warn("TX: skb tailroom is not enough: %d, requires: %d\n",
-> -			skb_tailroom(skb), tailen);
-> +		pr_debug("TX(): skb tailroom is not enough: %d, requires: %d\n",
-> +			 skb_tailroom(skb), tailen);
->   	}
-> -#endif
->   
->   	if (unlikely(!skb_cloned(skb) && tailen <= skb_tailroom(skb))) {
->   		nsg = 1;
-> @@ -1017,23 +1016,16 @@ static inline void tipc_crypto_key_set_state(struct tipc_crypto *c,
->   					     u8 new_active,
->   					     u8 new_pending)
->   {
-> -#ifdef TIPC_CRYPTO_DEBUG
->   	struct tipc_key old = c->key;
->   	char buf[32];
-> -#endif
->   
->   	c->key.keys = ((new_passive & KEY_MASK) << (KEY_BITS * 2)) |
->   		      ((new_active  & KEY_MASK) << (KEY_BITS)) |
->   		      ((new_pending & KEY_MASK));
->   
-> -#ifdef TIPC_CRYPTO_DEBUG
-> -	pr_info("%s(%s): key changing %s ::%pS\n",
-> -		(c->node) ? "RX" : "TX",
-> -		(c->node) ? tipc_node_get_id_str(c->node) :
-> -			    tipc_own_id_string(c->net),
-> -		tipc_key_change_dump(old, c->key, buf),
-> -		__builtin_return_address(0));
-> -#endif
-> +	pr_debug("%s: key changing %s ::%pS\n", c->name,
-> +		 tipc_key_change_dump(old, c->key, buf),
-> +		 __builtin_return_address(0));
->   }
->   
->   /**
-> @@ -1055,20 +1047,20 @@ int tipc_crypto_key_init(struct tipc_crypto *c, struct tipc_aead_key *ukey,
->   
->   	/* Initiate with the new user key */
->   	rc = tipc_aead_init(&aead, ukey, mode);
-> +	if (unlikely(rc)) {
-> +		pr_err("%s: unable to init key, err %d\n", c->name, rc);
-> +		return rc;
-> +	}
->   
->   	/* Attach it to the crypto */
-> -	if (likely(!rc)) {
-> -		rc = tipc_crypto_key_attach(c, aead, 0);
-> -		if (rc < 0)
-> -			tipc_aead_free(&aead->rcu);
-> +	rc = tipc_crypto_key_attach(c, aead, 0);
-> +	if (rc < 0) {
-> +		pr_err("%s: unable to attach key, err %d\n", c->name, rc);
-> +		tipc_aead_free(&aead->rcu);
-> +		return rc;
->   	}
->   
-> -	pr_info("%s(%s): key initiating, rc %d!\n",
-> -		(c->node) ? "RX" : "TX",
-> -		(c->node) ? tipc_node_get_id_str(c->node) :
-> -			    tipc_own_id_string(c->net),
-> -		rc);
-> -
-> +	pr_info("%s: key[%d] is successfully attached\n", c->name, rc);
->   	return rc;
->   }
->   
-> @@ -1083,49 +1075,42 @@ int tipc_crypto_key_init(struct tipc_crypto *c, struct tipc_aead_key *ukey,
->   static int tipc_crypto_key_attach(struct tipc_crypto *c,
->   				  struct tipc_aead *aead, u8 pos)
->   {
-> -	u8 new_pending, new_passive, new_key;
->   	struct tipc_key key;
->   	int rc = -EBUSY;
-> +	u8 new_key;
->   
->   	spin_lock_bh(&c->lock);
->   	key = c->key;
->   	if (key.active && key.passive)
->   		goto exit;
-> -	if (key.passive && !tipc_aead_users(c->aead[key.passive]))
-> -		goto exit;
->   	if (key.pending) {
-> -		if (pos)
-> -			goto exit;
->   		if (tipc_aead_users(c->aead[key.pending]) > 0)
->   			goto exit;
-> +		/* if (pos): ok with replacing, will be aligned when needed */
->   		/* Replace it */
-> -		new_pending = key.pending;
-> -		new_passive = key.passive;
-> -		new_key = new_pending;
-> +		new_key = key.pending;
->   	} else {
->   		if (pos) {
->   			if (key.active && pos != key_next(key.active)) {
-> -				new_pending = key.pending;
-> -				new_passive = pos;
-> -				new_key = new_passive;
-> +				key.passive = pos;
-> +				new_key = pos;
->   				goto attach;
->   			} else if (!key.active && !key.passive) {
-> -				new_pending = pos;
-> -				new_passive = key.passive;
-> -				new_key = new_pending;
-> +				key.pending = pos;
-> +				new_key = pos;
->   				goto attach;
->   			}
->   		}
-> -		new_pending = key_next(key.active ?: key.passive);
-> -		new_passive = key.passive;
-> -		new_key = new_pending;
-> +		key.pending = key_next(key.active ?: key.passive);
-> +		new_key = key.pending;
->   	}
->   
->   attach:
->   	aead->crypto = c;
-> -	tipc_crypto_key_set_state(c, new_passive, key.active, new_pending);
->   	tipc_aead_rcu_replace(c->aead[new_key], aead, &c->lock);
-> -
-> +	if (likely(c->key.keys != key.keys))
-> +		tipc_crypto_key_set_state(c, key.passive, key.active,
-> +					  key.pending);
->   	c->working = 1;
->   	c->timer1 = jiffies;
->   	c->timer2 = jiffies;
-> @@ -1204,7 +1189,8 @@ static bool tipc_crypto_key_try_align(struct tipc_crypto *rx, u8 new_pending)
->   		rcu_assign_pointer(rx->aead[new_passive], tmp2);
->   	refcount_set(&tmp1->refcnt, 1);
->   	aligned = true;
-> -	pr_info("RX(%s): key is aligned!\n", tipc_node_get_id_str(rx->node));
-> +	pr_info_ratelimited("%s: key[%d] -> key[%d]\n", rx->name, key.pending,
-> +			    new_pending);
->   
->   exit:
->   	spin_unlock(&rx->lock);
-> @@ -1274,8 +1260,7 @@ static struct tipc_aead *tipc_crypto_key_pick_tx(struct tipc_crypto *tx,
->   /**
->    * tipc_crypto_key_synch: Synch own key data according to peer key status
->    * @rx: RX crypto handle
-> - * @new_rx_active: latest RX active key from peer
-> - * @hdr: TIPCv2 message
-> + * @skb: TIPCv2 message buffer (incl. the ehdr from peer)
->    *
->    * This function updates the peer node related data as the peer RX active key
->    * has changed, so the number of TX keys' users on this node are increased and
-> @@ -1283,44 +1268,35 @@ static struct tipc_aead *tipc_crypto_key_pick_tx(struct tipc_crypto *tx,
->    *
->    * The "per-peer" sndnxt is also reset when the peer key has switched.
->    */
-> -static void tipc_crypto_key_synch(struct tipc_crypto *rx, u8 new_rx_active,
-> -				  struct tipc_msg *hdr)
-> +static void tipc_crypto_key_synch(struct tipc_crypto *rx, struct sk_buff *skb)
->   {
-> -	struct net *net = rx->net;
-> -	struct tipc_crypto *tx = tipc_net(net)->crypto_tx;
-> -	u8 cur_rx_active;
-> -
-> -	/* TX might be even not ready yet */
-> -	if (unlikely(!tx->key.active && !tx->key.pending))
-> -		return;
-> -
-> -	cur_rx_active = atomic_read(&rx->peer_rx_active);
-> -	if (likely(cur_rx_active == new_rx_active))
-> -		return;
-> +	struct tipc_ehdr *ehdr = (struct tipc_ehdr *)skb_network_header(skb);
-> +	struct tipc_crypto *tx = tipc_net(rx->net)->crypto_tx;
-> +	struct tipc_msg *hdr = buf_msg(skb);
-> +	u32 self = tipc_own_addr(rx->net);
-> +	u8 cur, new;
->   
-> -	/* Make sure this message destined for this node */
-> -	if (unlikely(msg_short(hdr) ||
-> -		     msg_destnode(hdr) != tipc_own_addr(net)))
-> +	/* Ensure this message is destined to us first */
-> +	if (!ehdr->destined || msg_short(hdr) || msg_destnode(hdr) != self)
->   		return;
->   
-> -	/* Peer RX active key has changed, try to update owns' & TX users */
-> -	if (atomic_cmpxchg(&rx->peer_rx_active,
-> -			   cur_rx_active,
-> -			   new_rx_active) == cur_rx_active) {
-> -		if (new_rx_active)
-> -			tipc_aead_users_inc(tx->aead[new_rx_active], INT_MAX);
-> -		if (cur_rx_active)
-> -			tipc_aead_users_dec(tx->aead[cur_rx_active], 0);
-> +	/* Peer RX active key has changed, let's update own TX users */
-> +	cur = atomic_read(&rx->peer_rx_active);
-> +	new = ehdr->rx_key_active;
-> +	if (tx->key.keys &&
-> +	    cur != new &&
-> +	    atomic_cmpxchg(&rx->peer_rx_active, cur, new) == cur) {
-> +		if (new)
-> +			tipc_aead_users_inc(tx->aead[new], INT_MAX);
-> +		if (cur)
-> +			tipc_aead_users_dec(tx->aead[cur], 0);
->   
->   		atomic64_set(&rx->sndnxt, 0);
->   		/* Mark the point TX key users changed */
->   		tx->timer1 = jiffies;
->   
-> -#ifdef TIPC_CRYPTO_DEBUG
-> -		pr_info("TX(%s): key users changed %d-- %d++, peer RX(%s)\n",
-> -			tipc_own_id_string(net), cur_rx_active,
-> -			new_rx_active, tipc_node_get_id_str(rx->node));
-> -#endif
-> +		pr_debug("%s: key users changed %d-- %d++, peer %s\n",
-> +			 tx->name, cur, new, rx->name);
->   	}
->   }
->   
-> @@ -1338,7 +1314,7 @@ static int tipc_crypto_key_revoke(struct net *net, u8 tx_key)
->   	tipc_crypto_key_detach(tx->aead[key.active], &tx->lock);
->   	spin_unlock(&tx->lock);
->   
-> -	pr_warn("TX(%s): key is revoked!\n", tipc_own_id_string(net));
-> +	pr_warn("%s: key is revoked\n", tx->name);
->   	return -EKEYREVOKED;
->   }
->   
-> @@ -1371,25 +1347,26 @@ int tipc_crypto_start(struct tipc_crypto **crypto, struct net *net,
->   	c->timer1 = jiffies;
->   	c->timer2 = jiffies;
->   	spin_lock_init(&c->lock);
-> -	*crypto = c;
-> +	scnprintf(c->name, 48, "%s(%s)", (is_rx(c)) ? "RX" : "TX",
-> +		  (is_rx(c)) ? tipc_node_get_id_str(c->node) :
-> +			       tipc_own_id_string(c->net));
->   
-> +	*crypto = c;
->   	return 0;
->   }
->   
->   void tipc_crypto_stop(struct tipc_crypto **crypto)
->   {
-> -	struct tipc_crypto *c, *tx, *rx;
-> -	bool is_rx;
-> +	struct tipc_crypto *c = *crypto, *tx, *rx;
->   	u8 k;
->   
-> -	if (!*crypto)
-> +	if (!c)
->   		return;
->   
->   	rcu_read_lock();
->   	/* RX stopping? => decrease TX key users if any */
-> -	is_rx = !!((*crypto)->node);
-> -	if (is_rx) {
-> -		rx = *crypto;
-> +	if (is_rx(c)) {
-> +		rx = c;
->   		tx = tipc_net(rx->net)->crypto_tx;
->   		k = atomic_read(&rx->peer_rx_active);
->   		if (k) {
-> @@ -1400,15 +1377,10 @@ void tipc_crypto_stop(struct tipc_crypto **crypto)
->   	}
->   
->   	/* Release AEAD keys */
-> -	c = *crypto;
->   	for (k = KEY_MIN; k <= KEY_MAX; k++)
->   		tipc_aead_put(rcu_dereference(c->aead[k]));
->   	rcu_read_unlock();
-> -
-> -	pr_warn("%s(%s) has been purged, node left!\n",
-> -		(is_rx) ? "RX" : "TX",
-> -		(is_rx) ? tipc_node_get_id_str((*crypto)->node) :
-> -			  tipc_own_id_string((*crypto)->net));
-> +	pr_debug("%s: has been stopped\n", c->name);
->   
->   	/* Free this crypto statistics */
->   	free_percpu(c->stats);
-> @@ -1422,102 +1394,81 @@ void tipc_crypto_timeout(struct tipc_crypto *rx)
->   	struct tipc_net *tn = tipc_net(rx->net);
->   	struct tipc_crypto *tx = tn->crypto_tx;
->   	struct tipc_key key;
-> -	u8 new_pending, new_passive;
->   	int cmd;
->   
-> -	/* TX key activating:
-> -	 * The pending key (users > 0) -> active
-> -	 * The active key if any (users == 0) -> free
-> -	 */
-> +	/* TX pending: taking all users & stable -> active */
->   	spin_lock(&tx->lock);
->   	key = tx->key;
->   	if (key.active && tipc_aead_users(tx->aead[key.active]) > 0)
->   		goto s1;
->   	if (!key.pending || tipc_aead_users(tx->aead[key.pending]) <= 0)
->   		goto s1;
-> -	if (time_before(jiffies, tx->timer1 + TIPC_TX_LASTING_LIM))
-> +	if (time_before(jiffies, tx->timer1 + TIPC_TX_LASTING_TIME))
->   		goto s1;
->   
->   	tipc_crypto_key_set_state(tx, key.passive, key.pending, 0);
->   	if (key.active)
->   		tipc_crypto_key_detach(tx->aead[key.active], &tx->lock);
->   	this_cpu_inc(tx->stats->stat[STAT_SWITCHES]);
-> -	pr_info("TX(%s): key %d is activated!\n", tipc_own_id_string(tx->net),
-> -		key.pending);
-> +	pr_info("%s: key[%d] is activated\n", tx->name, key.pending);
->   
->   s1:
->   	spin_unlock(&tx->lock);
->   
-> -	/* RX key activating:
-> -	 * The pending key (users > 0) -> active
-> -	 * The active key if any -> passive, freed later
-> -	 */
-> +	/* RX pending: having user -> active */
->   	spin_lock(&rx->lock);
->   	key = rx->key;
->   	if (!key.pending || tipc_aead_users(rx->aead[key.pending]) <= 0)
->   		goto s2;
->   
-> -	new_pending = (key.passive &&
-> -		       !tipc_aead_users(rx->aead[key.passive])) ?
-> -				       key.passive : 0;
-> -	new_passive = (key.active) ?: ((new_pending) ? 0 : key.passive);
-> -	tipc_crypto_key_set_state(rx, new_passive, key.pending, new_pending);
-> +	if (key.active)
-> +		key.passive = key.active;
-> +	key.active = key.pending;
-> +	rx->timer2 = jiffies;
-> +	tipc_crypto_key_set_state(rx, key.passive, key.active, 0);
->   	this_cpu_inc(rx->stats->stat[STAT_SWITCHES]);
-> -	pr_info("RX(%s): key %d is activated!\n",
-> -		tipc_node_get_id_str(rx->node),	key.pending);
-> +	pr_info("%s: key[%d] is activated\n", rx->name, key.pending);
->   	goto s5;
->   
->   s2:
-> -	/* RX key "faulty" switching:
-> -	 * The faulty pending key (users < -30) -> passive
-> -	 * The passive key (users = 0) -> pending
-> -	 * Note: This only happens after RX deactivated - s3!
-> -	 */
-> -	key = rx->key;
-> -	if (!key.pending || tipc_aead_users(rx->aead[key.pending]) > -30)
-> -		goto s3;
-> -	if (!key.passive || tipc_aead_users(rx->aead[key.passive]) != 0)
-> +	/* RX pending: not working -> remove */
-> +	if (!key.pending || tipc_aead_users(rx->aead[key.pending]) > -10)
->   		goto s3;
->   
-> -	new_pending = key.passive;
-> -	new_passive = key.pending;
-> -	tipc_crypto_key_set_state(rx, new_passive, key.active, new_pending);
-> +	tipc_crypto_key_set_state(rx, key.passive, key.active, 0);
-> +	tipc_crypto_key_detach(rx->aead[key.pending], &rx->lock);
-> +	pr_info("%s: key[%d] is removed\n", rx->name, key.pending);
->   	goto s5;
->   
->   s3:
-> -	/* RX key deactivating:
-> -	 * The passive key if any -> pending
-> -	 * The active key -> passive (users = 0) / pending
-> -	 * The pending key if any -> passive (users = 0)
-> -	 */
-> -	key = rx->key;
-> +	/* RX active: timed out or no user -> pending */
->   	if (!key.active)
->   		goto s4;
-> -	if (time_before(jiffies, rx->timer1 + TIPC_RX_ACTIVE_LIM))
-> +	if (time_before(jiffies, rx->timer1 + TIPC_RX_ACTIVE_LIM) &&
-> +	    tipc_aead_users(rx->aead[key.active]) > 0)
->   		goto s4;
->   
-> -	new_pending = (key.passive) ?: key.active;
-> -	new_passive = (key.passive) ? key.active : key.pending;
-> -	tipc_aead_users_set(rx->aead[new_pending], 0);
-> -	if (new_passive)
-> -		tipc_aead_users_set(rx->aead[new_passive], 0);
-> -	tipc_crypto_key_set_state(rx, new_passive, 0, new_pending);
-> -	pr_info("RX(%s): key %d is deactivated!\n",
-> -		tipc_node_get_id_str(rx->node), key.active);
-> +	if (key.pending)
-> +		key.passive = key.active;
-> +	else
-> +		key.pending = key.active;
-> +	rx->timer2 = jiffies;
-> +	tipc_crypto_key_set_state(rx, key.passive, 0, key.pending);
-> +	tipc_aead_users_set(rx->aead[key.pending], 0);
-> +	pr_info("%s: key[%d] is deactivated\n", rx->name, key.active);
->   	goto s5;
->   
->   s4:
-> -	/* RX key passive -> freed: */
-> -	key = rx->key;
-> -	if (!key.passive || !tipc_aead_users(rx->aead[key.passive]))
-> +	/* RX passive: outdated or not working -> free */
-> +	if (!key.passive)
->   		goto s5;
-> -	if (time_before(jiffies, rx->timer2 + TIPC_RX_PASSIVE_LIM))
-> +	if (time_before(jiffies, rx->timer2 + TIPC_RX_PASSIVE_LIM) &&
-> +	    tipc_aead_users(rx->aead[key.passive]) > -10)
->   		goto s5;
->   
->   	tipc_crypto_key_set_state(rx, 0, key.active, key.pending);
->   	tipc_crypto_key_detach(rx->aead[key.passive], &rx->lock);
-> -	pr_info("RX(%s): key %d is freed!\n", tipc_node_get_id_str(rx->node),
-> -		key.passive);
-> +	pr_info("%s: key[%d] is freed\n", rx->name, key.passive);
->   
->   s5:
->   	spin_unlock(&rx->lock);
-> @@ -1560,10 +1511,12 @@ int tipc_crypto_xmit(struct net *net, struct sk_buff **skb,
->   	struct tipc_crypto *__rx = tipc_node_crypto_rx(__dnode);
->   	struct tipc_crypto *tx = tipc_net(net)->crypto_tx;
->   	struct tipc_crypto_stats __percpu *stats = tx->stats;
-> +	struct tipc_msg *hdr = buf_msg(*skb);
->   	struct tipc_key key = tx->key;
->   	struct tipc_aead *aead = NULL;
-> -	struct sk_buff *probe;
-> +	struct sk_buff *_skb;
->   	int rc = -ENOKEY;
-> +	u32 user = msg_user(hdr);
->   	u8 tx_key;
->   
->   	/* No encryption? */
-> @@ -1581,17 +1534,18 @@ int tipc_crypto_xmit(struct net *net, struct sk_buff **skb,
->   			goto encrypt;
->   		if (__rx && atomic_read(&__rx->peer_rx_active) == tx_key)
->   			goto encrypt;
-> -		if (TIPC_SKB_CB(*skb)->probe)
-> +		if (TIPC_SKB_CB(*skb)->probe) {
-> +			pr_debug("%s: probing for key[%d]\n", tx->name,
-> +				 key.pending);
->   			goto encrypt;
-> -		if (!__rx &&
-> -		    time_after(jiffies, tx->timer2 + TIPC_TX_PROBE_LIM)) {
-> -			tx->timer2 = jiffies;
-> -			probe = skb_clone(*skb, GFP_ATOMIC);
-> -			if (probe) {
-> -				TIPC_SKB_CB(probe)->probe = 1;
-> -				tipc_crypto_xmit(net, &probe, b, dst, __dnode);
-> -				if (probe)
-> -					b->media->send_msg(net, probe, b, dst);
-> +		}
-> +		if (user == LINK_CONFIG || user == LINK_PROTOCOL) {
-> +			_skb = skb_clone(*skb, GFP_ATOMIC);
-> +			if (_skb) {
-> +				TIPC_SKB_CB(_skb)->probe = 1;
-> +				tipc_crypto_xmit(net, &_skb, b, dst, __dnode);
-> +				if (_skb)
-> +					b->media->send_msg(net, _skb, b, dst);
->   			}
->   		}
->   	}
-> @@ -1673,22 +1627,12 @@ int tipc_crypto_rcv(struct net *net, struct tipc_crypto *rx,
->   	if (unlikely(!rx))
->   		goto pick_tx;
->   
-> -	/* Pick RX key according to TX key, three cases are possible:
-> -	 * 1) The current active key (likely) or;
-> -	 * 2) The pending (new or deactivated) key (if any) or;
-> -	 * 3) The passive or old active key (i.e. users > 0);
-> -	 */
->   	tx_key = ((struct tipc_ehdr *)(*skb)->data)->tx_key;
-> +	/* Pick RX key according to TX key if any */
->   	key = rx->key;
-> -	if (likely(tx_key == key.active))
-> +	if (tx_key == key.active || tx_key == key.pending ||
-> +	    tx_key == key.passive)
->   		goto decrypt;
-> -	if (tx_key == key.pending)
-> -		goto decrypt;
-> -	if (tx_key == key.passive) {
-> -		rx->timer2 = jiffies;
-> -		if (tipc_aead_users(rx->aead[key.passive]) > 0)
-> -			goto decrypt;
-> -	}
->   
->   	/* Unknown key, let's try to align RX key(s) */
->   	if (tipc_crypto_key_try_align(rx, tx_key))
-> @@ -1747,21 +1691,17 @@ static void tipc_crypto_rcv_complete(struct net *net, struct tipc_aead *aead,
->   	struct tipc_aead *tmp = NULL;
->   	struct tipc_ehdr *ehdr;
->   	struct tipc_node *n;
-> -	u8 rx_key_active;
-> -	bool destined;
->   
->   	/* Is this completed by TX? */
-> -	if (unlikely(!rx->node)) {
-> +	if (unlikely(is_tx(aead->crypto))) {
->   		rx = skb_cb->tx_clone_ctx.rx;
-> -#ifdef TIPC_CRYPTO_DEBUG
-> -		pr_info("TX->RX(%s): err %d, aead %p, skb->next %p, flags %x\n",
-> -			(rx) ? tipc_node_get_id_str(rx->node) : "-", err, aead,
-> -			(*skb)->next, skb_cb->flags);
-> -		pr_info("skb_cb [recurs %d, last %p], tx->aead [%p %p %p]\n",
-> -			skb_cb->tx_clone_ctx.recurs, skb_cb->tx_clone_ctx.last,
-> -			aead->crypto->aead[1], aead->crypto->aead[2],
-> -			aead->crypto->aead[3]);
-> -#endif
-> +		pr_debug("TX->RX(%s): err %d, aead %p, skb->next %p, flags %x\n",
-> +			 (rx) ? tipc_node_get_id_str(rx->node) : "-", err, aead,
-> +			 (*skb)->next, skb_cb->flags);
-> +		pr_debug("skb_cb [recurs %d, last %p], tx->aead [%p %p %p]\n",
-> +			 skb_cb->tx_clone_ctx.recurs, skb_cb->tx_clone_ctx.last,
-> +			 aead->crypto->aead[1], aead->crypto->aead[2],
-> +			 aead->crypto->aead[3]);
->   		if (unlikely(err)) {
->   			if (err == -EBADMSG && (*skb)->next)
->   				tipc_rcv(net, (*skb)->next, b);
-> @@ -1782,9 +1722,6 @@ static void tipc_crypto_rcv_complete(struct net *net, struct tipc_aead *aead,
->   				goto free_skb;
->   		}
->   
-> -		/* Skip cloning this time as we had a RX pending key */
-> -		if (rx->key.pending)
-> -			goto rcv;
->   		if (tipc_aead_clone(&tmp, aead) < 0)
->   			goto rcv;
->   		if (tipc_crypto_key_attach(rx, tmp, ehdr->tx_key) < 0) {
-> @@ -1809,8 +1746,12 @@ static void tipc_crypto_rcv_complete(struct net *net, struct tipc_aead *aead,
->   
->   	/* Remove ehdr & auth. tag prior to tipc_rcv() */
->   	ehdr = (struct tipc_ehdr *)(*skb)->data;
-> -	destined = ehdr->destined;
-> -	rx_key_active = ehdr->rx_key_active;
-> +
-> +	/* Mark this point, RX passive still works */
-> +	if (rx->key.passive && ehdr->tx_key == rx->key.passive)
-> +		rx->timer2 = jiffies;
-> +
-> +	skb_reset_network_header(*skb);
->   	skb_pull(*skb, tipc_ehdr_size(ehdr));
->   	pskb_trim(*skb, (*skb)->len - aead->authsize);
->   
-> @@ -1820,9 +1761,8 @@ static void tipc_crypto_rcv_complete(struct net *net, struct tipc_aead *aead,
->   		goto free_skb;
->   	}
->   
-> -	/* Update peer RX active key & TX users */
-> -	if (destined)
-> -		tipc_crypto_key_synch(rx, rx_key_active, buf_msg(*skb));
-> +	/* Ok, everything's fine, try to synch own keys according to peers' */
-> +	tipc_crypto_key_synch(rx, *skb);
->   
->   	/* Mark skb decrypted */
->   	skb_cb->decrypted = 1;
-> @@ -1881,7 +1821,7 @@ static void tipc_crypto_do_cmd(struct net *net, int cmd)
->   	/* Print crypto statistics */
->   	for (i = 0, j = 0; i < MAX_STATS; i++)
->   		j += scnprintf(buf + j, 200 - j, "|%11s ", hstats[i]);
-> -	pr_info("\nCounter     %s", buf);
-> +	pr_info("Counter     %s", buf);
->   
->   	memset(buf, '-', 115);
->   	buf[115] = '\0';
-> @@ -1939,7 +1879,7 @@ static char *tipc_crypto_key_dump(struct tipc_crypto *c, char *buf)
->   		aead = rcu_dereference(c->aead[k]);
->   		if (aead)
->   			i += scnprintf(buf + i, 200 - i,
-> -				       "{\"%s...\", \"%s\"}/%d:%d",
-> +				       "{\"0x...%s\", \"%s\"}/%d:%d",
->   				       aead->hint,
->   				       (aead->mode == CLUSTER_KEY) ? "c" : "p",
->   				       atomic_read(&aead->users),
-> @@ -1948,14 +1888,13 @@ static char *tipc_crypto_key_dump(struct tipc_crypto *c, char *buf)
->   		i += scnprintf(buf + i, 200 - i, "\n");
->   	}
->   
-> -	if (c->node)
-> +	if (is_rx(c))
->   		i += scnprintf(buf + i, 200 - i, "\tPeer RX active: %d\n",
->   			       atomic_read(&c->peer_rx_active));
->   
->   	return buf;
->   }
->   
-> -#ifdef TIPC_CRYPTO_DEBUG
->   static char *tipc_key_change_dump(struct tipc_key old, struct tipc_key new,
->   				  char *buf)
->   {
-> @@ -1986,4 +1925,3 @@ static char *tipc_key_change_dump(struct tipc_key old, struct tipc_key new,
->   	i += scnprintf(buf + i, 32 - i, "]");
->   	return buf;
->   }
-> -#endif
-
-Acked-by: Jon Maloy <jmaloy@redhat.com>
-
-Happy you also got rid of some of the #ifdef TIPC_CRYPTO_DEBUG macros
-
-#ifdef TIPC_CRYPTO_DEBUG
-
-
-_______________________________________________
-tipc-discussion mailing list
-tipc-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+CgpPbiA3LzEwLzIwIDY6MTEgQU0sIFR1b25nIExpZW4gd3JvdGU6Cj4gSW4gYWRkaXRpb24gdG8g
+dGhlIHN1cHBvcnRlZCBjbHVzdGVyICYgcGVyLW5vZGUgZW5jcnlwdGlvbiBrZXlzIGZvciB0aGUK
+PiBlbi9kZWNyeXB0aW9uIG9mIFRJUEMgbWVzc2FnZXMsIHdlIG5vdyBpbnRyb2R1Y2Ugb25lIG9w
+dGlvbiBmb3IgdXNlciB0bwo+IHNldCBhIGNsdXN0ZXIga2V5IGFzICdtYXN0ZXIga2V5JywKU3Rp
+bGwgbm90IHF1aXRlIGhhcHB5IHdpdGggdGhlIHRlcm0gJ21hc3RlciBrZXknIGJ1dCBoYXZlIG5v
+IHJlYWxseSBnb29kIApzdWdnZXN0aW9ucyBhdCB0aGUgbW9tZW50LgpNYXliZSAnbWVtYmVyc2hp
+cCBrZXknIG9yIGp1c3QgJ21lbWJlciBrZXknPwo+IHdoaWNoIGlzIHNpbXBseSBhIHN5bW1ldHJp
+YyBrZXkgbGlrZQo+IHRoZSBmb3JtZXIKYnV0IGhhcyBhIGxvbmdlciBsaWZlIGN5Y2xlLiBJdCBo
+YXMgdHdvIHB1cnBvc2VzOgoKIMKgLSBBdXRoZW50aWNhdGlvbiBvZiBuZXcgbWVtYmVyIG5vZGVz
+IGluIHRoZSBjbHVzdGVyLgogwqAgTmV3IG5vZGVzLCBoYXZpbmcgbm8ga25vd2xlZGdlIG9mIGN1
+cnJlbnQgc2Vzc2lvbiBrZXlzCiDCoCBpbiB0aGUgY2x1c3RlciB3aWxsIHN0aWxsIGJlIGFibGUg
+dG8gam9pbiB0aGUgY2x1c3RlciBhcyBsb25nIGFzCiDCoCB0aGV5IGtub3cgdGhpcyBrZXkuIFRo
+aXMgaXMgYmVjYXVzZSBhbGwgbmVpZ2hib3IgZGlzY292ZXJ5CiDCoCAoTElOS19DT05GSUcpIG1l
+c3NhZ2VzIG11c3QgYmUgZW5jcnlwdGVkIHdpdGggdGhpcyBrZXkuCgotIEVuY3J5cHRpb24gb2Yg
+c2Vzc2lvbiBlbmNyeXB0aW9uIGtleXMgZHVyaW5nIGF1dG9tYXRpYyBleGNoYW5nZQogwqAgYW5k
+IHVwZGF0ZSBvZiB0aG9zZS4gVGhpcyBpc8KgIGEgZmVhdHVyZSB3ZSB3aWxsIGludHJvZHVjZQog
+wqAgaW4gYSBsYXRlciBjb21taXQgaW4gdGhpcyBzZXJpZXMuCldlIGluc2VydCB0aGUgbmV3IGtl
+eSBpbnRvIHRoZSBjdXJyZW50bHkgdW51c2VkIHNsb3QgMCBpbiB0aGUga2V5IGFycmF5LAphbmQg
+c3RhcnQgdXNpbmcgaXQgaW1tZWRpYXRlbHkgb25jZSB0aGUgdXNlciBoYXMgc2V0IGl0Lgo+CkFm
+dGVyIGpvaW5pbmcsIGEgbm9kZSBvbmx5IGtub3dpbmcgdGhlIG1hc3RlciBrZXkgc2hvdWxkIGJl
+IGZ1bGx5Cj4gY29tbXVuaWNhYmxlIHRvIGV4aXN0aW5nIG5vZGVzIGluIHRoZSBjbHVzdGVyLCBh
+bHRob3VnaCB0aG9zZSBub2RlcyBtYXkKPiBoYXZlIHRoZWlyIG93biBzZXNzaW9uIGtleXMgYWN0
+aXZhdGVkIChpLmUuIG5vdCB0aGUgbWFzdGVyIG9uZSkuIFRvCj4gc3VwcG9ydCB0aGlzLCB3ZSBz
+aW1wbHkKcy9zaW1wbHkvLwo+IGRlZmluZSBhICdncmFjZSBwZXJpb2QnLCBzdGFydGluZyBmcm9t
+IHRoZSB0aW1lCj4gYSBub2RlIGl0c2VsZiByZXBvcnRzIGhhdmluZyBubyBSWCBrZXlzLCBzbyB0
+aGUgZXhpc3Rpbmcgbm9kZXMgd2lsbCB1c2UKPiB0aGUgbWFzdGVyIGtleSBmb3IgZW5jcnlwdGlv
+biBpbnN0ZWFkLiBUaGUgZ3JhY2UgcGVyaW9kIGNhbiBiZSBleHRlbmRlZAo+IGJ1dCB3aWxsIGF1
+dG9tYXRpY2FsbHkgc3RvcCBhZnRlciwgZS5nLiA1IHNlY29uZHMgd2l0aG91dCBhIG5ldyByZXBv
+cnQuCj4gVGhpcyBpcyBhbHNvIHRoZSBiYXNpcyBmb3IgbGF0ZXIga2V5IGV4Y2hhbmdpbmcgc2lu
+Y2UgdGhlIG5ldyBub2RlIHdpbGwKPiBiZSBpbXBvc3NpYmxlIHRvIGRlY3J5cHQgYW55dGhpbmcg
+d2l0aG91dCB0aGUgc3VwcG9ydCBmcm9tIG1hc3RlciBrZXkuCj4KPiBGb3IgdXNlciB0byBzZXQg
+YSBtYXN0ZXIga2V5LCB3ZSBkZWZpbmUgYSBuZXcgbmV0bGluayBmbGFnIC0KPiAnVElQQ19OTEFf
+Tk9ERV9LRVlfTUFTVEVSJywgc28gaXQgY2FuIGJlIGFkZGVkIHRvIHRoZSBjdXJyZW50ICdzZXQg
+a2V5Jwo+IG5ldGxpbmsgY29tbWFuZCB0byBzcGVjaWZ5IHRoZSBzZXR0aW5nIGtleSB0byBiZSBh
+IG1hc3RlciBrZXkuCj4KPiBBYm92ZSBhbGwsIHRoZSB0cmFkaXRpb25hbCBjbHVzdGVyL3Blci1u
+b2RlIGtleSBtZWNoYW5pc20gaXMgZ3VhcmFudGVlZAo+IHRvIHdvcmsgd2hlbiB1c2VyIGNvbWVz
+IG5vdCB0byB1c2UgdGhpcyBtYXN0ZXIga2V5IG9wdGlvbi4gVGhpcyBpcyBhbHNvCj4gY29tcGF0
+aWJsZSB0byBsZWdhY3kgbm9kZXMgd2l0aG91dCB0aGUgZmVhdHVyZSBzdXBwb3J0ZWQuCkV2ZW4g
+dGhpcyBuZXcga2V5IGNhbiBiZSB1cGRhdGVkIHdpdGhvdXQgYW55IGludGVycnVwdGlvbgpvZiBj
+bHVzdGVyIGNvbm5lY3Rpdml0eSwgYnV0IGlzIHNvIGlzIG5lZWRlZCwgdGhpcyBoYXMgdG8gYmUK
+Y29vcmRpbmF0ZWQgYW5kIHNldCBieSB0aGUgdXNlci4KPgo+IFNpZ25lZC1vZmYtYnk6IFR1b25n
+IExpZW4gPHR1b25nLnQubGllbkBkZWt0ZWNoLmNvbS5hdT4KPiAtLS0KPiAgIGluY2x1ZGUvdWFw
+aS9saW51eC90aXBjX25ldGxpbmsuaCB8ICAgMSArCj4gICBuZXQvdGlwYy9jcnlwdG8uYyAgICAg
+ICAgICAgICAgICAgfCAyMDYgKysrKysrKysrKysrKysrKysrKysrKysrKysrKy0tLS0tLS0tLS0K
+PiAgIG5ldC90aXBjL2NyeXB0by5oICAgICAgICAgICAgICAgICB8ICAxNSArKy0KPiAgIG5ldC90
+aXBjL21zZy5oICAgICAgICAgICAgICAgICAgICB8ICAgNCArLQo+ICAgbmV0L3RpcGMvbmV0bGlu
+ay5jICAgICAgICAgICAgICAgIHwgICAxICsKPiAgIG5ldC90aXBjL25vZGUuYyAgICAgICAgICAg
+ICAgICAgICB8ICA0NiArKysrLS0tLS0KPiAgIDYgZmlsZXMgY2hhbmdlZCwgMTg5IGluc2VydGlv
+bnMoKyksIDg0IGRlbGV0aW9ucygtKQo+Cj4gZGlmZiAtLWdpdCBhL2luY2x1ZGUvdWFwaS9saW51
+eC90aXBjX25ldGxpbmsuaCBiL2luY2x1ZGUvdWFwaS9saW51eC90aXBjX25ldGxpbmsuaAo+IGlu
+ZGV4IGRjMGQyM2E1MGU2OS4uZDQ4NGJhYTlkMzY1IDEwMDY0NAo+IC0tLSBhL2luY2x1ZGUvdWFw
+aS9saW51eC90aXBjX25ldGxpbmsuaAo+ICsrKyBiL2luY2x1ZGUvdWFwaS9saW51eC90aXBjX25l
+dGxpbmsuaAo+IEBAIC0xNjUsNiArMTY1LDcgQEAgZW51bSB7Cj4gICAJVElQQ19OTEFfTk9ERV9V
+UCwJCS8qIGZsYWcgKi8KPiAgIAlUSVBDX05MQV9OT0RFX0lELAkJLyogZGF0YSAqLwo+ICAgCVRJ
+UENfTkxBX05PREVfS0VZLAkJLyogZGF0YSAqLwo+ICsJVElQQ19OTEFfTk9ERV9LRVlfTUFTVEVS
+LAkvKiBmbGFnICovCj4gICAKPiAgIAlfX1RJUENfTkxBX05PREVfTUFYLAo+ICAgCVRJUENfTkxB
+X05PREVfTUFYID0gX19USVBDX05MQV9OT0RFX01BWCAtIDEKPiBkaWZmIC0tZ2l0IGEvbmV0L3Rp
+cGMvY3J5cHRvLmMgYi9uZXQvdGlwYy9jcnlwdG8uYwo+IGluZGV4IGYxMDQ2YWI0YmQwMS4uN2M2
+ODhjZDBiMTNlIDEwMDY0NAo+IC0tLSBhL25ldC90aXBjL2NyeXB0by5jCj4gKysrIGIvbmV0L3Rp
+cGMvY3J5cHRvLmMKPiBAQCAtMzgsNiArMzgsNyBAQAo+ICAgI2luY2x1ZGUgPGNyeXB0by9hZXMu
+aD4KPiAgICNpbmNsdWRlICJjcnlwdG8uaCIKPiAgIAo+ICsjZGVmaW5lIFRJUENfVFhfR1JBQ0Vf
+UEVSSU9ECW1zZWNzX3RvX2ppZmZpZXMoNTAwMCkgLyogNXMgKi8KPiAgICNkZWZpbmUgVElQQ19U
+WF9MQVNUSU5HX1RJTUUJbXNlY3NfdG9famlmZmllcygxMDAwMCkgLyogMTBzICovCj4gICAjZGVm
+aW5lIFRJUENfUlhfQUNUSVZFX0xJTQltc2Vjc190b19qaWZmaWVzKDMwMDApIC8qIDNzICovCj4g
+ICAjZGVmaW5lIFRJUENfUlhfUEFTU0lWRV9MSU0JbXNlY3NfdG9famlmZmllcygxNTAwMCkgLyog
+MTVzICovCj4gQEAgLTQ5LDkgKzUwLDkgQEAKPiAgICAqIFRJUEMgS2V5IGlkcwo+ICAgICovCj4g
+ICBlbnVtIHsKPiAtCUtFWV9VTlVTRUQgPSAwLAo+IC0JS0VZX01JTiwKPiAtCUtFWV8xID0gS0VZ
+X01JTiwKPiArCUtFWV9NQVNURVIgPSAwLAo+ICsJS0VZX01JTiA9IEtFWV9NQVNURVIsCj4gKwlL
+RVlfMSA9IDEsCj4gICAJS0VZXzIsCj4gICAJS0VZXzMsCj4gICAJS0VZX01BWCA9IEtFWV8zLAo+
+IEBAIC0xNjYsMjcgKzE2NywzNiBAQCBzdHJ1Y3QgdGlwY19jcnlwdG9fc3RhdHMgewo+ICAgICog
+QGFlYWQ6IGFycmF5IG9mIHBvaW50ZXJzIHRvIEFFQUQga2V5cyBmb3IgZW5jcnlwdGlvbi9kZWNy
+eXB0aW9uCj4gICAgKiBAcGVlcl9yeF9hY3RpdmU6IHJlcGxpY2F0ZWQgcGVlciBSWCBhY3RpdmUg
+a2V5IGluZGV4Cj4gICAgKiBAa2V5OiB0aGUga2V5IHN0YXRlcwo+IC0gKiBAd29ya2luZzogdGhl
+IGNyeXB0byBpcyB3b3JraW5nIG9yIG5vdAo+ICAgICogQHN0YXRzOiB0aGUgY3J5cHRvIHN0YXRp
+c3RpY3MKPiAgICAqIEBuYW1lOiB0aGUgY3J5cHRvIG5hbWUKPiAgICAqIEBzbmRueHQ6IHRoZSBw
+ZXItcGVlciBzbmRueHQgKFRYKQo+ICAgICogQHRpbWVyMTogZ2VuZXJhbCB0aW1lciAxIChqaWZm
+aWVzKQo+ICAgICogQHRpbWVyMjogZ2VuZXJhbCB0aW1lciAyIChqaWZmaWVzKQo+ICsgKiBAd29y
+a2luZzogdGhlIGNyeXB0byBpcyB3b3JraW5nIG9yIG5vdAo+ICsgKiBAa2V5X21hc3RlcjogZmxh
+ZyBpbmRpY2F0ZXMgaWYgbWFzdGVyIGtleSBleGlzdHMKPiArICogQGxlZ2FjeV91c2VyOiBmbGFn
+IGluZGljYXRlcyBpZiBhIHBlZXIgam9pbnMgdy9vIG1hc3RlciBrZXkgKGZvciBid2QgY29tcC4p
+Cj4gICAgKiBAbG9jazogdGlwY19rZXkgbG9jawo+ICAgICovCj4gICBzdHJ1Y3QgdGlwY19jcnlw
+dG8gewo+ICAgCXN0cnVjdCBuZXQgKm5ldDsKPiAgIAlzdHJ1Y3QgdGlwY19ub2RlICpub2RlOwo+
+IC0Jc3RydWN0IHRpcGNfYWVhZCBfX3JjdSAqYWVhZFtLRVlfTUFYICsgMV07IC8qIGtleVswXSBp
+cyBVTlVTRUQgKi8KPiArCXN0cnVjdCB0aXBjX2FlYWQgX19yY3UgKmFlYWRbS0VZX01BWCArIDFd
+Owo+ICAgCWF0b21pY190IHBlZXJfcnhfYWN0aXZlOwo+ICAgCXN0cnVjdCB0aXBjX2tleSBrZXk7
+Cj4gLQl1OCB3b3JraW5nOjE7Cj4gICAJc3RydWN0IHRpcGNfY3J5cHRvX3N0YXRzIF9fcGVyY3B1
+ICpzdGF0czsKPiAgIAljaGFyIG5hbWVbNDhdOwo+ICAgCj4gICAJYXRvbWljNjRfdCBzbmRueHQg
+X19fX2NhY2hlbGluZV9hbGlnbmVkOwo+ICAgCXVuc2lnbmVkIGxvbmcgdGltZXIxOwo+ICAgCXVu
+c2lnbmVkIGxvbmcgdGltZXIyOwo+ICsJdW5pb24gewo+ICsJCXN0cnVjdCB7Cj4gKwkJCXU4IHdv
+cmtpbmc6MTsKPiArCQkJdTgga2V5X21hc3RlcjoxOwo+ICsJCQl1OCBsZWdhY3lfdXNlcjoxOwo+
+ICsJCX07Cj4gKwkJdTggZmxhZ3M7Cj4gKwl9Owo+ICAgCXNwaW5sb2NrX3QgbG9jazsgLyogY3J5
+cHRvIGxvY2sgKi8KPiAgIAo+ICAgfSBfX19fY2FjaGVsaW5lX2FsaWduZWQ7Cj4gQEAgLTIzNiwx
+MyArMjQ2LDE5IEBAIHN0YXRpYyBpbmxpbmUgdm9pZCB0aXBjX2NyeXB0b19rZXlfc2V0X3N0YXRl
+KHN0cnVjdCB0aXBjX2NyeXB0byAqYywKPiAgIAkJCQkJICAgICB1OCBuZXdfYWN0aXZlLAo+ICAg
+CQkJCQkgICAgIHU4IG5ld19wZW5kaW5nKTsKPiAgIHN0YXRpYyBpbnQgdGlwY19jcnlwdG9fa2V5
+X2F0dGFjaChzdHJ1Y3QgdGlwY19jcnlwdG8gKmMsCj4gLQkJCQkgIHN0cnVjdCB0aXBjX2FlYWQg
+KmFlYWQsIHU4IHBvcyk7Cj4gKwkJCQkgIHN0cnVjdCB0aXBjX2FlYWQgKmFlYWQsIHU4IHBvcywK
+PiArCQkJCSAgYm9vbCBtYXN0ZXJfa2V5KTsKPiAgIHN0YXRpYyBib29sIHRpcGNfY3J5cHRvX2tl
+eV90cnlfYWxpZ24oc3RydWN0IHRpcGNfY3J5cHRvICpyeCwgdTggbmV3X3BlbmRpbmcpOwo+ICAg
+c3RhdGljIHN0cnVjdCB0aXBjX2FlYWQgKnRpcGNfY3J5cHRvX2tleV9waWNrX3R4KHN0cnVjdCB0
+aXBjX2NyeXB0byAqdHgsCj4gICAJCQkJCQkgc3RydWN0IHRpcGNfY3J5cHRvICpyeCwKPiAtCQkJ
+CQkJIHN0cnVjdCBza19idWZmICpza2IpOwo+ICsJCQkJCQkgc3RydWN0IHNrX2J1ZmYgKnNrYiwK
+PiArCQkJCQkJIHU4IHR4X2tleSk7Cj4gICBzdGF0aWMgdm9pZCB0aXBjX2NyeXB0b19rZXlfc3lu
+Y2goc3RydWN0IHRpcGNfY3J5cHRvICpyeCwgc3RydWN0IHNrX2J1ZmYgKnNrYik7Cj4gICBzdGF0
+aWMgaW50IHRpcGNfY3J5cHRvX2tleV9yZXZva2Uoc3RydWN0IG5ldCAqbmV0LCB1OCB0eF9rZXkp
+Owo+ICtzdGF0aWMgaW5saW5lIHZvaWQgdGlwY19jcnlwdG9fY2xvbmVfbXNnKHN0cnVjdCBuZXQg
+Km5ldCwgc3RydWN0IHNrX2J1ZmYgKl9za2IsCj4gKwkJCQkJIHN0cnVjdCB0aXBjX2JlYXJlciAq
+YiwKPiArCQkJCQkgc3RydWN0IHRpcGNfbWVkaWFfYWRkciAqZHN0LAo+ICsJCQkJCSBzdHJ1Y3Qg
+dGlwY19ub2RlICpfX2Rub2RlLCB1OCB0eXBlKTsKPiAgIHN0YXRpYyB2b2lkIHRpcGNfY3J5cHRv
+X3Jjdl9jb21wbGV0ZShzdHJ1Y3QgbmV0ICpuZXQsIHN0cnVjdCB0aXBjX2FlYWQgKmFlYWQsCj4g
+ICAJCQkJICAgICBzdHJ1Y3QgdGlwY19iZWFyZXIgKmIsCj4gICAJCQkJICAgICBzdHJ1Y3Qgc2tf
+YnVmZiAqKnNrYiwgaW50IGVycik7Cj4gQEAgLTkzNyw4ICs5NTMsNiBAQCBib29sIHRpcGNfZWhk
+cl92YWxpZGF0ZShzdHJ1Y3Qgc2tfYnVmZiAqc2tiKQo+ICAgCQlyZXR1cm4gZmFsc2U7Cj4gICAJ
+aWYgKHVubGlrZWx5KHNrYi0+bGVuIDw9IGVoc3ogKyBUSVBDX0FFU19HQ01fVEFHX1NJWkUpKQo+
+ICAgCQlyZXR1cm4gZmFsc2U7Cj4gLQlpZiAodW5saWtlbHkoIWVoZHItPnR4X2tleSkpCj4gLQkJ
+cmV0dXJuIGZhbHNlOwo+ICAgCj4gICAJcmV0dXJuIHRydWU7Cj4gICB9Cj4gQEAgLTk5MSw2ICsx
+MDA1LDggQEAgc3RhdGljIGludCB0aXBjX2VoZHJfYnVpbGQoc3RydWN0IG5ldCAqbmV0LCBzdHJ1
+Y3QgdGlwY19hZWFkICphZWFkLAo+ICAgCWVoZHItPnR4X2tleSA9IHR4X2tleTsKPiAgIAllaGRy
+LT5kZXN0aW5lZCA9IChfX3J4KSA/IDEgOiAwOwo+ICAgCWVoZHItPnJ4X2tleV9hY3RpdmUgPSAo
+X19yeCkgPyBfX3J4LT5rZXkuYWN0aXZlIDogMDsKPiArCWVoZHItPnJ4X25va2V5ID0gKF9fcngp
+ID8gIV9fcngtPmtleS5rZXlzIDogMDsKPiArCWVoZHItPm1hc3Rlcl9rZXkgPSBhZWFkLT5jcnlw
+dG8tPmtleV9tYXN0ZXI7Cj4gICAJZWhkci0+cmVzZXJ2ZWRfMSA9IDA7Cj4gICAJZWhkci0+cmVz
+ZXJ2ZWRfMiA9IDA7Cj4gICAKPiBAQCAtMTAzMyw2ICsxMDQ5LDcgQEAgc3RhdGljIGlubGluZSB2
+b2lkIHRpcGNfY3J5cHRvX2tleV9zZXRfc3RhdGUoc3RydWN0IHRpcGNfY3J5cHRvICpjLAo+ICAg
+ICogQGM6IFRJUEMgY3J5cHRvIHRvIHdoaWNoIG5ldyBrZXkgaXMgYXR0YWNoZWQKPiAgICAqIEB1
+a2V5OiB0aGUgdXNlciBrZXkKPiAgICAqIEBtb2RlOiB0aGUga2V5IG1vZGUgKENMVVNURVJfS0VZ
+IG9yIFBFUl9OT0RFX0tFWSkKPiArICogQG1hc3Rlcl9rZXk6IHNwZWNpZnkgdGhpcyBpcyBhIGNs
+dXN0ZXIgbWFzdGVyIGtleQo+ICAgICoKPiAgICAqIEEgbmV3IFRJUEMgQUVBRCBrZXkgd2lsbCBi
+ZSBhbGxvY2F0ZWQgYW5kIGluaXRpYXRlZCB3aXRoIHRoZSBzcGVjaWZpZWQgdXNlcgo+ICAgICog
+a2V5LCB0aGVuIGF0dGFjaGVkIHRvIHRoZSBUSVBDIGNyeXB0by4KPiBAQCAtMTA0MCw3ICsxMDU3
+LDcgQEAgc3RhdGljIGlubGluZSB2b2lkIHRpcGNfY3J5cHRvX2tleV9zZXRfc3RhdGUoc3RydWN0
+IHRpcGNfY3J5cHRvICpjLAo+ICAgICogUmV0dXJuOiBuZXcga2V5IGlkIGluIGNhc2Ugb2Ygc3Vj
+Y2Vzcywgb3RoZXJ3aXNlOiA8IDAKPiAgICAqLwo+ICAgaW50IHRpcGNfY3J5cHRvX2tleV9pbml0
+KHN0cnVjdCB0aXBjX2NyeXB0byAqYywgc3RydWN0IHRpcGNfYWVhZF9rZXkgKnVrZXksCj4gLQkJ
+CSB1OCBtb2RlKQo+ICsJCQkgdTggbW9kZSwgYm9vbCBtYXN0ZXJfa2V5KQo+ICAgewo+ICAgCXN0
+cnVjdCB0aXBjX2FlYWQgKmFlYWQgPSBOVUxMOwo+ICAgCWludCByYyA9IDA7Cj4gQEAgLTEwNTMs
+NyArMTA3MCw3IEBAIGludCB0aXBjX2NyeXB0b19rZXlfaW5pdChzdHJ1Y3QgdGlwY19jcnlwdG8g
+KmMsIHN0cnVjdCB0aXBjX2FlYWRfa2V5ICp1a2V5LAo+ICAgCX0KPiAgIAo+ICAgCS8qIEF0dGFj
+aCBpdCB0byB0aGUgY3J5cHRvICovCj4gLQlyYyA9IHRpcGNfY3J5cHRvX2tleV9hdHRhY2goYywg
+YWVhZCwgMCk7Cj4gKwlyYyA9IHRpcGNfY3J5cHRvX2tleV9hdHRhY2goYywgYWVhZCwgMCwgbWFz
+dGVyX2tleSk7Cj4gICAJaWYgKHJjIDwgMCkgewo+ICAgCQlwcl9lcnIoIiVzOiB1bmFibGUgdG8g
+YXR0YWNoIGtleSwgZXJyICVkXG4iLCBjLT5uYW1lLCByYyk7Cj4gICAJCXRpcGNfYWVhZF9mcmVl
+KCZhZWFkLT5yY3UpOwo+IEBAIC0xMDY5LDExICsxMDg2LDEzIEBAIGludCB0aXBjX2NyeXB0b19r
+ZXlfaW5pdChzdHJ1Y3QgdGlwY19jcnlwdG8gKmMsIHN0cnVjdCB0aXBjX2FlYWRfa2V5ICp1a2V5
+LAo+ICAgICogQGM6IFRJUEMgY3J5cHRvIHRvIHdoaWNoIHRoZSBuZXcgQUVBRCBrZXkgaXMgYXR0
+YWNoZWQKPiAgICAqIEBhZWFkOiB0aGUgbmV3IEFFQUQga2V5IHBvaW50ZXIKPiAgICAqIEBwb3M6
+IGRlc2lyZWQgc2xvdCBpbiB0aGUgY3J5cHRvIGtleSBhcnJheSwgPSAwIGlmIGFueSEKPiArICog
+QG1hc3Rlcl9rZXk6IHNwZWNpZnkgdGhpcyBpcyBhIGNsdXN0ZXIgbWFzdGVyIGtleQo+ICAgICoK
+PiAgICAqIFJldHVybjogbmV3IGtleSBpZCBpbiBjYXNlIG9mIHN1Y2Nlc3MsIG90aGVyd2lzZTog
+LUVCVVNZCj4gICAgKi8KPiAgIHN0YXRpYyBpbnQgdGlwY19jcnlwdG9fa2V5X2F0dGFjaChzdHJ1
+Y3QgdGlwY19jcnlwdG8gKmMsCj4gLQkJCQkgIHN0cnVjdCB0aXBjX2FlYWQgKmFlYWQsIHU4IHBv
+cykKPiArCQkJCSAgc3RydWN0IHRpcGNfYWVhZCAqYWVhZCwgdTggcG9zLAo+ICsJCQkJICBib29s
+IG1hc3Rlcl9rZXkpCj4gICB7Cj4gICAJc3RydWN0IHRpcGNfa2V5IGtleTsKPiAgIAlpbnQgcmMg
+PSAtRUJVU1k7Cj4gQEAgLTEwODEsNiArMTEwMCwxMCBAQCBzdGF0aWMgaW50IHRpcGNfY3J5cHRv
+X2tleV9hdHRhY2goc3RydWN0IHRpcGNfY3J5cHRvICpjLAo+ICAgCj4gICAJc3Bpbl9sb2NrX2Jo
+KCZjLT5sb2NrKTsKPiAgIAlrZXkgPSBjLT5rZXk7Cj4gKwlpZiAobWFzdGVyX2tleSkgewo+ICsJ
+CW5ld19rZXkgPSBLRVlfTUFTVEVSOwo+ICsJCWdvdG8gYXR0YWNoOwo+ICsJfQo+ICAgCWlmIChr
+ZXkuYWN0aXZlICYmIGtleS5wYXNzaXZlKQo+ICAgCQlnb3RvIGV4aXQ7Cj4gICAJaWYgKGtleS5w
+ZW5kaW5nKSB7Cj4gQEAgLTExMTIsOCArMTEzNSw3IEBAIHN0YXRpYyBpbnQgdGlwY19jcnlwdG9f
+a2V5X2F0dGFjaChzdHJ1Y3QgdGlwY19jcnlwdG8gKmMsCj4gICAJCXRpcGNfY3J5cHRvX2tleV9z
+ZXRfc3RhdGUoYywga2V5LnBhc3NpdmUsIGtleS5hY3RpdmUsCj4gICAJCQkJCSAga2V5LnBlbmRp
+bmcpOwo+ICAgCWMtPndvcmtpbmcgPSAxOwo+IC0JYy0+dGltZXIxID0gamlmZmllczsKPiAtCWMt
+PnRpbWVyMiA9IGppZmZpZXM7Cj4gKwljLT5rZXlfbWFzdGVyIHw9IG1hc3Rlcl9rZXk7Cj4gICAJ
+cmMgPSBuZXdfa2V5Owo+ICAgCj4gICBleGl0Ogo+IEBAIC0xMTI2LDcgKzExNDgsNyBAQCB2b2lk
+IHRpcGNfY3J5cHRvX2tleV9mbHVzaChzdHJ1Y3QgdGlwY19jcnlwdG8gKmMpCj4gICAJaW50IGs7
+Cj4gICAKPiAgIAlzcGluX2xvY2tfYmgoJmMtPmxvY2spOwo+IC0JYy0+d29ya2luZyA9IDA7Cj4g
+KwljLT5mbGFncyA9IDA7Cj4gICAJdGlwY19jcnlwdG9fa2V5X3NldF9zdGF0ZShjLCAwLCAwLCAw
+KTsKPiAgIAlmb3IgKGsgPSBLRVlfTUlOOyBrIDw9IEtFWV9NQVg7IGsrKykKPiAgIAkJdGlwY19j
+cnlwdG9fa2V5X2RldGFjaChjLT5hZWFkW2tdLCAmYy0+bG9jayk7Cj4gQEAgLTEyMDIsNiArMTIy
+NCw3IEBAIHN0YXRpYyBib29sIHRpcGNfY3J5cHRvX2tleV90cnlfYWxpZ24oc3RydWN0IHRpcGNf
+Y3J5cHRvICpyeCwgdTggbmV3X3BlbmRpbmcpCj4gICAgKiBAdHg6IFRYIGNyeXB0byBoYW5kbGUK
+PiAgICAqIEByeDogUlggY3J5cHRvIGhhbmRsZSAoY2FuIGJlIE5VTEwpCj4gICAgKiBAc2tiOiB0
+aGUgbWVzc2FnZSBza2Igd2hpY2ggd2lsbCBiZSBkZWNyeXB0ZWQgbGF0ZXIKPiArICogQHR4X2tl
+eTogcGVlciBUWCBrZXkgaWQKPiAgICAqCj4gICAgKiBUaGlzIGZ1bmN0aW9uIGxvb2tzIHVwIHRo
+ZSBleGlzdGluZyBUWCBrZXlzIGFuZCBwaWNrIG9uZSB3aGljaCBpcyBzdWl0YWJsZQo+ICAgICog
+Zm9yIHRoZSBtZXNzYWdlIGRlY3J5cHRpb24sIHRoYXQgbXVzdCBiZSBhIGNsdXN0ZXIga2V5IGFu
+ZCBub3QgdXNlZCBiZWZvcmUKPiBAQCAtMTIxMSw3ICsxMjM0LDggQEAgc3RhdGljIGJvb2wgdGlw
+Y19jcnlwdG9fa2V5X3RyeV9hbGlnbihzdHJ1Y3QgdGlwY19jcnlwdG8gKnJ4LCB1OCBuZXdfcGVu
+ZGluZykKPiAgICAqLwo+ICAgc3RhdGljIHN0cnVjdCB0aXBjX2FlYWQgKnRpcGNfY3J5cHRvX2tl
+eV9waWNrX3R4KHN0cnVjdCB0aXBjX2NyeXB0byAqdHgsCj4gICAJCQkJCQkgc3RydWN0IHRpcGNf
+Y3J5cHRvICpyeCwKPiAtCQkJCQkJIHN0cnVjdCBza19idWZmICpza2IpCj4gKwkJCQkJCSBzdHJ1
+Y3Qgc2tfYnVmZiAqc2tiLAo+ICsJCQkJCQkgdTggdHhfa2V5KQo+ICAgewo+ICAgCXN0cnVjdCB0
+aXBjX3NrYl9jYiAqc2tiX2NiID0gVElQQ19TS0JfQ0Ioc2tiKTsKPiAgIAlzdHJ1Y3QgdGlwY19h
+ZWFkICphZWFkID0gTlVMTDsKPiBAQCAtMTIzMCw2ICsxMjU0LDEwIEBAIHN0YXRpYyBzdHJ1Y3Qg
+dGlwY19hZWFkICp0aXBjX2NyeXB0b19rZXlfcGlja190eChzdHJ1Y3QgdGlwY19jcnlwdG8gKnR4
+LAo+ICAgCj4gICAJLyogUGljayBvbmUgVFgga2V5ICovCj4gICAJc3Bpbl9sb2NrKCZ0eC0+bG9j
+ayk7Cj4gKwlpZiAodHhfa2V5ID09IEtFWV9NQVNURVIpIHsKPiArCQlhZWFkID0gdGlwY19hZWFk
+X3JjdV9wdHIodHgtPmFlYWRbS0VZX01BU1RFUl0sICZ0eC0+bG9jayk7Cj4gKwkJZ290byBkb25l
+Owo+ICsJfQo+ICAgCWRvIHsKPiAgIAkJayA9IChpID09IDApID8ga2V5LnBlbmRpbmcgOgo+ICAg
+CQkJKChpID09IDEpID8ga2V5LmFjdGl2ZSA6IGtleS5wYXNzaXZlKTsKPiBAQCAtMTI0OSw5ICsx
+Mjc3LDEyIEBAIHN0YXRpYyBzdHJ1Y3QgdGlwY19hZWFkICp0aXBjX2NyeXB0b19rZXlfcGlja190
+eChzdHJ1Y3QgdGlwY19jcnlwdG8gKnR4LAo+ICAgCQlza2ItPm5leHQgPSBza2JfY2xvbmUoc2ti
+LCBHRlBfQVRPTUlDKTsKPiAgIAkJaWYgKHVubGlrZWx5KCFza2ItPm5leHQpKQo+ICAgCQkJcHJf
+d2FybigiRmFpbGVkIHRvIGNsb25lIHNrYiBmb3IgbmV4dCByb3VuZCBpZiBhbnlcbiIpOwo+IC0J
+CVdBUk5fT04oIXJlZmNvdW50X2luY19ub3RfemVybygmYWVhZC0+cmVmY250KSk7Cj4gICAJCWJy
+ZWFrOwo+ICAgCX0gd2hpbGUgKCsraSA8IDMpOwo+ICsKPiArZG9uZToKPiArCWlmIChsaWtlbHko
+YWVhZCkpCj4gKwkJV0FSTl9PTighcmVmY291bnRfaW5jX25vdF96ZXJvKCZhZWFkLT5yZWZjbnQp
+KTsKPiAgIAlzcGluX3VubG9jaygmdHgtPmxvY2spOwo+ICAgCj4gICAJcmV0dXJuIGFlYWQ7Cj4g
+QEAgLTEyNjYsNiArMTI5Nyw5IEBAIHN0YXRpYyBzdHJ1Y3QgdGlwY19hZWFkICp0aXBjX2NyeXB0
+b19rZXlfcGlja190eChzdHJ1Y3QgdGlwY19jcnlwdG8gKnR4LAo+ICAgICogaGFzIGNoYW5nZWQs
+IHNvIHRoZSBudW1iZXIgb2YgVFgga2V5cycgdXNlcnMgb24gdGhpcyBub2RlIGFyZSBpbmNyZWFz
+ZWQgYW5kCj4gICAgKiBkZWNyZWFzZWQgY29ycmVzcG9uZGluZ2x5Lgo+ICAgICoKPiArICogSXQg
+YWxzbyBjb25zaWRlcnMgaWYgcGVlciBoYXMgbm8ga2V5LCB0aGVuIHdlIG5lZWQgdG8gbWFrZSBv
+d24gbWFzdGVyIGtleQo+ICsgKiAoaWYgYW55KSB0YWtpbmcgb3ZlciBpLmUuIHN0YXJ0aW5nIGdy
+YWNlIHBlcmlvZC4KPiArICoKPiAgICAqIFRoZSAicGVyLXBlZXIiIHNuZG54dCBpcyBhbHNvIHJl
+c2V0IHdoZW4gdGhlIHBlZXIga2V5IGhhcyBzd2l0Y2hlZC4KPiAgICAqLwo+ICAgc3RhdGljIHZv
+aWQgdGlwY19jcnlwdG9fa2V5X3N5bmNoKHN0cnVjdCB0aXBjX2NyeXB0byAqcngsIHN0cnVjdCBz
+a19idWZmICpza2IpCj4gQEAgLTEyNzYsMTEgKzEzMTAsMjMgQEAgc3RhdGljIHZvaWQgdGlwY19j
+cnlwdG9fa2V5X3N5bmNoKHN0cnVjdCB0aXBjX2NyeXB0byAqcngsIHN0cnVjdCBza19idWZmICpz
+a2IpCj4gICAJdTMyIHNlbGYgPSB0aXBjX293bl9hZGRyKHJ4LT5uZXQpOwo+ICAgCXU4IGN1ciwg
+bmV3Owo+ICAgCj4gLQkvKiBFbnN1cmUgdGhpcyBtZXNzYWdlIGlzIGRlc3RpbmVkIHRvIHVzIGZp
+cnN0ICovCj4gKwkvKiBVcGRhdGUgUlggJ2tleV9tYXN0ZXInIGZsYWcgYWNjb3JkaW5nIHRvIHBl
+ZXIsIGFsc28gbWFyayAibGVnYWN5IiBpZgo+ICsJICogYSBwZWVyIGhhcyBubyBtYXN0ZXIga2V5
+Lgo+ICsJICovCj4gKwlyeC0+a2V5X21hc3RlciA9IGVoZHItPm1hc3Rlcl9rZXk7Cj4gKwlpZiAo
+IXJ4LT5rZXlfbWFzdGVyKQo+ICsJCXR4LT5sZWdhY3lfdXNlciA9IDE7Cj4gKwo+ICsJLyogRm9y
+IGxhdGVyIGNhc2VzLCBhcHBseSBvbmx5IGlmIG1lc3NhZ2UgaXMgZGVzdGluZWQgdG8gdGhpcyBu
+b2RlICovCj4gICAJaWYgKCFlaGRyLT5kZXN0aW5lZCB8fCBtc2dfc2hvcnQoaGRyKSB8fCBtc2df
+ZGVzdG5vZGUoaGRyKSAhPSBzZWxmKQo+ICAgCQlyZXR1cm47Cj4gICAKPiAtCS8qIFBlZXIgUlgg
+YWN0aXZlIGtleSBoYXMgY2hhbmdlZCwgbGV0J3MgdXBkYXRlIG93biBUWCB1c2VycyAqLwo+ICsJ
+LyogQ2FzZSAxOiBQZWVyIGhhcyBubyBrZXlzLCBsZXQncyBtYWtlIG1hc3RlciBrZXkgdGFraW5n
+IG92ZXIgKi8Kcy90YWtpbmcvdGFrZS8KPiArCWlmIChlaGRyLT5yeF9ub2tleSkKPiArCQkvKiBT
+ZXQgb3IgZXh0ZW5kIGdyYWNlIHBlcmlvZCAqLwo+ICsJCXR4LT50aW1lcjIgPSBqaWZmaWVzOwo+
+ICsKPiArCS8qIENhc2UgMjogUGVlciBSWCBhY3RpdmUga2V5IGhhcyBjaGFuZ2VkLCBsZXQncyB1
+cGRhdGUgb3duIFRYIHVzZXJzICovCj4gICAJY3VyID0gYXRvbWljX3JlYWQoJnJ4LT5wZWVyX3J4
+X2FjdGl2ZSk7Cj4gICAJbmV3ID0gZWhkci0+cnhfa2V5X2FjdGl2ZTsKPiAgIAlpZiAodHgtPmtl
+eS5rZXlzICYmCj4gQEAgLTEzMzgsNyArMTM4NCw3IEBAIGludCB0aXBjX2NyeXB0b19zdGFydChz
+dHJ1Y3QgdGlwY19jcnlwdG8gKipjcnlwdG8sIHN0cnVjdCBuZXQgKm5ldCwKPiAgIAkJcmV0dXJu
+IC1FTk9NRU07Cj4gICAJfQo+ICAgCj4gLQljLT53b3JraW5nID0gMDsKPiArCWMtPmZsYWdzID0g
+MDsKPiAgIAljLT5uZXQgPSBuZXQ7Cj4gICAJYy0+bm9kZSA9IG5vZGU7Cj4gICAJdGlwY19jcnlw
+dG9fa2V5X3NldF9zdGF0ZShjLCAwLCAwLCAwKTsKPiBAQCAtMTQ3Myw2ICsxNTE5LDEyIEBAIHZv
+aWQgdGlwY19jcnlwdG9fdGltZW91dChzdHJ1Y3QgdGlwY19jcnlwdG8gKnJ4KQo+ICAgczU6Cj4g
+ICAJc3Bpbl91bmxvY2soJnJ4LT5sb2NrKTsKPiAgIAo+ICsJLyogUmVsYXggaXQgaGVyZSwgdGhl
+IGZsYWcgd2lsbCBiZSBzZXQgYWdhaW4gaWYgaXQgcmVhbGx5IGlzLCBidXQgb25seQo+ICsJICog
+d2hlbiB3ZSBhcmUgbm90IGluIGdyYWNlIHBlcmlvZCBmb3Igc2FmZXR5IQo+ICsJICovCj4gKwlp
+ZiAodGltZV9hZnRlcihqaWZmaWVzLCB0eC0+dGltZXIyICsgVElQQ19UWF9HUkFDRV9QRVJJT0Qp
+KQo+ICsJCXR4LT5sZWdhY3lfdXNlciA9IDA7Cj4gKwo+ICAgCS8qIExpbWl0IG1heF90Zm1zICYg
+ZG8gZGVidWcgY29tbWFuZHMgaWYgbmVlZGVkICovCj4gICAJaWYgKGxpa2VseShzeXNjdGxfdGlw
+Y19tYXhfdGZtcyA8PSBUSVBDX01BWF9URk1TX0xJTSkpCj4gICAJCXJldHVybjsKPiBAQCAtMTQ4
+Miw2ICsxNTM0LDIyIEBAIHZvaWQgdGlwY19jcnlwdG9fdGltZW91dChzdHJ1Y3QgdGlwY19jcnlw
+dG8gKnJ4KQo+ICAgCXRpcGNfY3J5cHRvX2RvX2NtZChyeC0+bmV0LCBjbWQpOwo+ICAgfQo+ICAg
+Cj4gK3N0YXRpYyBpbmxpbmUgdm9pZCB0aXBjX2NyeXB0b19jbG9uZV9tc2coc3RydWN0IG5ldCAq
+bmV0LCBzdHJ1Y3Qgc2tfYnVmZiAqX3NrYiwKPiArCQkJCQkgc3RydWN0IHRpcGNfYmVhcmVyICpi
+LAo+ICsJCQkJCSBzdHJ1Y3QgdGlwY19tZWRpYV9hZGRyICpkc3QsCj4gKwkJCQkJIHN0cnVjdCB0
+aXBjX25vZGUgKl9fZG5vZGUsIHU4IHR5cGUpCj4gK3sKPiArCXN0cnVjdCBza19idWZmICpza2I7
+Cj4gKwo+ICsJc2tiID0gc2tiX2Nsb25lKF9za2IsIEdGUF9BVE9NSUMpOwo+ICsJaWYgKHNrYikg
+ewo+ICsJCVRJUENfU0tCX0NCKHNrYiktPnhtaXRfdHlwZSA9IHR5cGU7Cj4gKwkJdGlwY19jcnlw
+dG9feG1pdChuZXQsICZza2IsIGIsIGRzdCwgX19kbm9kZSk7Cj4gKwkJaWYgKHNrYikKPiArCQkJ
+Yi0+bWVkaWEtPnNlbmRfbXNnKG5ldCwgc2tiLCBiLCBkc3QpOwo+ICsJfQo+ICt9Cj4gKwo+ICAg
+LyoqCj4gICAgKiB0aXBjX2NyeXB0b194bWl0IC0gQnVpbGQgJiBlbmNyeXB0IFRJUEMgbWVzc2Fn
+ZSBmb3IgeG1pdAo+ICAgICogQG5ldDogc3RydWN0IG5ldAo+IEBAIC0xNDkxLDcgKzE1NTksOCBA
+QCB2b2lkIHRpcGNfY3J5cHRvX3RpbWVvdXQoc3RydWN0IHRpcGNfY3J5cHRvICpyeCkKPiAgICAq
+IEBfX2Rub2RlOiBkZXN0aW5hdGlvbiBub2RlIGZvciByZWZlcmVuY2UgaWYgYW55Cj4gICAgKgo+
+ICAgICogRmlyc3QsIGJ1aWxkIGFuIGVuY3J5cHRpb24gbWVzc2FnZSBoZWFkZXIgb24gdGhlIHRv
+cCBvZiB0aGUgbWVzc2FnZSwgdGhlbgo+IC0gKiBlbmNyeXB0IHRoZSBvcmlnaW5hbCBUSVBDIG1l
+c3NhZ2UgYnkgdXNpbmcgdGhlIGFjdGl2ZSBvciBwZW5kaW5nIFRYIGtleS4KPiArICogZW5jcnlw
+dCB0aGUgb3JpZ2luYWwgVElQQyBtZXNzYWdlIGJ5IHVzaW5nIHRoZSBwZW5kaW5nLCBtYXN0ZXIg
+b3IgYWN0aXZlCj4gKyAqIGtleSB3aXRoIHRoaXMgcHJlZmVyZW5jZSBvcmRlci4KPiAgICAqIElm
+IHRoZSBlbmNyeXB0aW9uIGlzIHN1Y2Nlc3NmdWwsIHRoZSBlbmNyeXB0ZWQgc2tiIGlzIHJldHVy
+bmVkIGRpcmVjdGx5IG9yCj4gICAgKiB2aWEgdGhlIGNhbGxiYWNrLgo+ICAgICogT3RoZXJ3aXNl
+LCB0aGUgc2tiIGlzIGZyZWVkIQo+IEBAIC0xNTE0LDQ2ICsxNTgzLDYzIEBAIGludCB0aXBjX2Ny
+eXB0b194bWl0KHN0cnVjdCBuZXQgKm5ldCwgc3RydWN0IHNrX2J1ZmYgKipza2IsCj4gICAJc3Ry
+dWN0IHRpcGNfbXNnICpoZHIgPSBidWZfbXNnKCpza2IpOwo+ICAgCXN0cnVjdCB0aXBjX2tleSBr
+ZXkgPSB0eC0+a2V5Owo+ICAgCXN0cnVjdCB0aXBjX2FlYWQgKmFlYWQgPSBOVUxMOwo+IC0Jc3Ry
+dWN0IHNrX2J1ZmYgKl9za2I7Cj4gLQlpbnQgcmMgPSAtRU5PS0VZOwo+ICAgCXUzMiB1c2VyID0g
+bXNnX3VzZXIoaGRyKTsKPiAtCXU4IHR4X2tleTsKPiArCXUzMiB0eXBlID0gbXNnX3R5cGUoaGRy
+KTsKPiArCWludCByYyA9IC1FTk9LRVk7Cj4gKwl1OCB0eF9rZXkgPSAwOwo+ICAgCj4gICAJLyog
+Tm8gZW5jcnlwdGlvbj8gKi8KPiAgIAlpZiAoIXR4LT53b3JraW5nKQo+ICAgCQlyZXR1cm4gMDsK
+PiAgIAo+IC0JLyogVHJ5IHdpdGggdGhlIHBlbmRpbmcga2V5IGlmIGF2YWlsYWJsZSBhbmQ6Cj4g
+LQkgKiAxKSBUaGlzIGlzIHRoZSBvbmx5IGNob2ljZSAoaS5lLiBubyBhY3RpdmUga2V5KSBvcjsK
+PiAtCSAqIDIpIFBlZXIgaGFzIHN3aXRjaGVkIHRvIHRoaXMga2V5ICh1bmljYXN0IG9ubHkpIG9y
+Owo+IC0JICogMykgSXQgaXMgdGltZSB0byBkbyBhIHBlbmRpbmcga2V5IHByb2JlOwo+IC0JICov
+Cj4gKwkvKiBQZW5kaW5nIGtleSBpZiBwZWVyIGhhcyBhY3RpdmUgb24gaXQgb3IgcHJvYmluZyB0
+aW1lICovCj4gICAJaWYgKHVubGlrZWx5KGtleS5wZW5kaW5nKSkgewo+ICAgCQl0eF9rZXkgPSBr
+ZXkucGVuZGluZzsKPiAtCQlpZiAoIWtleS5hY3RpdmUpCj4gKwkJaWYgKCF0eC0+a2V5X21hc3Rl
+ciAmJiAha2V5LmFjdGl2ZSkKPiAgIAkJCWdvdG8gZW5jcnlwdDsKPiAgIAkJaWYgKF9fcnggJiYg
+YXRvbWljX3JlYWQoJl9fcngtPnBlZXJfcnhfYWN0aXZlKSA9PSB0eF9rZXkpCj4gICAJCQlnb3Rv
+IGVuY3J5cHQ7Cj4gLQkJaWYgKFRJUENfU0tCX0NCKCpza2IpLT5wcm9iZSkgewo+ICsJCWlmIChU
+SVBDX1NLQl9DQigqc2tiKS0+eG1pdF90eXBlID09IFNLQl9QUk9CSU5HKSB7Cj4gICAJCQlwcl9k
+ZWJ1ZygiJXM6IHByb2JpbmcgZm9yIGtleVslZF1cbiIsIHR4LT5uYW1lLAo+ICAgCQkJCSBrZXku
+cGVuZGluZyk7Cj4gICAJCQlnb3RvIGVuY3J5cHQ7Cj4gICAJCX0KPiAtCQlpZiAodXNlciA9PSBM
+SU5LX0NPTkZJRyB8fCB1c2VyID09IExJTktfUFJPVE9DT0wpIHsKPiAtCQkJX3NrYiA9IHNrYl9j
+bG9uZSgqc2tiLCBHRlBfQVRPTUlDKTsKPiAtCQkJaWYgKF9za2IpIHsKPiAtCQkJCVRJUENfU0tC
+X0NCKF9za2IpLT5wcm9iZSA9IDE7Cj4gLQkJCQl0aXBjX2NyeXB0b194bWl0KG5ldCwgJl9za2Is
+IGIsIGRzdCwgX19kbm9kZSk7Cj4gLQkJCQlpZiAoX3NrYikKPiAtCQkJCQliLT5tZWRpYS0+c2Vu
+ZF9tc2cobmV0LCBfc2tiLCBiLCBkc3QpOwo+ICsJCWlmICh1c2VyID09IExJTktfQ09ORklHIHx8
+IHVzZXIgPT0gTElOS19QUk9UT0NPTCkKPiArCQkJdGlwY19jcnlwdG9fY2xvbmVfbXNnKG5ldCwg
+KnNrYiwgYiwgZHN0LCBfX2Rub2RlLAo+ICsJCQkJCSAgICAgIFNLQl9QUk9CSU5HKTsKPiArCX0K
+PiArCj4gKwkvKiBNYXN0ZXIga2V5IGlmIHRoaXMgaXMgYSAqdml0YWwqIG1lc3NhZ2Ugb3IgaW4g
+Z3JhY2UgcGVyaW9kICovCj4gKwlpZiAodHgtPmtleV9tYXN0ZXIpIHsKPiArCQl0eF9rZXkgPSBL
+RVlfTUFTVEVSOwo+ICsJCWlmICgha2V5LmFjdGl2ZSkKPiArCQkJZ290byBlbmNyeXB0Owo+ICsJ
+CWlmIChUSVBDX1NLQl9DQigqc2tiKS0+eG1pdF90eXBlID09IFNLQl9HUkFDSU5HKSB7Cj4gKwkJ
+CXByX2RlYnVnKCIlczogZ3JhY2luZyBmb3IgbXNnICglZCAlZClcbiIsIHR4LT5uYW1lLAo+ICsJ
+CQkJIHVzZXIsIHR5cGUpOwo+ICsJCQlnb3RvIGVuY3J5cHQ7Cj4gKwkJfQo+ICsJCWlmICh1c2Vy
+ID09IExJTktfQ09ORklHIHx8Cj4gKwkJICAgICh1c2VyID09IExJTktfUFJPVE9DT0wgJiYgdHlw
+ZSA9PSBSRVNFVF9NU0cpIHx8Cj4gKwkJICAgIHRpbWVfYmVmb3JlKGppZmZpZXMsIHR4LT50aW1l
+cjIgKyBUSVBDX1RYX0dSQUNFX1BFUklPRCkpIHsKV2h5IGRvIFJFU0VUIG1lc3NhZ2VzIG5lZWQg
+dG8gYmUgZW5jcnlwdGVkIHdpdGggdGhlIG1hc3RlciBrZXk/Cj4gKwkJCWlmIChfX3J4ICYmIF9f
+cngtPmtleV9tYXN0ZXIgJiYKPiArCQkJICAgICFhdG9taWNfcmVhZCgmX19yeC0+cGVlcl9yeF9h
+Y3RpdmUpKQo+ICsJCQkJZ290byBlbmNyeXB0Owo+ICsJCQlpZiAoIV9fcngpIHsKPiArCQkJCWlm
+IChsaWtlbHkoIXR4LT5sZWdhY3lfdXNlcikpCj4gKwkJCQkJZ290byBlbmNyeXB0Owo+ICsJCQkJ
+dGlwY19jcnlwdG9fY2xvbmVfbXNnKG5ldCwgKnNrYiwgYiwgZHN0LAo+ICsJCQkJCQkgICAgICBf
+X2Rub2RlLCBTS0JfR1JBQ0lORyk7Cj4gICAJCQl9Cj4gICAJCX0KPiAgIAl9Cj4gKwo+ICAgCS8q
+IEVsc2UsIHVzZSB0aGUgYWN0aXZlIGtleSBpZiBhbnkgKi8KPiAgIAlpZiAobGlrZWx5KGtleS5h
+Y3RpdmUpKSB7Cj4gICAJCXR4X2tleSA9IGtleS5hY3RpdmU7Cj4gICAJCWdvdG8gZW5jcnlwdDsK
+PiAgIAl9Cj4gKwo+ICAgCWdvdG8gZXhpdDsKPiAgIAo+ICAgZW5jcnlwdDoKPiBAQCAtMTYxOSwx
+NSArMTcwNSwxNiBAQCBpbnQgdGlwY19jcnlwdG9fcmN2KHN0cnVjdCBuZXQgKm5ldCwgc3RydWN0
+IHRpcGNfY3J5cHRvICpyeCwKPiAgIAlzdHJ1Y3QgdGlwY19hZWFkICphZWFkID0gTlVMTDsKPiAg
+IAlzdHJ1Y3QgdGlwY19rZXkga2V5Owo+ICAgCWludCByYyA9IC1FTk9LRVk7Cj4gLQl1OCB0eF9r
+ZXkgPSAwOwo+ICsJdTggdHhfa2V5Owo+ICsKPiArCXR4X2tleSA9ICgoc3RydWN0IHRpcGNfZWhk
+ciAqKSgqc2tiKS0+ZGF0YSktPnR4X2tleTsKPiAgIAo+ICAgCS8qIE5ldyBwZWVyPwo+ICAgCSAq
+IExldCdzIHRyeSB3aXRoIFRYIGtleSAoaS5lLiBjbHVzdGVyIG1vZGUpICYgdmVyaWZ5IHRoZSBz
+a2IgZmlyc3QhCj4gICAJICovCj4gLQlpZiAodW5saWtlbHkoIXJ4KSkKPiArCWlmICh1bmxpa2Vs
+eSghcnggfHwgdHhfa2V5ID09IEtFWV9NQVNURVIpKQo+ICAgCQlnb3RvIHBpY2tfdHg7Cj4gICAK
+PiAtCXR4X2tleSA9ICgoc3RydWN0IHRpcGNfZWhkciAqKSgqc2tiKS0+ZGF0YSktPnR4X2tleTsK
+PiAgIAkvKiBQaWNrIFJYIGtleSBhY2NvcmRpbmcgdG8gVFgga2V5IGlmIGFueSAqLwo+ICAgCWtl
+eSA9IHJ4LT5rZXk7Cj4gICAJaWYgKHR4X2tleSA9PSBrZXkuYWN0aXZlIHx8IHR4X2tleSA9PSBr
+ZXkucGVuZGluZyB8fAo+IEBAIC0xNjQwLDcgKzE3MjcsNyBAQCBpbnQgdGlwY19jcnlwdG9fcmN2
+KHN0cnVjdCBuZXQgKm5ldCwgc3RydWN0IHRpcGNfY3J5cHRvICpyeCwKPiAgIAo+ICAgcGlja190
+eDoKPiAgIAkvKiBObyBrZXkgc3VpdGFibGU/IFRyeSB0byBwaWNrIG9uZSBmcm9tIFRYLi4uICov
+Cj4gLQlhZWFkID0gdGlwY19jcnlwdG9fa2V5X3BpY2tfdHgodHgsIHJ4LCAqc2tiKTsKPiArCWFl
+YWQgPSB0aXBjX2NyeXB0b19rZXlfcGlja190eCh0eCwgcngsICpza2IsIHR4X2tleSk7Cj4gICAJ
+aWYgKGFlYWQpCj4gICAJCWdvdG8gZGVjcnlwdDsKPiAgIAlnb3RvIGV4aXQ7Cj4gQEAgLTE3MjIs
+OSArMTgwOSwxMiBAQCBzdGF0aWMgdm9pZCB0aXBjX2NyeXB0b19yY3ZfY29tcGxldGUoc3RydWN0
+IG5ldCAqbmV0LCBzdHJ1Y3QgdGlwY19hZWFkICphZWFkLAo+ICAgCQkJCWdvdG8gZnJlZV9za2I7
+Cj4gICAJCX0KPiAgIAo+ICsJCS8qIElnbm9yZSBjbG9uaW5nIGlmIGl0IHdhcyBUWCBtYXN0ZXIg
+a2V5ICovCj4gKwkJaWYgKGVoZHItPnR4X2tleSA9PSBLRVlfTUFTVEVSKQo+ICsJCQlnb3RvIHJj
+djsKPiAgIAkJaWYgKHRpcGNfYWVhZF9jbG9uZSgmdG1wLCBhZWFkKSA8IDApCj4gICAJCQlnb3Rv
+IHJjdjsKPiAtCQlpZiAodGlwY19jcnlwdG9fa2V5X2F0dGFjaChyeCwgdG1wLCBlaGRyLT50eF9r
+ZXkpIDwgMCkgewo+ICsJCWlmICh0aXBjX2NyeXB0b19rZXlfYXR0YWNoKHJ4LCB0bXAsIGVoZHIt
+PnR4X2tleSwgZmFsc2UpIDwgMCkgewo+ICAgCQkJdGlwY19hZWFkX2ZyZWUoJnRtcC0+cmN1KTsK
+PiAgIAkJCWdvdG8gcmN2Owo+ICAgCQl9Cj4gQEAgLTE3NDAsMTAgKzE4MzAsMTAgQEAgc3RhdGlj
+IHZvaWQgdGlwY19jcnlwdG9fcmN2X2NvbXBsZXRlKHN0cnVjdCBuZXQgKm5ldCwgc3RydWN0IHRp
+cGNfYWVhZCAqYWVhZCwKPiAgIAkvKiBTZXQgdGhlIFJYIGtleSdzIHVzZXIgKi8KPiAgIAl0aXBj
+X2FlYWRfdXNlcnNfc2V0KGFlYWQsIDEpOwo+ICAgCj4gLXJjdjoKPiAgIAkvKiBNYXJrIHRoaXMg
+cG9pbnQsIFJYIHdvcmtzICovCj4gICAJcngtPnRpbWVyMSA9IGppZmZpZXM7Cj4gICAKPiArcmN2
+Ogo+ICAgCS8qIFJlbW92ZSBlaGRyICYgYXV0aC4gdGFnIHByaW9yIHRvIHRpcGNfcmN2KCkgKi8K
+PiAgIAllaGRyID0gKHN0cnVjdCB0aXBjX2VoZHIgKikoKnNrYiktPmRhdGE7Cj4gICAKPiBAQCAt
+MTg2NSwxNCArMTk1NSwyNCBAQCBzdGF0aWMgY2hhciAqdGlwY19jcnlwdG9fa2V5X2R1bXAoc3Ry
+dWN0IHRpcGNfY3J5cHRvICpjLCBjaGFyICpidWYpCj4gICAJY2hhciAqczsKPiAgIAo+ICAgCWZv
+ciAoayA9IEtFWV9NSU47IGsgPD0gS0VZX01BWDsgaysrKSB7Cj4gLQkJaWYgKGsgPT0ga2V5LnBh
+c3NpdmUpCj4gLQkJCXMgPSAiUEFTIjsKPiAtCQllbHNlIGlmIChrID09IGtleS5hY3RpdmUpCj4g
+LQkJCXMgPSAiQUNUIjsKPiAtCQllbHNlIGlmIChrID09IGtleS5wZW5kaW5nKQo+IC0JCQlzID0g
+IlBFTiI7Cj4gLQkJZWxzZQo+IC0JCQlzID0gIi0iOwo+ICsJCWlmIChrID09IEtFWV9NQVNURVIp
+IHsKPiArCQkJaWYgKGlzX3J4KGMpKQo+ICsJCQkJY29udGludWU7Cj4gKwkJCWlmICh0aW1lX2Jl
+Zm9yZShqaWZmaWVzLAo+ICsJCQkJCWMtPnRpbWVyMiArIFRJUENfVFhfR1JBQ0VfUEVSSU9EKSkK
+PiArCQkJCXMgPSAiQUNUIjsKPiArCQkJZWxzZQo+ICsJCQkJcyA9ICJQQVMiOwo+ICsJCX0gZWxz
+ZSB7Cj4gKwkJCWlmIChrID09IGtleS5wYXNzaXZlKQo+ICsJCQkJcyA9ICJQQVMiOwo+ICsJCQll
+bHNlIGlmIChrID09IGtleS5hY3RpdmUpCj4gKwkJCQlzID0gIkFDVCI7Cj4gKwkJCWVsc2UgaWYg
+KGsgPT0ga2V5LnBlbmRpbmcpCj4gKwkJCQlzID0gIlBFTiI7Cj4gKwkJCWVsc2UKPiArCQkJCXMg
+PSAiLSI7Cj4gKwkJfQo+ICAgCQlpICs9IHNjbnByaW50ZihidWYgKyBpLCAyMDAgLSBpLCAiXHRL
+ZXklZDogJXMiLCBrLCBzKTsKPiAgIAo+ICAgCQlyY3VfcmVhZF9sb2NrKCk7Cj4gZGlmZiAtLWdp
+dCBhL25ldC90aXBjL2NyeXB0by5oIGIvbmV0L3RpcGMvY3J5cHRvLmgKPiBpbmRleCBjM2RlNzY5
+ZjQ5ZTguLjdmY2I4MGNiMGU4YSAxMDA2NDQKPiAtLS0gYS9uZXQvdGlwYy9jcnlwdG8uaAo+ICsr
+KyBiL25ldC90aXBjL2NyeXB0by5oCj4gQEAgLTc0LDcgKzc0LDcgQEAgZXh0ZXJuIGludCBzeXNj
+dGxfdGlwY19tYXhfdGZtcyBfX3JlYWRfbW9zdGx5Owo+ICAgICogICAgIDMgMyAyIDIgMiAyIDIg
+MiAyIDIgMiAyIDEgMSAxIDEgMSAxIDEgMSAxIDEgMCAwIDAgMCAwIDAgMCAwIDAgMAo+ICAgICog
+ICAgIDEgMCA5IDggNyA2IDUgNHwzIDIgMSAwIDkgOCA3IDZ8NSA0IDMgMiAxIDAgOSA4fDcgNiA1
+IDQgMyAyIDEgMAo+ICAgICogICAgKy0rLSstKy0rLSstKy0rLSstKy0rLSstKy0rLSstKy0rLSst
+Ky0rLSstKy0rLSstKy0rLSstKy0rLSstKy0rLSsKPiAtICogdzA6fFZlcj03fCBVc2VyICB8RHxU
+WCB8UlggfEt8ICAgICAgICAgICAgICAgICBSc3ZkICAgICAgICAgICAgICAgIHwKPiArICogdzA6
+fFZlcj03fCBVc2VyICB8RHxUWCB8UlggfEt8TXxOfCAgICAgICAgICAgICBSc3ZkICAgICAgICAg
+ICAgICAgIHwKPiAgICAqICAgICstKy0rLSstKy0rLSstKy0rLSstKy0rLSstKy0rLSstKy0rLSst
+Ky0rLSstKy0rLSstKy0rLSstKy0rLSstKy0rCj4gICAgKiB3MTp8ICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICBTZXFubyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfAo+ICAgICogdzI6
+fCAgICAgICAgICAgICAgICAgICAgICAgICAgICg4IG9jdGV0cykgICAgICAgICAgICAgICAgICAg
+ICAgICAgIHwKPiBAQCAtMTAxLDYgKzEwMSw5IEBAIGV4dGVybiBpbnQgc3lzY3RsX3RpcGNfbWF4
+X3RmbXMgX19yZWFkX21vc3RseTsKPiAgICAqCVJYCTogQ3VycmVudGx5IFJYIGFjdGl2ZSBrZXkg
+Y29ycmVzcG9uZGluZyB0byB0aGUgZGVzdGluYXRpb24KPiAgICAqCSAgICAgICAgICBub2RlJ3Mg
+VFgga2V5ICh3aGVuIHRoZSAiRCIgYml0IGlzIHNldCkKPiAgICAqCUsJOiBLZWVwLWFsaXZlIGJp
+dCAoZm9yIFJQUywgTElOS19QUk9UT0NPTC9TVEFURV9NU0cgb25seSkKPiArICoJTSAgICAgICA6
+IEJpdCBpbmRpY2F0ZXMgaWYgc2VuZGVyIGhhcyBtYXN0ZXIga2V5Cj4gKyAqCU4JOiBCaXQgaW5k
+aWNhdGVzIGlmIHNlbmRlciBoYXMgbm8gUlgga2V5cyBjb3JyZXNwb25kaW5nIHRvIHRoZQo+ICsg
+KgkgICAgICAgICAgcmVjZWl2ZXIncyBUWCAod2hlbiB0aGUgIkQiIGJpdCBpcyBzZXQpCj4gICAg
+KglSc3ZkCTogUmVzZXJ2ZWQgYml0LCBmaWVsZAo+ICAgICogV29yZDEtMjoKPiAgICAqCVNlcW5v
+CTogVGhlIDY0LWJpdCBzZXF1ZW5jZSBudW1iZXIgb2YgdGhlIGVuY3J5cHRlZCBtZXNzYWdlLCBh
+bHNvCj4gQEAgLTExNyw3ICsxMjAsOSBAQCBzdHJ1Y3QgdGlwY19laGRyIHsKPiAgIAkJCV9fdTgJ
+ZGVzdGluZWQ6MSwKPiAgIAkJCQl1c2VyOjQsCj4gICAJCQkJdmVyc2lvbjozOwo+IC0JCQlfX3U4
+CXJlc2VydmVkXzE6MywKPiArCQkJX191OAlyZXNlcnZlZF8xOjEsCj4gKwkJCQlyeF9ub2tleTox
+LAo+ICsJCQkJbWFzdGVyX2tleToxLAo+ICAgCQkJCWtlZXBhbGl2ZToxLAo+ICAgCQkJCXJ4X2tl
+eV9hY3RpdmU6MiwKPiAgIAkJCQl0eF9rZXk6MjsKPiBAQCAtMTI4LDcgKzEzMyw5IEBAIHN0cnVj
+dCB0aXBjX2VoZHIgewo+ICAgCQkJX191OAl0eF9rZXk6MiwKPiAgIAkJCQlyeF9rZXlfYWN0aXZl
+OjIsCj4gICAJCQkJa2VlcGFsaXZlOjEsCj4gLQkJCQlyZXNlcnZlZF8xOjM7Cj4gKwkJCQltYXN0
+ZXJfa2V5OjEsCj4gKwkJCQlyeF9ub2tleToxLAo+ICsJCQkJcmVzZXJ2ZWRfMToxOwo+ICAgI2Vs
+c2UKPiAgICNlcnJvciAgIlBsZWFzZSBmaXggPGFzbS9ieXRlb3JkZXIuaD4iCj4gICAjZW5kaWYK
+PiBAQCAtMTU4LDcgKzE2NSw3IEBAIGludCB0aXBjX2NyeXB0b194bWl0KHN0cnVjdCBuZXQgKm5l
+dCwgc3RydWN0IHNrX2J1ZmYgKipza2IsCj4gICBpbnQgdGlwY19jcnlwdG9fcmN2KHN0cnVjdCBu
+ZXQgKm5ldCwgc3RydWN0IHRpcGNfY3J5cHRvICpyeCwKPiAgIAkJICAgIHN0cnVjdCBza19idWZm
+ICoqc2tiLCBzdHJ1Y3QgdGlwY19iZWFyZXIgKmIpOwo+ICAgaW50IHRpcGNfY3J5cHRvX2tleV9p
+bml0KHN0cnVjdCB0aXBjX2NyeXB0byAqYywgc3RydWN0IHRpcGNfYWVhZF9rZXkgKnVrZXksCj4g
+LQkJCSB1OCBtb2RlKTsKPiArCQkJIHU4IG1vZGUsIGJvb2wgbWFzdGVyX2tleSk7Cj4gICB2b2lk
+IHRpcGNfY3J5cHRvX2tleV9mbHVzaChzdHJ1Y3QgdGlwY19jcnlwdG8gKmMpOwo+ICAgaW50IHRp
+cGNfYWVhZF9rZXlfdmFsaWRhdGUoc3RydWN0IHRpcGNfYWVhZF9rZXkgKnVrZXkpOwo+ICAgYm9v
+bCB0aXBjX2VoZHJfdmFsaWRhdGUoc3RydWN0IHNrX2J1ZmYgKnNrYik7Cj4gZGlmZiAtLWdpdCBh
+L25ldC90aXBjL21zZy5oIGIvbmV0L3RpcGMvbXNnLmgKPiBpbmRleCAxMDE2ZTk2ZGI1YzQuLjI1
+ZTVjNWM4YTZmZiAxMDA2NDQKPiAtLS0gYS9uZXQvdGlwYy9tc2cuaAo+ICsrKyBiL25ldC90aXBj
+L21zZy5oCj4gQEAgLTEyNyw3ICsxMjcsOSBAQCBzdHJ1Y3QgdGlwY19za2JfY2Igewo+ICAgI2lm
+ZGVmIENPTkZJR19USVBDX0NSWVBUTwo+ICAgCQkJdTggZW5jcnlwdGVkOjE7Cj4gICAJCQl1OCBk
+ZWNyeXB0ZWQ6MTsKPiAtCQkJdTggcHJvYmU6MTsKPiArI2RlZmluZSBTS0JfUFJPQklORwkxCj4g
+KyNkZWZpbmUgU0tCX0dSQUNJTkcJMgo+ICsJCQl1OCB4bWl0X3R5cGU6MjsKPiAgIAkJCXU4IHR4
+X2Nsb25lX2RlZmVycmVkOjE7Cj4gICAjZW5kaWYKPiAgIAkJfTsKPiBkaWZmIC0tZ2l0IGEvbmV0
+L3RpcGMvbmV0bGluay5jIGIvbmV0L3RpcGMvbmV0bGluay5jCj4gaW5kZXggYzRhZWU2MjQ3ZDU1
+Li4xZWMwMGZjYzI2ZWUgMTAwNjQ0Cj4gLS0tIGEvbmV0L3RpcGMvbmV0bGluay5jCj4gKysrIGIv
+bmV0L3RpcGMvbmV0bGluay5jCj4gQEAgLTEwOCw2ICsxMDgsNyBAQCBjb25zdCBzdHJ1Y3Qgbmxh
+X3BvbGljeSB0aXBjX25sX25vZGVfcG9saWN5W1RJUENfTkxBX05PREVfTUFYICsgMV0gPSB7Cj4g
+ICAJCQkJCSAgICAubGVuID0gVElQQ19OT0RFSURfTEVOfSwKPiAgIAlbVElQQ19OTEFfTk9ERV9L
+RVldCQk9IHsgLnR5cGUgPSBOTEFfQklOQVJZLAo+ICAgCQkJCQkgICAgLmxlbiA9IFRJUENfQUVB
+RF9LRVlfU0laRV9NQVh9LAo+ICsJW1RJUENfTkxBX05PREVfS0VZX01BU1RFUl0JPSB7IC50eXBl
+ID0gTkxBX0ZMQUcgfSwKPiAgIH07Cj4gICAKPiAgIC8qIFByb3BlcnRpZXMgdmFsaWQgZm9yIG1l
+ZGlhLCBiZWFyZXIgYW5kIGxpbmsgKi8KPiBkaWZmIC0tZ2l0IGEvbmV0L3RpcGMvbm9kZS5jIGIv
+bmV0L3RpcGMvbm9kZS5jCj4gaW5kZXggMDMwYTUxYzRkMWZhLi41NWYwMTJkMWVhNzQgMTAwNjQ0
+Cj4gLS0tIGEvbmV0L3RpcGMvbm9kZS5jCj4gKysrIGIvbmV0L3RpcGMvbm9kZS5jCj4gQEAgLTI4
+NzIsMTEgKzI4NzIsMTEgQEAgc3RhdGljIGludCBfX3RpcGNfbmxfbm9kZV9zZXRfa2V5KHN0cnVj
+dCBza19idWZmICpza2IsIHN0cnVjdCBnZW5sX2luZm8gKmluZm8pCj4gICB7Cj4gICAJc3RydWN0
+IG5sYXR0ciAqYXR0cnNbVElQQ19OTEFfTk9ERV9NQVggKyAxXTsKPiAgIAlzdHJ1Y3QgbmV0ICpu
+ZXQgPSBzb2NrX25ldChza2ItPnNrKTsKPiAtCXN0cnVjdCB0aXBjX25ldCAqdG4gPSB0aXBjX25l
+dChuZXQpOwo+ICsJc3RydWN0IHRpcGNfY3J5cHRvICp0eCA9IHRpcGNfbmV0KG5ldCktPmNyeXB0
+b190eCwgKmMgPSB0eDsKPiAgIAlzdHJ1Y3QgdGlwY19ub2RlICpuID0gTlVMTDsKPiAgIAlzdHJ1
+Y3QgdGlwY19hZWFkX2tleSAqdWtleTsKPiAtCXN0cnVjdCB0aXBjX2NyeXB0byAqYzsKPiAtCXU4
+ICppZCwgKm93bl9pZDsKPiArCWJvb2wgbWFzdGVyX2tleSA9IGZhbHNlOwo+ICsJdTggKmlkLCAq
+b3duX2lkLCBtb2RlOwo+ICAgCWludCByYyA9IDA7Cj4gICAKPiAgIAlpZiAoIWluZm8tPmF0dHJz
+W1RJUENfTkxBX05PREVdKQo+IEBAIC0yODg2LDUxICsyODg2LDQ1IEBAIHN0YXRpYyBpbnQgX190
+aXBjX25sX25vZGVfc2V0X2tleShzdHJ1Y3Qgc2tfYnVmZiAqc2tiLCBzdHJ1Y3QgZ2VubF9pbmZv
+ICppbmZvKQo+ICAgCQkJICAgICAgaW5mby0+YXR0cnNbVElQQ19OTEFfTk9ERV0sCj4gICAJCQkg
+ICAgICB0aXBjX25sX25vZGVfcG9saWN5LCBpbmZvLT5leHRhY2spOwo+ICAgCWlmIChyYykKPiAt
+CQlnb3RvIGV4aXQ7Cj4gKwkJcmV0dXJuIHJjOwo+ICAgCj4gICAJb3duX2lkID0gdGlwY19vd25f
+aWQobmV0KTsKPiAtCWlmICghb3duX2lkKSB7Cj4gLQkJcmMgPSAtRVBFUk07Cj4gLQkJZ290byBl
+eGl0Owo+IC0JfQo+ICsJaWYgKCFvd25faWQpCj4gKwkJcmV0dXJuIC1FUEVSTTsKPiAgIAo+ICAg
+CXJjID0gdGlwY19ubF9yZXRyaWV2ZV9rZXkoYXR0cnMsICZ1a2V5KTsKPiAgIAlpZiAocmMpCj4g
+LQkJZ290byBleGl0Owo+ICsJCXJldHVybiByYzsKPiAgIAo+ICAgCXJjID0gdGlwY19hZWFkX2tl
+eV92YWxpZGF0ZSh1a2V5KTsKPiAgIAlpZiAocmMpCj4gLQkJZ290byBleGl0Owo+ICsJCXJldHVy
+biByYzsKPiAgIAo+ICAgCXJjID0gdGlwY19ubF9yZXRyaWV2ZV9ub2RlaWQoYXR0cnMsICZpZCk7
+Cj4gICAJc3dpdGNoIChyYykgewo+ICAgCWNhc2UgLUVOT0RBVEE6Cj4gLQkJLyogQ2x1c3RlciBr
+ZXkgbW9kZSAqLwo+IC0JCXJjID0gdGlwY19jcnlwdG9fa2V5X2luaXQodG4tPmNyeXB0b190eCwg
+dWtleSwgQ0xVU1RFUl9LRVkpOwo+ICsJCW1vZGUgPSBDTFVTVEVSX0tFWTsKPiArCQltYXN0ZXJf
+a2V5ID0gISEoYXR0cnNbVElQQ19OTEFfTk9ERV9LRVlfTUFTVEVSXSk7Cj4gICAJCWJyZWFrOwo+
+ICAgCWNhc2UgMDoKPiAtCQkvKiBQZXItbm9kZSBrZXkgbW9kZSAqLwo+IC0JCWlmICghbWVtY21w
+KGlkLCBvd25faWQsIE5PREVfSURfTEVOKSkgewo+IC0JCQljID0gdG4tPmNyeXB0b190eDsKPiAt
+CQl9IGVsc2Ugewo+ICsJCW1vZGUgPSBQRVJfTk9ERV9LRVk7Cj4gKwkJaWYgKG1lbWNtcChpZCwg
+b3duX2lkLCBOT0RFX0lEX0xFTikpIHsKPiAgIAkJCW4gPSB0aXBjX25vZGVfZmluZF9ieV9pZChu
+ZXQsIGlkKSA/Ogo+ICAgCQkJCXRpcGNfbm9kZV9jcmVhdGUobmV0LCAwLCBpZCwgMHhmZmZmdSwg
+MCwgdHJ1ZSk7Cj4gLQkJCWlmICh1bmxpa2VseSghbikpIHsKPiAtCQkJCXJjID0gLUVOT01FTTsK
+PiAtCQkJCWJyZWFrOwo+IC0JCQl9Cj4gKwkJCWlmICh1bmxpa2VseSghbikpCj4gKwkJCQlyZXR1
+cm4gLUVOT01FTTsKPiAgIAkJCWMgPSBuLT5jcnlwdG9fcng7Cj4gICAJCX0KPiAtCj4gLQkJcmMg
+PSB0aXBjX2NyeXB0b19rZXlfaW5pdChjLCB1a2V5LCBQRVJfTk9ERV9LRVkpOwo+IC0JCWlmIChu
+KQo+IC0JCQl0aXBjX25vZGVfcHV0KG4pOwo+ICAgCQlicmVhazsKPiAgIAlkZWZhdWx0Ogo+IC0J
+CWJyZWFrOwo+ICsJCXJldHVybiByYzsKPiAgIAl9Cj4gICAKPiAtZXhpdDoKPiArCS8qIEluaXRp
+YXRlIHRoZSBUWC9SWCBrZXkgKi8KPiArCXJjID0gdGlwY19jcnlwdG9fa2V5X2luaXQoYywgdWtl
+eSwgbW9kZSwgbWFzdGVyX2tleSk7Cj4gKwlpZiAobikKPiArCQl0aXBjX25vZGVfcHV0KG4pOwo+
+ICsKPiAgIAlyZXR1cm4gKHJjIDwgMCkgPyByYyA6IDA7Cj4gICB9Cj4gICAKQWNrZWQtYnk6IEpv
+biBNYWxveSA8am1hbG95QHJlZGhhdC5jb20+CgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fCnRpcGMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKdGlwYy1k
+aXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdl
+Lm5ldC9saXN0cy9saXN0aW5mby90aXBjLWRpc2N1c3Npb24K
