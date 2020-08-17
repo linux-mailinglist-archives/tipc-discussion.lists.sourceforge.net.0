@@ -2,94 +2,67 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08AFD245C94
-	for <lists+tipc-discussion@lfdr.de>; Mon, 17 Aug 2020 08:37:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21E7C2478E9
+	for <lists+tipc-discussion@lfdr.de>; Mon, 17 Aug 2020 23:35:06 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1k7Ym0-0004Qu-Pd; Mon, 17 Aug 2020 06:37:36 +0000
+	id 1k7mmQ-0003AI-7q; Mon, 17 Aug 2020 21:34:58 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <lucien.xin@gmail.com>) id 1k7Ym0-0004Qm-03
- for tipc-discussion@lists.sourceforge.net; Mon, 17 Aug 2020 06:37:36 +0000
+ (envelope-from <davem@davemloft.net>) id 1k7mmO-0003A8-Qt
+ for tipc-discussion@lists.sourceforge.net; Mon, 17 Aug 2020 21:34:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
- In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
- :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Mime-Version
+ :References:In-Reply-To:From:Subject:Cc:To:Message-Id:Date:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ZGAxLhTODGHqxXYJjtQOn9tVpAUfPOZu1UQ9wodOgrI=; b=XAhQOMiQp882dxWP6inmkvDXC3
- C2H2wGWDCBuO0p+sbczWlVd66iBVyRPxV+YQuFzup/ulK+HG6wi/GeXVQ4ODjoYLP8FktVlmsVQYJ
- R8wekgDC9MvV9jdjlzFovyQKvw27htEqkOzGZUkXG+xKWShHKvoMrS6nE50aD1R6ptdQ=;
+ bh=2857/61NQcqrQIDPsjaisyOBoDpo/XmWBK+TVG+1Rp0=; b=bnfYrQd29uyQ0cciIxZGa5NW9h
+ i00n4GE1auKjjxkiN8wMYr3O2CBDfUjwNN4P7wMr7UeuYYpWPfL1tM1MkKEPv2UulZgGXpvNF0F8l
+ Dxgk1qSOuiq4er3IgtCxWsx6f/k9bloB1R03iTFjQvyLBkECxd6wg04lAQnqpe4idqjE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
- MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:Mime-Version:References:
+ In-Reply-To:From:Subject:Cc:To:Message-Id:Date:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ZGAxLhTODGHqxXYJjtQOn9tVpAUfPOZu1UQ9wodOgrI=; b=CRvEb7Lz/B7C88tU+B3UDkvogB
- VcGy0HqdpfjqNmo3rvAiZE0yYhrXaXSAk9w7Pg0ZzrpqElIKkzVlIhcEniu3XVetjRtjW0qcUuHRr
- qEPFASthAvOWxADkcu1A8ahrhcxzxm9MisD9PWQuQbte7aVI7SFQXzq5sMG+dmIu031M=;
-Received: from mail-wm1-f65.google.com ([209.85.128.65])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.2)
- id 1k7Yly-009zii-Po
- for tipc-discussion@lists.sourceforge.net; Mon, 17 Aug 2020 06:37:35 +0000
-Received: by mail-wm1-f65.google.com with SMTP id c19so12545924wmd.1
- for <tipc-discussion@lists.sourceforge.net>;
- Sun, 16 Aug 2020 23:37:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ZGAxLhTODGHqxXYJjtQOn9tVpAUfPOZu1UQ9wodOgrI=;
- b=Jau8UHxbCZTNkgbfTbkB6VmFnXMVrXgTXnGLacRYKA0Q8FBXOMLhp6W6XqZ9Ce853F
- q0UwWh4tKkxIQ40y+5AmQwPKB++v2Rx/ek5G/SXIw3mwVSk6ViiyeMWssBMy8FHsce1W
- 4Pg6ThKVposNcwXOGISf0KJ1ceEPAeGzIBxCXxId/XLngLgE5/B4QRrVhL73e00UqKlQ
- DeQv1lCI5hTSi0yoe0uJBo/SrkF8FoeQMRrPUUnDKs8mrZvtWSzEA0tP5Cv5eqU3yJKU
- pjGrPs43TKHDbB12OZNaPiZrzPpbzK7co4Ea1z2vWc0r31ogPKrvVJDCCszSeOX/o1fK
- P6MA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ZGAxLhTODGHqxXYJjtQOn9tVpAUfPOZu1UQ9wodOgrI=;
- b=Jt5CvC0Qwy0dwne3UH9/KL2yC/AAz243zT5D+ko4b4Z0l4DT/n8dsEFCxM0vJVW5JQ
- l0C+Z0LWpEVXgrxwzFdJmd2+6cYimSak9A5uRI5DwZoBtJBQlHw0OHlk9eye1OrOJl2A
- xNDzyCwRMpmAw1mVc0D4b2424lLBlPdSoR/5zv3sruYxJ2zVfcmqezLxZFViJ0Gx1ieB
- oo6c8QYg2+lIo7YAItQNfG0SGYz9ab4aHvihJdgRlnttr3ByUCIXoS99Q0DfBaASI3UZ
- PH1dLJOi+MSQUXq72YnEQTO+zyBhVkNchzO31tzvovnNg5kamja7RC1ZBUCQdVfms+Qy
- AaRQ==
-X-Gm-Message-State: AOAM531itOttlvpq2xixuVG+78B4+hFnF+DDvJXN69fEADa8bRSOQEMF
- N7k8SX6kYpyTPyNjMASthfQIv54mODRXslfbAm4=
-X-Google-Smtp-Source: ABdhPJxgLhuDH141ArW220LANPYkIrsHDIcUJj1L8l8bTLKgCHir90VmijbBByW0UBI+KoEcK3XqFSkTf29nfmvteMs=
-X-Received: by 2002:a7b:cc8e:: with SMTP id p14mr12969602wma.111.1597646241374; 
- Sun, 16 Aug 2020 23:37:21 -0700 (PDT)
-MIME-Version: 1.0
-References: <d20778039a791b9721bb449d493836edb742d1dc.1597570323.git.lucien.xin@gmail.com>
- <CAM_iQpU7iCjAZ3w4cnzZx1iBpUySzP-d+RDwaoAsqTaDBiVMVQ@mail.gmail.com>
-In-Reply-To: <CAM_iQpU7iCjAZ3w4cnzZx1iBpUySzP-d+RDwaoAsqTaDBiVMVQ@mail.gmail.com>
-From: Xin Long <lucien.xin@gmail.com>
-Date: Mon, 17 Aug 2020 14:49:50 +0800
-Message-ID: <CADvbK_fL=gkc_RFzjsFF0dq+7N1QGwsvzbzpP9e4PzyF7vsO-g@mail.gmail.com>
-To: Cong Wang <xiyou.wangcong@gmail.com>
-X-Spam-Score: -0.1 (/)
+ bh=2857/61NQcqrQIDPsjaisyOBoDpo/XmWBK+TVG+1Rp0=; b=jWkpkFmDrzUUrMDUtSkDxHGaHS
+ 6ksrFhNDewDdNsreGdAe2t5YQIdloLm80wpKH9htd/mDm/3PZTNjbDmBCL8fhWP2K9pQ69yqy3Ydo
+ SliodxIc75JVQsgYBaqQa5p/MdFzxHjfuB0e7WDJ9Lba6XrYV6QK4u7jtvNOyow72PtE=;
+Received: from [23.128.96.9] (helo=shards.monkeyblade.net)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1k7mmL-00Eb2P-A8
+ for tipc-discussion@lists.sourceforge.net; Mon, 17 Aug 2020 21:34:56 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 81EAD15D4582A;
+ Mon, 17 Aug 2020 14:17:56 -0700 (PDT)
+Date: Mon, 17 Aug 2020 14:34:38 -0700 (PDT)
+Message-Id: <20200817.143438.857390576001965310.davem@davemloft.net>
+To: xiyou.wangcong@gmail.com
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <CAM_iQpVkDg3WKik_j98gdvVirkQdaTQ2zzg8GVzBeij6i+aNnQ@mail.gmail.com>
+References: <CAM_iQpWQ6um=-oYK4_sgY3=3PsV1GEgCfGMYXANJ-spYRcz2XQ@mail.gmail.com>
+ <f46edd0e-f44c-e600-2026-2d2ca960a94b@infradead.org>
+ <CAM_iQpVkDg3WKik_j98gdvVirkQdaTQ2zzg8GVzBeij6i+aNnQ@mail.gmail.com>
+X-Mailer: Mew version 6.8 on Emacs 26.3
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Mon, 17 Aug 2020 14:17:56 -0700 (PDT)
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- (lucien.xin[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.128.65 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.65 listed in wl.mailspike.net]
-X-Headers-End: 1k7Yly-009zii-Po
+ 1.0 RDNS_NONE Delivered to internal network by a host with no rDNS
+X-Headers-End: 1k7mmL-00Eb2P-A8
 Subject: Re: [tipc-discussion] [PATCH net] tipc: not enable tipc when ipv6
  works as a module
 X-BeenThere: tipc-discussion@lists.sourceforge.net
@@ -103,31 +76,29 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: network dev <netdev@vger.kernel.org>, Randy Dunlap <rdunlap@infradead.org>,
- tipc-discussion@lists.sourceforge.net, David Miller <davem@davemloft.net>
+Cc: netdev@vger.kernel.org, rdunlap@infradead.org,
+ tipc-discussion@lists.sourceforge.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-On Mon, Aug 17, 2020 at 2:29 AM Cong Wang <xiyou.wangcong@gmail.com> wrote:
->
-> On Sun, Aug 16, 2020 at 4:54 AM Xin Long <lucien.xin@gmail.com> wrote:
-> >
-> > When using ipv6_dev_find() in one module, it requires ipv6 not to
-> > work as a module. Otherwise, this error occurs in build:
-> >
-> >   undefined reference to `ipv6_dev_find'.
-> >
-> > So fix it by adding "depends on IPV6 || IPV6=n" to tipc/Kconfig,
-> > as it does in sctp/Kconfig.
->
-> Or put it into struct ipv6_stub?
-Hi Cong,
+From: Cong Wang <xiyou.wangcong@gmail.com>
+Date: Mon, 17 Aug 2020 11:55:55 -0700
 
-That could be one way. We may do it when this new function becomes more common.
-By now, I think it's okay to make TIPC depend on IPV6 || IPV6=n.
+> On Mon, Aug 17, 2020 at 11:49 AM Randy Dunlap <rdunlap@infradead.org> wrote:
+>>
+>> It just restricts how TIPC can be built, so that
+>> TIPC=y and IPV6=m cannot happen together, which causes
+>> a build error.
+> 
+> It also disallows TIPC=m and IPV6=m, right?
 
-Thanks.
+That combination is allowed.
+
+The whole "X || X=n" construct means X must be off or equal to the
+value of the Kconfig entry this dependency is for.
+
+Thus you'll see "depends IPV6 || IPV6=n" everywhere.
 
 
 _______________________________________________
