@@ -2,115 +2,115 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89A9924FAB3
-	for <lists+tipc-discussion@lfdr.de>; Mon, 24 Aug 2020 11:59:16 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19CA824FAE6
+	for <lists+tipc-discussion@lfdr.de>; Mon, 24 Aug 2020 12:01:21 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kA9Fp-0006QO-Qs; Mon, 24 Aug 2020 09:59:05 +0000
+	id 1kA9Hw-0005QJ-GK; Mon, 24 Aug 2020 10:01:16 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <hoang.h.le@dektech.com.au>) id 1kA9Fo-0006Py-58
- for tipc-discussion@lists.sourceforge.net; Mon, 24 Aug 2020 09:59:04 +0000
+ (envelope-from <hoang.h.le@dektech.com.au>) id 1kA9Hv-0005Pz-82
+ for tipc-discussion@lists.sourceforge.net; Mon, 24 Aug 2020 10:01:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
  :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=y+wcozbsJqEgnVjoMAeoC3hvjC9kYgFrxYvU9r5Q+q0=; b=ACODcBCHUrtocu/Lyf0mQuOofP
- S75k6Dywxg/P9k/zMES2RBWf+uGylhf3lwNtf3DOymxVdyFRHOEoJaqyyMaE7XeYsklGNow9HpF6w
- ANSnEMkj1qIA23zr+dQO4VV5CSdhZNYdDwDyHKLQFJkSINfWzRAUX9vot4y3dU8TB1XM=;
+ bh=9YRc9Dnaz4DAHXxj3AQAO6fKr1lS82JhDwyGH6UyLpw=; b=TPoEBScGZUuSnVm1AVnyNRqk2j
+ gWjeV1sNznPatlSdxhOBjcnhAtB0SmSdFsASfYfVn2zbq5NKny5Ly8mytc9nolobolqVSiCIKLQai
+ TRzLIIhBTNRGSqqgC9+LdducI+7R2HVoYuga/XpruVLBazfkLA7AmzaIMCnhuUyPQTiY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Date:
  Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
  :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=y+wcozbsJqEgnVjoMAeoC3hvjC9kYgFrxYvU9r5Q+q0=; b=I
- YNmUaDJMcyg5IIL6NT8Lze2a2ZIr+BUR3fecGMU2t/5w1p6axqNhdwMbc19dMu4hYT38ZBYiB420S
- eywa97XzJQAgsJ9OsPgrt8jTAVggScmK6PzH6oMUX7V5g50xS5eKPXHz5b7Dlq6EIG2VCRSjCWcQ3
- zq6vMcHmJblgT4Wo=;
-Received: from mail-eopbgr60095.outbound.protection.outlook.com ([40.107.6.95]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+ List-Owner:List-Archive; bh=9YRc9Dnaz4DAHXxj3AQAO6fKr1lS82JhDwyGH6UyLpw=; b=R
+ JqrX4Ga2mJ48QjL5kHwwAx/Qf0jgJXm6hlxkqvGbYnNvgoneOiKYSFhJ/pbIBl/TpMJH5gDJjumjx
+ 7chUiNYyVolX83n4L5JredGa+BBPqVFe83uX/jR+FegUnVkmcRb4SzVoHGA7m89fhe4YNwXoYYILb
+ ZuGjl23PvhnyPBqU=;
+Received: from mail-eopbgr70113.outbound.protection.outlook.com
+ ([40.107.7.113] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1kA9Fc-002NjJ-S4
- for tipc-discussion@lists.sourceforge.net; Mon, 24 Aug 2020 09:59:04 +0000
+ id 1kA9Ht-002Nn6-Bt
+ for tipc-discussion@lists.sourceforge.net; Mon, 24 Aug 2020 10:01:15 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=WWrScE3iXsiK1RK04NponKC/DF6vWAu/Lbb8Sp4F8k/hHpNn30tDprA/hsbxuF6kJvt/WJcq4ZzxGsW2lKcWS/702Rhu/9gOiZQvNucOw/aDPP62xKQ5cnxWpVdeEnF60zoZoKq4rv4i5bVHIVtKyoczU95bzXqrrkDBeKlw1HNOF2TfAU5twqZ8DTQOvPZcyozlClAQyB1ntfLExzF4tMOACLDGqCch9Agx3OsUefverKL8+D46jHoQyCb/inQJyDOBAcuyMIFFMzqqdJPMDWMrL1DQAZbOjqjOL3GrbfwU5eimv3Uvc6z+xnbc4tGFvfaU33Rf/ebWFom7F/LyNQ==
+ b=PYIShBQNMfGrIrRen+Ims3RGBIOV8P0B2Hx27Yh6zMNI5OiMk336mw3e9aAq0DXQ2ZhVODLz0AEd76G5MSZ2U26msynA3u0S2mh7uvUWY6gCaTP3d1lbFs8oWNwZeyYlS4gK0hXtSs3rIJHciyghCv5YMI7V1eVWFCYr2/ckQC0jl8LnCvA9yWjNH4fawsFQT9kJPe2b54uJyTPHLmaP7qTncQxqEnF5eH448hhU8OhwPysB0m9rPquR0ve3JgmNK962iMy5p42sQPeR3s4IhvwxMDQ63OpZBLo6U6f9H5Q23mqnybsbFklGXQBMJcozu+l2pAzbYOqy6nUojiGW3g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=y+wcozbsJqEgnVjoMAeoC3hvjC9kYgFrxYvU9r5Q+q0=;
- b=CFqNXrz8EMsfiKvDOLG7Q5844/i8xWILk4VI6JyLyDTLOCG/R9xvQZlI+SmoM+Py3yhH1+Y1xwRSxblDuH3NOfd22Og3yK9v1dUFld3pbMEfP1hwm7NU6cNJInqZJli/wrCD5v8chMUyynPH1N9F4GH+FRyXBDTB2tw0ClkHnIzhGnM58YbKbjvdgi3WzzIjI2SPnJZ/g2PDXFWOYRgYtA8xEB5gDbh5+P/4afoY5Yr8BQ5ixNH5fO7XGK/5iVMPns/bgmgjuaAXQdyy3mzr44hWx6mA782gm8yd+ssjxk2FKncBXmSRH54P9kdK8r1VdiinzpSN0pN55pDPR2KCNA==
+ bh=9YRc9Dnaz4DAHXxj3AQAO6fKr1lS82JhDwyGH6UyLpw=;
+ b=YxIzkZZIm0GDm5DRNQDCDh6V4K4si9qUdRaGqsw7wlYRwzyDOcjLwWB/7/gqS0+ypWps3JfVJSR5kd6wOcFWIdrGwc2ISR3tuAsniLMT8rJLCQYqyCsVvAwI9T/5ZPlo8x9O5uSNZNmfRNrXaKWEZ48kJ3l5Ois+2d3YcLFYsMiYn3JcGkyFosGqMKcFs+6Gd4bOoy/9cn4xjTgKmCl4i27iFpTEays1EKEePMFeOKo0n3QrDOVbNufIhPVO6bH9d/QVRwsUX2UDnDT1iAgXPyR3/SzJxuo50WCG3vpJPO2j2WYVcpTMusVxG9I/1xYjZ5meYYubfUJuw8rmSigvJA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=dektech.com.au; dmarc=pass action=none
  header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=y+wcozbsJqEgnVjoMAeoC3hvjC9kYgFrxYvU9r5Q+q0=;
- b=bS8Ieio4kgJQhD9NpTRZNYcG5uRB0eDMxspOoGuVSO3NBUUO+lhCkLVwKvRZJK0iEHKyKpGQwBSftCsBjo055NmacooUArzEzubPp5IFY6Y1GG2fpd7OMIysXPS/P7gLFoGFEjaECYvRcpmHq40SRDockXl7IlHmMnF/4xBSUWs=
+ bh=9YRc9Dnaz4DAHXxj3AQAO6fKr1lS82JhDwyGH6UyLpw=;
+ b=UcWZykLSLQioahyyfbqeLyWEaQoiFIzd0U+qcDbMYnG2GLXq7umieLy8mIdLGv0pSfsxKRCg/KzyrJ46I6RajoL8xWcK6qxLREY7AlfHDJOgUhmbgb331IVd/3DryrctneikMndtTGkkcH+dnNwQ1pp0N9uSZ6rzVrM6cpV8gyE=
 Authentication-Results: redhat.com; dkim=none (message not signed)
  header.d=none;redhat.com; dmarc=none action=none header.from=dektech.com.au;
 Received: from VI1PR05MB4605.eurprd05.prod.outlook.com (2603:10a6:802:61::21)
- by VI1PR0501MB2749.eurprd05.prod.outlook.com (2603:10a6:800:9a::9)
+ by VI1PR05MB3342.eurprd05.prod.outlook.com (2603:10a6:802:1d::15)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3305.26; Mon, 24 Aug
- 2020 09:58:44 +0000
+ 2020 10:00:58 +0000
 Received: from VI1PR05MB4605.eurprd05.prod.outlook.com
  ([fe80::8dac:a296:42d9:e90b]) by VI1PR05MB4605.eurprd05.prod.outlook.com
  ([fe80::8dac:a296:42d9:e90b%7]) with mapi id 15.20.3305.026; Mon, 24 Aug 2020
- 09:58:44 +0000
+ 10:00:58 +0000
 From: Hoang Huu Le <hoang.h.le@dektech.com.au>
 To: jmaloy@redhat.com, maloy@donjonn.com, tipc-discussion@lists.sourceforge.net
-Date: Mon, 24 Aug 2020 16:58:30 +0700
-Message-Id: <20200824095830.14367-1-hoang.h.le@dektech.com.au>
+Date: Mon, 24 Aug 2020 17:00:44 +0700
+Message-Id: <20200824100044.14438-1-hoang.h.le@dektech.com.au>
 X-Mailer: git-send-email 2.25.1
-X-ClientProxiedBy: SG2PR06CA0171.apcprd06.prod.outlook.com
- (2603:1096:1:1e::25) To VI1PR05MB4605.eurprd05.prod.outlook.com
+X-ClientProxiedBy: SG2PR06CA0157.apcprd06.prod.outlook.com
+ (2603:1096:1:1e::11) To VI1PR05MB4605.eurprd05.prod.outlook.com
  (2603:10a6:802:61::21)
 MIME-Version: 1.0
 X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from dektech.com.au (14.161.14.188) by
- SG2PR06CA0171.apcprd06.prod.outlook.com (2603:1096:1:1e::25) with Microsoft
+ SG2PR06CA0157.apcprd06.prod.outlook.com (2603:1096:1:1e::11) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3305.25 via Frontend Transport; Mon, 24 Aug 2020 09:58:42 +0000
+ 15.20.3305.24 via Frontend Transport; Mon, 24 Aug 2020 10:00:56 +0000
 X-Mailer: git-send-email 2.25.1
 X-Originating-IP: [14.161.14.188]
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 586aa4e3-6e05-4181-a61f-08d84814492f
-X-MS-TrafficTypeDiagnostic: VI1PR0501MB2749:
+X-MS-Office365-Filtering-Correlation-Id: fb518c30-dce5-4b52-9a66-08d848149913
+X-MS-TrafficTypeDiagnostic: VI1PR05MB3342:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <VI1PR0501MB27494EA712799B951DC33791F1560@VI1PR0501MB2749.eurprd05.prod.outlook.com>
+X-Microsoft-Antispam-PRVS: <VI1PR05MB3342ED407B9017EEC7134186F1560@VI1PR05MB3342.eurprd05.prod.outlook.com>
 X-MS-Oob-TLC-OOBClassifiers: OLM:773;
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: KnP5psxRNEWA8UZ2vsgZQJ+7D1AmRxotBJZ5JB44eLl/qHrqoR8NO/SPxWu71Ifvmgc60rS3N/nIaIhwt1pE344UW/sPA0L0c7XkXVN7Z2ZOYvs+PuszEKoYTKb0H9tc6daUVH6LpIFQZTPVg86ZdqmiO0HbuTQOjrCPLcj2ugUUWuMFy6UndF8/u+iaPAOjsivrArYPivhYXSb4oXR1EGh0xrH5KpWAUvqYkb06R2s0EHwuyQxU8HV6Qaod9ZTiWwTYE/+6ITPAS5wLad3q4EPHxrwABtv6PmrmE1OF9MJmOecDMeNnEN5oupL+dTgWC5yTsbaqDcJIjWiFNmE0AQ==
+X-Microsoft-Antispam-Message-Info: lsBwHerEXM0DhXun1fdCRJPOkHEM0DFQ4dzKgZ6TY9uBrArB8jkgBAdoQXnnEAXL0mUXYJ5Grhg2vGaVnP1VTDkLzcrXNeUR5a9P5WeW0KdveWE+ZbjCDakar0fNHvDx7e5bbkOE0NK8QzXNEXUr+I98K+fbwhUUqcn8hDyyptT/lbyMyaFWKixvzK53KFLZJztOLYBCJp27iXi6oBW2/a5lR1K65wZ5g7mpTbgmlpMEp1j1smWKG9lHIWXIOQ0NOAhI5p7WG9pYaMY0PfvVZKXWFibXJ1dhZNWX4nyUnOYTXmuBnp42ZzlSEXm9lA3E6q/4B9k1ihe+6n7UzDSAfg==
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:VI1PR05MB4605.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(376002)(366004)(346002)(396003)(136003)(39840400004)(478600001)(186003)(107886003)(5660300002)(26005)(2616005)(8676002)(4326008)(316002)(7696005)(16526019)(103116003)(956004)(52116002)(8936002)(55016002)(1076003)(86362001)(66476007)(66946007)(36756003)(66556008)(83380400001)(6666004)(2906002);
+ SFS:(136003)(39850400004)(396003)(346002)(376002)(366004)(4326008)(478600001)(107886003)(5660300002)(55016002)(103116003)(2616005)(956004)(316002)(2906002)(16526019)(86362001)(26005)(66946007)(66556008)(66476007)(52116002)(8676002)(36756003)(1076003)(8936002)(186003)(83380400001)(6666004)(7696005);
  DIR:OUT; SFP:1102; 
-X-MS-Exchange-AntiSpam-MessageData: sfXTqxR+ts/u18GAKEDfnUzbo9VoCS3S9SCeTFLIXeW51Y0F14rZSYeWL9F2bgssRGVf6CG+9PP0wegNYbognE/GuYnDOVdb7oYIBGQY5kJWKpZ+Xv+WnvFjO5I9u1yW9enSU8ICS6WfiprNmw5jI1woz8owMluq61Kb8YejIZ8+pzzgyDl6NzhPCaQp5PCjb9QO2iAR5PO11jQwp/X9R5Yldr07jkDiehlJ4UJb0lBLT7XMndE8/DU+0d113cLK6gKuRonqEAeaNEeDidGl0Q2EnSzQNT3i6JnNDhw6UEFXHCge1uRa71N4rsH5EvrIzIZA8nfgyDV02rw+cYjulEX7LT2fumO/yy8xMuemVp1SHpDlP7LtKX7z3RHiyhhtr8HxAAqZHDXv6OIprzwQ9D8NPdLckCLEFfXQuSy4h5rQ1tfsJkMYe7qpt+Gv++7suT2AzF0kBLnF8CQ71gFo0GEYKFXdf8qLUdlGOqNo7cKw+GDlplSIImDiNjAaS5v1HqhbsQpN/lfaQn1J81qC9Tgx1q9UZtwE4xsKosyPMakiGo591FgU2ThJ1tkIVgH2Qzv9qQQjSzbAnpIPmP+wo8DhUa5liakYbiDAGI04agMlh/EklvbwYrSZaJBsgGUwAOkEOBGhSMNmjFJ3f0CbHw==
+X-MS-Exchange-AntiSpam-MessageData: QwQCyeHdU9CdbbRcY15QgDFiWnouQrN/Mshnlmww1l/WbUCYWaB7dLDUR5aj9zhS/iecW0XGm/CyEWFDFe75JUE98AaKXiYOu6lUydLzjJePC0XtJdPI95MVbcC/++ZZ4yEVwtFQXSC36/RKqNdaGzE/SJKTHmmUH7hoz54DNq6xx+szKiEJA882OSa84ufsoyG/22P+Yz7IlnjMP1lLU5yVYz/FpGstPzI3XEndhdqAsFrimkw9hObWQtOK3BJmglSo6M6OV9IqtEdCf5QM1mfP1m5rm4hA4gBe6eVUm2OJo05YqhXxnzJ8HftRRB6Wee8tXOyRIC5ezY2huwWew0xpbL8bYIpWZKjsOgcqNTPyIv1etc0qiwi0jOqjEcAj3a5fuGQy/xeGW062H3Alv8xrDiSVYig66XXkyrmohw3jA7m0e2xC81d8Rxm+DOJwWE8ExQ8KaTFA0E1YlWuUVLPBIYpUFg+VHiyZVOkB2AemT3sdilEnmqqBaBs31J4cZADnUzhJE8EnZyE1bf91Fdlzo/tsW6+ne8LRfmoFk9hx2Rowfx5LuFJAZUyU5+7m45QykyOPSFQuKSN7+XnDjKMIreMLnMFG57wHj/k5XSbGWpDtPu+oifU6jPxPHCtJAOchheDZOqeHxUh9mLyfCQ==
 X-OriginatorOrg: dektech.com.au
-X-MS-Exchange-CrossTenant-Network-Message-Id: 586aa4e3-6e05-4181-a61f-08d84814492f
+X-MS-Exchange-CrossTenant-Network-Message-Id: fb518c30-dce5-4b52-9a66-08d848149913
 X-MS-Exchange-CrossTenant-AuthSource: VI1PR05MB4605.eurprd05.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Aug 2020 09:58:44.2057 (UTC)
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Aug 2020 10:00:58.1187 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: OyuTmDNMDfb6V/+9B8Dp2+HfTtg3yyvJ9gdF9h54vbFyigWajx6jMgfKyL+JbkSR0m5FflBbtOkrl5NZoMsyZL24iRzovkzfdWSRjxElyu4=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0501MB2749
+X-MS-Exchange-CrossTenant-UserPrincipalName: KCHVvpKtoWsBpGf4fBAuTj3WHzDHSRtFtt+OIOvAgdMPe3lQzJUXw9AfLAzubrfe8gKadTzMbabLr/EdaesXEZSVeNqm/0lLlLMhMG8/Ov8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB3342
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.6.95 listed in list.dnswl.org]
+ trust [40.107.7.113 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.6.95 listed in wl.mailspike.net]
+ [40.107.7.113 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -119,8 +119,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
-X-Headers-End: 1kA9Fc-002NjJ-S4
-Subject: [tipc-discussion] [iproute2-next] tipc: support 128bit node
+X-Headers-End: 1kA9Ht-002Nn6-Bt
+Subject: [tipc-discussion] [iproute2-next v2] tipc: support 128bit node
  identity for peer removing
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -145,9 +145,11 @@ In kernel upstream, we add the support to set node identity with
 peer removing. Then, we got a problem when trying to remove
 offline node i.e:
 
+$ tipc node list
 Node Identity                    Hash     State
 d6babc1c1c6d                     1cbcd7ca down
 
+$ tipc peer remove address d6babc1c1c6d
 invalid network address, syntax: Z.C.N
 error: No such device or address
 
