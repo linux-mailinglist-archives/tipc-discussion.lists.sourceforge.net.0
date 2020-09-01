@@ -2,132 +2,133 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id E07AF258E08
-	for <lists+tipc-discussion@lfdr.de>; Tue,  1 Sep 2020 14:14:40 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFC01258E15
+	for <lists+tipc-discussion@lfdr.de>; Tue,  1 Sep 2020 14:18:54 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kD5BL-0007mS-Vd; Tue, 01 Sep 2020 12:14:35 +0000
+	id 1kD5FQ-0000Ff-MS; Tue, 01 Sep 2020 12:18:48 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1kD5BK-0007m0-7l
- for tipc-discussion@lists.sourceforge.net; Tue, 01 Sep 2020 12:14:34 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1kD5FP-0000FV-Ka
+ for tipc-discussion@lists.sourceforge.net; Tue, 01 Sep 2020 12:18:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
- :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=KPC651VvM/uqi3nasKkYr9mS01bpnAHfSnmqnIEfX9o=; b=cAygNX2gd0Qw/YZi1asUSkvKYw
- PD9lYBzNaEsZryJ//yI5vXXT0xO6Vq48e6ExSmPAJ38PDV12yf/NawjDvR9fmt+9diriL+E1zCVgk
- 1CEev2CJfz/qu+TkVkANDRl+a+JyZDEGtzrNZVFkl5qIBmooyd7iPCN+qANOA6Rb1iic=;
+ bh=Ic6++jyXAiZS/unBXLvMAjW1izu2NOmeT/ItKplQzgQ=; b=dH6DF/rKKR7WZv9LEMKZvips7I
+ QIWG7ln5ojjgI1OMdJWXjEGUTaDH9cGlPUjMmgrDoE9SynVbqchiYQkPSZoV5uhSPRO3GYqyLXd8X
+ +MOsFe/DF4whlBu6eTZjywG9doIfL2RIvkScGAYNL1i3pH5Y4gqNJFuNvhxTv/Zoyb7c=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Type:Content-Transfer-Encoding:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=KPC651VvM/uqi3nasKkYr9mS01bpnAHfSnmqnIEfX9o=; b=jV/Iikb719r6Sq5FDpVsFoPb5P
- w7Q4VHMUxmSu8I2sbjKgyYXOV81lBC4uRGrRCUJ1oWuTARYknMGNZ9Jm0O38Zc3WGs33j12fRRBH5
- thD4wEK7R87UmC8XFghNdA89dSLMJFF3FogPFzuswIL4nHorGSDL690qAH9GVkVemMgw=;
-Received: from mail-eopbgr150095.outbound.protection.outlook.com
- ([40.107.15.95] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=Ic6++jyXAiZS/unBXLvMAjW1izu2NOmeT/ItKplQzgQ=; b=DlNljNYEF0v099DmaFBqBkQOGl
+ wC69w/84rAAQsHGQ82tAbX0Xx6jjXyHRby/xgTCuhPMDtqnAOnCBZjQ5aUQEL1lV5WfzmdMOH9s4M
+ IzjzIYBZhZRw7R/4QZ/4Vl/cLNCaOteDJrLe6Ku/taJt+Y0NahnGI0+W1K5o3fZezGts=;
+Received: from mail-vi1eur05on2119.outbound.protection.outlook.com
+ ([40.107.21.119] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1kD5BG-007kZ7-FP
- for tipc-discussion@lists.sourceforge.net; Tue, 01 Sep 2020 12:14:34 +0000
+ id 1kD5F9-008vnb-KP
+ for tipc-discussion@lists.sourceforge.net; Tue, 01 Sep 2020 12:18:47 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ehq0fcs97hL8FwATl71AUhn0QNxMdzxbEhD+2yvvGrGQaTPNZq66Q/dxLwKAI647VHq41vFQo1H5sv7oQEVw8llcqCvSHOaCFgp55JJNOzCM0c/j633mLaWQ9p7xsE0fn+Q/hbVNCQFbRSEtN6f5Nm6VCvzrunuKJyy+vv4QLsYmaWBuT9hKD4xE9I8Tkd2zAfiqTFg5gsa0mfsCInbBpWUE2nLf2V4HBb2a1kM0aOlXStWOYJUnpVSR7tB8DYIcqOweS8GjactSQ9xI8ClZ76+vveVZKL/IqIZGc16lYUPRUO6p0ucsTKsLmMYSGkRrUuevGQET7JzSZh7Lvss3KA==
+ b=QW5r5XKH+l9Gv0UigUAybgK1xbFHYM/0z6j0VeUz85534loP5ER1n67HqYtMIerh1hyEJKV2HmC1+0U2KhIrfmXnki0XIR0ONebY18h4grWrmKDfL10fRjs7+MNGfERMBDt57KqcnNwKyMynD+PkxQ34Hf4GgR+oQY9TW+e6FaOWk/DuTlleIhkqKvVMkrukH5ScnIF0xqTj0lWrVa5aZtQwta2xplNRvN+ciziP+fqLI5+ggMr4dGfM6yHDCdjcOU6vin17dZkG69QuFRONHW9qX9Ato+HXPly+sp/tLorWzRgfzpYhnZX6fim2ZZZHU3TINKg5ujLyKM0t7wEwhg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KPC651VvM/uqi3nasKkYr9mS01bpnAHfSnmqnIEfX9o=;
- b=fViagw4S+jhkB9xg2h6fQxxAWHNd2Lrc3yEoXog1+Kgdt+uAXShuGnX2b5Xg6R8jMwTQMoHjct2LG3gSuzRIPJE1jI2V6u9AS78dKaGr23ReWwqpFvaP2IfOdIMXu8+Gecu5oi5iWme7wDNoyzBjrw9pJRuoewQo/FKU3qYTcpYgOLWqTZ2WpZhb9uPLrcGIOUJdTCqu2i0TP/ih+KSbNJwsprgkozgZLPuTM2Yiee5VyUA/TO/WXM/NsA5U8oYx7SesfVpW+xDffMO4KYkDG+O6WZ48dX4gxzP2Zv4GzeRsLAHiz5oMP1eaj0REOC7hegd6xydM6L+bcwZEU4lDtg==
+ bh=Ic6++jyXAiZS/unBXLvMAjW1izu2NOmeT/ItKplQzgQ=;
+ b=RcP+I7czovz44JEPO2SkZmVtqJHYK5v8xf03PBna7voncsA9zZP/zxnBhW6V35Wg1250ZvsFYTJRXz53+I3ryCIg6TAxx9h1tYZRXBCpUsskQAffaMB6wMUu+TUtACNQ4t1E/Iv/m/MFMrL06pbdnoPVM7LagtbVSiHcvcV0iqXgLreIAfNbP7ZlRSHJsnPe15rmPcGHQLfY4yOk7gJRTUsVuw91MUyRAOKw020gk50Snr0wDzBm2CHsgnfx+SbitayHXBJWKjUS6i0+RsFI8JXIqTl279Yru/bu5q473Of/9u7kVA/o76dwCVHNXO+GmmwmaWBgxsF9TSUzKvJzAg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=dektech.com.au; dmarc=pass action=none
  header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KPC651VvM/uqi3nasKkYr9mS01bpnAHfSnmqnIEfX9o=;
- b=F0gtgCG778Cd17lcTIKyfzhHHgMYJxiJh/b5jOtAaCCr9NG8TdItzl+7qezzPMO/pCFXOLr+wjrQFK3SA01C71KBWzDuS7LmlQK6mKL8nWCYT8VQSWp6epnwbPmMfWYFvhY+cuP6qfiBnK5LWyPopTaLOqP+6uGP2kYBucSdC1c=
-Authentication-Results: davemloft.net; dkim=none (message not signed)
- header.d=none;davemloft.net; dmarc=none action=none
- header.from=dektech.com.au;
+ bh=Ic6++jyXAiZS/unBXLvMAjW1izu2NOmeT/ItKplQzgQ=;
+ b=u6dPzU5V46gKrAWCGyGnmVZeZp2GGg8CvGuxhS1U5S+W7ApcBYmaHlH+Z/aRNJmhd7tNPWQSBWoUSuW/M8AgxzxHuCjQdPRU2e2OxpIfpt6g0CZq9hqf5ZE9PaFr4gr2YaQQk2A+UQPwdSp9F7HuB3UYqVC85UYPuApE1BPkmuU=
 Received: from AM8PR05MB7332.eurprd05.prod.outlook.com (2603:10a6:20b:1db::9)
- by AM0PR05MB4673.eurprd05.prod.outlook.com (2603:10a6:208:b9::31)
+ by AM0PR05MB4915.eurprd05.prod.outlook.com (2603:10a6:208:cb::32)
  with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3326.23; Tue, 1 Sep
- 2020 12:14:16 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3326.25; Tue, 1 Sep
+ 2020 12:18:24 +0000
 Received: from AM8PR05MB7332.eurprd05.prod.outlook.com
  ([fe80::64de:d33d:e82:b902]) by AM8PR05MB7332.eurprd05.prod.outlook.com
  ([fe80::64de:d33d:e82:b902%7]) with mapi id 15.20.3326.025; Tue, 1 Sep 2020
- 12:14:15 +0000
-From: Tuong Lien <tuong.t.lien@dektech.com.au>
-To: davem@davemloft.net, jmaloy@redhat.com, maloy@donjonn.com,
- ying.xue@windriver.com, netdev@vger.kernel.org
-Date: Mon, 31 Aug 2020 15:38:17 +0700
-Message-Id: <20200831083817.3611-5-tuong.t.lien@dektech.com.au>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200831083817.3611-1-tuong.t.lien@dektech.com.au>
-References: <20200831083817.3611-1-tuong.t.lien@dektech.com.au>
-X-ClientProxiedBy: SG2PR06CA0247.apcprd06.prod.outlook.com
- (2603:1096:4:ac::31) To AM8PR05MB7332.eurprd05.prod.outlook.com
- (2603:10a6:20b:1db::9)
-MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from dektech.com.au (123.20.195.8) by
- SG2PR06CA0247.apcprd06.prod.outlook.com (2603:1096:4:ac::31) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3326.19 via Frontend Transport; Tue, 1 Sep 2020 12:14:11 +0000
-X-Mailer: git-send-email 2.26.2
-X-Originating-IP: [123.20.195.8]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 74d2175d-3ae3-419f-6ad0-08d84e7089b1
-X-MS-TrafficTypeDiagnostic: AM0PR05MB4673:
-X-Microsoft-Antispam-PRVS: <AM0PR05MB467346C1F822DF6B0CF87559E22E0@AM0PR05MB4673.eurprd05.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:1775;
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: FrbYURbtB3GlLube3YTInO2KoOUAxKXeDIe3JmEYpOx4Kqg78kk0JQeWy9f/9sjhD60avGFzWkALod6aLVP7XY4TUyHOl3OVWzHGmQNkrVliZrge/Po+kWolW2/QHY8cBubHO4jEKVIa8kdS32R7Hdj8o4oPo5lHkH+iYFWP6eKlkKEMih6NHir4SMNtyv8yAEOycTe4reTaUj3WpGBY3sEhQIBJzYVxN0FHcNkzifQzbQb6L4wx1z9Pa7fDlOcEPjrx/tbeu3ZftaKoMexChpuPQr2fJDt2Gn/dfOE4rYhSRxTi2DfXaNTCw98DT5yjDk6LFNajvHtthWEu2rP0lg==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ 12:18:24 +0000
+From: Tuong Tong Lien <tuong.t.lien@dektech.com.au>
+To: Eric Dumazet <eric.dumazet@gmail.com>, "davem@davemloft.net"
+ <davem@davemloft.net>, "jmaloy@redhat.com" <jmaloy@redhat.com>,
+ "maloy@donjonn.com" <maloy@donjonn.com>, "ying.xue@windriver.com"
+ <ying.xue@windriver.com>, "netdev@vger.kernel.org" <netdev@vger.kernel.org>
+Thread-Topic: [net] tipc: fix using smp_processor_id() in preemptible
+Thread-Index: AQHWfoc+himFBG6tQEGws4qIktdqQalR4IkAgAACUeCAABe0AIAAAmDQgAAv7QCAAYkt0A==
+Date: Tue, 1 Sep 2020 12:18:24 +0000
+Message-ID: <AM8PR05MB7332BE4B6E0381D2894E057AE22E0@AM8PR05MB7332.eurprd05.prod.outlook.com>
+References: <20200829193755.9429-1-tuong.t.lien@dektech.com.au>
+ <f81eafce-e1d1-bb18-cb70-cfdf45bb2ed0@gmail.com>
+ <AM8PR05MB733222C45D3F0CC19E909BB0E2510@AM8PR05MB7332.eurprd05.prod.outlook.com>
+ <0ed21ba7-2b3b-9d4f-563e-10d329ebeecb@gmail.com>
+ <AM8PR05MB7332E91A67120D78823353F6E2510@AM8PR05MB7332.eurprd05.prod.outlook.com>
+ <3f858962-4e38-0b72-4341-1304ec03cd7a@gmail.com>
+In-Reply-To: <3f858962-4e38-0b72-4341-1304ec03cd7a@gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: gmail.com; dkim=none (message not signed)
+ header.d=none;gmail.com; dmarc=none action=none header.from=dektech.com.au;
+x-originating-ip: [183.80.118.254]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: a156a7d4-f5a4-43c8-8745-08d84e711fb6
+x-ms-traffictypediagnostic: AM0PR05MB4915:
+x-microsoft-antispam-prvs: <AM0PR05MB4915B8D7609E22CAD9AEF8A8E22E0@AM0PR05MB4915.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: EGcsnYk4tqUeaK0SuRXt0x61qCIeVH7yVOddU5zauM8g9wctu2Zd89ATG3rR7qZngglCdAXDp+QORgwPHjfgYL3GUVvcYuK3abI/U/UnSBvNah3EJg8mD1DO0RhxuYzlXlYYS/zsQhrY4gQskBc2cLs2tQ7hkCw4tGBRGDnbsPv2GQ/5PHG6uBYkZG+pyrADtlYLbhXc/AMepiFIkZAueIuspdNFLLprfeFfB7177e+dVhTqtHkWXAk1dGTMC2C1FRXXv8Omk6dJtGmHVLJgA1zqKiRpTSiwbYJNf22rMO1DO6o4qcVOTKE8UIu/QvTwvtCQ28WGx6h3ZL/jxr2RxQ==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:AM8PR05MB7332.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(376002)(136003)(39850400004)(366004)(396003)(346002)(2906002)(1076003)(5660300002)(55016002)(8676002)(66556008)(316002)(8936002)(66476007)(66946007)(2616005)(956004)(26005)(7696005)(186003)(36756003)(478600001)(16526019)(30864003)(86362001)(55236004)(4326008)(52116002)(83380400001)(103116003);
+ SFS:(366004)(346002)(376002)(136003)(396003)(39850400004)(55016002)(66476007)(4326008)(86362001)(66556008)(64756008)(53546011)(2906002)(76116006)(66446008)(26005)(6506007)(7696005)(52536014)(83380400001)(66946007)(186003)(71200400001)(316002)(8936002)(5660300002)(9686003)(33656002)(110136005)(8676002)(478600001);
  DIR:OUT; SFP:1102; 
-X-MS-Exchange-AntiSpam-MessageData: lcrmGt2oEPfmxbpqv+nqaF0LKE+pysWmW3vnzNrWzwe9vper5HGtgvfVdFonVh/tECS2sxQSfu51ZDbf4xgENPtkhfDE+cwhCYfCWiOh+CZkVYl/f0XT+vbiWIOWpVcdYJol/j1vqtf/2DB1RjdH2CUa1XWWfhJDtr9EQLT2QAOGP6stbpY/D+Mtg8ftlNMM1raQ71gMZR2kcNCB2MJ45/T+EVtOUJJMiUp8vZPMv5SO+CvvCDURIJxwt08NXP5UkKeo10LPdemwWaulv3BKjUixgrz5M2vOwy2lbEtCLeZtiOAS5ZQpDif3mbazYi7u2Skai6orvNTtgpms2da71gnUufxu0ZnwApoi+ekk7RdQtsTcVVcp2YSthjB1owg9O7fLJTAy2mPK253rDL5xVdRj5+e9C4mVD/oEr58kx2TEZgz1W8f20BC7CvtcFiV25V0L4HjOP96txFgqNlE6vBdmDp02eDcgSEOEGEF42dTTK2H3oiPV8QzuzMuz9Wrdtt/DRKtm6JRY9e3n0iSg8lnj+3SI1N3S60sEByUwZ1DlH84yeReAc4bqHWw1vRbRwzp4+oPj1kJGsRCCZR1bu40GLdHTIFqhj7l+YjuwQwqpcTI4MqDqrYa3vj+K2ON4bZsGwY7H/V/+0KtWrnRd8A==
+x-ms-exchange-antispam-messagedata: Drd6r2x4itg5vsg9U6ZOGtTEZ2skJihwEQYKST38bYpNUjtoOb2zbWyUNhfBI5iO7J2vugB85Gcn/Mdhd2C1fzZcRWlUYBvVvrNiF+jZ6wuik589b3E5ECPm4A3R26nl8jDzzM1TC/PqKxjtMjLrqGckV7e3rm5FlsyPiEQ1bJwgLj9j4cEguIh7kDbNAG29p1oMwfVBrJvT84hleLzqggC/9CCUNBAn9uSjvZlmQ4QIkkr78jx7Nqk14wXsieLFAqfaLoaCvwJdlS2kIg9OsedrRmsxANP4qMu9kYi5VviyGK7eDXskvUeXQ9B7F8sC5lO+Wgmh4Hmd0fXhEQspjoNG1fX/Oqu2ONgz79IQUlqPOXBy4P2Vti6o5+Oqa2me0aS2Vn1ywps7uzBoEoB6HlOgFHloOMLwrBNdcMYnuWjVOW3Y5IC+GYxrwPlqkdcpZDyytm9A9oeCtdswTWY2lw9H0Jdp5f7Te1EfXEeEi2ZE+D60p+OnIX2G3s9qUNcheODGdVjY2t9WHtkfL6mnsK25xKPJDGJtJtpIZPB+yZEkHBZydYqbp9bLZV+FdZUAyQulwy8TExSoitI82gk+rdQa3qGbcmyYnwYOMuZTmR7LIln/v541gCsMUFZ8r+Xiiotsasj4BxbbJdLFQxf5AQ==
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
 X-OriginatorOrg: dektech.com.au
-X-MS-Exchange-CrossTenant-Network-Message-Id: 74d2175d-3ae3-419f-6ad0-08d84e7089b1
-X-MS-Exchange-CrossTenant-AuthSource: AM8PR05MB7332.eurprd05.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Sep 2020 12:14:13.0854 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: FpdKyKDHubKj5prWFcrZii+7Xvj5AYUn3vzI2qniRObgz0xLIskmvXjE9cvPd/qkDJQrhWtgoojKzclmFoIYFggzOTCoyicSGjxDQcBIjq8=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR05MB4673
-X-Spam-Score: 0.4 (/)
+X-MS-Exchange-CrossTenant-AuthSource: AM8PR05MB7332.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a156a7d4-f5a4-43c8-8745-08d84e711fb6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Sep 2020 12:18:24.2186 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 1957ea50-0dd8-4360-8db0-c9530df996b2
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: n9ZMwLU5nQ6gP6va/lNoThcwebhyEE4Dzce7eqNMzwMWkFsZk2LE+s5xA4vo/ypv8APpY3+TkwXlVVLEP/uUjHboB8Oh0+Xvrv9rvbnZWs8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR05MB4915
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: dektech.com.au]
+ for more information. [URIs: davemloft.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [40.107.21.119 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.15.95 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.5 DATE_IN_PAST_24_48     Date: is 24 to 48 hours before Received: date
+ [40.107.21.119 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
-X-Headers-End: 1kD5BG-007kZ7-FP
-Subject: [tipc-discussion] [net-next v2 4/4] tipc: add automatic rekeying
- for encryption key
+X-Headers-End: 1kD5F9-008vnb-KP
+Subject: Re: [tipc-discussion] [net] tipc: fix using smp_processor_id() in
+ preemptible
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -139,360 +140,90 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: tipc-discussion@lists.sourceforge.net
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "tipc-discussion@lists.sourceforge.net"
+ <tipc-discussion@lists.sourceforge.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Rekeying is required for security since a key is less secure when using
-for a long time. Also, key will be detached when its nonce value (or
-seqno ...) is exhausted. We now make the rekeying process automatic and
-configurable by user.
-
-Basically, TIPC will at a specific interval generate a new key by using
-the kernel 'Random Number Generator' cipher, then attach it as the node
-TX key and securely distribute to others in the cluster as RX keys (-
-the key exchange). The automatic key switching will then take over, and
-make the new key active shortly. Afterwards, the traffic from this node
-will be encrypted with the new session key. The same can happen in peer
-nodes but not necessarily at the same time.
-
-For simplicity, the automatically generated key will be initiated as a
-per node key. It is not too hard to also support a cluster key rekeying
-(e.g. a given node will generate a unique cluster key and update to the
-others in the cluster...), but that doesn't bring much benefit, while a
-per-node key is even more secure.
-
-We also enable user to force a rekeying or change the rekeying interval
-via netlink, the new 'set key' command option: 'TIPC_NLA_NODE_REKEYING'
-is added for these purposes as follows:
-- A value >= 1 will be set as the rekeying interval (in minutes);
-- A value of 0 will disable the rekeying;
-- A value of 'TIPC_REKEYING_NOW' (~0) will force an immediate rekeying;
-
-The default rekeying interval is (60 * 24) minutes i.e. done every day.
-There isn't any restriction for the value but user shouldn't set it too
-small or too large which results in an "ineffective" rekeying (thats ok
-for testing though).
-
-Acked-by: Jon Maloy <jmaloy@redhat.com>
-Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
----
- include/uapi/linux/tipc.h         |   2 +
- include/uapi/linux/tipc_netlink.h |   1 +
- net/tipc/crypto.c                 | 115 +++++++++++++++++++++++++++++-
- net/tipc/crypto.h                 |   2 +
- net/tipc/netlink.c                |   1 +
- net/tipc/node.c                   |  28 +++++++-
- 6 files changed, 146 insertions(+), 3 deletions(-)
-
-diff --git a/include/uapi/linux/tipc.h b/include/uapi/linux/tipc.h
-index add01db1daef..80ea15e12113 100644
---- a/include/uapi/linux/tipc.h
-+++ b/include/uapi/linux/tipc.h
-@@ -254,6 +254,8 @@ static inline int tipc_aead_key_size(struct tipc_aead_key *key)
- 	return sizeof(*key) + key->keylen;
- }
- 
-+#define TIPC_REKEYING_NOW		(~0U)
-+
- /* The macros and functions below are deprecated:
-  */
- 
-diff --git a/include/uapi/linux/tipc_netlink.h b/include/uapi/linux/tipc_netlink.h
-index d484baa9d365..d847dd671d79 100644
---- a/include/uapi/linux/tipc_netlink.h
-+++ b/include/uapi/linux/tipc_netlink.h
-@@ -166,6 +166,7 @@ enum {
- 	TIPC_NLA_NODE_ID,		/* data */
- 	TIPC_NLA_NODE_KEY,		/* data */
- 	TIPC_NLA_NODE_KEY_MASTER,	/* flag */
-+	TIPC_NLA_NODE_REKEYING,		/* u32 */
- 
- 	__TIPC_NLA_NODE_MAX,
- 	TIPC_NLA_NODE_MAX = __TIPC_NLA_NODE_MAX - 1
-diff --git a/net/tipc/crypto.c b/net/tipc/crypto.c
-index d29266a9d2ee..9d4ad832572f 100644
---- a/net/tipc/crypto.c
-+++ b/net/tipc/crypto.c
-@@ -36,6 +36,7 @@
- 
- #include <crypto/aead.h>
- #include <crypto/aes.h>
-+#include <crypto/rng.h>
- #include "crypto.h"
- #include "msg.h"
- #include "bcast.h"
-@@ -48,6 +49,8 @@
- #define TIPC_MAX_TFMS_DEF	10
- #define TIPC_MAX_TFMS_LIM	1000
- 
-+#define TIPC_REKEYING_INTV_DEF	(60 * 24) /* default: 1 day */
-+
- /**
-  * TIPC Key ids
-  */
-@@ -181,6 +184,7 @@ struct tipc_crypto_stats {
-  * @wq: common workqueue on TX crypto
-  * @work: delayed work sched for TX/RX
-  * @key_distr: key distributing state
-+ * @rekeying_intv: rekeying interval (in minutes)
-  * @stats: the crypto statistics
-  * @name: the crypto name
-  * @sndnxt: the per-peer sndnxt (TX)
-@@ -206,6 +210,7 @@ struct tipc_crypto {
- #define KEY_DISTR_SCHED		1
- #define KEY_DISTR_COMPL		2
- 	atomic_t key_distr;
-+	u32 rekeying_intv;
- 
- 	struct tipc_crypto_stats __percpu *stats;
- 	char name[48];
-@@ -294,7 +299,9 @@ static char *tipc_key_change_dump(struct tipc_key old, struct tipc_key new,
- static int tipc_crypto_key_xmit(struct net *net, struct tipc_aead_key *skey,
- 				u16 gen, u8 mode, u32 dnode);
- static bool tipc_crypto_key_rcv(struct tipc_crypto *rx, struct tipc_msg *hdr);
-+static void tipc_crypto_work_tx(struct work_struct *work);
- static void tipc_crypto_work_rx(struct work_struct *work);
-+static int tipc_aead_key_generate(struct tipc_aead_key *skey);
- 
- #define is_tx(crypto) (!(crypto)->node)
- #define is_rx(crypto) (!is_tx(crypto))
-@@ -342,6 +349,27 @@ int tipc_aead_key_validate(struct tipc_aead_key *ukey)
- 	return 0;
- }
- 
-+/**
-+ * tipc_aead_key_generate - Generate new session key
-+ * @skey: input/output key with new content
-+ *
-+ * Return: 0 in case of success, otherwise < 0
-+ */
-+static int tipc_aead_key_generate(struct tipc_aead_key *skey)
-+{
-+	int rc = 0;
-+
-+	/* Fill the key's content with a random value via RNG cipher */
-+	rc = crypto_get_default_rng();
-+	if (likely(!rc)) {
-+		rc = crypto_rng_get_bytes(crypto_default_rng, skey->key,
-+					  skey->keylen);
-+		crypto_put_default_rng();
-+	}
-+
-+	return rc;
-+}
-+
- static struct tipc_aead *tipc_aead_get(struct tipc_aead __rcu *aead)
- {
- 	struct tipc_aead *tmp;
-@@ -1473,6 +1501,7 @@ int tipc_crypto_start(struct tipc_crypto **crypto, struct net *net,
- 	atomic64_set(&c->sndnxt, 0);
- 	c->timer1 = jiffies;
- 	c->timer2 = jiffies;
-+	c->rekeying_intv = TIPC_REKEYING_INTV_DEF;
- 	spin_lock_init(&c->lock);
- 	scnprintf(c->name, 48, "%s(%s)", (is_rx(c)) ? "RX" : "TX",
- 		  (is_rx(c)) ? tipc_node_get_id_str(c->node) :
-@@ -1480,6 +1509,8 @@ int tipc_crypto_start(struct tipc_crypto **crypto, struct net *net,
- 
- 	if (is_rx(c))
- 		INIT_DELAYED_WORK(&c->work, tipc_crypto_work_rx);
-+	else
-+		INIT_DELAYED_WORK(&c->work, tipc_crypto_work_tx);
- 
- 	*crypto = c;
- 	return 0;
-@@ -1494,8 +1525,11 @@ void tipc_crypto_stop(struct tipc_crypto **crypto)
- 		return;
- 
- 	/* Flush any queued works & destroy wq */
--	if (is_tx(c))
-+	if (is_tx(c)) {
-+		c->rekeying_intv = 0;
-+		cancel_delayed_work_sync(&c->work);
- 		destroy_workqueue(c->wq);
-+	}
- 
- 	/* Release AEAD keys */
- 	rcu_read_lock();
-@@ -2348,3 +2382,82 @@ static void tipc_crypto_work_rx(struct work_struct *work)
- 
- 	tipc_node_put(rx->node);
- }
-+
-+/**
-+ * tipc_crypto_rekeying_sched - (Re)schedule rekeying w/o new interval
-+ * @tx: TX crypto
-+ * @changed: if the rekeying needs to be rescheduled with new interval
-+ * @new_intv: new rekeying interval (when "changed" = true)
-+ */
-+void tipc_crypto_rekeying_sched(struct tipc_crypto *tx, bool changed,
-+				u32 new_intv)
-+{
-+	unsigned long delay;
-+	bool now = false;
-+
-+	if (changed) {
-+		if (new_intv == TIPC_REKEYING_NOW)
-+			now = true;
-+		else
-+			tx->rekeying_intv = new_intv;
-+		cancel_delayed_work_sync(&tx->work);
-+	}
-+
-+	if (tx->rekeying_intv || now) {
-+		delay = (now) ? 0 : tx->rekeying_intv * 60 * 1000;
-+		queue_delayed_work(tx->wq, &tx->work, msecs_to_jiffies(delay));
-+	}
-+}
-+
-+/**
-+ * tipc_crypto_work_tx - Scheduled TX works handler
-+ * @work: the struct TX work
-+ *
-+ * The function processes the previous scheduled work, i.e. key rekeying, by
-+ * generating a new session key based on current one, then attaching it to the
-+ * TX crypto and finally distributing it to peers. It also re-schedules the
-+ * rekeying if needed.
-+ */
-+static void tipc_crypto_work_tx(struct work_struct *work)
-+{
-+	struct delayed_work *dwork = to_delayed_work(work);
-+	struct tipc_crypto *tx = container_of(dwork, struct tipc_crypto, work);
-+	struct tipc_aead_key *skey = NULL;
-+	struct tipc_key key = tx->key;
-+	struct tipc_aead *aead;
-+	int rc = -ENOMEM;
-+
-+	if (unlikely(key.pending))
-+		goto resched;
-+
-+	/* Take current key as a template */
-+	rcu_read_lock();
-+	aead = rcu_dereference(tx->aead[key.active ?: KEY_MASTER]);
-+	if (unlikely(!aead)) {
-+		rcu_read_unlock();
-+		/* At least one key should exist for securing */
-+		return;
-+	}
-+
-+	/* Lets duplicate it first */
-+	skey = kmemdup(aead->key, tipc_aead_key_size(aead->key), GFP_ATOMIC);
-+	rcu_read_unlock();
-+
-+	/* Now, generate new key, initiate & distribute it */
-+	if (likely(skey)) {
-+		rc = tipc_aead_key_generate(skey) ?:
-+		     tipc_crypto_key_init(tx, skey, PER_NODE_KEY, false);
-+		if (likely(rc > 0))
-+			rc = tipc_crypto_key_distr(tx, rc, NULL);
-+		kzfree(skey);
-+	}
-+
-+	if (likely(!rc))
-+		pr_info("%s: rekeying has been done\n", tx->name);
-+	else
-+		pr_warn_ratelimited("%s: rekeying returns %d\n", tx->name, rc);
-+
-+resched:
-+	/* Re-schedule rekeying if any */
-+	tipc_crypto_rekeying_sched(tx, false, 0);
-+}
-diff --git a/net/tipc/crypto.h b/net/tipc/crypto.h
-index 70bda3d7e174..e1f4e8fb5c10 100644
---- a/net/tipc/crypto.h
-+++ b/net/tipc/crypto.h
-@@ -171,6 +171,8 @@ void tipc_crypto_key_flush(struct tipc_crypto *c);
- int tipc_crypto_key_distr(struct tipc_crypto *tx, u8 key,
- 			  struct tipc_node *dest);
- void tipc_crypto_msg_rcv(struct net *net, struct sk_buff *skb);
-+void tipc_crypto_rekeying_sched(struct tipc_crypto *tx, bool changed,
-+				u32 new_intv);
- int tipc_aead_key_validate(struct tipc_aead_key *ukey);
- bool tipc_ehdr_validate(struct sk_buff *skb);
- 
-diff --git a/net/tipc/netlink.c b/net/tipc/netlink.c
-index 1ec00fcc26ee..c447cb5f879e 100644
---- a/net/tipc/netlink.c
-+++ b/net/tipc/netlink.c
-@@ -109,6 +109,7 @@ const struct nla_policy tipc_nl_node_policy[TIPC_NLA_NODE_MAX + 1] = {
- 	[TIPC_NLA_NODE_KEY]		= { .type = NLA_BINARY,
- 					    .len = TIPC_AEAD_KEY_SIZE_MAX},
- 	[TIPC_NLA_NODE_KEY_MASTER]	= { .type = NLA_FLAG },
-+	[TIPC_NLA_NODE_REKEYING]	= { .type = NLA_U32 },
- };
- 
- /* Properties valid for media, bearer and link */
-diff --git a/net/tipc/node.c b/net/tipc/node.c
-index e31b367d537b..83187f2c6c81 100644
---- a/net/tipc/node.c
-+++ b/net/tipc/node.c
-@@ -2879,6 +2879,17 @@ static int tipc_nl_retrieve_nodeid(struct nlattr **attrs, u8 **node_id)
- 	return 0;
- }
- 
-+static int tipc_nl_retrieve_rekeying(struct nlattr **attrs, u32 *intv)
-+{
-+	struct nlattr *attr = attrs[TIPC_NLA_NODE_REKEYING];
-+
-+	if (!attr)
-+		return -ENODATA;
-+
-+	*intv = nla_get_u32(attr);
-+	return 0;
-+}
-+
- static int __tipc_nl_node_set_key(struct sk_buff *skb, struct genl_info *info)
- {
- 	struct nlattr *attrs[TIPC_NLA_NODE_MAX + 1];
-@@ -2886,8 +2897,9 @@ static int __tipc_nl_node_set_key(struct sk_buff *skb, struct genl_info *info)
- 	struct tipc_crypto *tx = tipc_net(net)->crypto_tx, *c = tx;
- 	struct tipc_node *n = NULL;
- 	struct tipc_aead_key *ukey;
--	bool master_key = false;
-+	bool rekeying = true, master_key = false;
- 	u8 *id, *own_id, mode;
-+	u32 intv = 0;
- 	int rc = 0;
- 
- 	if (!info->attrs[TIPC_NLA_NODE])
-@@ -2903,9 +2915,17 @@ static int __tipc_nl_node_set_key(struct sk_buff *skb, struct genl_info *info)
- 	if (!own_id)
- 		return -EPERM;
- 
-+	rc = tipc_nl_retrieve_rekeying(attrs, &intv);
-+	if (rc == -ENODATA)
-+		rekeying = false;
-+
- 	rc = tipc_nl_retrieve_key(attrs, &ukey);
--	if (rc)
-+	if (rc == -ENODATA && rekeying) {
-+		rc = 0;
-+		goto rekeying;
-+	} else if (rc) {
- 		return rc;
-+	}
- 
- 	rc = tipc_aead_key_validate(ukey);
- 	if (rc)
-@@ -2940,6 +2960,10 @@ static int __tipc_nl_node_set_key(struct sk_buff *skb, struct genl_info *info)
- 	if (!master_key)
- 		tipc_crypto_key_distr(tx, rc, NULL);
- 
-+rekeying:
-+	/* Schedule TX rekeying if needed */
-+	tipc_crypto_rekeying_sched(tx, rekeying, intv);
-+
- exit:
- 	if (n)
- 		tipc_node_put(n);
--- 
-2.26.2
-
-
-
-_______________________________________________
-tipc-discussion mailing list
-tipc-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+DQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogRXJpYyBEdW1hemV0IDxl
+cmljLmR1bWF6ZXRAZ21haWwuY29tPg0KPiBTZW50OiBNb25kYXksIEF1Z3VzdCAzMSwgMjAyMCA3
+OjQ4IFBNDQo+IFRvOiBUdW9uZyBUb25nIExpZW4gPHR1b25nLnQubGllbkBkZWt0ZWNoLmNvbS5h
+dT47IEVyaWMgRHVtYXpldCA8ZXJpYy5kdW1hemV0QGdtYWlsLmNvbT47IGRhdmVtQGRhdmVtbG9m
+dC5uZXQ7DQo+IGptYWxveUByZWRoYXQuY29tOyBtYWxveUBkb25qb25uLmNvbTsgeWluZy54dWVA
+d2luZHJpdmVyLmNvbTsgbmV0ZGV2QHZnZXIua2VybmVsLm9yZw0KPiBDYzogdGlwYy1kaXNjdXNz
+aW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldA0KPiBTdWJqZWN0OiBSZTogW25ldF0gdGlwYzogZml4
+IHVzaW5nIHNtcF9wcm9jZXNzb3JfaWQoKSBpbiBwcmVlbXB0aWJsZQ0KPiANCj4gDQo+IA0KPiBP
+biA4LzMxLzIwIDM6MDUgQU0sIFR1b25nIFRvbmcgTGllbiB3cm90ZToNCj4gPg0KPiA+DQo+ID4+
+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+ID4+IEZyb206IEVyaWMgRHVtYXpldCA8ZXJp
+Yy5kdW1hemV0QGdtYWlsLmNvbT4NCj4gPj4gU2VudDogTW9uZGF5LCBBdWd1c3QgMzEsIDIwMjAg
+NDo0OCBQTQ0KPiA+PiBUbzogVHVvbmcgVG9uZyBMaWVuIDx0dW9uZy50LmxpZW5AZGVrdGVjaC5j
+b20uYXU+OyBFcmljIER1bWF6ZXQgPGVyaWMuZHVtYXpldEBnbWFpbC5jb20+OyBkYXZlbUBkYXZl
+bWxvZnQubmV0Ow0KPiA+PiBqbWFsb3lAcmVkaGF0LmNvbTsgbWFsb3lAZG9uam9ubi5jb207IHlp
+bmcueHVlQHdpbmRyaXZlci5jb207IG5ldGRldkB2Z2VyLmtlcm5lbC5vcmcNCj4gPj4gQ2M6IHRp
+cGMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQNCj4gPj4gU3ViamVjdDogUmU6IFtu
+ZXRdIHRpcGM6IGZpeCB1c2luZyBzbXBfcHJvY2Vzc29yX2lkKCkgaW4gcHJlZW1wdGlibGUNCj4g
+Pj4NCj4gPj4NCj4gPj4NCj4gPj4gT24gOC8zMS8yMCAxOjMzIEFNLCBUdW9uZyBUb25nIExpZW4g
+d3JvdGU6DQo+ID4+PiBIaSBFcmljLA0KPiA+Pj4NCj4gPj4+IFRoYW5rcyBmb3IgeW91ciBjb21t
+ZW50cywgcGxlYXNlIHNlZSBteSBhbnN3ZXJzIGlubGluZS4NCj4gPj4+DQo+ID4+Pj4gLS0tLS1P
+cmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gPj4+PiBGcm9tOiBFcmljIER1bWF6ZXQgPGVyaWMuZHVt
+YXpldEBnbWFpbC5jb20+DQo+ID4+Pj4gU2VudDogTW9uZGF5LCBBdWd1c3QgMzEsIDIwMjAgMzox
+NSBQTQ0KPiA+Pj4+IFRvOiBUdW9uZyBUb25nIExpZW4gPHR1b25nLnQubGllbkBkZWt0ZWNoLmNv
+bS5hdT47IGRhdmVtQGRhdmVtbG9mdC5uZXQ7IGptYWxveUByZWRoYXQuY29tOyBtYWxveUBkb25q
+b25uLmNvbTsNCj4gPj4+PiB5aW5nLnh1ZUB3aW5kcml2ZXIuY29tOyBuZXRkZXZAdmdlci5rZXJu
+ZWwub3JnDQo+ID4+Pj4gQ2M6IHRpcGMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQN
+Cj4gPj4+PiBTdWJqZWN0OiBSZTogW25ldF0gdGlwYzogZml4IHVzaW5nIHNtcF9wcm9jZXNzb3Jf
+aWQoKSBpbiBwcmVlbXB0aWJsZQ0KPiA+Pj4+DQo+ID4+Pj4NCj4gPj4+Pg0KPiA+Pj4+IE9uIDgv
+MjkvMjAgMTI6MzcgUE0sIFR1b25nIExpZW4gd3JvdGU6DQo+ID4+Pj4+IFRoZSAndGhpc19jcHVf
+cHRyKCknIGlzIHVzZWQgdG8gb2J0YWluIHRoZSBBRUFEIGtleScgVEZNIG9uIHRoZSBjdXJyZW50
+DQo+ID4+Pj4+IENQVSBmb3IgZW5jcnlwdGlvbiwgaG93ZXZlciB0aGUgZXhlY3V0aW9uIGNhbiBi
+ZSBwcmVlbXB0aWJsZSBzaW5jZSBpdCdzDQo+ID4+Pj4+IGFjdHVhbGx5IHVzZXItc3BhY2UgY29u
+dGV4dCwgc28gdGhlICd1c2luZyBzbXBfcHJvY2Vzc29yX2lkKCkgaW4NCj4gPj4+Pj4gcHJlZW1w
+dGlibGUnIGhhcyBiZWVuIG9ic2VydmVkLg0KPiA+Pj4+Pg0KPiA+Pj4+PiBXZSBmaXggdGhlIGlz
+c3VlIGJ5IHVzaW5nIHRoZSAnZ2V0L3B1dF9jcHVfcHRyKCknIEFQSSB3aGljaCBjb25zaXN0cyBv
+Zg0KPiA+Pj4+PiBhICdwcmVlbXB0X2Rpc2FibGUoKScgaW5zdGVhZC4NCj4gPj4+Pj4NCj4gPj4+
+Pj4gRml4ZXM6IGZjMWI2ZDZkZTIyMCAoInRpcGM6IGludHJvZHVjZSBUSVBDIGVuY3J5cHRpb24g
+JiBhdXRoZW50aWNhdGlvbiIpDQo+ID4+Pj4NCj4gPj4+PiBIYXZlIHlvdSBmb3Jnb3R0ZW4gJyBS
+ZXBvcnRlZC1ieTogc3l6Ym90KzI2M2Y4YzBkMDA3ZGMwOWIyZGRhQHN5emthbGxlci5hcHBzcG90
+bWFpbC5jb20nID8NCj4gPj4+IFdlbGwsIHJlYWxseSBJIGRldGVjdGVkIHRoZSBpc3N1ZSBkdXJp
+bmcgbXkgdGVzdGluZyBpbnN0ZWFkLCBkaWRuJ3Qga25vdyBpZiBpdCB3YXMgcmVwb3J0ZWQgYnkg
+c3l6Ym90IHRvby4NCj4gPj4+DQo+ID4+Pj4NCj4gPj4+Pj4gQWNrZWQtYnk6IEpvbiBNYWxveSA8
+am1hbG95QHJlZGhhdC5jb20+DQo+ID4+Pj4+IFNpZ25lZC1vZmYtYnk6IFR1b25nIExpZW4gPHR1
+b25nLnQubGllbkBkZWt0ZWNoLmNvbS5hdT4NCj4gPj4+Pj4gLS0tDQo+ID4+Pj4+ICBuZXQvdGlw
+Yy9jcnlwdG8uYyB8IDEyICsrKysrKysrKy0tLQ0KPiA+Pj4+PiAgMSBmaWxlIGNoYW5nZWQsIDkg
+aW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMoLSkNCj4gPj4+Pj4NCj4gPj4+Pj4gZGlmZiAtLWdp
+dCBhL25ldC90aXBjL2NyeXB0by5jIGIvbmV0L3RpcGMvY3J5cHRvLmMNCj4gPj4+Pj4gaW5kZXgg
+YzM4YmFiYWE0ZTU3Li43YzUyM2RjODE1NzUgMTAwNjQ0DQo+ID4+Pj4+IC0tLSBhL25ldC90aXBj
+L2NyeXB0by5jDQo+ID4+Pj4+ICsrKyBiL25ldC90aXBjL2NyeXB0by5jDQo+ID4+Pj4+IEBAIC0z
+MjYsNyArMzI2LDggQEAgc3RhdGljIHZvaWQgdGlwY19hZWFkX2ZyZWUoc3RydWN0IHJjdV9oZWFk
+ICpycCkNCj4gPj4+Pj4gIAlpZiAoYWVhZC0+Y2xvbmVkKSB7DQo+ID4+Pj4+ICAJCXRpcGNfYWVh
+ZF9wdXQoYWVhZC0+Y2xvbmVkKTsNCj4gPj4+Pj4gIAl9IGVsc2Ugew0KPiA+Pj4+PiAtCQloZWFk
+ID0gKnRoaXNfY3B1X3B0cihhZWFkLT50Zm1fZW50cnkpOw0KPiA+Pj4+PiArCQloZWFkID0gKmdl
+dF9jcHVfcHRyKGFlYWQtPnRmbV9lbnRyeSk7DQo+ID4+Pj4+ICsJCXB1dF9jcHVfcHRyKGFlYWQt
+PnRmbV9lbnRyeSk7DQo+ID4+Pj4NCj4gPj4+PiBXaHkgaXMgdGhpcyBzYWZlID8NCj4gPj4+Pg0K
+PiA+Pj4+IEkgdGhpbmsgdGhhdCB0aGlzIHZlcnkgdW51c3VhbCBjb25zdHJ1Y3QgbmVlZHMgYSBj
+b21tZW50LCBiZWNhdXNlIHRoaXMgaXMgbm90IG9idmlvdXMuDQo+ID4+Pj4NCj4gPj4+PiBUaGlz
+IHJlYWxseSBsb29rcyBsaWtlIGFuIGF0dGVtcHQgdG8gc2lsZW5jZSBzeXpib3QgdG8gbWUuDQo+
+ID4+PiBObywgdGhpcyBpcyBub3QgdG8gc2lsZW5jZSBzeXpib3QgYnV0IHJlYWxseSBzYWZlLg0K
+PiA+Pj4gVGhpcyBpcyBiZWNhdXNlIHRoZSAiYWVhZC0+dGZtX2VudHJ5IiBvYmplY3QgaXMgImNv
+bW1vbiIgYmV0d2VlbiBDUFVzLCB0aGVyZSBpcyBvbmx5IGl0cyBwb2ludGVyIHRvIGJlIHRoZSAi
+cGVyX2NwdSIgb25lLiBTbw0KPiBqdXN0DQo+ID4+IHRyeWluZyB0byBsb2NrIHRoZSBwcm9jZXNz
+IG9uIHRoZSBjdXJyZW50IENQVSBvciAncHJlZW1wdF9kaXNhYmxlKCknLCB0YWtpbmcgdGhlIHBl
+ci1jcHUgcG9pbnRlciBhbmQgZGVyZWZlcmVuY2luZyB0byB0aGUgYWN0dWFsDQo+ID4+ICJ0Zm1f
+ZW50cnkiIG9iamVjdC4uLiBpcyBlbm91Z2guIExhdGVyIG9uLCB0aGF04oCZcyBmaW5lIHRvIHBs
+YXkgd2l0aCB0aGUgYWN0dWFsIG9iamVjdCB3aXRob3V0IGFueSBsb2NraW5nLg0KPiA+Pg0KPiA+
+PiBXaHkgdXNpbmcgcGVyIGNwdSBwb2ludGVycywgaWYgdGhleSBhbGwgcG9pbnQgdG8gYSBjb21t
+b24gb2JqZWN0ID8NCj4gPj4NCj4gPj4gVGhpcyBtYWtlcyB0aGUgY29kZSByZWFsbHkgY29uZnVz
+aW5nLg0KPiA+IFNvcnJ5IGZvciBtYWtpbmcgeW91IGNvbmZ1c2VkLiBZZXMsIHRoZSBjb2RlIGlz
+IGEgYml0IHVnbHkgYW5kIGNvdWxkIGJlIG1hZGUgaW4gc29tZSBvdGhlciB3YXlzLi4uIFRoZSBp
+bml0aWFsIGlkZWEgaXMgdG8gbm90IHRvdWNoIG9yDQo+IGNoYW5nZSB0aGUgc2FtZSBwb2ludGVy
+IHZhcmlhYmxlIGluIGRpZmZlcmVudCBDUFVzIHNvIGF2b2lkIGEgcGVuYWx0eSB3aXRoIHRoZSBj
+YWNoZSBoaXRzL21pc3Nlcy4uLg0KPiANCj4gV2hhdCBtYWtlcyB0aGlzIGNvZGUgaW50ZXJydXB0
+IHNhZmUgPw0KPiANCldoeSBpcyBpdCB1bnNhZmU/IEl0cyAicGFyZW50IiBvYmplY3QgaXMgYWxy
+ZWFkeSBtYW5hZ2VkIGJ5IFJDVSBtZWNoYW5pc20uIEFsc28sIGl0IGlzIG5ldmVyIG1vZGlmaWVk
+IGJ1dCBqdXN0ICJyZWFkLW9ubHkiIGluIGFsbCBjYXNlcy4uLg0KDQpCUi9UdW9uZw0KPiBIYXZp
+bmcgYSBwZXItY3B1IGxpc3QgaXMgbm90IGludGVycnVwdCBzYWZlIHdpdGhvdXQgc3BlY2lhbCBj
+YXJlLg0KPiANCj4gDQoNCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwp0aXBjLWRpc2N1c3Npb24gbWFpbGluZyBsaXN0CnRpcGMtZGlzY3Vzc2lvbkBsaXN0
+cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlz
+dGluZm8vdGlwYy1kaXNjdXNzaW9uCg==
