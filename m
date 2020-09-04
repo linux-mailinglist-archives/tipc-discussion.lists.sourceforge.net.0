@@ -2,93 +2,98 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5398225E180
-	for <lists+tipc-discussion@lfdr.de>; Fri,  4 Sep 2020 20:33:22 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8658125E1C1
+	for <lists+tipc-discussion@lfdr.de>; Fri,  4 Sep 2020 21:10:14 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kEGWQ-0003Vu-73; Fri, 04 Sep 2020 18:33:14 +0000
+	id 1kEH66-0001C2-Pt; Fri, 04 Sep 2020 19:10:06 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1kEGWO-0003Ve-PO
- for tipc-discussion@lists.sourceforge.net; Fri, 04 Sep 2020 18:33:12 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1kEH65-0001Bw-Vd
+ for tipc-discussion@lists.sourceforge.net; Fri, 04 Sep 2020 19:10:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=6RuncgFlR+iTrJGloE346TaDRVrwHOPF8z1TinPdlQ0=; b=F2JjDvCeoicG7o9joNbcTjr1Eo
- Sol4qgRrUYFzi8E2VxZ3NJ/s3XWthiMtYQF54xKgoD0B7ErTuHSBw5MvNyBjl7hQ6AhJjVlhy5awa
- sMYCsEp+8dXU95XoJVaVekkn075XR+mdtzdnoHRzcj4bFNx8xoEdEwU3ncjzHhwjzXQU=;
+ bh=PiV5AAzX4LavqDvv1ikieKKPltwOvkung7ZgRCE+32U=; b=m/3TvHZ/uVE+id9nhy499O8xhb
+ SwpjPYYjfUGC456VUnBo+7j12EBUfaP0XoZlgiwF/R+2LPA7AseuK++EP6m89DJX3iZZ79AWRSnB6
+ CDDl6XWjKp5K9fZxmeUYvr6RtIi1k7JBtc+urylD1uxZfYWeHQxDxUNzh3/Cc43AtpjQ=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:
- Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=6RuncgFlR+iTrJGloE346TaDRVrwHOPF8z1TinPdlQ0=; b=J
- s9zTmUCz0NKux5rkCd+bqCYa5t+usSImBSGzze57ZpbqbCzLqRj2Biu519rxyXk/OQGjNEMI30fZL
- JZIQJPPqcvuIjadh/WQr6So5pjTZPAPR+gX9fj6+x443LoSmd+S/IAofbJh8SFkR/rI1caZM2+nr0
- 3faaW2lGzV2c1CLk=;
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=PiV5AAzX4LavqDvv1ikieKKPltwOvkung7ZgRCE+32U=; b=J5iWSmzsNZ//9IZdsoCMmueXZ0
+ dKhyHTf5Nn6Pgh/vX/qz8Fs0+jkQlbFHBmndMAG/EhrH+vuwwUW+privOLrskv+p6KIUzqSD1UuO4
+ 39p9rfqQ/F5/Mf9aXrPivaATQlLTKybCsV7U5TQQ4hV0ToJtKy3K8NMFYhJkcIpm2gPc=;
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1kEGW6-00CT0w-8u
- for tipc-discussion@lists.sourceforge.net; Fri, 04 Sep 2020 18:33:12 +0000
+ id 1kEH5n-00DD5T-0p
+ for tipc-discussion@lists.sourceforge.net; Fri, 04 Sep 2020 19:10:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1599244360;
+ s=mimecast20190719; t=1599246581;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=6RuncgFlR+iTrJGloE346TaDRVrwHOPF8z1TinPdlQ0=;
- b=R4XkJD50yGVnuXXeP+dKvdLNE73d6lCuzpo8mKyg9G0w2RzSTG5Pae6gXc5rbZEVczUkks
- yuVBVYGGW5HaWqQXKmtGjmLVHK3j4nS89D4ezXKANCjvp1lCxuLLYFo3U/UTu2vc/7SAtO
- sd/2weCarN7aWa01SVv6RjCanoc4HsE=
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=PiV5AAzX4LavqDvv1ikieKKPltwOvkung7ZgRCE+32U=;
+ b=W31799k/uYevtOXH/Q6W7gQMWKg3DGTY9ogPU5N3nYNqYWySnqoIvH5sH6Rl/toYFzSakG
+ d/Vica/j5kYtTZNtEHNVCCGZD21pT9MiAnQIj2RW8Gayc2FjeEQUPF9hH7U5YWpGm2FEIW
+ 7KxExhzoEKpbE4lJSTz5Wwp9McXR5wY=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-314-jzCyQBAWPEWRAZM7CQWP7A-1; Fri, 04 Sep 2020 14:32:36 -0400
-X-MC-Unique: jzCyQBAWPEWRAZM7CQWP7A-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
+ us-mta-101-oILUT_HNNBWP9ezzlGBz6w-1; Fri, 04 Sep 2020 15:09:37 -0400
+X-MC-Unique: oILUT_HNNBWP9ezzlGBz6w-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 07014801ABB;
- Fri,  4 Sep 2020 18:32:35 +0000 (UTC)
-Received: from f31.redhat.com (ovpn-118-242.rdu2.redhat.com [10.10.118.242])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 3B24D10023A7;
- Fri,  4 Sep 2020 18:32:32 +0000 (UTC)
-From: jmaloy@redhat.com
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A97D81005E71;
+ Fri,  4 Sep 2020 19:09:35 +0000 (UTC)
+Received: from [10.10.118.242] (ovpn-118-242.rdu2.redhat.com [10.10.118.242])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 4E0D05C5DE;
+ Fri,  4 Sep 2020 19:09:33 +0000 (UTC)
 To: tipc-discussion@lists.sourceforge.net
-Date: Fri,  4 Sep 2020 14:32:31 -0400
-Message-Id: <20200904183231.156384-1-jmaloy@redhat.com>
+References: <20200904183231.156384-1-jmaloy@redhat.com>
+From: Jon Maloy <jmaloy@redhat.com>
+Message-ID: <4f313426-319b-1190-fcbc-84a4ba05e49b@redhat.com>
+Date: Fri, 4 Sep 2020 15:09:32 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.10.0
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+In-Reply-To: <20200904183231.156384-1-jmaloy@redhat.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 Authentication-Results: relay.mimecast.com;
  auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
-X-Mimecast-Spam-Score: 0.001
+X-Mimecast-Spam-Score: 0.002
 X-Mimecast-Originator: redhat.com
-X-Spam-Score: -0.1 (/)
+Content-Language: en-US
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [205.139.110.61 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [205.139.110.61 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ trust [207.211.31.120 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [207.211.31.120 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -2.4 NICE_REPLY_A           Looks like a legit reply (A)
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
  0.0 TIME_LIMIT_EXCEEDED    Exceeded time limit / deadline
-X-Headers-End: 1kEGW6-00CT0w-8u
-Subject: [tipc-discussion] [RFC PATCH v2] tipc: adding unified 128 bit
+X-Headers-End: 1kEH5n-00DD5T-0p
+Subject: Re: [tipc-discussion] [RFC PATCH v2] tipc: adding unified 128 bit
  address struct
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -102,167 +107,133 @@ List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
 Cc: xinl@redhat.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-From: Jon Maloy <jmaloy@redhat.com>
-
-The existing 32-bit based address types in TIPC have a value space
-that is perceived as too limited in some environments. It would
-be more attractive in a modern user environment such as Kubernetes
-if it could provide a larger address range.
-
-Advantages:
-- Users could directly use UUIDs, strings or other values as service
-  instances types and instances.
-- No more risk of collisions between randomly selected service types
-
-The effect on the TIPC implementation and protocol would be significant,
-but this is still worth considering.
----
- include/uapi/linux/tipc.h | 56 ++++++++++++++++++++++++++++++++++-----
- 1 file changed, 50 insertions(+), 6 deletions(-)
-
-diff --git a/include/uapi/linux/tipc.h b/include/uapi/linux/tipc.h
-index add01db1daef..c0c46742ffbd 100644
---- a/include/uapi/linux/tipc.h
-+++ b/include/uapi/linux/tipc.h
-@@ -42,9 +42,22 @@
- #include <linux/sockios.h>
- 
- /*
-- * TIPC addressing primitives
-+ * Unified address type
-+ * node: destination node id or binding scope. Zero if whole cluster.
-+ * type: service type. Must be unique for service.
-+ * instance: service instance. Can be bound to by multiple sockets.
-+ * range: binding, subscription or multicast range.
-  */
-+struct tipc_addr {
-+        __u8 node[16];      /* zero if whole cluster */
-+        __u8 type[16];      /* zero if socket address */
-+        __u8 instance[16];  /* port number if socket address */
-+        __u8 range;         /* number of trailing bits in 'instance' */
-+};
- 
-+/*
-+ * Legacy address types
-+ */
- struct tipc_socket_addr {
- 	__u32 ref;
- 	__u32 node;
-@@ -74,7 +87,7 @@ struct tipc_service_range {
-  * Publication scopes when binding service / service range
-  */
- enum tipc_scope {
--	TIPC_CLUSTER_SCOPE = 2, /* 0 can also be used */
-+	TIPC_GLOBAL_SCOPE  = 0,
- 	TIPC_NODE_SCOPE    = 3
- };
- 
-@@ -114,8 +127,18 @@ enum tipc_scope {
- 
- #define TIPC_WAIT_FOREVER	(~0)	/* timeout for permanent subscription */
- 
-+struct tipc_topsub {
-+        struct tipc_addr service;       /* subscribed service */
-+        __u32 timeout;                  /* subscription duration [ms] */
-+        __u32 filter;                   /* subscription option bits */
-+        __u8 handle[16];                /* user handle */
-+};
-+
-+/*
-+ * Legacy subscription structure
-+ */
- struct tipc_subscr {
--	struct tipc_service_range seq;	/* range of interest */
-+        struct tipc_service_range seq;	/* range of interest */
- 	__u32 timeout;			/* subscription duration (in ms) */
- 	__u32 filter;			/* bitmask of filter options */
- 	char usr_handle[8];		/* available for subscriber use */
-@@ -125,6 +148,16 @@ struct tipc_subscr {
- #define TIPC_WITHDRAWN		2	/* withdrawal event */
- #define TIPC_SUBSCR_TIMEOUT	3	/* subscription timeout event */
- 
-+struct tipc_topevt {
-+        struct tipc_topsub sub;        /* original subscription */
-+        struct tipc_addr socket;       /* associated socket */
-+        struct tipc_addr service;      /* matching address */
-+	__u32 event;			/* publ/withdraw/timeout */
-+};
-+
-+/*
-+ * Legacy event structure
-+ */
- struct tipc_event {
- 	__u32 event;			/* event type */
- 	__u32 found_lower;		/* matching range */
-@@ -153,18 +186,21 @@ struct tipc_event {
- #define TIPC_SERVICE_RANGE      1
- #define TIPC_SERVICE_ADDR       2
- #define TIPC_SOCKET_ADDR        3
-+#define TIPC_ADDR               4
- 
- struct sockaddr_tipc {
- 	unsigned short family;
- 	unsigned char  addrtype;
- 	signed   char  scope;
- 	union {
-+
- 		struct tipc_socket_addr id;
- 		struct tipc_service_range nameseq;
- 		struct {
- 			struct tipc_service_addr name;
- 			__u32 domain;
- 		} name;
-+                struct tipc_addr a;
- 	} addr;
- };
- 
-@@ -188,17 +224,25 @@ struct sockaddr_tipc {
- #define TIPC_SOCK_RECVQ_DEPTH	132	/* Default: none (read only) */
- #define TIPC_MCAST_BROADCAST    133     /* Default: TIPC selects. No arg */
- #define TIPC_MCAST_REPLICAST    134     /* Default: TIPC selects. No arg */
--#define TIPC_GROUP_JOIN         135     /* Takes struct tipc_group_req* */
-+#define TIPC_GROUP_JOIN         135     /* Takes struct tipc_group_join */
- #define TIPC_GROUP_LEAVE        136     /* No argument */
- #define TIPC_SOCK_RECVQ_USED    137     /* Default: none (read only) */
- #define TIPC_NODELAY            138     /* Default: false */
- 
- /*
-- * Flag values
-+ * Group join flag values
-  */
- #define TIPC_GROUP_LOOPBACK     0x1  /* Receive copy of sent msg when match */
- #define TIPC_GROUP_MEMBER_EVTS  0x2  /* Receive membership events in socket */
- 
-+struct tipc_group_join {
-+	struct tipc_addr addr;
-+	__u32 flags;
-+};
-+
-+/*
-+ * Legacy structure
-+ */
- struct tipc_group_req {
- 	__u32 type;      /* group id */
- 	__u32 instance;  /* member id */
-@@ -259,7 +303,7 @@ static inline int tipc_aead_key_size(struct tipc_aead_key *key)
- 
- #define TIPC_CFG_SRV		0
- #define TIPC_ZONE_SCOPE         1
--
-+#define	TIPC_CLUSTER_SCOPE      2
- #define TIPC_ADDR_NAMESEQ	1
- #define TIPC_ADDR_NAME		2
- #define TIPC_ADDR_ID		3
--- 
-2.25.4
-
-
-
-_______________________________________________
-tipc-discussion mailing list
-tipc-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+SGkgYWxsLApJIGNvdWxkbid0IHF1aXRlIGxldCBnbyBvZiB0aGlzIG9sZCBpZGVhLCBidXQgdGhl
+ICJ0aXBjIHYzIiBwcm9wb3NhbCAKZnJvbSBteSBmaXJzdApwYXRjaCBiYWNrIGluIE1heSB3YXMg
+Y2xlYXJseSB0b28gaW50cnVzaXZlIGJvdGggdG8gcHJvdG9jb2wgYW5kIGNvZGUuClRoaXMgb25l
+IGxvb2tzIG1vcmUgcHJvbWlzaW5nLCBhbHRob3VnaCBpdCB3b3VsZCBzdGlsbCBoYXZlIGEgc2ln
+bmlmaWNhbnQKaW1wYWN0IG9uIHRoZSBiaW5kaW5nIHRhYmxlIGFuZCB0aGUgdG9wb2xvZ3kgc2Vy
+dmVyLiBJdCBtaWdodCBhY3R1YWxseSAKYmUgYmVzdAp0byBqdXN0IGltcGxlbWVudCBhbm90aGVy
+IGJpbmRpbmcgdGFibGUgYW5kIGFub3RoZXIgdG9wb2xvZ3kgc2VydmVyIGJlc2lkZXMKdGhlIGV4
+aXN0aW5nIG9uZXMganVzdCB0byBhdm9pZCByaXNrIG9mIGJyZWFraW5nIGFueXRoaW5nLgpBbnl3
+YXksIHRha2UgYSBsb29rIGF0IHRoaXMgbmV3IHN1Z2dlc3Rpb24gYW5kIGdpdmUgZmVlZGJhY2sg
+d2hldGhlciB5b3UgCnRoaW5rCml0IGlzIGdvb2Qgb3IgYmFkLgoKTm90ZSB0aGF0IHRoZSBuZXcg
+J3JhbmdlJyBmaWVsZCB3aWxsIHdvcmsgbGlrZSBhIGludmVydGVkIElQIG5ldG1hc2ssIGluIAp0
+aGUgc2Vuc2UKdGhhdCBpdCBkZW5vdGVzIGhvdyBtYW55IGJpdHMgb2YgJ2luc3RhbmNlJywgY291
+bnRlZCBmcm9tIHRoZSBlbmQsIApzaG91bGQgYmUKcmVnYXJkZWTCoCBhcyBub3Qgc2V0LgoKRXhh
+bXBsZSAxOgotLS0tLS0tLS0tLS0tLS0KSSBiaW5kIGEgc29ja2V0IHRvwqAge215X3NlcnZpY2Us
+IG15X211bHRpY2FzdF9pbnN0YW5jZSwgOH0KQSBjYWxsIHRvwqDCoCB7bXlfc2VydmljZSwgbXlf
+bXVsdGljYXN0X2luc3RhblswMDAwLC4uLmZmZmZdLCAwfSBpcwphIHVuaWNhc3QgYW5kIHdpbGwg
+cmVhY2ggdGhhdCBzb2NrZXQuCgpFeGFtcGxlIDI6Ci0tLS0tLS0tLS0tLS0tLQpJIGJpbmQgYSBz
+b2NrZXTCoCB0b8KgwqDCoMKgwqDCoMKgwqAge215X3NlcnZpY2UsIG15X211bHRpY2FzdF9pbnN0
+YW5BQSwgMH0KYW5kIGFub3RoZXIgb25lIHRvwqDCoMKgwqDCoCB7bXlfc2VydmljZSwgbXlfbXVs
+dGljYXN0X2luc3RhbkJCLCAwfQpBIGNhbGwgdG/CoMKgIHtteV9zZXJ2aWNlLCBteV9tdWx0aWNh
+c3RfaW5zdGFuLCA4fSBpcyBhIG11bHRpY2FzdCBhbmQKd2lsbCByZWFjaCBib3RoIHNvY2tldHMu
+CgpUaGUgcmVhc29uIGZvciB0aGlzLCBpbnN0ZWFkIG9mIHVzaW5nIHRoZSB7bG93ZXIsdXBwZXJ9
+IHNlbWFudGljcwp3ZSBoYXZlIGN1cnJlbnRseSBpcyB0aGF0IEkgd2FudCB0byBhdm9pZCBoYXZp
+bmcgdG8gaW52ZW50IGFuZCBpbXBsZW1lbnQKbXkgb3duIDEyOC1iaXQgYXJpdGhtZXRpYywgd2hp
+Y2ggaXMgZ3VhcmFudGVlZCB0byBiZSB3cm9uZyBvbiBvbmUKYXJjaGl0ZWN0dXJlIG9yIGFub3Ro
+ZXIuIEFuZCwgdGhlICdpbnN0YW5jZScgZmllbGQgYXJlIG5vdCBtZWFudAp0byBiZSBpbnRlcnBy
+ZXRlZCBhcyBudW1iZXIgaW4gdGhlIGZpcnN0IHBsYWNlLCBhbmQgYnkgdXNpbmcgdGhpcwptZXRo
+b2Qgd2UgYXZvaWQgdGhhdC4KCkdpdmUgeW91ciB0aG91Z2h0cyBhYm91dCB0aGlzLgoKLy8vam9u
+CgoKT24gOS80LzIwIDI6MzIgUE0sIGptYWxveUByZWRoYXQuY29tIHdyb3RlOgo+IEZyb206IEpv
+biBNYWxveSA8am1hbG95QHJlZGhhdC5jb20+Cj4KPiBUaGUgZXhpc3RpbmcgMzItYml0IGJhc2Vk
+IGFkZHJlc3MgdHlwZXMgaW4gVElQQyBoYXZlIGEgdmFsdWUgc3BhY2UKPiB0aGF0IGlzIHBlcmNl
+aXZlZCBhcyB0b28gbGltaXRlZCBpbiBzb21lIGVudmlyb25tZW50cy4gSXQgd291bGQKPiBiZSBt
+b3JlIGF0dHJhY3RpdmUgaW4gYSBtb2Rlcm4gdXNlciBlbnZpcm9ubWVudCBzdWNoIGFzIEt1YmVy
+bmV0ZXMKPiBpZiBpdCBjb3VsZCBwcm92aWRlIGEgbGFyZ2VyIGFkZHJlc3MgcmFuZ2UuCj4KPiBB
+ZHZhbnRhZ2VzOgo+IC0gVXNlcnMgY291bGQgZGlyZWN0bHkgdXNlIFVVSURzLCBzdHJpbmdzIG9y
+IG90aGVyIHZhbHVlcyBhcyBzZXJ2aWNlCj4gICAgaW5zdGFuY2VzIHR5cGVzIGFuZCBpbnN0YW5j
+ZXMuCj4gLSBObyBtb3JlIHJpc2sgb2YgY29sbGlzaW9ucyBiZXR3ZWVuIHJhbmRvbWx5IHNlbGVj
+dGVkIHNlcnZpY2UgdHlwZXMKPgo+IFRoZSBlZmZlY3Qgb24gdGhlIFRJUEMgaW1wbGVtZW50YXRp
+b24gYW5kIHByb3RvY29sIHdvdWxkIGJlIHNpZ25pZmljYW50LAo+IGJ1dCB0aGlzIGlzIHN0aWxs
+IHdvcnRoIGNvbnNpZGVyaW5nLgo+IC0tLQo+ICAgaW5jbHVkZS91YXBpL2xpbnV4L3RpcGMuaCB8
+IDU2ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKystLS0tLQo+ICAgMSBmaWxlIGNo
+YW5nZWQsIDUwIGluc2VydGlvbnMoKyksIDYgZGVsZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEv
+aW5jbHVkZS91YXBpL2xpbnV4L3RpcGMuaCBiL2luY2x1ZGUvdWFwaS9saW51eC90aXBjLmgKPiBp
+bmRleCBhZGQwMWRiMWRhZWYuLmMwYzQ2NzQyZmZiZCAxMDA2NDQKPiAtLS0gYS9pbmNsdWRlL3Vh
+cGkvbGludXgvdGlwYy5oCj4gKysrIGIvaW5jbHVkZS91YXBpL2xpbnV4L3RpcGMuaAo+IEBAIC00
+Miw5ICs0MiwyMiBAQAo+ICAgI2luY2x1ZGUgPGxpbnV4L3NvY2tpb3MuaD4KPiAgIAo+ICAgLyoK
+PiAtICogVElQQyBhZGRyZXNzaW5nIHByaW1pdGl2ZXMKPiArICogVW5pZmllZCBhZGRyZXNzIHR5
+cGUKPiArICogbm9kZTogZGVzdGluYXRpb24gbm9kZSBpZCBvciBiaW5kaW5nIHNjb3BlLiBaZXJv
+IGlmIHdob2xlIGNsdXN0ZXIuCj4gKyAqIHR5cGU6IHNlcnZpY2UgdHlwZS4gTXVzdCBiZSB1bmlx
+dWUgZm9yIHNlcnZpY2UuCj4gKyAqIGluc3RhbmNlOiBzZXJ2aWNlIGluc3RhbmNlLiBDYW4gYmUg
+Ym91bmQgdG8gYnkgbXVsdGlwbGUgc29ja2V0cy4KPiArICogcmFuZ2U6IGJpbmRpbmcsIHN1YnNj
+cmlwdGlvbiBvciBtdWx0aWNhc3QgcmFuZ2UuCj4gICAgKi8KPiArc3RydWN0IHRpcGNfYWRkciB7
+Cj4gKyAgICAgICAgX191OCBub2RlWzE2XTsgICAgICAvKiB6ZXJvIGlmIHdob2xlIGNsdXN0ZXIg
+Ki8KPiArICAgICAgICBfX3U4IHR5cGVbMTZdOyAgICAgIC8qIHplcm8gaWYgc29ja2V0IGFkZHJl
+c3MgKi8KPiArICAgICAgICBfX3U4IGluc3RhbmNlWzE2XTsgIC8qIHBvcnQgbnVtYmVyIGlmIHNv
+Y2tldCBhZGRyZXNzICovCj4gKyAgICAgICAgX191OCByYW5nZTsgICAgICAgICAvKiBudW1iZXIg
+b2YgdHJhaWxpbmcgYml0cyBpbiAnaW5zdGFuY2UnICovCj4gK307Cj4gICAKPiArLyoKPiArICog
+TGVnYWN5IGFkZHJlc3MgdHlwZXMKPiArICovCj4gICBzdHJ1Y3QgdGlwY19zb2NrZXRfYWRkciB7
+Cj4gICAJX191MzIgcmVmOwo+ICAgCV9fdTMyIG5vZGU7Cj4gQEAgLTc0LDcgKzg3LDcgQEAgc3Ry
+dWN0IHRpcGNfc2VydmljZV9yYW5nZSB7Cj4gICAgKiBQdWJsaWNhdGlvbiBzY29wZXMgd2hlbiBi
+aW5kaW5nIHNlcnZpY2UgLyBzZXJ2aWNlIHJhbmdlCj4gICAgKi8KPiAgIGVudW0gdGlwY19zY29w
+ZSB7Cj4gLQlUSVBDX0NMVVNURVJfU0NPUEUgPSAyLCAvKiAwIGNhbiBhbHNvIGJlIHVzZWQgKi8K
+PiArCVRJUENfR0xPQkFMX1NDT1BFICA9IDAsCj4gICAJVElQQ19OT0RFX1NDT1BFICAgID0gMwo+
+ICAgfTsKPiAgIAo+IEBAIC0xMTQsOCArMTI3LDE4IEBAIGVudW0gdGlwY19zY29wZSB7Cj4gICAK
+PiAgICNkZWZpbmUgVElQQ19XQUlUX0ZPUkVWRVIJKH4wKQkvKiB0aW1lb3V0IGZvciBwZXJtYW5l
+bnQgc3Vic2NyaXB0aW9uICovCj4gICAKPiArc3RydWN0IHRpcGNfdG9wc3ViIHsKPiArICAgICAg
+ICBzdHJ1Y3QgdGlwY19hZGRyIHNlcnZpY2U7ICAgICAgIC8qIHN1YnNjcmliZWQgc2VydmljZSAq
+Lwo+ICsgICAgICAgIF9fdTMyIHRpbWVvdXQ7ICAgICAgICAgICAgICAgICAgLyogc3Vic2NyaXB0
+aW9uIGR1cmF0aW9uIFttc10gKi8KPiArICAgICAgICBfX3UzMiBmaWx0ZXI7ICAgICAgICAgICAg
+ICAgICAgIC8qIHN1YnNjcmlwdGlvbiBvcHRpb24gYml0cyAqLwo+ICsgICAgICAgIF9fdTggaGFu
+ZGxlWzE2XTsgICAgICAgICAgICAgICAgLyogdXNlciBoYW5kbGUgKi8KPiArfTsKPiArCj4gKy8q
+Cj4gKyAqIExlZ2FjeSBzdWJzY3JpcHRpb24gc3RydWN0dXJlCj4gKyAqLwo+ICAgc3RydWN0IHRp
+cGNfc3Vic2NyIHsKPiAtCXN0cnVjdCB0aXBjX3NlcnZpY2VfcmFuZ2Ugc2VxOwkvKiByYW5nZSBv
+ZiBpbnRlcmVzdCAqLwo+ICsgICAgICAgIHN0cnVjdCB0aXBjX3NlcnZpY2VfcmFuZ2Ugc2VxOwkv
+KiByYW5nZSBvZiBpbnRlcmVzdCAqLwo+ICAgCV9fdTMyIHRpbWVvdXQ7CQkJLyogc3Vic2NyaXB0
+aW9uIGR1cmF0aW9uIChpbiBtcykgKi8KPiAgIAlfX3UzMiBmaWx0ZXI7CQkJLyogYml0bWFzayBv
+ZiBmaWx0ZXIgb3B0aW9ucyAqLwo+ICAgCWNoYXIgdXNyX2hhbmRsZVs4XTsJCS8qIGF2YWlsYWJs
+ZSBmb3Igc3Vic2NyaWJlciB1c2UgKi8KPiBAQCAtMTI1LDYgKzE0OCwxNiBAQCBzdHJ1Y3QgdGlw
+Y19zdWJzY3Igewo+ICAgI2RlZmluZSBUSVBDX1dJVEhEUkFXTgkJMgkvKiB3aXRoZHJhd2FsIGV2
+ZW50ICovCj4gICAjZGVmaW5lIFRJUENfU1VCU0NSX1RJTUVPVVQJMwkvKiBzdWJzY3JpcHRpb24g
+dGltZW91dCBldmVudCAqLwo+ICAgCj4gK3N0cnVjdCB0aXBjX3RvcGV2dCB7Cj4gKyAgICAgICAg
+c3RydWN0IHRpcGNfdG9wc3ViIHN1YjsgICAgICAgIC8qIG9yaWdpbmFsIHN1YnNjcmlwdGlvbiAq
+Lwo+ICsgICAgICAgIHN0cnVjdCB0aXBjX2FkZHIgc29ja2V0OyAgICAgICAvKiBhc3NvY2lhdGVk
+IHNvY2tldCAqLwo+ICsgICAgICAgIHN0cnVjdCB0aXBjX2FkZHIgc2VydmljZTsgICAgICAvKiBt
+YXRjaGluZyBhZGRyZXNzICovCj4gKwlfX3UzMiBldmVudDsJCQkvKiBwdWJsL3dpdGhkcmF3L3Rp
+bWVvdXQgKi8KPiArfTsKPiArCj4gKy8qCj4gKyAqIExlZ2FjeSBldmVudCBzdHJ1Y3R1cmUKPiAr
+ICovCj4gICBzdHJ1Y3QgdGlwY19ldmVudCB7Cj4gICAJX191MzIgZXZlbnQ7CQkJLyogZXZlbnQg
+dHlwZSAqLwo+ICAgCV9fdTMyIGZvdW5kX2xvd2VyOwkJLyogbWF0Y2hpbmcgcmFuZ2UgKi8KPiBA
+QCAtMTUzLDE4ICsxODYsMjEgQEAgc3RydWN0IHRpcGNfZXZlbnQgewo+ICAgI2RlZmluZSBUSVBD
+X1NFUlZJQ0VfUkFOR0UgICAgICAxCj4gICAjZGVmaW5lIFRJUENfU0VSVklDRV9BRERSICAgICAg
+IDIKPiAgICNkZWZpbmUgVElQQ19TT0NLRVRfQUREUiAgICAgICAgMwo+ICsjZGVmaW5lIFRJUENf
+QUREUiAgICAgICAgICAgICAgIDQKPiAgIAo+ICAgc3RydWN0IHNvY2thZGRyX3RpcGMgewo+ICAg
+CXVuc2lnbmVkIHNob3J0IGZhbWlseTsKPiAgIAl1bnNpZ25lZCBjaGFyICBhZGRydHlwZTsKPiAg
+IAlzaWduZWQgICBjaGFyICBzY29wZTsKPiAgIAl1bmlvbiB7Cj4gKwo+ICAgCQlzdHJ1Y3QgdGlw
+Y19zb2NrZXRfYWRkciBpZDsKPiAgIAkJc3RydWN0IHRpcGNfc2VydmljZV9yYW5nZSBuYW1lc2Vx
+Owo+ICAgCQlzdHJ1Y3Qgewo+ICAgCQkJc3RydWN0IHRpcGNfc2VydmljZV9hZGRyIG5hbWU7Cj4g
+ICAJCQlfX3UzMiBkb21haW47Cj4gICAJCX0gbmFtZTsKPiArICAgICAgICAgICAgICAgIHN0cnVj
+dCB0aXBjX2FkZHIgYTsKPiAgIAl9IGFkZHI7Cj4gICB9Owo+ICAgCj4gQEAgLTE4OCwxNyArMjI0
+LDI1IEBAIHN0cnVjdCBzb2NrYWRkcl90aXBjIHsKPiAgICNkZWZpbmUgVElQQ19TT0NLX1JFQ1ZR
+X0RFUFRICTEzMgkvKiBEZWZhdWx0OiBub25lIChyZWFkIG9ubHkpICovCj4gICAjZGVmaW5lIFRJ
+UENfTUNBU1RfQlJPQURDQVNUICAgIDEzMyAgICAgLyogRGVmYXVsdDogVElQQyBzZWxlY3RzLiBO
+byBhcmcgKi8KPiAgICNkZWZpbmUgVElQQ19NQ0FTVF9SRVBMSUNBU1QgICAgMTM0ICAgICAvKiBE
+ZWZhdWx0OiBUSVBDIHNlbGVjdHMuIE5vIGFyZyAqLwo+IC0jZGVmaW5lIFRJUENfR1JPVVBfSk9J
+TiAgICAgICAgIDEzNSAgICAgLyogVGFrZXMgc3RydWN0IHRpcGNfZ3JvdXBfcmVxKiAqLwo+ICsj
+ZGVmaW5lIFRJUENfR1JPVVBfSk9JTiAgICAgICAgIDEzNSAgICAgLyogVGFrZXMgc3RydWN0IHRp
+cGNfZ3JvdXBfam9pbiAqLwo+ICAgI2RlZmluZSBUSVBDX0dST1VQX0xFQVZFICAgICAgICAxMzYg
+ICAgIC8qIE5vIGFyZ3VtZW50ICovCj4gICAjZGVmaW5lIFRJUENfU09DS19SRUNWUV9VU0VEICAg
+IDEzNyAgICAgLyogRGVmYXVsdDogbm9uZSAocmVhZCBvbmx5KSAqLwo+ICAgI2RlZmluZSBUSVBD
+X05PREVMQVkgICAgICAgICAgICAxMzggICAgIC8qIERlZmF1bHQ6IGZhbHNlICovCj4gICAKPiAg
+IC8qCj4gLSAqIEZsYWcgdmFsdWVzCj4gKyAqIEdyb3VwIGpvaW4gZmxhZyB2YWx1ZXMKPiAgICAq
+Lwo+ICAgI2RlZmluZSBUSVBDX0dST1VQX0xPT1BCQUNLICAgICAweDEgIC8qIFJlY2VpdmUgY29w
+eSBvZiBzZW50IG1zZyB3aGVuIG1hdGNoICovCj4gICAjZGVmaW5lIFRJUENfR1JPVVBfTUVNQkVS
+X0VWVFMgIDB4MiAgLyogUmVjZWl2ZSBtZW1iZXJzaGlwIGV2ZW50cyBpbiBzb2NrZXQgKi8KPiAg
+IAo+ICtzdHJ1Y3QgdGlwY19ncm91cF9qb2luIHsKPiArCXN0cnVjdCB0aXBjX2FkZHIgYWRkcjsK
+PiArCV9fdTMyIGZsYWdzOwo+ICt9Owo+ICsKPiArLyoKPiArICogTGVnYWN5IHN0cnVjdHVyZQo+
+ICsgKi8KPiAgIHN0cnVjdCB0aXBjX2dyb3VwX3JlcSB7Cj4gICAJX191MzIgdHlwZTsgICAgICAv
+KiBncm91cCBpZCAqLwo+ICAgCV9fdTMyIGluc3RhbmNlOyAgLyogbWVtYmVyIGlkICovCj4gQEAg
+LTI1OSw3ICszMDMsNyBAQCBzdGF0aWMgaW5saW5lIGludCB0aXBjX2FlYWRfa2V5X3NpemUoc3Ry
+dWN0IHRpcGNfYWVhZF9rZXkgKmtleSkKPiAgIAo+ICAgI2RlZmluZSBUSVBDX0NGR19TUlYJCTAK
+PiAgICNkZWZpbmUgVElQQ19aT05FX1NDT1BFICAgICAgICAgMQo+IC0KPiArI2RlZmluZQlUSVBD
+X0NMVVNURVJfU0NPUEUgICAgICAyCj4gICAjZGVmaW5lIFRJUENfQUREUl9OQU1FU0VRCTEKPiAg
+ICNkZWZpbmUgVElQQ19BRERSX05BTUUJCTIKPiAgICNkZWZpbmUgVElQQ19BRERSX0lECQkzCgoK
+Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCnRpcGMtZGlz
+Y3Vzc2lvbiBtYWlsaW5nIGxpc3QKdGlwYy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5l
+dApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9saXN0cy9saXN0aW5mby90aXBjLWRpc2N1
+c3Npb24K
