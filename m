@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8658125E1C1
-	for <lists+tipc-discussion@lfdr.de>; Fri,  4 Sep 2020 21:10:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 590B825E3AF
+	for <lists+tipc-discussion@lfdr.de>; Sat,  5 Sep 2020 00:26:49 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kEH66-0001C2-Pt; Fri, 04 Sep 2020 19:10:06 +0000
+	id 1kEKAL-0001Nq-R2; Fri, 04 Sep 2020 22:26:41 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1kEH65-0001Bw-Vd
- for tipc-discussion@lists.sourceforge.net; Fri, 04 Sep 2020 19:10:06 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1kEKAK-0001Nj-GU
+ for tipc-discussion@lists.sourceforge.net; Fri, 04 Sep 2020 22:26:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
  MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=PiV5AAzX4LavqDvv1ikieKKPltwOvkung7ZgRCE+32U=; b=m/3TvHZ/uVE+id9nhy499O8xhb
- SwpjPYYjfUGC456VUnBo+7j12EBUfaP0XoZlgiwF/R+2LPA7AseuK++EP6m89DJX3iZZ79AWRSnB6
- CDDl6XWjKp5K9fZxmeUYvr6RtIi1k7JBtc+urylD1uxZfYWeHQxDxUNzh3/Cc43AtpjQ=;
+ bh=M545Jjg+mTAkFwmv93I/WEcNeFfnBVb8lzyuss48WyU=; b=mnIbYBvCOm0f2JCYMq6jl/mn3C
+ 53/n8C94jsMVkPBnHl+IbXfL39eYlfYIBdXSFc+qE2kLu0lLinFZMn9J3uQqzNL+9jFlwobUpCR6k
+ MyZslLC6RYix9tfnFhlIFD5UfPsZUaC1Rp+Lcn7FlpE8w7d5a65RanSX7GlytO4WHcFA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
@@ -29,48 +29,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=PiV5AAzX4LavqDvv1ikieKKPltwOvkung7ZgRCE+32U=; b=J5iWSmzsNZ//9IZdsoCMmueXZ0
- dKhyHTf5Nn6Pgh/vX/qz8Fs0+jkQlbFHBmndMAG/EhrH+vuwwUW+privOLrskv+p6KIUzqSD1UuO4
- 39p9rfqQ/F5/Mf9aXrPivaATQlLTKybCsV7U5TQQ4hV0ToJtKy3K8NMFYhJkcIpm2gPc=;
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+ bh=M545Jjg+mTAkFwmv93I/WEcNeFfnBVb8lzyuss48WyU=; b=KdGxPGgHHEc31ClMm/JatK+7mE
+ 6n+59Sx3M5XZprDe762KSCX3jDoyU9caYoaf5XZTDGJy15b5gPcbXShmOu5dL1T+Is4Sm4a2374se
+ 8A684iDFu8dc6BZxfNN9nPLC3UazGhmNyUFxGPhovlDdi9uVK0fj4bwPefXosFtQzjTk=;
+Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1kEH5n-00DD5T-0p
- for tipc-discussion@lists.sourceforge.net; Fri, 04 Sep 2020 19:10:02 +0000
+ id 1kEKA9-00DMnD-VM
+ for tipc-discussion@lists.sourceforge.net; Fri, 04 Sep 2020 22:26:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1599246581;
+ s=mimecast20190719; t=1599258374;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=PiV5AAzX4LavqDvv1ikieKKPltwOvkung7ZgRCE+32U=;
- b=W31799k/uYevtOXH/Q6W7gQMWKg3DGTY9ogPU5N3nYNqYWySnqoIvH5sH6Rl/toYFzSakG
- d/Vica/j5kYtTZNtEHNVCCGZD21pT9MiAnQIj2RW8Gayc2FjeEQUPF9hH7U5YWpGm2FEIW
- 7KxExhzoEKpbE4lJSTz5Wwp9McXR5wY=
+ bh=M545Jjg+mTAkFwmv93I/WEcNeFfnBVb8lzyuss48WyU=;
+ b=djHcpejjcV/t0NkAtuBW54ZIcjE9ahg8GsEJEn12EAeiQVqVxC6ql+Eu1+bvpe/ezXvVLE
+ 5Bq5VyLZKEt3x3vOF2/Bx8ahWle+89Di6nvwbzz2TBmqkriZHHyNO1lNLcMmPqZ5wDactW
+ cfenP40DOZyOATDmhWOfsyeG523+nOU=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-101-oILUT_HNNBWP9ezzlGBz6w-1; Fri, 04 Sep 2020 15:09:37 -0400
-X-MC-Unique: oILUT_HNNBWP9ezzlGBz6w-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
+ us-mta-261-wOKlWxlYM8yEpniQiGR6yw-1; Fri, 04 Sep 2020 18:26:11 -0400
+X-MC-Unique: wOKlWxlYM8yEpniQiGR6yw-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A97D81005E71;
- Fri,  4 Sep 2020 19:09:35 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A7EBC425E4;
+ Fri,  4 Sep 2020 22:26:10 +0000 (UTC)
 Received: from [10.10.118.242] (ovpn-118-242.rdu2.redhat.com [10.10.118.242])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 4E0D05C5DE;
- Fri,  4 Sep 2020 19:09:33 +0000 (UTC)
-To: tipc-discussion@lists.sourceforge.net
-References: <20200904183231.156384-1-jmaloy@redhat.com>
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 747D77ED62;
+ Fri,  4 Sep 2020 22:26:09 +0000 (UTC)
+To: Hoang Huu Le <hoang.h.le@dektech.com.au>, maloy@donjonn.com,
+ ying.xue@windriver.com, tipc-discussion@lists.sourceforge.net
+References: <20200904082550.394270-1-hoang.h.le@dektech.com.au>
 From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <4f313426-319b-1190-fcbc-84a4ba05e49b@redhat.com>
-Date: Fri, 4 Sep 2020 15:09:32 -0400
+Message-ID: <f5f36309-ef18-0e52-5191-6617f958e850@redhat.com>
+Date: Fri, 4 Sep 2020 18:26:08 -0400
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.10.0
 MIME-Version: 1.0
-In-Reply-To: <20200904183231.156384-1-jmaloy@redhat.com>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+In-Reply-To: <20200904082550.394270-1-hoang.h.le@dektech.com.au>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 Authentication-Results: relay.mimecast.com;
  auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
 X-Mimecast-Spam-Score: 0.002
@@ -79,22 +79,26 @@ Content-Language: en-US
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: dektech.com.au]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [207.211.31.120 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.120 listed in wl.mailspike.net]
+ trust [216.205.24.124 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
+ [216.205.24.124 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -2.4 NICE_REPLY_A           Looks like a legit reply (A)
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
- 0.0 TIME_LIMIT_EXCEEDED    Exceeded time limit / deadline
-X-Headers-End: 1kEH5n-00DD5T-0p
-Subject: Re: [tipc-discussion] [RFC PATCH v2] tipc: adding unified 128 bit
- address struct
+X-Headers-End: 1kEKA9-00DMnD-VM
+Subject: Re: [tipc-discussion] [net-next v3] tipc: fix a deadlock when
+ flushing scheduled work
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,134 +110,139 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: xinl@redhat.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: syzbot+d5aa7e0385f6a5d0f4fd@syzkaller.appspotmail.com
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-SGkgYWxsLApJIGNvdWxkbid0IHF1aXRlIGxldCBnbyBvZiB0aGlzIG9sZCBpZGVhLCBidXQgdGhl
-ICJ0aXBjIHYzIiBwcm9wb3NhbCAKZnJvbSBteSBmaXJzdApwYXRjaCBiYWNrIGluIE1heSB3YXMg
-Y2xlYXJseSB0b28gaW50cnVzaXZlIGJvdGggdG8gcHJvdG9jb2wgYW5kIGNvZGUuClRoaXMgb25l
-IGxvb2tzIG1vcmUgcHJvbWlzaW5nLCBhbHRob3VnaCBpdCB3b3VsZCBzdGlsbCBoYXZlIGEgc2ln
-bmlmaWNhbnQKaW1wYWN0IG9uIHRoZSBiaW5kaW5nIHRhYmxlIGFuZCB0aGUgdG9wb2xvZ3kgc2Vy
-dmVyLiBJdCBtaWdodCBhY3R1YWxseSAKYmUgYmVzdAp0byBqdXN0IGltcGxlbWVudCBhbm90aGVy
-IGJpbmRpbmcgdGFibGUgYW5kIGFub3RoZXIgdG9wb2xvZ3kgc2VydmVyIGJlc2lkZXMKdGhlIGV4
-aXN0aW5nIG9uZXMganVzdCB0byBhdm9pZCByaXNrIG9mIGJyZWFraW5nIGFueXRoaW5nLgpBbnl3
-YXksIHRha2UgYSBsb29rIGF0IHRoaXMgbmV3IHN1Z2dlc3Rpb24gYW5kIGdpdmUgZmVlZGJhY2sg
-d2hldGhlciB5b3UgCnRoaW5rCml0IGlzIGdvb2Qgb3IgYmFkLgoKTm90ZSB0aGF0IHRoZSBuZXcg
-J3JhbmdlJyBmaWVsZCB3aWxsIHdvcmsgbGlrZSBhIGludmVydGVkIElQIG5ldG1hc2ssIGluIAp0
-aGUgc2Vuc2UKdGhhdCBpdCBkZW5vdGVzIGhvdyBtYW55IGJpdHMgb2YgJ2luc3RhbmNlJywgY291
-bnRlZCBmcm9tIHRoZSBlbmQsIApzaG91bGQgYmUKcmVnYXJkZWTCoCBhcyBub3Qgc2V0LgoKRXhh
-bXBsZSAxOgotLS0tLS0tLS0tLS0tLS0KSSBiaW5kIGEgc29ja2V0IHRvwqAge215X3NlcnZpY2Us
-IG15X211bHRpY2FzdF9pbnN0YW5jZSwgOH0KQSBjYWxsIHRvwqDCoCB7bXlfc2VydmljZSwgbXlf
-bXVsdGljYXN0X2luc3RhblswMDAwLC4uLmZmZmZdLCAwfSBpcwphIHVuaWNhc3QgYW5kIHdpbGwg
-cmVhY2ggdGhhdCBzb2NrZXQuCgpFeGFtcGxlIDI6Ci0tLS0tLS0tLS0tLS0tLQpJIGJpbmQgYSBz
-b2NrZXTCoCB0b8KgwqDCoMKgwqDCoMKgwqAge215X3NlcnZpY2UsIG15X211bHRpY2FzdF9pbnN0
-YW5BQSwgMH0KYW5kIGFub3RoZXIgb25lIHRvwqDCoMKgwqDCoCB7bXlfc2VydmljZSwgbXlfbXVs
-dGljYXN0X2luc3RhbkJCLCAwfQpBIGNhbGwgdG/CoMKgIHtteV9zZXJ2aWNlLCBteV9tdWx0aWNh
-c3RfaW5zdGFuLCA4fSBpcyBhIG11bHRpY2FzdCBhbmQKd2lsbCByZWFjaCBib3RoIHNvY2tldHMu
-CgpUaGUgcmVhc29uIGZvciB0aGlzLCBpbnN0ZWFkIG9mIHVzaW5nIHRoZSB7bG93ZXIsdXBwZXJ9
-IHNlbWFudGljcwp3ZSBoYXZlIGN1cnJlbnRseSBpcyB0aGF0IEkgd2FudCB0byBhdm9pZCBoYXZp
-bmcgdG8gaW52ZW50IGFuZCBpbXBsZW1lbnQKbXkgb3duIDEyOC1iaXQgYXJpdGhtZXRpYywgd2hp
-Y2ggaXMgZ3VhcmFudGVlZCB0byBiZSB3cm9uZyBvbiBvbmUKYXJjaGl0ZWN0dXJlIG9yIGFub3Ro
-ZXIuIEFuZCwgdGhlICdpbnN0YW5jZScgZmllbGQgYXJlIG5vdCBtZWFudAp0byBiZSBpbnRlcnBy
-ZXRlZCBhcyBudW1iZXIgaW4gdGhlIGZpcnN0IHBsYWNlLCBhbmQgYnkgdXNpbmcgdGhpcwptZXRo
-b2Qgd2UgYXZvaWQgdGhhdC4KCkdpdmUgeW91ciB0aG91Z2h0cyBhYm91dCB0aGlzLgoKLy8vam9u
-CgoKT24gOS80LzIwIDI6MzIgUE0sIGptYWxveUByZWRoYXQuY29tIHdyb3RlOgo+IEZyb206IEpv
-biBNYWxveSA8am1hbG95QHJlZGhhdC5jb20+Cj4KPiBUaGUgZXhpc3RpbmcgMzItYml0IGJhc2Vk
-IGFkZHJlc3MgdHlwZXMgaW4gVElQQyBoYXZlIGEgdmFsdWUgc3BhY2UKPiB0aGF0IGlzIHBlcmNl
-aXZlZCBhcyB0b28gbGltaXRlZCBpbiBzb21lIGVudmlyb25tZW50cy4gSXQgd291bGQKPiBiZSBt
-b3JlIGF0dHJhY3RpdmUgaW4gYSBtb2Rlcm4gdXNlciBlbnZpcm9ubWVudCBzdWNoIGFzIEt1YmVy
-bmV0ZXMKPiBpZiBpdCBjb3VsZCBwcm92aWRlIGEgbGFyZ2VyIGFkZHJlc3MgcmFuZ2UuCj4KPiBB
-ZHZhbnRhZ2VzOgo+IC0gVXNlcnMgY291bGQgZGlyZWN0bHkgdXNlIFVVSURzLCBzdHJpbmdzIG9y
-IG90aGVyIHZhbHVlcyBhcyBzZXJ2aWNlCj4gICAgaW5zdGFuY2VzIHR5cGVzIGFuZCBpbnN0YW5j
-ZXMuCj4gLSBObyBtb3JlIHJpc2sgb2YgY29sbGlzaW9ucyBiZXR3ZWVuIHJhbmRvbWx5IHNlbGVj
-dGVkIHNlcnZpY2UgdHlwZXMKPgo+IFRoZSBlZmZlY3Qgb24gdGhlIFRJUEMgaW1wbGVtZW50YXRp
-b24gYW5kIHByb3RvY29sIHdvdWxkIGJlIHNpZ25pZmljYW50LAo+IGJ1dCB0aGlzIGlzIHN0aWxs
-IHdvcnRoIGNvbnNpZGVyaW5nLgo+IC0tLQo+ICAgaW5jbHVkZS91YXBpL2xpbnV4L3RpcGMuaCB8
-IDU2ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKystLS0tLQo+ICAgMSBmaWxlIGNo
-YW5nZWQsIDUwIGluc2VydGlvbnMoKyksIDYgZGVsZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEv
-aW5jbHVkZS91YXBpL2xpbnV4L3RpcGMuaCBiL2luY2x1ZGUvdWFwaS9saW51eC90aXBjLmgKPiBp
-bmRleCBhZGQwMWRiMWRhZWYuLmMwYzQ2NzQyZmZiZCAxMDA2NDQKPiAtLS0gYS9pbmNsdWRlL3Vh
-cGkvbGludXgvdGlwYy5oCj4gKysrIGIvaW5jbHVkZS91YXBpL2xpbnV4L3RpcGMuaAo+IEBAIC00
-Miw5ICs0MiwyMiBAQAo+ICAgI2luY2x1ZGUgPGxpbnV4L3NvY2tpb3MuaD4KPiAgIAo+ICAgLyoK
-PiAtICogVElQQyBhZGRyZXNzaW5nIHByaW1pdGl2ZXMKPiArICogVW5pZmllZCBhZGRyZXNzIHR5
-cGUKPiArICogbm9kZTogZGVzdGluYXRpb24gbm9kZSBpZCBvciBiaW5kaW5nIHNjb3BlLiBaZXJv
-IGlmIHdob2xlIGNsdXN0ZXIuCj4gKyAqIHR5cGU6IHNlcnZpY2UgdHlwZS4gTXVzdCBiZSB1bmlx
-dWUgZm9yIHNlcnZpY2UuCj4gKyAqIGluc3RhbmNlOiBzZXJ2aWNlIGluc3RhbmNlLiBDYW4gYmUg
-Ym91bmQgdG8gYnkgbXVsdGlwbGUgc29ja2V0cy4KPiArICogcmFuZ2U6IGJpbmRpbmcsIHN1YnNj
-cmlwdGlvbiBvciBtdWx0aWNhc3QgcmFuZ2UuCj4gICAgKi8KPiArc3RydWN0IHRpcGNfYWRkciB7
-Cj4gKyAgICAgICAgX191OCBub2RlWzE2XTsgICAgICAvKiB6ZXJvIGlmIHdob2xlIGNsdXN0ZXIg
-Ki8KPiArICAgICAgICBfX3U4IHR5cGVbMTZdOyAgICAgIC8qIHplcm8gaWYgc29ja2V0IGFkZHJl
-c3MgKi8KPiArICAgICAgICBfX3U4IGluc3RhbmNlWzE2XTsgIC8qIHBvcnQgbnVtYmVyIGlmIHNv
-Y2tldCBhZGRyZXNzICovCj4gKyAgICAgICAgX191OCByYW5nZTsgICAgICAgICAvKiBudW1iZXIg
-b2YgdHJhaWxpbmcgYml0cyBpbiAnaW5zdGFuY2UnICovCj4gK307Cj4gICAKPiArLyoKPiArICog
-TGVnYWN5IGFkZHJlc3MgdHlwZXMKPiArICovCj4gICBzdHJ1Y3QgdGlwY19zb2NrZXRfYWRkciB7
-Cj4gICAJX191MzIgcmVmOwo+ICAgCV9fdTMyIG5vZGU7Cj4gQEAgLTc0LDcgKzg3LDcgQEAgc3Ry
-dWN0IHRpcGNfc2VydmljZV9yYW5nZSB7Cj4gICAgKiBQdWJsaWNhdGlvbiBzY29wZXMgd2hlbiBi
-aW5kaW5nIHNlcnZpY2UgLyBzZXJ2aWNlIHJhbmdlCj4gICAgKi8KPiAgIGVudW0gdGlwY19zY29w
-ZSB7Cj4gLQlUSVBDX0NMVVNURVJfU0NPUEUgPSAyLCAvKiAwIGNhbiBhbHNvIGJlIHVzZWQgKi8K
-PiArCVRJUENfR0xPQkFMX1NDT1BFICA9IDAsCj4gICAJVElQQ19OT0RFX1NDT1BFICAgID0gMwo+
-ICAgfTsKPiAgIAo+IEBAIC0xMTQsOCArMTI3LDE4IEBAIGVudW0gdGlwY19zY29wZSB7Cj4gICAK
-PiAgICNkZWZpbmUgVElQQ19XQUlUX0ZPUkVWRVIJKH4wKQkvKiB0aW1lb3V0IGZvciBwZXJtYW5l
-bnQgc3Vic2NyaXB0aW9uICovCj4gICAKPiArc3RydWN0IHRpcGNfdG9wc3ViIHsKPiArICAgICAg
-ICBzdHJ1Y3QgdGlwY19hZGRyIHNlcnZpY2U7ICAgICAgIC8qIHN1YnNjcmliZWQgc2VydmljZSAq
-Lwo+ICsgICAgICAgIF9fdTMyIHRpbWVvdXQ7ICAgICAgICAgICAgICAgICAgLyogc3Vic2NyaXB0
-aW9uIGR1cmF0aW9uIFttc10gKi8KPiArICAgICAgICBfX3UzMiBmaWx0ZXI7ICAgICAgICAgICAg
-ICAgICAgIC8qIHN1YnNjcmlwdGlvbiBvcHRpb24gYml0cyAqLwo+ICsgICAgICAgIF9fdTggaGFu
-ZGxlWzE2XTsgICAgICAgICAgICAgICAgLyogdXNlciBoYW5kbGUgKi8KPiArfTsKPiArCj4gKy8q
-Cj4gKyAqIExlZ2FjeSBzdWJzY3JpcHRpb24gc3RydWN0dXJlCj4gKyAqLwo+ICAgc3RydWN0IHRp
-cGNfc3Vic2NyIHsKPiAtCXN0cnVjdCB0aXBjX3NlcnZpY2VfcmFuZ2Ugc2VxOwkvKiByYW5nZSBv
-ZiBpbnRlcmVzdCAqLwo+ICsgICAgICAgIHN0cnVjdCB0aXBjX3NlcnZpY2VfcmFuZ2Ugc2VxOwkv
-KiByYW5nZSBvZiBpbnRlcmVzdCAqLwo+ICAgCV9fdTMyIHRpbWVvdXQ7CQkJLyogc3Vic2NyaXB0
-aW9uIGR1cmF0aW9uIChpbiBtcykgKi8KPiAgIAlfX3UzMiBmaWx0ZXI7CQkJLyogYml0bWFzayBv
-ZiBmaWx0ZXIgb3B0aW9ucyAqLwo+ICAgCWNoYXIgdXNyX2hhbmRsZVs4XTsJCS8qIGF2YWlsYWJs
-ZSBmb3Igc3Vic2NyaWJlciB1c2UgKi8KPiBAQCAtMTI1LDYgKzE0OCwxNiBAQCBzdHJ1Y3QgdGlw
-Y19zdWJzY3Igewo+ICAgI2RlZmluZSBUSVBDX1dJVEhEUkFXTgkJMgkvKiB3aXRoZHJhd2FsIGV2
-ZW50ICovCj4gICAjZGVmaW5lIFRJUENfU1VCU0NSX1RJTUVPVVQJMwkvKiBzdWJzY3JpcHRpb24g
-dGltZW91dCBldmVudCAqLwo+ICAgCj4gK3N0cnVjdCB0aXBjX3RvcGV2dCB7Cj4gKyAgICAgICAg
-c3RydWN0IHRpcGNfdG9wc3ViIHN1YjsgICAgICAgIC8qIG9yaWdpbmFsIHN1YnNjcmlwdGlvbiAq
-Lwo+ICsgICAgICAgIHN0cnVjdCB0aXBjX2FkZHIgc29ja2V0OyAgICAgICAvKiBhc3NvY2lhdGVk
-IHNvY2tldCAqLwo+ICsgICAgICAgIHN0cnVjdCB0aXBjX2FkZHIgc2VydmljZTsgICAgICAvKiBt
-YXRjaGluZyBhZGRyZXNzICovCj4gKwlfX3UzMiBldmVudDsJCQkvKiBwdWJsL3dpdGhkcmF3L3Rp
-bWVvdXQgKi8KPiArfTsKPiArCj4gKy8qCj4gKyAqIExlZ2FjeSBldmVudCBzdHJ1Y3R1cmUKPiAr
-ICovCj4gICBzdHJ1Y3QgdGlwY19ldmVudCB7Cj4gICAJX191MzIgZXZlbnQ7CQkJLyogZXZlbnQg
-dHlwZSAqLwo+ICAgCV9fdTMyIGZvdW5kX2xvd2VyOwkJLyogbWF0Y2hpbmcgcmFuZ2UgKi8KPiBA
-QCAtMTUzLDE4ICsxODYsMjEgQEAgc3RydWN0IHRpcGNfZXZlbnQgewo+ICAgI2RlZmluZSBUSVBD
-X1NFUlZJQ0VfUkFOR0UgICAgICAxCj4gICAjZGVmaW5lIFRJUENfU0VSVklDRV9BRERSICAgICAg
-IDIKPiAgICNkZWZpbmUgVElQQ19TT0NLRVRfQUREUiAgICAgICAgMwo+ICsjZGVmaW5lIFRJUENf
-QUREUiAgICAgICAgICAgICAgIDQKPiAgIAo+ICAgc3RydWN0IHNvY2thZGRyX3RpcGMgewo+ICAg
-CXVuc2lnbmVkIHNob3J0IGZhbWlseTsKPiAgIAl1bnNpZ25lZCBjaGFyICBhZGRydHlwZTsKPiAg
-IAlzaWduZWQgICBjaGFyICBzY29wZTsKPiAgIAl1bmlvbiB7Cj4gKwo+ICAgCQlzdHJ1Y3QgdGlw
-Y19zb2NrZXRfYWRkciBpZDsKPiAgIAkJc3RydWN0IHRpcGNfc2VydmljZV9yYW5nZSBuYW1lc2Vx
-Owo+ICAgCQlzdHJ1Y3Qgewo+ICAgCQkJc3RydWN0IHRpcGNfc2VydmljZV9hZGRyIG5hbWU7Cj4g
-ICAJCQlfX3UzMiBkb21haW47Cj4gICAJCX0gbmFtZTsKPiArICAgICAgICAgICAgICAgIHN0cnVj
-dCB0aXBjX2FkZHIgYTsKPiAgIAl9IGFkZHI7Cj4gICB9Owo+ICAgCj4gQEAgLTE4OCwxNyArMjI0
-LDI1IEBAIHN0cnVjdCBzb2NrYWRkcl90aXBjIHsKPiAgICNkZWZpbmUgVElQQ19TT0NLX1JFQ1ZR
-X0RFUFRICTEzMgkvKiBEZWZhdWx0OiBub25lIChyZWFkIG9ubHkpICovCj4gICAjZGVmaW5lIFRJ
-UENfTUNBU1RfQlJPQURDQVNUICAgIDEzMyAgICAgLyogRGVmYXVsdDogVElQQyBzZWxlY3RzLiBO
-byBhcmcgKi8KPiAgICNkZWZpbmUgVElQQ19NQ0FTVF9SRVBMSUNBU1QgICAgMTM0ICAgICAvKiBE
-ZWZhdWx0OiBUSVBDIHNlbGVjdHMuIE5vIGFyZyAqLwo+IC0jZGVmaW5lIFRJUENfR1JPVVBfSk9J
-TiAgICAgICAgIDEzNSAgICAgLyogVGFrZXMgc3RydWN0IHRpcGNfZ3JvdXBfcmVxKiAqLwo+ICsj
-ZGVmaW5lIFRJUENfR1JPVVBfSk9JTiAgICAgICAgIDEzNSAgICAgLyogVGFrZXMgc3RydWN0IHRp
-cGNfZ3JvdXBfam9pbiAqLwo+ICAgI2RlZmluZSBUSVBDX0dST1VQX0xFQVZFICAgICAgICAxMzYg
-ICAgIC8qIE5vIGFyZ3VtZW50ICovCj4gICAjZGVmaW5lIFRJUENfU09DS19SRUNWUV9VU0VEICAg
-IDEzNyAgICAgLyogRGVmYXVsdDogbm9uZSAocmVhZCBvbmx5KSAqLwo+ICAgI2RlZmluZSBUSVBD
-X05PREVMQVkgICAgICAgICAgICAxMzggICAgIC8qIERlZmF1bHQ6IGZhbHNlICovCj4gICAKPiAg
-IC8qCj4gLSAqIEZsYWcgdmFsdWVzCj4gKyAqIEdyb3VwIGpvaW4gZmxhZyB2YWx1ZXMKPiAgICAq
-Lwo+ICAgI2RlZmluZSBUSVBDX0dST1VQX0xPT1BCQUNLICAgICAweDEgIC8qIFJlY2VpdmUgY29w
-eSBvZiBzZW50IG1zZyB3aGVuIG1hdGNoICovCj4gICAjZGVmaW5lIFRJUENfR1JPVVBfTUVNQkVS
-X0VWVFMgIDB4MiAgLyogUmVjZWl2ZSBtZW1iZXJzaGlwIGV2ZW50cyBpbiBzb2NrZXQgKi8KPiAg
-IAo+ICtzdHJ1Y3QgdGlwY19ncm91cF9qb2luIHsKPiArCXN0cnVjdCB0aXBjX2FkZHIgYWRkcjsK
-PiArCV9fdTMyIGZsYWdzOwo+ICt9Owo+ICsKPiArLyoKPiArICogTGVnYWN5IHN0cnVjdHVyZQo+
-ICsgKi8KPiAgIHN0cnVjdCB0aXBjX2dyb3VwX3JlcSB7Cj4gICAJX191MzIgdHlwZTsgICAgICAv
-KiBncm91cCBpZCAqLwo+ICAgCV9fdTMyIGluc3RhbmNlOyAgLyogbWVtYmVyIGlkICovCj4gQEAg
-LTI1OSw3ICszMDMsNyBAQCBzdGF0aWMgaW5saW5lIGludCB0aXBjX2FlYWRfa2V5X3NpemUoc3Ry
-dWN0IHRpcGNfYWVhZF9rZXkgKmtleSkKPiAgIAo+ICAgI2RlZmluZSBUSVBDX0NGR19TUlYJCTAK
-PiAgICNkZWZpbmUgVElQQ19aT05FX1NDT1BFICAgICAgICAgMQo+IC0KPiArI2RlZmluZQlUSVBD
-X0NMVVNURVJfU0NPUEUgICAgICAyCj4gICAjZGVmaW5lIFRJUENfQUREUl9OQU1FU0VRCTEKPiAg
-ICNkZWZpbmUgVElQQ19BRERSX05BTUUJCTIKPiAgICNkZWZpbmUgVElQQ19BRERSX0lECQkzCgoK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCnRpcGMtZGlz
-Y3Vzc2lvbiBtYWlsaW5nIGxpc3QKdGlwYy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5l
-dApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9saXN0cy9saXN0aW5mby90aXBjLWRpc2N1
-c3Npb24K
+
+
+On 9/4/20 4:25 AM, Hoang Huu Le wrote:
+> In the commit fdeba99b1e58
+> ("tipc: fix use-after-free in tipc_bcast_get_mode"), we're trying
+> to make sure the tipc_net_finalize_work work item finished if it
+> enqueued. But calling flush_scheduled_work() is not just
+affecting
+>   above
+> work item but either any scheduled work. This has turned out to be
+> overkill and this caused to deadlock as syzbot reported:
+>
+> ======================================================
+> WARNING: possible circular locking dependency detected
+> 5.9.0-rc2-next-20200828-syzkaller #0 Not tainted
+> ------------------------------------------------------
+> kworker/u4:6/349 is trying to acquire lock:
+> ffff8880aa063d38 ((wq_completion)events){+.+.}-{0:0}, at: flush_workqueue+0xe1/0x13e0 kernel/workqueue.c:2777
+>
+> but task is already holding lock:
+> ffffffff8a879430 (pernet_ops_rwsem){++++}-{3:3}, at: cleanup_net+0x9b/0xb10 net/core/net_namespace.c:565
+>
+> [...]
+>   Possible unsafe locking scenario:
+>
+>         CPU0                    CPU1
+>         ----                    ----
+>    lock(pernet_ops_rwsem);
+>                                 lock(&sb->s_type->i_mutex_key#13);
+>                                 lock(pernet_ops_rwsem);
+>    lock((wq_completion)events);
+>
+>   *** DEADLOCK ***
+> [...]
+>
+> To fix the original issue, we replace above calling by introducing
+> a bit flag. When a namespace cleaned-up, bit flag is set to zero:
+> - tipc_net_finalize functionial just does return immediately.
+> - tipc_net_finalize_work does not enqueue into the scheduled work queue.
+>
+> Reported-by: syzbot+d5aa7e0385f6a5d0f4fd@syzkaller.appspotmail.com
+> Fixes: fdeba99b1e58 ("tipc: fix use-after-free in tipc_bcast_get_mode")
+> Signed-off-by: Hoang Huu Le <hoang.h.le@dektech.com.au>
+> ---
+>   net/tipc/core.c |  8 ++++----
+>   net/tipc/core.h |  1 +
+>   net/tipc/net.c  | 10 +++++++++-
+>   3 files changed, 14 insertions(+), 5 deletions(-)
+>
+> diff --git a/net/tipc/core.c b/net/tipc/core.c
+> index 37d8695548cf..5e7bb768f45c 100644
+> --- a/net/tipc/core.c
+> +++ b/net/tipc/core.c
+> @@ -60,6 +60,7 @@ static int __net_init tipc_init_net(struct net *net)
+>   	tn->trial_addr = 0;
+>   	tn->addr_trial_end = 0;
+>   	tn->capabilities = TIPC_NODE_CAPABILITIES;
+> +	test_and_set_bit_lock(0, &tn->net_exit_flag);
+>   	memset(tn->node_id, 0, sizeof(tn->node_id));
+>   	memset(tn->node_id_string, 0, sizeof(tn->node_id_string));
+>   	tn->mon_threshold = TIPC_DEF_MON_THRESHOLD;
+> @@ -110,10 +111,6 @@ static void __net_exit tipc_exit_net(struct net *net)
+>   	tipc_detach_loopback(net);
+>   	tipc_net_stop(net);
+>   
+> -	/* Make sure the tipc_net_finalize_work stopped
+> -	 * before releasing the resources.
+> -	 */
+> -	flush_scheduled_work();
+>   	tipc_bcast_stop(net);
+>   	tipc_nametbl_stop(net);
+>   	tipc_sk_rht_destroy(net);
+> @@ -124,6 +121,9 @@ static void __net_exit tipc_exit_net(struct net *net)
+>   
+>   static void __net_exit tipc_pernet_pre_exit(struct net *net)
+>   {
+> +	struct tipc_net *tn = tipc_net(net);
+> +
+> +	clear_bit_unlock(0, &tn->net_exit_flag);
+>   	tipc_node_pre_cleanup_net(net);
+>   }
+>   
+> diff --git a/net/tipc/core.h b/net/tipc/core.h
+> index 631d83c9705f..aa75882dd932 100644
+> --- a/net/tipc/core.h
+> +++ b/net/tipc/core.h
+> @@ -143,6 +143,7 @@ struct tipc_net {
+>   	/* TX crypto handler */
+>   	struct tipc_crypto *crypto_tx;
+>   #endif
+> +	unsigned long net_exit_flag;
+>   };
+>   
+>   static inline struct tipc_net *tipc_net(struct net *net)
+> diff --git a/net/tipc/net.c b/net/tipc/net.c
+> index 85400e4242de..8ad5b9ad89c0 100644
+> --- a/net/tipc/net.c
+> +++ b/net/tipc/net.c
+> @@ -132,6 +132,9 @@ static void tipc_net_finalize(struct net *net, u32 addr)
+>   {
+>   	struct tipc_net *tn = tipc_net(net);
+>   
+> +	if (unlikely(!test_bit(0, &tn->net_exit_flag)))
+> +		return;
+> +
+>   	if (cmpxchg(&tn->node_addr, 0, addr))
+>   		return;
+>   	tipc_set_node_addr(net, addr);
+> @@ -153,8 +156,13 @@ static void tipc_net_finalize_work(struct work_struct *work)
+>   
+>   void tipc_sched_net_finalize(struct net *net, u32 addr)
+>   {
+> -	struct tipc_net_work *fwork = kzalloc(sizeof(*fwork), GFP_ATOMIC);
+> +	struct tipc_net *tn = tipc_net(net);
+> +	struct tipc_net_work *fwork;
+> +
+> +	if (unlikely(!test_bit(0, &tn->net_exit_flag)))
+> +		return;
+>   
+> +	fwork = kzalloc(sizeof(*fwork), GFP_ATOMIC);
+>   	if (!fwork)
+>   		return;
+>   	INIT_WORK(&fwork->work, tipc_net_finalize_work);
+Acked-by: Jon Maloy <jmaloy@redhat.com>
+
+
+
+_______________________________________________
+tipc-discussion mailing list
+tipc-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tipc-discussion
