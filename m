@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D9C6281EBE
-	for <lists+tipc-discussion@lfdr.de>; Sat,  3 Oct 2020 00:58:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F00EB281EC5
+	for <lists+tipc-discussion@lfdr.de>; Sat,  3 Oct 2020 00:59:53 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kOU08-0002Iv-OQ; Fri, 02 Oct 2020 22:58:08 +0000
+	id 1kOU1j-0002Uk-U2; Fri, 02 Oct 2020 22:59:47 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1kOU05-0002IF-On
- for tipc-discussion@lists.sourceforge.net; Fri, 02 Oct 2020 22:58:05 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1kOU1j-0002UZ-A3
+ for tipc-discussion@lists.sourceforge.net; Fri, 02 Oct 2020 22:59:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
  MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=C9o2X/O/VlalwVq5KUE+CkdNuA0jwDYfmZpEuUc1tk8=; b=kFKhaDlsaTSSGMVzRYDfT56pBi
- q2ma26hJIOs1o+E15ehjZ5+Y5gjRdx2c7fWvwarL7dTKGQ91n27V/jTzNougnIDF3bn0b//nWySD1
- r7E8GX5o/vcSfHlLT0xN1oqOOwAko65liPz8MNZ3IXWirnf6oAYf5LJEHjBWkwEjvr/c=;
+ bh=MmerLIiQoRKV1wDttrfV1u2L2Lltjs66j/yESHIWdIY=; b=RufaHQmMD6qwW6wylAztItG4Qw
+ 5TycfhWXm/gYWauT634S61rtpYPpTMSthLjhTKnkMGb1uKS8jLHV6A8SZ4osxnXDTDdEusAkUyqFi
+ Unz2cwCeBwRFxzkVyyzUg8lmko8DPClzJ8pprzstmJNG2VNRnFh4C5NlBgYtBIuBKzxE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
@@ -29,37 +29,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=C9o2X/O/VlalwVq5KUE+CkdNuA0jwDYfmZpEuUc1tk8=; b=REgJC0RXQJxZANcyoegTVCe5r4
- BZRTbERbDy6pqqQ/1TZ8zwfRd+2Qn9OteQtvpzDqCe7LilEhIws2zYPQkfPfD1+/zen/U3oPqshak
- Y+DQzMHWGi3ETIMuJFj7ppo9vqjWHTvLKzymx5UsaR8uOK7MffuDGCtNwAC5KXlOp674=;
+ bh=MmerLIiQoRKV1wDttrfV1u2L2Lltjs66j/yESHIWdIY=; b=kFYf/mxw2+iWBKecy3fw2bWksV
+ KzrnT9M0c7OPi3Uosejw8KdNS2Gxa/PS7SMM6BqIN0NgFIf99hbJT7DPIBNINzd7YMCqP1st/UOPx
+ RNi35Qws/XgBQdk4bUKl+xVmykHCLzb2FtjDCQl7oj/+TVvK2OEsSZ5zqOXbYkVpf8zY=;
 Received: from us-smtp-delivery-124.mimecast.com ([63.128.21.124])
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1kOU00-00Eg9C-4l
- for tipc-discussion@lists.sourceforge.net; Fri, 02 Oct 2020 22:58:05 +0000
+ id 1kOU1Y-000P3Z-Jx
+ for tipc-discussion@lists.sourceforge.net; Fri, 02 Oct 2020 22:59:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1601679467;
+ s=mimecast20190719; t=1601679570;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=C9o2X/O/VlalwVq5KUE+CkdNuA0jwDYfmZpEuUc1tk8=;
- b=EP6ANmbvLP/GgIj1NGRPOauVcx0R1c5g8PigxjEzY17IN36qppEpH9eZG040JVSLzcFnBb
- C1dcr1ra1ZeMMWl09fnf1HQ/DZeyj2SAE1YCUWudtP4+aZwVW8E2tskiXegk82c7WZu9dv
- hxnSv6O3GVunS3T3KRaFKGtn3dJxerY=
+ bh=MmerLIiQoRKV1wDttrfV1u2L2Lltjs66j/yESHIWdIY=;
+ b=XRRVnV1v+hPJsuDSIyGqRi0raFfPA7+DP3paxnOJ3qBl6r1LfZcTUs8wmy8DkrOv9OwqGN
+ B+c270kETc4VimpCu9xf2XMVcrhXAa6n/GZ7swxpWTFG9pX0u9sjyE5D10Nn6yx6UQQQGi
+ iIELniIzie4fD0VHGUkBK3UKbJIKTrE=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-456-tGuEtgcQNwaOlnc7iSIYxQ-1; Fri, 02 Oct 2020 18:57:41 -0400
-X-MC-Unique: tGuEtgcQNwaOlnc7iSIYxQ-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
+ us-mta-366-4m7hVRC5MR27TRDqo4durg-1; Fri, 02 Oct 2020 18:59:26 -0400
+X-MC-Unique: 4m7hVRC5MR27TRDqo4durg-1
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 7B4F6805EE4;
- Fri,  2 Oct 2020 22:57:40 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 7B3208015B1;
+ Fri,  2 Oct 2020 22:59:25 +0000 (UTC)
 Received: from [10.10.116.249] (ovpn-116-249.rdu2.redhat.com [10.10.116.249])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 57859702E7;
- Fri,  2 Oct 2020 22:57:39 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id D976E75120;
+ Fri,  2 Oct 2020 22:59:24 +0000 (UTC)
 To: Hoang Huu Le <hoang.h.le@dektech.com.au>,
  "tipc-discussion@lists.sourceforge.net"
  <tipc-discussion@lists.sourceforge.net>, tipc-dek <tipc-dek@dektech.com.au>,
@@ -67,13 +67,13 @@ To: Hoang Huu Le <hoang.h.le@dektech.com.au>,
 References: <245485cd-b543-f6b2-392b-eb76da7999d3@redhat.com>
  <VI1PR05MB4605432541CA65D6F0BE7741F1310@VI1PR05MB4605.eurprd05.prod.outlook.com>
 From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <1033b2cd-488e-dff3-e2a1-156b4cace1ce@redhat.com>
-Date: Fri, 2 Oct 2020 18:57:38 -0400
+Message-ID: <eb659d57-3aa4-226e-0e06-0a52db96df36@redhat.com>
+Date: Fri, 2 Oct 2020 18:59:24 -0400
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.11.0
 MIME-Version: 1.0
 In-Reply-To: <VI1PR05MB4605432541CA65D6F0BE7741F1310@VI1PR05MB4605.eurprd05.prod.outlook.com>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
 Authentication-Results: relay.mimecast.com;
  auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
 X-Mimecast-Spam-Score: 0
@@ -100,7 +100,7 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.3 NICE_REPLY_A           Looks like a legit reply (A)
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1kOU00-00Eg9C-4l
+X-Headers-End: 1kOU1Y-000P3Z-Jx
 Subject: Re: [tipc-discussion] tipc.py
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -120,37 +120,37 @@ Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 CgpPbiAxMC8xLzIwIDExOjA0IFBNLCBIb2FuZyBIdXUgTGUgd3JvdGU6Cj4gSGkgSm9uLAo+Cj4g
 SSd2ZSBkb25lIHRoaXMgYSBsb25nIHRpbWUgYWdvOgo+IDUwNTdmOGJiNGRlMCB0aXBjdXRpbHM6
 IGludHJvZHVjZSBweXRob24gYXBpCj4KPiBCYXNpY2FsbHksIGl0IHdvcmtzIHdpdGggUHl0aG9u
-IDIuCj4KPiBSZWdhcmRzLAo+IEhvYW5nClNvcnJ5LCBJIG1peGVkIGl0IHVwIGFuZCB0aG91Z2h0
-IGl0IHdhcyBUdW9uZy4gVGhlIHJlYXNvbiBJIHNhaWQgaXQgCmxvb2tlZCAidW5maW5pc2hlZCIg
-d2FzIGFsbCB0aGUgIlRPRE86IiBsaW5lcyBJIHNlZSBpbiB0aXBjLnB5LgpXaGF0IGFyZSB0aG9z
-ZT8KCi8vL2pvbgoKPj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPj4gRnJvbTogSm9uIE1h
-bG95IDxqbWFsb3lAcmVkaGF0LmNvbT4KPj4gU2VudDogRnJpZGF5LCBPY3RvYmVyIDIsIDIwMjAg
-NDo1NiBBTQo+PiBUbzogdGlwYy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldDsgdGlw
-Yy1kZWsgPHRpcGMtZGVrQGRla3RlY2guY29tLmF1PjsgWGluIExvbmcgPGx1Y2llbi54aW5AZ21h
-aWwuY29tPjsgWWluZyBYdWUKPj4gPHlpbmcueHVlQHdpbmRyaXZlci5jb20+Cj4+IFN1YmplY3Q6
-IHRpcGMucHkKPj4KPj4gSSBhbSB1cGRhdGluZyB0aGUgcHJvZ3JhbW1lcidzIG1hbnVhbCwgYW5k
-IHJlYWxpemVkIHRoYXQgdGhlIFB5dGhvbiBBUEkKPj4gaXMgbWlzc2luZy4KPj4gU2luY2UgdGhl
-cmUgYXJlIHNvIG1hbnkgcHJvZ3JhbW1lcnMga25vd2luZyBQeXRob24gbm93YWRheXMsIGJ1dCBu
-b3QgQywKPj4gSSB0aGluayBpdCB3b3VsZAo+PiBiZSB2ZXJ5IHVzZWZ1bCB0byBoYXZlIHRoaXMg
-QVBJIGluIHRoZSBtYW51YWwsIHNvIHRob3NlIHByb2dyYW1tZXJzIGNhbgo+PiBnZXQgYSBmZWVs
-aW5nCj4+IGZvciBob3cgc2ltcGxlIGl0IHRvIHVzZSBUSVBDLgo+Pgo+PiBUdW9uZyBzdGFydGVk
-IGRldmVsb3BtZW50IG9mIGFuIEFQSSBiYXNlZCBvbiB0aGUgbGlidGlwYyBDLUFQSSwgYnV0IGl0
-Cj4+IHNlZW1zIHRvIG1lIGl0IHdhcyBuZXZlciBmaW5pc2hlZC4KPj4gSG93ZXZlciwgUHl0aG9u
-IGRvZXMgc2luY2UgYSBsb25nIHRpbWUgaGF2ZSBuYXRpdmUgVElQQyBzdXBwb3J0LAo+PiBhbGxl
-Z2VkbHkgYm90aCBpbiBQeXRob24gMiBhbmQgUHl0b24gMy4KPj4gSSBoYWQgbmV2ZXIgc2VlbiB0
-aGF0IEFQSSB1bnRpbCBub3csIGJ1dCBhZnRlciBzb21lIGdvb2dsaW5nIEkgY2FtZSBvdmVyCj4+
-IHRoZSBmb2xsb3dpbmcgbGluaywgdGhhdCBzZWVtcyB0byBjb250YWluCj4+IHRoYXQgbmF0aXZl
-IGltcGxlbWVuYXRpb246Cj4+Cj4+IGh0dHBzOi8vYmxpdGlyaS5jb20uYXIvcC9weXRpcGMvCj4+
-Cj4+IEkgd29uZGVyIGlmIGFueWJvZHkgaGFzIHRoZSB0aW1lIHRvIHRyeSB0aGlzIG9uZSwgYW5k
-IHZlcmlmeSwgdXNpbmcgdGhlCj4+IGV4YW1wbGVzLCB0aGF0IGl0IHJlYWxseSB3b3Jrcy4KPj4g
-SXQgd291bGQgYmUgZW1iYXJyYXNzaW5nIHRvIGFkZCB0aGlzIHRvIHRoZSBtYW51YWwgaWYgaXQg
-dHVybnMgb3V0IGl0Cj4+IGRvZXNuJ3Qgd29yay4KPj4KPj4gUmVnYXJkcwo+PiAvLy9qb24KPj4K
-Pj4gUFMuIERvZXMgYW55Ym9keSB2b2x1bnRlZXIgdG8gYmUgYmVjb21lIGNvLW1haW50YWluZXIg
-b2YgdGhlIGhvbWUgcGFnZQo+PiBhbmQgcHJvamVjdCBwYWdlCj4+ICAgwqDCoMKgwqDCoCBhdCBT
-b3VyY2VGb3JnZT8gSSB0aGluayB3ZSBzaG91bGQgZXZlbiBjb25zaWRlciBtb3ZpbmcgaXQgdG8K
-Pj4gR2l0TGFiIG9yIEdpdEh1Yi4KPj4gICDCoMKgwqDCoMKgIFNpbmNlIHdlIGhhdmUgb3VyIG93
-biBkb21haW4gKHRpcGMuaW8pIHRoYXQgY291bGQgZWFzaWx5IGJlCj4+IHJlLXN0ZWVyZWQgdG8g
-YSBkaWZmZXJlbnQKPj4gICDCoMKgwqDCoMKgIGhvc3Qgc3lzdGVtLgoKCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwp0aXBjLWRpc2N1c3Npb24gbWFpbGlu
-ZyBsaXN0CnRpcGMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0
-cy5zb3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vdGlwYy1kaXNjdXNzaW9uCg==
+IDIuCkRvIHlvdSB0aGluayBpdCB5b3Ugd291bGQgaGF2ZSB0aW1lIHRvIGRvIHRoaXMgZm9yIFB5
+dGhvbiAzPwpQeXRob24gMiBpcyBwcmFjdGljYWxseSBkZWFkIG5vdywgYXMgd2UgYWxsIGtub3cu
+CgpSZWdhcmRzCi8vL2pvbgo+Cj4gUmVnYXJkcywKPiBIb2FuZwo+PiAtLS0tLU9yaWdpbmFsIE1l
+c3NhZ2UtLS0tLQo+PiBGcm9tOiBKb24gTWFsb3kgPGptYWxveUByZWRoYXQuY29tPgo+PiBTZW50
+OiBGcmlkYXksIE9jdG9iZXIgMiwgMjAyMCA0OjU2IEFNCj4+IFRvOiB0aXBjLWRpc2N1c3Npb25A
+bGlzdHMuc291cmNlZm9yZ2UubmV0OyB0aXBjLWRlayA8dGlwYy1kZWtAZGVrdGVjaC5jb20uYXU+
+OyBYaW4gTG9uZyA8bHVjaWVuLnhpbkBnbWFpbC5jb20+OyBZaW5nIFh1ZQo+PiA8eWluZy54dWVA
+d2luZHJpdmVyLmNvbT4KPj4gU3ViamVjdDogdGlwYy5weQo+Pgo+PiBJIGFtIHVwZGF0aW5nIHRo
+ZSBwcm9ncmFtbWVyJ3MgbWFudWFsLCBhbmQgcmVhbGl6ZWQgdGhhdCB0aGUgUHl0aG9uIEFQSQo+
+PiBpcyBtaXNzaW5nLgo+PiBTaW5jZSB0aGVyZSBhcmUgc28gbWFueSBwcm9ncmFtbWVycyBrbm93
+aW5nIFB5dGhvbiBub3dhZGF5cywgYnV0IG5vdCBDLAo+PiBJIHRoaW5rIGl0IHdvdWxkCj4+IGJl
+IHZlcnkgdXNlZnVsIHRvIGhhdmUgdGhpcyBBUEkgaW4gdGhlIG1hbnVhbCwgc28gdGhvc2UgcHJv
+Z3JhbW1lcnMgY2FuCj4+IGdldCBhIGZlZWxpbmcKPj4gZm9yIGhvdyBzaW1wbGUgaXQgdG8gdXNl
+IFRJUEMuCj4+Cj4+IFR1b25nIHN0YXJ0ZWQgZGV2ZWxvcG1lbnQgb2YgYW4gQVBJIGJhc2VkIG9u
+IHRoZSBsaWJ0aXBjIEMtQVBJLCBidXQgaXQKPj4gc2VlbXMgdG8gbWUgaXQgd2FzIG5ldmVyIGZp
+bmlzaGVkLgo+PiBIb3dldmVyLCBQeXRob24gZG9lcyBzaW5jZSBhIGxvbmcgdGltZSBoYXZlIG5h
+dGl2ZSBUSVBDIHN1cHBvcnQsCj4+IGFsbGVnZWRseSBib3RoIGluIFB5dGhvbiAyIGFuZCBQeXRv
+biAzLgo+PiBJIGhhZCBuZXZlciBzZWVuIHRoYXQgQVBJIHVudGlsIG5vdywgYnV0IGFmdGVyIHNv
+bWUgZ29vZ2xpbmcgSSBjYW1lIG92ZXIKPj4gdGhlIGZvbGxvd2luZyBsaW5rLCB0aGF0IHNlZW1z
+IHRvIGNvbnRhaW4KPj4gdGhhdCBuYXRpdmUgaW1wbGVtZW5hdGlvbjoKPj4KPj4gaHR0cHM6Ly9i
+bGl0aXJpLmNvbS5hci9wL3B5dGlwYy8KPj4KPj4gSSB3b25kZXIgaWYgYW55Ym9keSBoYXMgdGhl
+IHRpbWUgdG8gdHJ5IHRoaXMgb25lLCBhbmQgdmVyaWZ5LCB1c2luZyB0aGUKPj4gZXhhbXBsZXMs
+IHRoYXQgaXQgcmVhbGx5IHdvcmtzLgo+PiBJdCB3b3VsZCBiZSBlbWJhcnJhc3NpbmcgdG8gYWRk
+IHRoaXMgdG8gdGhlIG1hbnVhbCBpZiBpdCB0dXJucyBvdXQgaXQKPj4gZG9lc24ndCB3b3JrLgo+
+Pgo+PiBSZWdhcmRzCj4+IC8vL2pvbgo+Pgo+PiBQUy4gRG9lcyBhbnlib2R5IHZvbHVudGVlciB0
+byBiZSBiZWNvbWUgY28tbWFpbnRhaW5lciBvZiB0aGUgaG9tZSBwYWdlCj4+IGFuZCBwcm9qZWN0
+IHBhZ2UKPj4gICDCoMKgwqDCoMKgIGF0IFNvdXJjZUZvcmdlPyBJIHRoaW5rIHdlIHNob3VsZCBl
+dmVuIGNvbnNpZGVyIG1vdmluZyBpdCB0bwo+PiBHaXRMYWIgb3IgR2l0SHViLgo+PiAgIMKgwqDC
+oMKgwqAgU2luY2Ugd2UgaGF2ZSBvdXIgb3duIGRvbWFpbiAodGlwYy5pbykgdGhhdCBjb3VsZCBl
+YXNpbHkgYmUKPj4gcmUtc3RlZXJlZCB0byBhIGRpZmZlcmVudAo+PiAgIMKgwqDCoMKgwqAgaG9z
+dCBzeXN0ZW0uCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCnRpcGMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKdGlwYy1kaXNjdXNzaW9uQGxpc3RzLnNv
+dXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9saXN0cy9saXN0aW5m
+by90aXBjLWRpc2N1c3Npb24K
