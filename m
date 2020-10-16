@@ -2,103 +2,124 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1891328F959
-	for <lists+tipc-discussion@lfdr.de>; Thu, 15 Oct 2020 21:21:59 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03F7E291632
+	for <lists+tipc-discussion@lfdr.de>; Sun, 18 Oct 2020 07:54:29 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kT8ou-0004dp-21; Thu, 15 Oct 2020 19:21:48 +0000
+	id 1kU1e6-0005cJ-V7; Sun, 18 Oct 2020 05:54:18 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1kT8ot-0004df-Gi
- for tipc-discussion@lists.sourceforge.net; Thu, 15 Oct 2020 19:21:47 +0000
+ (envelope-from <tuong.t.lien@dektech.com.au>) id 1kU1e3-0005c8-Vl
+ for tipc-discussion@lists.sourceforge.net; Sun, 18 Oct 2020 05:54:16 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
+ :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ffkg0mUhvfm7M/5wyU3MoiaSGmEVA9mGZ2ekRFlYlDA=; b=hosyyve+R9/1Ll42AK1HKkcTYD
- SJz3jmJfrgxKOCPT7AQxJtgc193fjRDA+6TnTgbPwdgkhTntkH3KkupO2pofs5mRetIbRdh6KfdD1
- aUSW/rS5kx+jt+2UKT49wHFo7JNnY5hIv3hGwZKZ8DqtEAEP0br3e4Z4kIwt1zm0jWkY=;
+ bh=5gNeWsJFqE8GJJcyrkRB4g0irHbOjJjxqeSO99qphLw=; b=jURAcCz5nKKP4iWs/t8t7P8eA0
+ /fauk2AayrAlr3Rq6Il20pz9LSFqh61dlpc+pge69VJuhAawVW7tGefLMJLoZhL/Ie3pfkyOVS8Ny
+ 4e5kWreLDPzAK2LDRnIYasuc6+nlrQfl3uqrILDJFpKa26ss6ReI8cWfnd5tmXYlkfEw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=ffkg0mUhvfm7M/5wyU3MoiaSGmEVA9mGZ2ekRFlYlDA=; b=VScNlJTCL8KUB0BkpZyX7W3d2a
- 8lSIqgPX5dkBJUBRTj2Vt08zbtbj4oRmbaAIivR5mcT5zV/wn/z62SORC6al6jaekq2F6woeItL16
- 0yVO45RlAoPxSk4QPqxxanFa0+L7US916DW7eEM8jMtj5Fm9+Gb2BR7AZCxw/LywBp7k=;
-Received: from us-smtp-delivery-124.mimecast.com ([63.128.21.124])
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1kT8oc-00Bo2z-Pn
- for tipc-discussion@lists.sourceforge.net; Thu, 15 Oct 2020 19:21:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1602789684;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=ffkg0mUhvfm7M/5wyU3MoiaSGmEVA9mGZ2ekRFlYlDA=;
- b=bs1KTzUXYwDFZkUvdV+0adPptRnBZzJ1UCUUuzLSM2Ja8zez1ZtJp6K9hRZyD2gpmMv6h7
- 8lek7MqH4XyjpG8hs8e0Z91YPq1PEx+wzkvqOuG9sVGlN4nRW9tfIwTAThiiAd5eimS2Hw
- LWrCasVXapU4Bm+7E44VXz6zrJjyyCE=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-506-gnEZ5dKCOnS8na-ALhkilA-1; Thu, 15 Oct 2020 15:21:21 -0400
-X-MC-Unique: gnEZ5dKCOnS8na-ALhkilA-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id F38508030DD;
- Thu, 15 Oct 2020 19:21:19 +0000 (UTC)
-Received: from [10.10.116.249] (ovpn-116-249.rdu2.redhat.com [10.10.116.249])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 56B6110013DB;
- Thu, 15 Oct 2020 19:21:18 +0000 (UTC)
-To: Hoang Huu Le <hoang.h.le@dektech.com.au>, maloy@donjonn.com,
- ying.xue@windriver.com, tipc-discussion@lists.sourceforge.net
-References: <20201014070739.6550-1-hoang.h.le@dektech.com.au>
-From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <ff018270-a114-ead5-10b8-2a81eb77f87d@redhat.com>
-Date: Thu, 15 Oct 2020 15:21:17 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.11.0
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Date:
+ Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=5gNeWsJFqE8GJJcyrkRB4g0irHbOjJjxqeSO99qphLw=; b=Q
+ Fta5+Kc/Ce3SuBJij3N3Tygw7P3hlVTbWR3PcCXAO2yS4/3wHnMB1JFE+cS4yXVqf+Jzkf99H19Qw
+ bPDa8A2uX4PhzoqSXeiM0xmoVZ6lGLjLS+dKOLzLECITsJvZHbKvEAI5p0CJbt4ovGIexZuq7jM+l
+ h5+Ot4EjGyeuCZfY=;
+Received: from mail-db8eur05on2114.outbound.protection.outlook.com
+ ([40.107.20.114] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1kU1dr-0029dU-N9
+ for tipc-discussion@lists.sourceforge.net; Sun, 18 Oct 2020 05:54:15 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Afz5+eC29T8p90G9ihciIdqpQUMnp4YDAlSGWrWCg3hDwL+A7n5tbGCTKEz0vJGAijRATpwWEH4yo27OL3DoYOOyH4rxMkuUlLPx37be76j3k6XG35ucrOlXpFncpB7KXQGPzKDbvc8nxqInWWcMaZFfz3S58a7jU1Yx94MN254Wuk5MvBBg2ed49rffxsMU8iGroIq9tcshWZg+4QcSXOxvgxBB9G8nX4aoyvd9GTj8bdsh71xOd+6ny2Nz7Kz3h63TP6cu1nhUIzl+/xrEEsQS+/QyvnC94L27Bl1Bp6xSd2dc/YLb4mAsv7jqkZ4/s2yWHeOjl4/pmB3/jAyKMg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5gNeWsJFqE8GJJcyrkRB4g0irHbOjJjxqeSO99qphLw=;
+ b=cei07zdWU+jEq3GWmfFv+C0veifjYCqGCxrY9iTm6h9xduZMnVurveuaOw+ZEeYAE5Mnmjr4wlJVB/RCIccSsSF1rO25SZG231zn9vaSrWiQwF8yhHneTNOErO1brji86bH4u1nEBnAPnz8F/Gzk4dfL7iVVB2cKBEdJcL9WmQqbRvTcWwn84mdtXlXNbCClkW4j3m8U1Hr04GJW9aJhHElKvN78vTq23+m+WnQf1k3zKhIY00J7gPXEHZMPn27bSYifoDAuPpKUY3Ltsep1BU82E/X9cb0MTNaxXFKvBbUyMrjH6jh9tK2tX2tMBrKEL4AzYifEDPIejZpMuQe8ow==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=dektech.com.au; dmarc=pass action=none
+ header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5gNeWsJFqE8GJJcyrkRB4g0irHbOjJjxqeSO99qphLw=;
+ b=a/d1eowC4g7JyS5NTzOpyCFoxWq8ehHCsSB/VbmD4NDb/slNEbMHO6WF8WjBarCYlxgO+7UjL1QVmwHVZ29BpnqUQvAjGJ6eg5ZJRi9Jf4Symb92hMcZbunXF1vvca8DDgRJLrt2iXmlAZO088B/JmPqKreHF831myPgL+SxzYY=
+Authentication-Results: gmail.com; dkim=none (message not signed)
+ header.d=none;gmail.com; dmarc=none action=none header.from=dektech.com.au;
+Received: from AM8PR05MB7332.eurprd05.prod.outlook.com (2603:10a6:20b:1db::9)
+ by AM0PR05MB4131.eurprd05.prod.outlook.com (2603:10a6:208:5c::26)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3455.22; Sun, 18 Oct
+ 2020 05:21:13 +0000
+Received: from AM8PR05MB7332.eurprd05.prod.outlook.com
+ ([fe80::e846:1ad7:c6f1:ab9f]) by AM8PR05MB7332.eurprd05.prod.outlook.com
+ ([fe80::e846:1ad7:c6f1:ab9f%3]) with mapi id 15.20.3477.027; Sun, 18 Oct 2020
+ 05:21:12 +0000
+From: Tuong Lien <tuong.t.lien@dektech.com.au>
+To: dsahern@gmail.com, jmaloy@redhat.com, maloy@donjonn.com,
+ ying.xue@windriver.com, netdev@vger.kernel.org
+Date: Fri, 16 Oct 2020 23:01:59 +0700
+Message-Id: <20201016160201.7290-1-tuong.t.lien@dektech.com.au>
+X-Mailer: git-send-email 2.26.2
+X-Originating-IP: [113.20.114.51]
+X-ClientProxiedBy: AM4PR07CA0009.eurprd07.prod.outlook.com
+ (2603:10a6:205:1::22) To AM8PR05MB7332.eurprd05.prod.outlook.com
+ (2603:10a6:20b:1db::9)
 MIME-Version: 1.0
-In-Reply-To: <20201014070739.6550-1-hoang.h.le@dektech.com.au>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-Authentication-Results: relay.mimecast.com;
- auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Language: en-US
-X-Spam-Score: -1.1 (-)
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from dektech.com.au (113.20.114.51) by
+ AM4PR07CA0009.eurprd07.prod.outlook.com (2603:10a6:205:1::22) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3499.11 via Frontend Transport; Sun, 18 Oct 2020 05:21:11 +0000
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: eb82651f-af70-4a99-a2a4-08d87325a105
+X-MS-TrafficTypeDiagnostic: AM0PR05MB4131:
+X-Microsoft-Antispam-PRVS: <AM0PR05MB41316666584A6C2129FDF639E2010@AM0PR05MB4131.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:8273;
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: O/cArDjPYwRs1A1op8SO6F1GjTH324h8q8xeyqzf5pnemSoP3HOtCdSq+9kYiPXKlNMOBKQAhsGAGEE3iGCb3uyQ+Fi5u/5+9CgkIR4BWOpiqMVPIAY34DcTayRlcdTQEcwK/gFirmvuOG2goUgFPHeF+Qq+JTwI8rdNLeIjqTA/o9tk41WeSm5w8+dV+GBKwhjXAj/yDxiwXAJpD6Kg0S+sJgvfZeIgJRzb82xJI7Jpl3DKpmcTF0UDhB9FvAqEZf2Xfoah0GscBbrHnkenGcvjikMlRAfETfBBxxiw1JI/m7HcykC3d5kxPOWBd7o9ZnhksfZeonWXY1Ru/AuhbQ==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM8PR05MB7332.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(366004)(346002)(396003)(136003)(39830400003)(376002)(26005)(5660300002)(8676002)(16526019)(8936002)(66946007)(1076003)(6666004)(52116002)(66476007)(7696005)(66556008)(83380400001)(86362001)(36756003)(478600001)(4326008)(186003)(55016002)(2616005)(2906002)(956004)(316002)(103116003);
+ DIR:OUT; SFP:1102; 
+X-MS-Exchange-AntiSpam-MessageData: +lbx0Fz78w5rvoXNAL3D5piRVd1JmVfYhqNyfyYC10JS1dSwSI/YwbeTXDPfP+oWUcQkHMW+kp/xNLhzMcce5hEdA8IJAsDuuMwnIa406tKTrOFSkXA4BjNCvxmL7l7tvyDq08FflmgQ2f92nx7pcCE4s/cn51sA6SULZmYQp31AByvnxycz7dga+1PogqHK/Onq2zqOLU71f4BHKr2wq124xwOlpW2f+3dFMdljKRApLO2Cm4NEDetSMjsf/70nsL3HLT4NPh1WKG/mRj2F998xtQ7T/eitcJFMKe2JdvWqMyr1b3eyHDNU+s0ieLE7OnW22GqwWru0CMzMS5BddtUpVIHITpg3untH4RkgBv7Z3FA+WlhujmbjXmx3DuGcqDd8h4dKWzuZkgN0tFwYWGblegaXRksFlytDcGhRYcmT/9MvsAiEEjdmsWHTd6L7ytqy4SCYWvl7YE+aRdb/l6hue8Txdy5EyUmzG1zysPKWa/+y3qUbshwnYVcEDRsgCJBgLFrIpWdyXtvN7xAUrKlENkRBK/0l0DzXyqjsn9lugBPN7PP38rFHRbcm5Zir27YLYlZQKw+lfPCwSS4R8pV8a4ikJU3PdAds56gfZ4M/1nHkFwLagelxlkK7IdFZrizaDgoLdy62hF9HXt6e3A==
+X-OriginatorOrg: dektech.com.au
+X-MS-Exchange-CrossTenant-Network-Message-Id: eb82651f-af70-4a99-a2a4-08d87325a105
+X-MS-Exchange-CrossTenant-AuthSource: AM8PR05MB7332.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Oct 2020 05:21:12.8506 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: exYy3uNIqUgEDb4rTPmt+vpPAWJYO+KT8a61stGcQC/9jf4Hm/I3BT78Wu1tOOVbGu2PPzFCI+8XrVnxvcCPNMIK02GztMzS3iWHMymLBxU=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR05MB4131
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: dektech.com.au]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [63.128.21.124 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
- [63.128.21.124 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.20.114 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.5 DATE_IN_PAST_24_48     Date: is 24 to 48 hours before Received: date
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -1.0 NICE_REPLY_A           Looks like a legit reply (A)
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1kT8oc-00Bo2z-Pn
-Subject: Re: [tipc-discussion] [next v2] tipc: fix incorrect setting window
- for bcast link
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+X-Headers-End: 1kU1dr-0029dU-N9
+Subject: [tipc-discussion] [iproute2-next 0/2] tipc: add new options for
+ TIPC encryption
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,45 +131,54 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: tipc-discussion@lists.sourceforge.net
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
+This series adds two new options in the 'iproute2/tipc' command, enabling users
+to use the new TIPC encryption features, i.e. the master key and rekeying which
+have been recently merged in kernel.
 
+The help menu of the "tipc node set key" command is also updated accordingly:
 
-On 10/14/20 3:07 AM, Hoang Huu Le wrote:
-> In commit 16ad3f4022bb
-> ("tipc: introduce variable window congestion control"), we applied
-> the algorithm to select window size from minimum window to the
-> configured maximum window for unicast link, and, besides we chose
-> to keep the window size for broadcast link unchanged and equal (i.e
-> fix window 50)
->
-> However, when setting maximum window variable via command, the window
-> variable was re-initialized to unexpect value (i.e 32).
->
-> We fix this by updating the fix window for broadcast as we stated.
->
-> Fixes: 16ad3f4022bb ("tipc: introduce variable window congestion control")
-> Signed-off-by: Hoang Huu Le <hoang.h.le@dektech.com.au>
-> ---
->   net/tipc/bcast.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/net/tipc/bcast.c b/net/tipc/bcast.c
-> index c77fd13e2777..bc88f21ec0b2 100644
-> --- a/net/tipc/bcast.c
-> +++ b/net/tipc/bcast.c
-> @@ -589,7 +589,7 @@ static int tipc_bc_link_set_queue_limits(struct net *net, u32 max_win)
->   	if (max_win > TIPC_MAX_LINK_WIN)
->   		return -EINVAL;
->   	tipc_bcast_lock(net);
-> -	tipc_link_set_queue_limits(l, BCLINK_WIN_MIN, max_win);
-> +	tipc_link_set_queue_limits(l, tipc_link_min_win(l), max_win);
->   	tipc_bcast_unlock(net);
->   	return 0;
->   }
-Acked-by: Jon Maloy <jmaloy@redhat.com>
+# tipc node set key --help
+Usage: tipc node set key KEY [algname ALGNAME] [PROPERTIES]
+       tipc node set key rekeying REKEYING
+
+KEY
+  Symmetric KEY & SALT as a composite ASCII or hex string (0x...) in form:
+  [KEY: 16, 24 or 32 octets][SALT: 4 octets]
+
+ALGNAME
+  Cipher algorithm [default: "gcm(aes)"]
+
+PROPERTIES
+  master                - Set KEY as a cluster master key
+  <empty>               - Set KEY as a cluster key
+  nodeid NODEID         - Set KEY as a per-node key for own or peer
+
+REKEYING
+  INTERVAL              - Set rekeying interval (in minutes) [0: disable]
+  now                   - Trigger one (first) rekeying immediately
+
+EXAMPLES
+  tipc node set key this_is_a_master_key master
+  tipc node set key 0x746869735F69735F615F6B657931365F73616C74
+  tipc node set key this_is_a_key16_salt algname "gcm(aes)" nodeid 1001002
+  tipc node set key rekeying 600
+
+Tuong Lien (2):
+  tipc: add option to set master key for encryption
+  tipc: add option to set rekeying for encryption
+
+ tipc/cmdl.c |  2 +-
+ tipc/cmdl.h |  1 +
+ tipc/node.c | 81 +++++++++++++++++++++++++++++++++++++++--------------
+ 3 files changed, 62 insertions(+), 22 deletions(-)
+
+-- 
+2.26.2
 
 
 
