@@ -2,132 +2,100 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1566D291635
-	for <lists+tipc-discussion@lfdr.de>; Sun, 18 Oct 2020 07:56:17 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EE93294F5F
+	for <lists+tipc-discussion@lfdr.de>; Wed, 21 Oct 2020 16:59:23 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kU1fr-0005hD-Qk; Sun, 18 Oct 2020 05:56:07 +0000
+	id 1kVFa5-0001ne-6w; Wed, 21 Oct 2020 14:59:13 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <tuong.t.lien@dektech.com.au>) id 1kU1fp-0005h4-JU
- for tipc-discussion@lists.sourceforge.net; Sun, 18 Oct 2020 05:56:05 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1kVFa3-0001nW-NS
+ for tipc-discussion@lists.sourceforge.net; Wed, 21 Oct 2020 14:59:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
- :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Gj/f4WGO5odmZWydLs/aNNzEUCEWB3HU6KQ3uSCFPxU=; b=A7a7zolroE/jjar62F4aAclgfE
- 7GOVlG1Lh1Fzf4oKQFEu9+5wwS73QZxZ3/G2V0MpyJgJRym0w0JNcG3qQQPpguvsbvDwWFYUvX3oc
- 9WdW8zr7wE1bLtiuJBOc25ClnzjoS1Cu0qpgYtScxa4VTsSIrYu8I4Y86lUuoMrgAEF4=;
+ bh=y1K0u5QXkGdEqw+f4VmuYzwQwFEu3RBSm62I3rzvgQM=; b=RFF0iJwGOXX6Ix6TBWFu/5SFmC
+ YXIM2a+oSvNWFWqm6tvTA+eEZtaORXImSBEDVFkjaTIpJ0SpdLplZqKa7mrmO/tkx0+xY76RlFhtU
+ t71H/SQLIcbBB9BNFs0MIAG1vjlVPCFkVqqQRWDRDrIr5JBBXbqP6f3l0RE7yJDLKBSY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Type:Content-Transfer-Encoding:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=Gj/f4WGO5odmZWydLs/aNNzEUCEWB3HU6KQ3uSCFPxU=; b=c1JtmLUgrqv+TGfHqvc3/VI/5m
- wzcRqB/S8G4YgltflRufJPZW6i8h9aIClrGjkAmz/JJMF6NLDildNnN6ss66yiOmi79jOTZrXHFIB
- 0doanrgSoJpGbnSY4naMf6yZ0VQ1+WyGKKoJBYg+RbITiK/SctyCk+/cCkI0F+w7YC3c=;
-Received: from mail-db8eur05on2094.outbound.protection.outlook.com
- ([40.107.20.94] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+ bh=y1K0u5QXkGdEqw+f4VmuYzwQwFEu3RBSm62I3rzvgQM=; b=j8DbglTbQp+tFB1yN/cYVN1fcL
+ U07s55cMqQBpwNn677WUDQFhoRYi8CxwF/h3Lkci638xP1+Jc3IqRABS5k6u2EcoGGbRc5+aJ2F1w
+ wRgsJsRg50lo3tNMyugSaUQCCP0JCzM8I+Zm8U+mCSAONqzPmEQHbWtvsSyunZ/J6VoI=;
+Received: from us-smtp-delivery-124.mimecast.com ([63.128.21.124])
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1kU1fZ-00EEdg-Pc
- for tipc-discussion@lists.sourceforge.net; Sun, 18 Oct 2020 05:56:05 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NXA1D0yboCeX4+4LKMwwWmoavut3uDeniZeWO5zKj7hCoVMEtqCUPsSeIF4myXMfm16rau9tGMGPoIMPoynvZ4eogBHEJiOQJuTJ49OpR1U6F/vZCKXIGcOGEk7tYvIrMbdD7G7Q7jDXU4AiOOKmlh2g3FmXmJlXLLr4BEHy69Ao8VIYn+jJpGCKfvbHQVsQITTIgK54p+YFg6LkDsa8WoIgoNv02BO26wat0ko0/nUwyht+9A39H0FUeCDdLRZCZnj91bDcc8bLwnHwPzyeUKWySsQwfQCfmxNMeAoO/m/n4jCcrFT5oQjAJIC5JXFy8A3Ru5+9oogC0Cf6vvZ34Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Gj/f4WGO5odmZWydLs/aNNzEUCEWB3HU6KQ3uSCFPxU=;
- b=QZw1zBeg7uaLCXDUfdrdSHsAN6CbmqxauvIUv7YTtO/wgFO4rflXK8qsstm5GWlD3MdJX8JjFF6wMZQ94BplsL7ezKol1PzplKmWhPRmhoZ6JXtnkL94x3VwjXyzJvsKiFpopxn40DLus3o/7O6m6xAF93nAacpNOLoUwMyvwcZWo6yLW/zA7CHWMBdx6OO0/TMdZ8fOpXlmhvkFifqg4iEo3ytOeQ1DKkBdpA+otcRxbtEgiRP6s3tJKf5O4z9J1uwDPmOFCSRalniKLl16Bps5+t/5izcAk8yK5X3aK9VCb7b7PVYKo9jU7oXJVq+Ii1dpHnH3ekpLzIZVydxm2Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=dektech.com.au; dmarc=pass action=none
- header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Gj/f4WGO5odmZWydLs/aNNzEUCEWB3HU6KQ3uSCFPxU=;
- b=neDbHMIsmrU6GvLp8g1uoUhATaW5iSAkz05uOFA15Hac3LW0R+r2HMbw5ep0CB4rzjS96DbI9YMVc/LmCC8ozINLEnKOhQGzPBh5cqnZ0FtetGImKKqy2/tUlCLcCl/20DInFSMgcD/dDkqV2NW2nIYnrs0G4ZhQbOPYzVMZjLE=
-Authentication-Results: gmail.com; dkim=none (message not signed)
- header.d=none;gmail.com; dmarc=none action=none header.from=dektech.com.au;
-Received: from AM8PR05MB7332.eurprd05.prod.outlook.com (2603:10a6:20b:1db::9)
- by AM0PR05MB4131.eurprd05.prod.outlook.com (2603:10a6:208:5c::26)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3455.22; Sun, 18 Oct
- 2020 05:21:17 +0000
-Received: from AM8PR05MB7332.eurprd05.prod.outlook.com
- ([fe80::e846:1ad7:c6f1:ab9f]) by AM8PR05MB7332.eurprd05.prod.outlook.com
- ([fe80::e846:1ad7:c6f1:ab9f%3]) with mapi id 15.20.3477.027; Sun, 18 Oct 2020
- 05:21:17 +0000
-From: Tuong Lien <tuong.t.lien@dektech.com.au>
-To: dsahern@gmail.com, jmaloy@redhat.com, maloy@donjonn.com,
- ying.xue@windriver.com, netdev@vger.kernel.org
-Date: Fri, 16 Oct 2020 23:02:01 +0700
-Message-Id: <20201016160201.7290-3-tuong.t.lien@dektech.com.au>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20201016160201.7290-1-tuong.t.lien@dektech.com.au>
-References: <20201016160201.7290-1-tuong.t.lien@dektech.com.au>
-X-Originating-IP: [113.20.114.51]
-X-ClientProxiedBy: AM4PR07CA0009.eurprd07.prod.outlook.com
- (2603:10a6:205:1::22) To AM8PR05MB7332.eurprd05.prod.outlook.com
- (2603:10a6:20b:1db::9)
+ (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
+ id 1kVFZw-001YpA-AY
+ for tipc-discussion@lists.sourceforge.net; Wed, 21 Oct 2020 14:59:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1603292330;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=y1K0u5QXkGdEqw+f4VmuYzwQwFEu3RBSm62I3rzvgQM=;
+ b=DUOpVTz/FQgOFmUZHdymx0fCO6l2898QurX2HRH78uI0X3hR3UMKrkjdm/bksjG/VbkTsK
+ YPrK2ue71F4JeqpVSF7VndQf2yoc6/3R7dxEs+y7CPC6hWfg1KDxxodPIfDujuyt07hrAw
+ zxM5JMQa8EOcSUyeDIhA8IcAmGew77M=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-370-kNZdpkv1Pre_hnDtJfFo2Q-1; Wed, 21 Oct 2020 10:58:47 -0400
+X-MC-Unique: kNZdpkv1Pre_hnDtJfFo2Q-1
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 7B6D864094;
+ Wed, 21 Oct 2020 14:58:45 +0000 (UTC)
+Received: from [10.10.112.215] (ovpn-112-215.rdu2.redhat.com [10.10.112.215])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 0D3E66EF66;
+ Wed, 21 Oct 2020 14:58:43 +0000 (UTC)
+To: Ying Xue <ying.xue@windriver.com>, tipc-discussion@lists.sourceforge.net
+References: <20201010145608.1058917-1-jmaloy@redhat.com>
+ <bfd2ebec-efb5-8937-1f56-4b73d830fc0b@windriver.com>
+From: Jon Maloy <jmaloy@redhat.com>
+Message-ID: <a4b7e540-5e35-b65b-319d-d3b23a13936f@redhat.com>
+Date: Wed, 21 Oct 2020 10:58:43 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.11.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from dektech.com.au (113.20.114.51) by
- AM4PR07CA0009.eurprd07.prod.outlook.com (2603:10a6:205:1::22) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3499.11 via Frontend Transport; Sun, 18 Oct 2020 05:21:15 +0000
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 99ca5c6b-40f6-4dca-3e88-08d87325a38f
-X-MS-TrafficTypeDiagnostic: AM0PR05MB4131:
-X-Microsoft-Antispam-PRVS: <AM0PR05MB413185E0DCF58439D8989F3AE2010@AM0PR05MB4131.eurprd05.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:415;
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: VcMssKab9qBRN7E2z5OxwPkZ+4KEn060WzAIr2VsqokKmNfq87hTwvv07fvIfx908z2AYnvXxqltTw2g3YN3WhHnnno09UNZ/O/hfFMxEAYIQS7qKToYbZA7n5IAA6sKhKtEbXmItvMyzzohqAp0vj/Yv4K/NkJ68vgaPgWkTmV8LEh8NmH+6r6XtHS1CNN5G5Q9dEGcDJty6mGUQFPei0fSGnd9Ggis1jw18N7dO7cUbi7Ot+SRKy/IBZo5U7oWIJlag5f7oVk3m0/OE7p1IpvraMlk4bCkRulEE8sTvZMzoGnKn+1r/Qp9QKM5DNc+Smgl8Y6ahY9uMLjR7ArKdg==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM8PR05MB7332.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(366004)(346002)(396003)(136003)(39830400003)(376002)(26005)(5660300002)(8676002)(16526019)(8936002)(66946007)(1076003)(6666004)(52116002)(66476007)(7696005)(66556008)(83380400001)(86362001)(36756003)(478600001)(4326008)(186003)(55016002)(2616005)(2906002)(956004)(316002)(103116003);
- DIR:OUT; SFP:1102; 
-X-MS-Exchange-AntiSpam-MessageData: ic7+WuwqF/ynHEcMnBh2dr0qN9IhoOOrNlWVgoh7ioKWLbS4WVMx8/xR5o4lWs3zAHCQ2Cn7SAKqNxkb3aR5rI2d9Sa0bOKT3EROinTwpvEvEE2sbWzOfY+oAp8y1bw7jNodvVyJzrTTzcVzWt1sD5aIgIsJw0pi8PXfH/m2Bo3WMp54hhl1ivi0WcSQ8tPRYY6NX5UXN+o149QqsNAr8F2kTCJxYIqk7BYyuW0WRiILv+5msa7OVxB53U0p2LHbwFBWRmTYodfb3qN4FH3y90Z0kBp6rmIrfvOIEw8/I7KN7ev3A9wSoNr+BOuvPLoNSw5nNyIAKcUHOOY44lr/Mbtr2qADdyvVzd43OEwEed8nJMhFWqZDq3d2Jye5Z0c/YlYSBAN9PnMYh0Ob4/1EbQegyjxsVr+8xvmMJpx+X8Rwp2JKYpanbdh1x1R2udknZb6qS4s986IZqgyvth2bfTkthNawCminUyLbnXOGnfWdP70fhi9Zt1Ys6fccOZeg4vUHLzRr6TT4DfPHGJxmyEfOy+na8z+7ynoaaQGJb8JOoRTzBDcPF9xj4cUf5qgyYaSphHLwAamXvWNh2WH8fT5/siuOEcndTD/OqQAR9P2YyE5GYOU4czV8mhIpfaDlly2FfRl6dT1qyKT0HXIzQQ==
-X-OriginatorOrg: dektech.com.au
-X-MS-Exchange-CrossTenant-Network-Message-Id: 99ca5c6b-40f6-4dca-3e88-08d87325a38f
-X-MS-Exchange-CrossTenant-AuthSource: AM8PR05MB7332.eurprd05.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Oct 2020 05:21:16.9606 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 9QxZ1dbVISaxBn+7O7VWt10wMBr7uOQ+8KvgCsssdSd91vvh6z06rXyfnof/hEGshUpH8vVsPWi5WxvmmikAQfXASw3cT6DJ3xiAAexOz4s=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR05MB4131
-X-Spam-Score: 0.4 (/)
+In-Reply-To: <bfd2ebec-efb5-8937-1f56-4b73d830fc0b@windriver.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+Authentication-Results: relay.mimecast.com;
+ auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Language: en-US
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: dektech.com.au]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.20.94 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.20.94 listed in list.dnswl.org]
+ trust [63.128.21.124 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
+ [63.128.21.124 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.5 DATE_IN_PAST_24_48     Date: is 24 to 48 hours before Received: date
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
-X-Headers-End: 1kU1fZ-00EEdg-Pc
-Subject: [tipc-discussion] [iproute2-next 2/2] tipc: add option to set
- rekeying for encryption
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 NICE_REPLY_A           Looks like a legit reply (A)
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1kVFZw-001YpA-AY
+Subject: Re: [tipc-discussion] [net ] tipc: add stricter control of reserved
+ service types
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -139,170 +107,94 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: tipc-discussion@lists.sourceforge.net
-Content-Type: text/plain; charset="us-ascii"
+Cc: xinl@redhat.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-As supported in kernel, the TIPC encryption rekeying can be tuned using
-the netlink attribute - 'TIPC_NLA_NODE_REKEYING'. Now we add the
-'rekeying' option correspondingly to the 'tipc node set key' command so
-that user will be able to perform that tuning:
 
-tipc node set key rekeying REKEYING
 
-where the 'REKEYING' value can be:
+On 10/21/20 10:55 AM, Ying Xue wrote:
+> On 10/10/20 10:56 PM, jmaloy@redhat.com wrote:
+>> From: Jon Maloy <jmaloy@redhat.com>
+>>
+>> TIPC reserves 64 service types for current and future internal use.
+>> Therefore, the bind() function is meant to block regular user sockets
+>> from being bound to these values, while it should let through such
+>> bindings from internal users.
+>>
+>> However, since we at the design moment saw no way to distinguish
+>> between regular and internal users the filter function ended up
+>> with allowing all bindings of the types which were really in use
+>> ([0,1]), and block all the rest ([2,63]).
+>>
+>> This is dangerous, since a regular user may bind to the service type
+>> representing the topology server (TIPC_TOP_SRV == 1) or the one used
+>> for indicating neigboring node status (TIPC_CFG_SRV == 0), and wreak
+>> havoc for users of those services. I.e., practically all users.
+>>
+> Sorry, Jon. I could not understand how such scenarios described above
+> happened. Can you please take an example to demonstrate a regular user
+> can bind to the same service type as TIPC_TOP_SRV or TIPC_CFG_SRV under
+> the current code logic?
+>
+> Thanks,
+> Ying
+That is extremely simple. Take the hello_server under 
+tipcutils/demos/hello_world and change the server name to {1,1}.
+It works! And it shouldn't of course, because it will steal traffic 
+directed to the toplogy server.
 
-INTERVAL              - Set rekeying interval (in minutes) [0: disable]
-now                   - Trigger one (first) rekeying immediately
+///jon
 
-For example:
-$ tipc node set key rekeying 60
-$ tipc node set key rekeying now
-
-The command's help menu is also updated with these descriptions for the
-new command option.
-
-Acked-by: Jon Maloy <jmaloy@redhat.com>
-Signed-off-by: Tuong Lien <tuong.t.lien@dektech.com.au>
----
- tipc/cmdl.c |  2 +-
- tipc/cmdl.h |  1 +
- tipc/node.c | 47 +++++++++++++++++++++++++++++++++++++----------
- 3 files changed, 39 insertions(+), 11 deletions(-)
-
-diff --git a/tipc/cmdl.c b/tipc/cmdl.c
-index f2f259cc..981e268e 100644
---- a/tipc/cmdl.c
-+++ b/tipc/cmdl.c
-@@ -33,7 +33,7 @@ static const struct cmd *find_cmd(const struct cmd *cmds, char *str)
- 	return match;
- }
- 
--static struct opt *find_opt(struct opt *opts, char *str)
-+struct opt *find_opt(struct opt *opts, char *str)
- {
- 	struct opt *o;
- 	struct opt *match = NULL;
-diff --git a/tipc/cmdl.h b/tipc/cmdl.h
-index 03db3599..dcade362 100644
---- a/tipc/cmdl.h
-+++ b/tipc/cmdl.h
-@@ -46,6 +46,7 @@ struct opt {
- 	char *val;
- };
- 
-+struct opt *find_opt(struct opt *opts, char *str);
- struct opt *get_opt(struct opt *opts, char *key);
- bool has_opt(struct opt *opts, char *key);
- int parse_opts(struct opt *opts, struct cmdl *cmdl);
-diff --git a/tipc/node.c b/tipc/node.c
-index 1ff0baa4..05246013 100644
---- a/tipc/node.c
-+++ b/tipc/node.c
-@@ -160,7 +160,8 @@ static int cmd_node_set_nodeid(struct nlmsghdr *nlh, const struct cmd *cmd,
- static void cmd_node_set_key_help(struct cmdl *cmdl)
- {
- 	fprintf(stderr,
--		"Usage: %s node set key KEY [algname ALGNAME] [PROPERTIES]\n\n"
-+		"Usage: %s node set key KEY [algname ALGNAME] [PROPERTIES]\n"
-+		"       %s node set key rekeying REKEYING\n\n"
- 		"KEY\n"
- 		"  Symmetric KEY & SALT as a composite ASCII or hex string (0x...) in form:\n"
- 		"  [KEY: 16, 24 or 32 octets][SALT: 4 octets]\n\n"
-@@ -170,11 +171,16 @@ static void cmd_node_set_key_help(struct cmdl *cmdl)
- 		"  master                - Set KEY as a cluster master key\n"
- 		"  <empty>               - Set KEY as a cluster key\n"
- 		"  nodeid NODEID         - Set KEY as a per-node key for own or peer\n\n"
-+		"REKEYING\n"
-+		"  INTERVAL              - Set rekeying interval (in minutes) [0: disable]\n"
-+		"  now                   - Trigger one (first) rekeying immediately\n\n"
- 		"EXAMPLES\n"
- 		"  %s node set key this_is_a_master_key master\n"
- 		"  %s node set key 0x746869735F69735F615F6B657931365F73616C74\n"
--		"  %s node set key this_is_a_key16_salt algname \"gcm(aes)\" nodeid 1001002\n\n",
--		cmdl->argv[0], cmdl->argv[0], cmdl->argv[0], cmdl->argv[0]);
-+		"  %s node set key this_is_a_key16_salt algname \"gcm(aes)\" nodeid 1001002\n"
-+		"  %s node set key rekeying 600\n\n",
-+		cmdl->argv[0], cmdl->argv[0], cmdl->argv[0], cmdl->argv[0],
-+		cmdl->argv[0], cmdl->argv[0]);
- }
- 
- static int cmd_node_set_key(struct nlmsghdr *nlh, const struct cmd *cmd,
-@@ -190,12 +196,15 @@ static int cmd_node_set_key(struct nlmsghdr *nlh, const struct cmd *cmd,
- 		{ "algname",	OPT_KEYVAL,	NULL },
- 		{ "nodeid",	OPT_KEYVAL,	NULL },
- 		{ "master",	OPT_KEY,	NULL },
-+		{ "rekeying",	OPT_KEYVAL,	NULL },
- 		{ NULL }
- 	};
- 	struct nlattr *nest;
--	struct opt *opt_algname, *opt_nodeid, *opt_master;
-+	struct opt *opt_algname, *opt_nodeid, *opt_master, *opt_rekeying;
- 	char buf[MNL_SOCKET_BUFFER_SIZE];
- 	uint8_t id[TIPC_NODEID_LEN] = {0,};
-+	uint32_t rekeying = 0;
-+	bool has_key = false;
- 	int keysize;
- 	char *str;
- 
-@@ -204,17 +213,31 @@ static int cmd_node_set_key(struct nlmsghdr *nlh, const struct cmd *cmd,
- 		return -EINVAL;
- 	}
- 
-+	/* Check if command starts with opts i.e. "rekeying" opt without key */
-+	if (find_opt(opts, cmdl->argv[cmdl->optind]))
-+		goto get_ops;
- 
- 	/* Get user key */
-+	has_key = true;
- 	str = shift_cmdl(cmdl);
- 	if (str2key(str, &input.key)) {
- 		fprintf(stderr, "error, invalid key input\n");
- 		return -EINVAL;
- 	}
- 
-+get_ops:
- 	if (parse_opts(opts, cmdl) < 0)
- 		return -EINVAL;
- 
-+	/* Get rekeying time */
-+	opt_rekeying = get_opt(opts, "rekeying");
-+	if (opt_rekeying) {
-+		if (!strcmp(opt_rekeying->val, "now"))
-+			rekeying = TIPC_REKEYING_NOW;
-+		else
-+			rekeying = atoi(opt_rekeying->val);
-+	}
-+
- 	/* Get algorithm name, default: "gcm(aes)" */
- 	opt_algname = get_opt(opts, "algname");
- 	if (!opt_algname)
-@@ -246,12 +269,16 @@ static int cmd_node_set_key(struct nlmsghdr *nlh, const struct cmd *cmd,
- 	}
- 
- 	nest = mnl_attr_nest_start(nlh, TIPC_NLA_NODE);
--	keysize = tipc_aead_key_size(&input.key);
--	mnl_attr_put(nlh, TIPC_NLA_NODE_KEY, keysize, &input.key);
--	if (opt_nodeid)
--		mnl_attr_put(nlh, TIPC_NLA_NODE_ID, TIPC_NODEID_LEN, id);
--	if (opt_master)
--		mnl_attr_put(nlh, TIPC_NLA_NODE_KEY_MASTER, 0, NULL);
-+	if (has_key) {
-+		keysize = tipc_aead_key_size(&input.key);
-+		mnl_attr_put(nlh, TIPC_NLA_NODE_KEY, keysize, &input.key);
-+		if (opt_nodeid)
-+			mnl_attr_put(nlh, TIPC_NLA_NODE_ID, TIPC_NODEID_LEN, id);
-+		if (opt_master)
-+			mnl_attr_put(nlh, TIPC_NLA_NODE_KEY_MASTER, 0, NULL);
-+	}
-+	if (opt_rekeying)
-+		mnl_attr_put_u32(nlh, TIPC_NLA_NODE_REKEYING, rekeying);
- 
- 	mnl_attr_nest_end(nlh, nest);
- 	return msg_doit(nlh, NULL, NULL);
--- 
-2.26.2
+>
+>> The reality is however that TIPC_CFG_SRV never is bound through the
+>> bind() function, since it doesn't represent a regular socket, and
+>> TIPC_TOP_SRV can easily be filtered out, since it is the very first
+>> binding performed when the system is starting.
+>>
+>> We can hence block TIPC_CFG_SRV completely, and only allow TIPC_TOP_SRV
+>> to be bound once, and the correct behavior is achieved. This is what we
+>> do in this commit.
+>>
+>> It should be noted that, although this is a change of the API semantics,
+>> there is no risk we will break any currently working applications by
+>> doing this. Any application trying to bind to the values in question
+>> would be badly broken from the outset, so there is no chance we would
+>> find any such applications in real-world production systems.
+>>
+>> Signed-off-by: Jon Maloy <jmaloy@redhat.com>
+>> ---
+>>   net/tipc/socket.c | 8 +++++---
+>>   1 file changed, 5 insertions(+), 3 deletions(-)
+>>
+>> diff --git a/net/tipc/socket.c b/net/tipc/socket.c
+>> index e795a8a2955b..67875a5761d0 100644
+>> --- a/net/tipc/socket.c
+>> +++ b/net/tipc/socket.c
+>> @@ -665,6 +665,7 @@ static int tipc_bind(struct socket *sock, struct sockaddr *uaddr,
+>>   	struct sockaddr_tipc *addr = (struct sockaddr_tipc *)uaddr;
+>>   	struct tipc_sock *tsk = tipc_sk(sk);
+>>   	int res = -EINVAL;
+>> +	u32 stype, dnode;
+>>   
+>>   	lock_sock(sk);
+>>   	if (unlikely(!uaddr_len)) {
+>> @@ -691,9 +692,10 @@ static int tipc_bind(struct socket *sock, struct sockaddr *uaddr,
+>>   		goto exit;
+>>   	}
+>>   
+>> -	if ((addr->addr.nameseq.type < TIPC_RESERVED_TYPES) &&
+>> -	    (addr->addr.nameseq.type != TIPC_TOP_SRV) &&
+>> -	    (addr->addr.nameseq.type != TIPC_CFG_SRV)) {
+>> +	stype = addr->addr.nameseq.type;
+>> +	if (stype < TIPC_RESERVED_TYPES &&
+>> +	    (stype != TIPC_TOP_SRV ||
+>> +	     tipc_nametbl_translate(sock_net(sk), stype, stype, &dnode))) {
+>>   		res = -EACCES;
+>>   		goto exit;
+>>   	}
+>>
 
 
 
