@@ -2,109 +2,130 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A1632954A1
-	for <lists+tipc-discussion@lfdr.de>; Thu, 22 Oct 2020 00:05:23 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84CD8296A4F
+	for <lists+tipc-discussion@lfdr.de>; Fri, 23 Oct 2020 09:28:39 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kVMEH-00020b-Eu; Wed, 21 Oct 2020 22:05:09 +0000
+	id 1kVrUl-0000hN-3e; Fri, 23 Oct 2020 07:28:15 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <dsahern@gmail.com>) id 1kUtE7-0005ee-68
- for tipc-discussion@lists.sourceforge.net; Tue, 20 Oct 2020 15:07:03 +0000
+ (envelope-from <tung.q.nguyen@dektech.com.au>) id 1kVrUh-0000gy-L1
+ for tipc-discussion@lists.sourceforge.net; Fri, 23 Oct 2020 07:28:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Message-Id:Date:Subject:
+ To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=TRLniivicDPBrJmWtD5VYf1FKJumtqurgTFqAYL5pRM=; b=GN52M3H+vgpe1QEAAiEwG71A+t
- u39aaxwvvn7oSqaOHkePyyDo7hQXAeWLyqBLKBEDUBa4k4nDcwArN09L2kv2aTSdyNkjogzBwHvet
- EWtcNBOkhY8lWTw8SgvziMYBf07dawQb/A+70V7xrxi1ZiCMXki2im/fjWQJIlYz+wHo=;
+ bh=NAr88LlgSZNioICAdP5FBxZl7z/2jQXYIh5qChqarkk=; b=CSTxl5hpTL7C+D4zBCMV/WniLM
+ S6PuAFJiGV9BhuKdyR6xIjSpGrEgb45t7LyReQB6cgumiGwlhen19MuhO0i3wEI2+89VaVl3KF0Ye
+ MsFpEqwiG88o4TEJjsGe29IWVOuenb+cDwv6EbtqmBfRRP2TA7ljc703ywhBublnsGVQ=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=TRLniivicDPBrJmWtD5VYf1FKJumtqurgTFqAYL5pRM=; b=gVA7J5RqDDghEqZILGmd42R/fw
- CABSe6RdHStvd2oi/HN+BhavnJOhFqu2HdVFCUfotS/q3ubBbqw+F6MRtmbtZPWmjvNIBwl2yG9WJ
- kSWRSxkcLC86MESW/QMrSo98gkPbmYYYG6dUHvaOwh8GvD4CPJK3Oyi78K0JK4n8W1MA=;
-Received: from mail-io1-f67.google.com ([209.85.166.67])
+ h=MIME-Version:Content-Type:Message-Id:Date:Subject:To:From:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=NAr88LlgSZNioICAdP5FBxZl7z/2jQXYIh5qChqarkk=; b=E
+ wqv539hMKL+EJojCJOSWVFCGwYWA6HGa+S/Skw5kP1/+qg/SCt9fkUFlERqNTWRvcZXtZI3PW4EKa
+ bmONCKNd+kQNhMLetRXb5A5riLaxake1cld653dT30mpgFkNVm9z04gYT/RV63PoMUdf+txmjzESb
+ rzCfmtvlIVr7MUdg=;
+Received: from mail-am6eur05on2138.outbound.protection.outlook.com
+ ([40.107.22.138] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.2)
- id 1kUtDx-00HSgg-Dj
- for tipc-discussion@lists.sourceforge.net; Tue, 20 Oct 2020 15:07:03 +0000
-Received: by mail-io1-f67.google.com with SMTP id y20so3841728iod.5
- for <tipc-discussion@lists.sourceforge.net>;
- Tue, 20 Oct 2020 08:06:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=TRLniivicDPBrJmWtD5VYf1FKJumtqurgTFqAYL5pRM=;
- b=QekwbSLZj5vwDeeWNbhc2umShSFeSLnEgZiqvAmBjinqHH4cKMBpG+K22sqAunh4Jn
- 784vxmj6rPcJzc+WyjxfJIUhQ4mCbjsxEETWdjqdzuLls+v+gf9311hHJyoL1clRc8qR
- 6xN2g58bXoVp5olrPHKSr343Xpr2LOY2XHN2K71JVEkdAB/zqmjGaW7AVwfXhkfTLdtx
- NhBAwvHFtm81ZCp3kWiqplsEEUCB6+OKWIaFKUWqOGzLo4DDUeCkNUcf7Wo0Cs1dGL78
- nVdV8BmsxMo/WHsFs0sN1Ecq2/kWA1jgPS+455ThoEtd6uQ0aTanzKEQTdRb+NxGl6vb
- 0Ksg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=TRLniivicDPBrJmWtD5VYf1FKJumtqurgTFqAYL5pRM=;
- b=rFEGiIStaAExRfzaeAmGUYPtGBuDNG4kFMgged4TjedZ4u+N/JiKMYHOh/OGn9VKaB
- SFN4frbOIiYhTVTAPLaFIPxnhqB/nE6YENbzaUa0LmJwAy+0blsSCZT5EgclKKAvmCkI
- yx+Ner9xeH6Z6s1yGg4Zd1Dzv1+EKQG/MXUJE8TGR5b4y1bJ9I71zrybxKKiyMd8hF7p
- M9G9yhEA7+M28oDkLUrjKN/nSVLPJ31ZMD6HauJg0u4is8pzH61tGN1dQXGc4oGvjdWV
- MpJEcE9U9r2gU4uVHs4/J8h3b+qTsND19LL8Jdkimk4WYZF8k0aZNT1TACvlvyxh/5Rp
- uifQ==
-X-Gm-Message-State: AOAM533A/WpAL4UNxjg5ZuTeklKTIDIoOmlpHeTKZeyRi37dh0Lb4ZPl
- KtUXNAIZQOx8xaW8u3S1xgBp1NxWQxE=
-X-Google-Smtp-Source: ABdhPJxod+PxVrSaCiVitZe9GGgiFHhjqmV8thrE+U1dAKxbdMUzfCk4zHY0/tjExqNjVP9qVV0YNQ==
-X-Received: by 2002:a05:6602:2d85:: with SMTP id
- k5mr2523144iow.165.1603206400722; 
- Tue, 20 Oct 2020 08:06:40 -0700 (PDT)
-Received: from Davids-MacBook-Pro.local
- ([2601:282:803:7700:2cd9:64d4:cacf:1e54])
- by smtp.googlemail.com with ESMTPSA id z21sm1702069ioq.35.2020.10.20.08.06.39
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 20 Oct 2020 08:06:40 -0700 (PDT)
-To: Tuong Lien <tuong.t.lien@dektech.com.au>, jmaloy@redhat.com,
- maloy@donjonn.com, ying.xue@windriver.com, netdev@vger.kernel.org
-References: <20201016160201.7290-1-tuong.t.lien@dektech.com.au>
-From: David Ahern <dsahern@gmail.com>
-Message-ID: <942f4e8e-baf5-b8c4-bd5d-88872dfe7762@gmail.com>
-Date: Tue, 20 Oct 2020 09:06:37 -0600
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:68.0)
- Gecko/20100101 Thunderbird/68.12.1
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1kVrUS-003Zlh-BM
+ for tipc-discussion@lists.sourceforge.net; Fri, 23 Oct 2020 07:28:11 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=PzK6JQMonzg2on38In3XMZ9ILFvN6zA9C63QCWKPNQGaFCQFVqF6NotTQeiNRmicIiJ0L1Kv0gB2ujKGY2bn4fa/8Y8Mc+JFjuTrMotNr8a3tfBmLTV5sQ2PsK/+wEzGVt8+gvfagyCtKQMVLJm3Ie9jgWDWdX7BZ84XA4CoGXcUBKF0RfjqMbp2nLe1bgF0GYOZt/CZr8OwVYqIhisDK6CN+MTQZjke1R+stk61bj918S0iUUb1CQF/ouWrJQI5zg+qIJVVgws1tEeOmoLzVcGsAy/Oh8wOC7mueeG2YwWDJcIyQA7/8dfbsjjnZ/w5LYpxoS+1FhXS2vd7wjKbYg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=NAr88LlgSZNioICAdP5FBxZl7z/2jQXYIh5qChqarkk=;
+ b=JVN6tkIkZEe8/shBVX7D6uuSc/4hn4rUKVBM+pHLqFl/JPnQVT8AZqEgxXU4kbCT7NrY3A+HgPRhXZxXm97EY0rB8SKKl6GLX6w0dg+8TfjWf5DLvWhSi4vqFi7wSv5p8BEYjqE5N5GTT+DEK7YgRpe+l4r9UPuzt5Amg0fXB1reRJghI+2HsS/jPqObHGuxxXYTHPNGDodPrk+hIz36nS+p5kTX9LlQxys82NIKubaHr38Syl8GTpP6XG8ugtTH6uiN6SDO4ja0PZa5fMf33bCsJfbkfYxhdQHS9nEDztnuKfKyKLmcA3tWTtffJbXApZj69hMJcyxqADxg3OoO7A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=dektech.com.au; dmarc=pass action=none
+ header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=NAr88LlgSZNioICAdP5FBxZl7z/2jQXYIh5qChqarkk=;
+ b=QpV9fQklsQaA8yw5YiZsDu42oxlncSe52XZeciizq7J6NoXUeja7Vj5FFIBIu6Qj9ZovQ7e/7nR/91BYbJlVjwFCMoHrnpRkcLX/HW1hI8j3/LGCIFnyIJhMAvHfVg5sUbMtr7bAuHMqKsL5mKIkuL1HfSZ8/s468dnfOnS504c=
+Authentication-Results: lists.sourceforge.net; dkim=none (message not signed)
+ header.d=none; lists.sourceforge.net;
+ dmarc=none action=none header.from=dektech.com.au;
+Received: from DB7PR05MB4315.eurprd05.prod.outlook.com (2603:10a6:5:1f::18) by
+ DBAPR05MB7206.eurprd05.prod.outlook.com (2603:10a6:10:1b2::6) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3477.20; Fri, 23 Oct 2020 07:27:39 +0000
+Received: from DB7PR05MB4315.eurprd05.prod.outlook.com
+ ([fe80::c04f:dae3:9fa4:ff56]) by DB7PR05MB4315.eurprd05.prod.outlook.com
+ ([fe80::c04f:dae3:9fa4:ff56%4]) with mapi id 15.20.3477.028; Fri, 23 Oct 2020
+ 07:27:39 +0000
+From: Tung Nguyen <tung.q.nguyen@dektech.com.au>
+To: tipc-discussion@lists.sourceforge.net, jmaloy@redhat.com,
+ maloy@donjonn.com, ying.xue@windriver.com
+Date: Fri, 23 Oct 2020 14:27:25 +0700
+Message-Id: <20201023072725.2143-1-tung.q.nguyen@dektech.com.au>
+X-Mailer: git-send-email 2.17.1
+X-Originating-IP: [113.20.114.51]
+X-ClientProxiedBy: SGBP274CA0023.SGPP274.PROD.OUTLOOK.COM (2603:1096:4:b0::35)
+ To DB7PR05MB4315.eurprd05.prod.outlook.com
+ (2603:10a6:5:1f::18)
 MIME-Version: 1.0
-In-Reply-To: <20201016160201.7290-1-tuong.t.lien@dektech.com.au>
-Content-Language: en-US
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from ubuntu.dekvn.internal (113.20.114.51) by
+ SGBP274CA0023.SGPP274.PROD.OUTLOOK.COM (2603:1096:4:b0::35) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3499.18 via Frontend Transport; Fri, 23 Oct 2020 07:27:37 +0000
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: b11bc8a4-a46e-4ecf-2e0b-08d877251ef2
+X-MS-TrafficTypeDiagnostic: DBAPR05MB7206:
+X-Microsoft-Antispam-PRVS: <DBAPR05MB7206AD2DC8A3BBECFBC8547A881A0@DBAPR05MB7206.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:608;
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: +o3/uwtDqoYgL0ns70Mp4QDkD9AzQWu5ldPDCoefsyNhdJYgK316op1l+SZAB5vVDsuQdx77Qarzg2ChtXdsoDf3KSr9+eG5nN6IOcM5HFzH2dxKGSU3ehohr04WJTpV0u1ZoK/q3WFqjxBDkhEFwAl6+IFIBTJdDLQ2IbC6tXhJHfFY2aTpyf92jhpwU+Y1PIwEG54zGxPMMiTanFmoYKulkGrNmqxQE5azwEJ8yWrrpZ8p9pKENkEMKC0WbXGkr4rzlAbR0k/iQYabA1vwQqDC5pFFe0Tw81OobC8t21KxH6g42m9fXLn4r+tyY3R7
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB7PR05MB4315.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(346002)(376002)(39850400004)(136003)(366004)(396003)(478600001)(8676002)(6486002)(6512007)(103116003)(8936002)(2906002)(26005)(316002)(36756003)(66556008)(52116002)(1076003)(66946007)(6666004)(16526019)(66476007)(6506007)(83380400001)(186003)(5660300002)(956004)(86362001)(2616005);
+ DIR:OUT; SFP:1102; 
+X-MS-Exchange-AntiSpam-MessageData: DuKw/Z0UyAD95ZDXM1Pi625my0GECilM0lSKHna2IflCDFHsXi9rgO8AwE9+CeJvcc7+NsujxypVZnC3Ffp1eRgmZjRY0E98O4yK8jgg9gyBekEdvOasE1QYU4+1JtQ4DW+OHYrkUnBE017GEUWDtZDh3zsVi2RlYixaaMXbLtpMtzztl98moiYhTk/VPZh5ai/M0Im9qadd2yzv57+cfS16ixm6S1Ey9qV4fVuQQM9nxCm+ydXDUxO9O75WLUTV5rBKaA7j16tU2NJScLelzVnPFyRIZRAC93xkfCM49QRlKf0OrSl/TIXeLBTSJxn2cBrJNPo2jAXkxf4jzZRC5IFu6BjLM2vAvjLFSdTRB+Lq/0RSigFlSeAgMpXZEUtkfZpyuYLFR0HDb1w8JIK8AXmOQsn1VJsXLMlUkLsGY6FD6nBl4l+bn8yF7agDltESnS1MohxPCPJ4a00F9gptelm9Ur76nRLafsg9x6S+vR7qeMVzPDJZh7/Xgg/5zyKt3DfJiFKmMpiHxFo/1dHPFL3b8Nc8DckFVS4BTFjDX4l0N5Jmr5ccVdfpx2dqPsinSNG3X2JGE3pAJNv0m0j6m4ke5DQhb6VkMT2Z4cduSbmxWFqtM4LMH4meVu1crOV+WvRwpFKx4TJyqYvIlyL0Dg==
+X-OriginatorOrg: dektech.com.au
+X-MS-Exchange-CrossTenant-Network-Message-Id: b11bc8a4-a46e-4ecf-2e0b-08d877251ef2
+X-MS-Exchange-CrossTenant-AuthSource: DB7PR05MB4315.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Oct 2020 07:27:39.2286 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: OfaqTjOtVAyhlC6WrO798/BKkn/caGdGWz0u6sxg0P9rscdWrlfNNyFWA7PhcbuY/SibDXTYoxfcDwKEmmy5l5Kano68dCDvrb22dqqmeSk=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBAPR05MB7206
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- (dsahern[at]gmail.com)
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.166.67 listed in list.dnswl.org]
+ trust [40.107.22.138 listed in list.dnswl.org]
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: dektech.com.au]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.67 listed in wl.mailspike.net]
+ [40.107.22.138 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.0 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1kUtDx-00HSgg-Dj
-X-Mailman-Approved-At: Wed, 21 Oct 2020 22:05:07 +0000
-Subject: Re: [tipc-discussion] [iproute2-next 0/2] tipc: add new options for
- TIPC encryption
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+X-Headers-End: 1kVrUS-003Zlh-BM
+Subject: [tipc-discussion] [net v1 1/1] tipc: fix memmory leak caused by
+ tipc_buf_append()
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,55 +137,74 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: tipc-discussion@lists.sourceforge.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-On 10/16/20 10:01 AM, Tuong Lien wrote:
-> This series adds two new options in the 'iproute2/tipc' command, enabling users
-> to use the new TIPC encryption features, i.e. the master key and rekeying which
-> have been recently merged in kernel.
-> 
-> The help menu of the "tipc node set key" command is also updated accordingly:
-> 
-> # tipc node set key --help
-> Usage: tipc node set key KEY [algname ALGNAME] [PROPERTIES]
->        tipc node set key rekeying REKEYING
-> 
-> KEY
->   Symmetric KEY & SALT as a composite ASCII or hex string (0x...) in form:
->   [KEY: 16, 24 or 32 octets][SALT: 4 octets]
-> 
-> ALGNAME
->   Cipher algorithm [default: "gcm(aes)"]
-> 
-> PROPERTIES
->   master                - Set KEY as a cluster master key
->   <empty>               - Set KEY as a cluster key
->   nodeid NODEID         - Set KEY as a per-node key for own or peer
-> 
-> REKEYING
->   INTERVAL              - Set rekeying interval (in minutes) [0: disable]
->   now                   - Trigger one (first) rekeying immediately
-> 
-> EXAMPLES
->   tipc node set key this_is_a_master_key master
->   tipc node set key 0x746869735F69735F615F6B657931365F73616C74
->   tipc node set key this_is_a_key16_salt algname "gcm(aes)" nodeid 1001002
->   tipc node set key rekeying 600
-> 
-> Tuong Lien (2):
->   tipc: add option to set master key for encryption
->   tipc: add option to set rekeying for encryption
-> 
->  tipc/cmdl.c |  2 +-
->  tipc/cmdl.h |  1 +
->  tipc/node.c | 81 +++++++++++++++++++++++++++++++++++++++--------------
->  3 files changed, 62 insertions(+), 22 deletions(-)
-> 
+Commit ed42989eab57 ("fix the skb_unshare() in tipc_buf_append()")
+replaced skb_unshare() with skb_copy() to not reduce the data reference
+counter of the original skb intentionally. This is not the correct
+way to handle the cloned skb because it causes memory leak in 2
+following cases:
+ 1/ Sending multicast messages via broadcast link
+  The original skb list is cloned to the local skb list for local
+  destination. After that, the data reference counter of each skb
+  in the original list has the value of 2. This causes each skb not
+  to be freed after receiving ACK:
+  tipc_link_advance_transmq()
+  {
+   ...
+   /* release skb */
+   __skb_unlink(skb, &l->transmq);
+   kfree_skb(skb); <-- memory exists after being freed
+  }
 
-applied to iproute2-next
+ 2/ Sending multicast messages via replicast link
+  Similar to the above case, each skb cannot be freed after purging
+  the skb list:
+  tipc_mcast_xmit()
+  {
+   ...
+   __skb_queue_purge(pkts); <-- memory exists after being freed
+  }
+
+This commit fixes this issue by using skb_unshare() instead. Besides,
+to avoid use-after-free error reported by KASAN, kfree_skb(head)
+calling is removed from tipc_msg_reassemble() because the appending
+skb is always freed inside tipc_buf_append() in the case of error.
+
+Fixes: ed42989eab57 ("fix the skb_unshare() in tipc_buf_append()")
+Reported-by: Thang Hoang Ngo <thang.h.ngo@dektech.com.au>
+Signed-off-by: Tung Nguyen <tung.q.nguyen@dektech.com.au>
+---
+ net/tipc/msg.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/net/tipc/msg.c b/net/tipc/msg.c
+index 2a78aa701572..a193da26eb44 100644
+--- a/net/tipc/msg.c
++++ b/net/tipc/msg.c
+@@ -150,8 +150,7 @@ int tipc_buf_append(struct sk_buff **headbuf, struct sk_buff **buf)
+ 	if (fragid == FIRST_FRAGMENT) {
+ 		if (unlikely(head))
+ 			goto err;
+-		if (skb_cloned(frag))
+-			frag = skb_copy(frag, GFP_ATOMIC);
++		frag = skb_unshare(frag, GFP_ATOMIC);
+ 		if (unlikely(!frag))
+ 			goto err;
+ 		head = *headbuf = frag;
+@@ -797,7 +796,6 @@ bool tipc_msg_reassemble(struct sk_buff_head *list, struct sk_buff_head *rcvq)
+ 	return true;
+ error:
+ 	pr_warn("Failed do clone local mcast rcv buffer\n");
+-	kfree_skb(head);
+ 	return false;
+ }
+ 
+-- 
+2.17.1
+
 
 
 _______________________________________________
