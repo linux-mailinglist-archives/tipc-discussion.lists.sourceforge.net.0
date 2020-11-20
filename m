@@ -2,97 +2,77 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61B482BB156
-	for <lists+tipc-discussion@lfdr.de>; Fri, 20 Nov 2020 18:25:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1F642BB3E6
+	for <lists+tipc-discussion@lfdr.de>; Fri, 20 Nov 2020 19:39:37 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kgAAC-0001HU-2B; Fri, 20 Nov 2020 17:25:36 +0000
+	id 1kgBJe-0004rw-Bw; Fri, 20 Nov 2020 18:39:26 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1kgAAA-0001HI-L5
- for tipc-discussion@lists.sourceforge.net; Fri, 20 Nov 2020 17:25:34 +0000
+ (envelope-from <howard@thefiners.net>) id 1kgBJc-0004ro-Ih
+ for tipc-discussion@lists.sourceforge.net; Fri, 20 Nov 2020 18:39:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Message-ID:Date:Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=yMQMTWGQg1Unx60kJOPnUxoHfXYIHW02auWrcmHB38c=; b=QNUFM6trHgxG7zk1sT8D6ql7W9
- EH+pbFNJikFFDTUluq+/8GmXWttgm4wBpFrXQdWogVX/6u7jDJUyb7laS8N7tDW7kqbkkHeKWTDNs
- NWZgAVQeNbfdY+zxb0GriP8TLqUzrIvka2Sh5EkshG0HTPHvU5rk4VW9SqGQGHnFLfKE=;
+ bh=pSMrEAyDEJQHlbKXMdnVOJ6MTISTLsFIqabYt7UTE/w=; b=RwkfUksMyEzrEd7caMdxlCNRyu
+ HBXLGYkol7XPG2gn/ik7QuH4WaR84SLt748amngIKwaF1CIRSojLcyMz83PCUKnE70jYHZ4qqkMf6
+ zbL+l0W3WNnNMuy6LQSHlS6W6MMJzMCzq1eypgWGWps9wFBOaD3CPTDlfmtRsJ+mDhnM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:
+ Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=yMQMTWGQg1Unx60kJOPnUxoHfXYIHW02auWrcmHB38c=; b=GiKbXVVmVgPTY2QzMOYMAdN1My
- x1Qf9PGzOR0fIIbawyYFPBSckN8bw8oyebXjF8znyYaSICqH06JZCfCnsrrgXdHNs8iwhT7RrJFtt
- 1X2z2fByrE4l0aIOaCY8mKZZ+HjCKDz/Hk8teccuP/bAK/HNW09XWoRQNTHLBKYdQ8eE=;
-Received: from us-smtp-delivery-124.mimecast.com ([63.128.21.124])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1kgAA5-003VBw-IC
- for tipc-discussion@lists.sourceforge.net; Fri, 20 Nov 2020 17:25:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1605893123;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=yMQMTWGQg1Unx60kJOPnUxoHfXYIHW02auWrcmHB38c=;
- b=eU5aCEmMlWU5Bhhto8oVOUqIOTbRJATpxVfc7sBCMDwVTHNpYgMwT02iCB9Yyvw3kdSkQl
- 7aGEYlVG3d9KnYJJ+gT3FbxIv4cSShwi6S+zak3X0Jiqt82nIXZDLzYQRjesjG8vIZdETY
- Zhg/67QdN8VH1BMF8sTtAYPN7AORtN8=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-294-16wSZX5MOl-JzahZCUD68A-1; Fri, 20 Nov 2020 12:25:21 -0500
-X-MC-Unique: 16wSZX5MOl-JzahZCUD68A-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 3EC70185A0C4;
- Fri, 20 Nov 2020 17:25:20 +0000 (UTC)
-Received: from [10.10.114.220] (ovpn-114-220.rdu2.redhat.com [10.10.114.220])
- by smtp.corp.redhat.com (Postfix) with ESMTP id A31BC19C71;
- Fri, 20 Nov 2020 17:25:19 +0000 (UTC)
-To: Howard Finer <howard@thefiners.net>, tipc-discussion@lists.sourceforge.net
+ bh=pSMrEAyDEJQHlbKXMdnVOJ6MTISTLsFIqabYt7UTE/w=; b=Xt8JtI4VfrR1bNtjrvoY7/lnr3
+ D5mx1pHQxN9qGsoH3/U4UOVmdJ+n4Ts9D+NYU5dmQCW+FgLGgxQayCAEGJpppY5dgPMcdImhtneeG
+ HkfvajHkRulgdHjm1PlcYildQ38nJlhGkPdDnqVIcLJStz+S9W00+P9tQKZAWO3LGrYY=;
+Received: from p3plsmtpa06-03.prod.phx3.secureserver.net ([173.201.192.104])
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1kgBJR-00B5Dg-UK
+ for tipc-discussion@lists.sourceforge.net; Fri, 20 Nov 2020 18:39:24 +0000
+Received: from HowieInspiron157000 ([173.76.59.25]) by :SMTPAUTH: with ESMTPSA
+ id gBJEk7Ok15Lb5gBJFk2HzT; Fri, 20 Nov 2020 11:39:01 -0700
+X-CMAE-Analysis: v=2.4 cv=LcD5VhTi c=1 sm=1 tr=0 ts=5fb80d45
+ a=sM9wiLwscyDQ6gqnNcX9XA==:117 a=sM9wiLwscyDQ6gqnNcX9XA==:17
+ a=IkcTkHD0fZMA:10 a=20KFwNOVAAAA:8 a=9d28K2DEAAAA:8 a=FP58Ms26AAAA:8
+ a=8SK7jRMkuXNbeqXK3HcA:9 a=QEXdDO2ut3YA:10 a=1EUg3d_pyfCNkp6X46HA:22
+X-SECURESERVER-ACCT: howard@thefiners.net
+From: "Howard Finer" <howard@thefiners.net>
+To: "'Jon Maloy'" <jmaloy@redhat.com>, <tipc-discussion@lists.sourceforge.net>
 References: <036301d6bef6$b7d7e520$2787af60$@thefiners.net>
-From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <d8bcb856-fffb-ead8-1424-01e4068e2234@redhat.com>
-Date: Fri, 20 Nov 2020 12:25:18 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.3.1
+ <d8bcb856-fffb-ead8-1424-01e4068e2234@redhat.com>
+In-Reply-To: <d8bcb856-fffb-ead8-1424-01e4068e2234@redhat.com>
+Date: Fri, 20 Nov 2020 13:38:59 -0500
+Message-ID: <003b01d6bf6c$69d1d220$3d757660$@thefiners.net>
 MIME-Version: 1.0
-In-Reply-To: <036301d6bef6$b7d7e520$2787af60$@thefiners.net>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
-Authentication-Results: relay.mimecast.com;
- auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Language: en-US
-X-Spam-Score: -0.1 (/)
+X-Mailer: Microsoft Outlook 16.0
+Content-Language: en-us
+Thread-Index: AQIKWT8Cdz4dQVQ+HD0sQxiNV4rF6QLzZwvWqVKIfGA=
+X-CMAE-Envelope: MS4xfA9eRIbpMkIfKLVv4LcrL3m8UpiFJaH4UV+h1kLv8ifCYHZ0g6ARGOPS57PZxTNS+n/twi9oKF1IBgvOmp5a08k2ja8gm6pQglFV3DAc8gG5+W6uBj2R
+ wgy8wwas8afscVZXGVje8b+3Mg+BqQ2lw8Ip1VQlcc0tjwnHN8Gm5OBIa7JYYeQ74LpnHckgefCaL4+erysWjiW2OwTGhvRtPtPfaD5K2Y219vr4LavrD3Np
+ 0LDR2We5lvIX2HAUk4Akdg==
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [63.128.21.124 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [63.128.21.124 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ trust [173.201.192.104 listed in list.dnswl.org]
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: thefiners.net]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [173.201.192.104 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 NICE_REPLY_A           Looks like a legit reply (A)
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1kgAA5-003VBw-IC
+X-Headers-End: 1kgBJR-00B5Dg-UK
 Subject: Re: [tipc-discussion] tipc over an active/backup bond device
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -105,89 +85,144 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-SGkgSG93YXJkLApUaGlzIGlzIHRoZSBjb2RlIGV4ZWN1dGVkIHdoZW4gVElQQyByZWNlaXZlcyBh
-IE5FVERFVl9DSEFOR0UgZXZlbnQ6Cgpzd2l0Y2ggKGV2dCkgewp8wqDCoMKgwqDCoMKgIGNhc2Ug
-TkVUREVWX0NIQU5HRToKfMKgwqDCoMKgwqDCoCB8wqDCoMKgwqDCoMKgIGlmIChuZXRpZl9jYXJy
-aWVyX29rKGRldikgJiYgbmV0aWZfb3Blcl91cChkZXYpKSB7CnzCoMKgwqDCoMKgwqAgfMKgwqDC
-oMKgwqDCoCB8wqDCoMKgwqDCoMKgIHRlc3RfYW5kX3NldF9iaXRfbG9jaygwLCAmYi0+dXApOwp8
-wqDCoMKgwqDCoMKgIHzCoMKgwqDCoMKgwqAgfMKgwqDCoMKgwqDCoCBicmVhazsKfMKgwqDCoMKg
-wqDCoCB8wqDCoMKgwqDCoMKgIH0KfMKgwqDCoMKgwqDCoCB8wqDCoMKgwqDCoMKgIGZhbGx0aHJv
-dWdoOwp8wqDCoMKgwqDCoMKgIGNhc2UgTkVUREVWX0dPSU5HX0RPV046CnzCoMKgwqDCoMKgwqAg
-fMKgwqDCoMKgwqDCoCBjbGVhcl9iaXRfdW5sb2NrKDAsICZiLT51cCk7CnzCoMKgwqDCoMKgwqAg
-fMKgwqDCoMKgwqDCoCB0aXBjX3Jlc2V0X2JlYXJlcihuZXQsIGIpOwp8wqDCoMKgwqDCoMKgIHzC
-oMKgwqDCoMKgwqAgYnJlYWs7CnzCoMKgwqDCoMKgwqAgY2FzZSBORVRERVZfVVA6CnzCoMKgwqDC
-oMKgwqAgfMKgwqDCoMKgwqDCoCB0ZXN0X2FuZF9zZXRfYml0X2xvY2soMCwgJmItPnVwKTsKfMKg
-wqDCoMKgwqDCoCB8wqDCoMKgwqDCoMKgIGJyZWFrOwp8wqDCoMKgwqDCoMKgIGNhc2UgTkVUREVW
-X0NIQU5HRU1UVToKClNvLCB1bmxlc3MgdGhlIGJvbmQgaW50ZXJmYWNlIHJlYWxseSByZXBvcnRz
-IHRoYXQgaXQgaXMgZ29pbmcgZG93biBUSVBDIApkb2Vzbid0IHJlc2V0IGFueSBsaW5rcy4gQW5k
-IGlmIGl0ICpkb2VzKiByZXBvcnQgdGhhdCBpdCBpcyBnb2luZyBkb3duLCAKd2hhdCBlbHNlIGNh
-biB3ZSBkbz8KVG8gbWUgdGhpcyBsb29rcyBtb3JlIGxpa2UgYSBwcm9ibGVtIHdpdGggdGhlIGJv
-bmQgZGV2aWNlIHJhdGhlciB0aGFuIAp3aXRoIFRJUEMsIGJ1dCB3ZSBtaWdodCBvZiBjb3Vyc2Ug
-aGF2ZSBtaXN1bmRlcnN0b29kIGl0cyBleHBlY3RlZCBiZWhhdmlvci4KV2Ugd2lsbCBsb29rIGlu
-dG8gdGhpcy4KT24gYSBkaWZmZXJlbnQgbm90ZSwgeW91IGNvdWxkIGluc3RlYWQgb21pdCB0aGUg
-Ym9uZCBpbnRlcmZhY2UgYW5kIHRyeSAKdXNpbmcgZHVhbCBUSVBDIGxpbmtzLCB3aGljaCB3b3Jr
-IGluIGFjdGl2ZS1hY3RpdmUgbW9kZSBhbmQgZ2l2ZSBiZXR0ZXIgCnBlcmZvcm1hbmNlLgpJcyB0
-aGF0IGFuIG9wdGlvbiBmb3IgeW91PwoKQlIKSm9uIE1hbG95CgoKT24gMTEvMTkvMjAgMTE6MzYg
-UE0sIEhvd2FyZCBGaW5lciB3cm90ZToKPiBJIGFtIHRyeWluZyB0byB1c2UgVElQQyAoa2VybmVs
-IHZlcnNpb24gNC4xOSkgb3ZlciBhIGJvbmQgZGV2aWNlIHRoYXQgaXMKPiBjb25maWd1cmVkIGZv
-ciBhY3RpdmUtYmFja3VwIGFuZCBhcnAgbW9uaXRvcmluZyBmb3IgdGhlIHNsYXZlcy4gSWYgYSBz
-bGF2ZQo+IGdvZXMgZG93biwgVElQQyBpcyByZWNlaXZpbmcgYSBuZXRkZXZfY2hhbmdlIGR1cmlu
-ZyB0aGUgdGltZWZyYW1lIHRoYXQgdGhlCj4gYm9uZCBkZXZpY2UgaXMgd29ya2luZyB0b3dhcmRz
-IGJyaW5pbmcgdXAgdGhlIG5ldyBzbGF2ZS4gIFRoaXMgY2F1c2VzIFRJUEMKPiB0byBkaXNhYmxl
-IHRoZSBiZWFyZXIsIHdoaWNoIGluIHR1cm4gY2F1c2VzIGEgdGVtcG9yYXJ5IGxvc3Mgb2YKPiBj
-b21tdW5pY2F0aW9uIGJldHdlZW4gdGhlIG5vZGVzLgo+Cj4gICAKPgo+IEluc3RydW1lbnRhdGlv
-biBvZiB0aGUgYm9uZCBhbmQgdGlwYyBkcml2ZXJzIHNob3dzIHRoZSBmb2xsb3dpbmc6Cj4KPiA8
-Nj4gMSAyMDIwLTExLTE5VDIzOjU4OjMzLjExMTU0OSswMTowMCBMQUJOQlM1QSBrZXJuZWwgLSAt
-IC0gWyAgMTUzLjY1NTc3Nl0KPiBFbmFibGVkIGJlYXJlciA8ZXRoOmJvbmQwPiwgcHJpb3JpdHkg
-MTAKPgo+IDw2PiAxIDIwMjAtMTEtMjBUMDA6MDc6NTguNTQ0MDQwKzAxOjAwIExBQk5CUzVBIGtl
-cm5lbCAtIC0gLSBbICA3MTguNzk5MjU5XQo+IGJvbmQwOiBib25kX2FiX2FycF9jb21taXQ6IEJP
-TkRfTElOS19ET1dOOiBsaW5rIHN0YXR1cyBkZWZpbml0ZWx5IGRvd24gZm9yCj4gaW50ZXJmYWNl
-IGV0aDEsIGRpc2FibGluZyBpdAo+Cj4gPDY+IDEgMjAyMC0xMS0yMFQwMDowNzo1OC41NDQwNjMr
-MDE6MDAgTEFCTkJTNUEga2VybmVsIC0gLSAtIFsgIDcxOC43OTkyNjFdCj4gYm9uZDA6IGJvbmRf
-YWJfYXJwX2NvbW1pdDogZG9fZmFpbG92ZXIsIGJsb2NrIG5ldHBvbGxfdHggYW5kIGNhbGwKPiBz
-ZWxlY3RfYWN0aXZlX3NsYXZlCj4KPiA8Nj4gMSAyMDIwLTExLTIwVDAwOjA3OjU4LjU0NDA2OSsw
-MTowMCBMQUJOQlM1QSBrZXJuZWwgLSAtIC0gWyAgNzE4Ljc5OTI2M10KPiBib25kMDogYm9uZF9z
-ZWxlY3RfYWN0aXZlX3NsYXZlOiBib25kX2ZpbmRfYmVzdF9zbGF2ZSByZXR1cm5lZCBOVUxMCj4K
-PiA8Nj4gMSAyMDIwLTExLTIwVDAwOjA3OjU4LjU0NDA3MiswMTowMCBMQUJOQlM1QSBrZXJuZWwg
-LSAtIC0gWyAgNzE4Ljc5OTM0N10KPiBib25kMDogYm9uZF9zZWxlY3RfYWN0aXZlX3NsYXZlOiBu
-b3cgcnVubmluZyB3aXRob3V0IGFueSBhY3RpdmUgaW50ZXJmYWNlIQo+Cj4gPDY+IDEgMjAyMC0x
-MS0yMFQwMDowNzo1OC41NDQwODArMDE6MDAgTEFCTkJTNUEga2VybmVsIC0gLSAtIFsgIDcxOC43
-OTkzNDldCj4gYm9uZDA6IGJvbmRfYWJfYXJwX2NvbW1pdDogZG9fZmFpbG92ZXIsIHJldHVybmVk
-IGZyb20gc2VsZWN0X2FjdGl2ZV9zbGF2ZQo+IGFuZCB1bmJsb2NrIG5ldHBvbGwgdHgKPgo+IDw2
-PiAxIDIwMjAtMTEtMjBUMDA6MDc6NTguNTQ0MDgxKzAxOjAwIExBQk5CUzVBIGtlcm5lbCAtIC0g
-LSBbICA3MTguNzk5NjExXQo+IFJlc2V0dGluZyBiZWFyZXIgPGV0aDpib25kMD4KPgo+IDw2PiAx
-IDIwMjAtMTEtMjBUMDA6MDc6NTguNjU1NTM1KzAxOjAwIExBQk5CUzVBIGtlcm5lbCAtIC0gLSBb
-ICA3MTguOTA3MjQ1XQo+IGJvbmQwOiBib25kX2FiX2FycF9jb21taXQ6IEJPTkRfTElOS19VUDog
-bGluayBzdGF0dXMgZGVmaW5pdGVseSB1cCBmb3IKPiBpbnRlcmZhY2UgZXRoMAo+Cj4gPDY+IDEg
-MjAyMC0xMS0yMFQwMDowNzo1OC42NTU1NDUrMDE6MDAgTEFCTkJTNUEga2VybmVsIC0gLSAtIFsg
-IDcxOC45MDcyNDddCj4gYm9uZDA6IGJvbmRfYWJfYXJwX2NvbW1pdDogZG9fZmFpbG92ZXIsIGJs
-b2NrIG5ldHBvbGxfdHggYW5kIGNhbGwKPiBzZWxlY3RfYWN0aXZlX3NsYXZlCj4KPiA8Nj4gMSAy
-MDIwLTExLTIwVDAwOjA3OjU4LjY1NTU0OCswMTowMCBMQUJOQlM1QSBrZXJuZWwgLSAtIC0gWyAg
-NzE4LjkwNzI0OF0KPiBib25kMDogYm9uZF9zZWxlY3RfYWN0aXZlX3NsYXZlOiBib25kX2ZpbmRf
-YmVzdF9zbGF2ZSByZXR1cm5lZCBzbGF2ZSBldGgwCj4KPiA8Nj4gMSAyMDIwLTExLTIwVDAwOjA3
-OjU4LjY1NTU1OSswMTowMCBMQUJOQlM1QSBrZXJuZWwgLSAtIC0gWyAgNzE4LjkwNzI0OV0KPiBi
-b25kMDogbWFraW5nIGludGVyZmFjZSBldGgwIHRoZSBuZXcgYWN0aXZlIG9uZQo+Cj4gPDY+IDEg
-MjAyMC0xMS0yMFQwMDowNzo1OC42NTU1NjIrMDE6MDAgTEFCTkJTNUEga2VybmVsIC0gLSAtIFsg
-IDcxOC45MDc1NjBdCj4gYm9uZDA6IGJvbmRfc2VsZWN0X2FjdGl2ZV9zbGF2ZTogZmlyc3QgYWN0
-aXZlIGludGVyZmFjZSB1cCEKPgo+ICAgCj4KPiBXaXRoIGFycCBiYXNlZCBtb25pdG9yaW5nIG9u
-bHkgMSBzbGF2ZSB3aWxsIGJlICd1cCcuICBXaGVuIHRoZSBhY3RpdmUgc2xhdmUKPiBnb2VzIGRv
-d24sIHRoZSBvdGhlciBzbGF2ZSBuZWVkcyB0byBiZSBicm91Z2h0IHVwLiAgRHVyaW5nIHRoYXQg
-dGltZWZyYW1lIHdlCj4gc2VlIFRJUEMgaXMgcmVzZXR0aW5nIHRoZSBiZWFyZXIuICAgIFRoYXQg
-ZGVmZWF0cyB0aGUgZW50aXJlIHB1cnBvc2Ugb2YKPiB1c2luZyB0aGUgYm9uZCBkZXZpY2UuCj4K
-PiBJdCBzZWVtcyB0aGF0IHRoZSBoYW5kbGluZyBvZiB0aGUgbmV0ZGV2X2NoYW5nZSBldmVudCBm
-b3IgYSBhY3RpdmUvYmFja3VwCj4gYm9uZCBkZXZpY2UgaXMgbm90IGNvcnJlY3QuICBJdCBuZWVk
-cyB0byBsZWF2ZSB0aGUgYmVhcmVyIGludGFjdCBzbyB0aGF0Cj4gd2hlbiB0aGUgYmFja3VwIHNs
-YXZlIGlzIGJyb3VnaHQgdXAgdGhlIGNvbW11bmljYXRpb24gaXMgcHJvcGVybHkgcmVzdG9yZWQK
-PiB3aXRob3V0IGFueSB1cHBlciBsYXllciBhcHBsaWNhdGlvbnMgYmVpbmcgYXdhcmUgdGhhdCBz
-b21ldGhpbmcgaGFwcGVuZWQgYXQKPiB0aGUgbG93ZXIgbGV2ZWwuCj4KPiAgIAo+Cj4gVGhhbmtz
-LAo+Cj4gSG93YXJkCj4KPgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCj4gdGlwYy1kaXNjdXNzaW9uIG1haWxpbmcgbGlzdAo+IHRpcGMtZGlzY3Vzc2lv
-bkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKPiBodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9s
-aXN0cy9saXN0aW5mby90aXBjLWRpc2N1c3Npb24KPgoKCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwp0aXBjLWRpc2N1c3Npb24gbWFpbGluZyBsaXN0CnRp
-cGMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vm
-b3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vdGlwYy1kaXNjdXNzaW9uCg==
+Hi Jon,
+
+Thanks for the response.  I was continuing to debug the situation today and I agree that the issue is with the bond device.    When using active/backup and AP monitoring, it is issuing a NETDEV_CHANGE event that arguably it should not be doing.  I am already in the process of filing a bug against the bond driver.
+Essentially what happens is that the bond driver sees the slave down and stops using it. It doesn't immediately switch to the backup though because it is technically 'down'. However, it does send a NETDEV_CHANGE here.  it then immediately brings up the backup slave and sends another NETDEV_CHANGE. By then however the bearer has been reset.  The concept of the bond driver means it should switch the slave without notifying the upper layers anything happened.  But that is not the case here, and hence the bond device error.  If MII monitoring is used instead of ARP, it switches the slave immediately and TIPC is unaware.  However MII monitoring does not make much sense when going across a network involving switches, etc.
+
+Dual TIPC links is an interesting suggestion.  However the functionality where I see this issue is on a product that is 10+ years old, and we use the bond device for redundancy.  It is not a throughput/performance issue.  
+
+Thanks again for the quick response.
+
+Howard
+
+-----Original Message-----
+From: Jon Maloy <jmaloy@redhat.com> 
+Sent: Friday, November 20, 2020 12:25 PM
+To: Howard Finer <howard@thefiners.net>; tipc-discussion@lists.sourceforge.net
+Subject: Re: [tipc-discussion] tipc over an active/backup bond device
+
+Hi Howard,
+This is the code executed when TIPC receives a NETDEV_CHANGE event:
+
+switch (evt) {
+|       case NETDEV_CHANGE:
+|       |       if (netif_carrier_ok(dev) && netif_oper_up(dev)) {
+|       |       |       test_and_set_bit_lock(0, &b->up);
+|       |       |       break;
+|       |       }
+|       |       fallthrough;
+|       case NETDEV_GOING_DOWN:
+|       |       clear_bit_unlock(0, &b->up);
+|       |       tipc_reset_bearer(net, b);
+|       |       break;
+|       case NETDEV_UP:
+|       |       test_and_set_bit_lock(0, &b->up);
+|       |       break;
+|       case NETDEV_CHANGEMTU:
+
+So, unless the bond interface really reports that it is going down TIPC 
+doesn't reset any links. And if it *does* report that it is going down, 
+what else can we do?
+To me this looks more like a problem with the bond device rather than 
+with TIPC, but we might of course have misunderstood its expected behavior.
+We will look into this.
+On a different note, you could instead omit the bond interface and try 
+using dual TIPC links, which work in active-active mode and give better 
+performance.
+Is that an option for you?
+
+BR
+Jon Maloy
+
+
+On 11/19/20 11:36 PM, Howard Finer wrote:
+> I am trying to use TIPC (kernel version 4.19) over a bond device that is
+> configured for active-backup and arp monitoring for the slaves. If a slave
+> goes down, TIPC is receiving a netdev_change during the timeframe that the
+> bond device is working towards brining up the new slave.  This causes TIPC
+> to disable the bearer, which in turn causes a temporary loss of
+> communication between the nodes.
+>
+>   
+>
+> Instrumentation of the bond and tipc drivers shows the following:
+>
+> <6> 1 2020-11-19T23:58:33.111549+01:00 LABNBS5A kernel - - - [  153.655776]
+> Enabled bearer <eth:bond0>, priority 10
+>
+> <6> 1 2020-11-20T00:07:58.544040+01:00 LABNBS5A kernel - - - [  718.799259]
+> bond0: bond_ab_arp_commit: BOND_LINK_DOWN: link status definitely down for
+> interface eth1, disabling it
+>
+> <6> 1 2020-11-20T00:07:58.544063+01:00 LABNBS5A kernel - - - [  718.799261]
+> bond0: bond_ab_arp_commit: do_failover, block netpoll_tx and call
+> select_active_slave
+>
+> <6> 1 2020-11-20T00:07:58.544069+01:00 LABNBS5A kernel - - - [  718.799263]
+> bond0: bond_select_active_slave: bond_find_best_slave returned NULL
+>
+> <6> 1 2020-11-20T00:07:58.544072+01:00 LABNBS5A kernel - - - [  718.799347]
+> bond0: bond_select_active_slave: now running without any active interface!
+>
+> <6> 1 2020-11-20T00:07:58.544080+01:00 LABNBS5A kernel - - - [  718.799349]
+> bond0: bond_ab_arp_commit: do_failover, returned from select_active_slave
+> and unblock netpoll tx
+>
+> <6> 1 2020-11-20T00:07:58.544081+01:00 LABNBS5A kernel - - - [  718.799611]
+> Resetting bearer <eth:bond0>
+>
+> <6> 1 2020-11-20T00:07:58.655535+01:00 LABNBS5A kernel - - - [  718.907245]
+> bond0: bond_ab_arp_commit: BOND_LINK_UP: link status definitely up for
+> interface eth0
+>
+> <6> 1 2020-11-20T00:07:58.655545+01:00 LABNBS5A kernel - - - [  718.907247]
+> bond0: bond_ab_arp_commit: do_failover, block netpoll_tx and call
+> select_active_slave
+>
+> <6> 1 2020-11-20T00:07:58.655548+01:00 LABNBS5A kernel - - - [  718.907248]
+> bond0: bond_select_active_slave: bond_find_best_slave returned slave eth0
+>
+> <6> 1 2020-11-20T00:07:58.655559+01:00 LABNBS5A kernel - - - [  718.907249]
+> bond0: making interface eth0 the new active one
+>
+> <6> 1 2020-11-20T00:07:58.655562+01:00 LABNBS5A kernel - - - [  718.907560]
+> bond0: bond_select_active_slave: first active interface up!
+>
+>   
+>
+> With arp based monitoring only 1 slave will be 'up'.  When the active slave
+> goes down, the other slave needs to be brought up.  During that timeframe we
+> see TIPC is resetting the bearer.    That defeats the entire purpose of
+> using the bond device.
+>
+> It seems that the handling of the netdev_change event for a active/backup
+> bond device is not correct.  It needs to leave the bearer intact so that
+> when the backup slave is brought up the communication is properly restored
+> without any upper layer applications being aware that something happened at
+> the lower level.
+>
+>   
+>
+> Thanks,
+>
+> Howard
+>
+>
+> _______________________________________________
+> tipc-discussion mailing list
+> tipc-discussion@lists.sourceforge.net
+> https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+>
+
+
+
+
+_______________________________________________
+tipc-discussion mailing list
+tipc-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tipc-discussion
