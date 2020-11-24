@@ -2,27 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AFEF2C1051
-	for <lists+tipc-discussion@lfdr.de>; Mon, 23 Nov 2020 17:32:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04D192C2277
+	for <lists+tipc-discussion@lfdr.de>; Tue, 24 Nov 2020 11:05:20 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1khElH-0002PR-Ee; Mon, 23 Nov 2020 16:32:19 +0000
+	id 1khVC5-0007v8-6N; Tue, 24 Nov 2020 10:05:05 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <holger.brunck@hitachi-powergrids.com>)
- id 1khEku-0002OV-CO
- for tipc-discussion@lists.sourceforge.net; Mon, 23 Nov 2020 16:31:56 +0000
+ (envelope-from <tung.q.nguyen@dektech.com.au>) id 1khVC3-0007v0-9z
+ for tipc-discussion@lists.sourceforge.net; Tue, 24 Nov 2020 10:05:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
  :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ufhFVw1D+jn4D8F+ODIbPeysA6R9upe5GPXvbRAh/yM=; b=ccUzeih3invFNaSs4YZyaI1IwQ
- gZSqNpDAHuvKaHI+ycghMdqWjPe9LJjNUzjoFBGWwJSZGsYqDqxvj7HbZUFfTMEZppJ2129thPW/O
- OBN1K5rGDaJdMw5Xp8fwBSJaX4dMseJpte6ndFTDe9WhqgKwd1AkTSnIYdy621eOdXgc=;
+ bh=IO2aA0fTyNrebLt/BziT+UQ8woqryAXKv0pB/3QDe6Q=; b=epYYyt7Q12Eq3sG31tz6F4UnW1
+ Z7IFa/2sQq7IerCLIYQQZLuvbdAH0zfVyPZD8+ogtc1+VI/cS+P4rDsk7Y+kMnW6EYYywTXRILxA9
+ 4EZ8tGyTaWGCoRAgxoy0xEBH1HKFxoPqN6JrhSTTz+kwUxcDvPCcn9kPF7osaBNKvBfo=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
@@ -30,90 +29,94 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ufhFVw1D+jn4D8F+ODIbPeysA6R9upe5GPXvbRAh/yM=; b=YOD//mKlGULmKbArk6isPH9gik
- MUujRwduU7Qv9oN4HBNI6+2qN5YBkelAA71fvQneN+sLu42m3DiH8gzla1DxrypcTM9WTxy83blFU
- z1kLmrIwhSxQA7ikgZcJYQHQ0xhfiSncdCIpj0K0M+STc+9Z90sP+HOJCkGfVe/BS/yg=;
-Received: from mail-eopbgr60106.outbound.protection.outlook.com
- ([40.107.6.106] helo=EUR04-DB3-obe.outbound.protection.outlook.com)
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=IO2aA0fTyNrebLt/BziT+UQ8woqryAXKv0pB/3QDe6Q=; b=c1RxXa+DZsiwzFKr1Q50Tdv1Tg
+ NAxah+0ONR1IFKW6yOU6eW29ZydLUl/VtMOFcFilvrKmxyxXpRgM8v9L4vjt1jMerO4a9BWOU1b7h
+ +QFE9WuKX0PNk979WfjBgdNsOmK0pp4HPq6x8xkll9PFn/UX4RQRiIsS0EbxMWVNDoEE=;
+Received: from mail-eopbgr60090.outbound.protection.outlook.com ([40.107.6.90]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1khEko-00Be9g-JW
- for tipc-discussion@lists.sourceforge.net; Mon, 23 Nov 2020 16:31:56 +0000
+ id 1khVBu-002186-Lx
+ for tipc-discussion@lists.sourceforge.net; Tue, 24 Nov 2020 10:05:03 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=jPw+JcJMw8CnVUSXARqJwbBYeJeQM/AWY0VvqtCreTRo6ngfGOuqB76AjfjPhSp0dT/CL08q7l+TESN/oEP0vfot4zbwycmO9BQpHgwUlkj6l/pB2Hk8rBdGJaoRXenY4jYjto4sgZihvVHgNSFKzRdgLcQHPxgFdL5eI3CB6QrNXsr5tYRFt9oJQYxDHk8xgYQMa+XtmjZo3OfKiQD6khTJmLGNrlOwcV0JYEq23dW2Ue55Ch0VxMoyPdadp/IaHHhXZR49+ZmU/Djl0cKjb8wQ20NsDaQ0HKDIYrUQBXsgrCBo+yYZkR7HbHkE4ynsuZ/dj3/LuMFsAfyeDWABGA==
+ b=RX3lLQHYeJup9+YkAQacBI4LJe1PyUMx3R0OPyH5p1FMsfNjDwL+cccEZvBNELOV83l+bnual4ql4XW0KFpuqrCqM/aAO0Xv0IiaVL83ffqbgFDl4w6eeABxG2TLwqQTWE+b+YFYrC1ycWTPfd4Jan42h7z9gq3u3Yx4eZKh+hORouc3U9ijOrYpQInte1jCEhwS49tPY356SQRl2JmqmE/z/J5XPTmbe370mv8R6BhOlu2elLDwypmzGqAakf/8yrW2TUc3C4hcVK+iSYKAEvI0/BmarP5ezRFBYW7E9Z/vC5qKo7zmb8ozJnJiKOypuRKtlaBUbGBMhriEHv2x7A==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ufhFVw1D+jn4D8F+ODIbPeysA6R9upe5GPXvbRAh/yM=;
- b=dEgYsIzjn75J5HrIJ/1UEatouI4cOs8WjBXe0ouHSWWeYtpxClQRJvsJbJkAUfNVbzUADd1B2KScm/sZavtORGhJHX1ZNKgw6HjN9FFdz9p5eIMVxLT0VPPo0qvjyYd+ZrjhuEIkjZzJOJho0+hGtTyLhQcwtoelIunYYXfq3GuzZTZZFvW0O9viH3EE0j0nQB90M3tKKUs+qnxQ4rLOowFqEJyK3d//HaXRnAk0MS/lsxym+m3bY94a3cNlvMEgT9FODOAJIvOpT1ZH1tDlBWaQmDsO9fHfJi+VcdcC5Xe1e2MU369rfRlVuj4seL80KaHlcBAUQUDC69EMWRC2Zg==
+ bh=IO2aA0fTyNrebLt/BziT+UQ8woqryAXKv0pB/3QDe6Q=;
+ b=FRB203fysgHrJ6JqFjTsKvTQSHTi0+2fE57zterI4I3xAO/n7L4fEgEXtlGf3ZBpDCJ66fL1fbLTDwoTi2o/za5y0jvzct4wTJRhJvuMMNAD2uEUQs7wPoasRjxfyBBiU1d2FMcqb1BFZQCjI689BWTEerkeDG1GbNLOfH+LybffEWJpCHLwl3A5k3qiUEC+UTNZU8BWNKueMdk9QVKmI35NVAEpGp4B7QW4xz0WbfcByo6JWNxve/j+5SgeaRG2lNXZNNXQOQEaf0cXQujLpt5cOlrYQ6trUYHmXLtdS763fJUgRhO5myIuSK5aQbW5tO95MdWFXkDShbovt+0maw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=hitachi-powergrids.com; dmarc=pass action=none
- header.from=hitachi-powergrids.com; dkim=pass
- header.d=hitachi-powergrids.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=hitachi-powergrids.com; s=selector1;
+ smtp.mailfrom=dektech.com.au; dmarc=pass action=none
+ header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
+ s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ufhFVw1D+jn4D8F+ODIbPeysA6R9upe5GPXvbRAh/yM=;
- b=aRPMmCZNhOTw/JMrqOUnB3BmQQXFBI1yc9sI24hlUqdnVCKSc1u546WkdYD74pow5PgxF6UtviVWU/RmxlBezFef4PxlJ4YSK4ZjJLM/JkykhXaxh2GQCbj6qYV/3oaV8u59D5u5PNgMcI3atz4lbb58EGyY4MKbNl0DH4zGM3k=
-Received: from AS8PR06MB7269.eurprd06.prod.outlook.com (2603:10a6:20b:259::19)
- by AM7PR06MB6550.eurprd06.prod.outlook.com (2603:10a6:20b:11a::12)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3589.22; Mon, 23 Nov
- 2020 15:00:01 +0000
-Received: from AS8PR06MB7269.eurprd06.prod.outlook.com
- ([fe80::b828:89b5:b9dd:709f]) by AS8PR06MB7269.eurprd06.prod.outlook.com
- ([fe80::b828:89b5:b9dd:709f%3]) with mapi id 15.20.3589.030; Mon, 23 Nov 2020
- 15:00:01 +0000
-From: Holger Brunck <holger.brunck@hitachi-powergrids.com>
-To: Jon Maloy <jmaloy@redhat.com>, "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>
+ bh=IO2aA0fTyNrebLt/BziT+UQ8woqryAXKv0pB/3QDe6Q=;
+ b=jXRwswVE5iKNHMEQMOI93WHs/xnccDAw6DqWsOH8adtx4wfJD80gBhzcZifa2ci+VpgqqQBq85M82K9uVLeraGI5L2zdB/fSfrFWJZe+JKxkb7kVLbLEvPMYZg+F+9xLIT67SyvWjLmQfNzq7/ULIRXujci4a7DsIje/4nwlDVs=
+Received: from DB7PR05MB4315.eurprd05.prod.outlook.com (2603:10a6:5:1f::18) by
+ DB3PR0502MB3995.eurprd05.prod.outlook.com (2603:10a6:8:10::30) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3589.20; Tue, 24 Nov 2020 10:04:39 +0000
+Received: from DB7PR05MB4315.eurprd05.prod.outlook.com
+ ([fe80::fc7c:55e3:fd76:b5b6]) by DB7PR05MB4315.eurprd05.prod.outlook.com
+ ([fe80::fc7c:55e3:fd76:b5b6%6]) with mapi id 15.20.3589.030; Tue, 24 Nov 2020
+ 10:04:39 +0000
+From: Tung Quang Nguyen <tung.q.nguyen@dektech.com.au>
+To: Holger Brunck <holger.brunck@hitachi-powergrids.com>
 Thread-Topic: refcount warnings with TIPC in combination with a TAP device and
  fragmented messages
-Thread-Index: AQHWvn3mi7mZVfwgkkSaH/lh1J9LoanVy+2AgAAE/kE=
-Date: Mon, 23 Nov 2020 15:00:01 +0000
-Message-ID: <AS8PR06MB726986B9C4A672C4640D8064CCFC0@AS8PR06MB7269.eurprd06.prod.outlook.com>
+Thread-Index: AQHWvn3mi7mZVfwgkkSaH/lh1J9LoanVy+2AgAAE/kGAAUQOUA==
+Date: Tue, 24 Nov 2020 10:04:39 +0000
+Message-ID: <DB7PR05MB4315EFBDE5F6005390E8FF6E88FB0@DB7PR05MB4315.eurprd05.prod.outlook.com>
 References: <AS8PR06MB7269EEC3A0C96ED05DE19B29CCE00@AS8PR06MB7269.eurprd06.prod.outlook.com>,
  <999af682-2051-8e01-d417-ad04e1f442fc@redhat.com>
-In-Reply-To: <999af682-2051-8e01-d417-ad04e1f442fc@redhat.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-GB
+ <AS8PR06MB726986B9C4A672C4640D8064CCFC0@AS8PR06MB7269.eurprd06.prod.outlook.com>
+In-Reply-To: <AS8PR06MB726986B9C4A672C4640D8064CCFC0@AS8PR06MB7269.eurprd06.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-authentication-results: redhat.com; dkim=none (message not signed)
- header.d=none;redhat.com; dmarc=none action=none
- header.from=hitachi-powergrids.com;
-x-originating-ip: [193.17.201.81]
+authentication-results: hitachi-powergrids.com; dkim=none (message not signed)
+ header.d=none; hitachi-powergrids.com;
+ dmarc=none action=none header.from=dektech.com.au;
+x-originating-ip: [14.161.14.188]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 8dc50ac6-ec65-4012-1c59-08d88fc07436
-x-ms-traffictypediagnostic: AM7PR06MB6550:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM7PR06MB65503DBA7D85340D0B25BC5ACCFC0@AM7PR06MB6550.eurprd06.prod.outlook.com>
-x-abb-o365-outbound: ABBOUTBOUND1
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-ms-office365-filtering-correlation-id: 49de88a0-b2f3-4eef-2363-08d890605b61
+x-ms-traffictypediagnostic: DB3PR0502MB3995:
+x-microsoft-antispam-prvs: <DB3PR0502MB3995CF1E33DA5C900E15531388FB0@DB3PR0502MB3995.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: zZJhEj47h1KMFidlyghIEB1h4kzgU1lR9SCgJ6B5/yhxJZLjbC81HnTQ8R7UaNfaPXp5tQSgifPEyK5WuFKj7qMXlCN/EK7NwzTGG1A8sWj5W8+mFn7NKMqj95C+fKbsH2z1d2zWCAj/eZcJbGbcm4v4iUESWXGbZei5Lf//i1hA8OXWaR5lBM5D3R7rvnJ04VywCqqMzQ/0K+Hn2el31KiE2WpML6XtveHx63NnUGOtv24yqV2Cb28MgxWrTwwva4ymOQwOM89vd2l24CMMiP/S2dPsJX7uVWDPP1nQIFZDtHD1NHSUvuAn4Sa8FOGd6ZQzEnS0Gcqo7D3gLJqvUQ==
+x-microsoft-antispam-message-info: +iQPtZhw/CmQOQtMcA3AiXw4ozXWn+9a9c59DAV6JsbQ/E6aHNS4h1UyfH1cpK+LGiWHM9SGAyF5n5RMr5uHK2MuoAa2M7NOFG/O0Gy8Y2HUmKNier/WEO65XKAR6yIBNtfnIjaKE9PCc9c3+XYSMLNAGms5DxtbFFeScpXF/w8O51gMidDNj0t/gvblv6D+xQw/K61tdllJc1hqZPPOW4f2DJ4Jwrk6s/uuNgPtCQSCUKeVHxtvdORYdCraA/cKLvildMDu1HXprvonmwqGozHOOVn+Xxi61RHrFpJL09sbNSEIlZWMyFGetJfxFA878ufEyrg1NjJQ/XuVFNQcwA==
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AS8PR06MB7269.eurprd06.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(346002)(376002)(39860400002)(136003)(366004)(396003)(71200400001)(15650500001)(9686003)(5660300002)(8936002)(55016002)(4326008)(33656002)(107886003)(8676002)(45080400002)(86362001)(76116006)(66446008)(66476007)(478600001)(66556008)(66946007)(64756008)(2906002)(44832011)(54906003)(6506007)(316002)(110136005)(83380400001)(186003)(7696005)(26005)(53546011)(52536014);
+ IPV:NLI; SFV:NSPM; H:DB7PR05MB4315.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(376002)(39850400004)(346002)(136003)(396003)(366004)(316002)(54906003)(8676002)(26005)(2906002)(15650500001)(53546011)(186003)(9686003)(8936002)(83380400001)(6506007)(33656002)(45080400002)(478600001)(6916009)(7696005)(4326008)(52536014)(66446008)(66476007)(5660300002)(76116006)(71200400001)(86362001)(66946007)(66556008)(55016002)(64756008);
  DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata: otjtLhUQUuCSNnfZztOi59hQcz0Zx1CA6JbSSGiWkV0wB011px3SgoEswL6ARc+pT7+c0g1ek4fc4CNl8ZJrX4D80LYamEyDX2Pir29Jy6bozqiZfqCWsNN8neVft/1cK0K6lWrKfGk2uRF1l+7iNR2UaA7jbbILNAKCjyQFrA84A6T75jyOQhb1zZx3TgGc45da4UJuGAOvbtSZIP+/5r8mkxdrhvKhL0qviUXbjicIzC8ls0PGB5WBQKG5b/Zcvx8tQmboSVHopdnitSZdtoSyiRzG/ZfweDM4zApvAI7ETdcZ0mcfXJwzk8Br+DWU7ijZgzs+sL5ilfdusVpntvErD9yzXwYuZ9FY+r0yhAp5Ip6HH16B0j5Mq94qtFMmv4uWHNu+3UUwj3EuKxChtcXbxATSmH0cyWWAZ9AE88sDXuo6VdLEc7pzbrJF5OG4JI+etS3Ob8BxukNwFzfrGQLfU9uOQQrBf/lZX6+iyiGNUfgp5bNRbFoDzDFaFFYB6kqH1uok1BraYqqISJMlBocSxSW8dHOB90LYtJGL0P+UXajXzR3xnHo4YzSY1P1nz1c3nXan+UwHSRNXt1vzJ8Z1EQ/FiW4ipDKGSJC2yRYid91eootThXR0yYuOWSl3aT5Awg7C7ifYlNl18VACNvBEXIKP8RE12Q03JrdV4wkIHL2qDqlY+tqEAHySUbEMbFSuFnH4dusSw4D07w9Oq1n4va4fT+M3UIas6nE2N2/SZ79N0d13WZ+Af2zHQSMW3aTfX4imsYmDcbeCHaYu7jLN1o6J9i2ObO9fgQ2OZpPd8zLiQUEHherznLpNKSkQ3IoSRtBDDPukTi5hsVldmypDr3lcqohE1soQikl6WCJ1mbfCNmfAgEV9eGdFE6clNAtSdTI/T4rNrp68lGXFDQ==
+x-ms-exchange-antispam-messagedata: QUcRtFyOuxYF/Vb0csdN6waMqKS4906oR0ZZnOMJG7n8e1Oiw5JPnCyXFZVZqbWP+6ppcT9jD+JC/dxZmA3eKVRWmX6aeKR5NQhEiYyqW1mesEFx+MbhvNypBv+IiFSdeyUdSAKPqQePYDavlsxqf2qqeRaLAYUTX53WdL75MHERmxGUKIgz5Ftms+zZtBms3va3IsXwCS/lHmC1K3xM1aPpHWDvtIIatehbH0o1rZj5VdHTc9NNxUyMh/N9nDkKIDQv1gBm1f4kYqIx9e1VDhKq9+4G7ThHh/8gK8Pfj3WgXq7pFNwZ0v1Ge5tW/THT04Y4qjpedx7TmY6qsR3ay2t5W2jXf1Sp9usOppavJ/YawY9AvWRjK5BIrdQN82GCmfBYbRKg6fWwgQo/6F76Gf7KN6hxSlDNTjnuJfL4DQzEhAkSlurj/IdkM/EvL7xnb0k+EOG7RW85y/UC7Y0g1WZyHSaHgCxkoINIp1MDA/NE7/DYNcfkcE6yC/AGR5I9GBcx2xanwX5WNL8IpKWYB0nmyksuQr/KHumufJmqmakDy38N84U1WL8sqA5O1rTiYTZCeKMJO3ozAHJush1remd6d0v/Ec0FFGTpDP+Qa/HL5Z5ZpR7r+mes1W0dbC+0BZyeBce5DUFSL+Tde3PEfe7pR1fMmhL0JOtfXTalA9tIqHi9dHeBaoUbW700HVM0Sn1xK5WPXQaRGch+Gs7T5rgpszKwJXllXpJqtCxzteBiLnYOw5L/UCrmcVjqtazVvp9z+6uNCpHzI9ngUIHDmdvDwJhDBa8rTrklViqisK6VDaphMT2sFlnj+TEZFZrfEunGG94bWsKtX23z4AKXQCGqnvHmxFXuLRlZaMurTZpd/eWl1tLjdG7Ay8tUARJakjZKbCvR+4dGnUOeomo62A==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-X-OriginatorOrg: hitachi-powergrids.com
+X-OriginatorOrg: dektech.com.au
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: AS8PR06MB7269.eurprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8dc50ac6-ec65-4012-1c59-08d88fc07436
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Nov 2020 15:00:01.8264 (UTC)
+X-MS-Exchange-CrossTenant-AuthSource: DB7PR05MB4315.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 49de88a0-b2f3-4eef-2363-08d890605b61
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Nov 2020 10:04:39.5249 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 7831e6d9-dc6c-4cd1-9ec6-1dc2b4133195
+X-MS-Exchange-CrossTenant-id: 1957ea50-0dd8-4360-8db0-c9530df996b2
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: oebwphEIkJZE56hWilDh2zxVVB9KR+RUJrZt2gA7t68P5VdVRkmEydD1tAPKw4t0N/1EYoIARYktf4lKtLdHj3346MrMiQOIcM7v+gU75hmZhm2qBvTewfh/4HislLQx
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR06MB6550
+X-MS-Exchange-CrossTenant-userprincipalname: Us4voUiAgE4hzmsajyEtt3qoO7JqVMN84ljeEDvZYd8P6/0f3wHO+g80cafZWpDOUH94xkl+m5zSesPh4VHRognyCa2C4/5wCgAv9mZlvME=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0502MB3995
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [40.107.6.90 listed in list.dnswl.org]
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: dektech.com.au]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.6.106 listed in wl.mailspike.net]
+ [40.107.6.90 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -121,7 +124,7 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1khEko-00Be9g-JW
+X-Headers-End: 1khVBu-002186-Lx
 Subject: Re: [tipc-discussion] refcount warnings with TIPC in combination
  with a TAP device and fragmented messages
 X-BeenThere: tipc-discussion@lists.sourceforge.net
@@ -135,10 +138,30 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Matteo Ghidoni <matteo.ghidoni@hitachi-powergrids.com>
+Cc: "tipc-discussion@lists.sourceforge.net"
+ <tipc-discussion@lists.sourceforge.net>,
+ Matteo Ghidoni <matteo.ghidoni@hitachi-powergrids.com>
 Content-Type: text/plain; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
+
+Hi Holger,
+
+You said you met this stack trace after migrating to "kernel 5.4". Can you =
+give us a full version ?
+
+Thanks.
+Tung Nguyen
+
+-----Original Message-----
+From: Holger Brunck <holger.brunck@hitachi-powergrids.com> =
+
+Sent: Monday, November 23, 2020 10:00 PM
+To: Jon Maloy <jmaloy@redhat.com>; tipc-discussion@lists.sourceforge.net
+Cc: Tung Quang Nguyen <tung.q.nguyen@dektech.com.au>; CC: Xin Long <lucien.=
+xin@gmail.com>; Matteo Ghidoni <matteo.ghidoni@hitachi-powergrids.com>
+Subject: Re: refcount warnings with TIPC in combination with a TAP device a=
+nd fragmented messages
 
 Hi Jon,
 thanks.  To add some more information I was now using ftrace to see the cal=
