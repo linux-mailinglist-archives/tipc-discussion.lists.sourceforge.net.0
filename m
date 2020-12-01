@@ -2,163 +2,139 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3470B2C787D
-	for <lists+tipc-discussion@lfdr.de>; Sun, 29 Nov 2020 10:36:04 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id C40672C9A4B
+	for <lists+tipc-discussion@lfdr.de>; Tue,  1 Dec 2020 10:02:13 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kjJ7a-00018D-O5; Sun, 29 Nov 2020 09:35:54 +0000
+	id 1kk1Xt-0006yz-LN; Tue, 01 Dec 2020 09:02:01 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Ying.Xue@windriver.com>) id 1kjJ7Y-00017x-OZ
- for tipc-discussion@lists.sourceforge.net; Sun, 29 Nov 2020 09:35:52 +0000
+ (envelope-from <hoang.h.le@dektech.com.au>) id 1kk1Xn-0006yX-K5
+ for tipc-discussion@lists.sourceforge.net; Tue, 01 Dec 2020 09:01:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
+ :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=5IeGQr9QUHmJIqHWPPj6JlK+CB62LUD9TTQg8f/8wlY=; b=I9heiSVvTJzERuZFkXujeZw20/
- DHOsZB0H9fLJwM3bfR40+j4ovvea2twJ/QBTvJohFIh4v/bXrM+R+xXFqw4YxG6pemD0dYm3zP+9m
- lONa5na/ohrq/a3h9TVK2TDaHfS6b8oBk4HMWfAcx40IrD+QQc9wF1cINlsanY8sbjYw=;
+ bh=JPfyL7DM+q/Bb71Nh8PKSjLxyNTtfp2CgQn1OP3+6G0=; b=L9mdHFeRmtLpRDs3jRLgcdZqBl
+ qJSRwYoJgdZXXoxV+QDLl7b48XcSlRwLh0yhLvHMS7rYWHqS965uyaS49ZnnaNofa5rtV6kQBIqFV
+ hr8tbyYHBUSQGfqLZnf2qLFn4bqXFWvHAOhFkfUzCD+GnodYwNqcJRU5psQ25XAZIaEk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:Date:
- Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=5IeGQr9QUHmJIqHWPPj6JlK+CB62LUD9TTQg8f/8wlY=; b=TS7qggzOp6d9OPkWI88W7FGTdo
- HQ7vHAgki0i0p5kuXZdGfqs6VITuHpnCfBUqHB9uf+hsWBknyj2NsD3Ih5TsNYtfWmN9r7XEW55Xj
- Uk7bsAd1UL9xwxqZG1rsl1l9JDW0BhSJr3Ux2BEjXI2J5Jg1WmE2AT5oVqfS5/N7K96E=;
-Received: from mail-dm6nam12on2048.outbound.protection.outlook.com
- ([40.107.243.48] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Date:
+ Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=JPfyL7DM+q/Bb71Nh8PKSjLxyNTtfp2CgQn1OP3+6G0=; b=W
+ 4SycazusBeNXUPOS9KnEz+uOR3zqknGNoLPGOeePDN3ur2yJJdThMr98m3YAuEeUMN1TqKNTrmjmK
+ mkj0vDyOd80ObXMbNWvfFItDyUoTsMMwqAuGBhc0YQKfKs7QxE5i4mqp/AiVL1HxAcBGsDgGee6DR
+ T8aW+6c+mPkK3qnM=;
+Received: from mail-eopbgr80113.outbound.protection.outlook.com
+ ([40.107.8.113] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1kjJ7P-0049OI-Nn
- for tipc-discussion@lists.sourceforge.net; Sun, 29 Nov 2020 09:35:52 +0000
+ id 1kk1XX-00Dh5R-4D
+ for tipc-discussion@lists.sourceforge.net; Tue, 01 Dec 2020 09:01:55 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=gF3A9LbWksrq6rJxMLs08Hsz0rd+T9p7CEhXFzrkkjBEsyvlCENU6QLEyk972Lm80UNnkhCZFB4mx5vHXY9wPUsc0ArDxClccsMUvLGMOnEUzxoaXI7NsUCuT4xU6EkDymb57LwitpGGIgaewTjZPFLph9Ve3qfzf6qd2Hk9KtcUEEwvhw7l3niZftk579shAI4ygHf/4kYwz2DqDPzuqu2n6uOW7iGISrVN+6CBLurBR1UQOVPgcK+QKve5Qq+P85NAV0HoyCArnEbpbh3VEAV9aKtmLjg9got/tDqen0u4VMZl0jIBrxpRV6NWxzE3THb+51iA5IlcLcAuYyIeKg==
+ b=lroednF+As7V3lpupKVOtHpnynpY4kQrLK5HnJfxr/xWheWAD30X7aR5ea6nrS2vm5LBtHKnvUvklj6PUOGVl40MEs8aQAOTFfPeRRyl0KwEnyesVq3IQQZ9dDpJNqPAU61l9qhXPU0esQ0oZzPvVGx1/un1bs05Kjv+T+YUjcoXTXHvtTnHn1lEAqYjS6E2zTetnynt2J8tK0kXAaGnFFiJUiakeS3IBPc4Ki0GHSmFUHwrVhUKYPnJ7YQZ5KqlUGszf0Ghk+LssvBjNw5SYCw51yyHT+PDJh1Dz8fkpIhT2WB6KgRvj2h2GuvmEwK/tWJLwIiGvgDL1NHMxCsc0Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5IeGQr9QUHmJIqHWPPj6JlK+CB62LUD9TTQg8f/8wlY=;
- b=kW1CWnOYFmfKgkpMUZ81HzN8hr1+JJwpc36vQp/weazhRCYHO8y4RhOsPNPPxhGz58ng7t70ANOln8QB7oKhnxkzgDrcpO7uEl1xxemoilQFGoHBsR6VcIBgYceTqsyyV4ZTU3IcpZhgsbvE4grPHZTFapRtfUrjEQbB3NcKIy8QIB4et0ADpYLk1FZsUdtHa2uD7ceJEDi46k9DUIwV8Pagt0ObURl1f1SgXMc+BxaqrcFF1EhSA3p+ELd8h/Ok04KT7ytD+P7312YJrrRpA89CsmmiUI9zP4H3EPmRoxjEc7IQdiS6P2KkIEWnw+5FbjhAvC5Ek5oE+ryvGautlA==
+ bh=JPfyL7DM+q/Bb71Nh8PKSjLxyNTtfp2CgQn1OP3+6G0=;
+ b=XYz9ZwL/cUssJ7S6+scMnHxYj4X7huzn12ZWxEQSkOHzjvXlJ0H/UfK81m1Htpnvx61k5fTxAVuMbmz0TZZTp/9Hzn9ek5tqCnOOE9sUqdTDMHNUqFdR4UEV0YRdKsoCTW183JYXrVL/mK4Rz0em4MAQH/xkOj51kT/Xaeg1BZgeJXrU2C3nDdrbVjuWbhrC9cQOiFpYbwDORvvXDte87JOIAt6oRi4/Zr1+DRfN9jp4bTi/kxvcspN0ZWM4Uu6hE6ksAIX3CwTZEmcmlEaaJMBWB3pnGKLzSI6eWh8r98AFU7Rsh9k02keHoVcWv7aS2E/a7M67INJ8Pzrj3UVDqA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=windriver.com; dmarc=pass action=none
- header.from=windriver.com; dkim=pass header.d=windriver.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=windriversystems.onmicrosoft.com;
- s=selector2-windriversystems-onmicrosoft-com;
+ smtp.mailfrom=dektech.com.au; dmarc=pass action=none
+ header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
+ s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5IeGQr9QUHmJIqHWPPj6JlK+CB62LUD9TTQg8f/8wlY=;
- b=HiIJ3IodvMV7lLqPsfg61++akHkayu4f8bubuNeo7I/i8SWtFeEdnO6nK6zgMUqmT9ioKPs9nIpFC7s1tMB6EZhuYrfx5bt2v/ozIvq/5v3+NXiXfNZ4RhdWtum4XusfH37+2L53fjUzEr7lWX14SNWzTmgHCFK8YWKi9iD4NN8=
-Authentication-Results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=windriver.com;
-Received: from DM6PR11MB2603.namprd11.prod.outlook.com (2603:10b6:5:c6::21) by
- DM6PR11MB4220.namprd11.prod.outlook.com (2603:10b6:5:204::26) with
- Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3611.25; Sun, 29 Nov 2020 08:01:46 +0000
-Received: from DM6PR11MB2603.namprd11.prod.outlook.com
- ([fe80::54f7:13ae:91ef:6ae4]) by DM6PR11MB2603.namprd11.prod.outlook.com
- ([fe80::54f7:13ae:91ef:6ae4%5]) with mapi id 15.20.3589.022; Sun, 29 Nov 2020
- 08:01:46 +0000
-To: Randy Dunlap <rdunlap@infradead.org>
-References: <20201125042026.25374-1-rdunlap@infradead.org>
- <20201125042026.25374-4-rdunlap@infradead.org>
-From: Ying Xue <ying.xue@windriver.com>
-Autocrypt: addr=ying.xue@windriver.com; keydata=
- xjMEX1nnURYJKwYBBAHaRw8BAQdAZxROH3r87AOhslT5tP2cdYcg89+pbHiYf+LIny/C0fLN
- GDx5aW5nLnh1ZUB3aW5kcml2ZXIuY29tPsJ3BBAWCgAfBQJfWedRBgsJBwgDAgQVCAoCAxYC
- AQIZAQIbAwIeAQAKCRC3Qmz/Z9beRSLiAP9kPgF+mG4F3elbrVTen/sybJfZidnvF1YVq5Ho
- sUbt+wEA6ByAVvGqlEbt4SE1JP6xVgTzwlwihyCgl/byRAQzeg7OOARfWedREgorBgEEAZdV
- AQUBAQdAsdHm3QQyX4RnhnVEmywHpipu0cUyHWeuAkYuLavc5QYDAQgHwmEEGBYIAAkFAl9Z
- 51ECGwwACgkQt0Js/2fW3kXZKAEA0jTzhaLbmprQxi1BbUmAYtlpQCrrjCWdpFGwt5O3yO8A
- /jVE1VxnEgu71mYXX1QE1Lngk+SPVEfLm0BVZFk9fBAA
-Message-ID: <14e84721-b2a4-9acd-c00f-c56b2aff3076@windriver.com>
-Date: Sun, 29 Nov 2020 16:01:38 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.10.0
-In-Reply-To: <20201125042026.25374-4-rdunlap@infradead.org>
-Content-Language: en-US
-X-Originating-IP: [60.247.85.82]
-X-ClientProxiedBy: HK2PR02CA0132.apcprd02.prod.outlook.com
- (2603:1096:202:16::16) To DM6PR11MB2603.namprd11.prod.outlook.com
- (2603:10b6:5:c6::21)
+ bh=JPfyL7DM+q/Bb71Nh8PKSjLxyNTtfp2CgQn1OP3+6G0=;
+ b=Ia/nfvkfvHR8yjzzJk0V0vIOJAQhv4iJcWI0TkcN2u+RbG5LbPdues1Cv1bI5+OoO45vbZV0sfGZnAktQ38AaQiW2QFeYNcdYVL7yGttX1oub4i6IqcuuSKdy1fijwJqv8it0/ml1jOjA/nmz7T8pnUbT+K3KuiR7vaSt5lBHY8=
+Authentication-Results: redhat.com; dkim=none (message not signed)
+ header.d=none;redhat.com; dmarc=none action=none header.from=dektech.com.au;
+Received: from VI1PR05MB4605.eurprd05.prod.outlook.com (2603:10a6:802:61::21)
+ by VE1PR05MB7247.eurprd05.prod.outlook.com (2603:10a6:800:1ae::18)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3611.22; Tue, 1 Dec
+ 2020 09:01:29 +0000
+Received: from VI1PR05MB4605.eurprd05.prod.outlook.com
+ ([fe80::9854:ed43:372d:2883]) by VI1PR05MB4605.eurprd05.prod.outlook.com
+ ([fe80::9854:ed43:372d:2883%6]) with mapi id 15.20.3611.024; Tue, 1 Dec 2020
+ 09:01:29 +0000
+From: Hoang Huu Le <hoang.h.le@dektech.com.au>
+To: jmaloy@redhat.com, maloy@donjonn.com,
+ tipc-discussion@lists.sourceforge.net, ying.xue@windriver.com
+Date: Tue,  1 Dec 2020 16:01:14 +0700
+Message-Id: <20201201090114.3989-1-hoang.h.le@dektech.com.au>
+X-Mailer: git-send-email 2.25.1
+X-Originating-IP: [14.161.14.188]
+X-ClientProxiedBy: SG2PR01CA0091.apcprd01.prod.exchangelabs.com
+ (2603:1096:3:15::17) To VI1PR05MB4605.eurprd05.prod.outlook.com
+ (2603:10a6:802:61::21)
 MIME-Version: 1.0
 X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from [128.224.155.152] (60.247.85.82) by
- HK2PR02CA0132.apcprd02.prod.outlook.com (2603:1096:202:16::16) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3611.20 via Frontend Transport; Sun, 29 Nov 2020 08:01:44 +0000
+Received: from dektech.com.au (14.161.14.188) by
+ SG2PR01CA0091.apcprd01.prod.exchangelabs.com (2603:1096:3:15::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3611.20 via Frontend
+ Transport; Tue, 1 Dec 2020 09:01:27 +0000
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 7ff27475-4313-4b62-3b6b-08d8943d047f
-X-MS-TrafficTypeDiagnostic: DM6PR11MB4220:
-X-Microsoft-Antispam-PRVS: <DM6PR11MB42204F8033195861E700032384F60@DM6PR11MB4220.namprd11.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:8273;
+X-MS-Office365-Filtering-Correlation-Id: f439d638-ffbb-4302-c3cf-08d895d7b0f6
+X-MS-TrafficTypeDiagnostic: VE1PR05MB7247:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <VE1PR05MB724708DFF61A31B05C9D7ECFF1F40@VE1PR05MB7247.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:3513;
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: yqNxUjaTDQZTdX/mXXBzvPmn0mDNGxbnsH6B2CqdnIjuisbyyxoQ7tt184sIVsgfQAZB6WB92nNZlAtvs3OSSYGJReE4b+sU0bzsHwopgMj0sYfG7uI+hKav37Z4cB4T3847OAkyex/51S1go2zE4c64brmfB7dkknfPFy1+aob4zC7fDZx4yncloqukQIa3skoT2b6/Nomw3V/sbWzKERiljL/RUhGHbiK330VuPQ1K9Za/KaIOBCxUyHLEtO595kqFUTZe3lcuj+EfMLycpH5dd30wrh2af5WJ84gihCcIOEXywnkDEqp6SmtRqb5T/NEOotWDlrB3L8QL9ZacbRAtCi1v12SS+TJ4rBy2arDiCGEUmwAMl8Ukz4LGTO+ex299jKj1o/vaFDfPKWAsps5Iyzi2C5CfJBBEezz35MC4uByBlMRp+D4QicrQQqor
+X-Microsoft-Antispam-Message-Info: Nytrp6//a9SKZcioxVNeJ2JQYYGsyLR4m6TvUGwKVvxaIZr8NDkFuaCz8aDSoWiofyPWjz+xLog8ladNPvvKYn2fDTh2bA41+CT+WVJMSLXg3sSiIlAeesKzNq56okzIcU2FAZ1XoZPS+skUh6tVFwAJOgOGcL1nATeGxecj/esD/weJWVbOOauJ8ES0dc+PhYDx1/QZTnrgsmD58t1B7SKNT6Tq2SwQSHIsS1veudw/7PtV4puRO+Rw48EANvNyVOL1Cz8llQob4r58V6euISC7xWdWcQWy3X7Ckcopr2NqzDdtXiSFQGDuT8V2VhC7dtqAejj8OSqdKQ/rH7TqGg==
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DM6PR11MB2603.namprd11.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(376002)(136003)(346002)(366004)(186003)(53546011)(66556008)(8936002)(6666004)(956004)(54906003)(16576012)(2906002)(508600001)(2616005)(52116002)(31696002)(26005)(5660300002)(34490700003)(16526019)(83380400001)(86362001)(8676002)(6486002)(66946007)(66476007)(6706004)(36756003)(31686004)(4326008)(44832011)(6916009)(78286007)(43740500002);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: =?utf-8?B?V0lxYThpOWpKTlZ4NUZvT095T3U5d1ZmakxPdnBYcEI4SEl6NkoxSUZSMFJn?=
- =?utf-8?B?cTExcUhyZ0F2cnNjWkFURTRpZjlpLzNwVEt3bDkwbXRnT1NNdkpYZGxEbWZR?=
- =?utf-8?B?S3A2eFU5SDhBVWsxOWtTUlVvM2pIMmJhcnlTTW5OSFE3WGF0MVUxSHlkYUxI?=
- =?utf-8?B?ZDlzV2g3TDQ3U0xJYUZhTC9QWnFxZEpDSjR1ck12Mmc4d3dRVlhZaCttZ1BE?=
- =?utf-8?B?TkxaUUJWMHRDT1ZaR3Niek55ejhNdWFiSmkvTUV2L2ZSRHIvNkgvRlVGTkV5?=
- =?utf-8?B?MFIvc0NEaGZiMG1ob0RaNzNRZXJOWUQrNFJLUXZCUUFkdm1BQzVhZ2djTXg0?=
- =?utf-8?B?V25MV29NcHBMWm1tR1JRZjNmRVdQaW5zK2p3cmlCeVhxbGJwVm9ucnFreHo0?=
- =?utf-8?B?TXpPKytONGRMeDY4UXRtekNPZDN2bHVyS0Rsd3hhbVVyT2FqckdRMlU4Wk1v?=
- =?utf-8?B?ZFRmV3FiMzMxT2RSdCt6d21Sb0RJMXBCbk1QMzlJYVlCKzlxYThpR3kvQkN4?=
- =?utf-8?B?dkk5RXJYVnlFNDZBdkVYKzRTcUhscXlUOERYeS9PTmdGblR2Zm5BR2RPK1A2?=
- =?utf-8?B?RWk2VzB2WW00QUNmWTJyeExkdW0wQjlwN0xsZzNFaXVENlVkZVNoTGc0K1da?=
- =?utf-8?B?clIybkY2dVJpWC9WRmtLTk9EQkFVUXlXNUY2dkY5N2JkbmJLNzhQNGxuajQ4?=
- =?utf-8?B?ZWY2YkNIaUN5b0p1NXg2U203Zm9xMXRqOENpYWgvZXNUZlV2SFpjampIK2k0?=
- =?utf-8?B?UVhpR21HRGFUNmloRDJ4dGpncEhaZEhXS1hMT0NJa2x6WGNWN2lqSUdLSzk5?=
- =?utf-8?B?WWpqSDgwaWxidTJiRmk3di9LczVzQTBoYWRhK016UEczUXlvMlIwbjViVjJK?=
- =?utf-8?B?aW95V1BoUmx5a0xzY0ZibEhSYUdndUVYczlCUlBWTFQ2aEozNkdmQ0x5UUpw?=
- =?utf-8?B?aEI0SVJZNzFoenlmNXdIT09xVDlyNGdJbFhKZzY0NXpOTWF5YjZtNi9pVXJn?=
- =?utf-8?B?QjJDKytNVUQ2dE1QWm1XSm5ZWW9BNWh5N2Izck9XYVJ0Q3FRSktvSDJ6YlJ3?=
- =?utf-8?B?SDhibG1XeThGUjMxVndBQ2lXWVh0WjQ4THFudit3cUg2L0hRMlpRWWlSenRH?=
- =?utf-8?B?UElnaGdmU3RiZFpLbWlNcEdxR3k4Yzd1QWtORjBGSUcxN29kbmdPa1hxdHor?=
- =?utf-8?B?VHpTTnl4NUtPeDFvdHl4U0NyTGY0UkVyNGZxWmllTW15WnJuWlRtblNuTkxy?=
- =?utf-8?B?V3pFSUlHdE0xbnhWMDM4Y2hTMlJqZll6bWZORXp0MHJRaERjV0FuakxMVGQv?=
- =?utf-8?Q?SlWaEo2hYoz+n5kZRe+/E2ZR6CVh/EP3VI?=
-X-OriginatorOrg: windriver.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7ff27475-4313-4b62-3b6b-08d8943d047f
-X-MS-Exchange-CrossTenant-AuthSource: DM6PR11MB2603.namprd11.prod.outlook.com
+ IPV:NLI; SFV:NSPM; H:VI1PR05MB4605.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(346002)(376002)(366004)(39850400004)(396003)(136003)(5660300002)(66476007)(66556008)(66946007)(8676002)(8936002)(103116003)(7696005)(1076003)(52116002)(55016002)(956004)(186003)(16526019)(26005)(6666004)(36756003)(86362001)(478600001)(2906002)(83380400001)(2616005)(107886003)(4326008)(316002);
+ DIR:OUT; SFP:1102; 
+X-MS-Exchange-AntiSpam-MessageData: =?us-ascii?Q?AAn/EwG0ymjm7nAaFXg7WlpgSYG1kDkUtCI90UdGxL9FUS62+3agL94WKa9I?=
+ =?us-ascii?Q?9XTMdfQW1YiG6vuKmJs5S3tsO+p1X91j2wvUblzSLeTOt1FCoKRDRHtOVqje?=
+ =?us-ascii?Q?38+ag9YTmf7hjHr5B8uUKqYPjMlwTuooiF/21glGfAc3r02MzmT82VB9GPIm?=
+ =?us-ascii?Q?YdOlSYGGNv1JdT4ZTNadeo1o7NmWu1G8HWIe4ATYQWM8gjQ17G7MZJ6FUEOt?=
+ =?us-ascii?Q?xwoxLkqjsG5dhZ+KDScn7SCviL+8oOzU0M9GdvzT3v3uJwvjAinJa9ffugRG?=
+ =?us-ascii?Q?GA/1DazdH3Oe41al0EZsWPm635ogxij1H3q0+Ld69HbTM7e3sP8j90B3HQOc?=
+ =?us-ascii?Q?Ss2aya/q+hmV9JSP7n3FiIvdwu0qbL8XnoZczRm5AjaHcPYKG5AwyKIXfbba?=
+ =?us-ascii?Q?u39r3weD+xzVjLNB8/s0NDlAvdvq8CZuE3MT0qMrrSmvmDCF+xAOmpcbI+yO?=
+ =?us-ascii?Q?Go1Af//a8U3kpBkJLlnP89p9ygkPpvuLROVLQT32HLaDE/0SgXf4DQJXKPii?=
+ =?us-ascii?Q?PdlV9HsxCJ6dAwOON3Y9csjIZaABjjX+UQpye00m7HtsgavCIuzAZER6KM6T?=
+ =?us-ascii?Q?55TlHSGhWb2v89qMzJhEJb5tjAfZah1jNXZMn7TLIpv/dKHParaQTn30ztde?=
+ =?us-ascii?Q?xoGMlrBifbVoZMWZh5vkYz59c+sqGu7murtMGRGUbPwEguTNEH0vgI+mfJLS?=
+ =?us-ascii?Q?37ELUK95fIqtdgSA4P9IizjRnu+8y4GNnx0gAwynwQyqTUYwNnXeSCajvWRb?=
+ =?us-ascii?Q?mve+IXTY070XY5Vk69nIGY1vQ6kE/oHYkGWauJrb9885neZPNO42pvdsu3Os?=
+ =?us-ascii?Q?iu9kvrdjLap2eFFsO5btzc/zuSAcxzRO1sEFIp5bkbP4ZnH4HZUZL/jNmO/M?=
+ =?us-ascii?Q?ROkjJBqyJv8qomQ+6iTbEdz5fmHv3nKTXc36kpUw9H/DI5b8qvUX+2Fta8N6?=
+ =?us-ascii?Q?ZQuHgpzA0LJal80bubTI1zDqMjDnJSz8yEo++d++u7hUjrgec50Pf8VJOEId?=
+ =?us-ascii?Q?T3tV?=
+X-OriginatorOrg: dektech.com.au
+X-MS-Exchange-CrossTenant-Network-Message-Id: f439d638-ffbb-4302-c3cf-08d895d7b0f6
+X-MS-Exchange-CrossTenant-AuthSource: VI1PR05MB4605.eurprd05.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Nov 2020 08:01:46.6165 (UTC)
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Dec 2020 09:01:29.5982 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 8ddb2873-a1ad-4a18-ae4e-4644631433be
+X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: xduESi4aSecVogJmLuKis81EZUKdOAMgCJfwN4vouuHgYa2+6EUfLLgAeBU6eScpVBtnLwEq5V+9M9I9NWEI6Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB4220
-X-Spam-Score: -0.0 (/)
+X-MS-Exchange-CrossTenant-UserPrincipalName: 3jqpYKca6tbvaVhQO5yFeSP/Ee18vH2/OyhfEqgKPRyOMeFIIEhPJYs1mV1EzXiS0ZXevT+vzP3265vuFBsBTstE3xL31iJhKo7vOXmbs/g=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR05MB7247
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: davemloft.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.243.48 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.243.48 listed in wl.mailspike.net]
+ [40.107.8.113 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
- -0.0 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1kjJ7P-0049OI-Nn
-Subject: Re: [tipc-discussion] [PATCH 01/10 net-next] net/tipc: fix tipc
- header files for kernel-doc
+ 0.0 TIME_LIMIT_EXCEEDED    Exceeded time limit / deadline
+X-Headers-End: 1kk1XX-00Dh5R-4D
+Subject: [tipc-discussion] [net-next] tipc: support 128bit node identity for
+ peer removing
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -170,200 +146,66 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: netdev@vger.kernel.org, tipc-discussion@lists.sourceforge.net,
- "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Please see my comments about parameters marked with "FIXME":
+From: Hoang Le <hoang.h.le@dektech.com.au>
 
-On 11/25/20 12:20 PM, Randy Dunlap wrote:
-> Fix tipc header files for adding to the networking docbook.
-> 
-> Remove some uses of "/**" that were not kernel-doc notation.
-> 
-> Fix some source formatting to eliminate Sphinx warnings.
-> 
-> Add missing struct member and function argument kernel-doc descriptions.
-> 
-> Documentation/networking/tipc:18: ../net/tipc/name_table.h:65: WARNING: Unexpected indentation.
-> Documentation/networking/tipc:18: ../net/tipc/name_table.h:66: WARNING: Block quote ends without a blank line; unexpected unindent.
-> 
-> ../net/tipc/bearer.h:128: warning: Function parameter or member 'min_win' not described in 'tipc_media'
-> ../net/tipc/bearer.h:128: warning: Function parameter or member 'max_win' not described in 'tipc_media'
-> 
-> ../net/tipc/bearer.h:171: warning: Function parameter or member 'min_win' not described in 'tipc_bearer'
-> ../net/tipc/bearer.h:171: warning: Function parameter or member 'max_win' not described in 'tipc_bearer'
-> ../net/tipc/bearer.h:171: warning: Function parameter or member 'disc' not described in 'tipc_bearer'
-> ../net/tipc/bearer.h:171: warning: Function parameter or member 'up' not described in 'tipc_bearer'
-> ../net/tipc/bearer.h:171: warning: Function parameter or member 'refcnt' not described in 'tipc_bearer'
-> 
-> ../net/tipc/name_distr.h:68: warning: Function parameter or member 'port' not described in 'distr_item'
-> 
-> ../net/tipc/name_table.h:111: warning: Function parameter or member 'services' not described in 'name_table'
-> ../net/tipc/name_table.h:111: warning: Function parameter or member 'cluster_scope_lock' not described in 'name_table'
-> ../net/tipc/name_table.h:111: warning: Function parameter or member 'rc_dests' not described in 'name_table'
-> ../net/tipc/name_table.h:111: warning: Function parameter or member 'snd_nxt' not described in 'name_table'
-> 
-> ../net/tipc/subscr.h:67: warning: Function parameter or member 'kref' not described in 'tipc_subscription'
-> ../net/tipc/subscr.h:67: warning: Function parameter or member 'net' not described in 'tipc_subscription'
-> ../net/tipc/subscr.h:67: warning: Function parameter or member 'service_list' not described in 'tipc_subscription'
-> ../net/tipc/subscr.h:67: warning: Function parameter or member 'conid' not described in 'tipc_subscription'
-> ../net/tipc/subscr.h:67: warning: Function parameter or member 'inactive' not described in 'tipc_subscription'
-> ../net/tipc/subscr.h:67: warning: Function parameter or member 'lock' not described in 'tipc_subscription'
-> 
-> Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
-> Cc: Jon Maloy <jmaloy@redhat.com>
-> Cc: Ying Xue <ying.xue@windriver.com>
-> Cc: netdev@vger.kernel.org
-> Cc: tipc-discussion@lists.sourceforge.net
-> Cc: "David S. Miller" <davem@davemloft.net>
-> Cc: Jakub Kicinski <kuba@kernel.org>
-> ---
->  net/tipc/bearer.h     |   10 +++++++---
->  net/tipc/crypto.h     |    6 +++---
->  net/tipc/name_distr.h |    2 +-
->  net/tipc/name_table.h |    9 ++++++---
->  net/tipc/subscr.h     |   11 +++++++----
->  5 files changed, 24 insertions(+), 14 deletions(-)
-> 
-> --- linux-next-20201102.orig/net/tipc/bearer.h
-> +++ linux-next-20201102/net/tipc/bearer.h
-> @@ -93,7 +93,8 @@ struct tipc_bearer;
->   * @raw2addr: convert from raw addr format to media addr format
->   * @priority: default link (and bearer) priority
->   * @tolerance: default time (in ms) before declaring link failure
-> - * @window: default window (in packets) before declaring link congestion
-> + * @min_win: minimum window (in packets) before declaring link congestion
-> + * @max_win: maximum window (in packets) before declaring link congestion
->   * @mtu: max packet size bearer can support for media type not dependent on
->   * underlying device MTU
->   * @type_id: TIPC media identifier
-> @@ -138,12 +139,15 @@ struct tipc_media {
->   * @pt: packet type for bearer
->   * @rcu: rcu struct for tipc_bearer
->   * @priority: default link priority for bearer
-> - * @window: default window size for bearer
-> + * @min_win: minimum window (in packets) before declaring link congestion
-> + * @max_win: maximum window (in packets) before declaring link congestion
->   * @tolerance: default link tolerance for bearer
->   * @domain: network domain to which links can be established
->   * @identity: array index of this bearer within TIPC bearer array
-> - * @link_req: ptr to (optional) structure making periodic link setup requests
-> + * @disc: ptr to link setup request
->   * @net_plane: network plane ('A' through 'H') currently associated with bearer
-> + * @up: bearer up flag (bit 0)
-> + * @refcnt: tipc_bearer reference counter
->   *
->   * Note: media-specific code is responsible for initialization of the fields
->   * indicated below when a bearer is enabled; TIPC's generic bearer code takes
-> --- linux-next-20201102.orig/net/tipc/crypto.h
-> +++ linux-next-20201102/net/tipc/crypto.h
-> @@ -1,5 +1,5 @@
->  /* SPDX-License-Identifier: GPL-2.0 */
-> -/**
-> +/*
->   * net/tipc/crypto.h: Include file for TIPC crypto
->   *
->   * Copyright (c) 2019, Ericsson AB
-> @@ -53,7 +53,7 @@
->  #define TIPC_AES_GCM_IV_SIZE		12
->  #define TIPC_AES_GCM_TAG_SIZE		16
->  
-> -/**
-> +/*
->   * TIPC crypto modes:
->   * - CLUSTER_KEY:
->   *	One single key is used for both TX & RX in all nodes in the cluster.
-> @@ -69,7 +69,7 @@ enum {
->  extern int sysctl_tipc_max_tfms __read_mostly;
->  extern int sysctl_tipc_key_exchange_enabled __read_mostly;
->  
-> -/**
-> +/*
->   * TIPC encryption message format:
->   *
->   *     3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0
-> --- linux-next-20201102.orig/net/tipc/name_distr.h
-> +++ linux-next-20201102/net/tipc/name_distr.h
-> @@ -46,7 +46,7 @@
->   * @type: name sequence type
->   * @lower: name sequence lower bound
->   * @upper: name sequence upper bound
-> - * @ref: publishing port reference
-> + * @port: publishing port reference
->   * @key: publication key
->   *
->   * ===> All fields are stored in network byte order. <===
-> --- linux-next-20201102.orig/net/tipc/name_table.h
-> +++ linux-next-20201102/net/tipc/name_table.h
-> @@ -60,8 +60,8 @@ struct tipc_group;
->   * @key: publication key, unique across the cluster
->   * @id: publication id
->   * @binding_node: all publications from the same node which bound this one
-> - * - Remote publications: in node->publ_list
-> - *   Used by node/name distr to withdraw publications when node is lost
-> + * - Remote publications: in node->publ_list;
-> + * Used by node/name distr to withdraw publications when node is lost
->   * - Local/node scope publications: in name_table->node_scope list
->   * - Local/cluster scope publications: in name_table->cluster_scope list
->   * @binding_sock: all publications from the same socket which bound this one
-> @@ -92,13 +92,16 @@ struct publication {
->  
->  /**
->   * struct name_table - table containing all existing port name publications
-> - * @seq_hlist: name sequence hash lists
-> + * @services: name sequence hash lists
->   * @node_scope: all local publications with node scope
->   *               - used by name_distr during re-init of name table
->   * @cluster_scope: all local publications with cluster scope
->   *               - used by name_distr to send bulk updates to new nodes
->   *               - used by name_distr during re-init of name table
-> + * @cluster_scope_lock: lock for accessing @cluster_scope
->   * @local_publ_count: number of publications issued by this node
-> + * @rc_dests: broadcast destinations counter (FIXME)
+We add the support to remove a specific node down with 128bit
+node identifier, as an alternative to legacy 32-bit node address.
 
-@rc_dests: destination node counter
+example:
+$tipc peer remove identiy <1001002|16777777>
 
-> + * @snd_nxt: next sequence number to be used
->   */
->  struct name_table {
->  	struct hlist_head services[TIPC_NAMETBL_SIZE];
-> --- linux-next-20201102.orig/net/tipc/subscr.h
-> +++ linux-next-20201102/net/tipc/subscr.h
-> @@ -47,12 +47,15 @@ struct tipc_conn;
->  
->  /**
->   * struct tipc_subscription - TIPC network topology subscription object
-> - * @subscriber: pointer to its subscriber
-> - * @seq: name sequence associated with subscription
-> + * @kref: reference count for this subscription
-> + * @net: network namespace associated with subscription
->   * @timer: timer governing subscription duration (optional)
-> - * @nameseq_list: adjacent subscriptions in name sequence's subscription list
-> + * @service_list: adjacent subscriptions in name sequence's subscription list
->   * @sub_list: adjacent subscriptions in subscriber's subscription list
->   * @evt: template for events generated by subscription
-> + * @conid: connection ID for this subscription (FIXME)
+Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
+---
+ net/tipc/node.c | 21 ++++++++++++++++++---
+ 1 file changed, 18 insertions(+), 3 deletions(-)
 
-@conid: connection identifier of topology server
+diff --git a/net/tipc/node.c b/net/tipc/node.c
+index cd67b7d5169f..a7479f68a146 100644
+--- a/net/tipc/node.c
++++ b/net/tipc/node.c
+@@ -2195,6 +2195,9 @@ int tipc_nl_peer_rm(struct sk_buff *skb, struct genl_info *info)
+ 	struct tipc_net *tn = net_generic(net, tipc_net_id);
+ 	struct nlattr *attrs[TIPC_NLA_NET_MAX + 1];
+ 	struct tipc_node *peer, *temp_node;
++	u8 node_id[NODE_ID_LEN];
++	u64 *w0 = (u64 *)&node_id[0];
++	u64 *w1 = (u64 *)&node_id[8];
+ 	u32 addr;
+ 	int err;
+ 
+@@ -2208,10 +2211,22 @@ int tipc_nl_peer_rm(struct sk_buff *skb, struct genl_info *info)
+ 	if (err)
+ 		return err;
+ 
+-	if (!attrs[TIPC_NLA_NET_ADDR])
+-		return -EINVAL;
++	/* attrs[TIPC_NLA_NET_NODEID] and attrs[TIPC_NLA_NET_ADDR] are
++	 * mutually exclusive case
++	 */
++	if (attrs[TIPC_NLA_NET_ADDR]) {
++		addr = nla_get_u32(attrs[TIPC_NLA_NET_ADDR]);
++		if (!addr)
++			return -EINVAL;
++	}
+ 
+-	addr = nla_get_u32(attrs[TIPC_NLA_NET_ADDR]);
++	if (attrs[TIPC_NLA_NET_NODEID]) {
++		if (!attrs[TIPC_NLA_NET_NODEID_W1])
++			return -EINVAL;
++		*w0 = nla_get_u64(attrs[TIPC_NLA_NET_NODEID]);
++		*w1 = nla_get_u64(attrs[TIPC_NLA_NET_NODEID_W1]);
++		addr = hash128to32(node_id);
++	}
+ 
+ 	if (in_own_node(net, addr))
+ 		return -ENOTSUPP;
+-- 
+2.25.1
 
-> + * @inactive: true if this subscription is inactive
-> + * @lock: serialize up/down and timer events
->   */
->  struct tipc_subscription {
->  	struct kref kref;
-> @@ -63,7 +66,7 @@ struct tipc_subscription {
->  	struct tipc_event evt;
->  	int conid;
->  	bool inactive;
-> -	spinlock_t lock; /* serialize up/down and timer events */
-> +	spinlock_t lock;
->  };
->  
->  struct tipc_subscription *tipc_sub_subscribe(struct net *net,
-> 
 
 
 _______________________________________________
