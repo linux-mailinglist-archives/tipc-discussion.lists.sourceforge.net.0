@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 726A92D326B
-	for <lists+tipc-discussion@lfdr.de>; Tue,  8 Dec 2020 19:51:50 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id A84EF2D3268
+	for <lists+tipc-discussion@lfdr.de>; Tue,  8 Dec 2020 19:51:42 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kmi5H-0004pK-74; Tue, 08 Dec 2020 18:51:35 +0000
+	id 1kmi5I-000803-QU; Tue, 08 Dec 2020 18:51:36 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1kmi4r-0004km-VF
- for tipc-discussion@lists.sourceforge.net; Tue, 08 Dec 2020 18:51:09 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1kmi5H-0007zr-65
+ for tipc-discussion@lists.sourceforge.net; Tue, 08 Dec 2020 18:51:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
  :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=JxsKtHMxzHT2U5Fzo70Rk/O6j7uSKxf6zl3VedebBtE=; b=btPk/f5RSgIuPeF4YaZ4oUxcD5
- gxpPvzrq/sa9SKl0Oi/kWEGfijX3aJ0ZbNYntuEFChqKE0zKWk/lM/T9n8+D6qkjrhxTdXSNcZ1RH
- QYVkciWvC42nUmgx8m4OedtsUz4ulZTpDmBZev+nnjM2h//KGP7Bf41dzSzFJyKk3tNE=;
+ bh=51oMNhrOcRyGgobrK/lZ9V3/dMlW1UdBAbWqqxeEAAo=; b=g5qROLjjabyGkAMA1RROk2lAOq
+ GlD4rhsU5XnwZg6lyy54KsKnh96DvCrhtLq67DHU3IUH5DuIW3KXXI0+oBEILIbYYv6Ma7chemEgq
+ t3jK69/XlmR9z8LFm0v5lrPkKclw4yblfVjGmASb/N1pXPe3sdfn9y0mE1YcJ4iZzq2o=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:
@@ -29,41 +29,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=JxsKtHMxzHT2U5Fzo70Rk/O6j7uSKxf6zl3VedebBtE=; b=LAbIMYRhUW1TUG9LY7/GXUodoF
- 4zrs5d+h/bLahdfIMXUiyzjHD9AyDJThXYSjTP5NdnLnA3oqsDoIactkvhu4/sSIaDcPAG49f7veh
- ONhvndRajlzEA8m3Y7KA1Lxiy6zVZAhkx5knjZtzgcMWO99bHhI41y3crqHkkvDmREoo=;
-Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
+ bh=51oMNhrOcRyGgobrK/lZ9V3/dMlW1UdBAbWqqxeEAAo=; b=C8V6CEQW7wqoXa77ZfH3CQA3XI
+ qK27+kzUfXco7LWxvHVYGcSInowqpgHlFGO7+bI+ZdA1AAUntn4zGkoghl/3mFmiJ9EEwkI8W/gOW
+ o9puUxLcif4HXTOkusLkCvV8ev5YqZDx9UfdSu/hHm/0RmCbwaS0RqZ3stfCcaA8efhw=;
+Received: from us-smtp-delivery-124.mimecast.com ([63.128.21.124])
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1kmi4l-006uz8-Pp
- for tipc-discussion@lists.sourceforge.net; Tue, 08 Dec 2020 18:51:06 +0000
+ id 1kmi5D-006v1h-4c
+ for tipc-discussion@lists.sourceforge.net; Tue, 08 Dec 2020 18:51:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1607453450;
+ s=mimecast20190719; t=1607453478;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=JxsKtHMxzHT2U5Fzo70Rk/O6j7uSKxf6zl3VedebBtE=;
- b=GDyO1T48gmKWpORPa+t6rD95q1Ectjvp6BojHf89/rj9QCLaQZa0bn/rusJgfL1O/7UaT2
- SeSksIyXG70QHFUSn80rwwtOk8fwBgxinApJPkOYHUdlGKqV02RSTtZZGm7GmQ+eeGNYwS
- eAz96iyZFR8oJ1HdmzO1OilcvWR1Jko=
+ bh=51oMNhrOcRyGgobrK/lZ9V3/dMlW1UdBAbWqqxeEAAo=;
+ b=OL/EBAr87dRcqs0p+AI/D7xr8/z9wtdDxcn0Jiao6I1bKulLGTNW+zwhiFCDlMU0CucIal
+ 0BJWgKQTEKTqyupGIFGrgRQDkp2dmWtq0/5vZ/x0FT1XYUHrIg04jGrYQX28rTrrBFO6AN
+ bfataRe6mvldCAaswKvFsBtcU3RxXZA=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-115-rxz0UM2eO4uma-ZQwdPqRA-1; Tue, 08 Dec 2020 13:50:47 -0500
-X-MC-Unique: rxz0UM2eO4uma-ZQwdPqRA-1
+ us-mta-232-ChgECWDgPVqwpZVvpbqzFw-1; Tue, 08 Dec 2020 13:50:48 -0500
+X-MC-Unique: ChgECWDgPVqwpZVvpbqzFw-1
 Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
  [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 9191510054FF;
- Tue,  8 Dec 2020 18:50:45 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 480F01927800;
+ Tue,  8 Dec 2020 18:50:47 +0000 (UTC)
 Received: from f31.redhat.com (ovpn-116-129.rdu2.redhat.com [10.10.116.129])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 5C3B560877;
- Tue,  8 Dec 2020 18:50:43 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id CC3606091B;
+ Tue,  8 Dec 2020 18:50:45 +0000 (UTC)
 From: jmaloy@redhat.com
 To: tipc-discussion@lists.sourceforge.net
-Date: Tue,  8 Dec 2020 13:50:11 -0500
-Message-Id: <20201208185012.265508-16-jmaloy@redhat.com>
+Date: Tue,  8 Dec 2020 13:50:12 -0500
+Message-Id: <20201208185012.265508-17-jmaloy@redhat.com>
 In-Reply-To: <20201208185012.265508-1-jmaloy@redhat.com>
 References: <20201208185012.265508-1-jmaloy@redhat.com>
 MIME-Version: 1.0
@@ -76,9 +76,9 @@ X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [216.205.24.124 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [216.205.24.124 listed in wl.mailspike.net]
+ trust [63.128.21.124 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [63.128.21.124 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -88,9 +88,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  not necessarily valid
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1kmi4l-006uz8-Pp
-Subject: [tipc-discussion] [net-next 15/16] tipc: add host-endian copy of
- user subscription to struct tipc_subscription
+X-Headers-End: 1kmi5D-006v1h-4c
+Subject: [tipc-discussion] [net-next 16/16] tipc: remove some unnecessary
+ warnings
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -109,202 +109,138 @@ Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
 From: Jon Maloy <jmaloy@redhat.com>
 
-We reduce and localize the usage of the tipc_sub_xx() macros by adding a
-corresponding member, with fields set in host-endian format, to struct
-tipc_subscription.
+We move some warning printouts to more strategic locations to avoid
+duplicates and yield more detailed information about the reported
+problem.
 
 Signed-off-by: Jon Maloy <jmaloy@redhat.com>
 ---
- net/tipc/name_table.c | 29 +++++++++++-----------------
- net/tipc/subscr.c     | 45 +++++++++++++++++++++++--------------------
- net/tipc/subscr.h     |  3 ++-
- 3 files changed, 37 insertions(+), 40 deletions(-)
+ net/tipc/name_distr.c |  7 -------
+ net/tipc/name_table.c | 36 +++++++++++++++++-------------------
+ 2 files changed, 17 insertions(+), 26 deletions(-)
 
+diff --git a/net/tipc/name_distr.c b/net/tipc/name_distr.c
+index fe5f39792323..47f00e420377 100644
+--- a/net/tipc/name_distr.c
++++ b/net/tipc/name_distr.c
+@@ -253,13 +253,6 @@ static void tipc_publ_purge(struct net *net, struct publication *p, u32 addr)
+ 	if (_p)
+ 		tipc_node_unsubscribe(net, &_p->binding_node, addr);
+ 	spin_unlock_bh(&tn->nametbl_lock);
+-
+-	if (_p != p) {
+-		pr_err("Unable to remove publication from failed node\n"
+-		       " (type=%u, lower=%u, node=%u, port=%u, key=%u)\n",
+-		       p->sr.type, p->sr.lower, p->sk.node, p->sk.ref, p->key);
+-	}
+-
+ 	if (_p)
+ 		kfree_rcu(_p, rcu);
+ }
 diff --git a/net/tipc/name_table.c b/net/tipc/name_table.c
-index 4dfac3b9d26c..9085c41a1709 100644
+index 9085c41a1709..946d3ed5de5a 100644
 --- a/net/tipc/name_table.c
 +++ b/net/tipc/name_table.c
-@@ -414,17 +414,14 @@ static int tipc_publ_sort(void *priv, struct list_head *a,
- static void tipc_service_subscribe(struct tipc_service *service,
- 				   struct tipc_subscription *sub)
- {
--	struct tipc_subscr *sb = &sub->evt.s;
- 	struct publication *p, *first, *tmp;
- 	struct list_head publ_list;
- 	struct service_range *sr;
--	struct tipc_service_range r;
--	u32 filter;
-+	u32 filter, lower, upper;
+@@ -337,17 +337,22 @@ static bool tipc_service_insert_publ(struct net *net,
+ 	struct publication *_p;
+ 	u32 node = p->sk.node;
+ 	bool first = false;
++	u32 key = p->key;
  
--	r.type = tipc_sub_read(sb, seq.type);
--	r.lower = tipc_sub_read(sb, seq.lower);
--	r.upper = tipc_sub_read(sb, seq.upper);
--	filter = tipc_sub_read(sb, filter);
-+	filter = sub->s.filter;
-+	lower = sub->s.seq.lower;
-+	upper = sub->s.seq.upper;
+ 	sr = tipc_service_create_range(sc, p);
+ 	if (!sr)
+-		goto  err;
++		return false;
  
- 	tipc_sub_get(sub);
- 	list_add(&sub->service_list, &service->subscriptions);
-@@ -433,7 +430,7 @@ static void tipc_service_subscribe(struct tipc_service *service,
- 		return;
+ 	first = list_empty(&sr->all_publ);
  
- 	INIT_LIST_HEAD(&publ_list);
--	service_range_foreach_match(sr, service, r.lower, r.upper) {
-+	service_range_foreach_match(sr, service, lower, upper) {
- 		first = NULL;
- 		list_for_each_entry(p, &sr->all_publ, all_publ) {
- 			if (filter & TIPC_SUB_PORTS)
-@@ -830,14 +827,13 @@ void tipc_nametbl_withdraw(struct net *net, struct tipc_uaddr *ua,
- bool tipc_nametbl_subscribe(struct tipc_subscription *sub)
- {
- 	struct tipc_net *tn = tipc_net(sub->net);
--	struct tipc_subscr *s = &sub->evt.s;
--	u32 type = tipc_sub_read(s, seq.type);
-+	u32 type = sub->s.seq.type;
- 	struct tipc_service *sc;
- 	struct tipc_uaddr ua;
- 	bool res = true;
- 
- 	tipc_uaddr(&ua, TIPC_SERVICE_RANGE, TIPC_NODE_SCOPE, type,
--		   tipc_sub_read(s, seq.lower), tipc_sub_read(s, seq.upper));
-+		   sub->s.seq.lower, sub->s.seq.upper);
- 	spin_lock_bh(&tn->nametbl_lock);
- 	sc = tipc_service_find(sub->net, &ua);
- 	if (!sc)
-@@ -847,9 +843,8 @@ bool tipc_nametbl_subscribe(struct tipc_subscription *sub)
- 		tipc_service_subscribe(sc, sub);
- 		spin_unlock_bh(&sc->lock);
- 	} else {
--		pr_warn("Failed to subscribe for {%u,%u,%u}\n", type,
--			tipc_sub_read(s, seq.lower),
--			tipc_sub_read(s, seq.upper));
-+		pr_warn("Failed to subscribe for {%u,%u,%u}\n",
-+			type, sub->s.seq.lower, sub->s.seq.upper);
- 		res = false;
+ 	/* Return if the publication already exists */
+ 	list_for_each_entry(_p, &sr->all_publ, all_publ) {
+-		if (_p->key == p->key && (!_p->sk.node || _p->sk.node == node))
++		if (_p->key == key && (!_p->sk.node || _p->sk.node == node)) {
++			pr_debug("Failed to bind duplicate %u,%u,%u/%u:%u/%u\n",
++				 p->sr.type, p->sr.lower, p->sr.upper,
++				 node, p->sk.ref, key);
+ 			return false;
++		}
  	}
- 	spin_unlock_bh(&tn->nametbl_lock);
-@@ -863,13 +858,11 @@ bool tipc_nametbl_subscribe(struct tipc_subscription *sub)
- void tipc_nametbl_unsubscribe(struct tipc_subscription *sub)
- {
- 	struct tipc_net *tn = tipc_net(sub->net);
--	struct tipc_subscr *s = &sub->evt.s;
--	u32 type = tipc_sub_read(s, seq.type);
- 	struct tipc_service *sc;
- 	struct tipc_uaddr ua;
  
--	tipc_uaddr(&ua, TIPC_SERVICE_RANGE, TIPC_NODE_SCOPE, type,
--		   tipc_sub_read(s, seq.lower), tipc_sub_read(s, seq.upper));
-+	tipc_uaddr(&ua, TIPC_SERVICE_RANGE, TIPC_NODE_SCOPE,
-+		   sub->s.seq.type, sub->s.seq.lower, sub->s.seq.upper);
- 	spin_lock_bh(&tn->nametbl_lock);
- 	sc = tipc_service_find(sub->net, &ua);
- 	if (!sc)
-diff --git a/net/tipc/subscr.c b/net/tipc/subscr.c
-index feda0b6bbf1b..b6d883512f93 100644
---- a/net/tipc/subscr.c
-+++ b/net/tipc/subscr.c
-@@ -65,37 +65,32 @@ static void tipc_sub_send_event(struct tipc_subscription *sub,
- 
- /**
-  * tipc_sub_check_overlap - test for subscription overlap with the given values
-- * @seq: tipc_name_seq to check
-- * @found_lower: lower value to test
-- * @found_upper: upper value to test
-+ * @subscribed: the service range subscribed for
-+ * @found: the service range we are checning for match
-  *
-  * Returns true if there is overlap, otherwise false.
-  */
--bool tipc_sub_check_overlap(struct tipc_service_range *sr,
--			    u32 found_lower, u32 found_upper)
-+bool tipc_sub_check_overlap(struct tipc_service_range *subscribed,
-+			    struct tipc_service_range *found)
- {
--	if (found_lower < sr->lower)
--		found_lower = sr->lower;
--	if (found_upper > sr->upper)
--		found_upper = sr->upper;
--	if (found_lower > found_upper)
--		return false;
--	return true;
-+	u32 found_lower = found->lower;
-+	u32 found_upper = found->upper;
-+
-+	if (found_lower < subscribed->lower)
-+		found_lower = subscribed->lower;
-+	if (found_upper > subscribed->upper)
-+		found_upper = subscribed->upper;
-+	return found_lower <= found_upper;
+ 	if (in_own_node(net, p->sk.node))
+@@ -360,10 +365,6 @@ static bool tipc_service_insert_publ(struct net *net,
+ 		tipc_sub_report_overlap(sub, p, TIPC_PUBLISHED, first);
+ 	}
+ 	return true;
+-err:
+-	pr_warn("Failed to bind to %u,%u,%u, no memory\n",
+-		p->sr.type, p->sr.lower, p->sr.upper);
+-	return false;
  }
  
- void tipc_sub_report_overlap(struct tipc_subscription *sub,
- 			     struct publication *p,
- 			     u32 event, bool must)
+ /**
+@@ -473,18 +474,12 @@ struct publication *tipc_nametbl_insert_publ(struct net *net,
  {
--	struct tipc_subscr *s = &sub->evt.s;
--	u32 filter = tipc_sub_read(s, filter);
--	struct tipc_service_range seq;
--
--	seq.type = tipc_sub_read(s, seq.type);
--	seq.lower = tipc_sub_read(s, seq.lower);
--	seq.upper = tipc_sub_read(s, seq.upper);
-+	struct tipc_service_range *sr = &sub->s.seq;
-+	u32 filter = sub->s.filter;
+ 	struct tipc_service *sc;
+ 	struct publication *p;
+-	u32 type = ua->sr.type;
+ 	bool res = false;
  
--	if (!tipc_sub_check_overlap(&seq, p->sr.lower, p->sr.upper))
-+	if (!tipc_sub_check_overlap(sr, &p->sr))
- 		return;
- 	if (!must && !(filter & TIPC_SUB_PORTS))
- 		return;
-@@ -137,12 +132,14 @@ struct tipc_subscription *tipc_sub_subscribe(struct net *net,
- 					     struct tipc_subscr *s,
- 					     int conid)
- {
-+	u32 lower = tipc_sub_read(s, seq.lower);
-+	u32 upper = tipc_sub_read(s, seq.upper);
- 	u32 filter = tipc_sub_read(s, filter);
- 	struct tipc_subscription *sub;
- 	u32 timeout;
- 
- 	if ((filter & TIPC_SUB_PORTS && filter & TIPC_SUB_SERVICE) ||
--	    (tipc_sub_read(s, seq.lower) > tipc_sub_read(s, seq.upper))) {
-+	    lower > upper) {
- 		pr_warn("Subscription rejected, illegal request\n");
+ 	p = tipc_publ_create(ua, sk, key);
+ 	if (!p)
  		return NULL;
+ 
+-	if (ua->sr.lower > ua->sr.upper) {
+-		pr_debug("Failed to bind illegal {%u,%u,%u} from node %u\n",
+-			 type, ua->sr.lower, ua->sr.upper, sk->node);
+-		return NULL;
+-	}
+ 	sc = tipc_service_find(net, ua);
+ 	if (!sc)
+ 		sc = tipc_service_create(net, ua);
+@@ -512,15 +507,15 @@ struct publication *tipc_nametbl_remove_publ(struct net *net,
+ 
+ 	sc = tipc_service_find(net, ua);
+ 	if (!sc)
+-		return NULL;
++		goto exit;
+ 
+ 	spin_lock_bh(&sc->lock);
+ 	sr = tipc_service_find_range(sc, ua);
+ 	if (!sr)
+-		goto exit;
++		goto unlock;
+ 	p = tipc_service_remove_publ(sr, ua, sk, key);
+ 	if (!p)
+-		goto exit;
++		goto unlock;
+ 
+ 	/* Notify any waiting subscriptions */
+ 	last = list_empty(&sr->all_publ);
+@@ -539,8 +534,14 @@ struct publication *tipc_nametbl_remove_publ(struct net *net,
+ 		hlist_del_init_rcu(&sc->service_list);
+ 		kfree_rcu(sc, rcu);
  	}
-@@ -157,6 +154,12 @@ struct tipc_subscription *tipc_sub_subscribe(struct net *net,
- 	sub->conid = conid;
- 	sub->inactive = false;
- 	memcpy(&sub->evt.s, s, sizeof(*s));
-+	sub->s.seq.type = tipc_sub_read(s, seq.type);
-+	sub->s.seq.lower = lower;
-+	sub->s.seq.upper = upper;
-+	sub->s.filter = filter;
-+	sub->s.timeout = tipc_sub_read(s, timeout);
-+	memcpy(sub->s.usr_handle, s->usr_handle, 8);
- 	spin_lock_init(&sub->lock);
- 	kref_init(&sub->kref);
- 	if (!tipc_nametbl_subscribe(sub)) {
-diff --git a/net/tipc/subscr.h b/net/tipc/subscr.h
-index 5fce2e13fc1a..dcadb376b860 100644
---- a/net/tipc/subscr.h
-+++ b/net/tipc/subscr.h
-@@ -60,12 +60,13 @@ struct tipc_conn;
-  * @lock: serialize up/down and timer events
-  */
- struct tipc_subscription {
-+	struct tipc_subscr s;
-+	struct tipc_event evt;
- 	struct kref kref;
- 	struct net *net;
- 	struct timer_list timer;
- 	struct list_head service_list;
- 	struct list_head sub_list;
--	struct tipc_event evt;
- 	int conid;
- 	bool inactive;
- 	spinlock_t lock;
+-exit:
++unlock:
+ 	spin_unlock_bh(&sc->lock);
++exit:
++	if (!p) {
++		pr_err("Failed to remove unknown binding: %u,%u,%u/%u:%u/%u\n",
++		       ua->sr.type, ua->sr.lower, ua->sr.upper,
++		       sk->node, sk->ref, key);
++	}
+ 	return p;
+ }
+ 
+@@ -809,9 +810,6 @@ void tipc_nametbl_withdraw(struct net *net, struct tipc_uaddr *ua,
+ 		skb = tipc_named_withdraw(net, p);
+ 		list_del_init(&p->binding_sock);
+ 		kfree_rcu(p, rcu);
+-	} else {
+-		pr_err("Failed to remove local publication {%u,%u,%u}/%u\n",
+-		       ua->sr.type, ua->sr.lower, ua->sr.upper, key);
+ 	}
+ 	rc_dests = nt->rc_dests;
+ 	spin_unlock_bh(&tn->nametbl_lock);
 -- 
 2.28.0
 
