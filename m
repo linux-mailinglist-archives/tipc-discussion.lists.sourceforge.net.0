@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A6F52D325B
-	for <lists+tipc-discussion@lfdr.de>; Tue,  8 Dec 2020 19:51:07 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 592F52D325F
+	for <lists+tipc-discussion@lfdr.de>; Tue,  8 Dec 2020 19:51:21 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kmi4g-0007vb-GU; Tue, 08 Dec 2020 18:50:58 +0000
+	id 1kmi4x-0004mA-CR; Tue, 08 Dec 2020 18:51:15 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1kmi4e-0007vF-Co
- for tipc-discussion@lists.sourceforge.net; Tue, 08 Dec 2020 18:50:56 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1kmi4f-0004j6-GK
+ for tipc-discussion@lists.sourceforge.net; Tue, 08 Dec 2020 18:50:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
  :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=lR7VeEOcC6ScTBNsUpp8RItrFCoD2CtP6V8oRXYVmQY=; b=h03zraX2sSWhVf7+4Vpkf62KBx
- KxjkmgLsCB5C/IWfj2+uhhVJynRstGmB39ASoTx7xb9c8a3iFE0cgUKamB9UIWnfunLcsPmbE9rPj
- pRKuav/JU/l4+eS9N6RFo8/rZjTjyMhL2d04BYUXKGKIoAvrYdk8gs2MNOc2Gs159X/A=;
+ bh=mP2pU7PMI2KXonMuYl5TmwLQOkvliFcUjKi97sf1OZU=; b=EyhNNurQiDNyxWMDLlFzG9200k
+ W7pdfWQ45ztiKMAqhScoKu/phq/ZJMlFmvKEhpspvlNLmiEmLO+GwBy7YETn5zHgxLlm1/p4udF77
+ FLjOrPY8xcmdKfDJlxooOD98qPu1scbOozZvOH5l4BOZzIqKWiW6RYXyOr19fBzhF/sQ=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:
@@ -29,41 +29,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=lR7VeEOcC6ScTBNsUpp8RItrFCoD2CtP6V8oRXYVmQY=; b=POUsKf6CxI5V2x0g8RB2Lx5Ql2
- Bz8xGGkenVShX/dOUosY/meMoTatfppWZ4SkgAFCd9dOIdwVsXGBOmOEJgSthxTiBtOkAJnkyo/WI
- fvD1V4H7jFuMULcgIa1QaIdvXpbf8D5dU2aFWualDkAbYTHO0OV4F3KAylxxmFeWuslM=;
+ bh=mP2pU7PMI2KXonMuYl5TmwLQOkvliFcUjKi97sf1OZU=; b=dYcH2ARebkMcLraBOsCSRXbHIv
+ XODeFEMNTS5J4lYmulETbFDMuo+cMxKeV94I/8Q9GPxEyWQPuokvvff4/biah2WTNKBLYH1/OBsv/
+ t9dNmNPMWP3wCMId/C+0xRqUKuKaRd11rYlfc8dw/xgIHGeyxn2ksEscovUQWPVfNldA=;
 Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1kmi4b-003uhW-GS
- for tipc-discussion@lists.sourceforge.net; Tue, 08 Dec 2020 18:50:56 +0000
+ id 1kmi4a-003uhS-Ft
+ for tipc-discussion@lists.sourceforge.net; Tue, 08 Dec 2020 18:50:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1607453447;
+ s=mimecast20190719; t=1607453446;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=lR7VeEOcC6ScTBNsUpp8RItrFCoD2CtP6V8oRXYVmQY=;
- b=ZrmC9lln0+bYO9MGjJ06G+acHJZGzTKX/FpHHJyu6JJJoHW+M8ztD6BXjtdS6wdgK2nfPH
- /Q2+NywuiL+iOc78JK0ibqDcqy2y/xYTXQaRCwAqk94bURJjLfhqobHIAiXx/MJMQXxl8Y
- FVKVuGkFCjDyLSglIJOiOxvxYLK4CFg=
+ bh=mP2pU7PMI2KXonMuYl5TmwLQOkvliFcUjKi97sf1OZU=;
+ b=BrdKhl0E6JbxFps0W5ufnabXbKdbGNBC6bwIBA9U9xO2SrxA/uLOS8tC2w/MKVLUySYena
+ VjYvk9xhgFWSQ6qN5Zt3zBkrNH+C3RlPvXOpZi3RkiPgKT48uVlR2CBoW49tHq9DLtILYB
+ y/Sh69hRtMQR5bTmLZCYix7MWlvz7Xc=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-565--jpEcXYvNXitlckzT_u7YQ-1; Tue, 08 Dec 2020 13:50:45 -0500
-X-MC-Unique: -jpEcXYvNXitlckzT_u7YQ-1
+ us-mta-465-aFk-ZIYqN1aLcfM2XMSCxQ-1; Tue, 08 Dec 2020 13:50:41 -0500
+X-MC-Unique: aFk-ZIYqN1aLcfM2XMSCxQ-1
 Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
  [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E7C121926DC6;
- Tue,  8 Dec 2020 18:50:23 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 61FE4802EA6;
+ Tue,  8 Dec 2020 18:50:25 +0000 (UTC)
 Received: from f31.redhat.com (ovpn-116-129.rdu2.redhat.com [10.10.116.129])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 672192B394;
- Tue,  8 Dec 2020 18:50:22 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 25E7C2B394;
+ Tue,  8 Dec 2020 18:50:24 +0000 (UTC)
 From: jmaloy@redhat.com
 To: tipc-discussion@lists.sourceforge.net
-Date: Tue,  8 Dec 2020 13:50:00 -0500
-Message-Id: <20201208185012.265508-5-jmaloy@redhat.com>
+Date: Tue,  8 Dec 2020 13:50:01 -0500
+Message-Id: <20201208185012.265508-6-jmaloy@redhat.com>
 In-Reply-To: <20201208185012.265508-1-jmaloy@redhat.com>
 References: <20201208185012.265508-1-jmaloy@redhat.com>
 MIME-Version: 1.0
@@ -88,9 +88,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  not necessarily valid
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1kmi4b-003uhW-GS
-Subject: [tipc-discussion] [net-next 04/16] tipc: simplify signature of
- tipc_namtbl_publish()
+X-Headers-End: 1kmi4a-003uhS-Ft
+Subject: [tipc-discussion] [net-next 05/16] tipc: simplify call signatures
+ for publication creation
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -109,322 +109,213 @@ Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
 From: Jon Maloy <jmaloy@redhat.com>
 
-Using the new address structure tipc_uaddr, we simplify the signature
-of function tipc_sk_publish() and tipc_namtbl_publish() so that fewer
-parameters need to be passed around.
+We simplify the call signatures for tipc_nametbl_insert_publ() and
+tipc_publ_create() so that fewer parameters are passed around.
 
 Signed-off-by: Jon Maloy <jmaloy@redhat.com>
 ---
- net/tipc/name_table.c | 10 +++---
- net/tipc/name_table.h |  6 ++--
- net/tipc/net.c        |  8 +++--
- net/tipc/node.c       | 29 +++++++++--------
- net/tipc/socket.c     | 75 +++++++++++++++++++++++--------------------
- 5 files changed, 70 insertions(+), 58 deletions(-)
+ net/tipc/name_distr.c | 23 ++++++++--------
+ net/tipc/name_table.c | 61 +++++++++++++++++++------------------------
+ net/tipc/name_table.h | 10 ++++---
+ net/tipc/socket.c     |  8 ++----
+ 4 files changed, 47 insertions(+), 55 deletions(-)
 
+diff --git a/net/tipc/name_distr.c b/net/tipc/name_distr.c
+index 721d2fca3d6f..df42fc2b4536 100644
+--- a/net/tipc/name_distr.c
++++ b/net/tipc/name_distr.c
+@@ -293,30 +293,31 @@ static bool tipc_update_nametbl(struct net *net, struct distr_item *i,
+ 				u32 node, u32 dtype)
+ {
+ 	struct publication *p = NULL;
+-	u32 lower = ntohl(i->lower);
+-	u32 upper = ntohl(i->upper);
+-	u32 type = ntohl(i->type);
+-	u32 port = ntohl(i->port);
++	struct tipc_socket_addr sk;
++	struct tipc_uaddr ua;
+ 	u32 key = ntohl(i->key);
+ 
++	tipc_uaddr(&ua, TIPC_SERVICE_RANGE, TIPC_CLUSTER_SCOPE,
++		   ntohl(i->type), ntohl(i->lower), ntohl(i->upper));
++	sk.ref = ntohl(i->port);
++	sk.node = node;
++
+ 	if (dtype == PUBLICATION) {
+-		p = tipc_nametbl_insert_publ(net, type, lower, upper,
+-					     TIPC_CLUSTER_SCOPE, node,
+-					     port, key);
++		p = tipc_nametbl_insert_publ(net, &ua, &sk, key);
+ 		if (p) {
+ 			tipc_node_subscribe(net, &p->binding_node, node);
+ 			return true;
+ 		}
+ 	} else if (dtype == WITHDRAWAL) {
+-		p = tipc_nametbl_remove_publ(net, type, lower,
+-					     upper, node, key);
++		p = tipc_nametbl_remove_publ(net, ua.sr.type, ua.sr.lower,
++					     ua.sr.upper, node, key);
+ 		if (p) {
+ 			tipc_node_unsubscribe(net, &p->binding_node, node);
+ 			kfree_rcu(p, rcu);
+ 			return true;
+ 		}
+-		pr_warn_ratelimited("Failed to remove binding %u,%u from %x\n",
+-				    type, lower, node);
++		pr_warn_ratelimited("Failed to remove binding %u,%u from %u\n",
++				    ua.sr.type, ua.sr.lower, node);
+ 	} else {
+ 		pr_warn("Unrecognized name table message received\n");
+ 	}
 diff --git a/net/tipc/name_table.c b/net/tipc/name_table.c
-index 68e269b49780..d951e9345122 100644
+index d951e9345122..ba96d5fc57f3 100644
 --- a/net/tipc/name_table.c
 +++ b/net/tipc/name_table.c
-@@ -742,9 +742,8 @@ void tipc_nametbl_build_group(struct net *net, struct tipc_group *grp,
+@@ -222,36 +222,30 @@ static int hash(int x)
  
- /* tipc_nametbl_publish - add service binding to name table
+ /**
+  * tipc_publ_create - create a publication structure
+- * @type: name sequence type
+- * @lower: name sequence lower bound
+- * @upper: name sequence upper bound
+- * @scope: publication scope
+- * @node: network address of publishing socket
+- * @port: publishing port
++ * @ua: the service range the user is binding to
++ * @sk: the address of the socket thatis bound
+  * @key: publication key
   */
--struct publication *tipc_nametbl_publish(struct net *net, u32 type, u32 lower,
--					 u32 upper, u32 scope, u32 port,
--					 u32 key)
-+struct publication *tipc_nametbl_publish(struct net *net, struct tipc_uaddr *ua,
-+					 struct tipc_socket_addr *sk, u32 key)
+-static struct publication *tipc_publ_create(u32 type, u32 lower, u32 upper,
+-					    u32 scope, u32 node, u32 port,
++static struct publication *tipc_publ_create(struct tipc_uaddr *ua,
++					    struct tipc_socket_addr *sk,
+ 					    u32 key)
+ {
+-	struct publication *publ = kzalloc(sizeof(*publ), GFP_ATOMIC);
++	struct publication *p = kzalloc(sizeof(*p), GFP_ATOMIC);
+ 
+-	if (!publ)
++	if (!p)
+ 		return NULL;
+ 
+-	publ->sr.type = type;
+-	publ->sr.lower = lower;
+-	publ->sr.upper = upper;
+-	publ->scope = scope;
+-	publ->sk.node = node;
+-	publ->sk.ref = port;
+-	publ->key = key;
+-	INIT_LIST_HEAD(&publ->binding_sock);
+-	INIT_LIST_HEAD(&publ->binding_node);
+-	INIT_LIST_HEAD(&publ->local_publ);
+-	INIT_LIST_HEAD(&publ->all_publ);
+-	INIT_LIST_HEAD(&publ->list);
+-	return publ;
++	p->sr = ua->sr;
++	p->sk = *sk;
++	p->addrtype = ua->addrtype;
++	p->scope = ua->scope;
++	p->key = key;
++	INIT_LIST_HEAD(&p->binding_sock);
++	INIT_LIST_HEAD(&p->binding_node);
++	INIT_LIST_HEAD(&p->local_publ);
++	INIT_LIST_HEAD(&p->all_publ);
++	INIT_LIST_HEAD(&p->list);
++	return p;
+ }
+ 
+ /**
+@@ -468,23 +462,24 @@ static struct tipc_service *tipc_service_find(struct net *net, u32 type)
+ 	return NULL;
+ };
+ 
+-struct publication *tipc_nametbl_insert_publ(struct net *net, u32 type,
+-					     u32 lower, u32 upper,
+-					     u32 scope, u32 node,
+-					     u32 port, u32 key)
++struct publication *tipc_nametbl_insert_publ(struct net *net,
++					     struct tipc_uaddr *ua,
++					     struct tipc_socket_addr *sk,
++					     u32 key)
  {
  	struct name_table *nt = tipc_name_table(net);
- 	struct tipc_net *tn = tipc_net(net);
-@@ -759,8 +758,9 @@ struct publication *tipc_nametbl_publish(struct net *net, u32 type, u32 lower,
+ 	struct tipc_service *sc;
+ 	struct publication *p;
++	u32 type = ua->sr.type;
+ 	bool res = false;
+ 
+-	p = tipc_publ_create(type, lower, upper, scope, node, port, key);
++	p = tipc_publ_create(ua, sk, key);
+ 	if (!p)
+ 		return NULL;
+ 
+-	if (scope > TIPC_NODE_SCOPE || lower > upper) {
+-		pr_debug("Failed to bind illegal {%u,%u,%u} with scope %u\n",
+-			 type, lower, upper, scope);
++	if (ua->sr.lower > ua->sr.upper) {
++		pr_debug("Failed to bind illegal {%u,%u,%u} from node %u\n",
++			 type, ua->sr.lower, ua->sr.upper, sk->node);
+ 		return NULL;
+ 	}
+ 	sc = tipc_service_find(net, type);
+@@ -758,9 +753,7 @@ struct publication *tipc_nametbl_publish(struct net *net, struct tipc_uaddr *ua,
  		goto exit;
  	}
  
--	p = tipc_nametbl_insert_publ(net, type, lower, upper, scope,
--				     tipc_own_addr(net), port, key);
-+	p = tipc_nametbl_insert_publ(net, ua->sr.type, ua->sr.lower,
-+				     ua->sr.upper, ua->scope,
-+				     sk->node, sk->ref, key);
+-	p = tipc_nametbl_insert_publ(net, ua->sr.type, ua->sr.lower,
+-				     ua->sr.upper, ua->scope,
+-				     sk->node, sk->ref, key);
++	p = tipc_nametbl_insert_publ(net, ua, sk, key);
  	if (p) {
  		nt->local_publ_count++;
  		skb = tipc_named_publish(net, p);
 diff --git a/net/tipc/name_table.h b/net/tipc/name_table.h
-index 3fff00440e1a..5e969e060509 100644
+index 5e969e060509..e12b9eb2c7f1 100644
 --- a/net/tipc/name_table.h
 +++ b/net/tipc/name_table.h
-@@ -42,6 +42,7 @@ struct tipc_subscription;
- struct tipc_plist;
- struct tipc_nlist;
- struct tipc_group;
-+struct tipc_uaddr;
- 
- /*
-  * TIPC name types reserved for internal TIPC use (both current and planned)
-@@ -120,9 +121,8 @@ void tipc_nametbl_lookup_dst_nodes(struct net *net, u32 type, u32 lower,
- bool tipc_nametbl_lookup(struct net *net, u32 type, u32 instance, u32 domain,
- 			 struct list_head *dsts, int *dstcnt, u32 exclude,
- 			 bool all);
--struct publication *tipc_nametbl_publish(struct net *net, u32 type, u32 lower,
--					 u32 upper, u32 scope, u32 port,
--					 u32 key);
-+struct publication *tipc_nametbl_publish(struct net *net, struct tipc_uaddr *ua,
-+					 struct tipc_socket_addr *sk, u32 key);
+@@ -75,7 +75,8 @@ struct tipc_uaddr;
+ struct publication {
+ 	struct tipc_service_range sr;
+ 	struct tipc_socket_addr sk;
+-	u32 scope;
++	u16 addrtype;
++	u16 scope;
+ 	u32 key;
+ 	u32 id;
+ 	struct list_head binding_node;
+@@ -125,9 +126,10 @@ struct publication *tipc_nametbl_publish(struct net *net, struct tipc_uaddr *ua,
+ 					 struct tipc_socket_addr *sk, u32 key);
  int tipc_nametbl_withdraw(struct net *net, u32 type, u32 lower, u32 upper,
  			  u32 key);
- struct publication *tipc_nametbl_insert_publ(struct net *net, u32 type,
-diff --git a/net/tipc/net.c b/net/tipc/net.c
-index a129f661bee3..3f927949bb23 100644
---- a/net/tipc/net.c
-+++ b/net/tipc/net.c
-@@ -125,6 +125,11 @@ int tipc_net_init(struct net *net, u8 *node_id, u32 addr)
- static void tipc_net_finalize(struct net *net, u32 addr)
- {
- 	struct tipc_net *tn = tipc_net(net);
-+	struct tipc_socket_addr sk = {0, addr};
-+	struct tipc_uaddr ua;
-+
-+	tipc_uaddr(&ua, TIPC_SERVICE_RANGE, TIPC_CLUSTER_SCOPE,
-+		   TIPC_NODE_STATE, addr, addr);
- 
- 	if (cmpxchg(&tn->node_addr, 0, addr))
- 		return;
-@@ -132,8 +137,7 @@ static void tipc_net_finalize(struct net *net, u32 addr)
- 	tipc_named_reinit(net);
- 	tipc_sk_reinit(net);
- 	tipc_mon_reinit_self(net);
--	tipc_nametbl_publish(net, TIPC_NODE_STATE, addr, addr,
--			     TIPC_CLUSTER_SCOPE, 0, addr);
-+	tipc_nametbl_publish(net, &ua, &sk, addr);
- }
- 
- void tipc_net_finalize_work(struct work_struct *work)
-diff --git a/net/tipc/node.c b/net/tipc/node.c
-index 86b4d7ffb47a..3a71e26c9509 100644
---- a/net/tipc/node.c
-+++ b/net/tipc/node.c
-@@ -393,21 +393,23 @@ static void tipc_node_write_unlock_fast(struct tipc_node *n)
- 
- static void tipc_node_write_unlock(struct tipc_node *n)
- {
-+	struct tipc_socket_addr sk;
- 	struct net *net = n->net;
--	u32 addr = 0;
- 	u32 flags = n->action_flags;
--	u32 link_id = 0;
--	u32 bearer_id;
- 	struct list_head *publ_list;
-+	struct tipc_uaddr ua;
-+	u32 bearer_id;
- 
- 	if (likely(!flags)) {
- 		write_unlock_bh(&n->lock);
- 		return;
- 	}
- 
--	addr = n->addr;
--	link_id = n->link_id;
--	bearer_id = link_id & 0xffff;
-+	tipc_uaddr(&ua, TIPC_SERVICE_RANGE, TIPC_NODE_SCOPE,
-+		   TIPC_LINK_STATE, n->addr, n->addr);
-+	sk.ref = n->link_id;
-+	sk.node = n->addr;
-+	bearer_id = n->link_id & 0xffff;
- 	publ_list = &n->publ_list;
- 
- 	n->action_flags &= ~(TIPC_NOTIFY_NODE_DOWN | TIPC_NOTIFY_NODE_UP |
-@@ -416,20 +418,19 @@ static void tipc_node_write_unlock(struct tipc_node *n)
- 	write_unlock_bh(&n->lock);
- 
- 	if (flags & TIPC_NOTIFY_NODE_DOWN)
--		tipc_publ_notify(net, publ_list, addr, n->capabilities);
-+		tipc_publ_notify(net, publ_list, n->addr, n->capabilities);
- 
- 	if (flags & TIPC_NOTIFY_NODE_UP)
--		tipc_named_node_up(net, addr, n->capabilities);
-+		tipc_named_node_up(net, n->addr, n->capabilities);
- 
- 	if (flags & TIPC_NOTIFY_LINK_UP) {
--		tipc_mon_peer_up(net, addr, bearer_id);
--		tipc_nametbl_publish(net, TIPC_LINK_STATE, addr, addr,
--				     TIPC_NODE_SCOPE, link_id, link_id);
-+		tipc_mon_peer_up(net, n->addr, bearer_id);
-+		tipc_nametbl_publish(net, &ua, &sk, n->link_id);
- 	}
- 	if (flags & TIPC_NOTIFY_LINK_DOWN) {
--		tipc_mon_peer_down(net, addr, bearer_id);
--		tipc_nametbl_withdraw(net, TIPC_LINK_STATE, addr,
--				      addr, link_id);
-+		tipc_mon_peer_down(net, n->addr, bearer_id);
-+		tipc_nametbl_withdraw(net, TIPC_LINK_STATE, n->addr,
-+				      n->addr, n->link_id);
- 	}
- }
- 
+-struct publication *tipc_nametbl_insert_publ(struct net *net, u32 type,
+-					     u32 lower, u32 upper, u32 scope,
+-					     u32 node, u32 ref, u32 key);
++struct publication *tipc_nametbl_insert_publ(struct net *net,
++					     struct tipc_uaddr *ua,
++					     struct tipc_socket_addr *sk,
++					     u32 key);
+ struct publication *tipc_nametbl_remove_publ(struct net *net, u32 type,
+ 					     u32 lower, u32 upper,
+ 					     u32 node, u32 key);
 diff --git a/net/tipc/socket.c b/net/tipc/socket.c
-index bff14df40bc9..598c8611b75f 100644
+index 598c8611b75f..0a92ebdd096d 100644
 --- a/net/tipc/socket.c
 +++ b/net/tipc/socket.c
-@@ -111,7 +111,6 @@ struct tipc_sock {
- 	struct sock sk;
- 	u32 conn_type;
- 	u32 conn_instance;
--	int published;
- 	u32 max_pkt;
- 	u32 maxnagle;
- 	u32 portid;
-@@ -141,6 +140,7 @@ struct tipc_sock {
- 	bool expect_ack;
- 	bool nodelay;
- 	bool group_is_open;
-+	bool published;
- };
- 
- static int tipc_sk_backlog_rcv(struct sock *sk, struct sk_buff *skb);
-@@ -151,8 +151,7 @@ static int tipc_release(struct socket *sock);
- static int tipc_accept(struct socket *sock, struct socket *new_sock, int flags,
- 		       bool kern);
- static void tipc_sk_timeout(struct timer_list *t);
--static int tipc_sk_publish(struct tipc_sock *tsk, uint scope,
--			   struct tipc_service_range const *seq);
-+static int tipc_sk_publish(struct tipc_sock *tsk, struct tipc_uaddr *ua);
- static int tipc_sk_withdraw(struct tipc_sock *tsk, uint scope,
- 			    struct tipc_service_range const *seq);
- static int tipc_sk_leave(struct tipc_sock *tsk);
-@@ -677,22 +676,31 @@ static int tipc_release(struct socket *sock)
-  */
- static int __tipc_bind(struct socket *sock, struct sockaddr *skaddr, int alen)
- {
--	struct sockaddr_tipc *addr = (struct sockaddr_tipc *)skaddr;
-+	struct tipc_uaddr *ua = (struct tipc_uaddr *)skaddr;
- 	struct tipc_sock *tsk = tipc_sk(sock->sk);
-+	bool unbind = false;
- 
- 	if (unlikely(!alen))
- 		return tipc_sk_withdraw(tsk, 0, NULL);
- 
--	if (addr->addrtype == TIPC_SERVICE_ADDR)
--		addr->addr.nameseq.upper = addr->addr.nameseq.lower;
-+	if (ua->addrtype == TIPC_SERVICE_ADDR) {
-+		ua->addrtype = TIPC_SERVICE_RANGE;
-+		ua->sr.upper = ua->sr.lower;
-+	}
-+	if (ua->scope < 0) {
-+		unbind = true;
-+		ua->scope = -ua->scope;
-+	}
-+	/* Users may still use deprecated TIPC_ZONE_SCOPE */
-+	if (ua->scope != TIPC_NODE_SCOPE)
-+		ua->scope = TIPC_CLUSTER_SCOPE;
- 
- 	if (tsk->group)
- 		return -EACCES;
- 
--	if (addr->scope >= 0)
--		return tipc_sk_publish(tsk, addr->scope, &addr->addr.nameseq);
--	else
--		return tipc_sk_withdraw(tsk, -addr->scope, &addr->addr.nameseq);
-+	if (unbind)
-+		return tipc_sk_withdraw(tsk, ua->scope, &ua->sr);
-+	return tipc_sk_publish(tsk, ua);
- }
- 
- int tipc_sk_bind(struct socket *sock, struct sockaddr *skaddr, int alen)
-@@ -707,18 +715,17 @@ int tipc_sk_bind(struct socket *sock, struct sockaddr *skaddr, int alen)
- 
- static int tipc_bind(struct socket *sock, struct sockaddr *skaddr, int alen)
- {
--	struct sockaddr_tipc *addr = (struct sockaddr_tipc *)skaddr;
-+	struct tipc_uaddr *ua = (struct tipc_uaddr *)skaddr;
-+	u32 atype = ua->addrtype;
- 
- 	if (alen) {
--		if (alen < sizeof(struct sockaddr_tipc))
-+		if (!tipc_uaddr_valid(ua, alen))
- 			return -EINVAL;
--		if (addr->family != AF_TIPC)
-+		if (atype == TIPC_SOCKET_ADDR)
- 			return -EAFNOSUPPORT;
--		if (addr->addrtype > TIPC_SERVICE_ADDR)
--			return -EAFNOSUPPORT;
--		if (addr->addr.nameseq.type < TIPC_RESERVED_TYPES) {
-+		if (ua->sr.type < TIPC_RESERVED_TYPES) {
- 			pr_warn_once("Can't bind to reserved service type %u\n",
--				     addr->addr.nameseq.type);
-+				     ua->sr.type);
- 			return -EACCES;
- 		}
- 	}
-@@ -2891,31 +2898,28 @@ static void tipc_sk_timeout(struct timer_list *t)
- 	sock_put(sk);
- }
- 
--static int tipc_sk_publish(struct tipc_sock *tsk, uint scope,
--			   struct tipc_service_range const *seq)
-+static int tipc_sk_publish(struct tipc_sock *tsk, struct tipc_uaddr *ua)
- {
- 	struct sock *sk = &tsk->sk;
- 	struct net *net = sock_net(sk);
--	struct publication *publ;
-+	struct tipc_socket_addr skaddr;
-+	struct publication *p;
- 	u32 key;
- 
--	if (scope != TIPC_NODE_SCOPE)
--		scope = TIPC_CLUSTER_SCOPE;
--
- 	if (tipc_sk_connected(sk))
- 		return -EINVAL;
- 	key = tsk->portid + tsk->pub_count + 1;
- 	if (key == tsk->portid)
- 		return -EADDRINUSE;
--
--	publ = tipc_nametbl_publish(net, seq->type, seq->lower, seq->upper,
--				    scope, tsk->portid, key);
--	if (unlikely(!publ))
-+	skaddr.ref = tsk->portid;
-+	skaddr.node = tipc_own_addr(net);
-+	p = tipc_nametbl_publish(net, ua, &skaddr, key);
-+	if (unlikely(!p))
- 		return -EINVAL;
- 
--	list_add(&publ->binding_sock, &tsk->publications);
-+	list_add(&p->binding_sock, &tsk->publications);
- 	tsk->pub_count++;
--	tsk->published = 1;
-+	tsk->published = true;
- 	return 0;
- }
- 
-@@ -3067,7 +3071,7 @@ static int tipc_sk_join(struct tipc_sock *tsk, struct tipc_group_req *mreq)
- 	struct net *net = sock_net(&tsk->sk);
- 	struct tipc_group *grp = tsk->group;
- 	struct tipc_msg *hdr = &tsk->phdr;
--	struct tipc_service_range seq;
-+	struct tipc_uaddr ua;
- 	int rc;
- 
- 	if (mreq->type < TIPC_RESERVED_TYPES)
-@@ -3083,11 +3087,14 @@ static int tipc_sk_join(struct tipc_sock *tsk, struct tipc_group_req *mreq)
- 	msg_set_lookup_scope(hdr, mreq->scope);
+@@ -3088,12 +3088,8 @@ static int tipc_sk_join(struct tipc_sock *tsk, struct tipc_group_req *mreq)
  	msg_set_nametype(hdr, mreq->type);
  	msg_set_dest_droppable(hdr, true);
--	seq.type = mreq->type;
--	seq.lower = mreq->instance;
--	seq.upper = seq.lower;
  	tipc_nametbl_build_group(net, grp, mreq->type, mreq->scope);
--	rc = tipc_sk_publish(tsk, mreq->scope, &seq);
-+
-+	ua.sr.type = mreq->type;
-+	ua.sr.lower = mreq->instance;
-+	ua.sr.upper = ua.sr.lower;
-+	ua.scope = mreq->scope;
-+	ua.addrtype = TIPC_SERVICE_RANGE;
-+	rc = tipc_sk_publish(tsk, &ua);
+-
+-	ua.sr.type = mreq->type;
+-	ua.sr.lower = mreq->instance;
+-	ua.sr.upper = ua.sr.lower;
+-	ua.scope = mreq->scope;
+-	ua.addrtype = TIPC_SERVICE_RANGE;
++	tipc_uaddr(&ua, TIPC_SERVICE_RANGE, mreq->scope,
++		   mreq->type, mreq->instance, mreq->instance);
+ 	rc = tipc_sk_publish(tsk, &ua);
  	if (rc) {
  		tipc_group_delete(net, grp);
- 		tsk->group = NULL;
 -- 
 2.28.0
 
