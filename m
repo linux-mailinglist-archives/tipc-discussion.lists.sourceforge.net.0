@@ -2,150 +2,98 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4D4C2EA039
-	for <lists+tipc-discussion@lfdr.de>; Mon,  4 Jan 2021 23:56:09 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To:Sender:Cc:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=n5bGu7nBmDJ4OueHFRUHwMWvj6WOUoWT7HeWEw3y7aw=; b=UFwlbPkpL74uNSi1FCJmUpb/7w
-	zkh3p+h6li6rlpFqvB9c8yI6qKpktRlEkDLAJ+i5j1TwPfS6sl1ZmASgn9Va14PR/P6fbNo6YnBG1
-	3C88HjbLa2kMqof/CeK/E5f/BHDQk8OlvZ00Fi7DqV9WNzNPlYqY306Og4HbbrjBdnvM=;
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3007C2EA1F3
+	for <lists+tipc-discussion@lfdr.de>; Tue,  5 Jan 2021 02:01:52 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kwYlZ-0007Yc-UV; Mon, 04 Jan 2021 22:55:57 +0000
+	id 1kwajH-0001p5-FM; Tue, 05 Jan 2021 01:01:43 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Gary.Duzan@fisglobal.com>) id 1kwYlY-0007YO-PB
- for tipc-discussion@lists.sourceforge.net; Mon, 04 Jan 2021 22:55:56 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1kwajF-0001oy-Va
+ for tipc-discussion@lists.sourceforge.net; Tue, 05 Jan 2021 01:01:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Message-ID:Date:Subject:
- To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=x/sABv916kvutwX2wNZvurtmuZ87/dgJmY24N60weVE=; b=SbwyLkzCYhX4WQGpjVwSA3iynW
- CZ++pd74JF9Nevmc2TZc6S1ffxgOcQcxDWZesCV0YsKt7wu4iZAQUiX0b7RjSpe2GOu/o0ir+XKKN
- KPKgDc2o8w+4sjt5EzkzpWEZVz2srBxSHxhsOHUayyxyJv4eELI0UuiJq82E7x4pfUT0=;
+ bh=0Z+lWfj6wD78t73fyJ1PSr6hqUV6asLhogg5ku3Kouw=; b=Plzwe/61nDBSglKZ9dlSmCokcW
+ YGQgMgkSvqpt7EUW+k0YkFOhEuxg2SiV0W0FcFdtE5S/N9x+JkI7IOYradDvUEZhnwuBwxfzEFixO
+ s7ICgTd5oNvBDmzZj/BkQXaj2ZZd+73HqTkwy+bywgbOiC1s2EDr0J2mUuBAQ1bSkTrk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Type:Message-ID:Date:Subject:To:From:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=x/sABv916kvutwX2wNZvurtmuZ87/dgJmY24N60weVE=; b=l
- toryYsoVy41Tkp+X8qvXYz8lu3C4GKA1REEZBW+cLBB7jfD5dDiTos86vhHZVNKYEm73+KDed1A+N
- iksRkgppdOTCNFCJQkyL2WbNF4i/1wfQsk6EIYrZ7GdtDevRnJ6QQtX4dsVrjJNNZJRB9IdZR722j
- 3BA7XgScnR8yvsYk=;
-Received: from mail-db8eur05on2091.outbound.protection.outlook.com
- ([40.107.20.91] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=0Z+lWfj6wD78t73fyJ1PSr6hqUV6asLhogg5ku3Kouw=; b=fErOinJaNMZ6aB3bEiGGtq14Ch
+ q2RfHGpJqWs/mv9NpXtQGNabUQT/axXm1tXJ4mM0/WslP6afinfFN8p4J2rTzneBw9I43YzV4xzAc
+ AZaw0FtZwhZFxcbryuWpnDCBlHUFoNb820WR4LzLZtartCXTIkFKWTp4912EH7Z/5alw=;
+Received: from us-smtp-delivery-124.mimecast.com ([63.128.21.124])
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1kwYlM-007uHi-Lf
- for tipc-discussion@lists.sourceforge.net; Mon, 04 Jan 2021 22:55:56 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=chqUE4yhSueL0DS0CB2eFWSkAbppZpIzoUIsqVuYH4Oe35BL49KwGqAuoW7VERK3qAelSxJNZUv5preBfFcp05dCCX/gvDhaU51Z2H7Wnfl8jUmXkPkf6s/C/mk2Xzg/3aqbywudvu4KlkU7ELAYseo82Ga1FrU0Ucm2ppg4yTusq0cDPbu1MnPS2u+ARDzCO1IWXZFQinkCMMCQqAd+vHuT4z4J5ceQHHgJtWsTY3jcSMwzWmZDdc63CaJRBK+0iXAiHuaCpIoEsFtqp1E6+X+cJ/6AUzUAX4WJwhYtddBemYxfBZhzkCmlM0Dyi8jn6vopu9+KlHxrbEkU4rtmhw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=x/sABv916kvutwX2wNZvurtmuZ87/dgJmY24N60weVE=;
- b=CcHkg4b4du39ehwqBb169kLGWmfD6wbn6Ujjp0sP/gEb3fkYGAbeci53SIKtrjvKrkOUyjkm6ovKoPYNjGaqKSL9/echHllldKjeYIRT5EYSXkZbGXMaLcSBZFZGweH1faBPYZx5TxdSGLS6eo6FXXjiR/xR+OUKQysn70beoyqrmag552dmAUW499oxfJ5YBjVjqa/CQm4MAPUQF88pAcxK33DTWZZkAnrH1R3pdQP25PGWZ79Dq2DGixtxwju4SfHpyKKvp0HSDcJJuh0QadML981DMnW25XIkZB2A6/I0HbbNl4oH9LO69W/5cU4cOm7SXWt0Y26Qh3ChJjAjAg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=fisglobal.com; dmarc=pass action=none
- header.from=fisglobal.com; dkim=pass header.d=fisglobal.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fisglobal.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=x/sABv916kvutwX2wNZvurtmuZ87/dgJmY24N60weVE=;
- b=Bc6WnlO7XNEwGett/Y8187kTc80eNrYMmZyK0PKiZEiVLEBrnVV+71w5mFdHOu6Vccr7EKOLxB9oUEB4myt0ZsdxAs/V7uEOfRk81412Xjlo9EYQH5iSHZklFK7QJvGEjJPoLBO9HuZ5eKJT1qhtBzpRCe6OUhAoLFamGPwRALY=
-Received: from VI1PR08MB4192.eurprd08.prod.outlook.com (2603:10a6:803:e3::17)
- by VI1PR0801MB1776.eurprd08.prod.outlook.com (2603:10a6:800:5b::13)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3721.23; Mon, 4 Jan
- 2021 21:22:55 +0000
-Received: from VI1PR08MB4192.eurprd08.prod.outlook.com
- ([fe80::b85a:8a9a:c264:4d0a]) by VI1PR08MB4192.eurprd08.prod.outlook.com
- ([fe80::b85a:8a9a:c264:4d0a%3]) with mapi id 15.20.3721.024; Mon, 4 Jan 2021
- 21:22:55 +0000
-To: "tipc-discussion@lists.sourceforge.net"
+ (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
+ id 1kwaj4-008Idw-Tx
+ for tipc-discussion@lists.sourceforge.net; Tue, 05 Jan 2021 01:01:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1609808477;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=0Z+lWfj6wD78t73fyJ1PSr6hqUV6asLhogg5ku3Kouw=;
+ b=fAh1Jc3jFPLFcqy7NNc4rPXF76u4phrmRr2leGDAWFXN73X69CZK9ApdXWab3+DdkN6A8q
+ c7M2AeFfuh4uGj61EjTMJWUPH2kYsynugxBdBc88EbiPTiOf3aglsLR40HogW+BkPqCZBi
+ Ahv7PNS1KpDplUrw/8JpCWqoULAEPOE=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-466-GtLktUt5Mwytf-IzyiA9hg-1; Mon, 04 Jan 2021 20:01:13 -0500
+X-MC-Unique: GtLktUt5Mwytf-IzyiA9hg-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A4652107ACE6;
+ Tue,  5 Jan 2021 01:01:12 +0000 (UTC)
+Received: from [10.10.118.109] (ovpn-118-109.rdu2.redhat.com [10.10.118.109])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 2402C2719F;
+ Tue,  5 Jan 2021 01:01:11 +0000 (UTC)
+To: "Duzan, Gary D" <Gary.Duzan@fisglobal.com>,
+ "tipc-discussion@lists.sourceforge.net"
  <tipc-discussion@lists.sourceforge.net>
-Thread-Topic: Discovery between VMs
-Thread-Index: AQHW4tSGtYq8SIz7qkm0pWR6OZ56Ig==
-Date: Mon, 4 Jan 2021 21:22:55 +0000
-Message-ID: <VI1PR08MB419220FCFEAC17883490106985D20@VI1PR08MB4192.eurprd08.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: lists.sourceforge.net; dkim=none (message not signed)
- header.d=none; lists.sourceforge.net;
- dmarc=none action=none header.from=fisglobal.com;
-x-originating-ip: [96.227.140.91]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 7b9180f4-c07b-4431-3496-08d8b0f6e70e
-x-ms-traffictypediagnostic: VI1PR0801MB1776:
-x-microsoft-antispam-prvs: <VI1PR0801MB17764A585D1EB78386EDC09485D20@VI1PR0801MB1776.eurprd08.prod.outlook.com>
-disclaimersource: eop
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: ccy9fJqKpR7mhoM0IfgZN9jKrTLNeRWS0JXUAZfQDTzAatch24ytwgC/DJfyw0Yl3nQ6dhqr6Jy1MkKlCJ1avyfXmlA1RPjQJEXB5JMByOdKm3JN8sQMwB8nTPf2FQQt6OIX35QjXm4XBVBQXZtmudQAaa3ABdqkYl7Do85y/DfceXcUV4G4tASsx+42qArkHOURMT4crkOl9LGwJPPDsQDfJ0Ys5HpPrUCCLm9WzijBiLl9ptHxlM64fgD29QzmZ9nqFH+vcj/DytFDYy0X/YShylBnyn0vfQIwiSL+Hdqi+z1Va7RxgkOc4yFYZLRcPBQaUbhvGD1/IqZPXYfM6wqiH0uCQxWTfLzpZtOlqC6js5HVPAm5MT9y0RyCvD1Q3jzpJ1fMByXU/PifteVPrg==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VI1PR08MB4192.eurprd08.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(346002)(366004)(376002)(136003)(39860400002)(396003)(2906002)(33656002)(7116003)(478600001)(8676002)(186003)(26005)(86362001)(8936002)(6916009)(71200400001)(66446008)(64756008)(52536014)(91956017)(76116006)(316002)(9686003)(66476007)(19627405001)(7696005)(83380400001)(66946007)(3480700007)(5660300002)(55016002)(66556008)(6506007);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata: =?iso-8859-1?Q?9GMTRuMm6BXEHgRvhXQMqSA+Pd2Pauide5sWQ4XYJYo8vhU/W2hOTukqGq?=
- =?iso-8859-1?Q?MXDToezeEMTXax4+aU7hWer0XGseeLpRHqQBpEeHF/P9I0Vq7ctz0qsuFs?=
- =?iso-8859-1?Q?oHuGMwx/c6Uz9Pr75wbSYOdcXyEeEk4wSHXbE4vF+Cjfnj33KDwtwjj2D7?=
- =?iso-8859-1?Q?PLd/Rj89LgMuA/Kaw+mWsW9bERiMx/otm8+zQsQGblxOBpNAGq/TQAvaRQ?=
- =?iso-8859-1?Q?+uQ7yPj5TcU34HVpPoKkeinshkFUsb9bMTI0X8GUs0Ahlc8DVkEOxqpX9N?=
- =?iso-8859-1?Q?14tDogHGCi+cGP8YsdFBE/VPgeIH9pYMvwyN48TGktiWxY5UrGVv9L3r78?=
- =?iso-8859-1?Q?L4D3Cqvs9zFoS5V9LTgphvfirOvbOf7RqOEn19eE4QVTEG0XLVxpt53pJ3?=
- =?iso-8859-1?Q?Q5jHO45jv8bee+cOsJTqmBxWMIVI3mNMeoHfREMyoZKDNu6/s0XNUefew7?=
- =?iso-8859-1?Q?/n1GshEsNCUhp+GwfMUEB6sEUsa20efPFotDQBn4shCQUVg7M2x9KoddSw?=
- =?iso-8859-1?Q?PxnzeTAdOyIod3V4c5bWd3WmlhhhQhcJombmxxoPgT1DRbvNJLZOcbse/J?=
- =?iso-8859-1?Q?CsP1nLwXO5SYuxX8hxt8/3ozgaGcDTLgBse/Pjkb65ILpDYbiYZ3FYZEZ4?=
- =?iso-8859-1?Q?aDtrt0Epkx7UCbXm4/qdlnXjJyhw6cP6UGuIg/hd8WN5MoZwjB62oqFRnp?=
- =?iso-8859-1?Q?abaqelUJry4788QI4JuN36O58+UZ7VaKMalWLzonU/NNcxBRjT9fTQul3W?=
- =?iso-8859-1?Q?IJUO/G6zpR6in9wbSsDEb+2Tgso0yU8Iy23f7dMhfXd1Mox2nKfEMOzUCa?=
- =?iso-8859-1?Q?fRZ61KagaxEuiR4V4QJ8BingZRuZ8eVWRb6osNgGIX2cpwDJ/5+YRvj+3u?=
- =?iso-8859-1?Q?ogRf9+FOQGkYSm2kdqJQ8APTED27Dd4T8GB/7fkAjR6Zp5fiJgzL/MfJA+?=
- =?iso-8859-1?Q?H3IUOH++hhGjT5laUXcIq5nc3N9BR8ESC1ydfr6IU2PVdQAM/GO6N/maO0?=
- =?iso-8859-1?Q?WKRizt+e1GaVgNbjk=3D?=
-x-ms-exchange-transport-forked: True
+References: <VI1PR08MB419220FCFEAC17883490106985D20@VI1PR08MB4192.eurprd08.prod.outlook.com>
+From: Jon Maloy <jmaloy@redhat.com>
+Message-ID: <080cf9eb-e438-bf77-b7fe-ebc8b0d8adcf@redhat.com>
+Date: Mon, 4 Jan 2021 20:01:11 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.5.0
 MIME-Version: 1.0
-X-OriginatorOrg: fisglobal.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: VI1PR08MB4192.eurprd08.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7b9180f4-c07b-4431-3496-08d8b0f6e70e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Jan 2021 21:22:55.7436 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: e3ff91d8-34c8-4b15-a0b4-18910a6ac575
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: sEfK/Ie1ie9cciibZmX3TQ8eEyYp1UVoM6JQHcsWHGfWS6qM9xV7O9sdzX3ag7uyi5vq5kRHDaTN6qa0BrlbVEBoMEYzvRkP3Wb7Mv/Wt48=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0801MB1776
-X-Spam-Score: -6.8 (------)
+In-Reply-To: <VI1PR08MB419220FCFEAC17883490106985D20@VI1PR08MB4192.eurprd08.prod.outlook.com>
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+Authentication-Results: relay.mimecast.com;
+ auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Language: en-US
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.20.91 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [63.128.21.124 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM white-list
- 1.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 NICE_REPLY_A           Looks like a legit reply (A)
  -0.2 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1kwYlM-007uHi-Lf
-X-Content-Filtered-By: Mailman/MimeDel 2.1.21
-Subject: [tipc-discussion] Discovery between VMs
+X-Headers-End: 1kwaj4-008Idw-Tx
+Subject: Re: [tipc-discussion] Discovery between VMs
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -157,24 +105,50 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: "Duzan,
- Gary D via tipc-discussion" <tipc-discussion@lists.sourceforge.net>
-Reply-To: "Duzan, Gary D" <Gary.Duzan@fisglobal.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-   I'm new here, and I have trouble getting to SourceForge through the corporate proxy, so forgive me if this is an FAQ. I'm trying to get TIPC working at a remote site between two VMs running Ubuntu 18.04 which at least appear to be on the same IP subnet. The node address is set to distinct values on both hosts (as 18.04 had other TIPC which required the manual config), and the broadcast bearer is there, but they don't appear to be discovering each other as the client gets a Host Unreachable trying to do a sendto(). I believe the VMs are running under VMware, but getting visibility on that could be tricky. The TIPC code works fine between physical hosts locally.
-
-   Are there known problems getting the ethernet broadcast between VMs working? I believe I have the proper incantation to use a UDP bearer for use as a fallback, but I'd rather not use it if I don't have to.
-
-   Thanks.
-
-                                                                 Gary Duzan
-
-The information contained in this message is proprietary and/or confidential. If you are not the intended recipient, please: (i) delete the message and all copies; (ii) do not disclose, distribute or use the message in any manner; and (iii) notify the sender immediately. In addition, please be aware that any message addressed to our domain is subject to archiving and review by persons other than the intended recipient. Thank you.
-
-_______________________________________________
-tipc-discussion mailing list
-tipc-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+SGkgR2FyeSwKVGhlcmUgYXJlIG5vIGtub3duIHByb2JsZW1zIHdpdGggY29ubmVjdGluZyBiZXR3
+ZWVuIFZNcy4gQXMgYSBtYXR0ZXIgb2YgCmZhY3QsIHRoYXQgaXMgdGhlIHdheSB3ZSBydW4gYWxt
+b3N0IGFsbCB0aGUgdGltZS4KSGF2ZSB5b3UgdHJpZWQganVzdCB0byBwaW5nIGJldHdlZW4gdGhl
+IHR3byBWTXMsIHVzaW5nIHRoZSBzYW1lIAppbnRlcmZhY2VzPyBJZiB0aGF0IHdvcmtzIHRoZXkg
+c2hvdWxkIGRlZmluaXRlbHkgZmluZCBlYWNoIG90aGVyLgpJZiB5b3UgY2FuIHBpbmcgYW5kIHRo
+ZXkgc3RpbGwgZG9uJ3QgZGlzY292ZXIgZWFjaCBvdGhlciwgY2hlY2sgdGhlIApjbHVzdGVyIGlk
+IChha2EgbmV0d29yayBpZCkgYnkgZG9pbmcgJ3RpcGMgbm9kZSBnZXQgbmV0aWQnIG9uIGJvdGgg
+c2lkZXMuCklmIHRoZSBpbnRlcmZhY2VzIGRvbid0IGhhdmUgSVAgYWRkcmVzc2VzIHlvdSBjb3Vs
+ZCBhc3NpZ24gdGhvc2UgCnRlbXBvcmFyaWx5LCBqdXN0IHRvIGNoZWNrLgoKV2hhdCBkbyB0aGUg
+Y29tbWFuZHMgJ3RpcGMgbGluayBsaXN0JyBhbmQgJ3RpcGMgYmVhcmVyIGxpc3QnwqAgc2hvdyB5
+b3U/CgpCUgpKb24gTWFsb3kKCk9uIDEvNC8yMSA0OjIyIFBNLCBEdXphbiwgR2FyeSBEIHZpYSB0
+aXBjLWRpc2N1c3Npb24gd3JvdGU6Cj4gICAgIEknbSBuZXcgaGVyZSwgYW5kIEkgaGF2ZSB0cm91
+YmxlIGdldHRpbmcgdG8gU291cmNlRm9yZ2UgdGhyb3VnaCB0aGUgY29ycG9yYXRlIHByb3h5LCBz
+byBmb3JnaXZlIG1lIGlmIHRoaXMgaXMgYW4gRkFRLiBJJ20gdHJ5aW5nIHRvIGdldCBUSVBDIHdv
+cmtpbmcgYXQgYSByZW1vdGUgc2l0ZSBiZXR3ZWVuIHR3byBWTXMgcnVubmluZyBVYnVudHUgMTgu
+MDQgd2hpY2ggYXQgbGVhc3QgYXBwZWFyIHRvIGJlIG9uIHRoZSBzYW1lIElQIHN1Ym5ldC4gVGhl
+IG5vZGUgYWRkcmVzcyBpcyBzZXQgdG8gZGlzdGluY3QgdmFsdWVzIG9uIGJvdGggaG9zdHMgKGFz
+IDE4LjA0IGhhZCBvdGhlciBUSVBDIHdoaWNoIHJlcXVpcmVkIHRoZSBtYW51YWwgY29uZmlnKSwg
+YW5kIHRoZSBicm9hZGNhc3QgYmVhcmVyIGlzIHRoZXJlLCBidXQgdGhleSBkb24ndCBhcHBlYXIg
+dG8gYmUgZGlzY292ZXJpbmcgZWFjaCBvdGhlciBhcyB0aGUgY2xpZW50IGdldHMgYSBIb3N0IFVu
+cmVhY2hhYmxlIHRyeWluZyB0byBkbyBhIHNlbmR0bygpLiBJIGJlbGlldmUgdGhlIFZNcyBhcmUg
+cnVubmluZyB1bmRlciBWTXdhcmUsIGJ1dCBnZXR0aW5nIHZpc2liaWxpdHkgb24gdGhhdCBjb3Vs
+ZCBiZSB0cmlja3kuIFRoZSBUSVBDIGNvZGUgd29ya3MgZmluZSBiZXR3ZWVuIHBoeXNpY2FsIGhv
+c3RzIGxvY2FsbHkuCj4KPiAgICAgQXJlIHRoZXJlIGtub3duIHByb2JsZW1zIGdldHRpbmcgdGhl
+IGV0aGVybmV0IGJyb2FkY2FzdCBiZXR3ZWVuIFZNcyB3b3JraW5nPyBJIGJlbGlldmUgSSBoYXZl
+IHRoZSBwcm9wZXIgaW5jYW50YXRpb24gdG8gdXNlIGEgVURQIGJlYXJlciBmb3IgdXNlIGFzIGEg
+ZmFsbGJhY2ssIGJ1dCBJJ2QgcmF0aGVyIG5vdCB1c2UgaXQgaWYgSSBkb24ndCBoYXZlIHRvLgo+
+Cj4gICAgIFRoYW5rcy4KPgo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgIEdhcnkgRHV6YW4KPgo+IFRoZSBpbmZvcm1hdGlv
+biBjb250YWluZWQgaW4gdGhpcyBtZXNzYWdlIGlzIHByb3ByaWV0YXJ5IGFuZC9vciBjb25maWRl
+bnRpYWwuIElmIHlvdSBhcmUgbm90IHRoZSBpbnRlbmRlZCByZWNpcGllbnQsIHBsZWFzZTogKGkp
+IGRlbGV0ZSB0aGUgbWVzc2FnZSBhbmQgYWxsIGNvcGllczsgKGlpKSBkbyBub3QgZGlzY2xvc2Us
+IGRpc3RyaWJ1dGUgb3IgdXNlIHRoZSBtZXNzYWdlIGluIGFueSBtYW5uZXI7IGFuZCAoaWlpKSBu
+b3RpZnkgdGhlIHNlbmRlciBpbW1lZGlhdGVseS4gSW4gYWRkaXRpb24sIHBsZWFzZSBiZSBhd2Fy
+ZSB0aGF0IGFueSBtZXNzYWdlIGFkZHJlc3NlZCB0byBvdXIgZG9tYWluIGlzIHN1YmplY3QgdG8g
+YXJjaGl2aW5nIGFuZCByZXZpZXcgYnkgcGVyc29ucyBvdGhlciB0aGFuIHRoZSBpbnRlbmRlZCBy
+ZWNpcGllbnQuIFRoYW5rIHlvdS4KPgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCj4gdGlwYy1kaXNjdXNzaW9uIG1haWxpbmcgbGlzdAo+IHRpcGMtZGlz
+Y3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKPiBodHRwczovL2xpc3RzLnNvdXJjZWZvcmdl
+Lm5ldC9saXN0cy9saXN0aW5mby90aXBjLWRpc2N1c3Npb24KPgoKCgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwp0aXBjLWRpc2N1c3Npb24gbWFpbGluZyBs
+aXN0CnRpcGMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5z
+b3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vdGlwYy1kaXNjdXNzaW9uCg==
