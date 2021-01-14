@@ -2,163 +2,96 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 349F02F4C1B
-	for <lists+tipc-discussion@lfdr.de>; Wed, 13 Jan 2021 14:17:43 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id C20B72F654B
+	for <lists+tipc-discussion@lfdr.de>; Thu, 14 Jan 2021 16:59:35 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1kzg1i-0005YL-Q4; Wed, 13 Jan 2021 13:17:30 +0000
+	id 1l0522-0004pn-D7; Thu, 14 Jan 2021 15:59:30 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Ying.Xue@windriver.com>) id 1kzg1h-0005YD-H9
- for tipc-discussion@lists.sourceforge.net; Wed, 13 Jan 2021 13:17:29 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1l0521-0004pS-Cr
+ for tipc-discussion@lists.sourceforge.net; Thu, 14 Jan 2021 15:59:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=LH52c7CFjs3QN5JWPgvxZcdyQyC392pIGJmKrPymIg0=; b=VQWvDNMimkdNxkGDIyg5gJrD1E
- yzWixUFd3q2cttDQWYhRZRJ1opt2VbNcMClEmWk6o5NcO9LfvP97LTT01Ge+MgowRw4RBWnRY0XeV
- 3kQ4sQapuA7adz3g3f1h1hwLI6uWMWkPxlBd2K3e8GRC5dus6H15iUPbfR5+ga7/DiXE=;
+ bh=N1jiFZ+BTbOnp7BDFCcT1kr+iDpCrn9geTo5A349Jxs=; b=WIrMqEI79ZrYoIYd4zZ9Cp5PqW
+ THSN5uQd09/UrZuNBrvUN6aRs+6L61i+OL4bfZ9bNXG8FaE5vRAqKOgHotLdPyps6UryklRshBpFU
+ Fy2dTPhH/qvIKBLEFLWrL9qkEZ9rgFpmdb4ZJYJ4hVyxDgGuT5eSmuC7wW/RG9zv41kk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:Date:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
  Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=LH52c7CFjs3QN5JWPgvxZcdyQyC392pIGJmKrPymIg0=; b=JSVFR7HO0DhmfRnVtLuej0LYXa
- LmpcJ3tCozVDr+WXx/yXTx33oKR0QU+4ZR7euyqTo61kgV0oawNqX6hGPOzTxqmq0uZgGcR16nU5U
- uk2u0AbkPaqytOfgAEnaGDK7HVnRds8JkADDk73ozMm6M6zptTdJfZVytmr/Dy0TE5xk=;
-Received: from mail-mw2nam12on2058.outbound.protection.outlook.com
- ([40.107.244.58] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1kzg1Y-008vx7-CS
- for tipc-discussion@lists.sourceforge.net; Wed, 13 Jan 2021 13:17:29 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=PMWcrqOcVb5/Q+OBUmuFYBZF7J/GGkmln2HWWFhNfei2lLr2U9HpvoB7O6AbKzPFWVhN8txhDypG+K1II6vSFB9zhC6Zh2XS1T+lOB1Y9/1GhiX3xH5R4kBKoQHpB/eDLTUfOY1IypiKjWom0vYQcQOccRslIpBBSDYrxtI6rGxHwiMoDde3gqr5ygIWXap0/T1mplprEKnBYZJCv4L/cngZdNsohzmnjwdKqwq8gBns0cu9zx4vE5zwveJ39wc7vbnNU1e/VU6M0ALJ5L2ZSSM0xPdYwVZ5ZMfsKo5bWP40AqNbzctfK46zMLG79DzhrlP0LPoboRGHsTn3RmW4HA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LH52c7CFjs3QN5JWPgvxZcdyQyC392pIGJmKrPymIg0=;
- b=FGCBosIwhtF9G4ICBzX/KdVSnkhSwY0BbaTZZNwn0lbTOUCyH92DZXMx4fEwU0kXVsCZBjF9KtcbKSzzSS2om3xwd8VFxUOB/4cBr+oUXBXTEOiXVMyBrZUE7DXVx+kSyjvl1WYQAsj6AV6iJ8a7AJ6+sCi5whsmRC9WcSqPeulQq6ec9oRwN0JiQ9IjGyHY346zO8h+FGgCNSYEjBv5qVhh8FWP7REaeAO0YLJ01boAXx+qRs2Bng6jfiHCARjZTWVzbkCGAfHv+ZroOVaa94Z+XuDxX2ahPifJNrHmT7GjTxrf67gssNm7daxhpScVMkuxq+65tyeek729CPmuKQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=windriver.com; dmarc=pass action=none
- header.from=windriver.com; dkim=pass header.d=windriver.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=windriversystems.onmicrosoft.com;
- s=selector2-windriversystems-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LH52c7CFjs3QN5JWPgvxZcdyQyC392pIGJmKrPymIg0=;
- b=FG+ruVMGXw4MIr/ciG+2Xb70mlToI7leNiyR7/G/5zStR0W+hpSs7v8SG6wI6VtwC4AGdEzFUYu5m5xRH+7Gw56S5l2AYvCszOW9TPTU6qwVNopqUIUsV9Dm85jEUuUS6XSjID8QrgvsjxQBDk4xtozEsF5G18oR6P0Itn4TRVQ=
-Authentication-Results: gmail.com; dkim=none (message not signed)
- header.d=none;gmail.com; dmarc=none action=none header.from=windriver.com;
-Received: from DM6PR11MB3964.namprd11.prod.outlook.com (2603:10b6:5:19c::28)
- by DM6PR11MB4754.namprd11.prod.outlook.com (2603:10b6:5:2ad::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3742.6; Wed, 13 Jan
- 2021 13:02:14 +0000
-Received: from DM6PR11MB3964.namprd11.prod.outlook.com
- ([fe80::584e:b857:3878:d128]) by DM6PR11MB3964.namprd11.prod.outlook.com
- ([fe80::584e:b857:3878:d128%3]) with mapi id 15.20.3742.012; Wed, 13 Jan 2021
- 13:02:14 +0000
-To: jmaloy@redhat.com, tipc-discussion@lists.sourceforge.net
-References: <20201208185012.265508-1-jmaloy@redhat.com>
-From: Ying Xue <ying.xue@windriver.com>
-Autocrypt: addr=ying.xue@windriver.com; keydata=
- xjMEX1nnURYJKwYBBAHaRw8BAQdAZxROH3r87AOhslT5tP2cdYcg89+pbHiYf+LIny/C0fLN
- GDx5aW5nLnh1ZUB3aW5kcml2ZXIuY29tPsJ3BBAWCgAfBQJfWedRBgsJBwgDAgQVCAoCAxYC
- AQIZAQIbAwIeAQAKCRC3Qmz/Z9beRSLiAP9kPgF+mG4F3elbrVTen/sybJfZidnvF1YVq5Ho
- sUbt+wEA6ByAVvGqlEbt4SE1JP6xVgTzwlwihyCgl/byRAQzeg7OOARfWedREgorBgEEAZdV
- AQUBAQdAsdHm3QQyX4RnhnVEmywHpipu0cUyHWeuAkYuLavc5QYDAQgHwmEEGBYIAAkFAl9Z
- 51ECGwwACgkQt0Js/2fW3kXZKAEA0jTzhaLbmprQxi1BbUmAYtlpQCrrjCWdpFGwt5O3yO8A
- /jVE1VxnEgu71mYXX1QE1Lngk+SPVEfLm0BVZFk9fBAA
-Message-ID: <1be796f8-818b-47ff-7272-4a86d2e46a77@windriver.com>
-Date: Wed, 13 Jan 2021 21:01:46 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.10.0
-In-Reply-To: <20201208185012.265508-1-jmaloy@redhat.com>
-Content-Language: en-US
-X-Originating-IP: [60.247.85.82]
-X-ClientProxiedBy: BY5PR03CA0020.namprd03.prod.outlook.com
- (2603:10b6:a03:1e0::30) To DM6PR11MB3964.namprd11.prod.outlook.com
- (2603:10b6:5:19c::28)
+ bh=N1jiFZ+BTbOnp7BDFCcT1kr+iDpCrn9geTo5A349Jxs=; b=dLmUJxpKknlFti6PNHN6piwlZJ
+ 9k8HiG/K5P5wxWKa5PhZC73Rk9BXmmVK/sf5OlUBvRB/XHcGs5zobsDotyHdKw9dHUH39HgoDyAWB
+ lCdtH3n9aY/yxUI+izxTKdITnpriXLDuFdxqXcgRU1WG+1NSqqf7LcMtRucgJ8c/4PMM=;
+Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
+ id 1l051w-009EEN-PA
+ for tipc-discussion@lists.sourceforge.net; Thu, 14 Jan 2021 15:59:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1610639958;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=N1jiFZ+BTbOnp7BDFCcT1kr+iDpCrn9geTo5A349Jxs=;
+ b=arEkJ3nhprAWDkUO6CmzHSw7HqZ2DKgNMW2mI/la+QoNW4EyJLWvC8OB4zz8Po8wNNc550
+ eyosMuIV6cdCOGNesopp/XxgQaPlHpj1kSgmzrV3arE1wWa28p5HBwscIop+Ne18h6Cz7z
+ qS1kTvDsPkWXx3FAfT6a+NYkYEiNYiw=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-547-WJoENA_jPsCQCmvq4JJr6Q-1; Thu, 14 Jan 2021 10:59:15 -0500
+X-MC-Unique: WJoENA_jPsCQCmvq4JJr6Q-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id CF028107565A;
+ Thu, 14 Jan 2021 15:59:10 +0000 (UTC)
+Received: from [10.10.119.172] (ovpn-119-172.rdu2.redhat.com [10.10.119.172])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 933F718A50;
+ Thu, 14 Jan 2021 15:59:09 +0000 (UTC)
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Jonathan Corbet <corbet@lwn.net>
+References: <cover.1610610937.git.mchehab+huawei@kernel.org>
+ <9d205b0e080153af0fbddee06ad0eb23457e1b1b.1610610937.git.mchehab+huawei@kernel.org>
+From: Jon Maloy <jmaloy@redhat.com>
+Message-ID: <da52ef69-753a-7aa8-a2b1-1b5ef48df94e@redhat.com>
+Date: Thu, 14 Jan 2021 10:59:08 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.5.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from [128.224.155.152] (60.247.85.82) by
- BY5PR03CA0020.namprd03.prod.outlook.com (2603:10b6:a03:1e0::30) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3763.10 via Frontend
- Transport; Wed, 13 Jan 2021 13:02:11 +0000
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: ddc7b33b-577d-4459-69ca-08d8b7c37297
-X-MS-TrafficTypeDiagnostic: DM6PR11MB4754:
-X-Microsoft-Antispam-PRVS: <DM6PR11MB47549227F4D2D574D53A918D84A90@DM6PR11MB4754.namprd11.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:5236;
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: sVl0GlU4XG3KOpksJ3cYyA2NYf2hntmwA+q8ZDnZkG4vKf0zyXFzEUfseQ4cs/OasOlpzzT8Q+1oRZWhgHYOcT31NGPxlVnl/ixnRBhkLCj7grwPX3lRi37no5s0+zBQwKzleDWzvngOMvq3/GfAkFQO3uO02tGqvpUIUIMuGoAD3i/F18F2rLwdDYfLVPaUKJEzptY6iNn1ofMo6ogcb2MkW6csxnRVPCeScudIaMdryh3BPsUDhJ1L4djXbcVXtwBgXYGwTIuVSwvBs3PQToaNcN3FU8kDqjzm9WWshga2VlRGVhh8fkSrmToSRMqb1EjhMV0xy0g7Tn9n9x4O5Y+bBFvJbFtMKBXd2bk3+cPK0Ai1BntLstmwo2VpnoxO2BPgZfHC97zdL+zZ2yk/w1FkYMG9A/St9lHYt5D1CGcIMHCuAXfI/doNQyj9WO417Gn9hTPK/bO0/t6Ljof2+Mp7gfxyu7Go7Ug/d4RxD55aqE/OTLbQxnysI1H4M2q/
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DM6PR11MB3964.namprd11.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(396003)(39850400004)(366004)(136003)(376002)(346002)(8676002)(956004)(5660300002)(31686004)(16526019)(31696002)(6486002)(2906002)(8936002)(16576012)(66946007)(186003)(6706004)(26005)(66476007)(316002)(53546011)(4326008)(44832011)(2616005)(52116002)(86362001)(83380400001)(478600001)(6666004)(66556008)(36756003)(78286007)(43740500002)(45980500001);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: =?utf-8?B?enM4c002YkJocSswTmJsNWdoQ1dyL1Yyb0l0OUNnb1dBaFVYNDhqS3ZLQm0z?=
- =?utf-8?B?N1l5OW9lVlhORmZXRVJpQmhZRVBic3piZmNZK3RLREg3aGdNRHF4MzduWWQ5?=
- =?utf-8?B?S3FlcDFZV2dzaXJFYytlcXBmMEo0NUdIaTNrMjZPQ25kOHY4YzhoMzZMN2tt?=
- =?utf-8?B?aVFzYlgzRmw5UG1WdHF2YjZMR2krSGhUY3BxWjI3bndSZ0dmOWVUY3B1SU44?=
- =?utf-8?B?RDByanZuVjNuZmJjKzFENTNLZVUxN2NxTTZycFRZQnZrdjhicmQ5MXhiYnR5?=
- =?utf-8?B?SmQ5ZzZwQ1lQYVdRejRzWHZJTXc3TG84bzJjYXNzeHc2VUFLWURFZnh3N3lp?=
- =?utf-8?B?dGRKaGUveG1lTmpSTElpZ2lJUGRQWnhTTFNhZ0ttM1VJclBwQmtMZFR4K21P?=
- =?utf-8?B?YU40Z1cxVGtaNTVSN3Y3ekNTQUw1Y0l6WjBKQ21oUGo5dmVhSnBOVU1pVnpR?=
- =?utf-8?B?b0c2SEhDamV4RWNwSzh6c0lyY3hVME9HMExVOWJreUlGYXRMeXpDV1ozUXlk?=
- =?utf-8?B?VFlCelFidEpyUjF2UE84anlZU2pZQTFmM1AvYmlhcFAvMnNZWjFCakQwMTV0?=
- =?utf-8?B?bTBpT0hHWjhka0o5NXZRYkg3VlhwQUxJU0VqNWZpeFNQMjdNd3dvQXN4eitx?=
- =?utf-8?B?VTRPeEhZVGYyaVZzNFA5aGFWWTdmNlorNHVFMWFwRi9EQ2g0SGk1QUk4N3k1?=
- =?utf-8?B?d3FrOElZKzF2SmsrdXY1TnNaaXBpQVJYTUFyaEZ1em9XU2dONGtRMGdJVFpn?=
- =?utf-8?B?U3lxcjBrdmF0MVR2NzB4SUZGa2tRZmdHaUhZL0xrTUtVWDk4ajNkMDgxa2dk?=
- =?utf-8?B?WTdObnZNNXo3N3VveDM4a3lDMm5SRytKQ1BrdVFoVWErb3FHa2VNcDRzUFJX?=
- =?utf-8?B?UFFEdGQrUHlucFYvSmtLYVQ0akF1TlZZNWY4OU9JYUpuZzhTVzBQY1hlM2l2?=
- =?utf-8?B?VUpIQ0JiRlcyTzNSM0Uxay9LVDNaUXNLV1A5RmJHbFdhOVBGaXRObDd2c0Z4?=
- =?utf-8?B?ZGlMbjJzTFhTYXhQa0F6TWs3S3pTbjJDSm53U014SE1aMVVGOEpDTEJzSnBx?=
- =?utf-8?B?MGVKWHhIb0pobGFFUkRCc0tuaHgrcG4zTWprUEN2TnJUSlBhdHI5ck9nbWht?=
- =?utf-8?B?cDhjcE1iYkJJbC9rZ3dCbFFOVTZXZm1VcVVZSFNHajFkSmZpMFkzSURuZlVS?=
- =?utf-8?B?VXZkeXFxQ0Q0WXhnYWlkVkkyamVFblg3REluVkxuMkxYL0U2MWdQejZxRFdh?=
- =?utf-8?B?eXlySUJLUVFPRDRTSVVqWUY1YUI2Vkt0dXJrR2pScm9ZV3E2R2NaODNCNXpG?=
- =?utf-8?Q?DYHyDqNSz2IED8qC2QTP9SIpJmV97wswJG?=
-X-OriginatorOrg: windriver.com
-X-MS-Exchange-CrossTenant-AuthSource: DM6PR11MB3964.namprd11.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jan 2021 13:02:14.0597 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 8ddb2873-a1ad-4a18-ae4e-4644631433be
-X-MS-Exchange-CrossTenant-Network-Message-Id: ddc7b33b-577d-4459-69ca-08d8b7c37297
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: f405D5xN/yUJP3ifADgY2W0aKSa6ONcWoZnzB2THLpuHeUDU2d/Ylp19X+n3dL9YJgw+qU3JUf6OxsaequxA4g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB4754
-X-Spam-Score: -0.0 (/)
+In-Reply-To: <9d205b0e080153af0fbddee06ad0eb23457e1b1b.1610610937.git.mchehab+huawei@kernel.org>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Spam-Score: -0.6 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: windriver.com]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [40.107.244.58 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.244.58 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [216.205.24.124 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
- -0.0 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1kzg1Y-008vx7-CS
-Subject: Re: [tipc-discussion] [net-next 00/16] tipc: cleanups and
- simplifications
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.2 NICE_REPLY_A           Looks like a legit reply (A)
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1l051w-009EEN-PA
+Subject: Re: [tipc-discussion] [PATCH v6 12/16] net: tip: fix a couple
+ kernel-doc markups
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -170,55 +103,56 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: xinl@redhat.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ tipc-discussion@lists.sourceforge.net, Jakub Kicinski <kuba@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Thank you for your patience Jon!
 
-This series looks good to me.
 
-Acked-by: Ying Xue <ying.xue@windriver.com>
+On 1/14/21 3:04 AM, Mauro Carvalho Chehab wrote:
+> A function has a different name between their prototype
+> and its kernel-doc markup:
+>
+> 	../net/tipc/link.c:2551: warning: expecting prototype for link_reset_stats(). Prototype was for tipc_link_reset_stats() instead
+> 	../net/tipc/node.c:1678: warning: expecting prototype for is the general link level function for message sending(). Prototype was for tipc_node_xmit() instead
+>
+> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+> ---
+>   net/tipc/link.c | 2 +-
+>   net/tipc/node.c | 2 +-
+>   2 files changed, 2 insertions(+), 2 deletions(-)
+>
+> diff --git a/net/tipc/link.c b/net/tipc/link.c
+> index a6a694b78927..115109259430 100644
+> --- a/net/tipc/link.c
+> +++ b/net/tipc/link.c
+> @@ -2544,7 +2544,7 @@ void tipc_link_set_queue_limits(struct tipc_link *l, u32 min_win, u32 max_win)
+>   }
+>   
+>   /**
+> - * link_reset_stats - reset link statistics
+> + * tipc_link_reset_stats - reset link statistics
+>    * @l: pointer to link
+>    */
+>   void tipc_link_reset_stats(struct tipc_link *l)
+> diff --git a/net/tipc/node.c b/net/tipc/node.c
+> index 83d9eb830592..008670d1f43e 100644
+> --- a/net/tipc/node.c
+> +++ b/net/tipc/node.c
+> @@ -1665,7 +1665,7 @@ static void tipc_lxc_xmit(struct net *peer_net, struct sk_buff_head *list)
+>   }
+>   
+>   /**
+> - * tipc_node_xmit() is the general link level function for message sending
+> + * tipc_node_xmit() - general link level function for message sending
+>    * @net: the applicable net namespace
+>    * @list: chain of buffers containing message
+>    * @dnode: address of destination node
+Acked-by: Jon Maloy <jmaloy@redhat.com>
 
-On 12/9/20 2:49 AM, jmaloy@redhat.com wrote:
-> From: Jon Maloy <jmaloy@redhat.com>
-> 
-> We make a number of simplifications and cleanups, especially to call signatures
-> in the binding table. This makes the code easier to understand and serves as a
-> preparation for an upcoming functional addition.
-> 
-> Jon Maloy (16):
->   tipc: re-organize members of struct publication
->   tipc: move creation of publication item one level up in call chain
->   tipc: introduce new unified address type for internal use
->   tipc: simplify signature of tipc_namtbl_publish()
->   tipc: simplify call signatures for publication creation
->   tipc: simplify signature of tipc_nametbl_withdraw() functions
->   tipc: rename binding table lookup functions
->   tipc: refactor tipc_sendmsg() and tipc_lookup_anycast()
->   tipc: simplify signature of tipc_namtbl_lookup_mcast_sockets()
->   tipc: simplify signature of tipc_nametbl_lookup_mcast_nodes()
->   tipc: simplify signature of tipc_nametbl_lookup_group()
->   tipc: simplify signature of tipc_service_find_range()
->   tipc: simplify signature of tipc_find_service()
->   tipc: simplify api between binding table and topology server
->   tipc: add host-endian copy of user subscription to struct
->     tipc_subscription
->   tipc: remove some unnecessary warnings
-> 
->  net/tipc/addr.h       |  44 +++++
->  net/tipc/msg.c        |  23 ++-
->  net/tipc/name_distr.c |  89 +++++----
->  net/tipc/name_table.c | 419 ++++++++++++++++++++++--------------------
->  net/tipc/name_table.h |  64 ++++---
->  net/tipc/net.c        |   8 +-
->  net/tipc/node.c       |  28 +--
->  net/tipc/socket.c     | 313 +++++++++++++++----------------
->  net/tipc/subscr.c     |  84 +++++----
->  net/tipc/subscr.h     |  12 +-
->  10 files changed, 567 insertions(+), 517 deletions(-)
-> 
 
 
 _______________________________________________
