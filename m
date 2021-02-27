@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3E6D326DFA
-	for <lists+tipc-discussion@lfdr.de>; Sat, 27 Feb 2021 17:56:21 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76F63326DF8
+	for <lists+tipc-discussion@lfdr.de>; Sat, 27 Feb 2021 17:56:20 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1lG2t4-0002CX-TC; Sat, 27 Feb 2021 16:56:14 +0000
+	id 1lG2t6-0000mj-5c; Sat, 27 Feb 2021 16:56:16 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1lG2t2-0002C9-Mx
- for tipc-discussion@lists.sourceforge.net; Sat, 27 Feb 2021 16:56:12 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1lG2t4-0000mN-Gv
+ for tipc-discussion@lists.sourceforge.net; Sat, 27 Feb 2021 16:56:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
  :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=7HK6ZSIAWoiF8j96jz8tQ3Bquj1sBZ3oa2pkHPW8Kug=; b=T4l7KKzHEpcqErQvtoZik6eo12
- 3yAOw/Jkj7BloBul6xQOYmvIg4dR6t4cvXEzibEB7Mc2kLjdNEeL1z60Ak3vijp1qfVCwdLMwcS5H
- Ym+e7blqexQjNnfTgOSVr5uaQ1x8uz2e6uBWwi9DTIzWrEXT3jaIuypC4LAzYoqXtvOI=;
+ bh=+N3eSFXiVjaI9pZtgwPFv/QffRb2DxSFbycDu1QRfRo=; b=ljtSj4hfeVMMLlHCMGMJ3/13qy
+ 1e4eS5VofMlmKwu+sTrab9TTe1zkrTwCBVycKZlSyh2pbnRdVdbRVey8ZbAMFAPSccaTPSgb6kwVC
+ bCigyaN2bv1qxKyWgYfEu9hpgEXTU9aNYhVjJ9gSIUsBma65m0ICzHBBxCNARdlmglOU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:
@@ -29,41 +29,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=7HK6ZSIAWoiF8j96jz8tQ3Bquj1sBZ3oa2pkHPW8Kug=; b=jrVEkyuPuZ17e/7Ma9IamKrcHi
- csNk33GsWVq1htqYfpPYEibtutoRwje+2GL+EXiDZ0Ljlt+uuJzT1s8OQWCDxWz9WzAF9BWOps5OZ
- Pq1h2I+QiCeI5XGVVU94aNtbH2JpXndYM0ciHKVcXVXpuYuwFZJ08UdvCbA3A1uAj8iA=;
-Received: from us-smtp-delivery-124.mimecast.com ([63.128.21.124])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.3)
- id 1lG2sy-0002Gv-BI
- for tipc-discussion@lists.sourceforge.net; Sat, 27 Feb 2021 16:56:12 +0000
+ bh=+N3eSFXiVjaI9pZtgwPFv/QffRb2DxSFbycDu1QRfRo=; b=WcQ3u3IqouIV4m+oxmHB019Y0W
+ xJ+AvHYsTP60AqvM+P0QS858ltpH/fTctnSSipdra8/2QJCMV8r/5j/Bg5jYJr3ozpH9VVpAfxctY
+ n4bG0tfDYsWQEdgG18CXy+PiITnyBdRk7C0yE5wPl1eamBkinQRy1bjuatfrSNIpNZPk=;
+Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
+ id 1lG2t0-007iBS-21
+ for tipc-discussion@lists.sourceforge.net; Sat, 27 Feb 2021 16:56:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1614444962;
+ s=mimecast20190719; t=1614444964;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=7HK6ZSIAWoiF8j96jz8tQ3Bquj1sBZ3oa2pkHPW8Kug=;
- b=b2upFpt89UkLsjuLf8HfxZk/o4oGtZ/y6W603KSho0In80SfFtTxV2ZtO7ydoeb0nZlIX9
- rScdt/YHtPiP3OCB/wFatFgVM/Rtshm2HANXPmXj/XvG37LFVOcggWrxFmztzdkLIHY6j4
- FgrDNY6xf5ey03cS+kWXaJvvNSq2SCE=
+ bh=+N3eSFXiVjaI9pZtgwPFv/QffRb2DxSFbycDu1QRfRo=;
+ b=UaQomFjPOKkCzEeg7CRRNuHNNOMsQl/rmIlxfQe3gv6e5L6DK8UAd4DpCdcoEpJkMAS4DM
+ x2UEHbeJ7+9ZOKmW/0jwnkLkY3J9Cu3ZgL+Lez7xoYQAdgVjoA87W0A0r2mPKVy5+qqs0E
+ Ng9wiVpSscez4sSLskHex2hHFbSFhxI=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-406-G9WB_nQ1MZSZBgNv9C6lxA-1; Sat, 27 Feb 2021 11:56:00 -0500
-X-MC-Unique: G9WB_nQ1MZSZBgNv9C6lxA-1
+ us-mta-7-bQyfPys9N2Kj5Q2k-PDsZw-1; Sat, 27 Feb 2021 11:56:01 -0500
+X-MC-Unique: bQyfPys9N2Kj5Q2k-PDsZw-1
 Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
  [10.5.11.15])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id DF44D107ACE4;
- Sat, 27 Feb 2021 16:55:58 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 68E647BA3;
+ Sat, 27 Feb 2021 16:56:00 +0000 (UTC)
 Received: from fenrir.redhat.com (ovpn-114-105.rdu2.redhat.com [10.10.114.105])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 99B4B62A02;
- Sat, 27 Feb 2021 16:55:57 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 1EA5962A02;
+ Sat, 27 Feb 2021 16:55:59 +0000 (UTC)
 From: jmaloy@redhat.com
 To: tipc-discussion@lists.sourceforge.net
-Date: Sat, 27 Feb 2021 11:55:35 -0500
-Message-Id: <20210227165542.3781624-10-jmaloy@redhat.com>
+Date: Sat, 27 Feb 2021 11:55:36 -0500
+Message-Id: <20210227165542.3781624-11-jmaloy@redhat.com>
 In-Reply-To: <20210227165542.3781624-1-jmaloy@redhat.com>
 References: <20210227165542.3781624-1-jmaloy@redhat.com>
 MIME-Version: 1.0
@@ -78,9 +78,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: windriver.com]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [63.128.21.124 listed in wl.mailspike.net]
+ for more information. [URIs: dektech.com.au]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [216.205.24.124 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -90,9 +90,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  not necessarily valid
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1lG2sy-0002Gv-BI
-Subject: [tipc-discussion] [net-next v2 09/16] tipc: simplify signature of
- tipc_namtbl_lookup_mcast_sockets()
+X-Headers-End: 1lG2t0-007iBS-21
+Subject: [tipc-discussion] [net-next v2 10/16] tipc: simplify signature of
+ tipc_nametbl_lookup_mcast_nodes()
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,36 +111,34 @@ Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
 From: Jon Maloy <jmaloy@redhat.com>
 
-We reduce the signature of this function according to the same
-principle as the preceding commits.
+We follow up the preceding commits by reducing the signature of
+the function tipc_nametbl_lookup_mcast_nodes().
 
 Signed-off-by: Jon Maloy <jmaloy@redhat.com>
 Acked-by: Ying Xue <ying.xue@windriver.com>
 Acked-by: Hoang Le <hoang.h.le@dektech.com.au>
 ---
- net/tipc/name_table.c | 10 +++++-----
- net/tipc/name_table.h |  5 ++---
- net/tipc/socket.c     | 22 +++++++++++-----------
- 3 files changed, 18 insertions(+), 19 deletions(-)
+ net/tipc/name_table.c |  8 ++++----
+ net/tipc/name_table.h |  4 ++--
+ net/tipc/socket.c     | 18 ++++++++----------
+ 3 files changed, 14 insertions(+), 16 deletions(-)
 
 diff --git a/net/tipc/name_table.c b/net/tipc/name_table.c
-index 20beb04b2db0..ad021d8c02e7 100644
+index ad021d8c02e7..33b79a5da8c9 100644
 --- a/net/tipc/name_table.c
 +++ b/net/tipc/name_table.c
-@@ -668,21 +668,21 @@ bool tipc_nametbl_lookup_group(struct net *net, u32 type, u32 instance,
-  * Used on nodes which have received a multicast/broadcast message
-  * Returns a list of local sockets
+@@ -698,20 +698,20 @@ void tipc_nametbl_lookup_mcast_sockets(struct net *net, struct tipc_uaddr *ua,
+  * Used on nodes which are sending out a multicast/broadcast message
+  * Returns a list of nodes, including own node if applicable
   */
--void tipc_nametbl_lookup_mcast_sockets(struct net *net, u32 type, u32 lower,
--				       u32 upper, u32 scope, bool exact,
--				       struct list_head *dports)
-+void tipc_nametbl_lookup_mcast_sockets(struct net *net, struct tipc_uaddr *ua,
-+				       bool exact, struct list_head *dports)
+-void tipc_nametbl_lookup_mcast_nodes(struct net *net, u32 type, u32 lower,
+-				     u32 upper, struct tipc_nlist *nodes)
++void tipc_nametbl_lookup_mcast_nodes(struct net *net, struct tipc_uaddr *ua,
++				     struct tipc_nlist *nodes)
  {
  	struct service_range *sr;
  	struct tipc_service *sc;
  	struct publication *p;
-+	u32 scope = ua->scope;
  
  	rcu_read_lock();
 -	sc = tipc_service_find(net, type);
@@ -151,91 +149,95 @@ index 20beb04b2db0..ad021d8c02e7 100644
  	spin_lock_bh(&sc->lock);
 -	service_range_foreach_match(sr, sc, lower, upper) {
 +	service_range_foreach_match(sr, sc, ua->sr.lower, ua->sr.upper) {
- 		list_for_each_entry(p, &sr->local_publ, local_publ) {
- 			if (p->scope == scope || (!exact && p->scope < scope))
- 				tipc_dest_push(dports, 0, p->sk.ref);
+ 		list_for_each_entry(p, &sr->all_publ, all_publ) {
+ 			tipc_nlist_add(nodes, p->sk.node);
+ 		}
 diff --git a/net/tipc/name_table.h b/net/tipc/name_table.h
-index 9896205a5d66..26aa6acb4512 100644
+index 26aa6acb4512..c5aa45abbdc3 100644
 --- a/net/tipc/name_table.h
 +++ b/net/tipc/name_table.h
-@@ -112,9 +112,8 @@ struct name_table {
- int tipc_nl_name_table_dump(struct sk_buff *skb, struct netlink_callback *cb);
- bool tipc_nametbl_lookup_anycast(struct net *net, struct tipc_uaddr *ua,
+@@ -114,8 +114,8 @@ bool tipc_nametbl_lookup_anycast(struct net *net, struct tipc_uaddr *ua,
  				 struct tipc_socket_addr *sk);
--void tipc_nametbl_lookup_mcast_sockets(struct net *net, u32 type, u32 lower,
--				       u32 upper, u32 scope, bool exact,
--				   struct list_head *dports);
-+void tipc_nametbl_lookup_mcast_sockets(struct net *net, struct tipc_uaddr *ua,
-+				       bool exact, struct list_head *dports);
- void tipc_nametbl_lookup_mcast_nodes(struct net *net, u32 type, u32 lower,
- 				     u32 upper, struct tipc_nlist *nodes);
+ void tipc_nametbl_lookup_mcast_sockets(struct net *net, struct tipc_uaddr *ua,
+ 				       bool exact, struct list_head *dports);
+-void tipc_nametbl_lookup_mcast_nodes(struct net *net, u32 type, u32 lower,
+-				     u32 upper, struct tipc_nlist *nodes);
++void tipc_nametbl_lookup_mcast_nodes(struct net *net, struct tipc_uaddr *ua,
++				     struct tipc_nlist *nodes);
  bool tipc_nametbl_lookup_group(struct net *net, u32 type, u32 instance,
+ 			       u32 domain, struct list_head *dsts,
+ 			       int *dstcnt, u32 exclude,
 diff --git a/net/tipc/socket.c b/net/tipc/socket.c
-index 26e1ca6e4766..b952128537e1 100644
+index b952128537e1..83d7c9c25c63 100644
 --- a/net/tipc/socket.c
 +++ b/net/tipc/socket.c
-@@ -1205,17 +1205,18 @@ void tipc_sk_mcast_rcv(struct net *net, struct sk_buff_head *arrvq,
- 		       struct sk_buff_head *inputq)
+@@ -832,7 +832,7 @@ static __poll_t tipc_poll(struct file *file, struct socket *sock,
+ /**
+  * tipc_sendmcast - send multicast message
+  * @sock: socket structure
+- * @seq: destination address
++ * @ua: destination address struct
+  * @msg: message to send
+  * @dlen: length of data to send
+  * @timeout: timeout to wait for wakeup
+@@ -840,7 +840,7 @@ static __poll_t tipc_poll(struct file *file, struct socket *sock,
+  * Called from function tipc_sendmsg(), which has done all sanity checks
+  * Return: the number of bytes sent on success, or errno
+  */
+-static int tipc_sendmcast(struct  socket *sock, struct tipc_service_range *seq,
++static int tipc_sendmcast(struct  socket *sock, struct tipc_uaddr *ua,
+ 			  struct msghdr *msg, size_t dlen, long timeout)
  {
- 	u32 self = tipc_own_addr(net);
--	u32 type, lower, upper, scope;
- 	struct sk_buff *skb, *_skb;
- 	u32 portid, onode;
- 	struct sk_buff_head tmpq;
- 	struct list_head dports;
- 	struct tipc_msg *hdr;
-+	struct tipc_uaddr ua;
- 	int user, mtyp, hlen;
- 	bool exact;
+ 	struct sock *sk = sock->sk;
+@@ -848,7 +848,6 @@ static int tipc_sendmcast(struct  socket *sock, struct tipc_service_range *seq,
+ 	struct tipc_msg *hdr = &tsk->phdr;
+ 	struct net *net = sock_net(sk);
+ 	int mtu = tipc_bcast_get_mtu(net);
+-	struct tipc_mc_method *method = &tsk->mc_method;
+ 	struct sk_buff_head pkts;
+ 	struct tipc_nlist dsts;
+ 	int rc;
+@@ -863,8 +862,7 @@ static int tipc_sendmcast(struct  socket *sock, struct tipc_service_range *seq,
  
- 	__skb_queue_head_init(&tmpq);
- 	INIT_LIST_HEAD(&dports);
-+	ua.addrtype = TIPC_SERVICE_RANGE;
+ 	/* Lookup destination nodes */
+ 	tipc_nlist_init(&dsts, tipc_own_addr(net));
+-	tipc_nametbl_lookup_mcast_nodes(net, seq->type, seq->lower,
+-					seq->upper, &dsts);
++	tipc_nametbl_lookup_mcast_nodes(net, ua, &dsts);
+ 	if (!dsts.local && !dsts.remote)
+ 		return -EHOSTUNREACH;
  
- 	skb = tipc_skb_peek(arrvq, &inputq->lock);
- 	for (; skb; skb = tipc_skb_peek(arrvq, &inputq->lock)) {
-@@ -1224,7 +1225,7 @@ void tipc_sk_mcast_rcv(struct net *net, struct sk_buff_head *arrvq,
- 		mtyp = msg_type(hdr);
- 		hlen = skb_headroom(skb) + msg_hdr_sz(hdr);
- 		onode = msg_orignode(hdr);
--		type = msg_nametype(hdr);
-+		ua.sr.type = msg_nametype(hdr);
+@@ -874,9 +872,9 @@ static int tipc_sendmcast(struct  socket *sock, struct tipc_service_range *seq,
+ 	msg_set_lookup_scope(hdr, TIPC_CLUSTER_SCOPE);
+ 	msg_set_destport(hdr, 0);
+ 	msg_set_destnode(hdr, 0);
+-	msg_set_nametype(hdr, seq->type);
+-	msg_set_namelower(hdr, seq->lower);
+-	msg_set_nameupper(hdr, seq->upper);
++	msg_set_nametype(hdr, ua->sr.type);
++	msg_set_namelower(hdr, ua->sr.lower);
++	msg_set_nameupper(hdr, ua->sr.upper);
  
- 		if (mtyp == TIPC_GRP_UCAST_MSG || user == GROUP_PROTOCOL) {
- 			spin_lock_bh(&inputq->lock);
-@@ -1239,24 +1240,23 @@ void tipc_sk_mcast_rcv(struct net *net, struct sk_buff_head *arrvq,
+ 	/* Build message as chain of buffers */
+ 	__skb_queue_head_init(&pkts);
+@@ -886,7 +884,7 @@ static int tipc_sendmcast(struct  socket *sock, struct tipc_service_range *seq,
+ 	if (unlikely(rc == dlen)) {
+ 		trace_tipc_sk_sendmcast(sk, skb_peek(&pkts),
+ 					TIPC_DUMP_SK_SNDQ, " ");
+-		rc = tipc_mcast_xmit(net, &pkts, method, &dsts,
++		rc = tipc_mcast_xmit(net, &pkts, &tsk->mc_method, &dsts,
+ 				     &tsk->cong_link_cnt);
+ 	}
  
- 		/* Group messages require exact scope match */
- 		if (msg_in_group(hdr)) {
--			lower = 0;
--			upper = ~0;
--			scope = msg_lookup_scope(hdr);
-+			ua.sr.lower = 0;
-+			ua.sr.upper = ~0;
-+			ua.scope = msg_lookup_scope(hdr);
- 			exact = true;
- 		} else {
- 			/* TIPC_NODE_SCOPE means "any scope" in this context */
- 			if (onode == self)
--				scope = TIPC_NODE_SCOPE;
-+				ua.scope = TIPC_NODE_SCOPE;
- 			else
--				scope = TIPC_CLUSTER_SCOPE;
-+				ua.scope = TIPC_CLUSTER_SCOPE;
- 			exact = false;
--			lower = msg_namelower(hdr);
--			upper = msg_nameupper(hdr);
-+			ua.sr.lower = msg_namelower(hdr);
-+			ua.sr.upper = msg_nameupper(hdr);
- 		}
+@@ -1479,7 +1477,7 @@ static int __tipc_sendmsg(struct socket *sock, struct msghdr *m, size_t dlen)
  
- 		/* Create destination port list: */
--		tipc_nametbl_lookup_mcast_sockets(net, type, lower, upper,
--						  scope, exact, &dports);
-+		tipc_nametbl_lookup_mcast_sockets(net, &ua, exact, &dports);
- 
- 		/* Clone message per destination */
- 		while (tipc_dest_pop(&dports, NULL, &portid)) {
+ 	/* Determine destination */
+ 	if (atype == TIPC_SERVICE_RANGE) {
+-		return tipc_sendmcast(sock, &ua->sr, m, dlen, timeout);
++		return tipc_sendmcast(sock, ua, m, dlen, timeout);
+ 	} else if (atype == TIPC_SERVICE_ADDR) {
+ 		skaddr.node = ua->lookup_node;
+ 		ua->scope = tipc_node2scope(skaddr.node);
 -- 
 2.29.2
 
