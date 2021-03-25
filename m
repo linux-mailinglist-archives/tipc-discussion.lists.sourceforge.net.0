@@ -2,67 +2,70 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 255FD349631
-	for <lists+tipc-discussion@lfdr.de>; Thu, 25 Mar 2021 16:56:53 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEDD9349630
+	for <lists+tipc-discussion@lfdr.de>; Thu, 25 Mar 2021 16:56:49 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1lPSLo-0002vF-MK; Thu, 25 Mar 2021 15:56:48 +0000
+	id 1lPSLj-0005MA-Fp; Thu, 25 Mar 2021 15:56:43 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1lPSLj-0002uL-8W
- for tipc-discussion@lists.sourceforge.net; Thu, 25 Mar 2021 15:56:43 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1lPSLh-0005M3-Qr
+ for tipc-discussion@lists.sourceforge.net; Thu, 25 Mar 2021 15:56:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
- :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=RyH9ZeMon5WqBs1Vm3A3RESlCUeXlfdPfbRp3LqPhRA=; b=GusMLlEn2baml3eDX+V8dP952f
- QFKErETj8f5C8ut9UOVexBb4er3naxCekCBE2KGzq3miUvxBEY2d/NVLtYNwMIwUzjKzqI82ImWZk
- 0s7Gx2HUc8f34sq3LCxb6Y3pM38OB77wZOOmKhnxI/CvwmmPiaAGtn/E+bRKly6WXt3g=;
+ bh=T52l3QomMlvCDZRMfaPA/DOdY/y/D9tW3asOlNnh8Jg=; b=bHqB2kG9yzQmYMWjGO4RZ2LO9U
+ 7pEOmKlLEYRUEeEgrpQzuqOEuGjljFhoEDz4U7XxfiwQO8Uj1bA2nCRTfFvg+oCu8xAQXTqTGgI2L
+ 0AMOEIzJJDIep+zZZaA/ZEz+DXHQ2FFszZUlL062/58PWh5ilaPeWJMgMoplcsIOCzEI=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-Id:Date:
- Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=RyH9ZeMon5WqBs1Vm3A3RESlCUeXlfdPfbRp3LqPhRA=; b=Y
- BvGHvOZPo6CXOQx0EDH1QOp1w7sg0lCWusNE+FlzOSN2NwNLlg0dgI0S50HwrPLOYzbnXkMl92sfD
- L3qQqo6yaOQBu+j74fLOnmfE+f1acViTTdQ6OQ0feY8Ck49xPr5ciEvjaEQuacGwNqsfuKgS/OWKZ
- bJtXG8ciZBnZ596I=;
+ h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:
+ In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=T52l3QomMlvCDZRMfaPA/DOdY/y/D9tW3asOlNnh8Jg=; b=jSSdbR9PIl1MugblXlXKEfML6J
+ N1m5/mANzq1yYhANT+KpnHKveVKopdUfW9cSKp9jYC3x0LQa2tJKKNhAt74ZScQgz3MJJ5xTgACwX
+ VGehGR0rHCKP7nM6ydkNypNnYJoVLP6NNoLL+jAjGqHQWoELBN8NgEGrdHNCZMb1EOxY=;
 Received: from us-smtp-delivery-124.mimecast.com ([63.128.21.124])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1lPSLa-00AHEB-Eu
- for tipc-discussion@lists.sourceforge.net; Thu, 25 Mar 2021 15:56:43 +0000
+ id 1lPSLc-00AHEH-Ci
+ for tipc-discussion@lists.sourceforge.net; Thu, 25 Mar 2021 15:56:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1616687788;
+ s=mimecast20190719; t=1616687790;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=RyH9ZeMon5WqBs1Vm3A3RESlCUeXlfdPfbRp3LqPhRA=;
- b=MUWV0RorJRlakaEjR2kNBJiYiOYFaDMC7hg7xcAp1fGI0tOWnVfKfZwS547rydLeB96Lr3
- 4WepchUd8lmcSxy6YWk+ufJV+lX0VyFF6D7tCjQjKlmf7Ig+37vt9uFg7AB54e56KH78A/
- 0mpRdx8NfblUFq0Tu5EL/UZWb5NXwCw=
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=T52l3QomMlvCDZRMfaPA/DOdY/y/D9tW3asOlNnh8Jg=;
+ b=aLs5paDbkIqXfhLgq+A86kob+Lb/FyM+REsIieuHECGa1WMDQvC2dIBRfmvwpZox/R7GE2
+ EJPLoVqvEMfMumDskcmLFTg70l+3NgBB1ULCbHEC+zlEmVOqXcGuVnQWRFqJZ82bUKVZao
+ LJg++GVdVODSFlpJ87wP8ejNyeY6Wz8=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-450-xlf84LaVM7a-Hv9nucyANA-1; Thu, 25 Mar 2021 11:56:26 -0400
-X-MC-Unique: xlf84LaVM7a-Hv9nucyANA-1
+ us-mta-596-fCPa-3oTMN-1yHn7XNCHdg-1; Thu, 25 Mar 2021 11:56:28 -0400
+X-MC-Unique: fCPa-3oTMN-1yHn7XNCHdg-1
 Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
  [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 013B81009E33;
- Thu, 25 Mar 2021 15:56:25 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8A94018C89E5;
+ Thu, 25 Mar 2021 15:56:27 +0000 (UTC)
 Received: from fenrir.redhat.com (ovpn-114-63.rdu2.redhat.com [10.10.114.63])
- by smtp.corp.redhat.com (Postfix) with ESMTP id B2C446EF40;
- Thu, 25 Mar 2021 15:56:22 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 6152B60D01;
+ Thu, 25 Mar 2021 15:56:25 +0000 (UTC)
 From: jmaloy@redhat.com
 To: tipc-discussion@lists.sourceforge.net
-Date: Thu, 25 Mar 2021 11:56:17 -0400
-Message-Id: <20210325155621.2055206-1-jmaloy@redhat.com>
+Date: Thu, 25 Mar 2021 11:56:18 -0400
+Message-Id: <20210325155621.2055206-2-jmaloy@redhat.com>
+In-Reply-To: <20210325155621.2055206-1-jmaloy@redhat.com>
+References: <20210325155621.2055206-1-jmaloy@redhat.com>
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 Authentication-Results: relay.mimecast.com;
@@ -83,8 +86,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  not necessarily valid
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1lPSLa-00AHEB-Eu
-Subject: [tipc-discussion] [net-next 0/4] tipc: some small cleanups
+X-Headers-End: 1lPSLc-00AHEH-Ci
+Subject: [tipc-discussion] [net-next 1/4] tipc: fix htmldoc and smatch
+ warnings
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,22 +107,47 @@ Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
 From: Jon Maloy <jmaloy@redhat.com>
 
-We fix a couple of warnings and make some minor code cleanups and
-improvements.
+We fix a warning from the htmldoc tool and an indentation error reported
+by smatch. There are no functional changes in this commit.
 
-Jon Maloy (4):
-  tipc: fix htmldoc and smatch warnings
-  tipc: eliminate redundant fields in struct tipc_sock
-  tipc: refactor function tipc_sk_anc_data_recv()
-  tipc: simplify handling of lookup scope during multicast message
-    reception
+Signed-off-by: Jon Maloy <jmaloy@redhat.com>
+---
+ net/tipc/socket.c | 2 +-
+ net/tipc/subscr.h | 3 ++-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
 
- net/tipc/name_table.c |   6 +-
- net/tipc/name_table.h |   4 +-
- net/tipc/socket.c     | 151 +++++++++++++++++++-----------------------
- net/tipc/subscr.h     |   3 +-
- 4 files changed, 77 insertions(+), 87 deletions(-)
-
+diff --git a/net/tipc/socket.c b/net/tipc/socket.c
+index 117a472a8e61..f21162aa0cf7 100644
+--- a/net/tipc/socket.c
++++ b/net/tipc/socket.c
+@@ -1450,7 +1450,7 @@ static int __tipc_sendmsg(struct socket *sock, struct msghdr *m, size_t dlen)
+ 		ua = (struct tipc_uaddr *)&tsk->peer;
+ 		if (!syn && ua->family != AF_TIPC)
+ 			return -EDESTADDRREQ;
+-		 atype = ua->addrtype;
++		atype = ua->addrtype;
+ 	}
+ 
+ 	if (unlikely(syn)) {
+diff --git a/net/tipc/subscr.h b/net/tipc/subscr.h
+index ddea6554ec46..60b877531b66 100644
+--- a/net/tipc/subscr.h
++++ b/net/tipc/subscr.h
+@@ -49,12 +49,13 @@ struct tipc_conn;
+ 
+ /**
+  * struct tipc_subscription - TIPC network topology subscription object
++ * @s: host-endian copy of the user subscription
++ * @evt: template for events generated by subscription
+  * @kref: reference count for this subscription
+  * @net: network namespace associated with subscription
+  * @timer: timer governing subscription duration (optional)
+  * @service_list: adjacent subscriptions in name sequence's subscription list
+  * @sub_list: adjacent subscriptions in subscriber's subscription list
+- * @evt: template for events generated by subscription
+  * @conid: connection identifier of topology server
+  * @inactive: true if this subscription is inactive
+  * @lock: serialize up/down and timer events
 -- 
 2.29.2
 
