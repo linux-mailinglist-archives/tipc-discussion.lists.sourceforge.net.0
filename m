@@ -2,104 +2,155 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75BCF3483DC
-	for <lists+tipc-discussion@lfdr.de>; Wed, 24 Mar 2021 22:40:17 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 268223486B9
+	for <lists+tipc-discussion@lfdr.de>; Thu, 25 Mar 2021 02:57:39 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1lPBEa-0007Jz-DS; Wed, 24 Mar 2021 21:40:12 +0000
+	id 1lPFFY-000132-EV; Thu, 25 Mar 2021 01:57:28 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1lPBEZ-0007Jo-6s
- for tipc-discussion@lists.sourceforge.net; Wed, 24 Mar 2021 21:40:11 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ (envelope-from <hoang.h.le@dektech.com.au>) id 1lPFFW-00012t-R9
+ for tipc-discussion@lists.sourceforge.net; Thu, 25 Mar 2021 01:57:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
+ :Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=sQelrLMHlXBzPHZPBF+hdDO664iaET7mBXTrfCmV3c0=; b=XO3k5hjBqN6dpaAupUr8NZvHlC
- 3OUpGhNGJg04KmW/awccvZr4VFtnIZJh1AAWULmw1I6Jf8NsP+HBHJJ9f/5WuM6PWHamBm/aEaU8l
- YVZagZeJCEuuZRAlNiNjoZyu3zFjIbM7xBDW/hZvT/uDKPrBQn9aNjt3KSfAL712+SnM=;
+ bh=hfWX0U9qBokI4dmD5xab0cV9MKzM2Mp7olZzFZcUfiM=; b=A6gXGtEGfqNW4T8srta8t2ar0l
+ vqVnPsBPnX9LIp9eaXC9h6fYgrB9iB2ANROYG2Z9IcEQL9pGO1VTKEFfFrw1iE6LaMELS2QJ9GzrO
+ KpEZ1fhx7UaUOur6yVrhJeV06Scf1XplOV2aCoYrPG7Y5h5B0tCEW7AxzY79r9LagtTE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=sQelrLMHlXBzPHZPBF+hdDO664iaET7mBXTrfCmV3c0=; b=aDvV/NVnEzUK1K5kMrDUbeQeeu
- imKN+Qy/dlgq3m9h9BYvyqBvE9fPyi/rOaXQF/0x51Tr9uHyEXnBd76HAJjsfYetmrSQncNNqOh3D
- 8Ac7O2EQMLUrxYW2KzMml/fXbpic0qmIuAdXIg/ZM0D3eG+z7M55SmBZzASbX+W3JJJo=;
-Received: from us-smtp-delivery-124.mimecast.com ([63.128.21.124])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.3)
- id 1lPBES-00022v-8y
- for tipc-discussion@lists.sourceforge.net; Wed, 24 Mar 2021 21:40:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1616621998;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=sQelrLMHlXBzPHZPBF+hdDO664iaET7mBXTrfCmV3c0=;
- b=cIN8Ra4839FFy4Fn+zQnUt6vU8rUjpkG/Ja/BV1SK5U3Qk670Qd9kXuMlBEyx4EvIbvY/H
- 2X8Ij3igUBqtXOA0IOd7mCL/U+X0FBJ3+6aLazXO71DMYRgBKR2gQXh7UCXgozPUO7p8cM
- ygjQIjsY0WP5grZQYEavoXFxjY37wO0=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-466-AciwTyQQM92rPgKBPGAyIQ-1; Wed, 24 Mar 2021 17:39:56 -0400
-X-MC-Unique: AciwTyQQM92rPgKBPGAyIQ-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id DE1AD1013731;
- Wed, 24 Mar 2021 21:39:54 +0000 (UTC)
-Received: from [10.10.114.63] (ovpn-114-63.rdu2.redhat.com [10.10.114.63])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 7983929245;
- Wed, 24 Mar 2021 21:39:53 +0000 (UTC)
-To: Hoang Le <hoang.h.le@dektech.com.au>,
- tipc-discussion@lists.sourceforge.net, maloy@donjonn.com,
- ying.xue@windriver.com, tuan.a.vo@dektech.com.au,
- tung.q.nguyen@dektech.com.au
-References: <20210323090646.8066-1-hoang.h.le@dektech.com.au>
-From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <22e5de97-4f3f-7127-46cc-77a6ecf44078@redhat.com>
-Date: Wed, 24 Mar 2021 17:39:52 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.6.0
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Date:
+ Subject:To:From:Sender:Reply-To:Cc:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=hfWX0U9qBokI4dmD5xab0cV9MKzM2Mp7olZzFZcUfiM=; b=F
+ 2UxOyqQ7I0wsIRLwbbSbzZXrZ30QoxPJ7f0GvVrH+JkMcczhjB6qe4g7zSfcyJ6vfLuxYVoAWYadw
+ 0T1oug+alswvXFIAod/BjNbSMGj9Br+h8LDZD9Jj492dFh+ZLTorH4MJ6HM18WiuXj3klIkwcTKCk
+ V1LOrI1KIC/6UCMo=;
+Received: from mail-db8eur05on2130.outbound.protection.outlook.com
+ ([40.107.20.130] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1lPFFM-007mZ1-Bj
+ for tipc-discussion@lists.sourceforge.net; Thu, 25 Mar 2021 01:57:26 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=KJ+9fbcERqvTeMI6XPon4WnXqumwWK5BhQcCzbGs44BWBDsoGhRY5Qtp3gxZcOcFejE/k+dHrxIxIrPkRPa3k2+nkY5YvLm+2Gtrs9kRtOl/YH+bkSFRVbhJB/eZ58MHuQRERbCUCd2GN5i5Yf4xT/9G3GPJJIhajmfFZf4SI6SzkUdn6DIIfzYRgPaDQ0UsfIj4uk3LG765gSNKkfuNDEBVymmAlW7xeQWbzZYBLG6/W9KnG8t4BAxO0/hDB2a1AUjXJuoTa54Ib3ayzjsHD73KwZuiz/FyFIDCQ36zWwKi131HKPFUSzLKbnHOVBmsz4t2C7G89uh3zB78wVnPYw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hfWX0U9qBokI4dmD5xab0cV9MKzM2Mp7olZzFZcUfiM=;
+ b=Q3xVXXM56ih0QLNXfNgPDDgWp6yQG0mkQVvdAbrdtOulVSfxoxej4v7BXLswYrL2IrLfrCC8SqhLc2Lv+Vx4gHq5vZpm6IVtQ7acDfWEeH6PxVvf4YXFTJCMq4humCcHfjLBgLYz0qBBOAt6DUotplrvR3ztVUFv6dLV+n99Wobfa8T/kRRL3dtf2n5wxLQwod6utZW2TCbcDxTZV22htEi8eG+FC6NLcqB+6zP6Org66mkEd53xcmUArtnz/r1XA5fAG+wNbDkqT/EORHowMM6tvhysLWxMedWw533sx/3/Ovp++B+9guIELvAV529XXnJRntACv/3qnwTDwxXPzw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=dektech.com.au; dmarc=pass action=none
+ header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hfWX0U9qBokI4dmD5xab0cV9MKzM2Mp7olZzFZcUfiM=;
+ b=MDbqKFJcVFJ1Yq1o/DnPy9ANqfHievfeBFLOJ5TvDA+qY8/EwzepqLfqNaNXp13VN2Xc3x2YtezWyHQCGRyMIqzW8vnoFhhnd41RsMp5Rz8o9qm+tYK71WfxDR/J65YyEb6uXMeRg502voz8T6djXahaHvdB2zVpiY8PwMBzYyM=
+Authentication-Results: vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=none action=none
+ header.from=dektech.com.au;
+Received: from VI1PR05MB4605.eurprd05.prod.outlook.com (2603:10a6:802:61::21)
+ by VI1PR05MB6719.eurprd05.prod.outlook.com (2603:10a6:800:133::9)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3977.24; Thu, 25 Mar
+ 2021 01:57:06 +0000
+Received: from VI1PR05MB4605.eurprd05.prod.outlook.com
+ ([fe80::5573:2fb4:56e0:1cc3]) by VI1PR05MB4605.eurprd05.prod.outlook.com
+ ([fe80::5573:2fb4:56e0:1cc3%6]) with mapi id 15.20.3955.024; Thu, 25 Mar 2021
+ 01:57:05 +0000
+From: Hoang Le <hoang.h.le@dektech.com.au>
+To: netdev@vger.kernel.org, tipc-discussion@lists.sourceforge.net,
+ jmaloy@redhat.com, maloy@donjonn.com, ying.xue@windriver.com,
+ tuan.a.vo@dektech.com.au, tung.q.nguyen@dektech.com.au
+Date: Thu, 25 Mar 2021 08:56:41 +0700
+Message-Id: <20210325015641.7063-1-hoang.h.le@dektech.com.au>
+X-Mailer: git-send-email 2.25.1
+X-Originating-IP: [113.20.114.51]
+X-ClientProxiedBy: SGBP274CA0007.SGPP274.PROD.OUTLOOK.COM (2603:1096:4:b0::19)
+ To VI1PR05MB4605.eurprd05.prod.outlook.com
+ (2603:10a6:802:61::21)
 MIME-Version: 1.0
-In-Reply-To: <20210323090646.8066-1-hoang.h.le@dektech.com.au>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-Authentication-Results: relay.mimecast.com;
- auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Language: en-US
-X-Spam-Score: -0.1 (/)
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from dektech.com.au (113.20.114.51) by
+ SGBP274CA0007.SGPP274.PROD.OUTLOOK.COM (2603:1096:4:b0::19) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3977.24 via Frontend Transport; Thu, 25 Mar 2021 01:57:03 +0000
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: dd850151-31c0-4f4d-b5aa-08d8ef314a51
+X-MS-TrafficTypeDiagnostic: VI1PR05MB6719:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <VI1PR05MB6719FC68CB9C32EA73212E8DF1629@VI1PR05MB6719.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:4502;
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 6sSJ99e7dZls9sMQivVU2qAAqo2SdOaxec1Np2LtLEQo+EVgaVBEG8lvD3VaGQawqhKK2TsbkJ9U1y6kg9+0IpLirnahsAnVdKi2f5/c8z21hvHetxMCObTNXYDyo9NgDD6w9cKNrQMe01GDM5LWiMzfNpe6uLd+G+S7Qe3OC4QFWKw4u+lPBKJzZjdppxCi7jdl+8+wrWz23hsJcij6qBxpz7AAQvLuVXAOD3lVCmv+VPKJL7hPCZ/WlS+uzOF2XQ63i6HhdgVnxRdVb00c8Zigg4XUPa/MVpmLfe7PrtYw9vGgYxiIzkh93SUNooH3CIbmXSR5ouA4/Klshfm11EFsIj4qCk/WdN7pFtW/7jcG0/IRr+xbtEkOJHkf72saXACN/BHdNLL8xniuBmt8BGtj3VYcltJHfB0o10DRXaz2YxxTeYDbFfByBIyNR2dNJqMVhw3CDofUO2IUqNl33f+etiaEd6NQfAhtCrCKkk7UFQXjuInUBqJo6F3CkXn5jSAJD8sdXVxUt6kJ18FuW9MfFiDZCrptKLccqF05ztQG5Hf+BkFxzZmML5n9aVSrLWcfvlKfDfcfYcdjEqN9Pp0tQYXlHVdiUDJAX0bx6Ec6M6sj4OrUKrr1yX6L94qhCRpPk5IqovfmXLsHit1isA==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VI1PR05MB4605.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(396003)(136003)(366004)(39840400004)(376002)(346002)(2906002)(103116003)(55016002)(66556008)(66476007)(66946007)(83380400001)(15650500001)(86362001)(8676002)(8936002)(316002)(38100700001)(36756003)(186003)(16526019)(478600001)(52116002)(26005)(6636002)(7696005)(956004)(1076003)(2616005)(6666004)(5660300002);
+ DIR:OUT; SFP:1102; 
+X-MS-Exchange-AntiSpam-MessageData: =?us-ascii?Q?a3nqxJ8ppTetltUYrFzVR88cWUQRTN21LZx0BFOYAI+8H3fU4eLQ/B0LFWq2?=
+ =?us-ascii?Q?rnKx7OziRwdGY17mDUwhiMyAN4pw0TJgFAhCw95d2VGpEqtYG8OoS19JKZkt?=
+ =?us-ascii?Q?HqW+nkfqNqhI2M0hQ09J6uXOio/6po4AqxJAf7jh/cDdGKvFXHC6Pq2CsLxk?=
+ =?us-ascii?Q?WsWJr1OIACWH6tB1rAd+meohiyExAyuPUuuzDiYrFdAVQoqhsr7G85zeO1wC?=
+ =?us-ascii?Q?fk1w1I0y46pTwEPb2lmtgWO4IV8cpHKgS8sPdfAtOEDCsnScApOP5CYmlu8w?=
+ =?us-ascii?Q?Ea27PEaZxgBcYIelc0NJnRiKI70CILw5B4RilQusvS61/fMektKeYOIzgGJ9?=
+ =?us-ascii?Q?bD3c/n5E0hbFZNalnIFN6Td0x93Nw2naT8snBNdqStn1MD5Q24Bw1/tTSieQ?=
+ =?us-ascii?Q?ctX/3zFNCClV6L3e++hOoEEoqu72L0ihkDTPTGaWWoqb3fuVVFskeEaEtOzr?=
+ =?us-ascii?Q?+66nR3HoddsmeQDaNsbXYNPHOhto5z7vLjfVFgCqHDORARVfKUaCdtu6Z7Kn?=
+ =?us-ascii?Q?o6L4HXy1hFH1XqsGuMoPD1/ywZcKpB5xz+9OuCbvHkfOGpAcUPDw0FjUjjCr?=
+ =?us-ascii?Q?A1DnLkBG4/8QZ1l0OMBPjsq6EM8Eiskqya5Fq9kgsv3d7+6wpAh57MW7sVNw?=
+ =?us-ascii?Q?bS9b0p6YfwHZCJHVs7sozla5LO2CrXUzNANVeVJXUmgLlYJBKTMdhw6lEYTb?=
+ =?us-ascii?Q?O/kMQkzVNTiCjHRw+fpu/G9IdCf3ea+sezeEtYp4R7ffQowNpeufyW3sEEP+?=
+ =?us-ascii?Q?wXSnJiOjCpawKteld34cDt41lB0SdAr1i4Rdqin3sv9CoekVwOYG2hZAp/MG?=
+ =?us-ascii?Q?fFwXhDM4aNiwGJCn5z1GAyXYhvKUBcDeI3v8FLh7Ze19CLLi5rr1BqS+taBT?=
+ =?us-ascii?Q?XJlckqaXB6SIYc12SvtQXxM4SLKt0QdldQO1zunG1I/87L42kyoNTF30kZAO?=
+ =?us-ascii?Q?UuGqlC9BVnV5tQTg8nW+UctzaC3ETmrqLXlRGdRdbjP4MSkM9XUzOc27z6On?=
+ =?us-ascii?Q?8TWiAb4uX+2p9sJDWngAvRTYPqZARNVvwO1FzFce75CxXjScOPfZTIAWCp9F?=
+ =?us-ascii?Q?sh/gjkj2CaOPn0zhV1T00F17tBiuFEV3Uy6MOoif5jcvqmUUG0OpYZD0SWgW?=
+ =?us-ascii?Q?47OnJwcMYrV8A78jTUBKblplHbk4iTtxGh6nZk71OPuprO9pVcGxnCNIjzsp?=
+ =?us-ascii?Q?1GJ5QNcRAVU+FThxMbCwJ64rhb/5xFOsmiuduSHBdZihT8oJNlPkz+C7TyD8?=
+ =?us-ascii?Q?cXr0CGZEoW0IQMM5gWbnl4PoXNWJbG0EKu+NsyhYgVXoxnGiph5S7G4TDUgL?=
+ =?us-ascii?Q?PG9MWPNGl5tyLRAtAU0Jn7P8?=
+X-OriginatorOrg: dektech.com.au
+X-MS-Exchange-CrossTenant-Network-Message-Id: dd850151-31c0-4f4d-b5aa-08d8ef314a51
+X-MS-Exchange-CrossTenant-AuthSource: VI1PR05MB4605.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Mar 2021 01:57:05.5428 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: QE6COZ9UQAIAX00myBbVuEZXeC2PUExkjkscOfQZ/I+wDjcugbg7TYLAWKwpfFDWa837ST7IaMT+DORiCzt+KH0ua/ReZKdRS3sTJ6g3AEA=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB6719
+X-Spam-Score: 0.9 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [40.107.20.130 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.20.130 listed in wl.mailspike.net]
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: dektech.com.au]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [63.128.21.124 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 NICE_REPLY_A           Looks like a legit reply (A)
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1lPBES-00022v-8y
-Subject: Re: [tipc-discussion] [iproute2-next v2] tipc: add support for the
- netlink extack
+ 1.0 FORGED_SPF_HELO        No description available.
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal information
+X-Headers-End: 1lPFFM-007mZ1-Bj
+Subject: [tipc-discussion] [net-next] tipc: add extack messages for
+ bearer/media failure
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,93 +162,209 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
+Add extack error messages for -EINVAL errors when enabling bearer,
+getting/setting properties for a media/bearer
 
-
-On 3/23/21 5:06 AM, Hoang Le wrote:
-> Add support extack in tipc to dump the netlink extack error messages
-> (i.e -EINVAL) sent from kernel.
->
-> Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
-> ---
->   tipc/msg.c | 29 ++++++++++++++++++++++-------
->   1 file changed, 22 insertions(+), 7 deletions(-)
->
-> diff --git a/tipc/msg.c b/tipc/msg.c
-> index dc09d05048f3..f29b2f8d35ad 100644
-> --- a/tipc/msg.c
-> +++ b/tipc/msg.c
-> @@ -18,6 +18,7 @@
->   #include <linux/genetlink.h>
->   #include <libmnl/libmnl.h>
->   
-> +#include "libnetlink.h"
->   #include "msg.h"
->   
->   int parse_attrs(const struct nlattr *attr, void *data)
-> @@ -49,6 +50,7 @@ static struct mnl_socket *msg_send(struct nlmsghdr *nlh)
->   {
->   	int ret;
->   	struct mnl_socket *nl;
-> +	int one = 1;
->   
->   	nl = mnl_socket_open(NETLINK_GENERIC);
->   	if (nl == NULL) {
-> @@ -56,6 +58,8 @@ static struct mnl_socket *msg_send(struct nlmsghdr *nlh)
->   		return NULL;
->   	}
->   
-> +	/* support to get extended ACK */
-> +	mnl_socket_setsockopt(nl, NETLINK_EXT_ACK, &one, sizeof(one));
->   	ret = mnl_socket_bind(nl, 0, MNL_SOCKET_AUTOPID);
->   	if (ret < 0) {
->   		perror("mnl_socket_bind");
-> @@ -73,21 +77,32 @@ static struct mnl_socket *msg_send(struct nlmsghdr *nlh)
->   
->   static int msg_recv(struct mnl_socket *nl, mnl_cb_t callback, void *data, int seq)
->   {
-> -	int ret;
->   	unsigned int portid;
->   	char buf[MNL_SOCKET_BUFFER_SIZE];
-> +	struct nlmsghdr *h;
-> +	size_t num_bytes;
-> +	int is_err = 0;
-> +	int ret = 0;
->   
->   	portid = mnl_socket_get_portid(nl);
->   
-> -	ret = mnl_socket_recvfrom(nl, buf, sizeof(buf));
-> -	while (ret > 0) {
-> -		ret = mnl_cb_run(buf, ret, seq, portid, callback, data);
-> +	num_bytes = mnl_socket_recvfrom(nl, buf, sizeof(buf));
-> +	while (num_bytes > 0) {
-> +		ret = mnl_cb_run(buf, num_bytes, seq, portid, callback, data);
->   		if (ret <= 0)
->   			break;
-> -		ret = mnl_socket_recvfrom(nl, buf, sizeof(buf));
-> +		num_bytes = mnl_socket_recvfrom(nl, buf, sizeof(buf));
-> +	}
-> +
-> +	if (ret == -1) {
-> +		if (num_bytes > 0) {
-> +			h = (struct nlmsghdr *)buf;
-> +			is_err = nl_dump_ext_ack(h, NULL);
-> +		}
-> +
-> +		if (!is_err)
-> +			perror("error");
->   	}
-> -	if (ret == -1)
-> -		perror("error");
->   
->   	mnl_socket_close(nl);
->   
 Acked-by: Jon Maloy <jmaloy@redhat.com>
+Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
+---
+ net/tipc/bearer.c | 50 +++++++++++++++++++++++++++++++++++++----------
+ 1 file changed, 40 insertions(+), 10 deletions(-)
 
-Thanks, Hoang.
+diff --git a/net/tipc/bearer.c b/net/tipc/bearer.c
+index a4389ef08a98..1090f21fcfac 100644
+--- a/net/tipc/bearer.c
++++ b/net/tipc/bearer.c
+@@ -243,7 +243,8 @@ void tipc_bearer_remove_dest(struct net *net, u32 bearer_id, u32 dest)
+  */
+ static int tipc_enable_bearer(struct net *net, const char *name,
+ 			      u32 disc_domain, u32 prio,
+-			      struct nlattr *attr[])
++			      struct nlattr *attr[],
++			      struct netlink_ext_ack *extack)
+ {
+ 	struct tipc_net *tn = tipc_net(net);
+ 	struct tipc_bearer_names b_names;
+@@ -257,17 +258,20 @@ static int tipc_enable_bearer(struct net *net, const char *name,
+ 
+ 	if (!bearer_name_validate(name, &b_names)) {
+ 		errstr = "illegal name";
++		NL_SET_ERR_MSG(extack, "Illegal name");
+ 		goto rejected;
+ 	}
+ 
+ 	if (prio > TIPC_MAX_LINK_PRI && prio != TIPC_MEDIA_LINK_PRI) {
+ 		errstr = "illegal priority";
++		NL_SET_ERR_MSG(extack, "Illegal priority");
+ 		goto rejected;
+ 	}
+ 
+ 	m = tipc_media_find(b_names.media_name);
+ 	if (!m) {
+ 		errstr = "media not registered";
++		NL_SET_ERR_MSG(extack, "Media not registered");
+ 		goto rejected;
+ 	}
+ 
+@@ -281,6 +285,7 @@ static int tipc_enable_bearer(struct net *net, const char *name,
+ 			break;
+ 		if (!strcmp(name, b->name)) {
+ 			errstr = "already enabled";
++			NL_SET_ERR_MSG(extack, "Already enabled");
+ 			goto rejected;
+ 		}
+ 		bearer_id++;
+@@ -292,6 +297,7 @@ static int tipc_enable_bearer(struct net *net, const char *name,
+ 			name, prio);
+ 		if (prio == TIPC_MIN_LINK_PRI) {
+ 			errstr = "cannot adjust to lower";
++			NL_SET_ERR_MSG(extack, "Cannot adjust to lower");
+ 			goto rejected;
+ 		}
+ 		pr_warn("Bearer <%s>: trying with adjusted priority\n", name);
+@@ -302,6 +308,7 @@ static int tipc_enable_bearer(struct net *net, const char *name,
+ 
+ 	if (bearer_id >= MAX_BEARERS) {
+ 		errstr = "max 3 bearers permitted";
++		NL_SET_ERR_MSG(extack, "Max 3 bearers permitted");
+ 		goto rejected;
+ 	}
+ 
+@@ -315,6 +322,7 @@ static int tipc_enable_bearer(struct net *net, const char *name,
+ 	if (res) {
+ 		kfree(b);
+ 		errstr = "failed to enable media";
++		NL_SET_ERR_MSG(extack, "Failed to enable media");
+ 		goto rejected;
+ 	}
+ 
+@@ -331,6 +339,7 @@ static int tipc_enable_bearer(struct net *net, const char *name,
+ 	if (res) {
+ 		bearer_disable(net, b);
+ 		errstr = "failed to create discoverer";
++		NL_SET_ERR_MSG(extack, "Failed to create discoverer");
+ 		goto rejected;
+ 	}
+ 
+@@ -909,6 +918,7 @@ int tipc_nl_bearer_get(struct sk_buff *skb, struct genl_info *info)
+ 	bearer = tipc_bearer_find(net, name);
+ 	if (!bearer) {
+ 		err = -EINVAL;
++		NL_SET_ERR_MSG(info->extack, "Bearer not found");
+ 		goto err_out;
+ 	}
+ 
+@@ -948,8 +958,10 @@ int __tipc_nl_bearer_disable(struct sk_buff *skb, struct genl_info *info)
+ 	name = nla_data(attrs[TIPC_NLA_BEARER_NAME]);
+ 
+ 	bearer = tipc_bearer_find(net, name);
+-	if (!bearer)
++	if (!bearer) {
++		NL_SET_ERR_MSG(info->extack, "Bearer not found");
+ 		return -EINVAL;
++	}
+ 
+ 	bearer_disable(net, bearer);
+ 
+@@ -1007,7 +1019,8 @@ int __tipc_nl_bearer_enable(struct sk_buff *skb, struct genl_info *info)
+ 			prio = nla_get_u32(props[TIPC_NLA_PROP_PRIO]);
+ 	}
+ 
+-	return tipc_enable_bearer(net, bearer, domain, prio, attrs);
++	return tipc_enable_bearer(net, bearer, domain, prio, attrs,
++				  info->extack);
+ }
+ 
+ int tipc_nl_bearer_enable(struct sk_buff *skb, struct genl_info *info)
+@@ -1046,6 +1059,7 @@ int tipc_nl_bearer_add(struct sk_buff *skb, struct genl_info *info)
+ 	b = tipc_bearer_find(net, name);
+ 	if (!b) {
+ 		rtnl_unlock();
++		NL_SET_ERR_MSG(info->extack, "Bearer not found");
+ 		return -EINVAL;
+ 	}
+ 
+@@ -1086,8 +1100,10 @@ int __tipc_nl_bearer_set(struct sk_buff *skb, struct genl_info *info)
+ 	name = nla_data(attrs[TIPC_NLA_BEARER_NAME]);
+ 
+ 	b = tipc_bearer_find(net, name);
+-	if (!b)
++	if (!b) {
++		NL_SET_ERR_MSG(info->extack, "Bearer not found");
+ 		return -EINVAL;
++	}
+ 
+ 	if (attrs[TIPC_NLA_BEARER_PROP]) {
+ 		struct nlattr *props[TIPC_NLA_PROP_MAX + 1];
+@@ -1106,12 +1122,18 @@ int __tipc_nl_bearer_set(struct sk_buff *skb, struct genl_info *info)
+ 		if (props[TIPC_NLA_PROP_WIN])
+ 			b->max_win = nla_get_u32(props[TIPC_NLA_PROP_WIN]);
+ 		if (props[TIPC_NLA_PROP_MTU]) {
+-			if (b->media->type_id != TIPC_MEDIA_TYPE_UDP)
++			if (b->media->type_id != TIPC_MEDIA_TYPE_UDP) {
++				NL_SET_ERR_MSG(info->extack,
++					       "MTU property is unsupported");
+ 				return -EINVAL;
++			}
+ #ifdef CONFIG_TIPC_MEDIA_UDP
+ 			if (tipc_udp_mtu_bad(nla_get_u32
+-					     (props[TIPC_NLA_PROP_MTU])))
++					     (props[TIPC_NLA_PROP_MTU]))) {
++				NL_SET_ERR_MSG(info->extack,
++					       "MTU value is out-of-range");
+ 				return -EINVAL;
++			}
+ 			b->mtu = nla_get_u32(props[TIPC_NLA_PROP_MTU]);
+ 			tipc_node_apply_property(net, b, TIPC_NLA_PROP_MTU);
+ #endif
+@@ -1239,6 +1261,7 @@ int tipc_nl_media_get(struct sk_buff *skb, struct genl_info *info)
+ 	rtnl_lock();
+ 	media = tipc_media_find(name);
+ 	if (!media) {
++		NL_SET_ERR_MSG(info->extack, "Media not found");
+ 		err = -EINVAL;
+ 		goto err_out;
+ 	}
+@@ -1275,9 +1298,10 @@ int __tipc_nl_media_set(struct sk_buff *skb, struct genl_info *info)
+ 	name = nla_data(attrs[TIPC_NLA_MEDIA_NAME]);
+ 
+ 	m = tipc_media_find(name);
+-	if (!m)
++	if (!m) {
++		NL_SET_ERR_MSG(info->extack, "Media not found");
+ 		return -EINVAL;
+-
++	}
+ 	if (attrs[TIPC_NLA_MEDIA_PROP]) {
+ 		struct nlattr *props[TIPC_NLA_PROP_MAX + 1];
+ 
+@@ -1293,12 +1317,18 @@ int __tipc_nl_media_set(struct sk_buff *skb, struct genl_info *info)
+ 		if (props[TIPC_NLA_PROP_WIN])
+ 			m->max_win = nla_get_u32(props[TIPC_NLA_PROP_WIN]);
+ 		if (props[TIPC_NLA_PROP_MTU]) {
+-			if (m->type_id != TIPC_MEDIA_TYPE_UDP)
++			if (m->type_id != TIPC_MEDIA_TYPE_UDP) {
++				NL_SET_ERR_MSG(info->extack,
++					       "MTU property is unsupported");
+ 				return -EINVAL;
++			}
+ #ifdef CONFIG_TIPC_MEDIA_UDP
+ 			if (tipc_udp_mtu_bad(nla_get_u32
+-					     (props[TIPC_NLA_PROP_MTU])))
++					     (props[TIPC_NLA_PROP_MTU]))) {
++				NL_SET_ERR_MSG(info->extack,
++					       "MTU value is out-of-range");
+ 				return -EINVAL;
++			}
+ 			m->mtu = nla_get_u32(props[TIPC_NLA_PROP_MTU]);
+ #endif
+ 		}
+-- 
+2.25.1
 
 
 
