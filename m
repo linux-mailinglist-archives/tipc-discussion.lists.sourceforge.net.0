@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCF19349634
-	for <lists+tipc-discussion@lfdr.de>; Thu, 25 Mar 2021 16:57:00 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BA6D349633
+	for <lists+tipc-discussion@lfdr.de>; Thu, 25 Mar 2021 16:56:58 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1lPSLw-0005NY-IO; Thu, 25 Mar 2021 15:56:56 +0000
+	id 1lPSLt-0002wg-Om; Thu, 25 Mar 2021 15:56:53 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1lPSLu-0005NF-4V
- for tipc-discussion@lists.sourceforge.net; Thu, 25 Mar 2021 15:56:54 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1lPSLq-0002vp-Ps
+ for tipc-discussion@lists.sourceforge.net; Thu, 25 Mar 2021 15:56:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
  :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=LCvHZ4ux+8/KUg9KKJCjdfaiKQCURM+9nbiZ5SCx8Is=; b=YgccAznMnBSby8wCbV5SAQwUXi
- Ok3RwYn6tcoUSB6IZqOKfQqAOF85E9rqB16pRgTbghkIl351ZFe1sZzV6l4Ix9RJf2LXXpARhSgND
- HpNKIOnX1dG4ScPZZOjepWY/qePPujGH2KZZy2HiAKscDKzf5rUGf8EO/ixQ/BG5rceQ=;
+ bh=L43SWQ33YGujdbnCckhjEWIHkQXWQ7KBRGr9QF0EZ/U=; b=KGGeyxrsBD4ondgpyRgsT4H/kY
+ 1EIlSpobaI3VLmt2W945W3wr9mU696j9m73nsljPcmf9k/3yqyBdoruBSKEZlD2fDoUzlQ4z2WP7u
+ thD44llsERWLGzUL+3LTjwCr22O0LsvA1VKQyQuhCwWk7ggOD2NaAzcTlWWlKdwq8XRo=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:
@@ -29,41 +29,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=LCvHZ4ux+8/KUg9KKJCjdfaiKQCURM+9nbiZ5SCx8Is=; b=AchrK+halQzS8g8glRVktuJIpj
- NYYkJ48KCn8BfDFDwBY0FugNzb8f659+q3GA17s6mguVAn0Tus7TuY5ylSLrfjrKGmQXj0nkMgX+1
- quejTORwtJRVZx7uEzeUNyvYL6A5XHiJMP3t0eHYcbtvvFA+SC6bJh/zS6NERR6uqnso=;
-Received: from us-smtp-delivery-124.mimecast.com ([63.128.21.124])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1lPSLk-0004J3-Bh
- for tipc-discussion@lists.sourceforge.net; Thu, 25 Mar 2021 15:56:53 +0000
+ bh=L43SWQ33YGujdbnCckhjEWIHkQXWQ7KBRGr9QF0EZ/U=; b=kRn8hp1LPD8gViDUnyjjETfULI
+ xUEj0zZ3gisp17t91hWiqlO4DeoVMoFFpWIMUb2i5V7Gt7Cz8ojDgxDQ2YzJZX43dl/oCVkcPjnIW
+ Bmge9GJhtvV8Vc5pDxfwpGDm/gYKKVw2GAIfr1p9516KWO/K8HfG0l1M6NsjjQOiU4iU=;
+Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1lPSLm-00AHcu-Bb
+ for tipc-discussion@lists.sourceforge.net; Thu, 25 Mar 2021 15:56:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1616687798;
+ s=mimecast20190719; t=1616687800;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=LCvHZ4ux+8/KUg9KKJCjdfaiKQCURM+9nbiZ5SCx8Is=;
- b=PuPtj+ADjtikH65NDGN6sIb06X0R01r+bIUbvqt8KDiJzP88m/4r/qil17X7HfXYWZzSiV
- fSaf8lgKOyf2YjJKWHuM/2m3HMl464mVDpaL653oCZeP6JQf+nuwAPalK7NvSNQ23g6g9o
- v35YLyfVPDjsAvnXue0FLU6YdlST/e0=
+ bh=L43SWQ33YGujdbnCckhjEWIHkQXWQ7KBRGr9QF0EZ/U=;
+ b=IyEclvYX9RGIBkmTp+LQfs7L9wiyjH9+9tvkh3W4bX7psF0a+kCMWXWExMZDclRGGO3gm1
+ xsJugoUyBOc223WQvdzB591D4ZKlGSyMuiQoo1rV+zSTkKXfZ79wD1Cp8StTtSil/uC/Jp
+ oHuUQvCn/olHPYBI7whEtX7StX1R3bs=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-508-q0SCivkfNw2JDvPu-l5Nig-1; Thu, 25 Mar 2021 11:56:33 -0400
-X-MC-Unique: q0SCivkfNw2JDvPu-l5Nig-1
+ us-mta-463-DwYVepOXO2SOxLkmauzPIw-1; Thu, 25 Mar 2021 11:56:36 -0400
+X-MC-Unique: DwYVepOXO2SOxLkmauzPIw-1
 Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
  [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 74D8610866AB;
- Thu, 25 Mar 2021 15:56:32 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 996AEA0C25;
+ Thu, 25 Mar 2021 15:56:34 +0000 (UTC)
 Received: from fenrir.redhat.com (ovpn-114-63.rdu2.redhat.com [10.10.114.63])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 7BEFB60D01;
- Thu, 25 Mar 2021 15:56:30 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id B99AD60CCF;
+ Thu, 25 Mar 2021 15:56:32 +0000 (UTC)
 From: jmaloy@redhat.com
 To: tipc-discussion@lists.sourceforge.net
-Date: Thu, 25 Mar 2021 11:56:20 -0400
-Message-Id: <20210325155621.2055206-4-jmaloy@redhat.com>
+Date: Thu, 25 Mar 2021 11:56:21 -0400
+Message-Id: <20210325155621.2055206-5-jmaloy@redhat.com>
 In-Reply-To: <20210325155621.2055206-1-jmaloy@redhat.com>
 References: <20210325155621.2055206-1-jmaloy@redhat.com>
 MIME-Version: 1.0
@@ -75,10 +75,10 @@ X-Mimecast-Originator: redhat.com
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [63.128.21.124 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [216.205.24.124 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -86,9 +86,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  not necessarily valid
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1lPSLk-0004J3-Bh
-Subject: [tipc-discussion] [net-next 3/4] tipc: refactor function
- tipc_sk_anc_data_recv()
+X-Headers-End: 1lPSLm-00AHcu-Bb
+Subject: [tipc-discussion] [net-next 4/4] tipc: simplify handling of lookup
+ scope during multicast message reception
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,125 +107,128 @@ Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
 From: Jon Maloy <jmaloy@redhat.com>
 
-We refactor tipc_sk_anc_data_recv() to make it slighltly more
-comprehensible, but also to facilitate application of some additions
-to the code in a future commit.
+We introduce a new macro TIPC_ANY_SCOPE to make the handling of the
+lookup scope value more comprehensible during multicast reception.
+
+The (unchanged) rules go as follows:
+
+1) Multicast messages sent from own node are delivered to all matching
+   sockets on the own node, irrespective of their binding scope.
+
+2) Multicast messages sent from other nodes arrive here because they
+   have found TIPC_CLUSTER_SCOPE bindings emanating from this node.
+   Those messages should be delivered to exactly those sockets, but not
+   to local sockets bound with TIPC_NODE_SCOPE, since the latter
+   obviously were not meant to be visible for those senders.
+
+3) Group multicast/broadcast messages are delivered to the sockets with
+   a binding scope matching exactly the lookup scope indicated in the
+   message header, and nobody else.
 
 Signed-off-by: Jon Maloy <jmaloy@redhat.com>
 ---
- net/tipc/socket.c | 85 +++++++++++++++++++++--------------------------
- 1 file changed, 38 insertions(+), 47 deletions(-)
+ net/tipc/name_table.c |  6 +++---
+ net/tipc/name_table.h |  4 +++-
+ net/tipc/socket.c     | 19 +++++++------------
+ 3 files changed, 13 insertions(+), 16 deletions(-)
 
+diff --git a/net/tipc/name_table.c b/net/tipc/name_table.c
+index 6db9f9e7c0ac..86007bcaf47c 100644
+--- a/net/tipc/name_table.c
++++ b/net/tipc/name_table.c
+@@ -671,12 +671,12 @@ bool tipc_nametbl_lookup_group(struct net *net, struct tipc_uaddr *ua,
+  * Returns a list of local sockets
+  */
+ void tipc_nametbl_lookup_mcast_sockets(struct net *net, struct tipc_uaddr *ua,
+-				       bool exact, struct list_head *dports)
++				       struct list_head *dports)
+ {
+ 	struct service_range *sr;
+ 	struct tipc_service *sc;
+ 	struct publication *p;
+-	u32 scope = ua->scope;
++	u8 scope = ua->scope;
+ 
+ 	rcu_read_lock();
+ 	sc = tipc_service_find(net, ua);
+@@ -686,7 +686,7 @@ void tipc_nametbl_lookup_mcast_sockets(struct net *net, struct tipc_uaddr *ua,
+ 	spin_lock_bh(&sc->lock);
+ 	service_range_foreach_match(sr, sc, ua->sr.lower, ua->sr.upper) {
+ 		list_for_each_entry(p, &sr->local_publ, local_publ) {
+-			if (p->scope == scope || (!exact && p->scope < scope))
++			if (scope == p->scope || scope == TIPC_ANY_SCOPE)
+ 				tipc_dest_push(dports, 0, p->sk.ref);
+ 		}
+ 	}
+diff --git a/net/tipc/name_table.h b/net/tipc/name_table.h
+index c7c9a3ddd420..148b0f640959 100644
+--- a/net/tipc/name_table.h
++++ b/net/tipc/name_table.h
+@@ -51,6 +51,8 @@ struct tipc_uaddr;
+ #define TIPC_PUBL_SCOPE_NUM	(TIPC_NODE_SCOPE + 1)
+ #define TIPC_NAMETBL_SIZE	1024	/* must be a power of 2 */
+ 
++#define TIPC_ANY_SCOPE 255
++
+ /**
+  * struct publication - info about a published service address or range
+  * @sr: service range represented by this publication
+@@ -113,7 +115,7 @@ int tipc_nl_name_table_dump(struct sk_buff *skb, struct netlink_callback *cb);
+ bool tipc_nametbl_lookup_anycast(struct net *net, struct tipc_uaddr *ua,
+ 				 struct tipc_socket_addr *sk);
+ void tipc_nametbl_lookup_mcast_sockets(struct net *net, struct tipc_uaddr *ua,
+-				       bool exact, struct list_head *dports);
++				       struct list_head *dports);
+ void tipc_nametbl_lookup_mcast_nodes(struct net *net, struct tipc_uaddr *ua,
+ 				     struct tipc_nlist *nodes);
+ bool tipc_nametbl_lookup_group(struct net *net, struct tipc_uaddr *ua,
 diff --git a/net/tipc/socket.c b/net/tipc/socket.c
-index 12a97755bc80..358d1f2494a7 100644
+index 358d1f2494a7..c0508f76197b 100644
 --- a/net/tipc/socket.c
 +++ b/net/tipc/socket.c
-@@ -1730,67 +1730,58 @@ static void tipc_sk_set_orig_addr(struct msghdr *m, struct sk_buff *skb)
- static int tipc_sk_anc_data_recv(struct msghdr *m, struct sk_buff *skb,
- 				 struct tipc_sock *tsk)
- {
--	struct tipc_msg *msg;
--	u32 anc_data[3];
--	u32 err;
--	u32 dest_type;
--	int has_name;
--	int res;
-+	struct tipc_msg *hdr;
-+	bool has_addr;
-+	int data[12];
-+	int dlen, rc;
+@@ -1200,7 +1200,6 @@ void tipc_sk_mcast_rcv(struct net *net, struct sk_buff_head *arrvq,
+ 	struct tipc_msg *hdr;
+ 	struct tipc_uaddr ua;
+ 	int user, mtyp, hlen;
+-	bool exact;
  
- 	if (likely(m->msg_controllen == 0))
- 		return 0;
--	msg = buf_msg(skb);
+ 	__skb_queue_head_init(&tmpq);
+ 	INIT_LIST_HEAD(&dports);
+@@ -1214,6 +1213,12 @@ void tipc_sk_mcast_rcv(struct net *net, struct sk_buff_head *arrvq,
+ 		hlen = skb_headroom(skb) + msg_hdr_sz(hdr);
+ 		onode = msg_orignode(hdr);
+ 		ua.sr.type = msg_nametype(hdr);
++		ua.sr.lower = msg_namelower(hdr);
++		ua.sr.upper = msg_nameupper(hdr);
++		if (onode == self)
++			ua.scope = TIPC_ANY_SCOPE;
++		else
++			ua.scope = TIPC_CLUSTER_SCOPE;
  
--	/* Optionally capture errored message object(s) */
--	err = msg ? msg_errcode(msg) : 0;
--	if (unlikely(err)) {
--		anc_data[0] = err;
--		anc_data[1] = msg_data_sz(msg);
--		res = put_cmsg(m, SOL_TIPC, TIPC_ERRINFO, 8, anc_data);
--		if (res)
--			return res;
--		if (anc_data[1]) {
--			if (skb_linearize(skb))
--				return -ENOMEM;
--			msg = buf_msg(skb);
--			res = put_cmsg(m, SOL_TIPC, TIPC_RETDATA, anc_data[1],
--				       msg_data(msg));
--			if (res)
--				return res;
--		}
-+	hdr = buf_msg(skb);
-+	dlen = msg_data_sz(hdr);
-+
-+	/* Capture errored message object, if any */
-+	if (msg_errcode(hdr)) {
-+		if (skb_linearize(skb))
-+			return -ENOMEM;
-+		hdr = buf_msg(skb);
-+		data[0] = msg_errcode(hdr);
-+		data[1] = dlen;
-+		rc = put_cmsg(m, SOL_TIPC, TIPC_ERRINFO, 8, data);
-+		if (rc || !dlen)
-+			return rc;
-+		rc = put_cmsg(m, SOL_TIPC, TIPC_RETDATA, dlen, msg_data(hdr));
-+		if (rc)
-+			return rc;
- 	}
+ 		if (mtyp == TIPC_GRP_UCAST_MSG || user == GROUP_PROTOCOL) {
+ 			spin_lock_bh(&inputq->lock);
+@@ -1231,20 +1236,10 @@ void tipc_sk_mcast_rcv(struct net *net, struct sk_buff_head *arrvq,
+ 			ua.sr.lower = 0;
+ 			ua.sr.upper = ~0;
+ 			ua.scope = msg_lookup_scope(hdr);
+-			exact = true;
+-		} else {
+-			/* TIPC_NODE_SCOPE means "any scope" in this context */
+-			if (onode == self)
+-				ua.scope = TIPC_NODE_SCOPE;
+-			else
+-				ua.scope = TIPC_CLUSTER_SCOPE;
+-			exact = false;
+-			ua.sr.lower = msg_namelower(hdr);
+-			ua.sr.upper = msg_nameupper(hdr);
+ 		}
  
--	/* Optionally capture message destination object */
--	dest_type = msg ? msg_type(msg) : TIPC_DIRECT_MSG;
--	switch (dest_type) {
-+	/* Capture TIPC_SERVICE_ADDR/RANGE destination address, if any */
-+	switch (msg_type(hdr)) {
- 	case TIPC_NAMED_MSG:
--		has_name = 1;
--		anc_data[0] = msg_nametype(msg);
--		anc_data[1] = msg_namelower(msg);
--		anc_data[2] = msg_namelower(msg);
-+		has_addr = true;
-+		data[0] = msg_nametype(hdr);
-+		data[1] = msg_namelower(hdr);
-+		data[2] = data[1];
- 		break;
- 	case TIPC_MCAST_MSG:
--		has_name = 1;
--		anc_data[0] = msg_nametype(msg);
--		anc_data[1] = msg_namelower(msg);
--		anc_data[2] = msg_nameupper(msg);
-+		has_addr = true;
-+		data[0] = msg_nametype(hdr);
-+		data[1] = msg_namelower(hdr);
-+		data[2] = msg_nameupper(hdr);
- 		break;
- 	case TIPC_CONN_MSG:
--		has_name = !!tsk->conn_addrtype;
--		anc_data[0] = msg_nametype(&tsk->phdr);
--		anc_data[1] = msg_nameinst(&tsk->phdr);
--		anc_data[2] = anc_data[1];
-+		has_addr = !!tsk->conn_addrtype;
-+		data[0] = msg_nametype(&tsk->phdr);
-+		data[1] = msg_nameinst(&tsk->phdr);
-+		data[2] = data[1];
- 		break;
- 	default:
--		has_name = 0;
--	}
--	if (has_name) {
--		res = put_cmsg(m, SOL_TIPC, TIPC_DESTNAME, 12, anc_data);
--		if (res)
--			return res;
-+		has_addr = false;
- 	}
--
--	return 0;
-+	if (!has_addr)
-+		return 0;
-+	return put_cmsg(m, SOL_TIPC, TIPC_DESTNAME, 12, data);
- }
+ 		/* Create destination port list: */
+-		tipc_nametbl_lookup_mcast_sockets(net, &ua, exact, &dports);
++		tipc_nametbl_lookup_mcast_sockets(net, &ua, &dports);
  
- static struct sk_buff *tipc_sk_build_ack(struct tipc_sock *tsk)
+ 		/* Clone message per destination */
+ 		while (tipc_dest_pop(&dports, NULL, &portid)) {
 -- 
 2.29.2
 
