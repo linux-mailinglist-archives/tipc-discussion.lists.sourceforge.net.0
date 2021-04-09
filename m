@@ -2,93 +2,142 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6FEE35766A
-	for <lists+tipc-discussion@lfdr.de>; Wed,  7 Apr 2021 22:59:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD34E35977F
+	for <lists+tipc-discussion@lfdr.de>; Fri,  9 Apr 2021 10:17:42 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1lUFGi-0002BD-ID; Wed, 07 Apr 2021 20:59:20 +0000
+	id 1lUmKb-0004LL-Lm; Fri, 09 Apr 2021 08:17:33 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- (envelope-from <jmaloy@redhat.com>) id 1lUFGW-0002Ah-Ar
- for tipc-discussion@lists.sourceforge.net; Wed, 07 Apr 2021 20:59:08 +0000
+ (envelope-from <hoang.h.le@dektech.com.au>) id 1lUmKZ-0004LD-Pq
+ for tipc-discussion@lists.sourceforge.net; Fri, 09 Apr 2021 08:17:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
- :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
+ :Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=4wIokgAzJHZ4LpwhKXr0jMLskWcuLfhB799UehEshZ8=; b=jqoO2i9WWaIFP2ERWMVWv+Pafs
- FlmYGwWIEpsBl1cVCpbOaoIvQsxdwj83QBzc4xfANeGPy/3oFftGEiEaN9LgABLa/gqjkPr4dBZ83
- Ajo3DJQzqCjbDPNXduceYIWqc3RnJv1a57uaX7rJCRqdEJfFWnBBoGqAyT1BM+1xYmF8=;
+ bh=maseX1NZQ6eueah1lKOGSuUH5sLwafOJlgZvVEDun7w=; b=KvOtr3X+mWRYu4jlr7mZo1Vk5H
+ gtU07B+5pZKn4Scniha0gJAMvqxI6ZpUJsr81ly0kZ6AidZBY8kw+xAkKcv7oFv+k23BRuVb824m8
+ r6iXZyISXF/+lMQkgoOGWgKnST7tHCctavrBhbCkF0ru8E0C1X/9Vv3/ePbu3buWNN74=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=4wIokgAzJHZ4LpwhKXr0jMLskWcuLfhB799UehEshZ8=; b=Bwez/2izjy4sEPmJF4eCe7B/39
- sAYQDXGOkwXnGQS+yAgeDIqDCzVAc8Fj7Slul5K1W25Xr1KJhXsJ/qCShTlT0w4+1p1Cmua890xrd
- ZNvwSIwVVp59KGsC+neIeu9SFMfHkzlC/mCx1floqsbv/JSkLr5taMjlzOfDGSVEg90E=;
-Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Date:
+ Subject:To:From:Sender:Reply-To:Cc:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=maseX1NZQ6eueah1lKOGSuUH5sLwafOJlgZvVEDun7w=; b=a
+ au5eiB7zhFFGuit61wMqMVN0XGwNllVNPdXB+BWLIkBXWvF9pQyb2698uXPHxzVXMK2z8oj7GnWH5
+ L8RAegrA8j5nQY77LhYRS+7lbZ8VtMsmVdM6g8nAavRzZxpL7BfKciWkNiuaArmzYDtU/vKir4uTk
+ tSvFufpiWU+ZPSgg=;
+Received: from mail-vi1eur05on2101.outbound.protection.outlook.com
+ ([40.107.21.101] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1lUFGR-000220-NY
- for tipc-discussion@lists.sourceforge.net; Wed, 07 Apr 2021 20:59:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1617829137;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=4wIokgAzJHZ4LpwhKXr0jMLskWcuLfhB799UehEshZ8=;
- b=MdWib/CNNKf2kqG8xSe8DQaymxcVc+2NjBMIFPAp8Mp860m8d+1IDmt8x4iVb26ftM9erL
- 1NZ7pCxQrKe0huodUCdlFy5bQy44txOxAO4W72ZTgDWQuTWhkUc0SQ9fCVwIFl2MFbXXWL
- TlbdcXkgyE6+oCr/r1UmMmLnZ/REbug=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-9-gJbGMn2oO5is-gV7QbFM6Q-1; Wed, 07 Apr 2021 16:58:56 -0400
-X-MC-Unique: gJbGMn2oO5is-gV7QbFM6Q-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5D0DE800D53;
- Wed,  7 Apr 2021 20:58:54 +0000 (UTC)
-Received: from fenrir.redhat.com (ovpn-114-63.rdu2.redhat.com [10.10.114.63])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 2C3F95D9D0;
- Wed,  7 Apr 2021 20:58:53 +0000 (UTC)
-From: jmaloy@redhat.com
-To: tipc-discussion@lists.sourceforge.net
-Date: Wed,  7 Apr 2021 16:58:36 -0400
-Message-Id: <20210407205836.3187340-4-jmaloy@redhat.com>
-In-Reply-To: <20210407205836.3187340-1-jmaloy@redhat.com>
-References: <20210407205836.3187340-1-jmaloy@redhat.com>
+ id 1lUmKD-0001Rm-0g
+ for tipc-discussion@lists.sourceforge.net; Fri, 09 Apr 2021 08:17:31 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Jagu9vxmbQP0uySQCAoXdmmeVklrHGmHvPqECNSrkuATxJkYxuwuD5n2KqZ67+NwGiXioxT0gq1fib1HQfFbp1NSuG9PW54Xmymep0h/zW+ASgP6QbV9d5XXODftf3w0ri18vA4q1clIvkUuvopMPOgIxdLWBTxwKuGTWUILdGvtyPGP7buGg1Ecq70Xo3OYDVPKLsyRB1B00PC1WmYYlo/N6+C8+Hq090qJCb2+gte8RoksORmdEhCzJCJEINplBr93pNlhmTeFswDNNYJmjZ4q3roNpa1xa/kiP8Nmn7i4D9PgcVh7NCaZ/Tkp1Y1Hni/AtBKlYbD2ArUUpqHZpQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=maseX1NZQ6eueah1lKOGSuUH5sLwafOJlgZvVEDun7w=;
+ b=MV3GLgV7GjYxULYIkNrbzonf1wPbd2bAMdlM3UbWdkDb8r702nirjd2J9I8VFPW9DxmQe3BmBhHIylVtC2502QQ3T/HsHXfdinqoZ1fLqej3fia5OAkE9S/Eubp+TCUihoBVPu1mQKoDPqX5g0RFx0wo8MwHW1USNR9xCCgVTXmOhKLehUWzHavRlMSb+hOzvUMCs9yu0dmwDJC53/3ZV1FzZFAwi5BwS9fE2giwXoJ6zvdz/P1bAEPgc/50pqGeij7MJw2WoCBFMBsf1E75UeUs1MoXQLlEhDAxx9LUiyDfJaB3snKMxFUIg3kU+8RDwoPxR0efhjxACwojX79b1A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=dektech.com.au; dmarc=pass action=none
+ header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=maseX1NZQ6eueah1lKOGSuUH5sLwafOJlgZvVEDun7w=;
+ b=q3fvrYvpsTkGhx53j5m2vt72Bz/bwXJS/JBoWifd6D7gS12TUtLjpOTJJ6vj2mG9wVVEoTsYddPd+CzRbedV6xuctdJmRWjJHDEicl88WjvfCF/bLbjmHKWydY9TkEkwfO94JHkX5aXxoVGCeXHk0E2wDXur81Qq5ANgOXo9d2Y=
+Authentication-Results: lists.sourceforge.net; dkim=none (message not signed)
+ header.d=none; lists.sourceforge.net;
+ dmarc=none action=none header.from=dektech.com.au;
+Received: from VI1PR05MB4605.eurprd05.prod.outlook.com (2603:10a6:802:61::21)
+ by VI1PR05MB4607.eurprd05.prod.outlook.com (2603:10a6:802:5e::23)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3999.32; Fri, 9 Apr
+ 2021 08:16:53 +0000
+Received: from VI1PR05MB4605.eurprd05.prod.outlook.com
+ ([fe80::5573:2fb4:56e0:1cc3]) by VI1PR05MB4605.eurprd05.prod.outlook.com
+ ([fe80::5573:2fb4:56e0:1cc3%6]) with mapi id 15.20.3999.032; Fri, 9 Apr 2021
+ 08:16:53 +0000
+From: Hoang Le <hoang.h.le@dektech.com.au>
+To: tipc-discussion@lists.sourceforge.net, jmaloy@redhat.com,
+ maloy@donjonn.com, ying.xue@windriver.com, tung.q.nguyen@dektech.com.au
+Date: Fri,  9 Apr 2021 15:16:37 +0700
+Message-Id: <20210409081637.3500-1-hoang.h.le@dektech.com.au>
+X-Mailer: git-send-email 2.25.1
+X-Originating-IP: [113.20.114.51]
+X-ClientProxiedBy: HKAPR03CA0007.apcprd03.prod.outlook.com
+ (2603:1096:203:c8::12) To VI1PR05MB4605.eurprd05.prod.outlook.com
+ (2603:10a6:802:61::21)
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-Authentication-Results: relay.mimecast.com;
- auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-X-Spam-Score: -0.1 (/)
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from dektech.com.au (113.20.114.51) by
+ HKAPR03CA0007.apcprd03.prod.outlook.com (2603:1096:203:c8::12) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.4042.6 via Frontend Transport; Fri, 9 Apr 2021 08:16:50 +0000
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 2ecedff0-0fa8-49c2-d26e-08d8fb2fd556
+X-MS-TrafficTypeDiagnostic: VI1PR05MB4607:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <VI1PR05MB4607F923F185C0A2CEBEA500F1739@VI1PR05MB4607.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:2958;
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: Jg1WA7QiKrgkIL/AEblVmxQ1OH3Ro3BIabUL7PywAjdL5nwShcgpqigW25Ua7Ckh/8YiDX8iPq5FARU8VIskmPYNqYJUSga6kfLr2gvKCdoDNYLZDxw6OlfX/tsdgvciGqhkcG+f5bPWTkR+u+VTnz2M7oSlRfDObxsYYoEb5LIsJVHgycjdwPKZB5aAvplo22AAS4Qf9oIWQVr2A3Am3aQQze7STq1/+h8wvjDDg01KmoomNvDS/CJ2ngp3QsOf58NLeUlBs/V4+P49RgkSgtheSxFc66XinotURHvMb3LjzjrFQBkOqp7XYDT/tfWH3Qj9SnFsTYaR1JcHutG2RJjKM0PuxJxYd9WB+Bguhcg5aZq/+wHq6/04v9yvd77FxTAd+8FKNJhcwdk8r9rW/V7C7IWzsTb0tf/Is+BRKx5FbhIs7bUm6PyoE+9Rcp3iSz6BOHXnSsPCFTbVZ+BrAFu86QXhxiJZiqrLcQxqtUH8selC0OfEDHRnJFcsKuoFe59yIYxC82GbDQbc9+8fBfdwf0EleohJRUXW2yjug/X+2WMgtkHeU9ZAPdd8a0ugpqKKIcD0g46QLoeCCz0hoFGUT36Tt+l3DZ4mygQsd4KMisNdBBdOl2tjEaflrrBEnhhMA+/jVTgNxEATFhyNu7xACf2g/Xmisd9lh/+QLAhNsJikP87XZDNEtudblYGY
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VI1PR05MB4605.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(346002)(366004)(396003)(39850400004)(376002)(136003)(55016002)(86362001)(52116002)(1076003)(6636002)(7696005)(103116003)(38350700001)(38100700001)(16526019)(6666004)(186003)(2906002)(316002)(5660300002)(8676002)(956004)(66556008)(2616005)(478600001)(8936002)(36756003)(26005)(66946007)(83380400001)(66476007);
+ DIR:OUT; SFP:1102; 
+X-MS-Exchange-AntiSpam-MessageData: =?us-ascii?Q?XmeLtg9Rvc5LAUTJ4ZNuIx2tIxSfsdtQMZMvLcoUytzHX4QPhBFwd2cPjwa8?=
+ =?us-ascii?Q?N0fIp9FcNxwuEq5AX1QW2p4hD6qR3L6Ni2JatAyoLU2WgDhDJN2tE+tcp6gR?=
+ =?us-ascii?Q?BAswYn3dbq0XbS4eKG0BPLMSgp6ruFCNXvY+D7na9KWtsGv4ZIYQtPYH/hg1?=
+ =?us-ascii?Q?djrrUjfMUlA1Rm0yr56ZJy6r2zN4gRjCXHD1j7cAfL5IaJDkHh5ZDoKKTi7Z?=
+ =?us-ascii?Q?W8Ej6wjMakYDYlz+8+GhYB2jFS2m1SnHkTkea6auMLuBLwybTwTcwAf/GFLz?=
+ =?us-ascii?Q?5PZmJ38dCB2SJTKTbnKVbMlj6JNkc9ZQ/cCbuQk8Lkffrx5wcS0su/6zxTXb?=
+ =?us-ascii?Q?3NgyWqSR68JEh+/pZUi020UD4IY3IYCNkA7f289+bJUl8blqe/wOffCmrc8b?=
+ =?us-ascii?Q?xUnz+uJV+97y5MA0ORMexeO+dmBD96zDPYuYeuiQD6XdtXzjF65rzw1urXOd?=
+ =?us-ascii?Q?SSMnQHu5t7sC4jveTJp9YPVzPI0lDIktywOLYVFoYUXa4rt4dW7ovRZsBnYC?=
+ =?us-ascii?Q?OCDlV7R+vBBs+ESR+bNXNwb4m1TgNDSM490amQTfBMSxQznNLxOZ92GTPAc6?=
+ =?us-ascii?Q?ZvlEMhqctD0r6gsUme97Hr2NwpRAvlVojzM78hxcvtNDsMaFZhMaEzTXMfn/?=
+ =?us-ascii?Q?S0fbD8BHweCgQxH0kMAqf/xQpDvr5NPAJ9QVeoot8h/k12xgBdS93XoMl7Mz?=
+ =?us-ascii?Q?Gpts3HdV6FT/yaYKUqpKP9j9COQ5yxiSxz6c6vQTX4ZGGqO4BaBjd734HHz/?=
+ =?us-ascii?Q?J980YFyQc234aWze2peTjqIOsR+mAc0S+j07C4Eoj0M2hhgrZqQQxmdkJxRy?=
+ =?us-ascii?Q?FDNrpUnsseLJEvrJv/lw5rzAQyP5/kNYzjDbL/VBi0sD76Bsi66IrfVTvTnj?=
+ =?us-ascii?Q?rNmUNbyt8GyJO4v9X/Z4uM9/qxFGzQ+tDNJH8vdbnEiE5xGxvH+Ixz+9BPIh?=
+ =?us-ascii?Q?YM2iT2yRb8N1RbAzzI+n7KeDR0flWDI/Ua37YbquyKIhnZO/a3/cNnh3aBJ6?=
+ =?us-ascii?Q?eVPmR6pVYHv/yC9lQmUs4zkng/3zIB/EaNFKoiqmFtvx4Tx8VnNDZ6HDc5Rv?=
+ =?us-ascii?Q?buqXu5vJOvz6oAsaPU5s6/MB49GrcbjBbuRgQGxvY/IYXfCda7Gyfb3e96eJ?=
+ =?us-ascii?Q?Lxf6wq5RUOUmmipjC4Lu1ghEAbwXfCaW/3mq1yFJ13XDWmKdBiaJkGiNk0jv?=
+ =?us-ascii?Q?FDTK1chV7KAc0Lye3v1ZskSyQZhzownEbb/Rqdc9QZRQ4FZcFd/ZiozgYACf?=
+ =?us-ascii?Q?58RrNqKlbPis6MhbHOdJtKtuaLSeidfftAL81R1BfWWuCisll5rZ8zwdAgiF?=
+ =?us-ascii?Q?mFcJ+NC99wj8A3IfyR2NC1L6?=
+X-OriginatorOrg: dektech.com.au
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2ecedff0-0fa8-49c2-d26e-08d8fb2fd556
+X-MS-Exchange-CrossTenant-AuthSource: VI1PR05MB4605.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Apr 2021 08:16:53.6585 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: dkCOtHZq2sw8xIuJT8K3FgNt84rh9S0uuSG7Z38RmbtgTVOorA3aDlqIIN3XRZF0nWnLYlifT5e1SWyYDnVnaF3u2rv689BdhKAQWZnK34Y=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB4607
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [216.205.24.124 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1lUFGR-000220-NY
-Subject: [tipc-discussion] [net-next v2 3/3] tipc: simplify handling of
- lookup scope during multicast message reception
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [40.107.21.101 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.21.101 listed in wl.mailspike.net]
+ 0.0 TIME_LIMIT_EXCEEDED    Exceeded time limit / deadline
+X-Headers-End: 1lUmKD-0001Rm-0g
+Subject: [tipc-discussion] [net] tipc: make node link identity publish
+ thread safe
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,137 +149,53 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: lxin@redhat.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-From: Jon Maloy <jmaloy@redhat.com>
+The using of the node address and node link identity are not thread safe,
+meaning that two publications may be published the same values, as result
+one of them will get failure because of already existing in the name table.
+To avoid this we have to use the node address and node link identity values
+from inside the node item's write lock protection.
 
-We introduce a new macro TIPC_ANY_SCOPE to make the handling of the
-lookup scope value more comprehensible during multicast reception.
-
-The (unchanged) rules go as follows:
-
-1) Multicast messages sent from own node are delivered to all matching
-   sockets on the own node, irrespective of their binding scope.
-
-2) Multicast messages sent from other nodes arrive here because they
-   have found TIPC_CLUSTER_SCOPE bindings coming from this node. Those
-   messages should be delivered to exactly those sockets, but not to
-   local sockets bound with TIPC_NODE_SCOPE, since the latter obviously
-   were not meant to be visible for those senders.
-
-3) Group multicast/broadcast messages are delivered to the sockets with
-   a binding scope matching exactly the lookup scope indicated in the
-   message header, and nobodey else.
-
-Signed-off-by: Jon Maloy <jmaloy@redhat.com>
+Fixes: 50a3499ab853 ("tipc: simplify signature of tipc_namtbl_publish()")
+Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
 ---
- net/tipc/name_table.c |  6 +++---
- net/tipc/name_table.h |  4 +++-
- net/tipc/socket.c     | 19 +++++++------------
- 3 files changed, 13 insertions(+), 16 deletions(-)
+ net/tipc/node.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/net/tipc/name_table.c b/net/tipc/name_table.c
-index 6db9f9e7c0ac..86007bcaf47c 100644
---- a/net/tipc/name_table.c
-+++ b/net/tipc/name_table.c
-@@ -671,12 +671,12 @@ bool tipc_nametbl_lookup_group(struct net *net, struct tipc_uaddr *ua,
-  * Returns a list of local sockets
-  */
- void tipc_nametbl_lookup_mcast_sockets(struct net *net, struct tipc_uaddr *ua,
--				       bool exact, struct list_head *dports)
-+				       struct list_head *dports)
- {
- 	struct service_range *sr;
- 	struct tipc_service *sc;
- 	struct publication *p;
--	u32 scope = ua->scope;
-+	u8 scope = ua->scope;
+diff --git a/net/tipc/node.c b/net/tipc/node.c
+index 707d0dc71fad..b8cf298a3413 100644
+--- a/net/tipc/node.c
++++ b/net/tipc/node.c
+@@ -423,18 +423,18 @@ static void tipc_node_write_unlock(struct tipc_node *n)
+ 	write_unlock_bh(&n->lock);
  
- 	rcu_read_lock();
- 	sc = tipc_service_find(net, ua);
-@@ -686,7 +686,7 @@ void tipc_nametbl_lookup_mcast_sockets(struct net *net, struct tipc_uaddr *ua,
- 	spin_lock_bh(&sc->lock);
- 	service_range_foreach_match(sr, sc, ua->sr.lower, ua->sr.upper) {
- 		list_for_each_entry(p, &sr->local_publ, local_publ) {
--			if (p->scope == scope || (!exact && p->scope < scope))
-+			if (scope == p->scope || scope == TIPC_ANY_SCOPE)
- 				tipc_dest_push(dports, 0, p->sk.ref);
- 		}
+ 	if (flags & TIPC_NOTIFY_NODE_DOWN)
+-		tipc_publ_notify(net, publ_list, n->addr, n->capabilities);
++		tipc_publ_notify(net, publ_list, sk.node, n->capabilities);
+ 
+ 	if (flags & TIPC_NOTIFY_NODE_UP)
+-		tipc_named_node_up(net, n->addr, n->capabilities);
++		tipc_named_node_up(net, sk.node, n->capabilities);
+ 
+ 	if (flags & TIPC_NOTIFY_LINK_UP) {
+-		tipc_mon_peer_up(net, n->addr, bearer_id);
+-		tipc_nametbl_publish(net, &ua, &sk, n->link_id);
++		tipc_mon_peer_up(net, sk.node, bearer_id);
++		tipc_nametbl_publish(net, &ua, &sk, sk.ref);
  	}
-diff --git a/net/tipc/name_table.h b/net/tipc/name_table.h
-index c7c9a3ddd420..148b0f640959 100644
---- a/net/tipc/name_table.h
-+++ b/net/tipc/name_table.h
-@@ -51,6 +51,8 @@ struct tipc_uaddr;
- #define TIPC_PUBL_SCOPE_NUM	(TIPC_NODE_SCOPE + 1)
- #define TIPC_NAMETBL_SIZE	1024	/* must be a power of 2 */
+ 	if (flags & TIPC_NOTIFY_LINK_DOWN) {
+-		tipc_mon_peer_down(net, n->addr, bearer_id);
+-		tipc_nametbl_withdraw(net, &ua, &sk, n->link_id);
++		tipc_mon_peer_down(net, sk.node, bearer_id);
++		tipc_nametbl_withdraw(net, &ua, &sk, sk.ref);
+ 	}
+ }
  
-+#define TIPC_ANY_SCOPE 255
-+
- /**
-  * struct publication - info about a published service address or range
-  * @sr: service range represented by this publication
-@@ -113,7 +115,7 @@ int tipc_nl_name_table_dump(struct sk_buff *skb, struct netlink_callback *cb);
- bool tipc_nametbl_lookup_anycast(struct net *net, struct tipc_uaddr *ua,
- 				 struct tipc_socket_addr *sk);
- void tipc_nametbl_lookup_mcast_sockets(struct net *net, struct tipc_uaddr *ua,
--				       bool exact, struct list_head *dports);
-+				       struct list_head *dports);
- void tipc_nametbl_lookup_mcast_nodes(struct net *net, struct tipc_uaddr *ua,
- 				     struct tipc_nlist *nodes);
- bool tipc_nametbl_lookup_group(struct net *net, struct tipc_uaddr *ua,
-diff --git a/net/tipc/socket.c b/net/tipc/socket.c
-index 61aefb9f6fd8..c85859b73adf 100644
---- a/net/tipc/socket.c
-+++ b/net/tipc/socket.c
-@@ -1200,7 +1200,6 @@ void tipc_sk_mcast_rcv(struct net *net, struct sk_buff_head *arrvq,
- 	struct tipc_msg *hdr;
- 	struct tipc_uaddr ua;
- 	int user, mtyp, hlen;
--	bool exact;
- 
- 	__skb_queue_head_init(&tmpq);
- 	INIT_LIST_HEAD(&dports);
-@@ -1214,6 +1213,12 @@ void tipc_sk_mcast_rcv(struct net *net, struct sk_buff_head *arrvq,
- 		hlen = skb_headroom(skb) + msg_hdr_sz(hdr);
- 		onode = msg_orignode(hdr);
- 		ua.sr.type = msg_nametype(hdr);
-+		ua.sr.lower = msg_namelower(hdr);
-+		ua.sr.upper = msg_nameupper(hdr);
-+		if (onode == self)
-+			ua.scope = TIPC_ANY_SCOPE;
-+		else
-+			ua.scope = TIPC_CLUSTER_SCOPE;
- 
- 		if (mtyp == TIPC_GRP_UCAST_MSG || user == GROUP_PROTOCOL) {
- 			spin_lock_bh(&inputq->lock);
-@@ -1231,20 +1236,10 @@ void tipc_sk_mcast_rcv(struct net *net, struct sk_buff_head *arrvq,
- 			ua.sr.lower = 0;
- 			ua.sr.upper = ~0;
- 			ua.scope = msg_lookup_scope(hdr);
--			exact = true;
--		} else {
--			/* TIPC_NODE_SCOPE means "any scope" in this context */
--			if (onode == self)
--				ua.scope = TIPC_NODE_SCOPE;
--			else
--				ua.scope = TIPC_CLUSTER_SCOPE;
--			exact = false;
--			ua.sr.lower = msg_namelower(hdr);
--			ua.sr.upper = msg_nameupper(hdr);
- 		}
- 
- 		/* Create destination port list: */
--		tipc_nametbl_lookup_mcast_sockets(net, &ua, exact, &dports);
-+		tipc_nametbl_lookup_mcast_sockets(net, &ua, &dports);
- 
- 		/* Clone message per destination */
- 		while (tipc_dest_pop(&dports, NULL, &portid)) {
 -- 
-2.29.2
+2.25.1
 
 
 
