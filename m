@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDB41381B91
-	for <lists+tipc-discussion@lfdr.de>; Sun, 16 May 2021 00:53:00 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35890381BA7
+	for <lists+tipc-discussion@lfdr.de>; Sun, 16 May 2021 00:58:21 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1li39Q-00077W-Vl; Sat, 15 May 2021 22:52:52 +0000
+	id 1li3EZ-0006D0-OC; Sat, 15 May 2021 22:58:11 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1li39Q-00077P-5Z
- for tipc-discussion@lists.sourceforge.net; Sat, 15 May 2021 22:52:52 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1li3EY-0006Cp-Pw
+ for tipc-discussion@lists.sourceforge.net; Sat, 15 May 2021 22:58:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
  MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=b26lioNlVAsQ62IGWB0D9tHVfqEZy0bID3QiwmjJWEA=; b=ByCIcLvG9m06vwnvmthm0+ihlh
- PpyfEmQxUVkUaVc5/pkytZPGsgUAphWBChm0MrBm3lumTVwYs6jdYdWONrO8VZARKQwAT7wE0u63v
- RC+5krBpOCg7z0v1esFSBhmO3KhbKg3VwTYSZEKEPJYE0pU8glvBQayG16QjO8VluIRU=;
+ bh=9+7OU1jiXcuN+JE+ZENa1/WzM8XgPqJzZW5eKBUcv7I=; b=WQKAoLxrgHwAKiV3VrV1kvcEFs
+ 4kKILzWtPaNS5ISmcFLx3ZdFJGJDJV9Qcv0j2UaZ2klkSAg0nQ6/Hv1Mt8+iPNwvOZP+XB6jWAT2T
+ mcGP1LZzYoPSDmE7kcK+LWILncp2Zyc5Wl9MMCTew6fbtMaKFpBXCh5iczXmukhgFSrI=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
@@ -29,65 +29,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=b26lioNlVAsQ62IGWB0D9tHVfqEZy0bID3QiwmjJWEA=; b=jrG8YkDKoQWGdxtOw//zzyT5ew
- gWEWWIgglBU/UG4CzGUHfN9JSrLiGLKLsAZsKPbWtJSVlnCSh6wP+zcdCNus9gH6MTdmZ5qcG+uSt
- Oz9gq7L3zm/AKj7eRYFGSAGg14ii24XlZEvotjqKLyGsbuUyg2p76Ex19IM4FND0zzKs=;
+ bh=9+7OU1jiXcuN+JE+ZENa1/WzM8XgPqJzZW5eKBUcv7I=; b=TKodWtpE/NF4M5Q2f/5t9vY0er
+ DTCYJSLzpbsMD6S8LthZZg3PGndr+Q5qpyuNvvoFH1EX5134hMNRftXM5/E0732vFRwuQgHNZvRsX
+ 7cthQFAsOWMGl0VXmkWmGEaSM6NCSLELuLpkiHQ4sRSpOuDPNwx/21gKN5QFLPgXts6w=;
 Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1li39E-009oiB-SV
- for tipc-discussion@lists.sourceforge.net; Sat, 15 May 2021 22:52:54 +0000
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ id 1li3EU-0005vr-1k
+ for tipc-discussion@lists.sourceforge.net; Sat, 15 May 2021 22:58:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1621119152;
+ s=mimecast20190719; t=1621119478;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=b26lioNlVAsQ62IGWB0D9tHVfqEZy0bID3QiwmjJWEA=;
- b=CxH2KyjmRT1y5MztnOsg/SgogikxgQMNtiDw4L7iHh/s2FEmr5h/A5yK0RnU1UMdnq1u/N
- nm/YAexomHwaKcroNclOgfu0SfFiZFE5J7muUsoMK0Svw4Ue9fxD+AEyTK1tL+ayY8queA
- 1BbdGkK3XZBPBOpgJh6LIU3IZjiTSZQ=
-Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com
- [209.85.219.69]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-190-r-MH4GedPG6kJlcgEYu7Rw-1; Sat, 15 May 2021 18:52:30 -0400
-X-MC-Unique: r-MH4GedPG6kJlcgEYu7Rw-1
-Received: by mail-qv1-f69.google.com with SMTP id
- g26-20020a0caada0000b02901b93eb92373so2111186qvb.3
+ bh=9+7OU1jiXcuN+JE+ZENa1/WzM8XgPqJzZW5eKBUcv7I=;
+ b=CRskjGbRZW7s0NNWw6Exv6owoIbH3/pQ16rvPE2NDNp5P1doAAGVL8y13kgDkzXJvSpJcW
+ hypIvnWnI7aWpOLMOm1yOaYgAWE/EeUDSfmKU4vurA7AX1YQ8Qu0J/cqh9Asd2dQlgMTQr
+ G07RQnmMTOwpkEmn74WCq5L+lTUI8pE=
+Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com
+ [209.85.222.198]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-320-5sm3q_4MPjGcXfKmVhC3ng-1; Sat, 15 May 2021 18:57:56 -0400
+X-MC-Unique: 5sm3q_4MPjGcXfKmVhC3ng-1
+Received: by mail-qk1-f198.google.com with SMTP id
+ o14-20020a05620a130eb02902ea53a6ef80so1993359qkj.6
  for <tipc-discussion@lists.sourceforge.net>;
- Sat, 15 May 2021 15:52:30 -0700 (PDT)
+ Sat, 15 May 2021 15:57:56 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-transfer-encoding
  :content-language;
- bh=b26lioNlVAsQ62IGWB0D9tHVfqEZy0bID3QiwmjJWEA=;
- b=VQvvBBLu5HnbnKeB2GLVmdUtn+ncLkejrxnusQoVHTUV7ijqA6O1FZTjxFPBm46mMA
- Cxag5nZJcWrMtR9MzDcwepcK2WyZMstf5U4ke6+rJ2o1FLVE2ycFmYdkBQHUKbgi+DZD
- v8OJyfPolRRMcX1m9cwJIKjNkX5qg1v3AUZYfbVt70lbJBSWxKU0nY2U33jt59A/r6BT
- 1NS92PZ7DHMxy5qqGaNvkvvZHPyTnhsAf2Llnl0dZsDgoXpRBkfoNimDzCB1Od+grhNc
- mKmPuuxOgII21qSsQek+IoA0JIrLsKryjggphP/SN0QnvjvK+nAL3CtRjQhldepllEMF
- Wgyg==
-X-Gm-Message-State: AOAM533Zlhp1zlt/Ovz/IWo8OGm6nWjIxH5aH7YAT7KBqzadwDYrTxvv
- OAfVYcm2vgwUdjqheE7jry96gp3ledfXP63JbZxptz/1EuN2sbcDsUjX9dbEDxj/Ax+r36HUxOQ
- AisedKSgLS/q8q4fr22peP4U9FFTVfdpsJxKH
-X-Received: by 2002:a0c:9e68:: with SMTP id z40mr17880847qve.17.1621119150207; 
- Sat, 15 May 2021 15:52:30 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJwt2Hzg29cAuEkwXgQ8GmM+rXKgWZEzPJ6L9ByDFRLaj9FI/Wl/UiGNYoAhFIfQO7KGkXaoNw==
-X-Received: by 2002:a0c:9e68:: with SMTP id z40mr17880836qve.17.1621119150040; 
- Sat, 15 May 2021 15:52:30 -0700 (PDT)
+ bh=9+7OU1jiXcuN+JE+ZENa1/WzM8XgPqJzZW5eKBUcv7I=;
+ b=YpWj9gqIM5BNmnZ4XcBEeO6ECVJmYxYA4ysy2XtY57AySnZQtaIHn4GI3QerBBhlPb
+ lgdck/IeGWO6mVUiHOcsSz/Te4BsvSXmk7jeBTKCZwYN+J4LKvh35/X8i3zzxrsMRVan
+ bB0uWmm9Jud0+eKHoMiYExT1s+3/VQXLuk1rQmrv3E3qmvmRopoiy+Y2Y0zr2OcbvWvY
+ itN4QIQKm+7TBYIUhrT3ffUjLm2V3rakHQudXSIDdvhb0ns180BPR1nd50qwXbVBqhtv
+ L1D6ntuYdJKeAKjvx1Y0ZZhytHn4LDSdxHIbkYDoZDuNbHHE5nHWcRgBsoQRH6bHTiGU
+ StEA==
+X-Gm-Message-State: AOAM531G6T6pj+m1l26vyjXrEiugsR2Xx14Uh+4+i+GdnJ3wfjq9txGf
+ 01jfNVNkS79KYoVQAwW7Ptn9g+EwLpyB7tXLj9hmYC0DJPTBRC5XZhcOUAnFkwACf0kxtOuhTwA
+ Q4NW++OwVB7h9Gj8Aj2bcH8sG+0tYDenlZK3I
+X-Received: by 2002:a05:6214:1433:: with SMTP id
+ o19mr1671467qvx.59.1621119476370; 
+ Sat, 15 May 2021 15:57:56 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzKwOrtaeteO9NmLX1KUl053C7yobMvcddlNcbBg6LmnS9TOilpr6UZNHO1lvzeOYNU1Ne6Cw==
+X-Received: by 2002:a05:6214:1433:: with SMTP id
+ o19mr1671460qvx.59.1621119476204; 
+ Sat, 15 May 2021 15:57:56 -0700 (PDT)
 Received: from [192.168.0.106] ([24.225.235.43])
- by smtp.gmail.com with ESMTPSA id a23sm7250537qtd.60.2021.05.15.15.52.29
+ by smtp.gmail.com with ESMTPSA id b23sm7891095qtq.0.2021.05.15.15.57.55
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 15 May 2021 15:52:29 -0700 (PDT)
-To: Xin Long <lucien.xin@gmail.com>, tipc-discussion@lists.sourceforge.net
-References: <e197001eb38a4fbc8447459b72ad64ac65e44ada.1621018450.git.lucien.xin@gmail.com>
+ Sat, 15 May 2021 15:57:55 -0700 (PDT)
+To: Xin Long <lucien.xin@gmail.com>, network dev <netdev@vger.kernel.org>,
+ tipc-discussion@lists.sourceforge.net
+References: <c7d752b5522360de0a6886202c59fe49524a9fda.1620417423.git.lucien.xin@gmail.com>
 From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <ac3a75e0-9172-c8aa-7cf4-68d10ee29eb3@redhat.com>
-Date: Sat, 15 May 2021 18:52:28 -0400
+Message-ID: <6b5deaab-d91a-8008-961e-805274f8989f@redhat.com>
+Date: Sat, 15 May 2021 18:57:54 -0400
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
  Thunderbird/78.8.1
 MIME-Version: 1.0
-In-Reply-To: <e197001eb38a4fbc8447459b72ad64ac65e44ada.1621018450.git.lucien.xin@gmail.com>
+In-Reply-To: <c7d752b5522360de0a6886202c59fe49524a9fda.1620417423.git.lucien.xin@gmail.com>
 Authentication-Results: relay.mimecast.com;
  auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
 X-Mimecast-Spam-Score: 0
@@ -98,10 +101,6 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: final_work.net]
  0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
  [170.10.133.124 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -112,9 +111,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 NICE_REPLY_A           Looks like a legit reply (A)
  -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1li39E-009oiB-SV
-Subject: Re: [tipc-discussion] [PATCH net] tipc: simplify the finalize work
- queue
+X-Headers-End: 1li3EU-0005vr-1k
+Subject: Re: [tipc-discussion] [PATCH net] tipc: skb_linearize the head skb
+ when reassembling msgs
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -126,161 +125,99 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: kuba@kernel.org, davem@davemloft.net
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
 
 
-On 5/14/21 2:54 PM, Xin Long wrote:
-> This patch is to use "struct work_struct" for the finalize work queue
-> instead of "struct tipc_net_work", as it can get the "net" and "addr"
-> from tipc_net's other members and there is no need to add extra net
-> and addr in tipc_net by defining "struct tipc_net_work".
+On 5/7/21 3:57 PM, Xin Long wrote:
+> It's not a good idea to append the frag skb to a skb's frag_list if
+> the frag_list already has skbs from elsewhere, such as this skb was
+> created by pskb_copy() where the frag_list was cloned (all the skbs
+> in it were skb_get'ed) and shared by multiple skbs.
 >
-> Note that it's safe to get net from tn->bcl as bcl is always released
-> after the finalize work queue is done.
+> However, the new appended frag skb should have been only seen by the
+> current skb. Otherwise, it will cause use after free crashes as this
+> appended frag skb are seen by multiple skbs but it only got skb_get
+> called once.
 >
+> The same thing happens with a skb updated by pskb_may_pull() with a
+> skb_cloned skb. Li Shuang has reported quite a few crashes caused
+> by this when doing testing over macvlan devices:
+>
+>    [] kernel BUG at net/core/skbuff.c:1970!
+>    [] Call Trace:
+>    []  skb_clone+0x4d/0xb0
+>    []  macvlan_broadcast+0xd8/0x160 [macvlan]
+>    []  macvlan_process_broadcast+0x148/0x150 [macvlan]
+>    []  process_one_work+0x1a7/0x360
+>    []  worker_thread+0x30/0x390
+>
+>    [] kernel BUG at mm/usercopy.c:102!
+>    [] Call Trace:
+>    []  __check_heap_object+0xd3/0x100
+>    []  __check_object_size+0xff/0x16b
+>    []  simple_copy_to_iter+0x1c/0x30
+>    []  __skb_datagram_iter+0x7d/0x310
+>    []  __skb_datagram_iter+0x2a5/0x310
+>    []  skb_copy_datagram_iter+0x3b/0x90
+>    []  tipc_recvmsg+0x14a/0x3a0 [tipc]
+>    []  ____sys_recvmsg+0x91/0x150
+>    []  ___sys_recvmsg+0x7b/0xc0
+>
+>    [] kernel BUG at mm/slub.c:305!
+>    [] Call Trace:
+>    []  <IRQ>
+>    []  kmem_cache_free+0x3ff/0x400
+>    []  __netif_receive_skb_core+0x12c/0xc40
+>    []  ? kmem_cache_alloc+0x12e/0x270
+>    []  netif_receive_skb_internal+0x3d/0xb0
+>    []  ? get_rx_page_info+0x8e/0xa0 [be2net]
+>    []  be_poll+0x6ef/0xd00 [be2net]
+>    []  ? irq_exit+0x4f/0x100
+>    []  net_rx_action+0x149/0x3b0
+>
+>    ...
+>
+> This patch is to fix it by linearizing the head skb if it has frag_list
+> set in tipc_buf_append(). Note that we choose to do this before calling
+> skb_unshare(), as __skb_linearize() will avoid skb_copy(). Also, we can
+> not just drop the frag_list either as the early time.
+>
+> Fixes: 45c8b7b175ce ("tipc: allow non-linear first fragment buffer")
+> Reported-by: Li Shuang <shuali@redhat.com>
 > Signed-off-by: Xin Long <lucien.xin@gmail.com>
 > ---
->   net/tipc/core.c     |  4 ++--
->   net/tipc/core.h     |  8 +-------
->   net/tipc/discover.c |  4 ++--
->   net/tipc/link.c     |  5 +++++
->   net/tipc/link.h     |  1 +
->   net/tipc/net.c      | 15 +++------------
->   6 files changed, 14 insertions(+), 23 deletions(-)
+>   net/tipc/msg.c | 9 ++-------
+>   1 file changed, 2 insertions(+), 7 deletions(-)
 >
-> diff --git a/net/tipc/core.c b/net/tipc/core.c
-> index 72f3ac7..3f4542e 100644
-> --- a/net/tipc/core.c
-> +++ b/net/tipc/core.c
-> @@ -60,7 +60,7 @@ static int __net_init tipc_init_net(struct net *net)
->   	tn->trial_addr = 0;
->   	tn->addr_trial_end = 0;
->   	tn->capabilities = TIPC_NODE_CAPABILITIES;
-> -	INIT_WORK(&tn->final_work.work, tipc_net_finalize_work);
-> +	INIT_WORK(&tn->work, tipc_net_finalize_work);
->   	memset(tn->node_id, 0, sizeof(tn->node_id));
->   	memset(tn->node_id_string, 0, sizeof(tn->node_id_string));
->   	tn->mon_threshold = TIPC_DEF_MON_THRESHOLD;
-> @@ -110,7 +110,7 @@ static void __net_exit tipc_exit_net(struct net *net)
->   
->   	tipc_detach_loopback(net);
->   	/* Make sure the tipc_net_finalize_work() finished */
-> -	cancel_work_sync(&tn->final_work.work);
-> +	cancel_work_sync(&tn->work);
->   	tipc_net_stop(net);
->   
->   	tipc_bcast_stop(net);
-> diff --git a/net/tipc/core.h b/net/tipc/core.h
-> index 5741ae4..0a3f7a7 100644
-> --- a/net/tipc/core.h
-> +++ b/net/tipc/core.h
-> @@ -91,12 +91,6 @@ extern unsigned int tipc_net_id __read_mostly;
->   extern int sysctl_tipc_rmem[3] __read_mostly;
->   extern int sysctl_tipc_named_timeout __read_mostly;
->   
-> -struct tipc_net_work {
-> -	struct work_struct work;
-> -	struct net *net;
-> -	u32 addr;
-> -};
-> -
->   struct tipc_net {
->   	u8  node_id[NODE_ID_LEN];
->   	u32 node_addr;
-> @@ -148,7 +142,7 @@ struct tipc_net {
->   	struct tipc_crypto *crypto_tx;
->   #endif
->   	/* Work item for net finalize */
-> -	struct tipc_net_work final_work;
-> +	struct work_struct work;
->   	/* The numbers of work queues in schedule */
->   	atomic_t wq_count;
->   };
-> diff --git a/net/tipc/discover.c b/net/tipc/discover.c
-> index 5380f60..da69e1a 100644
-> --- a/net/tipc/discover.c
-> +++ b/net/tipc/discover.c
-> @@ -168,7 +168,7 @@ static bool tipc_disc_addr_trial_msg(struct tipc_discoverer *d,
->   
->   	/* Apply trial address if we just left trial period */
->   	if (!trial && !self) {
-> -		tipc_sched_net_finalize(net, tn->trial_addr);
-> +		schedule_work(&tn->work);
->   		msg_set_prevnode(buf_msg(d->skb), tn->trial_addr);
->   		msg_set_type(buf_msg(d->skb), DSC_REQ_MSG);
->   	}
-> @@ -308,7 +308,7 @@ static void tipc_disc_timeout(struct timer_list *t)
->   	if (!time_before(jiffies, tn->addr_trial_end) && !tipc_own_addr(net)) {
->   		mod_timer(&d->timer, jiffies + TIPC_DISC_INIT);
->   		spin_unlock_bh(&d->lock);
-> -		tipc_sched_net_finalize(net, tn->trial_addr);
-> +		schedule_work(&tn->work);
->   		return;
+> diff --git a/net/tipc/msg.c b/net/tipc/msg.c
+> index 3f0a253..ce6ab54 100644
+> --- a/net/tipc/msg.c
+> +++ b/net/tipc/msg.c
+> @@ -149,18 +149,13 @@ int tipc_buf_append(struct sk_buff **headbuf, struct sk_buff **buf)
+>   		if (unlikely(head))
+>   			goto err;
+>   		*buf = NULL;
+> +		if (skb_has_frag_list(frag) && __skb_linearize(frag))
+> +			goto err;
+>   		frag = skb_unshare(frag, GFP_ATOMIC);
+>   		if (unlikely(!frag))
+>   			goto err;
+>   		head = *headbuf = frag;
+>   		TIPC_SKB_CB(head)->tail = NULL;
+> -		if (skb_is_nonlinear(head)) {
+> -			skb_walk_frags(head, tail) {
+> -				TIPC_SKB_CB(head)->tail = tail;
+> -			}
+> -		} else {
+> -			skb_frag_list_init(head);
+> -		}
+>   		return 0;
 >   	}
 >   
-> diff --git a/net/tipc/link.c b/net/tipc/link.c
-> index 1151092..c44b4bf 100644
-> --- a/net/tipc/link.c
-> +++ b/net/tipc/link.c
-> @@ -372,6 +372,11 @@ char tipc_link_plane(struct tipc_link *l)
->   	return l->net_plane;
->   }
->   
-> +struct net *tipc_link_net(struct tipc_link *l)
-> +{
-> +	return l->net;
-> +}
-> +
->   void tipc_link_update_caps(struct tipc_link *l, u16 capabilities)
->   {
->   	l->peer_caps = capabilities;
-> diff --git a/net/tipc/link.h b/net/tipc/link.h
-> index fc07232..a16f401 100644
-> --- a/net/tipc/link.h
-> +++ b/net/tipc/link.h
-> @@ -156,4 +156,5 @@ int tipc_link_bc_sync_rcv(struct tipc_link *l,   struct tipc_msg *hdr,
->   int tipc_link_bc_nack_rcv(struct tipc_link *l, struct sk_buff *skb,
->   			  struct sk_buff_head *xmitq);
->   bool tipc_link_too_silent(struct tipc_link *l);
-> +struct net *tipc_link_net(struct tipc_link *l);
->   #endif
-> diff --git a/net/tipc/net.c b/net/tipc/net.c
-> index a130195..0e95572 100644
-> --- a/net/tipc/net.c
-> +++ b/net/tipc/net.c
-> @@ -41,6 +41,7 @@
->   #include "socket.h"
->   #include "node.h"
->   #include "bcast.h"
-> +#include "link.h"
->   #include "netlink.h"
->   #include "monitor.h"
->   
-> @@ -142,19 +143,9 @@ static void tipc_net_finalize(struct net *net, u32 addr)
->   
->   void tipc_net_finalize_work(struct work_struct *work)
->   {
-> -	struct tipc_net_work *fwork;
-> +	struct tipc_net *tn = container_of(work, struct tipc_net, work);
->   
-> -	fwork = container_of(work, struct tipc_net_work, work);
-> -	tipc_net_finalize(fwork->net, fwork->addr);
-> -}
-> -
-> -void tipc_sched_net_finalize(struct net *net, u32 addr)
-> -{
-> -	struct tipc_net *tn = tipc_net(net);
-> -
-> -	tn->final_work.net = net;
-> -	tn->final_work.addr = addr;
-> -	schedule_work(&tn->final_work.work);
-> +	tipc_net_finalize(tipc_link_net(tn->bcl), tn->trial_addr);
->   }
->   
->   void tipc_net_stop(struct net *net)
 Acked-by: Jon Maloy <jmaloy@redhat.com>
 
 
