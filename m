@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7972F399755
-	for <lists+tipc-discussion@lfdr.de>; Thu,  3 Jun 2021 02:57:20 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7669939A1D1
+	for <lists+tipc-discussion@lfdr.de>; Thu,  3 Jun 2021 15:08:44 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1lobfa-0003Xc-Lu; Thu, 03 Jun 2021 00:57:10 +0000
+	id 1lon5O-0006pE-CQ; Thu, 03 Jun 2021 13:08:34 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- (envelope-from <jmaloy@redhat.com>) id 1lobfZ-0003XV-HV
- for tipc-discussion@lists.sourceforge.net; Thu, 03 Jun 2021 00:57:09 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <jmaloy@redhat.com>) id 1lon54-0006m9-3a
+ for tipc-discussion@lists.sourceforge.net; Thu, 03 Jun 2021 13:08:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
  MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=KXrHUX09IZU5k6hZl5jIpVcgmkPe37mC0NGM9LX3Xls=; b=JYHqrgkjuDcsprZnxECW7oD3Em
- sQ23KzDTdNzmNt02QJjxpWcrPu4VcMGoxMsqfJn+m/ttume+qHVZLNSrUwe+pfFTrhlYk66qhwPyw
- 0t+a4F8r3sePj1JOsXCrVRoxuD2a9jhz2M9erUWXLonLdyHhVRSPh+aLS9OoohJJ5jAQ=;
+ bh=phWDTBiOPyAG0wKIKRe1O/Soj0OfowGQS7YwZbib9wQ=; b=gtwdFXO0LecBXstxUZLAbI+OQI
+ YU7OixviYxUFoCdIhCrdERUfff7F3H8sFA1tzfD2dtyPqDhzMsCGlOx+kxBt7Bwk0+EK4f5nGTaCC
+ G8ahuzbi7b2ABunJrgVVTEgjBFuxJxXigzb3Fln6+E9DTfmSBTwNztBeNr8OU7VE3aMg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
@@ -29,67 +29,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=KXrHUX09IZU5k6hZl5jIpVcgmkPe37mC0NGM9LX3Xls=; b=bLR4FC5NjSX65/L+mKHezZztbV
- urbXRkLLz2SCPPSWk6KBeei/fsXXl20qrFG4PUqfoLNwClAoeBs+87qxD4JoUkV6KVfmDNPhS5j2P
- 6qNhSALwueRpTUG9qYRhfONFRHuCos6mXT5niWL2G2dc+PNG3NQpxVUJvTpalsFAqIt4=;
+ bh=phWDTBiOPyAG0wKIKRe1O/Soj0OfowGQS7YwZbib9wQ=; b=FArrn8foagrguMJWQuKGUYqPl4
+ jbb56CqrYBOC1ruyXnQcbnx2Gi41lr5TLhVGH2W2x/vtXk6GWqyJCnV7jf/e7cgbFUXNw3Oadtjlu
+ tpGIBSrai47waXleSdMz9Zf4NTI4wxGtmH0WmCRjSCMC6jhYrA3w6xiH+hIyKMqqC0do=;
 Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1lobfL-00014C-M3
- for tipc-discussion@lists.sourceforge.net; Thu, 03 Jun 2021 00:57:09 +0000
+ id 1lon51-008vfy-IJ
+ for tipc-discussion@lists.sourceforge.net; Thu, 03 Jun 2021 13:08:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1622681810;
+ s=mimecast20190719; t=1622725685;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=KXrHUX09IZU5k6hZl5jIpVcgmkPe37mC0NGM9LX3Xls=;
- b=fiEsI+AilJtiFdNo3ePU0c6vRFdH27eUwk+SHjH3Q4QTCNhshA80QTZ4SIfmh3ElVCgGzm
- vsbkYlVIBm8ZCBLYx5uwsx5BozszCjgDV2x/mGiLmHvZaEygi81z/KYLfpChB+hmCgZLSX
- Jyjt1H9b/rsRXn9vbQv0u2ffZBXuh1w=
-Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com
- [209.85.219.72]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-439-zN1aiRf1NJSmnOgZJfOfBg-1; Wed, 02 Jun 2021 20:56:49 -0400
-X-MC-Unique: zN1aiRf1NJSmnOgZJfOfBg-1
-Received: by mail-qv1-f72.google.com with SMTP id
- n17-20020ad444b10000b02902157677ec50so3159975qvt.12
+ bh=phWDTBiOPyAG0wKIKRe1O/Soj0OfowGQS7YwZbib9wQ=;
+ b=WjH997Bkg1ZIxn3sKC3enASz2wgWX8DQWQCilvljviOroX4/0kEpdb1wZMvSWcZnyrtMEp
+ 09Etx9ScBrSSLLEhQr0wmxuMM7QYddvSW84EHFw5csc5rpBAK9PKfyPyUKx8ToXduWIL9p
+ 3yiiEIgXXJL6REKDBxw7STD8Fp4vDH0=
+Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com
+ [209.85.222.198]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-437-ZpmjQeFINlCIozhvOg7b_g-1; Thu, 03 Jun 2021 09:08:03 -0400
+X-MC-Unique: ZpmjQeFINlCIozhvOg7b_g-1
+Received: by mail-qk1-f198.google.com with SMTP id
+ y5-20020a37af050000b02903a9c3f8b89fso4102698qke.2
  for <tipc-discussion@lists.sourceforge.net>;
- Wed, 02 Jun 2021 17:56:49 -0700 (PDT)
+ Thu, 03 Jun 2021 06:08:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-transfer-encoding
  :content-language;
- bh=KXrHUX09IZU5k6hZl5jIpVcgmkPe37mC0NGM9LX3Xls=;
- b=uSMgAmf/it5FA6zIjHYJoNhlJTR8/1baLJxgDAklEjIuU9bN1/iW3PyvAJYRZDo7kF
- VPkh0UAMBxANXi1vklr8KS4eAllh3eZYqmCOyZw4JFguYJKbGBfnHz+Z/Gh8YddnvuDC
- VphQbwT/wVFlYPtde6IIUXrjzXFnxn+JjFaQh+OgRf2MTsayO7XAGwL9RfroF9R/KeYP
- bn9eCKtjfbC4L5jo/HYBqW4Oj6J0g6/Y1sKAYoZp2zJXvbA17d1BxQFY+RlxLuuOkDKS
- wl0vRCipSLwenkJi3JwvQLQ4T61mC5qkeZ/ba7Wo4rrtx5Kuh0jYclUrxzZwD0fRCcwI
- TW6g==
-X-Gm-Message-State: AOAM5312lgcvGyH8NUJ97z90KuWvsJtJpw34Vw+OPJkppRLDur7NCfdW
- cjPb4xp3jr+1TQKZME2jldtWKUry42VMszVCTGTY5AL7J6vDmvVBlj8UtzatfZuq2I6JIq6Fzvo
- Mjx7Gw78BOBPXbGZsIkZmusY39d8boLYKoik1/A+e8uvBi2MQSrpMsDe+hp4A+mG07cwXoLFBut
- PEU9Q12o8sFQ==
-X-Received: by 2002:ad4:596c:: with SMTP id eq12mr20182194qvb.30.1622681808161; 
- Wed, 02 Jun 2021 17:56:48 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJyTsKHL8WSvMDQFpipQWr1OpiyPOua1yE4UDdIVrbFK8Ym2XHMvge/ASVH6UWewPtoUcbOaiQ==
-X-Received: by 2002:ad4:596c:: with SMTP id eq12mr20182177qvb.30.1622681807871; 
- Wed, 02 Jun 2021 17:56:47 -0700 (PDT)
+ bh=phWDTBiOPyAG0wKIKRe1O/Soj0OfowGQS7YwZbib9wQ=;
+ b=r8IIHy65pE7hJNLTAQVs1lowO9WipV6UQvAM8deFXeukAfk4MU66i5LTeg9BMJ7Y4u
+ bftvn1XO9aE+SMCPIDjEUU3qj2AJWIdhjeeEzGjFeGKx0F5c4gEFehUtGhDA7Zcej48v
+ tQGQghL9Yj5ZmtjGS1pIPC8+PiAoAKZTKGrw+e56w5UW+vpQRIXg5zoFVKufwAYVGYA2
+ SD/4MDe0fxE+MKPjn4pTH3wpfLSjMlQv61R8Z6UQ0HSbH13Qnzk3w9RESgxuHpCinxmc
+ LVMX6csd7xGa+aBiMkBA2tBDAYf+jInXeboJbzgUfBunwSJHtWzenTFFCVKcdfNsKX6P
+ XeUA==
+X-Gm-Message-State: AOAM532GwsuuJgic4eP3EH+Wit4gau6lbnd+Mj+aUGQiOEjp9jPWLzoJ
+ 49KCJrzyo5P/2UEgYzIqaWjXSNnEtQ+hVWLVouYrZVp6HHXc0sLkgVIrPbTdpcN3Pf22uelWLDI
+ uZgMwTVXiR9ep/r8YtM2wDjRIZhfriXUqY5H3
+X-Received: by 2002:ac8:5fc1:: with SMTP id k1mr28653283qta.275.1622725683453; 
+ Thu, 03 Jun 2021 06:08:03 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxZjxAZ016NuyN/W44nOTWDXC5wz52b3xuVvNZCq0Lcw66NuNZkMabgGskv6A7NYazam2qOOw==
+X-Received: by 2002:ac8:5fc1:: with SMTP id k1mr28653262qta.275.1622725683203; 
+ Thu, 03 Jun 2021 06:08:03 -0700 (PDT)
 Received: from [192.168.0.106] ([24.225.235.43])
- by smtp.gmail.com with ESMTPSA id l14sm919832qtj.26.2021.06.02.17.56.47
+ by smtp.gmail.com with ESMTPSA id z186sm1889159qkb.116.2021.06.03.06.08.01
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 02 Jun 2021 17:56:47 -0700 (PDT)
-To: Xin Long <lucien.xin@gmail.com>, "Duzan, Gary D" <Gary.Duzan@fisglobal.com>
-References: <VI1PR08MB4192C92F9657055B7EF4530F85249@VI1PR08MB4192.eurprd08.prod.outlook.com>
- <CADvbK_dB_qqTcTryfRTRXnp_GnH6L5woyyyY_iikrsP_VuBRLg@mail.gmail.com>
+ Thu, 03 Jun 2021 06:08:02 -0700 (PDT)
+To: Menglong Dong <menglong8.dong@gmail.com>
+References: <CADxym3baupJJ7Q9otxtoQ-DH5e-J2isg-LZj2CsOqRPo70AL4A@mail.gmail.com>
+ <e91baaba-e00a-4b16-0787-e9460dacfbb9@redhat.com>
+ <CADxym3ZdyqJ7b_PqdcjbNhKWP7_nsPRQ9Q0TtFC6Qzr75ekK+g@mail.gmail.com>
 From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <a31bf399-7c8e-38c3-44df-c3ced7c55864@redhat.com>
-Date: Wed, 2 Jun 2021 20:56:46 -0400
+Message-ID: <85310a8b-35ab-376d-ca87-7487b97232c8@redhat.com>
+Date: Thu, 3 Jun 2021 09:08:01 -0400
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
  Thunderbird/78.10.1
 MIME-Version: 1.0
-In-Reply-To: <CADvbK_dB_qqTcTryfRTRXnp_GnH6L5woyyyY_iikrsP_VuBRLg@mail.gmail.com>
+In-Reply-To: <CADxym3ZdyqJ7b_PqdcjbNhKWP7_nsPRQ9Q0TtFC6Qzr75ekK+g@mail.gmail.com>
 Authentication-Results: relay.mimecast.com;
  auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
 X-Mimecast-Spam-Score: 0
@@ -100,10 +100,6 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
  [216.205.24.124 listed in wl.mailspike.net]
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: ericsson.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -114,8 +110,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.6 NICE_REPLY_A           Looks like a legit reply (A)
  -0.4 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1lobfL-00014C-M3
-Subject: Re: [tipc-discussion] DGRAM/STREAM Crossover on Debian?
+X-Headers-End: 1lon51-008vfy-IJ
+Subject: Re: [tipc-discussion] The value of FB_MTU eats two pages
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -127,78 +123,71 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>
+Cc: netdev <netdev@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
+ tipc-discussion@lists.sourceforge.net, Jakub Kicinski <kuba@kernel.org>,
+ David Miller <davem@davemloft.net>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
 
 
-On 6/2/21 4:14 PM, Xin Long wrote:
-> On Wed, May 26, 2021 at 11:38 AM Duzan, Gary D via tipc-discussion
-> <tipc-discussion@lists.sourceforge.net> wrote:
->>     I'm in the process of enhancing a TIPC DGRAM-based RPC-ish service to include TIPC STREAM transport for larger messages. To simplify configuration, I have the server process(es) bind() the same type/range for both DGRAM and STREAM sockets (poll()ing to see which have incoming requests), then choose which to use on the client. This seems to work on most of my Linux systems (RHEL-8, Ubuntu 20.04/21.04, Fedora 34, Debian 11), but on my Debian 10 system (4.19.181-1 kernel) I am seeing messages from a DGRAM client appearing on an accept()ed STREAM socket on the server. I have confirmed that the client is not sending anything on a STREAM socket, and the message received by the server is formatted as a DGRAM message (without the message framing header).
-> When you start two scoket on the server: DGRAM and STREAM, in the
-> client's nametable there will be 2 sockets with different portids:
-> # tipc nametable show
-> Type       Lower      Upper      Scope    Port       Node
-> 18888      17         17         cluster  4063960415
-> 18888      17         17         cluster  1106254118
+On 6/2/21 10:26 PM, Menglong Dong wrote:
+> Hello Maloy,
 >
-> When the client calls sendmsg()/connect() to send msg to the server,
-> it will choose one of them by the rule of "local, closest-first or
-> round-robin".
-> The client doesn't know if the peer is a DGRAM socket or STREAM
-> socket. In your case, it should go round-robin.
+> On Thu, Jun 3, 2021 at 3:50 AM Jon Maloy <jmaloy@redhat.com> wrote:
 >
-> Without this commit:
+> [...]
+>> Hi Dong,
+>> The value is based on empiric knowledge.
+>> When I determined it I made a small loop in a kernel driver where I
+>> allocated skbs (using tipc_buf_acquire) with an increasing size
+>> (incremented with 1 each iteration), and then printed out the
+>> corresponding truesize.
+>>
+>> That gave the value we are using now.
+>>
+>> Now, when re-running the test I get a different value, so something has
+>> obviously changed since then.
+>>
+>> [ 1622.158586] skb(513) =>> truesize 2304, prev skb(512) => prev
+>> truesize 1280
+>> [ 1622.162074] skb(1537) =>> truesize 4352, prev skb(1536) => prev
+>> truesize 2304
+>> [ 1622.165984] skb(3585) =>> truesize 8448, prev skb(3584) => prev
+>> truesize 4352
+>>
+>> As you can see, the optimal value now, for an x86_64 machine compiled
+>> with gcc, is 3584 bytes, not 3744.
+> I'm not sure if this is a perfect way to determine the value of FB_MTU.
+> If 'struct skb_shared_info' changes, this value seems should change,
+> too.
 >
-> commit 25b9221b959483f17c2964d0922869e16caa86b5
-> Author: Jon Maloy <jon.maloy@ericsson.com>
-> Date:   Fri Sep 28 20:23:21 2018 +0200
+> How about we make it this:
 >
->      tipc: add SYN bit to connection setup messages
+> #define FB_MTU (PAGE_SIZE - \
+>           SKB_DATA_ALIGN(sizeof(struct skb_shared_info)) - \
+>           SKB_DATA_ALIGN(BUF_HEADROOM + BUF_TAILROOM + 3 + \
+>                   MAX_H_SIZ))
 >
-> The SYN msg for STREAM is no different from the DATA msg for DGRAM.
-> that's what you're seeing in kernel-4.19
+> The value 'BUF_HEADROOM + BUF_TAILROOM + 3' come from 'tipc_buf_acquire()':
 >
->>     Debian isn't a target platform for production, so I don't need a specific fix, but it is still surprising and a bit disturbing. Was this a known problem with the 4.19 kernel? Are there particular reasons why using this pattern is a bad idea?
-> I think it may not work as expected if you create 2 different types of
-> TIPC sockets binding to the same address.
-> At least on the latest kernel, once the DGRAM client chooses the
-> STREAM socket, the DATA msg will be dropped.
+> #ifdef CONFIG_TIPC_CRYPTO
+>      unsigned int buf_size = (BUF_HEADROOM + size + BUF_TAILROOM + 3) & ~3u;
+> #else
+>      unsigned int buf_size = (BUF_HEADROOM + size + 3) & ~3u;
+> #endif
 >
-> Thanks.
-Exactly. Contrary to UDP vs TCP, TIPC is only one protocol, so you 
-cannot bind the same service type/instance to different socket types 
-without risking problems.
-The SYN bit will prevent a connection from being established with a 
-socket of the wrong type, but it will not stop the binding table lookup 
-from selecting such a socket, since it knows nothing about socket types. 
-I am actually surprised that this works even on the non-Debian machines. 
-Maybe the secondary lookup mechanism is saving the day.
-
-This could of course be fixed without too much effort, but the question 
-is if that is the right way to go. At least we would have to carefully 
-consider possible compatibility issues.
-
-Would it be a problem for you to just choose different service types/ranges?
+> Is it a good idea?
+Yes, I think that makes sense. I was always aware of the "fragility" of 
+my approach, -this one looks more future safe.
 
 ///jon
 
 >
->>     Thanks.
->>
->> Gary Duzan
->> FIS - GT.M Core
->>
->> The information contained in this message is proprietary and/or confidential. If you are not the intended recipient, please: (i) delete the message and all copies; (ii) do not disclose, distribute or use the message in any manner; and (iii) notify the sender immediately. In addition, please be aware that any message addressed to our domain is subject to archiving and review by persons other than the intended recipient. Thank you.
->>
->> _______________________________________________
->> tipc-discussion mailing list
->> tipc-discussion@lists.sourceforge.net
->> https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+> Thanks
+> Menglong Dong
+>
 
 
 
