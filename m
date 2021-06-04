@@ -2,163 +2,119 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAF3739A5B4
-	for <lists+tipc-discussion@lfdr.de>; Thu,  3 Jun 2021 18:27:41 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fs4xipGxdpeOVzM2BZuhYbJ+H1uPxFU58n4nTQDHtAQ=; b=Ph/L0oTLQjoGWHRLlQTgFArhE
-	nGFgN96AHcfWE1HVRmQkTxB35dfSqjb4SLx+kJjNh5YbDywD2ImbyEGozhxXEmiMCpUNnVgI2HsiN
-	VD3xXxzBGOhQ4/cscbw9IjPY4lJ05QTVrxaVRx7LQCfpguFioZ9im/yG80+tvf6iwhlzs=;
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
+	by mail.lfdr.de (Postfix) with ESMTPS id C133F39C05D
+	for <lists+tipc-discussion@lfdr.de>; Fri,  4 Jun 2021 21:20:59 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1loqBv-0003GP-01; Thu, 03 Jun 2021 16:27:31 +0000
+	id 1lpFN8-0000H6-CK; Fri, 04 Jun 2021 19:20:46 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- (envelope-from <Gary.Duzan@fisglobal.com>) id 1loqBt-0003GI-3W
- for tipc-discussion@lists.sourceforge.net; Thu, 03 Jun 2021 16:27:29 +0000
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <jmaloy@redhat.com>) id 1lpFN7-0000Gy-4E
+ for tipc-discussion@lists.sourceforge.net; Fri, 04 Jun 2021 19:20:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Type:In-Reply-To:References:
- Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=4acI1nJzR5NaMELSb8b/9TOswI6zNuzsaco8A3y9ti8=; b=gsALYxbpu0ceYb0m+NkK7cafUN
- mn6HwRzzi3YPKUXjhg/NB0PpOXsQzeHHvYtBtGbOAYukpgyOmFBd3Yv+x7dD4lGaSCnQU9Smi/+d0
- WnqdoUZJDgJ1Gci1sQFinSFtqEjTDP1xxfV28US9KUtrYAJCiOSeKBk7Sn2d1qL9apTs=;
+ bh=v/OSjy7rj5MMtciwVjHGGLHvaE+7LxU3wiDX2YLz6FQ=; b=mL561XOjukgfha37+G8vQ71aSj
+ ZL6e20jgXZjyFbROmDZdq4G8IwvCRAFfXvBgIhSOU1/i28dhS5hWbcSE/5e1wAtJeGld2vGgDtcoA
+ eniXGvH3pRqPiFSXUxIRdSJjn49fEhqVUrRhlx4O2pk9tvSRTrX4G+Ka9J+cvS5svln0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:
- CC:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=4acI1nJzR5NaMELSb8b/9TOswI6zNuzsaco8A3y9ti8=; b=d+sbgZ8SfpPYF1+dSKL1RApCjR
- VsVp+McB0FfZmhMjdUgft+mz5OGUpe2DfuEYtYAzia5EOHXPUbBU0Im6FfhY5LkSJlDE4AGjR2HBR
- By2rtWnqMe3gEp8HmtFyX0VKrHWoDNHc+88I0ODEpXEPCezqCCIkcYZ0iTjfZbJkpfro=;
-Received: from mail-eopbgr40114.outbound.protection.outlook.com
- ([40.107.4.114] helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+ bh=v/OSjy7rj5MMtciwVjHGGLHvaE+7LxU3wiDX2YLz6FQ=; b=eJoJ1REoaEW4dpAPhGMB3Lmazv
+ 4Z1mPlw/HcPI9EdIGoBZb8SC9mH0eoFxMLkeCUfCvQSV9Nu9OKDBUGtftUxgPsnHj9hCO13tfMysm
+ bx+FN1uclQY2RblPSzbaRtfkA88WZlaF8p2+jRSpi9XE+3mWW1QAh/7F733zHMCSnOIs=;
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1loqBf-0000AF-C4
- for tipc-discussion@lists.sourceforge.net; Thu, 03 Jun 2021 16:27:29 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Xl0n2BzCqHKYn8qwBilkrzb1gs3qMUu/Q7vaeX4UkW9naXp4n6s43xhNWeUN8onlgupRi1CUCF6SeHIQaMJamaV9glpqZhLqn3M0j+5tEUpO8fg/zFPxPfKTfypbhnPZ2lOP5NAffzQvjCyqBiNX0OyeqUzUtUuWnbh+9pu4mqeW53j5hivIGkw6c39J+2orW5lSy9cy4kpfTPdBEBM7stmkn9EGbdNqScVTdIh1N/quhxcfhNpRYdJc/OkeZ3TDUAyWV1Ca4W3Zq+0Sqx5RB5Qmes2/PummuXKDH8wtpmWmjBzLUGXTSqXE8fBXT1V62QrqrebfJ8Q7nALGRiyVgg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4acI1nJzR5NaMELSb8b/9TOswI6zNuzsaco8A3y9ti8=;
- b=dBxsA5ukD3NgHqWpR4LxsEkpCd4RZADpqapkBGcuNCl6PyH7Wg+x9Cp8+ScdCvrAHHJnx1ZqImmujuWkLGgEC+zHUWbsrhXmkqWvpPpfewhfm+4i2P+EBLBG6ISI331tgbxEMfDJQc/rB387+OeBmmDinQn1m1L1kdSqnwkpm6YsE7Wl7IOkCqBK4d6ZH5SCXIv6lcBkGhYv1PsWFw03ahItJOiaP2LqksRomeqlKZrkxETsfkRG7wa2Qdvs8K7Q7Jm+XIeM513nR7emneU6mzEyIR0nzO2onXSSPtNfTRurUeafZjN3oAqV+0VFTSGsIqwGnMfdG81ZUIDTWHQEZw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=fisglobal.com; dmarc=pass action=none
- header.from=fisglobal.com; dkim=pass header.d=fisglobal.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fisglobal.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4acI1nJzR5NaMELSb8b/9TOswI6zNuzsaco8A3y9ti8=;
- b=hhN+cfNlgP3Ckig1JZa+TmxrozYlTVnnv8m990ifkbgslXQzgP72WGDO3Ul+APhJqT4tTrW/qnBJPsZEwFXUR37GEJMmoKaWTJYcc6PiQ7HSeOU7mVYUgHtklsw6UVGq7eV/SZ1qgkPYPXuPXWdwOg/GR7DJvuDvkbJsoZFr7u8=
-Received: from VI1PR08MB4192.eurprd08.prod.outlook.com (2603:10a6:803:e3::17)
- by VI1PR0801MB1967.eurprd08.prod.outlook.com (2603:10a6:800:8c::13)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4173.24; Thu, 3 Jun
- 2021 13:55:19 +0000
-Received: from VI1PR08MB4192.eurprd08.prod.outlook.com
- ([fe80::3944:16d7:bec1:677f]) by VI1PR08MB4192.eurprd08.prod.outlook.com
- ([fe80::3944:16d7:bec1:677f%6]) with mapi id 15.20.4195.020; Thu, 3 Jun 2021
- 13:55:19 +0000
-To: Jon Maloy <jmaloy@redhat.com>, Xin Long <lucien.xin@gmail.com>
-Thread-Topic: EXTERNAL: Re: [tipc-discussion] DGRAM/STREAM Crossover on Debian?
-Thread-Index: AQHXUi25+IKGy3Es20iTN08hz5OBfKsBM4KAgABOyQCAAMX1yw==
-Date: Thu, 3 Jun 2021 13:55:19 +0000
-Message-ID: <VI1PR08MB41927531472FF499217E50B2853C9@VI1PR08MB4192.eurprd08.prod.outlook.com>
-References: <VI1PR08MB4192C92F9657055B7EF4530F85249@VI1PR08MB4192.eurprd08.prod.outlook.com>
- <CADvbK_dB_qqTcTryfRTRXnp_GnH6L5woyyyY_iikrsP_VuBRLg@mail.gmail.com>,
- <a31bf399-7c8e-38c3-44df-c3ced7c55864@redhat.com>
-In-Reply-To: <a31bf399-7c8e-38c3-44df-c3ced7c55864@redhat.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: redhat.com; dkim=none (message not signed)
- header.d=none;redhat.com; dmarc=none action=none header.from=fisglobal.com;
-x-originating-ip: [96.227.140.91]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 2c83ab9b-b8b3-48ca-c861-08d926973974
-x-ms-traffictypediagnostic: VI1PR0801MB1967:
-x-microsoft-antispam-prvs: <VI1PR0801MB19674551E637EA6E65FA7E6E853C9@VI1PR0801MB1967.eurprd08.prod.outlook.com>
-disclaimersource: eop
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: CcJnXAtxtlOHaicfF9kam1eVhAL2LiOFqJRQC5CfeEKSMGxn9dCC1H1xhv27Bxw8aO/d2hWKMUBTiTW5FJyVtTFhQX8swXxVJVZcI7yo/pvaq6oYJVNgdeTx8ZFoSHineymusgdVfA3S7+ddfUFV7LtALPlRfKkqudjHVRTDnM2ydjCvBK2sRxaDsXH5JY654FkGADhbESo0J7TtQPm8FWEQDYQWd+VJMD7i9daTI1l2a3adXVStd/EFzZwde3sXCmgWkEJL1cybCoJ5/3g8lveACd0zu+CUdbu52QorAKTVOM70sCXxuZP4ZZHlXPbKXpgY+1o39sUVMhAwiRzwhSbcdUE4nfG4R0jk9le3KhV+HffssZjmmMzCiTsFNR1+RFBphN62sZ0MJIqwzYhQJ2Bc0h01xZn8OU28nkXn0ahHn8qh4AH/p15wFc4N9fyXQqK2TEgfw0waV9l6bKdI46Yd0xNz3u+dcSxvdiim67rgjXCG10GD4uYcsYcqdx+/Ev6J8TJDDYHrGntEMbDkyPAAtBnrSboHw5eO/1/GOPXD92SxCqGjD24KN66TdXkE7Y9j4w/mu/yUQn4kKDdyW2xFw+s1+mtpKBIjzftCzj55VHOaoMMYPxC1SWrbBqW7I8PWBhXNX6UB7ZLBuwZD7nju/V3hQ0bkkqrIINfdN1A+u9xGIM4oVb0pC2ln0bZ/pALvHYfUDQk/qiw/TAqi/QtvDL6DV15ILEgMq8uAV3Y=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VI1PR08MB4192.eurprd08.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(346002)(396003)(39860400002)(366004)(376002)(136003)(66446008)(86362001)(91956017)(66476007)(66946007)(33656002)(6506007)(966005)(76116006)(66556008)(64756008)(83380400001)(478600001)(71200400001)(26005)(55016002)(110136005)(166002)(9686003)(8676002)(316002)(4326008)(7696005)(38100700002)(53546011)(2906002)(52536014)(8936002)(5660300002)(122000001)(186003)(45080400002)(19627405001);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata: =?iso-8859-1?Q?4O42F+J44QuGCyLa40Sb1917pNixCUZ7iUl/T7tmXK0GaCJlLQ3iI+nR2P?=
- =?iso-8859-1?Q?hAiro1I4cDYiMd99FfomEwJ8/aPgP5a5DTZUcxV4mvsyNw5or0JC7EgAHE?=
- =?iso-8859-1?Q?CkIZVRujdVYgZCbUA6l14It7cZrSlRUSaoBQqMjRSw34qz6bVimM0vsMnU?=
- =?iso-8859-1?Q?PolXLEzTUqcxNIPtPqapxNcQFU7ydx5hyPqRe82N9BV+7qxz8UTrBULyJO?=
- =?iso-8859-1?Q?korc3aIPSWxq01j/ZxCmr/Ojk4y26bBpH3twgae4K0QGdmyKVBMFlNKD1Y?=
- =?iso-8859-1?Q?SPaV00PwfhlzDfM4w+/fb1+/ASudmrQ0U8qExKosG7OqfVQIELPGGyz8SN?=
- =?iso-8859-1?Q?cf91jNZZJP6MtMByjm/AXK8hJIHY7OIGU9bzulrKoETW68VHpTPhefIX70?=
- =?iso-8859-1?Q?3qpAhbHMbnLmL4krrTY/HHlgm0kH365Xvp3g/vdNrCmzj2RqDvW1nIFLQU?=
- =?iso-8859-1?Q?TvGD1O53wSUPx2ce01fkxtvySkiQ1yZy5UO+0mICdfN/B8HbrCTw3wuaCU?=
- =?iso-8859-1?Q?waSwHu7xnRfMomLsVbWkWFSV/tjyCb5F2VhzhVavTaVKXjvniZNxThhibe?=
- =?iso-8859-1?Q?snqLWp7rksQcmSSLUIgYRUkYTdo2iN9uP6V1wmoPGFpsIJIQRij+iqpMHO?=
- =?iso-8859-1?Q?0dXzcSLCoHbz3mYFLqvY/0CKzr1BaeCiBYyyy/3euPC2/gShWzLspCj44Q?=
- =?iso-8859-1?Q?1n6LtJanNzu8HFyWp8shm+F+sasYMvH/JkAHuex36Mhf1oO55QauYQom3P?=
- =?iso-8859-1?Q?y/4p1+ZYlBehq9wq8N1ppt454zqYIu9s7QTZjvTt9rFXcptiZjFIZ9oP+i?=
- =?iso-8859-1?Q?e3wlr9AEl5oiiDvnKCKIzYXl3lLb4Y8b9A4B4jC0/oqE5HYJWW6hFZ7wuY?=
- =?iso-8859-1?Q?AVKaFCukb9ZqdMU+0dukJcwYsc+xWmRZPVewovj/AHK1LsJxRkVHikGa69?=
- =?iso-8859-1?Q?pK5uVkP6+9NfLyUrBXmDL59WKUoFuQM1hKoW90PU1mnt7PwLWlkv9gsb7Y?=
- =?iso-8859-1?Q?ATL7zgn6AJu3QzKIvLE2qb/gRNt2J4UVmW98rlAwt0ia/GMeoDQn8gaqmY?=
- =?iso-8859-1?Q?3a5iv66KfgJC8ep9uXIelX8iWevYxrKs0mMK+QYPDGcg4vdtKAAZcMg33R?=
- =?iso-8859-1?Q?6wB8yPKj8Z067cgFI+lx6oayCEXdOvqP7VYo0VjdlUhOtYBeUNqCcvD+2J?=
- =?iso-8859-1?Q?slzS+ASEUrugiXmhEINDWg9K7nKdIw4mUhg8ZE7Um8P1GSlCBVfpC6pTKW?=
- =?iso-8859-1?Q?8BKfosZOdoe2MsvD0L43A5fCyV06/K06qpwtSzYKBGDbrLcZqY8ndqRQks?=
- =?iso-8859-1?Q?yauEFoXBTrG2ZMR6Oe7gG+gkT7pgDZQDnq/O7mvH6KyzV94=3D?=
-x-ms-exchange-transport-forked: True
+ id 1lpFMs-0006Tk-N0
+ for tipc-discussion@lists.sourceforge.net; Fri, 04 Jun 2021 19:20:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1622834425;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=v/OSjy7rj5MMtciwVjHGGLHvaE+7LxU3wiDX2YLz6FQ=;
+ b=g2DNCLvErf8xSsSqOKQkWMR4OeH4wyO7NG3wN/qlZ0u3nG306hBvlbVFj3e1Oqwf2l2njm
+ L9t6MFiUeRrjTDTeGENWv6JxHSPp0A1OxCrU3uWg/mYwJsuVC9dZZoS91w7X51J0JZmd/l
+ 5hPBfmEYFfgMi0xdtpXwAtiMD9g1Tps=
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
+ [209.85.222.197]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-504-W0i8ojTGM5aTPlyEznHcuA-1; Fri, 04 Jun 2021 15:20:18 -0400
+X-MC-Unique: W0i8ojTGM5aTPlyEznHcuA-1
+Received: by mail-qk1-f197.google.com with SMTP id
+ b19-20020a05620a0893b02902e956b29f5dso7219147qka.16
+ for <tipc-discussion@lists.sourceforge.net>;
+ Fri, 04 Jun 2021 12:20:18 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=v/OSjy7rj5MMtciwVjHGGLHvaE+7LxU3wiDX2YLz6FQ=;
+ b=OTufOPu5b6IapRc6hlRCqDe4mQCDNvJ+xr3xwdqRcll533z6X1EZLD1NZxzB6tQt+3
+ dl6nvQwlbSEzqGZVbQ6kBIfeGtuSqWM1wpawnbNA1pWQqEJ7q2K/4WSrB8BxWo5Ez237
+ /iBcjjXuBU7GYE9sVlUTctlGfVsvETVyyz4DYfsgKHxxJFkV05dzRkAFlhfTQptbzpPd
+ f5YPUQg9cwMKzxRkFLdI11gdkSUrPGj4pPgi334xuvnjszqKywBF+R5ZpvVMxHlVV7p3
+ CF/hY+ZVOWACS3KR8boDEYANW7b6N1+wRDaGTeYVE9jFc/XtuCxLELci4SYcgrSqHNlC
+ IyZg==
+X-Gm-Message-State: AOAM530kq0bVdEPRag8MKojnW2DFJld6cIQvAVvU0JVin8C414IqNiXg
+ mjobFYsOL5puAoMbVS0ealL5dxdJMIaCjNkw0vsBTeRE+gHNiVPZhbUHjvawjw52hgkOyHGAp1c
+ iiob+iCBRjq7c2YHovhTpvkF8tjJy6KqdC5pR
+X-Received: by 2002:ac8:5748:: with SMTP id 8mr6105583qtx.233.1622834418404;
+ Fri, 04 Jun 2021 12:20:18 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxxCiD4kWBi9CrjYC7k8NXIrBh7JN+pXxin/1Hf0f8UO8evbFVj+IiWqIzCKYP8sQKcMklujg==
+X-Received: by 2002:ac8:5748:: with SMTP id 8mr6105562qtx.233.1622834418113;
+ Fri, 04 Jun 2021 12:20:18 -0700 (PDT)
+Received: from [192.168.0.106] ([24.225.235.43])
+ by smtp.gmail.com with ESMTPSA id x66sm3152989qkc.100.2021.06.04.12.20.16
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 04 Jun 2021 12:20:17 -0700 (PDT)
+To: menglong8.dong@gmail.com
+References: <20210604074419.53956-1-dong.menglong@zte.com.cn>
+From: Jon Maloy <jmaloy@redhat.com>
+Message-ID: <e997a058-9f6e-86a0-8591-56b0b89441aa@redhat.com>
+Date: Fri, 4 Jun 2021 15:20:16 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.10.1
 MIME-Version: 1.0
-X-OriginatorOrg: fisglobal.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: VI1PR08MB4192.eurprd08.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2c83ab9b-b8b3-48ca-c861-08d926973974
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Jun 2021 13:55:19.5138 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: e3ff91d8-34c8-4b15-a0b4-18910a6ac575
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: KyKFhnSN8Cw5KzvUtvHnI5w9Cf0m6px2/zUTfHMr6Drif/p5aj17YiU1bfdSYlpfT+k2R1SjRLyC32f/RfKTRLRva5VC6SefycvoK/E6XTE=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0801MB1967
-X-Spam-Score: -6.0 (------)
+In-Reply-To: <20210604074419.53956-1-dong.menglong@zte.com.cn>
+Authentication-Results: relay.mimecast.com;
+ auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Language: en-US
+X-Spam-Score: -1.1 (-)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: ericsson.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.4.114 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ for more information. [URIs: zte.com.cn]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [170.10.133.124 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM white-list
- 1.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 1.0 PDS_BAD_THREAD_QP_64   Bad thread header - short QP
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.6 NICE_REPLY_A           Looks like a legit reply (A)
  -0.4 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1loqBf-0000AF-C4
-X-Content-Filtered-By: Mailman/MimeDel 2.1.21
-Subject: Re: [tipc-discussion] EXTERNAL: Re: DGRAM/STREAM Crossover on
- Debian?
+X-Headers-End: 1lpFMs-0006Tk-N0
+Subject: Re: [tipc-discussion] [PATCH net-next] net: tipc: fix FB_MTU eat
+ two pages
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -170,122 +126,113 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: "Duzan,
- Gary D via tipc-discussion" <tipc-discussion@lists.sourceforge.net>
-Reply-To: "Duzan, Gary D" <Gary.Duzan@fisglobal.com>
-Cc: "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Menglong Dong <dong.menglong@zte.com.cn>, netdev@vger.kernel.org,
+ Zeal Robot <zealci@zte.com.cn>, linux-kernel@vger.kernel.org,
+ tipc-discussion@lists.sourceforge.net, kuba@kernel.org, davem@davemloft.net
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-
-Contrary to UDP vs TCP, TIPC is only one protocol, so you
-cannot bind the same service type/instance to different socket types
-without risking problems.
-The SYN bit will prevent a connection from being established with a
-socket of the wrong type, but it will not stop the binding table lookup
-from selecting such a socket, since it knows nothing about socket types.
-I am actually surprised that this works even on the non-Debian machines.
-Maybe the secondary lookup mechanism is saving the day.
-
-This could of course be fixed without too much effort, but the question
-is if that is the right way to go. At least we would have to carefully
-consider possible compatibility issues.
-
-Would it be a problem for you to just choose different service types/ranges?
-
-///jon
-
-   Interesting. So, accidents of implementation aside, you would expect DGRAM, STREAM, and SEQPACKET sockets to be able to communicate with each other? I'm not using SEQPACKET (yet), but it sounds like one might be able to connect() between STREAM and SEQPACKET sockets today, though presumably the way that send()s on the STREAM side get "packetized" on the SEQPACKET end is not clearly defined. If this is what is intended, I think some clarification in the documentation would be helpful, as would testing to ensure expected behavior across socket types. It is true that bringing TCP/UDP thinking to TIPC is going to lead to errors, but it isn't going to be rare. If it is straightforward to keep communication between different socket types separate, then I suspect that would produce the least surprise.
-
-   As for my own project, logically I'm dealing with the same service either way; it is only the DGRAM message size limit that is pushing the STREAM fallback option. I could require a separate service type for the STREAM implementation, but that is another piece of configuration which I'd rather avoid, if practical. I expect I will keep it the way I have it while I'm in experimental mode, as it seems to be working as I expect on the target kernels, but I'll need to be sure I'm on solid ground if we ever manage to get the thing to production.
-
-   Thanks.
-
-                              Gary Duzan
-                              FIS - GT.M Core
-
-
-________________________________
-From: Jon Maloy <jmaloy@redhat.com>
-Sent: Wednesday, June 2, 2021 8:56 PM
-To: Xin Long <lucien.xin@gmail.com>; Duzan, Gary D <Gary.Duzan@fisglobal.com>
-Cc: tipc-discussion@lists.sourceforge.net <tipc-discussion@lists.sourceforge.net>
-Subject: EXTERNAL: Re: [tipc-discussion] DGRAM/STREAM Crossover on Debian?
-
-CAUTION: This email originated from outside of the company. Do not click links or open attachments unless you recognize the sender and know the content is safe.
-
-
-
-On 6/2/21 4:14 PM, Xin Long wrote:
-> On Wed, May 26, 2021 at 11:38 AM Duzan, Gary D via tipc-discussion
-> <tipc-discussion@lists.sourceforge.net> wrote:
->>     I'm in the process of enhancing a TIPC DGRAM-based RPC-ish service to include TIPC STREAM transport for larger messages. To simplify configuration, I have the server process(es) bind() the same type/range for both DGRAM and STREAM sockets (poll()ing to see which have incoming requests), then choose which to use on the client. This seems to work on most of my Linux systems (RHEL-8, Ubuntu 20.04/21.04, Fedora 34, Debian 11), but on my Debian 10 system (4.19.181-1 kernel) I am seeing messages from a DGRAM client appearing on an accept()ed STREAM socket on the server. I have confirmed that the client is not sending anything on a STREAM socket, and the message received by the server is formatted as a DGRAM message (without the message framing header).
-> When you start two scoket on the server: DGRAM and STREAM, in the
-> client's nametable there will be 2 sockets with different portids:
-> # tipc nametable show
-> Type       Lower      Upper      Scope    Port       Node
-> 18888      17         17         cluster  4063960415
-> 18888      17         17         cluster  1106254118
->
-> When the client calls sendmsg()/connect() to send msg to the server,
-> it will choose one of them by the rule of "local, closest-first or
-> round-robin".
-> The client doesn't know if the peer is a DGRAM socket or STREAM
-> socket. In your case, it should go round-robin.
->
-> Without this commit:
->
-> commit 25b9221b959483f17c2964d0922869e16caa86b5
-> Author: Jon Maloy <jon.maloy@ericsson.com>
-> Date:   Fri Sep 28 20:23:21 2018 +0200
->
->      tipc: add SYN bit to connection setup messages
->
-> The SYN msg for STREAM is no different from the DATA msg for DGRAM.
-> that's what you're seeing in kernel-4.19
->
->>     Debian isn't a target platform for production, so I don't need a specific fix, but it is still surprising and a bit disturbing. Was this a known problem with the 4.19 kernel? Are there particular reasons why using this pattern is a bad idea?
-> I think it may not work as expected if you create 2 different types of
-> TIPC sockets binding to the same address.
-> At least on the latest kernel, once the DGRAM client chooses the
-> STREAM socket, the DATA msg will be dropped.
->
-> Thanks.
-Exactly. Contrary to UDP vs TCP, TIPC is only one protocol, so you
-cannot bind the same service type/instance to different socket types
-without risking problems.
-The SYN bit will prevent a connection from being established with a
-socket of the wrong type, but it will not stop the binding table lookup
-from selecting such a socket, since it knows nothing about socket types.
-I am actually surprised that this works even on the non-Debian machines.
-Maybe the secondary lookup mechanism is saving the day.
-
-This could of course be fixed without too much effort, but the question
-is if that is the right way to go. At least we would have to carefully
-consider possible compatibility issues.
-
-Would it be a problem for you to just choose different service types/ranges?
-
-///jon
-
->
->>     Thanks.
->>
->> Gary Duzan
->> FIS - GT.M Core
->>
->> The information contained in this message is proprietary and/or confidential. If you are not the intended recipient, please: (i) delete the message and all copies; (ii) do not disclose, distribute or use the message in any manner; and (iii) notify the sender immediately. In addition, please be aware that any message addressed to our domain is subject to archiving and review by persons other than the intended recipient. Thank you.
->>
->> _______________________________________________
->> tipc-discussion mailing list
->> tipc-discussion@lists.sourceforge.net
->> https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Flists.sourceforge.net%2Flists%2Flistinfo%2Ftipc-discussion&amp;data=04%7C01%7Cgary.duzan%40fisglobal.com%7C68e57e4f23b548f804b008d9262a7be5%7Ce3ff91d834c84b15a0b418910a6ac575%7C0%7C0%7C637582786180071891%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=VNEWWSJ4euG3QutIj3MXmPpOI56vPasJtcdFYM61ToU%3D&amp;reserved=0
-
-The information contained in this message is proprietary and/or confidential. If you are not the intended recipient, please: (i) delete the message and all copies; (ii) do not disclose, distribute or use the message in any manner; and (iii) notify the sender immediately. In addition, please be aware that any message addressed to our domain is subject to archiving and review by persons other than the intended recipient. Thank you.
-
-_______________________________________________
-tipc-discussion mailing list
-tipc-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+CgpPbiA2LzQvMjEgMzo0NCBBTSwgbWVuZ2xvbmc4LmRvbmdAZ21haWwuY29tIHdyb3RlOgo+IEZy
+b206IE1lbmdsb25nIERvbmcgPGRvbmcubWVuZ2xvbmdAenRlLmNvbS5jbj4KPgo+IEZCX01UVSBp
+cyB1c2VkIGluICd0aXBjX21zZ19idWlsZCgpJyB0byBhbGxvYyBzbWFsbGVyIHNrYiB3aGVuIG1l
+bW9yeQo+IGFsbG9jYXRpb24gZmFpbHMsIHdoaWNoIGNhbiBhdm9pZCB1bm5lY2Vzc2FyeSBzZW5k
+aW5nIGZhaWx1cmVzLgo+Cj4gVGhlIHZhbHVlIG9mIEZCX01UVSBub3cgaXMgMzc0NCwgYW5kIHRo
+ZSBkYXRhIHNpemUgd2lsbCBiZToKPgo+ICAgICgzNzQ0ICsgU0tCX0RBVEFfQUxJR04oc2l6ZW9m
+KHN0cnVjdCBza2Jfc2hhcmVkX2luZm8pKSArIFwKPiAgICAgIFNLQl9EQVRBX0FMSUdOKEJVRl9I
+RUFEUk9PTSArIEJVRl9UQUlMUk9PTSArIDMpKQo+Cj4gd2hpY2ggaXMgbGFyZ2VyIHRoYW4gb25l
+IHBhZ2UoNDA5NiksIGFuZCB0d28gcGFnZXMgd2lsbCBiZSBhbGxvY2F0ZWQuCj4KPiBUbyBhdm9p
+ZCBpdCwgcmVwbGFjZSAnMzc0NCcgd2l0aCBhIGNhbGN1bGF0aW9uOgo+Cj4gRkJfTVRVID0gKFBB
+R0VfU0laRSAtIFNLQl9EQVRBX0FMSUdOKHNpemVvZihzdHJ1Y3Qgc2tiX3NoYXJlZF9pbmZvKSkK
+PiAgICAgICAgICAgIC0gU0tCX0RBVEFfQUxJR04oQlVGX0hFQURST09NICsgQlVGX1RBSUxST09N
+ICsgMykpCj4KPiBGaXhlczogNGM5NGNjMmQzZDU3ICgidGlwYzogZmFsbCBiYWNrIHRvIHNtYWxs
+ZXIgTVRVIGlmIGFsbG9jYXRpb24gb2YgbG9jYWwgc2VuZCBza2IgZmFpbHMiKQo+Cj4gUmVwb3J0
+ZWQtYnk6IFplYWwgUm9ib3QgPHplYWxjaUB6dGUuY29tLmNuPgo+IFNpZ25lZC1vZmYtYnk6IE1l
+bmdsb25nIERvbmcgPGRvbmcubWVuZ2xvbmdAenRlLmNvbS5jbj4KPiAtLS0KPiAgIG5ldC90aXBj
+L2JjYXN0LmMgfCAgMSArCj4gICBuZXQvdGlwYy9tc2cuYyAgIHwgIDggKy0tLS0tLQo+ICAgbmV0
+L3RpcGMvbXNnLmggICB8ICAxIC0KPiAgIG5ldC90aXBjL210dS5oICAgfCA1NSArKysrKysrKysr
+KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKPiAgIDQgZmlsZXMgY2hhbmdl
+ZCwgNTcgaW5zZXJ0aW9ucygrKSwgOCBkZWxldGlvbnMoLSkKPiAgIGNyZWF0ZSBtb2RlIDEwMDY0
+NCBuZXQvdGlwYy9tdHUuaAo+Cj4gZGlmZiAtLWdpdCBhL25ldC90aXBjL2JjYXN0LmMgYi9uZXQv
+dGlwYy9iY2FzdC5jCj4gaW5kZXggZDRiZWNhODk1OTkyLi5jNjQxYjY4ZTA4MTIgMTAwNjQ0Cj4g
+LS0tIGEvbmV0L3RpcGMvYmNhc3QuYwo+ICsrKyBiL25ldC90aXBjL2JjYXN0LmMKPiBAQCAtNDEs
+NiArNDEsNyBAQAo+ICAgI2luY2x1ZGUgImJjYXN0LmgiCj4gICAjaW5jbHVkZSAibGluay5oIgo+
+ICAgI2luY2x1ZGUgIm5hbWVfdGFibGUuaCIKPiArI2luY2x1ZGUgIm10dS5oIgo+ICAgCj4gICAj
+ZGVmaW5lIEJDTElOS19XSU5fREVGQVVMVCAgNTAJLyogYmNhc3QgbGluayB3aW5kb3cgc2l6ZSAo
+ZGVmYXVsdCkgKi8KPiAgICNkZWZpbmUgQkNMSU5LX1dJTl9NSU4gICAgICAzMgkvKiBiY2FzdCBt
+aW5pbXVtIGxpbmsgd2luZG93IHNpemUgKi8KPiBkaWZmIC0tZ2l0IGEvbmV0L3RpcGMvbXNnLmMg
+Yi9uZXQvdGlwYy9tc2cuYwo+IGluZGV4IGNlNmFiNTQ4MjJkOC4uZWM3MGQyNzFjMmRhIDEwMDY0
+NAo+IC0tLSBhL25ldC90aXBjL21zZy5jCj4gKysrIGIvbmV0L3RpcGMvbXNnLmMKPiBAQCAtNDAs
+MTUgKzQwLDkgQEAKPiAgICNpbmNsdWRlICJhZGRyLmgiCj4gICAjaW5jbHVkZSAibmFtZV90YWJs
+ZS5oIgo+ICAgI2luY2x1ZGUgImNyeXB0by5oIgo+ICsjaW5jbHVkZSAibXR1LmgiCj4gICAKPiAg
+ICNkZWZpbmUgTUFYX0ZPUldBUkRfU0laRSAxMDI0Cj4gLSNpZmRlZiBDT05GSUdfVElQQ19DUllQ
+VE8KPiAtI2RlZmluZSBCVUZfSEVBRFJPT00gQUxJR04oKChMTF9NQVhfSEVBREVSICsgNDgpICsg
+RUhEUl9NQVhfU0laRSksIDE2KQo+IC0jZGVmaW5lIEJVRl9UQUlMUk9PTSAoVElQQ19BRVNfR0NN
+X1RBR19TSVpFKQo+IC0jZWxzZQo+IC0jZGVmaW5lIEJVRl9IRUFEUk9PTSAoTExfTUFYX0hFQURF
+UiArIDQ4KQo+IC0jZGVmaW5lIEJVRl9UQUlMUk9PTSAxNgo+IC0jZW5kaWYKPiAgIAo+ICAgc3Rh
+dGljIHVuc2lnbmVkIGludCBhbGlnbih1bnNpZ25lZCBpbnQgaSkKPiAgIHsKPiBkaWZmIC0tZ2l0
+IGEvbmV0L3RpcGMvbXNnLmggYi9uZXQvdGlwYy9tc2cuaAo+IGluZGV4IDVkNjQ1OTZiYTk4Ny4u
+ZTgzNjg5ZDBmMGY2IDEwMDY0NAo+IC0tLSBhL25ldC90aXBjL21zZy5oCj4gKysrIGIvbmV0L3Rp
+cGMvbXNnLmgKPiBAQCAtOTksNyArOTksNiBAQCBzdHJ1Y3QgcGxpc3Q7Cj4gICAjZGVmaW5lIE1B
+WF9IX1NJWkUgICAgICAgICAgICAgICAgNjAJLyogTGFyZ2VzdCBwb3NzaWJsZSBUSVBDIGhlYWRl
+ciBzaXplICovCj4gICAKPiAgICNkZWZpbmUgTUFYX01TR19TSVpFIChNQVhfSF9TSVpFICsgVElQ
+Q19NQVhfVVNFUl9NU0dfU0laRSkKPiAtI2RlZmluZSBGQl9NVFUgICAgICAgICAgICAgICAgICAz
+NzQ0Cj4gICAjZGVmaW5lIFRJUENfTUVESUFfSU5GT19PRkZTRVQJNQo+ICAgCj4gICBzdHJ1Y3Qg
+dGlwY19za2JfY2Igewo+IGRpZmYgLS1naXQgYS9uZXQvdGlwYy9tdHUuaCBiL25ldC90aXBjL210
+dS5oCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAwMDAwMDAuLjAzM2YwYjE3
+OGY5ZAo+IC0tLSAvZGV2L251bGwKPiArKysgYi9uZXQvdGlwYy9tdHUuaApQbGVhc2UgZG9uJ3Qg
+YWRkIGFueSBleHRyYSBmaWxlIGp1c3QgZm9yIHRoaXMgbGl0dGxlIGZpeC4gV2UgaGF2ZSBlbm91
+Z2ggCmZpbGVzLgpLZWVwIHRoZSBtYWNyb3MgaW4gbXNnLmgvYyB3aGVyZSB0aGV5IHVzZWQgdG8g
+YmUuwqAgWW91IGNhbiBzdGlsbCBhZGQgCnlvdXIgY29weXJpZ2h0IGxpbmUgdG8gdGhvc2UgZmls
+ZXMuClJlZ2FyZGluZyB0aGUgbWFjcm9zIGtlcHQgaW5zaWRlIG1zZy5jLCB0aGV5IGFyZSB0aGVy
+ZSBiZWNhdXNlIHdlIGRlc2lnbiAKYnkgdGhlIHByaW5jaXBsZSBvZiBtaW5pbWFsIGV4cG9zdXJl
+LCBldmVuIGFtb25nIG91ciBtb2R1bGUgaW50ZXJuYWwgZmlsZXMuCk90aGVyd2lzZSBpdCBpcyBv
+ay4KClRoYW5rcwovLy9qb24KCj4gQEAgLTAsMCArMSw1NSBAQAo+ICsvKiBTUERYLUxpY2Vuc2Ut
+SWRlbnRpZmllcjogR1BMLTIuMC1vbmx5ICovCj4gKy8qCj4gKyAqIENvcHlyaWdodCAyMDIxIFpU
+RSBDb3Jwb3JhdGlvbi4KPiArICogQWxsIHJpZ2h0cyByZXNlcnZlZC4KPiArICoKPiArICogUmVk
+aXN0cmlidXRpb24gYW5kIHVzZSBpbiBzb3VyY2UgYW5kIGJpbmFyeSBmb3Jtcywgd2l0aCBvciB3
+aXRob3V0Cj4gKyAqIG1vZGlmaWNhdGlvbiwgYXJlIHBlcm1pdHRlZCBwcm92aWRlZCB0aGF0IHRo
+ZSBmb2xsb3dpbmcgY29uZGl0aW9ucyBhcmUgbWV0Ogo+ICsgKgo+ICsgKiAxLiBSZWRpc3RyaWJ1
+dGlvbnMgb2Ygc291cmNlIGNvZGUgbXVzdCByZXRhaW4gdGhlIGFib3ZlIGNvcHlyaWdodAo+ICsg
+KiAgICBub3RpY2UsIHRoaXMgbGlzdCBvZiBjb25kaXRpb25zIGFuZCB0aGUgZm9sbG93aW5nIGRp
+c2NsYWltZXIuCj4gKyAqIDIuIFJlZGlzdHJpYnV0aW9ucyBpbiBiaW5hcnkgZm9ybSBtdXN0IHJl
+cHJvZHVjZSB0aGUgYWJvdmUgY29weXJpZ2h0Cj4gKyAqICAgIG5vdGljZSwgdGhpcyBsaXN0IG9m
+IGNvbmRpdGlvbnMgYW5kIHRoZSBmb2xsb3dpbmcgZGlzY2xhaW1lciBpbiB0aGUKPiArICogICAg
+ZG9jdW1lbnRhdGlvbiBhbmQvb3Igb3RoZXIgbWF0ZXJpYWxzIHByb3ZpZGVkIHdpdGggdGhlIGRp
+c3RyaWJ1dGlvbi4KPiArICogMy4gTmVpdGhlciB0aGUgbmFtZXMgb2YgdGhlIGNvcHlyaWdodCBo
+b2xkZXJzIG5vciB0aGUgbmFtZXMgb2YgaXRzCj4gKyAqICAgIGNvbnRyaWJ1dG9ycyBtYXkgYmUg
+dXNlZCB0byBlbmRvcnNlIG9yIHByb21vdGUgcHJvZHVjdHMgZGVyaXZlZCBmcm9tCj4gKyAqICAg
+IHRoaXMgc29mdHdhcmUgd2l0aG91dCBzcGVjaWZpYyBwcmlvciB3cml0dGVuIHBlcm1pc3Npb24u
+Cj4gKyAqCj4gKyAqIEFsdGVybmF0aXZlbHksIHRoaXMgc29mdHdhcmUgbWF5IGJlIGRpc3RyaWJ1
+dGVkIHVuZGVyIHRoZSB0ZXJtcyBvZiB0aGUKPiArICogR05VIEdlbmVyYWwgUHVibGljIExpY2Vu
+c2UgKCJHUEwiKSB2ZXJzaW9uIDIgYXMgcHVibGlzaGVkIGJ5IHRoZSBGcmVlCj4gKyAqIFNvZnR3
+YXJlIEZvdW5kYXRpb24uCj4gKyAqCj4gKyAqIFRISVMgU09GVFdBUkUgSVMgUFJPVklERUQgQlkg
+VEhFIENPUFlSSUdIVCBIT0xERVJTIEFORCBDT05UUklCVVRPUlMgIkFTIElTIgo+ICsgKiBBTkQg
+QU5ZIEVYUFJFU1MgT1IgSU1QTElFRCBXQVJSQU5USUVTLCBJTkNMVURJTkcsIEJVVCBOT1QgTElN
+SVRFRCBUTywgVEhFCj4gKyAqIElNUExJRUQgV0FSUkFOVElFUyBPRiBNRVJDSEFOVEFCSUxJVFkg
+QU5EIEZJVE5FU1MgRk9SIEEgUEFSVElDVUxBUiBQVVJQT1NFCj4gKyAqIEFSRSBESVNDTEFJTUVE
+LiBJTiBOTyBFVkVOVCBTSEFMTCBUSEUgQ09QWVJJR0hUIE9XTkVSIE9SIENPTlRSSUJVVE9SUyBC
+RQo+ICsgKiBMSUFCTEUgRk9SIEFOWSBESVJFQ1QsIElORElSRUNULCBJTkNJREVOVEFMLCBTUEVD
+SUFMLCBFWEVNUExBUlksIE9SCj4gKyAqIENPTlNFUVVFTlRJQUwgREFNQUdFUyAoSU5DTFVESU5H
+LCBCVVQgTk9UIExJTUlURUQgVE8sIFBST0NVUkVNRU5UIE9GCj4gKyAqIFNVQlNUSVRVVEUgR09P
+RFMgT1IgU0VSVklDRVM7IExPU1MgT0YgVVNFLCBEQVRBLCBPUiBQUk9GSVRTOyBPUiBCVVNJTkVT
+Uwo+ICsgKiBJTlRFUlJVUFRJT04pIEhPV0VWRVIgQ0FVU0VEIEFORCBPTiBBTlkgVEhFT1JZIE9G
+IExJQUJJTElUWSwgV0hFVEhFUiBJTgo+ICsgKiBDT05UUkFDVCwgU1RSSUNUIExJQUJJTElUWSwg
+T1IgVE9SVCAoSU5DTFVESU5HIE5FR0xJR0VOQ0UgT1IgT1RIRVJXSVNFKQo+ICsgKiBBUklTSU5H
+IElOIEFOWSBXQVkgT1VUIE9GIFRIRSBVU0UgT0YgVEhJUyBTT0ZUV0FSRSwgRVZFTiBJRiBBRFZJ
+U0VEIE9GIFRIRQo+ICsgKiBQT1NTSUJJTElUWSBPRiBTVUNIIERBTUFHRS4KPiArICovCj4gKwo+
+ICsjaWZuZGVmIF9USVBDX01UVV9ICj4gKyNkZWZpbmUgX1RJUENfTVRVX0gKPiArCj4gKyNpbmNs
+dWRlIDxsaW51eC90aXBjLmg+Cj4gKyNpbmNsdWRlICJjcnlwdG8uaCIKPiArCj4gKyNpZmRlZiBD
+T05GSUdfVElQQ19DUllQVE8KPiArI2RlZmluZSBCVUZfSEVBRFJPT00gQUxJR04oKChMTF9NQVhf
+SEVBREVSICsgNDgpICsgRUhEUl9NQVhfU0laRSksIDE2KQo+ICsjZGVmaW5lIEJVRl9UQUlMUk9P
+TSAoVElQQ19BRVNfR0NNX1RBR19TSVpFKQo+ICsjZGVmaW5lIEZCX01UVQkoUEFHRV9TSVpFIC0g
+XAo+ICsJCSBTS0JfREFUQV9BTElHTihzaXplb2Yoc3RydWN0IHNrYl9zaGFyZWRfaW5mbykpIC0g
+XAo+ICsJCSBTS0JfREFUQV9BTElHTihCVUZfSEVBRFJPT00gKyBCVUZfVEFJTFJPT00gKyAzKSkK
+PiArI2Vsc2UKPiArI2RlZmluZSBCVUZfSEVBRFJPT00gKExMX01BWF9IRUFERVIgKyA0OCkKPiAr
+I2RlZmluZSBCVUZfVEFJTFJPT00gMTYKPiArI2RlZmluZSBGQl9NVFUJKFBBR0VfU0laRSAtIFwK
+PiArCQkgU0tCX0RBVEFfQUxJR04oc2l6ZW9mKHN0cnVjdCBza2Jfc2hhcmVkX2luZm8pKSAtIFwK
+PiArCQkgU0tCX0RBVEFfQUxJR04oQlVGX0hFQURST09NICsgMykpCj4gKyNlbmRpZgo+ICsKPiAr
+I2VuZGlmCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+CnRpcGMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKdGlwYy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJj
+ZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9saXN0cy9saXN0aW5mby90
+aXBjLWRpc2N1c3Npb24K
