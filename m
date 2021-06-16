@@ -2,107 +2,119 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FF213A4AA4
-	for <lists+tipc-discussion@lfdr.de>; Fri, 11 Jun 2021 23:34:03 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 461B53AA252
+	for <lists+tipc-discussion@lfdr.de>; Wed, 16 Jun 2021 19:20:33 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1lromj-0004HW-VU; Fri, 11 Jun 2021 21:33:49 +0000
+	id 1ltZD9-000661-Vm; Wed, 16 Jun 2021 17:20:19 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <lucien.xin@gmail.com>) id 1lromj-0004HL-0e
- for tipc-discussion@lists.sourceforge.net; Fri, 11 Jun 2021 21:33:49 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1ltZD1-00065j-2O
+ for tipc-discussion@lists.sourceforge.net; Wed, 16 Jun 2021 17:20:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=GFzuUzzsWWPFvPe13fiN+mMnQlVLlkOymPN/fzh9VlE=; b=IYxiUa/6jPq7Rz9kUTdutBcVj/
- SQ3/XxYXbm7DKHnaBH7mIBbcEO32HpdqcMsIZYR/5JtdinhyFG4ulr838JQJhnD2k7wyl6wf8VOFt
- goeIghkDzi1Xo2SrNDp2HThVXvIvhChwt5FLdpSZMuqIjwG7IY/8DLouFSmS3sYXh/bI=;
+ bh=5tOfWue4IHh412QoYoKvQGoafX/bPZx2LCREQnKm6+k=; b=Zt9ogiFUK8gWleWurn2cR1O+mq
+ O9QsfflbZXL051VS779Q5Z9Zjocl7SDMSiQIOrByMHmQAJBj/SGbl+1/RYm1o3Y0GbSKN8TWTfdUP
+ Sk/5pXbjdW8gqLVUpjKyDAabVMVmbzEO9b0Vm1suQwCTK6SbzlcEKDhe+4g49eozaJrw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=GFzuUzzsWWPFvPe13fiN+mMnQlVLlkOymPN/fzh9VlE=; b=j
- +mU30QEIaHlmsmJy1H7zfZbcSlNU23weWYlTQL3nheR6tEZlowsgdtH8nrStTcDsLTUwL94C2cg68
- T7qG0Q7ibCAJqkaO31te8UxQvKAdvCuVhXjymtyBDAziRSum4Z6OJ7WL2yhAtl0OJSbXI3O5/QjA1
- V02w0yuET0qvXWgI=;
-Received: from mail-qt1-f175.google.com ([209.85.160.175])
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=5tOfWue4IHh412QoYoKvQGoafX/bPZx2LCREQnKm6+k=; b=DvqC43bm17QWzRDn8ZMwRphCji
+ PVwW9kA9CsufQgjzS+tu93TYU8J7S1TAgaCNZ8an3bCKGDIJikoByfdvU87quLC0i3QH14GyCRgep
+ 95x8acc7Zy1td1sO59Cw9swAp0fHiXB9RjmNOUo1QqWb/i6gc4NgdnLpTC+CzylZJFDg=;
+Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
- id 1lromb-0002mO-It
- for tipc-discussion@lists.sourceforge.net; Fri, 11 Jun 2021 21:33:48 +0000
-Received: by mail-qt1-f175.google.com with SMTP id v6so3710160qta.9
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ id 1ltZCr-0005FH-O0
+ for tipc-discussion@lists.sourceforge.net; Wed, 16 Jun 2021 17:20:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1623863996;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=5tOfWue4IHh412QoYoKvQGoafX/bPZx2LCREQnKm6+k=;
+ b=CVkls6vgWikpiZvLbRYfu+b5txw/0LMUwdJwme21jPj7DWSw8vi1RRKuzHVTYII2BPJYbz
+ A7nKAW8IBxz+gKa2UQTKyCCgacf/Ih7R1jkSm8pbXm5bvQMJceSZxGBTR+gzb39HBbLA74
+ +z3ZJrpLeWMii7g5YCiOGBEzt2T09vI=
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com
+ [209.85.222.200]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-417-fdDYGqw8NU-U_s_RjLMnIw-1; Wed, 16 Jun 2021 13:19:55 -0400
+X-MC-Unique: fdDYGqw8NU-U_s_RjLMnIw-1
+Received: by mail-qk1-f200.google.com with SMTP id
+ r190-20020a375dc70000b02903acea04c19fso88566qkb.8
  for <tipc-discussion@lists.sourceforge.net>;
- Fri, 11 Jun 2021 14:33:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=GFzuUzzsWWPFvPe13fiN+mMnQlVLlkOymPN/fzh9VlE=;
- b=soCYuYiG3XbkjesK21vdrzqsgnCajLYqbf55UveQ2bpbpX8FPiYPOB0+AEQLEBB9D6
- iwgPAQnaB2J7mHIrfwQ1qsMLpmwP06rG+gLqJuyBFuL1CZSPGuTsPJHLuG321dtRGj5s
- rDSfg1FmgYBt2enf3tb/6fZNQzR+VJRm+oP1crSkCCSIwnzmc+5H473cMOISIARtYY9p
- l4vNeD/IKk97/XPABv/qyJlMxjeSGxesuT7Jn7iKmJBRTSXCfCsvKGXOLX7FxXW4yIcW
- FE6x+ihYD5s12LMUJQYQlWULi2IGsEVI02KVJdq2TlUhhpObwQDGbjyxclSf+cwnShuU
- HzWA==
+ Wed, 16 Jun 2021 10:19:55 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=GFzuUzzsWWPFvPe13fiN+mMnQlVLlkOymPN/fzh9VlE=;
- b=sH5ILmAbnGkbVdJqVThRqzDnXb2L5hw5q5acmWb+7K7bIvXrqshD8zmI3hHJoNYmtQ
- 93wTmctLD2htOg/wTJiJC1Et9cA4WeA0Rmi70q8ZAHS9xscFWi+9nPYH4zXHDxPQlnQK
- ETYCBXsAfK6wICDP8JvUfLuPtAhcQwZn1sd2frJt+jM7tY5OjrvRjB3bOh04x8wVroh0
- LFuwFkjIop72ODldZxBNMgNv66FYtMDFOXrraZ77L92/LkjIU2eJWQMaP4t6u3DK/eKu
- tGQ6/SkeafAotRyzqgqKrsKY3vlK1/iiPwbELYFiKQLxYS2XpRA68tBXVuIiJPEjDorD
- RaDA==
-X-Gm-Message-State: AOAM5320oP7nGXDMr5GBUNdE8rDO6awZR4Jh0hdvYa4S5MP0iUu6mzZn
- V+7tgyn6WdzDC8fbJo4cAXCAMKjbC8o=
-X-Google-Smtp-Source: ABdhPJxuuwHLd5G1e0flgzr3OwvLF0GcDFsVbJt6KjTLSmsviowMveTrW8qgsWJu0g3KVF1qOc4JVA==
-X-Received: by 2002:ac8:5481:: with SMTP id h1mr5852333qtq.206.1623447216659; 
- Fri, 11 Jun 2021 14:33:36 -0700 (PDT)
-Received: from localhost (nat-pool-bos-t.redhat.com. [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id l13sm4754597qtk.50.2021.06.11.14.33.36
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 11 Jun 2021 14:33:36 -0700 (PDT)
-From: Xin Long <lucien.xin@gmail.com>
-To: tipc-discussion@lists.sourceforge.net
-Date: Fri, 11 Jun 2021 17:33:35 -0400
-Message-Id: <409805d797d6eafe4bf91d96b3c579844cf753c8.1623447215.git.lucien.xin@gmail.com>
-X-Mailer: git-send-email 2.27.0
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=5tOfWue4IHh412QoYoKvQGoafX/bPZx2LCREQnKm6+k=;
+ b=oOptXN8P1fAr/49IWmpNn/OrZXWlzdWqPoNw7CFeAvprDjN68aEpx10lgUW5ZIojkH
+ hB+cMpFqq+CWC2vwFBpUFl3PufPjkCGfgn952AaF+vHw4S0YlpBDAtX5uyUDdVaviUql
+ bfWWHAE52YW+81mXU8nCLgC16GtyuMULvPYesP22+FgRGVW+WKK5/177EOmUcfMbXaVN
+ n6higedTih6EsXQMw0Qfr4FbQFBjaV9ti4bdvZRiXp9AqU1tn9r42l762VHeY3lGaKoX
+ HqQHy3O3EOBIgdQql6o+dqiMKYUmnaIYGc8+It0s8aqN7nQ8a8Qi0AIKE3rIoHWT69Ko
+ g3XQ==
+X-Gm-Message-State: AOAM532MmG2np9LtnbNVFQe34oqT3KKO0rmZVt0iLxcUfu3l73bwSeQh
+ FUzrfz5gTnJ98JujtAjl8IwR2fpDm9BKkPJxC0YNLkH2YE4jwBGo5++P4MZ9JDORjgr8s0mVB7X
+ PI1FwIQl/vofGeQaJVm4UI5F6A5ZH4urJk7x9
+X-Received: by 2002:ad4:4084:: with SMTP id l4mr1107334qvp.37.1623863994836;
+ Wed, 16 Jun 2021 10:19:54 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzYO2L9w5DF8orxj0gnLwffmSQHXIT+DJ4oXKGAK4paB9pMjTypjkO0r6KY/BknwY21T9aggw==
+X-Received: by 2002:ad4:4084:: with SMTP id l4mr1107307qvp.37.1623863994494;
+ Wed, 16 Jun 2021 10:19:54 -0700 (PDT)
+Received: from [192.168.0.106] ([24.225.235.43])
+ by smtp.gmail.com with ESMTPSA id e14sm1614528qtq.24.2021.06.16.10.19.53
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 16 Jun 2021 10:19:54 -0700 (PDT)
+To: menglong8.dong@gmail.com
+References: <20210615094504.155456-1-dong.menglong@zte.com.cn>
+From: Jon Maloy <jmaloy@redhat.com>
+Message-ID: <81009833-212a-b731-2f49-81ba49fd0ba2@redhat.com>
+Date: Wed, 16 Jun 2021 13:19:52 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.10.1
 MIME-Version: 1.0
-X-Spam-Score: 0.6 (/)
+In-Reply-To: <20210615094504.155456-1-dong.menglong@zte.com.cn>
+Authentication-Results: relay.mimecast.com;
+ auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Language: en-US
+X-Spam-Score: -0.5 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- (lucien.xin[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.160.175 listed in list.dnswl.org]
- 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
- blocklist [URIs: tipc.io]
- 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
- blocklist [URIs: tipc.io]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: tipc.io]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.160.175 listed in wl.mailspike.net]
+ for more information. [URIs: zte.com.cn]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [216.205.24.124 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1lromb-0002mO-It
-Subject: [tipc-discussion] [PATCH net] Documentation: add more details in
- tipc.rst
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.2 NICE_REPLY_A           Looks like a legit reply (A)
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1ltZCr-0005FH-O0
+Subject: Re: [tipc-discussion] [PATCH v3 net-next] net: tipc: fix FB_MTU eat
+ two pages
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -114,158 +126,204 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: lxin@redhat.com, Menglong Dong <dong.menglong@zte.com.cn>,
+ tipc-discussion@lists.sourceforge.net
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-kernel-doc for TIPC is too simple, we need to add more information for it.
-
-This patch is to extend the abstract, and add the Features and Links items.
-
-Signed-off-by: Xin Long <lucien.xin@gmail.com>
----
- Documentation/networking/tipc.rst | 121 +++++++++++++++++++++++++++++-
- 1 file changed, 118 insertions(+), 3 deletions(-)
-
-diff --git a/Documentation/networking/tipc.rst b/Documentation/networking/tipc.rst
-index 76775f24cdc8..ab63d298cca2 100644
---- a/Documentation/networking/tipc.rst
-+++ b/Documentation/networking/tipc.rst
-@@ -4,10 +4,125 @@
- Linux Kernel TIPC
- =================
- 
--TIPC (Transparent Inter Process Communication) is a protocol that is
--specially designed for intra-cluster communication.
-+Introduction
-+============
- 
--For more information about TIPC, see http://tipc.sourceforge.net.
-+TIPC (Transparent Inter Process Communication) is a protocol that is specially
-+designed for intra-cluster communication. It can be configured to transmit
-+messages either on UDP or directly across Ethernet. Message delivery is
-+sequence guaranteed, loss free and flow controlled. Latency times are shorter
-+than with any other known protocol, while maximal throughput is comparable to
-+that of TCP.
-+
-+TIPC Features
-+-------------
-+
-+- Cluster wide IPC service
-+
-+  Have you ever wished you had the convenience of Unix Domain Sockets even when
-+  transmitting data between cluster nodes? Where you yourself determine the
-+  addresses you want to bind to and use? Where you don't have to perform DNS
-+  lookups and worry about IP addresses? Where you don't have to start timers
-+  to monitor the continuous existence of peer sockets? And yet without the
-+  downsides of that socket type, such as the risk of lingering inodes?
-+
-+  Welcome to the Transparent Inter Process Communication service, TIPC in short,
-+  which gives you all of this, and a lot more.
-+
-+- Service Addressing
-+
-+  A fundamental concept in TIPC is that of Service Addressing which makes it
-+  possible for a programmer to chose his own address, bind it to a server
-+  socket and let client programs use only that address for sending messages.
-+
-+- Service Tracking
-+
-+  A client wanting to wait for the availability of a server, uses the Service
-+  Tracking mechanism to subscribe for binding and unbinding/close events for
-+  sockets with the associated service address.
-+
-+  The service tracking mechanism can also be used for Cluster Topology Tracking,
-+  i.e., subscribing for availability/non-availability of cluster nodes.
-+
-+  Likewise, the service tracking mechanism can be used for Cluster Connectivity
-+  Tracking, i.e., subscribing for up/down events for individual links between
-+  cluster nodes.
-+
-+- Transmission Modes
-+
-+  Using a service address, a client can send datagram messages to a server socket.
-+
-+  Using the same address type, it can establish a connection towards an accepting
-+  server socket.
-+
-+  It can also use a service address to create and join a Communication Group,
-+  which is the TIPC manifestation of a brokerless message bus.
-+
-+  Multicast with very good performance and scalability is available both in
-+  datagram mode and in communication group mode.
-+
-+- Inter Node Links
-+
-+  Communication between any two nodes in a cluster is maintained by one or two
-+  Inter Node Links, which both guarantee data traffic integrity and monitor
-+  the peer node's availability.
-+
-+- Cluster Scalability
-+
-+  By applying the Overlapping Ring Monitoring algorithm on the inter node links
-+  it is possible to scale TIPC clusters up to 1000 nodes with a maintained
-+  neighbor failure discovery time of 1-2 seconds. For smaller clusters this
-+  time can be made much shorter.
-+
-+- Neighbor Discovery
-+
-+  Neighbor Node Discovery in the cluster is done by Ethernet broadcast or UDP
-+  multicast, when any of those services are available. If not, configured peer
-+  IP addresses can be used.
-+
-+- Configuration
-+
-+  When running TIPC in single node mode no configuration whatsoever is needed.
-+  When running in cluster mode TIPC must as a minimum be given a node address
-+  (before Linux 4.17) and told which interface to attach to. The "tipc"
-+  configuration tool makes is possible to add and maintain many more
-+  configuration parameters.
-+
-+- Performance
-+
-+  TIPC message transfer latency times are better than in any other known protocol.
-+  Maximal byte throughput for inter-node connections is still somewhat lower than
-+  for TCP, while they are superior for intra-node and inter-container throughput
-+  on the same host.
-+
-+- Language Support
-+
-+  The TIPC user API has support for C, Python, Perl, Ruby, D and Go.
-+
-+More Information
-+----------------
-+
-+- How to set up TIPC:
-+
-+  http://tipc.io/getting_started.html
-+
-+- How to program with TIPC:
-+
-+  http://tipc.io/programming.html
-+
-+- How to contribute to TIPC:
-+
-+- http://tipc.io/contacts.html
-+
-+- More details about TIPC specification:
-+
-+  http://tipc.io/protocol.html
-+
-+
-+Implementation
-+==============
-+
-+TIPC is implemented as a kernel module in net/tipc/ directory.
- 
- TIPC Base Types
- ---------------
--- 
-2.27.0
-
-
-
-_______________________________________________
-tipc-discussion mailing list
-tipc-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+CgpPbiA2LzE1LzIxIDU6NDUgQU0sIG1lbmdsb25nOC5kb25nQGdtYWlsLmNvbSB3cm90ZToKPiBG
+cm9tOiBNZW5nbG9uZyBEb25nIDxkb25nLm1lbmdsb25nQHp0ZS5jb20uY24+Cj4KPiBGQl9NVFUg
+aXMgdXNlZCBpbiAndGlwY19tc2dfYnVpbGQoKScgdG8gYWxsb2Mgc21hbGxlciBza2Igd2hlbiBt
+ZW1vcnkKPiBhbGxvY2F0aW9uIGZhaWxzLCB3aGljaCBjYW4gYXZvaWQgdW5uZWNlc3Nhcnkgc2Vu
+ZGluZyBmYWlsdXJlcy4KPgo+IFRoZSB2YWx1ZSBvZiBGQl9NVFUgbm93IGlzIDM3NDQsIGFuZCB0
+aGUgZGF0YSBzaXplIHdpbGwgYmU6Cj4KPiAgICAoMzc0NCArIFNLQl9EQVRBX0FMSUdOKHNpemVv
+ZihzdHJ1Y3Qgc2tiX3NoYXJlZF9pbmZvKSkgKyBcCj4gICAgICBTS0JfREFUQV9BTElHTihCVUZf
+SEVBRFJPT00gKyBCVUZfVEFJTFJPT00gKyAzKSkKPgo+IHdoaWNoIGlzIGxhcmdlciB0aGFuIG9u
+ZSBwYWdlKDQwOTYpLCBhbmQgdHdvIHBhZ2VzIHdpbGwgYmUgYWxsb2NhdGVkLgo+Cj4gVG8gYXZv
+aWQgaXQsIHJlcGxhY2UgJzM3NDQnIHdpdGggYSBjYWxjdWxhdGlvbjoKPgo+IEZCX01UVT0oUEFH
+RV9TSVpFIC0gXAo+IAkJU0tCX0RBVEFfQUxJR04oc2l6ZW9mKHN0cnVjdCBza2Jfc2hhcmVkX2lu
+Zm8pKSAtCVwKPiAJCVNLQl9EQVRBX0FMSUdOKEJVRl9IRUFEUk9PTSArIEJVRl9UQUlMUk9PTSAr
+CQlcCj4gCQkJICAgICAgIEVIRFJfTUFYX1NJWkUpCQkJCVwKPiAJCSkKPgo+IHdoaWNoIGlzIGZv
+ciBjcnlwdG8gc2tiLCBhbmQ6Cj4KPiBGQl9NVFVfTE9DQUw9KFBBR0VfU0laRSAtIFNLQl9EQVRB
+X0FMSUdOKEJVRl9IRUFEUk9PTSkgLQlcCj4gCQkgICAgICBTS0JfREFUQV9BTElHTihzaXplb2Yo
+c3RydWN0IHNrYl9zaGFyZWRfaW5mbykpCVwKPiAJCSAgICAgICkKCj4gd2hpY2ggaXMgZm9yIGxv
+Y2FsIG1lc3NhZ2UuCj4KPiBBbmQgQlVGX0hFQURST09NIGlzIGRlZmluZWQgYXMgbm9uLWNyeXB0
+byB2ZXJzaW9uLgo+Cj4gV2hhdCdzIG1vcmUsIGFsbG9jX3NrYl9mY2xvbmUoKSB3aWxsIGNhbGwg
+U0tCX0RBVEFfQUxJR04gZm9yIGRhdGEgc2l6ZSwKPiBhbmQgaXQncyBub3QgbmVjZXNzYXJ5IHRv
+IG1ha2UgYWxpZ25tZW50IGZvciBidWZfc2l6ZSBpbgo+IHRpcGNfYnVmX2FjcXVpcmUoKS4gU28s
+IGp1c3QgcmVtb3ZlIGl0Lgo+Cj4gRml4ZXM6IDRjOTRjYzJkM2Q1NyAoInRpcGM6IGZhbGwgYmFj
+ayB0byBzbWFsbGVyIE1UVSBpZiBhbGxvY2F0aW9uIG9mIGxvY2FsIHNlbmQgc2tiIGZhaWxzIikK
+Pgo+IFNpZ25lZC1vZmYtYnk6IE1lbmdsb25nIERvbmcgPGRvbmcubWVuZ2xvbmdAenRlLmNvbS5j
+bj4KPiAtLS0KPiBWMzoKPiAtIHNwbGl0IHRpcGNfbXNnX2J1aWxkIHRvIHRpcGNfbXNnX2J1aWxk
+IGFuZCB0aXBjX21zZ19mcmFnCj4gLSBpbnRyb2R1Y2UgdGlwY19idWZfYWNxdWlyZV9mbGV4LCB3
+aGljaCBpcyBhYmxlIHRvIGFsbG9jIHNrYiBmb3IKPiAgICBsb2NhbCBtZXNzYWdlCj4gLSBhZGQg
+dGhlIHZhcmlhdGUgJ2xvY2FsJyBpbiB0aXBjX21zZ19idWlsZCB0byBjaGVjayBpZiB0aGlzIGlz
+IGEKPiAgICBsb2NhbCBtZXNzYWdlLgo+Cj4gVjI6Cj4gLSBkZWZpbmUgRkJfTVRVIGluIG1zZy5j
+IGluc3RlYWQgb2YgaW50cm9kdWNlIGEgbmV3IGZpbGUKPiAtIHJlbW92ZSBhbGlnbiBmb3IgYnVm
+X3NpemUgaW4gdGlwY19idWZfYWNxdWlyZSgpCj4gLS0tCj4gICBuZXQvdGlwYy9iY2FzdC5jIHwg
+ICAyICstCj4gICBuZXQvdGlwYy9tc2cuYyAgIHwgMTY4ICsrKysrKysrKysrKysrKysrKysrKysr
+KysrKysrLS0tLS0tLS0tLS0tLS0tLS0tCj4gICBuZXQvdGlwYy9tc2cuaCAgIHwgICAzICstCj4g
+ICAzIGZpbGVzIGNoYW5nZWQsIDEwOCBpbnNlcnRpb25zKCspLCA2NSBkZWxldGlvbnMoLSkKPgo+
+IGRpZmYgLS1naXQgYS9uZXQvdGlwYy9iY2FzdC5jIGIvbmV0L3RpcGMvYmNhc3QuYwo+IGluZGV4
+IGQ0YmVjYTg5NTk5Mi4uOWRhYWNlOTU0MmY0IDEwMDY0NAo+IC0tLSBhL25ldC90aXBjL2JjYXN0
+LmMKPiArKysgYi9uZXQvdGlwYy9iY2FzdC5jCj4gQEAgLTY5OSw3ICs2OTksNyBAQCBpbnQgdGlw
+Y19iY2FzdF9pbml0KHN0cnVjdCBuZXQgKm5ldCkKPiAgIAlzcGluX2xvY2tfaW5pdCgmdGlwY19u
+ZXQobmV0KS0+YmNsb2NrKTsKPiAgIAo+ICAgCWlmICghdGlwY19saW5rX2JjX2NyZWF0ZShuZXQs
+IDAsIDAsIE5VTEwsCj4gLQkJCQkgRkJfTVRVLAo+ICsJCQkJIGZiX210dSwKPiAgIAkJCQkgQkNM
+SU5LX1dJTl9ERUZBVUxULAo+ICAgCQkJCSBCQ0xJTktfV0lOX0RFRkFVTFQsCj4gICAJCQkJIDAs
+Cj4gZGlmZiAtLWdpdCBhL25ldC90aXBjL21zZy5jIGIvbmV0L3RpcGMvbXNnLmMKPiBpbmRleCBj
+ZTZhYjU0ODIyZDguLjM0OTEwN2UwOGQ2ZiAxMDA2NDQKPiAtLS0gYS9uZXQvdGlwYy9tc2cuYwo+
+ICsrKyBiL25ldC90aXBjL21zZy5jCj4gQEAgLTQyLDE5ICs0Miw0NiBAQAo+ICAgI2luY2x1ZGUg
+ImNyeXB0by5oIgo+ICAgCj4gICAjZGVmaW5lIE1BWF9GT1JXQVJEX1NJWkUgMTAyNAo+ICsjZGVm
+aW5lIEJVRl9IRUFEUk9PTSBBTElHTihMTF9NQVhfSEVBREVSICsgNDgsIDE2KQo+ICsKPiAgICNp
+ZmRlZiBDT05GSUdfVElQQ19DUllQVE8KPiAtI2RlZmluZSBCVUZfSEVBRFJPT00gQUxJR04oKChM
+TF9NQVhfSEVBREVSICsgNDgpICsgRUhEUl9NQVhfU0laRSksIDE2KQo+IC0jZGVmaW5lIEJVRl9U
+QUlMUk9PTSAoVElQQ19BRVNfR0NNX1RBR19TSVpFKQo+ICsjZGVmaW5lIEJVRl9UQUlMUk9PTSBU
+SVBDX0FFU19HQ01fVEFHX1NJWkUKPiAgICNlbHNlCj4gLSNkZWZpbmUgQlVGX0hFQURST09NIChM
+TF9NQVhfSEVBREVSICsgNDgpCj4gLSNkZWZpbmUgQlVGX1RBSUxST09NIDE2Cj4gKyNkZWZpbmUg
+RUhEUl9NQVhfU0laRSAwCj4gKyNkZWZpbmUgQlVGX1RBSUxST09NICAwCj4gICAjZW5kaWYKPiAg
+IApXZSBuZWVkIGVpdGhlciBhIGNvbW1lbnQgb3IgYSBuYW1pbmcgdGhhdCBleHBsYWlucyB3aHkg
+d2UgYXJlIGRvaW5nIGFsbCAKdGhpcywgaS5lLiwgdGhhdCB3ZSB3YW50IGEgYnVmZmVyIHRoYXQg
+Zml0cyB3aXRoaW4gb25lIHBhZ2UuCj4gKyNkZWZpbmUgRkJfTVRVIChQQUdFX1NJWkUgLSBcCj4g
+KwkJU0tCX0RBVEFfQUxJR04oc2l6ZW9mKHN0cnVjdCBza2Jfc2hhcmVkX2luZm8pKSAtCVwKPiAr
+CQlTS0JfREFUQV9BTElHTihCVUZfSEVBRFJPT00gKyBCVUZfVEFJTFJPT00gKwkJXAo+ICsJCQkg
+ICAgICAgRUhEUl9NQVhfU0laRSkJCQkJXAo+ICsJCSkKPiArCj4gKyNkZWZpbmUgRkJfTVRVX0xP
+Q0FMIChQQUdFX1NJWkUgLSBTS0JfREFUQV9BTElHTihCVUZfSEVBRFJPT00pIC0JXAo+ICsJCSAg
+ICAgIFNLQl9EQVRBX0FMSUdOKHNpemVvZihzdHJ1Y3Qgc2tiX3NoYXJlZF9pbmZvKSkJXAo+ICsJ
+CSAgICAgICkKPiArCj4gK2NvbnN0IGludCBmYl9tdHUgPSBGQl9NVFU7Cj4gKwo+ICAgc3RhdGlj
+IHVuc2lnbmVkIGludCBhbGlnbih1bnNpZ25lZCBpbnQgaSkKPiAgIHsKPiAgIAlyZXR1cm4gKGkg
+KyAzKSAmIH4zdTsKPiAgIH0KVGhpcyBvbmUgc2hvdWxkIGJlIGNvbXBsZXRlbHkgcmVwbGFjZWQg
+d2l0aCB0aGUgQUxJR04gbWFjcm8sIG9yIG1heWJlIHdlIApzaG91bGQgZGVmaW5lIG91ciBvd24g
+QUxJR040KCkgbWFjcm8gYmFzZWQgb24gdGhhdCwgdW5ubGVzcyB0aGVyZSAKYWxyZWFkeSBpcyBz
+b21lLgpCdXQgdGhhdCBzaG91bGQgYmUgYSBzZXBhcmF0ZSBwYXRjaC4KPiAgIAo+ICtzdGF0aWMg
+aW5saW5lIHN0cnVjdCBza19idWZmICp0aXBjX2FsbG9jX3NrYihpbnQgaGVhZHJvb20sIGludCB0
+YWlscm9vbSwKPiArCQkJCQkgICAgIGludCBzaXplLCBnZnBfdCBnZnApCj4gK3sKPiArCXN0cnVj
+dCBza19idWZmICpza2I7Cj4gKwo+ICsJc2tiID0gYWxsb2Nfc2tiX2ZjbG9uZShzaXplICsgaGVh
+ZHJvb20gKyB0YWlscm9vbSwgZ2ZwKTsKPiArCWlmIChza2IpIHsKPiArCQlza2JfcmVzZXJ2ZShz
+a2IsIGhlYWRyb29tKTsKPiArCQlza2JfcHV0KHNrYiwgc2l6ZSk7Cj4gKwkJc2tiLT5uZXh0ID0g
+TlVMTDsKPiArCX0KPiArCXJldHVybiBza2I7Cj4gK30KPiArCj4gICAvKioKPiAgICAqIHRpcGNf
+YnVmX2FjcXVpcmUgLSBjcmVhdGVzIGEgVElQQyBtZXNzYWdlIGJ1ZmZlcgo+ICAgICogQHNpemU6
+IG1lc3NhZ2Ugc2l6ZSAoaW5jbHVkaW5nIFRJUEMgaGVhZGVyKQo+IEBAIC02OCwyMCArOTUsMTcg
+QEAgc3RhdGljIHVuc2lnbmVkIGludCBhbGlnbih1bnNpZ25lZCBpbnQgaSkKPiAgICAqLwo+ICAg
+c3RydWN0IHNrX2J1ZmYgKnRpcGNfYnVmX2FjcXVpcmUodTMyIHNpemUsIGdmcF90IGdmcCkKPiAg
+IHsKPiAtCXN0cnVjdCBza19idWZmICpza2I7Cj4gLSNpZmRlZiBDT05GSUdfVElQQ19DUllQVE8K
+PiAtCXVuc2lnbmVkIGludCBidWZfc2l6ZSA9IChCVUZfSEVBRFJPT00gKyBzaXplICsgQlVGX1RB
+SUxST09NICsgMykgJiB+M3U7Cj4gLSNlbHNlCj4gLQl1bnNpZ25lZCBpbnQgYnVmX3NpemUgPSAo
+QlVGX0hFQURST09NICsgc2l6ZSArIDMpICYgfjN1Owo+IC0jZW5kaWYKPiArCXJldHVybiB0aXBj
+X2FsbG9jX3NrYihCVUZfSEVBRFJPT00gKyBFSERSX01BWF9TSVpFLAo+ICsJCQkgICAgICBCVUZf
+VEFJTFJPT00sIHNpemUsIGdmcCk7Cj4gK30KPiAgIApTbyBmYXIsIHNvIGdvb2QuCj4gLQlza2Ig
+PSBhbGxvY19za2JfZmNsb25lKGJ1Zl9zaXplLCBnZnApOwo+IC0JaWYgKHNrYikgewo+IC0JCXNr
+Yl9yZXNlcnZlKHNrYiwgQlVGX0hFQURST09NKTsKPiAtCQlza2JfcHV0KHNrYiwgc2l6ZSk7Cj4g
+LQkJc2tiLT5uZXh0ID0gTlVMTDsKPiAtCX0KPiAtCXJldHVybiBza2IKCj4gOwo+ICtzdGF0aWMg
+c3RydWN0IHNrX2J1ZmYgKnRpcGNfYnVmX2FjcXVpcmVfZmxleCh1MzIgc2l6ZSwgYm9vbCBsb2Nh
+bCwKPiArCQkJCQkgICAgIGdmcF90IGdmcCkKSSBmZWVsIHRoaXMgZnVuY3Rpb24gaXMgb3Zlcmtp
+bGwgYW5kIHdheSB0b28gaW50cnVzaXZlIGZvciBteSBjb21mb3J0LCAKZXNwZWNpYWxseSBmb3Ig
+c3VjaCBhIG1hcmdpbmFsIGZpeCB0aGlzIGlzIG1lYW50IHRvIGJlLgpXZSBzdXJlIG1heSBzYXZl
+IGEgZmV3IGJ5dGVzIHdoZW4gYWxsb2NhdGluZyBsb2NhbCBidWZmZXJzLCBidXQgbW9zdCAKYnVm
+ZmVycyBhcmUgbm90IHNvIGNsb3NlIHRvIGEgcGFnZSBsaW1pdCBhIHRoYXQgaXQgd2lsbCBtYWtl
+IGFueSBkaWZmZXJlbmNlLgpBbmQgZXZlbiBpZiB3ZSBoYXBwZW4gdG8gc2F2ZSBhIHBhZ2Ugbm93
+IGFuZCB0aGVuLCBpdCBpcyBub3Qgd29ydGggaXQuCgpTdGljayB0byB0aXBjX2J1Zl9hY3F1aXJl
+KCkgd2hlcmUgaXQgaXMgdXNlZCBub3csIHNvIHdlIGRvbsK0dCBoYXZlIHRvIApjaGFuZ2UgYW55
+IG1vcmUgY29kZS4KCkJSCi8vL2pvbgoKPiArewo+ICsJaWYgKGxvY2FsKQo+ICsJCXJldHVybiB0
+aXBjX2FsbG9jX3NrYihCVUZfSEVBRFJPT00sIDAsIHNpemUsIGdmcCk7Cj4gKwllbHNlCj4gKwkJ
+cmV0dXJuIHRpcGNfYnVmX2FjcXVpcmUoc2l6ZSwgZ2ZwKTsKPiAgIH0KPiAgIAo+ICAgdm9pZCB0
+aXBjX21zZ19pbml0KHUzMiBvd25fbm9kZSwgc3RydWN0IHRpcGNfbXNnICptLCB1MzIgdXNlciwg
+dTMyIHR5cGUsCj4gQEAgLTM1NywyNiArMzgxLDEyIEBAIGludCB0aXBjX21zZ19mcmFnbWVudChz
+dHJ1Y3Qgc2tfYnVmZiAqc2tiLCBjb25zdCBzdHJ1Y3QgdGlwY19tc2cgKmhkciwKPiAgIAlyZXR1
+cm4gLUVOT01FTTsKPiAgIH0KPiAgIAo+IC0vKioKPiAtICogdGlwY19tc2dfYnVpbGQgLSBjcmVh
+dGUgYnVmZmVyIGNoYWluIGNvbnRhaW5pbmcgc3BlY2lmaWVkIGhlYWRlciBhbmQgZGF0YQo+IC0g
+KiBAbWhkcjogTWVzc2FnZSBoZWFkZXIsIHRvIGJlIHByZXBlbmRlZCB0byBkYXRhCj4gLSAqIEBt
+OiBVc2VyIG1lc3NhZ2UKPiAtICogQG9mZnNldDogYnVmZmVyIG9mZnNldCBmb3IgZnJhZ21lbnRl
+ZCBtZXNzYWdlcyAoRklYTUUpCj4gLSAqIEBkc3o6IFRvdGFsIGxlbmd0aCBvZiB1c2VyIGRhdGEK
+PiAtICogQHBrdG1heDogTWF4IHBhY2tldCBzaXplIHRoYXQgY2FuIGJlIHVzZWQKPiAtICogQGxp
+c3Q6IEJ1ZmZlciBvciBjaGFpbiBvZiBidWZmZXJzIHRvIGJlIHJldHVybmVkIHRvIGNhbGxlcgo+
+IC0gKgo+IC0gKiBOb3RlIHRoYXQgdGhlIHJlY3Vyc2l2ZSBjYWxsIHdlIGFyZSBtYWtpbmcgaGVy
+ZSBpcyBzYWZlLCBzaW5jZSBpdCBjYW4KPiAtICogbG9naWNhbGx5IGdvIG9ubHkgb25lIGZ1cnRo
+ZXIgbGV2ZWwgZG93bi4KPiAtICoKPiAtICogUmV0dXJuOiBtZXNzYWdlIGRhdGEgc2l6ZSBvciBl
+cnJubzogLUVOT01FTSwgLUVGQVVMVAo+IC0gKi8KPiAtaW50IHRpcGNfbXNnX2J1aWxkKHN0cnVj
+dCB0aXBjX21zZyAqbWhkciwgc3RydWN0IG1zZ2hkciAqbSwgaW50IG9mZnNldCwKPiAtCQkgICBp
+bnQgZHN6LCBpbnQgcGt0bWF4LCBzdHJ1Y3Qgc2tfYnVmZl9oZWFkICpsaXN0KQo+ICtzdGF0aWMg
+aW50IHRpcGNfbXNnX2ZyYWcoc3RydWN0IHRpcGNfbXNnICptaGRyLCBzdHJ1Y3QgbXNnaGRyICpt
+LCBpbnQgZHN6LAo+ICsJCQkgaW50IHBrdG1heCwgc3RydWN0IHNrX2J1ZmZfaGVhZCAqbGlzdCwK
+PiArCQkJIGJvb2wgbG9jYWwpClNhbWUgY29tbWVudCBhcyBhYm92ZS4KPiAgIHsKPiAgIAlpbnQg
+bWhzeiA9IG1zZ19oZHJfc3oobWhkcik7Cj4gICAJc3RydWN0IHRpcGNfbXNnIHBrdGhkcjsKPiAt
+CWludCBtc3ogPSBtaHN6ICsgZHN6Owo+ICAgCWludCBwa3RyZW0gPSBwa3RtYXg7Cj4gICAJc3Ry
+dWN0IHNrX2J1ZmYgKnNrYjsKPiAgIAlpbnQgZHJlbSA9IGRzejsKPiBAQCAtMzg1LDMzICszOTUs
+NiBAQCBpbnQgdGlwY19tc2dfYnVpbGQoc3RydWN0IHRpcGNfbXNnICptaGRyLCBzdHJ1Y3QgbXNn
+aGRyICptLCBpbnQgb2Zmc2V0LAo+ICAgCWludCBwa3RzejsKPiAgIAlpbnQgcmM7Cj4gICAKPiAt
+CW1zZ19zZXRfc2l6ZShtaGRyLCBtc3opOwo+IC0KPiAtCS8qIE5vIGZyYWdtZW50YXRpb24gbmVl
+ZGVkPyAqLwo+IC0JaWYgKGxpa2VseShtc3ogPD0gcGt0bWF4KSkgewo+IC0JCXNrYiA9IHRpcGNf
+YnVmX2FjcXVpcmUobXN6LCBHRlBfS0VSTkVMKTsKPiAtCj4gLQkJLyogRmFsbCBiYWNrIHRvIHNt
+YWxsZXIgTVRVIGlmIG5vZGUgbG9jYWwgbWVzc2FnZSAqLwo+IC0JCWlmICh1bmxpa2VseSghc2ti
+KSkgewo+IC0JCQlpZiAocGt0bWF4ICE9IE1BWF9NU0dfU0laRSkKPiAtCQkJCXJldHVybiAtRU5P
+TUVNOwo+IC0JCQlyYyA9IHRpcGNfbXNnX2J1aWxkKG1oZHIsIG0sIG9mZnNldCwgZHN6LCBGQl9N
+VFUsIGxpc3QpOwo+IC0JCQlpZiAocmMgIT0gZHN6KQo+IC0JCQkJcmV0dXJuIHJjOwo+IC0JCQlp
+ZiAodGlwY19tc2dfYXNzZW1ibGUobGlzdCkpCj4gLQkJCQlyZXR1cm4gZHN6Owo+IC0JCQlyZXR1
+cm4gLUVOT01FTTsKPiAtCQl9Cj4gLQkJc2tiX29ycGhhbihza2IpOwo+IC0JCV9fc2tiX3F1ZXVl
+X3RhaWwobGlzdCwgc2tiKTsKPiAtCQlza2JfY29weV90b19saW5lYXJfZGF0YShza2IsIG1oZHIs
+IG1oc3opOwo+IC0JCXBrdHBvcyA9IHNrYi0+ZGF0YSArIG1oc3o7Cj4gLQkJaWYgKGNvcHlfZnJv
+bV9pdGVyX2Z1bGwocGt0cG9zLCBkc3osICZtLT5tc2dfaXRlcikpCj4gLQkJCXJldHVybiBkc3o7
+Cj4gLQkJcmMgPSAtRUZBVUxUOwo+IC0JCWdvdG8gZXJyb3I7Cj4gLQl9Cj4gLQo+ICAgCS8qIFBy
+ZXBhcmUgcmV1c2FibGUgZnJhZ21lbnQgaGVhZGVyICovCj4gICAJdGlwY19tc2dfaW5pdChtc2df
+cHJldm5vZGUobWhkciksICZwa3RoZHIsIE1TR19GUkFHTUVOVEVSLAo+ICAgCQkgICAgICBGSVJT
+VF9GUkFHTUVOVCwgSU5UX0hfU0laRSwgbXNnX2Rlc3Rub2RlKG1oZHIpKTsKPiBAQCAtNDIwLDcg
+KzQwMyw3IEBAIGludCB0aXBjX21zZ19idWlsZChzdHJ1Y3QgdGlwY19tc2cgKm1oZHIsIHN0cnVj
+dCBtc2doZHIgKm0sIGludCBvZmZzZXQsCj4gICAJbXNnX3NldF9pbXBvcnRhbmNlKCZwa3RoZHIs
+IG1zZ19pbXBvcnRhbmNlKG1oZHIpKTsKPiAgIAo+ICAgCS8qIFByZXBhcmUgZmlyc3QgZnJhZ21l
+bnQgKi8KPiAtCXNrYiA9IHRpcGNfYnVmX2FjcXVpcmUocGt0bWF4LCBHRlBfS0VSTkVMKTsKPiAr
+CXNrYiA9IHRpcGNfYnVmX2FjcXVpcmVfZmxleChwa3RtYXgsIGxvY2FsLCBHRlBfS0VSTkVMKTsK
+PiAgIAlpZiAoIXNrYikKPiAgIAkJcmV0dXJuIC1FTk9NRU07Cj4gICAJc2tiX29ycGhhbihza2Ip
+Owo+IEBAIC00NTEsNyArNDM0LDcgQEAgaW50IHRpcGNfbXNnX2J1aWxkKHN0cnVjdCB0aXBjX21z
+ZyAqbWhkciwgc3RydWN0IG1zZ2hkciAqbSwgaW50IG9mZnNldCwKPiAgIAkJCXBrdHN6ID0gZHJl
+bSArIElOVF9IX1NJWkU7Cj4gICAJCWVsc2UKPiAgIAkJCXBrdHN6ID0gcGt0bWF4Owo+IC0JCXNr
+YiA9IHRpcGNfYnVmX2FjcXVpcmUocGt0c3osIEdGUF9LRVJORUwpOwo+ICsJCXNrYiA9IHRpcGNf
+YnVmX2FjcXVpcmVfZmxleChwa3RzeiwgbG9jYWwsIEdGUF9LRVJORUwpOwo+ICAgCQlpZiAoIXNr
+Yikgewo+ICAgCQkJcmMgPSAtRU5PTUVNOwo+ICAgCQkJZ290byBlcnJvcjsKPiBAQCAtNDc0LDYg
+KzQ1Nyw2NSBAQCBpbnQgdGlwY19tc2dfYnVpbGQoc3RydWN0IHRpcGNfbXNnICptaGRyLCBzdHJ1
+Y3QgbXNnaGRyICptLCBpbnQgb2Zmc2V0LAo+ICAgCXJldHVybiByYzsKPiAgIH0KPiAgIAo+ICsv
+KioKPiArICogdGlwY19tc2dfYnVpbGQgLSBjcmVhdGUgYnVmZmVyIGNoYWluIGNvbnRhaW5pbmcg
+c3BlY2lmaWVkIGhlYWRlciBhbmQgZGF0YQo+ICsgKiBAbWhkcjogTWVzc2FnZSBoZWFkZXIsIHRv
+IGJlIHByZXBlbmRlZCB0byBkYXRhCj4gKyAqIEBtOiBVc2VyIG1lc3NhZ2UKPiArICogQG9mZnNl
+dDogYnVmZmVyIG9mZnNldCBmb3IgZnJhZ21lbnRlZCBtZXNzYWdlcyAoRklYTUUpCj4gKyAqIEBk
+c3o6IFRvdGFsIGxlbmd0aCBvZiB1c2VyIGRhdGEKPiArICogQHBrdG1heDogTWF4IHBhY2tldCBz
+aXplIHRoYXQgY2FuIGJlIHVzZWQKPiArICogQGxpc3Q6IEJ1ZmZlciBvciBjaGFpbiBvZiBidWZm
+ZXJzIHRvIGJlIHJldHVybmVkIHRvIGNhbGxlcgo+ICsgKgo+ICsgKiBOb3RlIHRoYXQgdGhlIHJl
+Y3Vyc2l2ZSBjYWxsIHdlIGFyZSBtYWtpbmcgaGVyZSBpcyBzYWZlLCBzaW5jZSBpdCBjYW4KPiAr
+ICogbG9naWNhbGx5IGdvIG9ubHkgb25lIGZ1cnRoZXIgbGV2ZWwgZG93bi4KPiArICoKPiArICog
+UmV0dXJuOiBtZXNzYWdlIGRhdGEgc2l6ZSBvciBlcnJubzogLUVOT01FTSwgLUVGQVVMVAo+ICsg
+Ki8KPiAraW50IHRpcGNfbXNnX2J1aWxkKHN0cnVjdCB0aXBjX21zZyAqbWhkciwgc3RydWN0IG1z
+Z2hkciAqbSwgaW50IG9mZnNldCwKPiArCQkgICBpbnQgZHN6LCBpbnQgcGt0bWF4LCBzdHJ1Y3Qg
+c2tfYnVmZl9oZWFkICpsaXN0KQo+ICt7Cj4gKwlpbnQgbWhzeiA9IG1zZ19oZHJfc3oobWhkcik7
+Cj4gKwlpbnQgbXN6ID0gbWhzeiArIGRzejsKPiArCXN0cnVjdCBza19idWZmICpza2I7Cj4gKwli
+b29sIGxvY2FsID0gZmFsc2U7Cj4gKwljaGFyICpwa3Rwb3M7Cj4gKwlpbnQgcmM7Cj4gKwo+ICsJ
+bXNnX3NldF9zaXplKG1oZHIsIG1zeik7Cj4gKwlpZiAocGt0bWF4ID09IE1BWF9NU0dfU0laRSkK
+PiArCQlsb2NhbCA9IHRydWU7Cj4gKwo+ICsJLyogRnJhZ21lbnRhdGlvbiBuZWVkZWQgKi8KPiAr
+CWlmICh1bmxpa2VseShtc3ogPD0gcGt0bWF4KSkKPiArCQlyZXR1cm4gdGlwY19tc2dfZnJhZyht
+aGRyLCBtLCBkc3osIHBrdG1heCwgbGlzdCwgbG9jYWwpOwo+ICsKPiArCXNrYiA9IHRpcGNfYnVm
+X2FjcXVpcmVfZmxleChtc3osIGxvY2FsLCBHRlBfS0VSTkVMKTsKPiArCj4gKwkvKiBGYWxsIGJh
+Y2sgdG8gc21hbGxlciBNVFUgaWYgbm9kZSBsb2NhbCBtZXNzYWdlICovCj4gKwlpZiAodW5saWtl
+bHkoIXNrYikpCj4gKwkJZ290byB0cnlfZnJhZzsKPiArCj4gKwlza2Jfb3JwaGFuKHNrYik7Cj4g
+Kwlza2JfY29weV90b19saW5lYXJfZGF0YShza2IsIG1oZHIsIG1oc3opOwo+ICsJcGt0cG9zID0g
+c2tiLT5kYXRhICsgbWhzejsKPiArCWlmIChjb3B5X2Zyb21faXRlcl9mdWxsKHBrdHBvcywgZHN6
+LCAmbS0+bXNnX2l0ZXIpKSB7Cj4gKwkJX19za2JfcXVldWVfdGFpbChsaXN0LCBza2IpOwo+ICsJ
+CXJldHVybiBkc3o7Cj4gKwl9Cj4gKwlfX3NrYl9xdWV1ZV9oZWFkX2luaXQobGlzdCk7Cj4gKwly
+ZXR1cm4gLUVGQVVMVDsKPiArCj4gK3RyeV9mcmFnOgo+ICsJaWYgKCFsb2NhbCkKPiArCQlyZXR1
+cm4gLUVOT01FTTsKPiArCXJjID0gdGlwY19tc2dfZnJhZyhtaGRyLCBtLCBkc3osIEZCX01UVV9M
+T0NBTCwgbGlzdCwgdHJ1ZSk7Cj4gKwlpZiAocmMgIT0gZHN6KQo+ICsJCXJldHVybiByYzsKPiAr
+CWlmICh0aXBjX21zZ19hc3NlbWJsZShsaXN0KSkKPiArCQlyZXR1cm4gZHN6Owo+ICsJcmV0dXJu
+IC1FTk9NRU07Cj4gK30KPiArCj4gICAvKioKPiAgICAqIHRpcGNfbXNnX2J1bmRsZSAtIEFwcGVu
+ZCBjb250ZW50cyBvZiBhIGJ1ZmZlciB0byB0YWlsIG9mIGFuIGV4aXN0aW5nIG9uZQo+ICAgICog
+QGJza2I6IHRoZSBidW5kbGUgYnVmZmVyIHRvIGFwcGVuZCB0bwo+IGRpZmYgLS1naXQgYS9uZXQv
+dGlwYy9tc2cuaCBiL25ldC90aXBjL21zZy5oCj4gaW5kZXggNWQ2NDU5NmJhOTg3Li4yYzIxNDY5
+MTAzN2MgMTAwNjQ0Cj4gLS0tIGEvbmV0L3RpcGMvbXNnLmgKPiArKysgYi9uZXQvdGlwYy9tc2cu
+aAo+IEBAIC05OSw5ICs5OSwxMCBAQCBzdHJ1Y3QgcGxpc3Q7Cj4gICAjZGVmaW5lIE1BWF9IX1NJ
+WkUgICAgICAgICAgICAgICAgNjAJLyogTGFyZ2VzdCBwb3NzaWJsZSBUSVBDIGhlYWRlciBzaXpl
+ICovCj4gICAKPiAgICNkZWZpbmUgTUFYX01TR19TSVpFIChNQVhfSF9TSVpFICsgVElQQ19NQVhf
+VVNFUl9NU0dfU0laRSkKPiAtI2RlZmluZSBGQl9NVFUgICAgICAgICAgICAgICAgICAzNzQ0Cj4g
+ICAjZGVmaW5lIFRJUENfTUVESUFfSU5GT19PRkZTRVQJNQo+ICAgCj4gK2V4dGVybiBjb25zdCBp
+bnQgZmJfbXR1Owo+ICsKPiAgIHN0cnVjdCB0aXBjX3NrYl9jYiB7Cj4gICAJdW5pb24gewo+ICAg
+CQlzdHJ1Y3QgewoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwp0aXBjLWRpc2N1c3Npb24gbWFpbGluZyBsaXN0CnRpcGMtZGlzY3Vzc2lvbkBsaXN0cy5z
+b3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlzdGlu
+Zm8vdGlwYy1kaXNjdXNzaW9uCg==
