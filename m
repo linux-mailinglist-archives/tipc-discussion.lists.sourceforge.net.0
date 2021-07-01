@@ -2,100 +2,90 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A78DC3B8B20
-	for <lists+tipc-discussion@lfdr.de>; Thu,  1 Jul 2021 02:18:48 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41BD83B8B25
+	for <lists+tipc-discussion@lfdr.de>; Thu,  1 Jul 2021 02:21:38 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1lykPi-0002yZ-Hi; Thu, 01 Jul 2021 00:18:42 +0000
+	id 1lykSS-0003Kz-Er; Thu, 01 Jul 2021 00:21:32 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <lucien.xin@gmail.com>) id 1lykPf-0002yR-W8
- for tipc-discussion@lists.sourceforge.net; Thu, 01 Jul 2021 00:18:40 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ (envelope-from <lucien.xin@gmail.com>) id 1lykSQ-0003Ks-MT
+ for tipc-discussion@lists.sourceforge.net; Thu, 01 Jul 2021 00:21:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
  Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=SBtwJKgc0T+2dOTNszlDoLaX2IUTZ6r/oUir5NyFDqs=; b=FWim2vf+6Y0g6zk+u0lLWxdvBw
- wWLRy9ymP/yod0Ks+eY06MtMICVP99ihJ8pNBA2s5F593MwEgz4zKi3eqHxhxJLxP0YpCtEGvcDzr
- WOo92J5FaTvcvFY1fXy4rW/5meQETFHMrada0E2/qQsyIl3kvYUmFkhGCpARlYH0dsME=;
+ bh=krrl6vl2jqjd1n9iCvsbKYFIC3+csOxVLKihFN5nFS0=; b=PK6S2nEtKtuGRArhOduZd49RHV
+ A58UWAiFRq9rAH4B6QThAX0JW/oInCTvyZUA/xMqbkXkXR6MDgIcuGLhFMrrBStxZNXCo+j87Apg4
+ mre5zDFvIqzSa0zil7yLXRqPtb5wSrKB9s2RQxvcolO0qh2KBik+HRI4hkgbeHACjqTg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:To:From:
  Sender:Reply-To:Cc:Content-Type:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=SBtwJKgc0T+2dOTNszlDoLaX2IUTZ6r/oUir5NyFDqs=; b=n
- J6LrV4jZrqg50tOYYjjj7/5mb1+K1eXC6f1HQzwvy2qjK+Wyuy3o6gXrrIYztJ8xbjqLDi3DRVGiX
- wjexmoNnhwBajb51rH/cKNupd1YzkNWGmBRC/gw2BDwniaAqFboOxm+Pxdrbh0dewio8tw8NxebhO
- sAyT+o33rssfvyEM=;
-Received: from mail-wm1-f47.google.com ([209.85.128.47])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ List-Owner:List-Archive; bh=krrl6vl2jqjd1n9iCvsbKYFIC3+csOxVLKihFN5nFS0=; b=i
+ 7Gt9Il6Wx7fo2Qn09zQcLzYFGKXfaQ1dp5CSlQkCWpa+h1iJfLNximKH5uK5tCXRlEEloo2iDFORS
+ fljhoCbk+m3Ddx/MDr+Z1jtP2jTy+pfKdn7dQBu6bpj562CbF+OzBbzzokkvsP3SPrITbCwHzWMo0
+ RN+tJWAQroaaTrdI=;
+Received: from mail-wr1-f46.google.com ([209.85.221.46])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
- id 1lykPV-0006ta-3d
- for tipc-discussion@lists.sourceforge.net; Thu, 01 Jul 2021 00:18:39 +0000
-Received: by mail-wm1-f47.google.com with SMTP id
- p10-20020a05600c430ab02901df57d735f7so5628273wme.3
+ id 1lykSP-005KHl-1e
+ for tipc-discussion@lists.sourceforge.net; Thu, 01 Jul 2021 00:21:30 +0000
+Received: by mail-wr1-f46.google.com with SMTP id l8so5743679wry.13
  for <tipc-discussion@lists.sourceforge.net>;
- Wed, 30 Jun 2021 17:18:29 -0700 (PDT)
+ Wed, 30 Jun 2021 17:21:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=SBtwJKgc0T+2dOTNszlDoLaX2IUTZ6r/oUir5NyFDqs=;
- b=NgxfzqpIKr5S62MlJPBAm9TKS0yZIBo4rrsx+wx1JwXLgjUvXzDwQJgLckwL0wFEHN
- RYd95r9e2lar4a6VYXRka4PwGJibgINq2euNF3ShvXKDtAUD9SrUVjZY16sdnEwvF8kL
- tOlzHkGIHPBWhmHN5i28ZX1GQQmqasTws6Qtt0bj2lf3zcw1eQGG7BhE5Tck8HN9FRtP
- IAqh/3CQRCMpB8UuJoa1ZOwImbc7PMzRsvsL32TY7tYF9HjcxOcDAZkB0r/nyY9xzXsZ
- jjuHSCUFrNsmFehFVqXlAMXKi6TgieZtCSX9goC1AUJYvgeVx4f2lkwpeq/zEkUeu00v
- PcMA==
+ bh=krrl6vl2jqjd1n9iCvsbKYFIC3+csOxVLKihFN5nFS0=;
+ b=s6lm6BW9SiEaRJPwn+aKwaf2ViqKkZJebcN/0GFEdtx6sCOCPfS9D3HTfpROzzdZO0
+ +JC601NslUAVes+gqbhbkD6htb81TkONs9O6hlFeWZzDT5nFgtbP5Ffz7uPmPTMwm/9f
+ fUu16Cy5AJhJgsWSF3+V1flo/PQNRmvtH4zFGqwiB/s4NzSBswZstqU/6hUDLMHVTc7a
+ uo4D+ojqlj99ZKZrPjBzlJkTTyVQ1zol3cX5DLGXxIWrKAsNzvxWQp6gzqHFpjlidp+M
+ HDlmTeB6U4v6Cn/hqUeCPuDeFvdEVkkXwvCAOSyM901soiIxypHqr/3eLjoJLP6gJFnO
+ 2vBg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=SBtwJKgc0T+2dOTNszlDoLaX2IUTZ6r/oUir5NyFDqs=;
- b=S4fSoMeDxrWHXlD7tpZ9B0JSXBCcVyYJkrXB/7skpo/dM2rDlwDamFh6XaP/VVtWwD
- zBNEMa+eo7y8xe7h4cXuryEY7VJF0fbPS+zTTa/H6OHK9vieXHAQn/IigpFwafJ7MNsA
- /Pyx9d/ZPvU9a5WvhAzomxbliJLRr3F10H9rlT3qO1i3qnLVX1+mfhsVR5tvlmyuvn2X
- lCj/ba36usUtDtPle5IDx/t3F1B+rBMuGsijdKJ6mbtYZ0XklNZTZ8rwtimHOmiaZ4qn
- I+kLoYdIo+76yTdDlIK+oEazylgT80SifPL12AcwUYeeiaE/nams9/vhreHP0gZNYJXk
- vyzg==
-X-Gm-Message-State: AOAM5308jA7glN7aDK3JpE6nM8EegnR5OTBlmViAsoUgqJeaqlInf1cr
- r34qEJqFkmpI/TedH40CJ3P8Gg3cKjf83g==
-X-Google-Smtp-Source: ABdhPJzS3duIbKQHVT0j5Qh46XCZi3OqW8a1+2CS0IeAiYsSHgYjl4kd+D+JTMRCQMSQuhNuirr4wA==
-X-Received: by 2002:a05:600c:3b8a:: with SMTP id
- n10mr40708656wms.123.1625098702688; 
- Wed, 30 Jun 2021 17:18:22 -0700 (PDT)
+ bh=krrl6vl2jqjd1n9iCvsbKYFIC3+csOxVLKihFN5nFS0=;
+ b=lOJx9MnnHbMdsDNFrIf518p3MgHLqAK+w6mqPj0XsYFTVwHy7OIuf4Taaqb79u/sJN
+ l3zMgR3Gw4cYg6disGIqW3aNEfGWrQvAty8Xz66l0NXwblooBPnG6LBnamdcZ9U/DdZk
+ Ft6/dDqmmrx2q2mByo5tG0Agxzn/ZXicANILWTpfGB89/jPMZiXpvF6WkdTafzx0EgYn
+ rXD4h34+D+6xSHaem6fWe6uQ9HdfQQt4Z92KFt6lAX8ZzxCuevLQ/SPeDwIZ7f9/h6T6
+ K6xgENv3uWarc38rC4sKa1bC+IdqyqyuWll41Sb8U/DYLPfY223Z+o+nK+6B7Z2VOqnI
+ +wsw==
+X-Gm-Message-State: AOAM530vnv5gmMsoklg/17Aph2fxIVh81WjxUjLJn21KtFJbOj3deAAP
+ hd/fKEYwwre0kGRFbT6acuWwswWaqwkqYg==
+X-Google-Smtp-Source: ABdhPJwxVNFtdKv88c7emqg1/SS2X6yzjWKkHD3oid4kcE+ojVte5S68gfGgWN9/4I1zuzPWYeAaIw==
+X-Received: by 2002:adf:f54c:: with SMTP id j12mr26385040wrp.109.1625098882692; 
+ Wed, 30 Jun 2021 17:21:22 -0700 (PDT)
 Received: from localhost (nat-pool-bos-t.redhat.com. [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id l64sm7739822wmf.23.2021.06.30.17.18.22
+ by smtp.gmail.com with ESMTPSA id 24sm7525517wmi.35.2021.06.30.17.21.22
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 30 Jun 2021 17:18:22 -0700 (PDT)
+ Wed, 30 Jun 2021 17:21:22 -0700 (PDT)
 From: Xin Long <lucien.xin@gmail.com>
-To: network dev <netdev@vger.kernel.org>, davem@davemloft.net, kuba@kernel.org,
- Jon Maloy <jmaloy@redhat.com>, tipc-discussion@lists.sourceforge.net
-Date: Wed, 30 Jun 2021 20:18:20 -0400
-Message-Id: <092c608f3bcf0e5db62cfe19379285c29cb37a43.1625098700.git.lucien.xin@gmail.com>
+To: Jon Maloy <jmaloy@redhat.com>, Erin Shepherd <erin.shepherd@e43.eu>,
+ tipc-discussion@lists.sourceforge.net
+Date: Wed, 30 Jun 2021 20:21:21 -0400
+Message-Id: <8b84716568d37175790a2fe738a3bdf9de5914cb.1625098881.git.lucien.xin@gmail.com>
 X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
-X-Spam-Score: 0.6 (/)
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
  (lucien.xin[at]gmail.com)
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: tipc.io]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.47 listed in wl.mailspike.net]
+ [209.85.221.46 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.128.47 listed in list.dnswl.org]
- 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
- blocklist [URIs: tipc.io]
- 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
- blocklist [URIs: tipc.io]
+ trust [209.85.221.46 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -103,9 +93,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1lykPV-0006ta-3d
-Subject: [tipc-discussion] [PATCH net-next] Documentation: add more details
- in tipc.rst
+X-Headers-End: 1lykSP-005KHl-1e
+Subject: [tipc-discussion] [PATCHv2 net-next] tipc: keep the skb in rcv
+ queue until the whole data is read
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -121,149 +111,103 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-kernel-doc for TIPC is too simple, we need to add more information for it.
+Currently, when userspace reads a datagram with a buffer that is
+smaller than this datagram, the data will be truncated and only
+part of it can be received by users. It doesn't seem right that
+users don't know the datagram size and have to use a huge buffer
+to read it to avoid the truncation.
 
-This patch is to extend the abstract, and add the Features and Links items.
+This patch to fix it by keeping the skb in rcv queue until the
+whole data is read by users. Only the last msg of the datagram
+will be marked with MSG_EOR, just as TCP/SCTP does.
+
+Note that this will work as above only when MSG_EOR is set in the
+flags parameter of recvmsg(), so that it won't break any old user
+applications.
+
+v1->v2:
+  - To enable this only when the flags with MSG_EOR is passed into
+    recvmsg() to fix the compatibility isssue as Erin noticed.
 
 Signed-off-by: Xin Long <lucien.xin@gmail.com>
-Acked-by: Jon Maloy <jmaloy@redhat.com>
 ---
- Documentation/networking/tipc.rst | 121 +++++++++++++++++++++++++++++-
- 1 file changed, 118 insertions(+), 3 deletions(-)
+ net/tipc/socket.c | 36 +++++++++++++++++++++++++++---------
+ 1 file changed, 27 insertions(+), 9 deletions(-)
 
-diff --git a/Documentation/networking/tipc.rst b/Documentation/networking/tipc.rst
-index 76775f24cdc8..ab63d298cca2 100644
---- a/Documentation/networking/tipc.rst
-+++ b/Documentation/networking/tipc.rst
-@@ -4,10 +4,125 @@
- Linux Kernel TIPC
- =================
+diff --git a/net/tipc/socket.c b/net/tipc/socket.c
+index 34a97ea36cc8..9b0b311c7ec1 100644
+--- a/net/tipc/socket.c
++++ b/net/tipc/socket.c
+@@ -1880,6 +1880,7 @@ static int tipc_recvmsg(struct socket *sock, struct msghdr *m,
+ 	bool connected = !tipc_sk_type_connectionless(sk);
+ 	struct tipc_sock *tsk = tipc_sk(sk);
+ 	int rc, err, hlen, dlen, copy;
++	struct tipc_skb_cb *skb_cb;
+ 	struct sk_buff_head xmitq;
+ 	struct tipc_msg *hdr;
+ 	struct sk_buff *skb;
+@@ -1903,6 +1904,7 @@ static int tipc_recvmsg(struct socket *sock, struct msghdr *m,
+ 		if (unlikely(rc))
+ 			goto exit;
+ 		skb = skb_peek(&sk->sk_receive_queue);
++		skb_cb = TIPC_SKB_CB(skb);
+ 		hdr = buf_msg(skb);
+ 		dlen = msg_data_sz(hdr);
+ 		hlen = msg_hdr_sz(hdr);
+@@ -1922,18 +1924,33 @@ static int tipc_recvmsg(struct socket *sock, struct msghdr *m,
  
--TIPC (Transparent Inter Process Communication) is a protocol that is
--specially designed for intra-cluster communication.
-+Introduction
-+============
+ 	/* Capture data if non-error msg, otherwise just set return value */
+ 	if (likely(!err)) {
+-		copy = min_t(int, dlen, buflen);
+-		if (unlikely(copy != dlen))
+-			m->msg_flags |= MSG_TRUNC;
+-		rc = skb_copy_datagram_msg(skb, hlen, m, copy);
++		int offset = skb_cb->bytes_read;
++
++		copy = min_t(int, dlen - offset, buflen);
++		rc = skb_copy_datagram_msg(skb, hlen + offset, m, copy);
++		if (unlikely(rc))
++			goto exit;
++		if (unlikely(offset + copy < dlen)) {
++			if (flags & MSG_EOR) {
++				if (!(flags & MSG_PEEK))
++					skb_cb->bytes_read = offset + copy;
++			} else {
++				m->msg_flags |= MSG_TRUNC;
++				skb_cb->bytes_read = 0;
++			}
++		} else {
++			if (flags & MSG_EOR)
++				m->msg_flags |= MSG_EOR;
++			skb_cb->bytes_read = 0;
++		}
+ 	} else {
+ 		copy = 0;
+ 		rc = 0;
+-		if (err != TIPC_CONN_SHUTDOWN && connected && !m->msg_control)
++		if (err != TIPC_CONN_SHUTDOWN && connected && !m->msg_control) {
+ 			rc = -ECONNRESET;
++			goto exit;
++		}
+ 	}
+-	if (unlikely(rc))
+-		goto exit;
  
--For more information about TIPC, see http://tipc.sourceforge.net.
-+TIPC (Transparent Inter Process Communication) is a protocol that is specially
-+designed for intra-cluster communication. It can be configured to transmit
-+messages either on UDP or directly across Ethernet. Message delivery is
-+sequence guaranteed, loss free and flow controlled. Latency times are shorter
-+than with any other known protocol, while maximal throughput is comparable to
-+that of TCP.
-+
-+TIPC Features
-+-------------
-+
-+- Cluster wide IPC service
-+
-+  Have you ever wished you had the convenience of Unix Domain Sockets even when
-+  transmitting data between cluster nodes? Where you yourself determine the
-+  addresses you want to bind to and use? Where you don't have to perform DNS
-+  lookups and worry about IP addresses? Where you don't have to start timers
-+  to monitor the continuous existence of peer sockets? And yet without the
-+  downsides of that socket type, such as the risk of lingering inodes?
-+
-+  Welcome to the Transparent Inter Process Communication service, TIPC in short,
-+  which gives you all of this, and a lot more.
-+
-+- Service Addressing
-+
-+  A fundamental concept in TIPC is that of Service Addressing which makes it
-+  possible for a programmer to chose his own address, bind it to a server
-+  socket and let client programs use only that address for sending messages.
-+
-+- Service Tracking
-+
-+  A client wanting to wait for the availability of a server, uses the Service
-+  Tracking mechanism to subscribe for binding and unbinding/close events for
-+  sockets with the associated service address.
-+
-+  The service tracking mechanism can also be used for Cluster Topology Tracking,
-+  i.e., subscribing for availability/non-availability of cluster nodes.
-+
-+  Likewise, the service tracking mechanism can be used for Cluster Connectivity
-+  Tracking, i.e., subscribing for up/down events for individual links between
-+  cluster nodes.
-+
-+- Transmission Modes
-+
-+  Using a service address, a client can send datagram messages to a server socket.
-+
-+  Using the same address type, it can establish a connection towards an accepting
-+  server socket.
-+
-+  It can also use a service address to create and join a Communication Group,
-+  which is the TIPC manifestation of a brokerless message bus.
-+
-+  Multicast with very good performance and scalability is available both in
-+  datagram mode and in communication group mode.
-+
-+- Inter Node Links
-+
-+  Communication between any two nodes in a cluster is maintained by one or two
-+  Inter Node Links, which both guarantee data traffic integrity and monitor
-+  the peer node's availability.
-+
-+- Cluster Scalability
-+
-+  By applying the Overlapping Ring Monitoring algorithm on the inter node links
-+  it is possible to scale TIPC clusters up to 1000 nodes with a maintained
-+  neighbor failure discovery time of 1-2 seconds. For smaller clusters this
-+  time can be made much shorter.
-+
-+- Neighbor Discovery
-+
-+  Neighbor Node Discovery in the cluster is done by Ethernet broadcast or UDP
-+  multicast, when any of those services are available. If not, configured peer
-+  IP addresses can be used.
-+
-+- Configuration
-+
-+  When running TIPC in single node mode no configuration whatsoever is needed.
-+  When running in cluster mode TIPC must as a minimum be given a node address
-+  (before Linux 4.17) and told which interface to attach to. The "tipc"
-+  configuration tool makes is possible to add and maintain many more
-+  configuration parameters.
-+
-+- Performance
-+
-+  TIPC message transfer latency times are better than in any other known protocol.
-+  Maximal byte throughput for inter-node connections is still somewhat lower than
-+  for TCP, while they are superior for intra-node and inter-container throughput
-+  on the same host.
-+
-+- Language Support
-+
-+  The TIPC user API has support for C, Python, Perl, Ruby, D and Go.
-+
-+More Information
-+----------------
-+
-+- How to set up TIPC:
-+
-+  http://tipc.io/getting_started.html
-+
-+- How to program with TIPC:
-+
-+  http://tipc.io/programming.html
-+
-+- How to contribute to TIPC:
-+
-+- http://tipc.io/contacts.html
-+
-+- More details about TIPC specification:
-+
-+  http://tipc.io/protocol.html
-+
-+
-+Implementation
-+==============
-+
-+TIPC is implemented as a kernel module in net/tipc/ directory.
+ 	/* Mark message as group event if applicable */
+ 	if (unlikely(grp_evt)) {
+@@ -1956,9 +1973,10 @@ static int tipc_recvmsg(struct socket *sock, struct msghdr *m,
+ 		tipc_node_distr_xmit(sock_net(sk), &xmitq);
+ 	}
  
- TIPC Base Types
- ---------------
+-	tsk_advance_rx_queue(sk);
++	if (!skb_cb->bytes_read)
++		tsk_advance_rx_queue(sk);
+ 
+-	if (likely(!connected))
++	if (likely(!connected) || skb_cb->bytes_read)
+ 		goto exit;
+ 
+ 	/* Send connection flow control advertisement when applicable */
 -- 
 2.27.0
 
