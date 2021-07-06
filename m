@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 905873BDD0C
-	for <lists+tipc-discussion@lfdr.de>; Tue,  6 Jul 2021 20:22:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64BE83BDD0E
+	for <lists+tipc-discussion@lfdr.de>; Tue,  6 Jul 2021 20:22:50 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1m0piN-0005Ca-2T; Tue, 06 Jul 2021 18:22:35 +0000
+	id 1m0piX-0005F0-8p; Tue, 06 Jul 2021 18:22:45 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <lucien.xin@gmail.com>) id 1m0piK-0005CD-Td
- for tipc-discussion@lists.sourceforge.net; Tue, 06 Jul 2021 18:22:32 +0000
+ (envelope-from <lucien.xin@gmail.com>) id 1m0piV-0005EM-C8
+ for tipc-discussion@lists.sourceforge.net; Tue, 06 Jul 2021 18:22:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hDzf62tCOfntqIVucU+GLd+SnGOZlNw4VN8y4D+jHac=; b=GPXsJcBZNch95t/su/hDGcFlmy
- iBPCAlDD1Tkur2eNahAl6vc7X/b8tVMVYLu4gokY+5OGDgdnB/wcqTSMgOF2r85GP732VuUBHabIy
- nV4Z7Zn4ZbxmB2MI0tAn17dSaQIpeZseZV8n4pfmSbH88AvWXu9sd+S0h01ltopYFVdE=;
+ bh=YQjjZq60UeghfC4iw7sr2oUd24IJuI11o+aJ7+cRybo=; b=Ffa8j82auzfF/SCHC/HlhGzBSr
+ ZQHOenuCPrbp6WOMXSgYt6lCAgqI9xVbyC7ZwBQYcsXp/iivzzV1dQ48ivgeJlH0I//J0q40CBtin
+ 0Pmjoe4ZKBKw6bJ/DDaDheg5JBLUk/zCFF1LR2LT2gxu+urJHCs88skxszrfVnQJVkAM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -29,52 +29,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=hDzf62tCOfntqIVucU+GLd+SnGOZlNw4VN8y4D+jHac=; b=Lh7q6wVKgz01l8JSUOL7Wc13hB
- WOBTkt74avCvTHwLLaAsltiljKSJ1Uu9/YYV1ByK09965lWLOP8hV4IvyHWR0k9RsXA5QrIdpFb0E
- 5Jcdu6GvyP8gFafKkLZGJ6Rs2/icrgQ1R6d649yHaSiJtFekz3clbI1z8IGsvNZKV6Yo=;
-Received: from mail-wr1-f52.google.com ([209.85.221.52])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=YQjjZq60UeghfC4iw7sr2oUd24IJuI11o+aJ7+cRybo=; b=M4OxgyElZ8CzXGa4Cijpwvp0yy
+ 89hN3vp+AmvjClN1CDVgcArdLtNRWlW1UhBwgAki6UjKbGz3L9mv71fVBpAMSZ2HaTNmOgf+MTu8d
+ EQ1c+fcNjKpD3LrFaUpFknKeC77W54+3srWct7DAZqS1dUJEzWO2Uwa+vbp3oQa9QD+I=;
+Received: from mail-wm1-f45.google.com ([209.85.128.45])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
- id 1m0piI-00CboM-5E
- for tipc-discussion@lists.sourceforge.net; Tue, 06 Jul 2021 18:22:32 +0000
-Received: by mail-wr1-f52.google.com with SMTP id p8so98580wrr.1
+ id 1m0piJ-0006tv-RR
+ for tipc-discussion@lists.sourceforge.net; Tue, 06 Jul 2021 18:22:43 +0000
+Received: by mail-wm1-f45.google.com with SMTP id
+ j39-20020a05600c1c27b029020028e48b8fso2488631wms.0
  for <tipc-discussion@lists.sourceforge.net>;
- Tue, 06 Jul 2021 11:22:30 -0700 (PDT)
+ Tue, 06 Jul 2021 11:22:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=hDzf62tCOfntqIVucU+GLd+SnGOZlNw4VN8y4D+jHac=;
- b=vQrgdwHjjAhvT74bd5N5amdRc1/ebn1WEpQ9P5ppVhtgP7W/2rq3RALeMPkG0AYie+
- 2BQRoB8w7Oj35VSOVf73Ajh/RitH+bpLhrgw7SMQlKdcVowFKsvZNa5WsPMmY0cd5+54
- aXW/wjLwBdPVXutqRtGt7onB70FcNsz6TWFm7wBhBgFAVtQl0Y0bsbHMboCME5Pp18N+
- p2Pze6v+gkX45I4mjj0nUd/wYer9Z/1dCThp7WUf33+SkcHaTDjTdVX46bTtsl2yrGJP
- nekmXkBtjpG0qJiOu7/XkKnI8POthH4qrvgMSOs4yOuJyx8oscj2bG8/c6wUirCbFg60
- Pqlg==
+ bh=YQjjZq60UeghfC4iw7sr2oUd24IJuI11o+aJ7+cRybo=;
+ b=o0t1PnWp/M8JNL12D6qACmDkNZXKIdtR26YyW2hoMNlX7Q5t5GIqlEqPvDoaYYDaPf
+ TL8NwDUvWfpewqNuaqKM9d7xR6ndFn/8WDDJl1qwlcES508t75igupA0kp2PjyJ7WTBu
+ H8J4tJvI0W1td3JEUyOtvxz05GwnjjI0AbwrzCM0n4eVKr1ltfwptvjBPnujlB6IBzWQ
+ vNhHFLk6qnngKEZsMDO7HrcWDKNtoY53z5z0PpVqtoeRsP6WxgNCC+/8RLasm9BX1hwV
+ SOTk/whshbywA5IQJmA5K0CWW4fMXPRcFjFlJeqvCHfYVmd7HxVMKA1UqOl2FGXqitZp
+ Sa2g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=hDzf62tCOfntqIVucU+GLd+SnGOZlNw4VN8y4D+jHac=;
- b=Ld+nQ8WU8Pc92Z0IPR9z/W096ScywolJI8l/WWlKmbT7ij9mbFQ8wzQ6T5zs6bWXcJ
- gpMq5jF/vaiCPQ7wX9+mm2B3njZHHBAh+PCoLJkuWZivk17Hrurs2fBQfEtRMmEHg6IR
- Wy/vXUGgWh8w9L82hh/qKU3v6C3yK0vcSG7CQfi1O/PsvxaDK+YvGp8KnLTZQWh4HLXa
- fBV0vW57fxw5gv5Lzr1wOFs8gL9gHjZWsVUNAbdHSIk+eBvMXrUkknVttiTtMW5WlRyq
- 6ECctPm3lOxKAGux2rFUifhQ/8D1QiskCtNWTxUBUAvAgG5D4NmXLqk57xzMFB6OBcKe
- w5ag==
-X-Gm-Message-State: AOAM5324xuIPjFbnX3LOsmOrtya2axpb3cCvii2kfFvTsNSHGE+uVqVZ
- sPAmu2vS996kLgNydHT8NRY=
-X-Google-Smtp-Source: ABdhPJwLuL+mr2FbkxjlWjMSbuQr3V4101JCHADrfV7W1LTbncgVZHN58zBqHvbR5PdusweLg05ozA==
-X-Received: by 2002:a5d:6904:: with SMTP id t4mr23226897wru.20.1625595743752; 
- Tue, 06 Jul 2021 11:22:23 -0700 (PDT)
+ bh=YQjjZq60UeghfC4iw7sr2oUd24IJuI11o+aJ7+cRybo=;
+ b=KpIJnSmLXaa9zw4KCufEdzXJre7CK4jmKEXOlBAwPoWPZ6weyYkClpedXAX81oTKY5
+ o7IKDpNsabV3Z32CesiEQsmepAHDXbpnQsm0nHounPrmwBOZhcb2WRfgpqYPxTnADaTS
+ EqbPSw3BdJc0rVdSOf5iWrKwN1UtIao+dyKei9IbANCZsw0jfFgyJzA0DidRbty0lQpZ
+ a41yNuIQ5smr+Ph6RJpa3p4+FN3v91IbBYVuZs69+2H4rIu2P1K9Wf6DitOwzwQLOG+r
+ AQ71U+H9B+ZGX8FgtumyIJIouZB4P71y0KvyXtOAY9tOXp0nXDn0hOYkdtzT6W60PzHe
+ w/UQ==
+X-Gm-Message-State: AOAM533QU6KJww6V4w75pGgxkX03yFg6pPRhihNA0B90qKnOR3a5RYkO
+ WqC8ee+84y9EdBrqvJivMkyjYWFVffQe9w==
+X-Google-Smtp-Source: ABdhPJwT7Yw2VRirNogVZi/sBok0YDs4vf4dv2PetAz+0Io/DO5vZNwhUgF/pL7jEJzaLUXsFsWpKQ==
+X-Received: by 2002:a05:600c:5110:: with SMTP id
+ o16mr2341745wms.24.1625595745567; 
+ Tue, 06 Jul 2021 11:22:25 -0700 (PDT)
 Received: from localhost (nat-pool-bos-t.redhat.com. [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id c16sm16096983wmr.2.2021.07.06.11.22.23
+ by smtp.gmail.com with ESMTPSA id l34sm4378485wms.45.2021.07.06.11.22.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 06 Jul 2021 11:22:23 -0700 (PDT)
+ Tue, 06 Jul 2021 11:22:25 -0700 (PDT)
 From: Xin Long <lucien.xin@gmail.com>
 To: Jon Maloy <jmaloy@redhat.com>,
 	tipc-discussion@lists.sourceforge.net
-Date: Tue,  6 Jul 2021 14:22:10 -0400
-Message-Id: <cc6f0b8d8e5b2a5d4c7f04a2a2750b3f353afebd.1625595705.git.lucien.xin@gmail.com>
+Date: Tue,  6 Jul 2021 14:22:11 -0400
+Message-Id: <49e48ff31811b6ccd5a598691a09697f9dbe27e6.1625595705.git.lucien.xin@gmail.com>
 X-Mailer: git-send-email 2.27.0
 In-Reply-To: <cover.1625595705.git.lucien.xin@gmail.com>
 References: <cover.1625595705.git.lucien.xin@gmail.com>
@@ -84,19 +86,19 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
  (lucien.xin[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.221.52 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.52 listed in wl.mailspike.net]
+ [209.85.128.45 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [209.85.128.45 listed in list.dnswl.org]
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1m0piI-00CboM-5E
-Subject: [tipc-discussion] [PATCH net-next 4/8] tipc: add probe send and
+X-Headers-End: 1m0piJ-0006tv-RR
+Subject: [tipc-discussion] [PATCH net-next 5/8] tipc: add probe recv and
  state transition
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -113,9 +115,9 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-pl.count will make a timer that 'timeout' every after '10 * node timer
-interval', where it does state transition in tipc_link_pl_send() and
-sends probe in tipc_link_build_proto_msg().
+This patch is to receive and process the probe ack by checking
+msg_max_pkt() == l->pl.probe_size then does state transition
+in tipc_link_pl_recv().
 
 For the details, see:
 
@@ -127,74 +129,74 @@ Signed-off-by: Xin Long <lucien.xin@gmail.com>
  1 file changed, 48 insertions(+)
 
 diff --git a/net/tipc/link.c b/net/tipc/link.c
-index 414f9cf543ff..3af6c04f82c2 100644
+index 3af6c04f82c2..241c9378e258 100644
 --- a/net/tipc/link.c
 +++ b/net/tipc/link.c
-@@ -292,6 +292,7 @@ static int tipc_link_advance_transmq(struct tipc_link *l, struct tipc_link *r,
- 				     bool *retransmitted, int *rc);
+@@ -293,6 +293,7 @@ static int tipc_link_advance_transmq(struct tipc_link *l, struct tipc_link *r,
  static void tipc_link_update_cwin(struct tipc_link *l, int released,
  				  bool retransmitted);
-+static void tipc_link_pl_send(struct tipc_link *l);
+ static void tipc_link_pl_send(struct tipc_link *l);
++static void tipc_link_pl_recv(struct tipc_link *l);
  /*
   *  Simple non-static link routines (i.e. referenced outside this file)
   */
-@@ -902,6 +903,14 @@ int tipc_link_timeout(struct tipc_link *l, struct sk_buff_head *xmitq)
- 	if (state || probe || setup)
- 		tipc_link_build_proto_msg(l, mtyp, PROBE_MSTATE, 0, 0, 0, 0, xmitq);
+@@ -2333,6 +2334,13 @@ static int tipc_link_proto_rcv(struct tipc_link *l, struct sk_buff *skb,
+ 			break;
+ 		}
  
-+	if (probe && tipc_link_is_up(l)) {
-+		l->pl.count++;
-+		if (!(l->pl.count % TIPC_PROBE_INTERVAL)) {
-+			tipc_link_pl_send(l);
-+			tipc_link_build_proto_msg(l, mtyp, PROBE_PLPMTU, 0, 0, 0, 0, xmitq);
++		if (!reply && msg_max_pkt(hdr) == l->pl.probe_size) {
++			tipc_link_pl_recv(l);
++			if (l->pl.state == TIPC_PL_COMPLETE)
++				break;
++			tipc_link_build_proto_msg(l, STATE_MSG, PROBE_PLPMTU, 0, 0, 0, 0, xmitq);
 +		}
-+	}
 +
- 	return rc;
- }
+ 		/* Receive Gap ACK blocks from peer if any */
+ 		glen = tipc_get_gap_ack_blks(&ga, l, hdr, true);
  
-@@ -3013,3 +3022,42 @@ int tipc_link_dump(struct tipc_link *l, u16 dqueues, char *buf)
- 
- 	return i;
+@@ -3061,3 +3069,43 @@ static void tipc_link_pl_send(struct tipc_link *l)
+ 	}
+ 	l->pl.count = TIPC_PROBE_INTERVAL;
  }
 +
-+static void tipc_link_pl_send(struct tipc_link *l)
++static void tipc_link_pl_recv(struct tipc_link *l)
 +{
 +	pr_debug("%s: PLPMTUD: link: %p, state: %d, pmtu: %d, size: %d, high: %d\n",
 +		 __func__, l, l->pl.state, l->pl.pmtu, l->pl.probe_size, l->pl.probe_high);
 +
-+	if (l->pl.count <= TIPC_MAX_PROBES * TIPC_PROBE_INTERVAL)
-+		return;
-+
++	l->pl.pmtu = l->pl.probe_size;
++	l->pl.count = 0;
 +	if (l->pl.state == TIPC_PL_BASE) {
-+		if (l->pl.probe_size == TIPC_BASE_PLPMTU) { /* BASE_PLPMTU Confirmation Failed */
-+			l->pl.state = TIPC_PL_ERROR; /* Base -> Error */
++		l->pl.state = TIPC_PL_SEARCH; /* Base -> Search */
++		l->pl.probe_size += TIPC_PL_BIG_STEP;
++	} else if (l->pl.state == TIPC_PL_ERROR) {
++		l->pl.state = TIPC_PL_SEARCH; /* Error -> Search */
 +
-+			l->pl.pmtu = TIPC_MIN_PLPMTU;
-+			l->mtu = l->pl.pmtu;
-+		}
++		l->pl.pmtu = l->pl.probe_size;
++		l->mtu = l->pl.pmtu;
++		l->pl.probe_size += TIPC_PL_BIG_STEP;
 +	} else if (l->pl.state == TIPC_PL_SEARCH) {
-+		if (l->pl.pmtu == l->pl.probe_size) { /* Black Hole Detected */
-+			l->pl.state = TIPC_PL_BASE;  /* Search -> Base */
-+			l->pl.probe_size = TIPC_BASE_PLPMTU;
++		if (!l->pl.probe_high) {
++			l->pl.probe_size = min(l->pl.probe_size + TIPC_PL_BIG_STEP,
++					       TIPC_MAX_PLPMTU);
++			return;
++		}
++		l->pl.probe_size += TIPC_PL_MIN_STEP;
++		if (l->pl.probe_size >= l->pl.probe_high) {
 +			l->pl.probe_high = 0;
++			l->pl.raise = 0;
++			l->pl.state = TIPC_PL_COMPLETE; /* Search -> Search Complete */
 +
-+			l->pl.pmtu = TIPC_BASE_PLPMTU;
-+			l->mtu = l->pl.pmtu;
-+		} else { /* Normal probe failure. */
-+			l->pl.probe_high = l->pl.probe_size;
 +			l->pl.probe_size = l->pl.pmtu;
++			l->mtu = l->pl.pmtu;
 +		}
 +	} else if (l->pl.state == TIPC_PL_COMPLETE) {
-+		if (l->pl.pmtu == l->pl.probe_size) { /* Black Hole Detected */
-+			l->pl.state = TIPC_PL_BASE;  /* Search Complete -> Base */
-+			l->pl.probe_size = TIPC_BASE_PLPMTU;
-+
-+			l->pl.pmtu = TIPC_BASE_PLPMTU;
-+			l->mtu = l->pl.pmtu;
++		l->pl.raise++;
++		if (l->pl.raise == 30) {
++			l->pl.state = TIPC_PL_SEARCH; /* Search Complete -> Search */
++			l->pl.probe_size += TIPC_PL_MIN_STEP;
 +		}
 +	}
-+	l->pl.count = TIPC_PROBE_INTERVAL;
 +}
 -- 
 2.27.0
