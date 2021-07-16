@@ -2,79 +2,80 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 166603C3592
-	for <lists+tipc-discussion@lfdr.de>; Sat, 10 Jul 2021 18:46:55 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8FF13CBEB7
+	for <lists+tipc-discussion@lfdr.de>; Fri, 16 Jul 2021 23:44:30 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1m2G7p-00017L-F8; Sat, 10 Jul 2021 16:46:45 +0000
+	id 1m4Vd6-0006Wl-84; Fri, 16 Jul 2021 21:44:20 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <lucien.xin@gmail.com>) id 1m2G7o-00017F-AG
- for tipc-discussion@lists.sourceforge.net; Sat, 10 Jul 2021 16:46:44 +0000
+ (envelope-from <lucien.xin@gmail.com>) id 1m4Vd4-0006WU-2x
+ for tipc-discussion@lists.sourceforge.net; Fri, 16 Jul 2021 21:44:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
  Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=thCYdwKxX5qi2ESl+qIZOCm9o/KTLPJiXpULrJUDw9I=; b=cU6bi9ay/n84yfzM9UoPfb+H/N
- uSVfvtv2kGriDswBkPcdmZWoecZ73DQxgkGEXiE5/n8PdAkIhFFTQi3sis5ld4JtwRTqo1zrXZhSg
- imgCt1n28Q9AXW4bJfzauxTqNSJOBQ2v0t5sENs18EhPfWFhTntakog4z/0va0aDKxn8=;
+ bh=05I6T4y1TAStE9/dQzJnO6wGH+WxC5k7nootATM77EE=; b=jzAqsCN4Ke5e5prWgqm3UMBuJt
+ jFuNfpyOAQgFeuxXEiopVPJgBIKDUS6KQU5th2feIm5HSCVGaVR8ioxYUpn/SfVnmln1WpQgJwGAy
+ 3sLPM8Qmzl4WW8VlkMwisLytsoXfmHrCg9zssoebD5qOlJxXnNJDf8EcgwZFhbPH2/nw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
  :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=thCYdwKxX5qi2ESl+qIZOCm9o/KTLPJiXpULrJUDw9I=; b=Z
- Sc8fIIPFDVHixTCvUXARsCcM2uSq5QMD2GYl8c/Afe/whH8NKJrhDQnnBM3OfZy2b7/oSsPI4+8H1
- 3lc9EeEyHq5kCMzqZ0zEaEkAQey46oZBditQR9H/tTiBJW2TJYGQHU+9p7GfR7D/b/8cmd7LTW720
- IuKfPsK4XI1qN/Xo=;
-Received: from mail-wm1-f46.google.com ([209.85.128.46])
+ List-Owner:List-Archive; bh=05I6T4y1TAStE9/dQzJnO6wGH+WxC5k7nootATM77EE=; b=L
+ osLPbVlWlUx+rmSUD7jbE7vRQ8rU0mVP2c2CjDaYPDQBW6TdywlIfYk726F38nho3RRo8LeIQO/vg
+ QdRobhz9pHP8YbZbefyHadi97agD6uKVvnXwugC74GCQeocIsothZbbXOgCCPfRQEVOKWcHlE4pWl
+ sHiwn5UkxJSHl0bo=;
+Received: from mail-wm1-f50.google.com ([209.85.128.50])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
- id 1m2G7Z-0004dN-Ku
- for tipc-discussion@lists.sourceforge.net; Sat, 10 Jul 2021 16:46:44 +0000
-Received: by mail-wm1-f46.google.com with SMTP id w13so8224688wmc.3
+ id 1m4Vd2-0004D0-8G
+ for tipc-discussion@lists.sourceforge.net; Fri, 16 Jul 2021 21:44:17 +0000
+Received: by mail-wm1-f50.google.com with SMTP id
+ o30-20020a05600c511eb029022e0571d1a0so6689564wms.5
  for <tipc-discussion@lists.sourceforge.net>;
- Sat, 10 Jul 2021 09:46:29 -0700 (PDT)
+ Fri, 16 Jul 2021 14:44:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=thCYdwKxX5qi2ESl+qIZOCm9o/KTLPJiXpULrJUDw9I=;
- b=GZyZTJ2FrUDHs7h5uvShf5gOGs4HHiMCMcNH40lPBNotgdY8PHH9cLIKAXDE4rI36f
- a1m1upDrIoTcqbSxZ+c1mBipqiLy/QNPbclFPHm8SkL1scnp6E8z8QWZawGbmfgye2xi
- IG0JJdqyPmF46ljn2ybVv+wo3HE0q0qI4Ay1sto0T2IFsuv8TSnoVIYCYSjgyE2E6G/d
- 0Gvlhreqg3sAAyrIH8XG4SM6cNDp2i12aZdFIojhDwirCZ2qLQrBD+QYyP0zuivCtE3c
- 5vZc6lpjlKeXFE5d2PCMNXExuWiw3YcmvyCcT/FhZClk/7I0VA6+eeM5XygYBmvfGOvV
- h7oA==
+ bh=05I6T4y1TAStE9/dQzJnO6wGH+WxC5k7nootATM77EE=;
+ b=lQj6O3icJGzrCo7DAPwL2cjseX728QVZzqKkefKwU99+NpbDvglGWAGJvvvQQleWE3
+ 4HBkbDoDEKX8Cy+VFomIcqH+cNSaaLAcfdmp+gJf8ZPM2fMle26Gijb09b9Qm+ycczP7
+ b6Ad0g3N/H5+Q3OmSuVjLn8OCqWFyKfFP1mHL6a9HKxfNfsm8BUbToOZ0UdkeOdfO9MW
+ dAN7EdrTioYs80d0WsvfvtTgRuS4DE5oxXKMzWOOAgFgmu9oMDU+U6k0yl5RG1g6x4ke
+ A9q+q5vWnYN083dRga2KNjCXHHObFE99eFysJfBULpEEYJLXAcg2JoeR7k2m5MUu0z1i
+ NlDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=thCYdwKxX5qi2ESl+qIZOCm9o/KTLPJiXpULrJUDw9I=;
- b=pDmeXghv6Zx8K+tQkWicNqGfDmi6JfeeC648szmmOqiy5ikJH/lDkd702csGdmFHgl
- nv0vmNWEt6K1plE6Qly107x6TRKxemYcufzbERKNfDf3WDeBIJ+QCImFMU63Zq7BDkPs
- x3awoSQiH3HOH+TGWjwvt5QMWtfxZNlncNad3mrqyWT5t/lfO9c0SoiAguzocvL0qcVp
- j1/6hzlIFcsjt61IDcyFX7PiT2QgueufX89EuFwZWkRAoWBqmL9s+tF+j+P5wK70Zz6h
- nhRNUUy1bJUALIyhHjyjOMldsw0tPL5Ane2BpKr9cKu0eAjmD3sxm3gzRVkcxZK/6yIz
- 1p7Q==
-X-Gm-Message-State: AOAM5312j2chMqY4GeGdqFzdsaI9T7oO0UpPOzcfEtftZKqPX3b8vueG
- 7GomrgUSL68RH7Gle60aXSQwRB1VUZohTQ==
-X-Google-Smtp-Source: ABdhPJxCR2YmPEZPcBoyRP5vTFg2HGkG9QJoaOBjs5PTcahQrpE7rjY1bxL30j928d4M2sohQ5M1RQ==
-X-Received: by 2002:a1c:9886:: with SMTP id
- a128mr29152542wme.150.1625935583058; 
- Sat, 10 Jul 2021 09:46:23 -0700 (PDT)
+ bh=05I6T4y1TAStE9/dQzJnO6wGH+WxC5k7nootATM77EE=;
+ b=rI+TScRquHico4Yt8gwR+j4m0r3xpMyZQUpUTEEy//c/vKD5d5IlZEco/eYk8dPPpp
+ iqT0hmavpcXNHax6/sQKVyS667Gkwh8se3IU6bB1Lz0i0c7vG3kmIY//O+rSltwwLcKj
+ hsfgMjCt5Sys3SDo0msnfybjs+oPC3+3TiVHyp69yCqoF/aVBgDEsnV68ALa+Z9nIdHf
+ DxVJ2spihd+TI11gSTdJkNgw5HQDuRzuvUxsYo33RCInyhnkKHi2y21A6lykWEGbQC4H
+ 37wgixrHXskjzIqAhvcoYC49JeK0bYQ0xqlZ9ijpfQKT07L/e3yfO2md/RjECJyA1Sg+
+ Q94Q==
+X-Gm-Message-State: AOAM532SiYIUoFqjeBGEl2syva0HH9n1p7nJwTGph5oveSSb6cp9yxiN
+ 5Y4b+1STdK/xFUkCPYw/aeS/tEF1YG4=
+X-Google-Smtp-Source: ABdhPJxgfosGf0pxBJ76Ow+krBnHAp2Auo7cthzPyz/Wn3k/1N0WzZsEKDaDwrC2UKgRB02RhRUiTQ==
+X-Received: by 2002:a1c:a9c6:: with SMTP id s189mr8028836wme.143.1626471849874; 
+ Fri, 16 Jul 2021 14:44:09 -0700 (PDT)
 Received: from localhost (nat-pool-bos-t.redhat.com. [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id m12sm7576737wms.24.2021.07.10.09.46.22
+ by smtp.gmail.com with ESMTPSA id n7sm11496808wmq.37.2021.07.16.14.44.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 10 Jul 2021 09:46:22 -0700 (PDT)
+ Fri, 16 Jul 2021 14:44:09 -0700 (PDT)
 From: Xin Long <lucien.xin@gmail.com>
-To: tipc-discussion@lists.sourceforge.net
-Date: Sat, 10 Jul 2021 12:46:19 -0400
-Message-Id: <721bd5e84b3c4eb906014377d569e6074046b26b.1625935579.git.lucien.xin@gmail.com>
+To: network dev <netdev@vger.kernel.org>, davem@davemloft.net, kuba@kernel.org,
+ Jon Maloy <jmaloy@redhat.com>, tipc-discussion@lists.sourceforge.net
+Date: Fri, 16 Jul 2021 17:44:07 -0400
+Message-Id: <57cb295272cdeedec04ac2f920a1fd37446163c6.1626471847.git.lucien.xin@gmail.com>
 X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
 X-Spam-Score: -0.1 (/)
@@ -82,19 +83,20 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
  (lucien.xin[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [209.85.128.50 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.50 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.46 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.128.46 listed in list.dnswl.org]
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1m2G7Z-0004dN-Ku
-Subject: [tipc-discussion] [PATCH net] tipc: fix implicit-connect for SYN+
+X-Headers-End: 1m4Vd2-0004D0-8G
+Subject: [tipc-discussion] [PATCH net-next] tipc: keep the skb in rcv queue
+ until the whole data is read
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,104 +108,105 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: Erin Shepherd <erin.shepherd@e43.eu>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-For implicit-connect, when it's either SYN- or SYN+, an ACK should
-be sent back to the client immediately. It's not appropriate for
-the client to enter established state only after receiving data
-from the server.
+Currently, when userspace reads a datagram with a buffer that is
+smaller than this datagram, the data will be truncated and only
+part of it can be received by users. It doesn't seem right that
+users don't know the datagram size and have to use a huge buffer
+to read it to avoid the truncation.
 
-On client side, after the SYN is sent out, tipc_wait_for_connect()
-should be called to wait for the ACK if timeout is set.
+This patch to fix it by keeping the skb in rcv queue until the
+whole data is read by users. Only the last msg of the datagram
+will be marked with MSG_EOR, just as TCP/SCTP does.
 
-This patch also restricts __tipc_sendstream() to call __sendmsg()
-only when it's in TIPC_OPEN state, so that the client can program
-in a single loop doing both connecting and data sending like:
+Note that this will work as above only when MSG_EOR is set in the
+flags parameter of recvmsg(), so that it won't break any old user
+applications.
 
-  for (...)
-      sendmsg(dest, buf);
-
-This makes the implicit-connect more implicit.
-
-Fixes: b97bf3fd8f6a ("[TIPC] Initial merge")
 Signed-off-by: Xin Long <lucien.xin@gmail.com>
+Acked-by: Jon Maloy <jmaloy@redhat.com>
 ---
- net/tipc/socket.c | 21 +++++++++++++--------
- 1 file changed, 13 insertions(+), 8 deletions(-)
+ net/tipc/socket.c | 36 +++++++++++++++++++++++++++---------
+ 1 file changed, 27 insertions(+), 9 deletions(-)
 
 diff --git a/net/tipc/socket.c b/net/tipc/socket.c
-index 34a97ea36cc8..ebd300c26a44 100644
+index 34a97ea36cc8..9b0b311c7ec1 100644
 --- a/net/tipc/socket.c
 +++ b/net/tipc/socket.c
-@@ -158,6 +158,7 @@ static void tipc_sk_remove(struct tipc_sock *tsk);
- static int __tipc_sendstream(struct socket *sock, struct msghdr *m, size_t dsz);
- static int __tipc_sendmsg(struct socket *sock, struct msghdr *m, size_t dsz);
- static void tipc_sk_push_backlog(struct tipc_sock *tsk, bool nagle_ack);
-+static int tipc_wait_for_connect(struct socket *sock, long *timeo_p);
+@@ -1880,6 +1880,7 @@ static int tipc_recvmsg(struct socket *sock, struct msghdr *m,
+ 	bool connected = !tipc_sk_type_connectionless(sk);
+ 	struct tipc_sock *tsk = tipc_sk(sk);
+ 	int rc, err, hlen, dlen, copy;
++	struct tipc_skb_cb *skb_cb;
+ 	struct sk_buff_head xmitq;
+ 	struct tipc_msg *hdr;
+ 	struct sk_buff *skb;
+@@ -1903,6 +1904,7 @@ static int tipc_recvmsg(struct socket *sock, struct msghdr *m,
+ 		if (unlikely(rc))
+ 			goto exit;
+ 		skb = skb_peek(&sk->sk_receive_queue);
++		skb_cb = TIPC_SKB_CB(skb);
+ 		hdr = buf_msg(skb);
+ 		dlen = msg_data_sz(hdr);
+ 		hlen = msg_hdr_sz(hdr);
+@@ -1922,18 +1924,33 @@ static int tipc_recvmsg(struct socket *sock, struct msghdr *m,
  
- static const struct proto_ops packet_ops;
- static const struct proto_ops stream_ops;
-@@ -1515,8 +1516,13 @@ static int __tipc_sendmsg(struct socket *sock, struct msghdr *m, size_t dlen)
- 		rc = 0;
- 	}
- 
--	if (unlikely(syn && !rc))
-+	if (unlikely(syn && !rc)) {
- 		tipc_set_sk_state(sk, TIPC_CONNECTING);
-+		if (timeout) {
-+			timeout = msecs_to_jiffies(timeout);
-+			tipc_wait_for_connect(sock, &timeout);
+ 	/* Capture data if non-error msg, otherwise just set return value */
+ 	if (likely(!err)) {
+-		copy = min_t(int, dlen, buflen);
+-		if (unlikely(copy != dlen))
+-			m->msg_flags |= MSG_TRUNC;
+-		rc = skb_copy_datagram_msg(skb, hlen, m, copy);
++		int offset = skb_cb->bytes_read;
++
++		copy = min_t(int, dlen - offset, buflen);
++		rc = skb_copy_datagram_msg(skb, hlen + offset, m, copy);
++		if (unlikely(rc))
++			goto exit;
++		if (unlikely(offset + copy < dlen)) {
++			if (flags & MSG_EOR) {
++				if (!(flags & MSG_PEEK))
++					skb_cb->bytes_read = offset + copy;
++			} else {
++				m->msg_flags |= MSG_TRUNC;
++				skb_cb->bytes_read = 0;
++			}
++		} else {
++			if (flags & MSG_EOR)
++				m->msg_flags |= MSG_EOR;
++			skb_cb->bytes_read = 0;
 +		}
-+	}
- 
- 	return rc ? rc : dlen;
- }
-@@ -1564,7 +1570,7 @@ static int __tipc_sendstream(struct socket *sock, struct msghdr *m, size_t dlen)
- 		return -EMSGSIZE;
- 
- 	/* Handle implicit connection setup */
--	if (unlikely(dest)) {
-+	if (unlikely(dest && sk->sk_state == TIPC_OPEN)) {
- 		rc = __tipc_sendmsg(sock, m, dlen);
- 		if (dlen && dlen == rc) {
- 			tsk->peer_caps = tipc_node_get_capabilities(net, dnode);
-@@ -2689,9 +2695,10 @@ static int tipc_accept(struct socket *sock, struct socket *new_sock, int flags,
- 		       bool kern)
- {
- 	struct sock *new_sk, *sk = sock->sk;
--	struct sk_buff *buf;
- 	struct tipc_sock *new_tsock;
-+	struct msghdr m = {NULL,};
- 	struct tipc_msg *msg;
-+	struct sk_buff *buf;
- 	long timeo;
- 	int res;
- 
-@@ -2737,19 +2744,17 @@ static int tipc_accept(struct socket *sock, struct socket *new_sock, int flags,
- 	}
- 
- 	/*
--	 * Respond to 'SYN-' by discarding it & returning 'ACK'-.
--	 * Respond to 'SYN+' by queuing it on new socket.
-+	 * Respond to 'SYN-' by discarding it & returning 'ACK'.
-+	 * Respond to 'SYN+' by queuing it on new socket & returning 'ACK'.
- 	 */
- 	if (!msg_data_sz(msg)) {
--		struct msghdr m = {NULL,};
--
- 		tsk_advance_rx_queue(sk);
--		__tipc_sendstream(new_sock, &m, 0);
  	} else {
- 		__skb_dequeue(&sk->sk_receive_queue);
- 		__skb_queue_head(&new_sk->sk_receive_queue, buf);
- 		skb_set_owner_r(buf, new_sk);
+ 		copy = 0;
+ 		rc = 0;
+-		if (err != TIPC_CONN_SHUTDOWN && connected && !m->msg_control)
++		if (err != TIPC_CONN_SHUTDOWN && connected && !m->msg_control) {
+ 			rc = -ECONNRESET;
++			goto exit;
++		}
  	}
-+	__tipc_sendstream(new_sock, &m, 0);
- 	release_sock(new_sk);
- exit:
- 	release_sock(sk);
+-	if (unlikely(rc))
+-		goto exit;
+ 
+ 	/* Mark message as group event if applicable */
+ 	if (unlikely(grp_evt)) {
+@@ -1956,9 +1973,10 @@ static int tipc_recvmsg(struct socket *sock, struct msghdr *m,
+ 		tipc_node_distr_xmit(sock_net(sk), &xmitq);
+ 	}
+ 
+-	tsk_advance_rx_queue(sk);
++	if (!skb_cb->bytes_read)
++		tsk_advance_rx_queue(sk);
+ 
+-	if (likely(!connected))
++	if (likely(!connected) || skb_cb->bytes_read)
+ 		goto exit;
+ 
+ 	/* Send connection flow control advertisement when applicable */
 -- 
 2.27.0
 
