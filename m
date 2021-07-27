@@ -2,90 +2,101 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE5923D430D
-	for <lists+tipc-discussion@lfdr.de>; Sat, 24 Jul 2021 00:46:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21E6D3D83CC
+	for <lists+tipc-discussion@lfdr.de>; Wed, 28 Jul 2021 01:19:51 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1m73vr-0003jx-Rz; Fri, 23 Jul 2021 22:46:15 +0000
+	id 1m8WMQ-0005cV-CF; Tue, 27 Jul 2021 23:19:42 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- (envelope-from <lucien.xin@gmail.com>) id 1m73vq-0003jp-Bz
- for tipc-discussion@lists.sourceforge.net; Fri, 23 Jul 2021 22:46:14 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1m8WMP-0005cN-05
+ for tipc-discussion@lists.sourceforge.net; Tue, 27 Jul 2021 23:19:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Date:Message-ID:Subject:From:To:Sender:Reply-To:Cc:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=IXMHN1p1xWo4UB7EaGyYonwfbbu8eU/2HKestiCVXqw=; b=NUDNyE6rIWefby30SqiAUQkDKl
- ONcnCrMAi099ZUP6DUXbIFCVPvBrWsmLJSo3MvGSrfghf/JaMaCAAC75klDXq/VXGWmuQs/HNV5Xa
- x2pxJyC5cVNjowsczSmGCJlQ+7mXQwgBD1mxkdNTboKrHikFtM8nmzYmsrM3YNq4yBq4=;
+ bh=NtbGRsPPvuYZWBpHOc4nZqXZ7Nepl9igrBsULgOiFaw=; b=dMhAJdlrX1BnXKwF7cIPyDUdGC
+ K7Vx6qxqduqVQurz9fZoh3SS+RN00D3jSSv6CMM3dls1NcfPX6l+YPW5HT4UiXCS/ft7In4pgIAnw
+ jGV/G4QrJ29jylH7yBLJkZYu51TkRoWEPZwHA95ebg+Ntg6LJ0q+ofQIpybZqJxTAEo4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Date:Message-ID:
+ Subject:From:To:Sender:Reply-To:Cc:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=IXMHN1p1xWo4UB7EaGyYonwfbbu8eU/2HKestiCVXqw=; b=W
- It8IMQUPlrJxFGOIuDRLaLcWVLyZ7HqhelEmnStLYrZcXd/AQiFKz1Ccd21hYMtDny0TiIqIKpiRd
- HX8YbZiE2SG8NRvwa8XqvarFsdeAL6/dMzxPPDdsMXoCgNVMsGvjmoX8khMCvnMT47MO7o1Ec10zx
- APhckpYRZevZoctI=;
-Received: from mail-qv1-f49.google.com ([209.85.219.49])
+ List-Owner:List-Archive; bh=NtbGRsPPvuYZWBpHOc4nZqXZ7Nepl9igrBsULgOiFaw=; b=D
+ U5VAUEfhzNMko9TOEGsRIcA3lENtz6cHUpRLiHxh0DQKtKCnQqV7VRaDQdCkU+ZETM2RQqC+SNN1e
+ T5myohFTLycS6hRZY2Ywtb/A4p4JxzDFacld/L3hl2tHqwzvBrVv7PnavrMwzqizhKXQ5e2jAoYZs
+ sfaqrTl0rhbKdwko=;
+Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
- id 1m73vk-00049D-1k
- for tipc-discussion@lists.sourceforge.net; Fri, 23 Jul 2021 22:46:14 +0000
-Received: by mail-qv1-f49.google.com with SMTP id l16so2118487qvw.1
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ id 1m8WMA-0004JF-SX
+ for tipc-discussion@lists.sourceforge.net; Tue, 27 Jul 2021 23:19:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1627427957;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=NtbGRsPPvuYZWBpHOc4nZqXZ7Nepl9igrBsULgOiFaw=;
+ b=Nuld00wk1uatSoNcs4UO8bxfv8bo7Mx0Lns+rhBRcCJo4TeUadMC/nWjHsrF5nS8xyXUGz
+ F//Pm8d0gCMLfbPH5Zww9WaFx1NeKC6MIF4GFTMiATF9mUA+QY2YsfU5Y0PkEUxw7CIw1B
+ gdFxyGoGnb4NIB7PiNe4ehSpJk8Ey3c=
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com
+ [209.85.222.200]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-437-PHmdnHmAOM-IEuf10fBRZw-1; Tue, 27 Jul 2021 19:19:15 -0400
+X-MC-Unique: PHmdnHmAOM-IEuf10fBRZw-1
+Received: by mail-qk1-f200.google.com with SMTP id
+ y3-20020ae9f4030000b02903b916ae903fso454465qkl.6
  for <tipc-discussion@lists.sourceforge.net>;
- Fri, 23 Jul 2021 15:46:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=IXMHN1p1xWo4UB7EaGyYonwfbbu8eU/2HKestiCVXqw=;
- b=qDNIn540u8CMMuCMP4l1j3lUgiKkAAvpUk27+ESx7qyCvUheLiMVbqqbsM/1WMUIxt
- aKOG04AXykFGqOiaLwD0Rwsx7bnTy3x5LOymVYBZoi0bH3q9Jn/mCjTOE1blMZxdoQMJ
- aiTwb2UMn+RvTeUHQPPFsghi2HqJGR18hWL0xzgcOb1tGxPLpcs8f9bCTKQe5InIoE91
- Wc7W2dkJT3k8MYLp7l+3NQLH1unD/Q7pfB6NZHLQZ505mBZ4S40QEBxBI71CjljVrzCG
- llEcAxUnJTj/aHEWFhvoz9wSB3J6KHbyE6PCLAuEzxn1MyajiCBdCc2oxPSRafrRhpxz
- 2SMQ==
+ Tue, 27 Jul 2021 16:19:15 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=IXMHN1p1xWo4UB7EaGyYonwfbbu8eU/2HKestiCVXqw=;
- b=YS8+6MUzl6XLp9S0mWoAt3ZXO8DKf/t4x0TgN+ZbkmjWvK49f9JdDwmddYgEWc7WO4
- iIDGjaLttzXpFpRqPyM6aJz1c3Cywvs23tGAtEzbNm67HEOWuAuqq42K5FhcAj+7QB7C
- MYI/x5zfwn8H5SAWb78+4OZzLuoNEN1wrbTtUCalNgma4ANWVYGalxqqAqbyLICsGJMr
- T6QAcEmgCX90d3ev7wF5JpwkK6dPIwAt7dubocWulAETxwv+t7x2kENmdgZYMU081J8f
- Q3+SRYfB9TI+v4xkHvKujo7yaoJ5az7B5WS7nB9kzokcTlPkcv1N6pNI35QDaoKWkWmn
- KmEw==
-X-Gm-Message-State: AOAM533Op6TMYhrvhSXhj5xjRTgKqc/4c2JnEUjglhu8q30ni5iT+OlR
- Dvw6mLlpx2O6N6jmxCWcp1XWiTmp7iIxnw==
-X-Google-Smtp-Source: ABdhPJyIE1z3kqZhOsFM5lJWIld2Eqkq0l+ifRZKsWBXlhPbQrxYqAfWBytrB4wWhBFgyXMMl+L1OA==
-X-Received: by 2002:a0c:db01:: with SMTP id d1mr6933874qvk.38.1627080362255;
- Fri, 23 Jul 2021 15:46:02 -0700 (PDT)
-Received: from localhost (nat-pool-bos-t.redhat.com. [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id e123sm14928798qkf.103.2021.07.23.15.46.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 23 Jul 2021 15:46:01 -0700 (PDT)
-From: Xin Long <lucien.xin@gmail.com>
-To: network dev <netdev@vger.kernel.org>, davem@davemloft.net, kuba@kernel.org,
- tipc-discussion@lists.sourceforge.net
-Date: Fri, 23 Jul 2021 18:46:01 -0400
-Message-Id: <453b10a48c21d1882bbee21fe2c84197faad75e1.1627080361.git.lucien.xin@gmail.com>
-X-Mailer: git-send-email 2.27.0
+ h=x-gm-message-state:to:from:subject:message-id:date:user-agent
+ :mime-version:content-language:content-transfer-encoding;
+ bh=NtbGRsPPvuYZWBpHOc4nZqXZ7Nepl9igrBsULgOiFaw=;
+ b=nGyNnkNlIOqMsDJEbBCfLFlYffInRwfOzXVfyntjPtohwOiEM/KbBobAxZ5F4g1sLw
+ CTO2YZVl70eb9BAxElslOrYIXjdVUajAWOM0zV+9fm3NzZO8MH/qkL2BbLg7MIeAm4Mw
+ HLYLCiCJuDBYSsCyc7VSS4JHWP2Zrwc4d21049ie87s/wHrP07Fr9daT72zV0yunZjXV
+ 9qeQ6JpAkkIhdbdqTeOsZiqwi+bVeCLatZvqF73+Cp5JGGU39+zl7UeRRM2BU/2YM5aF
+ qdJmp6rapFOAVMtTzoGS4kkodpkluRJoBWCzJd+2ETiReBjPYXiZYstyOWDE48jvxaMn
+ 0CrQ==
+X-Gm-Message-State: AOAM532u+1m5sDPTcS7H0Gv8Yc/ECBtS3W9H/rD5jwEsF7Dw2vnqCgj5
+ nssmwd5rUs56NElOj5dI50/XPbV/2V1e3EkSX6QaUucwKUihL/790MAZhAhleEyUuKtN7UQ1YTj
+ JhHiMIXhgXCZPEmDhjEBBQRBzqaz2h9CXeWE5
+X-Received: by 2002:ac8:72d2:: with SMTP id o18mr21491181qtp.170.1627427955567; 
+ Tue, 27 Jul 2021 16:19:15 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxHeGhG4txsVSclsWl2cniYtXVnPVacNdaYZpLmx0OVsq7/wh8kaMtTr+feWghQHmk3NaEtEQ==
+X-Received: by 2002:ac8:72d2:: with SMTP id o18mr21491162qtp.170.1627427955318; 
+ Tue, 27 Jul 2021 16:19:15 -0700 (PDT)
+Received: from [192.168.0.104] ([24.225.235.43])
+ by smtp.gmail.com with ESMTPSA id t14sm2413630qkm.7.2021.07.27.16.19.14
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 27 Jul 2021 16:19:14 -0700 (PDT)
+To: tipc-discussion@lists.sourceforge.net,
+ Tung Nguyen <tung.q.nguyen@dektech.com.au>,
+ Hoang Huu Le <hoang.h.le@dektech.com.au>, Xin Long <lucien.xin@gmail.com>,
+ Ying Xue <ying.xue@windriver.com>
+From: Jon Maloy <jmaloy@redhat.com>
+Message-ID: <7420c234-2b8e-9c62-5b4a-e10998284b35@redhat.com>
+Date: Tue, 27 Jul 2021 19:19:50 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.11.0
 MIME-Version: 1.0
-X-Spam-Score: -0.1 (/)
+Authentication-Results: relay.mimecast.com;
+ auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Language: en-US
+X-Spam-Score: -0.8 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- (lucien.xin[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.219.49 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.219.49 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [216.205.24.124 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -93,10 +104,10 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1m73vk-00049D-1k
-Subject: [tipc-discussion] [PATCH net] tipc: do not write skb_shinfo frags
- when doing decrytion
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1m8WMA-0004JF-SX
+Subject: [tipc-discussion] Strange behavior in socket.c::tipc_sk_enqueue()
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,59 +119,54 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Sabrina Dubroca <sd@queasysnail.net>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-One skb's skb_shinfo frags are not writable, and they can be shared with
-other skbs' like by pskb_copy(). To write the frags may cause other skb's
-data crash.
+I did by accident discover a strange behavior in the function 
+tipc_sk_enqueue:
 
-So before doing en/decryption, skb_cow_data() should always be called for
-a cloned or nonlinear skb if req dst is using the same sg as req src.
-While at it, the likely branch can be removed, as it will be covered
-by skb_cow_data().
 
-Note that esp_input() has the same issue, and I will fix it in another
-patch. tipc_aead_encrypt() doesn't have this issue, as it only processes
-linear data in the unlikely branch.
+static void tipc_sk_enqueue(struct sk_buff_head *inputq,
+                             struct sock *sk, u32 dport,
+                             struct sk_buff_head *xmitq)
+{
+         struct tipc_sock *tsk = tipc_sk(sk);
+         unsigned long time_limit = jiffies + 2;
+         struct sk_buff *skb;
+         unsigned int lim;
+         atomic_t *dcnt;
+         u32 onode;
 
-Fixes: fc1b6d6de220 ("tipc: introduce TIPC encryption & authentication")
-Reported-by: Shuang Li <shuali@redhat.com>
-Signed-off-by: Xin Long <lucien.xin@gmail.com>
-Acked-by: Jon Maloy <jmaloy@redhat.com>
----
- net/tipc/crypto.c | 14 ++++----------
- 1 file changed, 4 insertions(+), 10 deletions(-)
+         while (skb_queue_len(inputq)) {
+         if (unlikely(time_after_eq(jiffies, time_limit)))
+               return;
+         [...]
+         }
+}
 
-diff --git a/net/tipc/crypto.c b/net/tipc/crypto.c
-index e5c43d4d5a75..c9391d38de85 100644
---- a/net/tipc/crypto.c
-+++ b/net/tipc/crypto.c
-@@ -898,16 +898,10 @@ static int tipc_aead_decrypt(struct net *net, struct tipc_aead *aead,
- 	if (unlikely(!aead))
- 		return -ENOKEY;
- 
--	/* Cow skb data if needed */
--	if (likely(!skb_cloned(skb) &&
--		   (!skb_is_nonlinear(skb) || !skb_has_frag_list(skb)))) {
--		nsg = 1 + skb_shinfo(skb)->nr_frags;
--	} else {
--		nsg = skb_cow_data(skb, 0, &unused);
--		if (unlikely(nsg < 0)) {
--			pr_err("RX: skb_cow_data() returned %d\n", nsg);
--			return nsg;
--		}
-+	nsg = skb_cow_data(skb, 0, &unused);
-+	if (unlikely(nsg < 0)) {
-+		pr_err("RX: skb_cow_data() returned %d\n", nsg);
-+		return nsg;
- 	}
- 
- 	/* Allocate memory for the AEAD operation */
--- 
-2.27.0
+At the moment we call time_after_eq() the two jiffies often
+have already passed, and the skb is not dequeued.
+I noticed that tipc_sk_rcv() may call tipc_sk_enqueue()
+with the same skb dozens of times before the buffer can
+be delivered further upwards in the stack.
+
+Needless to say that this cannot be good for performance.
+
+I believe the value of 2 jiffies was hard coded at a time
+when machines were slower, and a jiffie represented a much
+longer time interval.
+
+Now it is clearly too short, and should be replaced with something
+longer and more consisten, e.g. msec_to_jiffies(2).
+
+Can anybody look into this?
+
+Also, I will be on vacation the next two weeks, which means we
+should cancel the bi-weekly meeting next Tuesday.
+
+///jon
+
 
 
 
