@@ -2,26 +2,26 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6CD3405DDC
-	for <lists+tipc-discussion@lfdr.de>; Thu,  9 Sep 2021 22:04:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A29AE40604F
+	for <lists+tipc-discussion@lfdr.de>; Fri, 10 Sep 2021 02:04:18 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1mOQHv-0001c0-C8; Thu, 09 Sep 2021 20:04:47 +0000
+	id 1mOU1Y-0004pA-An; Fri, 10 Sep 2021 00:04:08 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <jmaloy@redhat.com>) id 1mOQHt-0001bm-SQ
- for tipc-discussion@lists.sourceforge.net; Thu, 09 Sep 2021 20:04:45 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1mOU1R-0004nz-Dx
+ for tipc-discussion@lists.sourceforge.net; Fri, 10 Sep 2021 00:04:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
  MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=/5f0u1BmIn1o6yrusYQJib25VSfehiEO+tM/0SmO99o=; b=Wfo/euITiQEF2PHtc973xOwF61
- elOh5Abp4T4i9o9cI5LRKG3VafBb8O4mxr7x1SLyFuy5YbA3bRhluYSQGIGiaxyUOkaQTHoLH/24r
- /ijjhdk4PYUpmF4Ij4HedkaebxC4HScqOUOhEC4eMaPKTR6YsLlCDSDl5aB5PIefx+J4=;
+ bh=G6XOqaesl4DDKQKqixgo07fDrd1Fcc7aYPMBmuwUbw8=; b=EvEiDvvo47eHSvW2aGbTC8BXu9
+ BnJ3KolbwEXpWoAoLg4O5lNQAmiEuIll40+tI0CMs3khlBUTdyzjUjqu/UuyCw8IlXg7hlIykagsp
+ Wn8yVocPOvuC/8ynd6LJRniUi6aHqOTpaCloOzKgxmYonvusjuMmi3TURwiXwHHIylos=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
@@ -29,66 +29,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=/5f0u1BmIn1o6yrusYQJib25VSfehiEO+tM/0SmO99o=; b=DNi3LeRqwP6iYABAC5a5SJ247w
- 4Q3jlw1IPkwcTJLHrX/OEnJeJd/snIDDhpyZKJ14wIYkNDLKf6vYNrs0VpUwgUQn2KBCC5sNYp6nH
- zL7aSjsqtlNAFfboGzkO7MumasRGoq7dj8fQ4PpS40lLh+Esqf31otuyvrRunrF5dkSM=;
+ bh=G6XOqaesl4DDKQKqixgo07fDrd1Fcc7aYPMBmuwUbw8=; b=M+IO5EZ2DYhPIA5lb7ndPS6L/u
+ zfIVR8lrf1bnw2TPVxXoe/h5ioktMMArvBNOo5xioZCq49vd2vKxH5TzECEOtFvYgM+7/M+r7bJ1g
+ +95g/6uKUaMObpujvzcrdR5At1e8RUeMDaNcqtH+6cBgTGqcfd0tdb1lHFnmRL0UHxcM=;
 Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mOQHq-005FMy-FH
- for tipc-discussion@lists.sourceforge.net; Thu, 09 Sep 2021 20:04:45 +0000
+ id 1mOU1K-005RGo-JY
+ for tipc-discussion@lists.sourceforge.net; Fri, 10 Sep 2021 00:04:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1631217876;
+ s=mimecast20190719; t=1631232228;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=/5f0u1BmIn1o6yrusYQJib25VSfehiEO+tM/0SmO99o=;
- b=WkdhJYE/7lCAkPwTyHWN4J+nw+pCy95QY43LksBBts0DS0wxe/FU3U8Ju8ky7l7MPbnoI4
- CyfcSKNc6EQ0saNgR2EajmQchNFplem+nKe5ueXIZvJZ8PuhMFhH631Ngx2Bw79HP6kVOP
- 7D4IV33B52WI02I6ZydS0KI/4RA3mJ0=
-Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com
- [209.85.222.198]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-267-sgrctwngOgunqSYADhK4vA-1; Thu, 09 Sep 2021 16:04:34 -0400
-X-MC-Unique: sgrctwngOgunqSYADhK4vA-1
-Received: by mail-qk1-f198.google.com with SMTP id
- u19-20020a05620a121300b0042665527c3bso7818524qkj.14
+ bh=G6XOqaesl4DDKQKqixgo07fDrd1Fcc7aYPMBmuwUbw8=;
+ b=FrdasRWSalCim2HKhZq/WTFH6XGMyAbu2MZJ+e14C0bgTR+MjRAlw6p7EfoA5bCi+L04J3
+ 0CMbRcuvYRi3DoV8ZjPWYzHvJwnUx5VotE6hBF2EG91VXI4TL9wn+bkJWKytqtzmN4YNqD
+ 0kMSSb6EvXO53FBcK7eIpSUiqQGccf8=
+Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com
+ [209.85.160.197]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-533-P_EXf_A8PSidzFhIdOFr-A-1; Thu, 09 Sep 2021 20:03:46 -0400
+X-MC-Unique: P_EXf_A8PSidzFhIdOFr-A-1
+Received: by mail-qt1-f197.google.com with SMTP id
+ b15-20020a05622a020f00b0029e28300d94so10996907qtx.16
  for <tipc-discussion@lists.sourceforge.net>;
- Thu, 09 Sep 2021 13:04:34 -0700 (PDT)
+ Thu, 09 Sep 2021 17:03:46 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:subject:to:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=/5f0u1BmIn1o6yrusYQJib25VSfehiEO+tM/0SmO99o=;
- b=DycYUVenFBapUnKuzwC+F1IS9VHLYh3ukCpoakIvj2B7IZUdY8cIQscuMl1I4g8mcA
- 2KKylMseKj9XI8jchvq9d0AhNwOe/6GjBmRcrYFuSUwEPjKBSEsstRAdPUV5lAUBz40/
- EctewDROMNFuYXHXHbhxSiw0Pryiaya9QjQRWP4SMNnkaCv0Dx/CyUnmULeYDQn1N/Jw
- ktFXaVH+UjEeuD9ih8zPYuuE73Mg2THg14BRabhXBEmx5RTodrUqEH4bIqzcokZP1biE
- ty2Q+tWSO1Dc/wJU4ix2OP1WUja4wJ4t8b/YFogwRLmCaq8V2n+05SxF2d1C1WXRb9Q2
- lyfQ==
-X-Gm-Message-State: AOAM5333wSaooFiu+GLFZl/UZZ1EVljmqkku9Kx33skrAxeD1FhCT6ka
- HVEmYRuqRF5U68HMjUYmDyCnal4MaO+mONnwtJgRXI4JaiG69IISe1KupDvecGSJwwX/dFRz9KO
- HLnmPZ4xUlCQP1Uw4KfrN9QVwsjwdv3Ncb5A/Ld3yZnbz5bJ/VhqOZzQT1iQAXcU9VmOHsDebbm
- J//aKodB0aTQ==
-X-Received: by 2002:ac8:4c89:: with SMTP id j9mr4598436qtv.78.1631217873406;
- Thu, 09 Sep 2021 13:04:33 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJzuRyocWVTkfLKQ79+de89t80gbQKr+PfPqjjk8jsZTVohQ+II/AsBefK+rLUYoojeaFztJjA==
-X-Received: by 2002:ac8:4c89:: with SMTP id j9mr4598411qtv.78.1631217873101;
- Thu, 09 Sep 2021 13:04:33 -0700 (PDT)
+ bh=G6XOqaesl4DDKQKqixgo07fDrd1Fcc7aYPMBmuwUbw8=;
+ b=A3OdI2klpH3sz/0NT3Ly9kpsoM/0WMfZSHoqdkCQuo/Xrde0Y1oPrmoRlPsKUFJVFp
+ u19ffQ0yUY1PLkbdtzNf0AyvHawfgakfeGOtZknEBX1cTrSxGXvVF1B5FLhx3FhrghYI
+ tgENAcvmxWgz6lMGLTpUjSsWbCrQ5G8Z4qcDEyCDei32tc2gLv0zpNr5WgCY51sWTTxB
+ SlU9jyt7p6zd5YpBVoBGN2Hs1zBNI4UObNdAsfswQ4bSrMsnPNA/SLBKHsKqy3rP6Mhw
+ hJxorjlLtCzCva/O4ZApVTKN9VxNdb0OHK4bSu4i5UxjMa5l72+0GCY+0cL8Vxl3JjMN
+ EbYw==
+X-Gm-Message-State: AOAM531XKliBw1pbSoUSFjb52yoRztBId1hCKtM53peVFYRQhVru5amq
+ nbgrnAuFOtNzbuNbnraHPdq7e30q7A6papduycdTD3r8nz4Moa+qlJcX0xXCZ3pEIMlHIbTalhv
+ jQ4IOb/Es6XZR72yK5OILV1pAGM6xzm6T8drvFJ8WcEchhckvG0hpKfpDNa/L56b9WSGm+D6TdC
+ 41Uhg4tP7+AA==
+X-Received: by 2002:ac8:96:: with SMTP id c22mr5405221qtg.223.1631232224604;
+ Thu, 09 Sep 2021 17:03:44 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJya7tUyLea/gL6RmJP+pKfm4k23zXA8KCFtdUbxoJwCA/ohcbUb5zGNmMDKI4DIsiQ9u/F+sg==
+X-Received: by 2002:ac8:96:: with SMTP id c22mr5405100qtg.223.1631232222886;
+ Thu, 09 Sep 2021 17:03:42 -0700 (PDT)
 Received: from [192.168.0.104] ([24.225.235.43])
- by smtp.gmail.com with ESMTPSA id e5sm1841362qts.0.2021.09.09.13.04.32
+ by smtp.gmail.com with ESMTPSA id c72sm2525697qkg.5.2021.09.09.17.03.42
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 09 Sep 2021 13:04:32 -0700 (PDT)
+ Thu, 09 Sep 2021 17:03:42 -0700 (PDT)
 To: Xin Long <lucien.xin@gmail.com>, tipc-discussion@lists.sourceforge.net
 References: <cover.1625595705.git.lucien.xin@gmail.com>
+ <49e48ff31811b6ccd5a598691a09697f9dbe27e6.1625595705.git.lucien.xin@gmail.com>
 From: Jon Maloy <jmaloy@redhat.com>
-Message-ID: <06bf0c78-0635-0c7a-8dc2-f4d179a7933c@redhat.com>
-Date: Thu, 9 Sep 2021 16:05:48 -0400
+Message-ID: <27939cdc-5271-acf9-19fb-1821e9fe8efe@redhat.com>
+Date: Thu, 9 Sep 2021 20:05:14 -0400
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
  Thunderbird/78.11.0
 MIME-Version: 1.0
-In-Reply-To: <cover.1625595705.git.lucien.xin@gmail.com>
+In-Reply-To: <49e48ff31811b6ccd5a598691a09697f9dbe27e6.1625595705.git.lucien.xin@gmail.com>
 Authentication-Results: relay.mimecast.com;
  auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
 X-Mimecast-Spam-Score: 0
@@ -101,17 +102,21 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 06/07/2021 14:22, Xin Long wrote: > This patchset is to
- implement PLPMTUD and GSO for TIPC, > Patch 1-5 are for PLPMTUD while 6-8
- are for GSO. I think this should be posted as two separate series, as they
- really implement two different features. 
+ Content preview:  On 06/07/2021 14:22,
+ Xin Long wrote: > This patch is to receive
+ and process the probe ack by checking > msg_max_pkt() == l->pl.probe_size
+ then does state transition > in tipc_link_pl_recv(). > > For t [...] 
  Content analysis details:   (-3.3 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [216.205.24.124 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
  [216.205.24.124 listed in wl.mailspike.net]
+ 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+ blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: lwn.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [216.205.24.124 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -123,9 +128,9 @@ X-Spam-Report: Spam detection software,
  author's domain
  -2.0 NICE_REPLY_A           Looks like a legit reply (A)
  -0.4 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1mOQHq-005FMy-FH
-Subject: Re: [tipc-discussion] [PATCH net-next 0/8] tipc: add PLPMTUD probe
- and GSO offload
+X-Headers-End: 1mOU1K-005RGo-JY
+Subject: Re: [tipc-discussion] [PATCH net-next 5/8] tipc: add probe recv and
+ state transition
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -144,56 +149,93 @@ Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
 
 On 06/07/2021 14:22, Xin Long wrote:
-> This patchset is to implement PLPMTUD and GSO for TIPC,
-> Patch 1-5 are for PLPMTUD while 6-8 are for GSO.
+> This patch is to receive and process the probe ack by checking
+> msg_max_pkt() == l->pl.probe_size then does state transition
+> in tipc_link_pl_recv().
+> 
+> For the details, see:
+> 
+>    https://lwn.net/Articles/860385/
+> 
+> Signed-off-by: Xin Long <lucien.xin@gmail.com>
+> ---
+>   net/tipc/link.c | 48 ++++++++++++++++++++++++++++++++++++++++++++++++
+>   1 file changed, 48 insertions(+)
+> 
+> diff --git a/net/tipc/link.c b/net/tipc/link.c
+> index 3af6c04f82c2..241c9378e258 100644
+> --- a/net/tipc/link.c
+> +++ b/net/tipc/link.c
+> @@ -293,6 +293,7 @@ static int tipc_link_advance_transmq(struct tipc_link *l, struct tipc_link *r,
+>   static void tipc_link_update_cwin(struct tipc_link *l, int released,
+>   				  bool retransmitted);
+>   static void tipc_link_pl_send(struct tipc_link *l);
+> +static void tipc_link_pl_recv(struct tipc_link *l);
+>   /*
+>    *  Simple non-static link routines (i.e. referenced outside this file)
+>    */
+> @@ -2333,6 +2334,13 @@ static int tipc_link_proto_rcv(struct tipc_link *l, struct sk_buff *skb,
+>   			break;
+>   		}
+>   
+> +		if (!reply && msg_max_pkt(hdr) == l->pl.probe_size) {
+> +			tipc_link_pl_recv(l);
+> +			if (l->pl.state == TIPC_PL_COMPLETE)
+> +				break;
+> +			tipc_link_build_proto_msg(l, STATE_MSG, PROBE_PLPMTU, 0, 0, 0, 0, xmitq);
+> +		}
+> +
+>   		/* Receive Gap ACK blocks from peer if any */
+>   		glen = tipc_get_gap_ack_blks(&ga, l, hdr, true);
+>   
+> @@ -3061,3 +3069,43 @@ static void tipc_link_pl_send(struct tipc_link *l)
+>   	}
+>   	l->pl.count = TIPC_PROBE_INTERVAL;
+>   }
+> +
+> +static void tipc_link_pl_recv(struct tipc_link *l)
+> +{
+> +	pr_debug("%s: PLPMTUD: link: %p, state: %d, pmtu: %d, size: %d, high: %d\n",
+> +		 __func__, l, l->pl.state, l->pl.pmtu, l->pl.probe_size, l->pl.probe_high);
 
-I think this should be posted as two separate series, as they really 
-implement two different features.
-
-The problem I see with this is that you reduce MTU in patch #1, so
-performance will suffer until the second series is adapted.
-
-Unless there is a way around this the two series mut at least be
-applied within the same release.
-
-Also, if I understand this correctly, PLTMUD will work also for
-the Ethernet bearer, so that jumbo frame capability can be detected?
-I am uncertain about the value of this, since jumbo frame capability is 
-already detected by the endpoint bearers, and I doubt that such frames
-ever do more than one intra-subnet hop. But maybe I am wrong here? 
-Anyway, this feature cannot do any harm even on Ethernet.
-
+Many of these lines will not pass checkpatch.
 ///jon
 
-> 
-> It gets some ideas from SCTP as their similarities like
-> both are reliable datagram packets and possible to run
-> over IP(v6)/UDP. But also it does some adjustments for
-> TIPC.
-> 
-> Xin Long (8):
->    tipc: set the mtu for bearer properly for udp media
->    tipc: add the constants and variables for plpmtud
->    tipc: build probe and its reply in tipc_link_build_proto_msg
->    tipc: add probe send and state transition
->    tipc: add probe recv and state transition
->    tipc: add offload base
->    tipc: add software gso
->    tipc: add hardware gso
-> 
->   include/uapi/linux/tipc_config.h |   6 --
->   net/tipc/Makefile                |   2 +-
->   net/tipc/bearer.c                |  23 ++++-
->   net/tipc/core.c                  |   3 +
->   net/tipc/link.c                  | 147 +++++++++++++++++++++++++++----
->   net/tipc/link.h                  |  29 ++++++
->   net/tipc/msg.c                   |   1 +
->   net/tipc/msg.h                   |   3 +
->   net/tipc/node.c                  |  15 +++-
->   net/tipc/offload.c               |  70 +++++++++++++++
->   net/tipc/udp_media.c             |  18 ++--
->   11 files changed, 287 insertions(+), 30 deletions(-)
->   create mode 100644 net/tipc/offload.c
+> +
+> +	l->pl.pmtu = l->pl.probe_size;
+> +	l->pl.count = 0;
+> +	if (l->pl.state == TIPC_PL_BASE) {
+> +		l->pl.state = TIPC_PL_SEARCH; /* Base -> Search */
+> +		l->pl.probe_size += TIPC_PL_BIG_STEP;
+> +	} else if (l->pl.state == TIPC_PL_ERROR) {
+> +		l->pl.state = TIPC_PL_SEARCH; /* Error -> Search */
+> +
+> +		l->pl.pmtu = l->pl.probe_size;
+> +		l->mtu = l->pl.pmtu;
+> +		l->pl.probe_size += TIPC_PL_BIG_STEP;
+> +	} else if (l->pl.state == TIPC_PL_SEARCH) {
+> +		if (!l->pl.probe_high) {
+> +			l->pl.probe_size = min(l->pl.probe_size + TIPC_PL_BIG_STEP,
+> +					       TIPC_MAX_PLPMTU);
+> +			return;
+> +		}
+> +		l->pl.probe_size += TIPC_PL_MIN_STEP;
+> +		if (l->pl.probe_size >= l->pl.probe_high) {
+> +			l->pl.probe_high = 0;
+> +			l->pl.raise = 0;
+> +			l->pl.state = TIPC_PL_COMPLETE; /* Search -> Search Complete */
+> +
+> +			l->pl.probe_size = l->pl.pmtu;
+> +			l->mtu = l->pl.pmtu;
+> +		}
+> +	} else if (l->pl.state == TIPC_PL_COMPLETE) {
+> +		l->pl.raise++;
+> +		if (l->pl.raise == 30) {
+> +			l->pl.state = TIPC_PL_SEARCH; /* Search Complete -> Search */
+> +			l->pl.probe_size += TIPC_PL_MIN_STEP;
+> +		}
+> +	}
+> +}
 > 
 
 
