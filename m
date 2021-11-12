@@ -2,91 +2,110 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FBD744CC78
-	for <lists+tipc-discussion@lfdr.de>; Wed, 10 Nov 2021 23:19:12 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51A3D44DECF
+	for <lists+tipc-discussion@lfdr.de>; Fri, 12 Nov 2021 01:04:28 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1mkvvt-0000zN-NP; Wed, 10 Nov 2021 22:19:05 +0000
+	id 1mlK3H-0007r3-Ud; Fri, 12 Nov 2021 00:04:19 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <lucien.xin@gmail.com>) id 1mkvvr-0000zH-Rr
- for tipc-discussion@lists.sourceforge.net; Wed, 10 Nov 2021 22:19:03 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1mlK3G-0007qw-8l
+ for tipc-discussion@lists.sourceforge.net; Fri, 12 Nov 2021 00:04:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
- MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=N09BCJv98YRZWfVReddxxIdaCNRCEPF1owcIxfKgyIw=; b=IyAv31lpvQEkuvWPJrKpQysvyg
- ArddC+5bkMZiA8jfceRtblfPRyQGz6+otmBI2WeEOTu9SzAd8Ekua6Bi3MC/3mp3gEmRVw7e6C+dh
- rvfQrp7RwvwK08SDm3uA1BPu/tS9qphUfSG6mxwttSeXRk1Pd5NYPYc8iwZR6Cu3Cszk=;
+ bh=+aI3vIA8L2jTbmaVH9PAGWa1rUBVm1aF92U3pHIQZow=; b=kY/Djcgp5c0KjGqeWDYV4aM8ZR
+ QCPW78pRvNzbrJ9Z3g9ftf0y6s+CcFBxUZaVGklyOziQBREryrLZlE8Dlhxm7ows9XooMLzEsu3bn
+ IWm8XLoq/ZBtsdvqTZkgJFreB9xTsXlxxunbFwx23wL0IcRF5APNcBR8GHiWvEhIXjJE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Cc:To:Subject:Message-ID:Date:From:MIME-Version:Sender:
- Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=N09BCJv98YRZWfVReddxxIdaCNRCEPF1owcIxfKgyIw=; b=g
- XC7zT5FKXRHyPkDgIs3EqHla3suDPgwYBRZScqjSl2ocjy+jNVmlWbL6HOCr9skEeNiPS0eG+V0Wb
- S5FPnS+0NGUZ61xwNTikp2nON8mbLIcOcRzpqki1FzT0l7T3aWsUbkwf9HHAKjiwttDYouoeeNbSj
- aZ07qCA31OOd8tfs=;
-Received: from mail-wr1-f43.google.com ([209.85.221.43])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
- id 1mkvvr-008wby-A7
- for tipc-discussion@lists.sourceforge.net; Wed, 10 Nov 2021 22:19:03 +0000
-Received: by mail-wr1-f43.google.com with SMTP id d3so6495377wrh.8
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
+ Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=+aI3vIA8L2jTbmaVH9PAGWa1rUBVm1aF92U3pHIQZow=; b=ZAK+ba9xjqjCi26HcliZcrXQws
+ T9ZXEIn0FTsxl5WR4SL23rq6f6PG5QO1NfJHGXX4Jjlm9YxmUH83cbksk8jS/T6/p7vZHr0sIAJv8
+ kDiKFI+B2BznWskV04/ZczzqV8kqKj0LPLXt4Awqe4Q2o+bOiD2YHe4d3BORT5m4+e1g=;
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ id 1mlK3A-0005ag-Tm
+ for tipc-discussion@lists.sourceforge.net; Fri, 12 Nov 2021 00:04:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1636675446;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=+aI3vIA8L2jTbmaVH9PAGWa1rUBVm1aF92U3pHIQZow=;
+ b=DoLkf3EEuoQm3tEPhwfe86gtwXfafh9U8cmsmlNMUaaJsvTNXCqf/QSsZbGCuCx0PyxJJ8
+ BTqrrXxkD4GT7ZkFagJ5KY3ISWoymnuBw1K70XAreSEgeU/F/chmDoY3bHkf5/VirHkXlm
+ S8Zbx1TEmXh/pT6F8FKZzPFQBp9gEzw=
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
+ [209.85.222.197]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-171-8AmEYBD0PAmVa_Lvyy-PnA-1; Thu, 11 Nov 2021 19:04:04 -0500
+X-MC-Unique: 8AmEYBD0PAmVa_Lvyy-PnA-1
+Received: by mail-qk1-f197.google.com with SMTP id
+ ay9-20020a05620a178900b00462db20ac02so5252391qkb.10
  for <tipc-discussion@lists.sourceforge.net>;
- Wed, 10 Nov 2021 14:19:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=mime-version:from:date:message-id:subject:to:cc;
- bh=N09BCJv98YRZWfVReddxxIdaCNRCEPF1owcIxfKgyIw=;
- b=lS3tXCJdMVBfkJjbR+ZaOyKiirH11r0Q05zfccL3Gvay0g72Xdo4t1uTS16KlT8uJJ
- U2TmjyL2xxpgzQ+Q3UsL0Cf53v6ckM06d+lSv8GJ4kEeXpUEQIRqUryM7UpSNIkoxVl9
- yoemRKjJaksr+gf/Kr7d3VNvTWFO9JCjBaixfr3rlyaxhZ1zJ98HrQBGO0Vitd7ohmPf
- STfS5CB2CiIO/EU8xkwkbvHyN5vy67u1YKut8BFe8i7EJ3kLdmNaUv5nYMIEJZz2iqP3
- Wz03ax/WwUUDpOpI/7LfauEo+bLx6sJ3oNKfp/B3+wkj/O/4VkiEfP/hKF5kO4m6hNJI
- 4ynw==
+ Thu, 11 Nov 2021 16:04:04 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=N09BCJv98YRZWfVReddxxIdaCNRCEPF1owcIxfKgyIw=;
- b=R2KqHB1bN6i2opeX14B1j66CEDLCebeDB5DRXrn5EgS1qXfKWPIeyw6WPb21huEe9f
- pP2kas5WQ/g6kvObZJPMx8LhEc9RxqPqWs9dpQS4StBeYp9beDK3dAkTf1RFr7V7G1JK
- pvIlibwuQo8sXmVI3v+3LTE6wIhXjp3UnlRKaRL4eIPQBR6PCdbfAkKCZy292WCIsmv7
- uu1zA+CZF48MVvuPJi85z+/758LYMpeRb0EkOKscr1If+n4i/DWQycPPntMFk7DpArjU
- 5fHZOE4OIyiObdwYlOTl086e82dTMEcXFluqPIwh4MqdLTiFPnM80YuX7ZTPIBYVJ5Tg
- p9rA==
-X-Gm-Message-State: AOAM53060Kj2RDaa7SeRYA1IdldjHi8NhGZHX3E9WOsqMUpvDMyDinaj
- Lqp0s4VHFyKPg/xMZ0XuGajUE1Aj0GNyMCU8Re4lJap9wHM=
-X-Google-Smtp-Source: ABdhPJzqfzXgUbuMNopTZGNf8eGUDCwZhDPPjnmUrCIxi70zUaMjvuZUiTWJcw8XHSxHrmEQD9DjJ7F+YiSwEacJfFw=
-X-Received: by 2002:a5d:47aa:: with SMTP id 10mr3158732wrb.50.1636582736879;
- Wed, 10 Nov 2021 14:18:56 -0800 (PST)
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=+aI3vIA8L2jTbmaVH9PAGWa1rUBVm1aF92U3pHIQZow=;
+ b=16khfxHbo4iTwbVH9WTq1Le22A9hTDGN0OUCAK4HUvgJBKvNbXpq0QJ8bQI8Be984E
+ qs5wE8Pur/OPZMwt0Mz6zFk3QSSxZ92uPQ1jdT7cM/11/bJhMUYZymkloka5uGDieV6J
+ exRPzPpeZy4ASe16Q+U4VVcjIeJHmGfhy7p4UAWBQFwXThTS4JJ9Gh+UKjQsGx5U5rjx
+ Wta+2cCNLo/Ew39/TQB++6OD4trhK21q87F5wcrAqPD/7UVgAEQXthCMmUz99mZnQlTy
+ eDby37aqM31D5/4Xow6EyiUAv/p5WIPjQiec/COUw0v/KC/MWYsfzWJ6l9sOW9fRWs/0
+ lQfQ==
+X-Gm-Message-State: AOAM533J78HoChAPcMc+APy5t7nvEpgsdUDTwuUOCnga7kMUfo/veTgb
+ TGDwuBEKrPRTsnag5TKyIQuuWRW3HobwfIKsM9YRvsoI89SvXj7lFsh7puKDvWCiNFabNbNWCrV
+ zdKyWIT9K92sXwEFG8jVrhOs07M62rKsvbWYI
+X-Received: by 2002:ac8:5996:: with SMTP id e22mr11956147qte.373.1636675443938; 
+ Thu, 11 Nov 2021 16:04:03 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJymwzqftQwSVQz3EVwVZALeAzcSvuKspR4FbE1BNS8tjVDd4h2McovAbqJCNwooPT1nnA4EMA==
+X-Received: by 2002:ac8:5996:: with SMTP id e22mr11956129qte.373.1636675443741; 
+ Thu, 11 Nov 2021 16:04:03 -0800 (PST)
+Received: from [10.0.0.96] ([24.225.241.171])
+ by smtp.gmail.com with ESMTPSA id o2sm2346985qtw.17.2021.11.11.16.04.02
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 11 Nov 2021 16:04:03 -0800 (PST)
+Message-ID: <0f144d68-37c8-1e4a-1516-a3a572f06f8f@redhat.com>
+Date: Thu, 11 Nov 2021 19:06:18 -0500
 MIME-Version: 1.0
-From: Xin Long <lucien.xin@gmail.com>
-Date: Wed, 10 Nov 2021 17:18:46 -0500
-Message-ID: <CADvbK_dBvjbwZn65RTp1Dh-+YuLr_GLQdY1bh9GwQckdchJs-Q@mail.gmail.com>
-To: tipc-discussion@lists.sourceforge.net
-X-Spam-Score: -0.2 (/)
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.1.0
+To: Tadeusz Struk <tadeusz.struk@linaro.org>
+References: <20211111205916.37899-1-tadeusz.struk@linaro.org>
+From: Jon Maloy <jmaloy@redhat.com>
+In-Reply-To: <20211111205916.37899-1-tadeusz.struk@linaro.org>
+Authentication-Results: relay.mimecast.com;
+ auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Language: en-US
+X-Spam-Score: -3.6 (---)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hi Everyone, Currently in tcp_rcv(),
- it seems that both unencrypted
- and encrypted packets can be processed even when key/master_key is set. After
- the key is set, which means all packets going out will be encrypted, to respond
- to the unencrypted packets with encrypted packets doesn't seem normal, from
- my point of view. 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  On 11/11/21 15:59, Tadeusz Struk wrote: > kmemdup can return
+ a null pointer so need to check for it, otherwise > the null key will be
+ dereferenced later in tipc_crypto_key_xmit as > can be seen in the [...] 
+ Content analysis details:   (-3.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [lucien.xin[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,13 +115,16 @@ X-Spam-Report: Spam detection software,
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.43 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.43 listed in list.dnswl.org]
-X-Headers-End: 1mkvvr-008wby-A7
-Subject: [tipc-discussion] shouldn't unencrypted packets be discarded if any
- key is set on local node?
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [170.10.129.124 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [170.10.129.124 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -2.0 NICE_REPLY_A           Looks like a legit reply (A)
+ -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1mlK3A-0005ag-Tm
+Subject: Re: [tipc-discussion] [PATCH] tipc: check for null after calling
+ kmemdup
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -114,30 +136,56 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org, tipc-discussion@lists.sourceforge.net,
+ Jakub Kicinski <kuba@kernel.org>, "David S. Miller" <davem@davemloft.net>,
+ Dmitry Vyukov <dvyukov@google.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Hi Everyone,
 
-Currently in tcp_rcv(), it seems that both unencrypted and encrypted packets
-can be processed even when key/master_key is set.
 
-After the key is set, which means all packets going out will be encrypted, to
-respond to the unencrypted packets with encrypted packets doesn't seem
-normal, from my point of view.
+On 11/11/21 15:59, Tadeusz Struk wrote:
+> kmemdup can return a null pointer so need to check for it, otherwise
+> the null key will be dereferenced later in tipc_crypto_key_xmit as
+> can be seen in the trace [1].
+>
+> Cc: Jon Maloy <jmaloy@redhat.com>
+> Cc: Ying Xue <ying.xue@windriver.com>
+> Cc: "David S. Miller" <davem@davemloft.net>
+> Cc: Jakub Kicinski <kuba@kernel.org>
+> Cc: netdev@vger.kernel.org
+> Cc: tipc-discussion@lists.sourceforge.net
+> Cc: linux-kernel@vger.kernel.org
+> Cc: stable@vger.kernel.org # 5.15, 5.14, 5.10
+>
+> [1] https://syzkaller.appspot.com/bug?id=bca180abb29567b189efdbdb34cbf7ba851c2a58
+>
+> Reported-by: Dmitry Vyukov <dvyukov@google.com>
+> Signed-off-by: Tadeusz Struk <tadeusz.struk@linaro.org>
+> ---
+>   net/tipc/crypto.c | 5 +++++
+>   1 file changed, 5 insertions(+)
+>
+> diff --git a/net/tipc/crypto.c b/net/tipc/crypto.c
+> index dc60c32bb70d..988a343f9fd5 100644
+> --- a/net/tipc/crypto.c
+> +++ b/net/tipc/crypto.c
+> @@ -597,6 +597,11 @@ static int tipc_aead_init(struct tipc_aead **aead, struct tipc_aead_key *ukey,
+>   	tmp->cloned = NULL;
+>   	tmp->authsize = TIPC_AES_GCM_TAG_SIZE;
+>   	tmp->key = kmemdup(ukey, tipc_aead_key_size(ukey), GFP_KERNEL);
+> +	if (!tmp->key) {
+> +		free_percpu(tmp->tfm_entry);
+> +		kfree_sensitive(tmp);
+> +		return -ENOMEM;
+> +	}
+>   	memcpy(&tmp->salt, ukey->key + keylen, TIPC_AES_GCM_SALT_SIZE);
+>   	atomic_set(&tmp->users, 0);
+>   	atomic64_set(&tmp->seqno, 0);
+Acked-by: Jon Maloy <jmaloy@redhat.com>
 
-Besides, it may cause some potential security issues if the local node can
-still receive unencrypted packets after the key is set, such as the CVE
-one fixed by:
-
-fa40d9734a57 ("tipc: fix size validations for the MSG_CRYPTO type")
-
-So I'm thinking of only accepting the encrypted packets if any key is
-set on the local node. But I'm not sure if we have any other cases
-needing it to accept both kinds of packets, anyone know? Tuong?
-
-Thanks.
 
 
 _______________________________________________
