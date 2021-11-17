@@ -2,171 +2,117 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7F1D454679
-	for <lists+tipc-discussion@lfdr.de>; Wed, 17 Nov 2021 13:38:29 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40BB4455022
+	for <lists+tipc-discussion@lfdr.de>; Wed, 17 Nov 2021 23:04:19 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1mnKCf-0001to-Ek; Wed, 17 Nov 2021 12:38:18 +0000
+	id 1mnT2D-00017B-D5; Wed, 17 Nov 2021 22:04:05 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <prvs=6955e86eb0=ying.xue@windriver.com>)
- id 1mnKCe-0001th-AK
- for tipc-discussion@lists.sourceforge.net; Wed, 17 Nov 2021 12:38:17 +0000
+ (envelope-from <jmaloy@redhat.com>) id 1mnT2C-000175-8R
+ for tipc-discussion@lists.sourceforge.net; Wed, 17 Nov 2021 22:04:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Q4AZ1veJgFNAK4rCMDxSk5INFm4LgzDXCrsWkgIlTMs=; b=SXLAk6bLDT018+mhImwq1q3PGG
- 7BVMTwhUD+AA1eYV90Wxd94SC1Dt76AKVNwfTfzam+WVprGxZ5+A9qnswlxZt/asq/AGV2IXJ5KTj
- PneZpC70ogGnQED4Y94eUeZwTxNj552ESVnNslfBAYAMuyDFfSOgR0VyUaXQVwgaBb1I=;
+ bh=UM3rOln8kBcAURl+w/UPvP+woZK+h5DIoF92PXfCfdQ=; b=EecIkWvu7meIbAV+QBwfQrE0Ao
+ dpgcunBghR89LFiRl9zGOtKmyDJbY4k5iauOyjLQaPHKkFEXsfwr+R5gFC1pNueMvvvs6dFfQzzpd
+ asOZ6+0HinnfLpH3WcaWUT/8+4Ou9VpFBnsOSCNdHnpR0zDFLwEHhWB2W4OFcqeABfVE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
- References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
+ Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=Q4AZ1veJgFNAK4rCMDxSk5INFm4LgzDXCrsWkgIlTMs=; b=nIvmiBQfGmTPU9RrUiJuQdwMe0
- 6iHgwAsyiMevUgsRRQOidSjh2sWV03vD1XE7HCt2juNoie72xHSNkikvM0eTD4hU0/ox8lwF8+puG
- EQtce7IJfcQME9j9aUb//SBggfHzp4E9ohgNCTtFjdIQVW0aT/NwcUHFGZcQBr93g5JI=;
-Received: from mx0a-0064b401.pphosted.com ([205.220.166.238])
+ bh=UM3rOln8kBcAURl+w/UPvP+woZK+h5DIoF92PXfCfdQ=; b=ClWvStn5Yga6mt/6OuhjtSPeVO
+ UNN02rntypObU4ChWlMkgxWQx5KUuF20qcVFNktDxWdd7f934jzkPn9OFc8/x+bkD/yEb61d9RcNC
+ ctOUzRLY9xhNvauAIcIi3EpNJYduR9E9+MNYFNt/n9YC8dCysjw1rAhsk6Hd+cXa4qa8=;
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mnKCZ-000297-PO
- for tipc-discussion@lists.sourceforge.net; Wed, 17 Nov 2021 12:38:17 +0000
-Received: from pps.filterd (m0250809.ppops.net [127.0.0.1])
- by mx0a-0064b401.pphosted.com (8.16.1.2/8.16.1.2) with ESMTP id 1AHCH35x001500;
- Wed, 17 Nov 2021 04:37:51 -0800
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=windriver.com;
- h=from : to : cc :
- subject : date : message-id : references : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=PPS06212021;
- bh=Q4AZ1veJgFNAK4rCMDxSk5INFm4LgzDXCrsWkgIlTMs=;
- b=suL5Z9c2F4lKYaKhNSzCPJD1yYGyP/R4hPN19VRg2V7KKmszOt++9ndALd5SoFrZ7NYc
- mkb80phPBg5fchcsmQ+nSYaYRVOW7YienDIJfjhX+6T0+J1s3K9TdPfm++qv0VynbQJE
- S4XYp0gkk9eC6VPozsM6+bO6yZvLPwEQuQx3rRXCrDXuQmVxBN2NA25TkhW+DIwx4XbI
- ugdMoj+i6lrOoycVcxzXrjzYpAHkY82yVXNvZsVlNfUvK5EyaF1zpt8+MrjjjDvI6Qh9
- Y6lg2Ru2VNmu9wadXfRj/o9Ow1DRgNYPmuIea7d1mo+baU+P946vBHzkHJ8dkz5nJogJ OQ== 
-Received: from nam02-bn1-obe.outbound.protection.outlook.com
- (mail-bn1nam07lp2048.outbound.protection.outlook.com [104.47.51.48])
- by mx0a-0064b401.pphosted.com (PPS) with ESMTPS id 3ccww005x8-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 17 Nov 2021 04:37:50 -0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=GJnuJWALt82742h9K9wpcDhhG8x81bs77U/yjO/HfWLYnVPcB2G9L1FCNt5rwwps72iscqPdchx0C1aL1gxZGUsBAjZ7Ja6MAeaPZAFFg0AgOt53MEQu0Xp/DLwYAXD7VWbuwW7I+DqU3WI1sui6/cpa6sfHqgH4aRiKjzjy+4oFxollGaoIUoZMuAHD5j/7n/1QYjgFkG0bd8dOuhIM08Gl6Rdqa8E9rxMWUsK7MqPslWa1BYxgX7Ot/X1wBBOspV3lE7m3LjnP9kssq1wIgJzVp6mFb9yCqqxQlV2vIcmqo/nYqWOamXzNB0GYupy9D3hWuJG87g9KBp14CFzKMA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Q4AZ1veJgFNAK4rCMDxSk5INFm4LgzDXCrsWkgIlTMs=;
- b=gkmla/q8hkp+1ZHqGo6xSiquw7p+Ca+ecaB/K2qQKjqZVvW9idzKd9TRbKL2mCGJiADoZLHOU+rmazeUV8y66Vs6FWjMWU4okgmC2Z+gHtb375TPCn2ZOU0juL+73Ivp7ydwXPU5BN14OrMryltP8FIOa7xEUD8Q2/W4Nn30ZGCguoXxPeEXnPobwT4ncgwiVmwafZmG6CIf80Jt6zQiORsL7QvqjTxnlasMXdUDSLn3tP0/e5K2mCMoRNRbNLf+F8rKtfBeZOKUxXEar8Tte/Qz+ohgb5I966AzXCgDeBJBghv7wPfh2NbVQJ3pZpSTWpcUMVeveXj/kTR9qf7/uA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=windriver.com; dmarc=pass action=none
- header.from=windriver.com; dkim=pass header.d=windriver.com; arc=none
-Received: from DM8PR11MB5686.namprd11.prod.outlook.com (2603:10b6:8:21::11) by
- DM4PR11MB5536.namprd11.prod.outlook.com (2603:10b6:5:39b::15) with
- Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.4690.26; Wed, 17 Nov 2021 12:37:46 +0000
-Received: from DM8PR11MB5686.namprd11.prod.outlook.com
- ([fe80::c439:a54b:3935:964b]) by DM8PR11MB5686.namprd11.prod.outlook.com
- ([fe80::c439:a54b:3935:964b%4]) with mapi id 15.20.4713.021; Wed, 17 Nov 2021
- 12:37:46 +0000
-From: "Xue, Ying" <Ying.Xue@windriver.com>
-To: Tadeusz Struk <tadeusz.struk@linaro.org>, "davem@davemloft.net"
- <davem@davemloft.net>
-Thread-Topic: [PATCH v2] tipc: check for null after calling kmemdup
-Thread-Index: AQHX2jotl85lhMqGjkuUe5aW5Kh/4KwHq1xQ
-Date: Wed, 17 Nov 2021 12:37:46 +0000
-Message-ID: <DM8PR11MB56865CBD8366FFFE28E0A6D6849A9@DM8PR11MB5686.namprd11.prod.outlook.com>
-References: <20211115160143.5099-1-tadeusz.struk@linaro.org>
-In-Reply-To: <20211115160143.5099-1-tadeusz.struk@linaro.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 30ed7933-edfa-42f1-d25f-08d9a9c70efd
-x-ms-traffictypediagnostic: DM4PR11MB5536:
-x-microsoft-antispam-prvs: <DM4PR11MB55360188959923D22B97BDB3849A9@DM4PR11MB5536.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5236;
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 4Rs4Qgw7YJx76i8TeJP34cyOgpElZ1JNkjRBQWmDTJnyCWLyaRKl4qPf2VaaT2LX4L1AemjUczwm3wr+2PUIncq0sPEUsxk3hJshrZX0Ej3yxw94hK6dkLe0W788ImpDVtT6o60hFvgkoJQJxRFGhYK1oGwt9AGSkmfx31MGOF1tx7kiV7YSEJw3YNHEC2eN8KcmBtM/FiC+HihxqkqRstvfgWOcFS0DjRY0C5ynI4OLo0UdwI52z2OuG3zZa+WGwApNVV9asLUuqWYZhJkuaClhyjPvd9XcUbNAh+wIl0F8dpeT7MZm7vD/UGOkG6UZ51BC2VDAXT7tsnLelXx9Rrcir8eWEAyUoaFJk518HdyDtgkaGza6RdczJkkGdbjaJ5cW8DsEyiRJqpTOmE6ocg7zSVZ8tPl4c36sd/4z+QRCxpj3CxXeQKACurBW7tXGHHBImIZUeVeQ14gNKbD4hlnTxxtgqg0u0TALCxk/MYN0FsIvBQVcTwtzCJ0vR0droobIaK9vkjFqEpFQIuCY/Xv5QBvIBI3wH3TKya6UT3mRdnxhWss6JYWkzYIOhQaY3KNaZb/IPMPg5V+GdiIiPHJw4TXSEjurh9AAGtFn50j5LQ4tzvn96hFwCt+qVaq5LtCqzIIfwXBb+6s8YISjaD18OtqFreoeE7TwGm4M6fOaAtmX/7I61fHaDW8gQaCyFGoc/LGz+zImjLJ8FjVj2nA0HLEgCpdC+qdjczfizviyobzMzF6ads8Q2gTVwU2jOyKSc6ik42qtLOsD9k8GFxSo7xW6RKtW+pcVkOPPiwDTPt1Xqmw5NSqEW/ajh982
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DM8PR11MB5686.namprd11.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(4636009)(366004)(38100700002)(5660300002)(64756008)(66556008)(8676002)(7696005)(122000001)(66446008)(33656002)(110136005)(38070700005)(508600001)(966005)(55016002)(54906003)(4326008)(2906002)(186003)(52536014)(53546011)(66946007)(76116006)(86362001)(316002)(9686003)(8936002)(26005)(83380400001)(66476007)(71200400001)(6506007)(99710200001);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?IxYmxlOT30KeGrISUcE/YRNCw72+G5mskxrpPM2K7f9i77FiT2RckV0tbLOr?=
- =?us-ascii?Q?Ha1WlW0v9UQRQf79yE09QtJLCDI5NwlN5n4yFaibImx2WaP3OA6GFhNPOtfv?=
- =?us-ascii?Q?geBdNFO3vqcAdenX0QUqeTRkgD07iaBAazNqIuuAOEJ38s1dKzdDEKBhZHdS?=
- =?us-ascii?Q?KRomsmMG64CzqnBqmzMxiiyjUnfq+BzuCFKBQZUvLy8ROO8HJo6bM8yOvgg+?=
- =?us-ascii?Q?25+k9RxqpjegSRz2W5gn32OzTIv5gUo5Fv8WChSb1OA/79wbD4klDSpaqcLx?=
- =?us-ascii?Q?jagRyvBHxpRAFrmOXEteWgk9XT0GY6LfLTzrHuxR37AiUAK/Hh6QBUKEYdUu?=
- =?us-ascii?Q?hXFmJO1pFvW9Ag5KcJn/l82XaLNd78bWlAP2qBbrrDBavZPmAUMoIw98GaUy?=
- =?us-ascii?Q?Q7c1S1qxLaKiMi3K7QPpHlhN2WlEI/WOUdG53Y4Gx45CaCyGe7rPtd+yLqxX?=
- =?us-ascii?Q?xiIZmRMLglZRZz4msx/Vx3r8BDvsyydiIj30NQnQ0ikymIgeyR0tI8IVq6M0?=
- =?us-ascii?Q?f2+qly9Fo6S3OwpMkLjM00nvdGWqxpeaGUQI5reehW1nnUWCum/L9wUIavuo?=
- =?us-ascii?Q?opQj0JCxlRizhNBbdu60eHwAxkPWhw8P/u08Y5G2WowtYWjZBLfpGO4aOlJD?=
- =?us-ascii?Q?VK0bbMnvvgGdu8AnNTBfhwJPNk5/fbA5SKccDh8WVcdFsB9pYDU3vGo+LT0F?=
- =?us-ascii?Q?uAk1nMlsDFqiFk+Md3rJUokJ/AYMboYcx09dIyzJOv1i6WHwF3zKupwjVDuD?=
- =?us-ascii?Q?g45oMLRHvrncAVi6Ddy4psGLs7Yo2hpTmitMtXHYIetBvD0PBtZACoi1p+Fl?=
- =?us-ascii?Q?lGatfFHcJZueA920z4NE3VX6dP40q1QgOVo3R9ZNi0V17ot+tNNXJiwOmMKE?=
- =?us-ascii?Q?oLjnii2CJfOR6rsphhwFdeKwNbMe+PsImk+Akjin4/kLYwAvUTiPDQYrrM4q?=
- =?us-ascii?Q?7yP75JHDhNjReJU9Ozzwi66e55ravfPsCqyrjnRXUjwVWpN/yB4ePw8CoaRA?=
- =?us-ascii?Q?eKwaN5o3B6qk59eQ1TozA0Sxaj10X9TRe80omn7ErvpVAkgV4SAAZXAoeVuk?=
- =?us-ascii?Q?RUwZpF4XZwzJhdYOodBkKTptQ07iVJJenIi4fyX/c8u6g/yO5MRiLoUMBg5T?=
- =?us-ascii?Q?qE+zAc2NmjROswEaayOOvOBuKKa7aQCRuHdiOhTgMUlv9saEB4wn/+LoHn8x?=
- =?us-ascii?Q?tIbAjL8lSEdsIw1Z9IPavMa7Q7OmuH3UWTK2rY7oBQwZhUCKxv19SnBwqe01?=
- =?us-ascii?Q?xsUcdWmPPf84grjWSlOz8O6+MMd8nNVeWl8RDCJDl4C3JlGFjuno29wNtnrA?=
- =?us-ascii?Q?MW2N4MMH+mF0xJfqncUnidXKunmbpewnRKQPnZfo/TnhdXo6kr700QQAEwYp?=
- =?us-ascii?Q?NOtu+t8tdWYWmpBM36JKAP4QqQjFvz7ljmkGYr9u4BRMTTcWIZ5DVhyWDh6n?=
- =?us-ascii?Q?I8wnLpalNgYNWCA2GHPtXAZjdPxF3CLmNJQn+f0oa0NJ4T48IDV6FVoPA351?=
- =?us-ascii?Q?WjNGvjWDjZQQP1d/+nyaYzwUKWTErZ+baU/ZoBx6cyy2rvKXheQLC66BraZ1?=
- =?us-ascii?Q?hNraXokjoKxXTOlcAtjd6oQpNMZAKlRlXWyYZA3fdySYDTFo2yThgWg6TtxI?=
- =?us-ascii?Q?rj1M23kwDEfqOI5gzl9stKo=3D?=
+ id 1mnT22-00052B-VB
+ for tipc-discussion@lists.sourceforge.net; Wed, 17 Nov 2021 22:04:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1637186628;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=UM3rOln8kBcAURl+w/UPvP+woZK+h5DIoF92PXfCfdQ=;
+ b=dOiNVyE/DX6axuTysdNnu5K4bDhMGaY8fPmMrydCINAfYY7//b9LDR6ALn6j63IjV4HnFv
+ K+XWpBrP++Be1+u+yve3m/8dapCkk9nqWJwn6YQEkgvTGlDROKiW8OllK6GGf9J9ZPYrt3
+ Rfo7RSNZnAibM31pjDaCQiAGJXlyFx8=
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com
+ [209.85.222.200]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ us-mta-47-qUkOEjYeOjW03eVAEWp6Xg-1; Wed, 17 Nov 2021 17:03:46 -0500
+X-MC-Unique: qUkOEjYeOjW03eVAEWp6Xg-1
+Received: by mail-qk1-f200.google.com with SMTP id
+ bj10-20020a05620a190a00b004681da13edcso3110628qkb.1
+ for <tipc-discussion@lists.sourceforge.net>;
+ Wed, 17 Nov 2021 14:03:45 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
+ :content-language:to:cc:references:from:in-reply-to
+ :content-transfer-encoding;
+ bh=UM3rOln8kBcAURl+w/UPvP+woZK+h5DIoF92PXfCfdQ=;
+ b=SSaX5NZTHuuU/37BnFeAhgkaDxr/+E6iTHi6LtcaQdNmBPxuFOU16bw6+/1Q9Km10I
+ u5eBmyEyp8mzczt6dTBi78GQ88eIrI5Viw88Qd7LAitZadg9Zeh9tAyNFkjTDPwVgIZX
+ mHK1dfgR4Qy2SSZG35jJFtuX8a7qfKyocU/qYwSoOrN0xfHjUi0oFS5etuAsJF2dr3/a
+ yA2LPYjh+NhODFVAZjVHnfojoigjzrOoHEzvYmi6WrHHGozOePkXOeMlPK0nrD2nDm4w
+ b3R0zXuNvQELGQ97J0o1dhP55J/9U30KRb9+v2m4hMqa8G3RoOUHWjkaBqNvosnxtJN2
+ h9iw==
+X-Gm-Message-State: AOAM531v6Nv5gzwG+ShUBCn6O7Kt1QXtMQCsk1L0uM3/b01r8KcL1XwE
+ i3EY3QpTqJbD2+LbbFaf5yX8kEiMTqqVc13jU0yeY8zDm6yG1M8m8lTnByEdJUm70PIl8fdGBsh
+ j6Dm757DOJomQ9M6YWN3XWOO11tWS5uNkHIIT
+X-Received: by 2002:ac8:5c53:: with SMTP id j19mr21301636qtj.40.1637186625569; 
+ Wed, 17 Nov 2021 14:03:45 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJwKbmfhLXEcjpNEixYPWQ886lMm649m9jzw2P56FDGKONoExY3utbgtPOsfA1loXEghxgDNQQ==
+X-Received: by 2002:ac8:5c53:: with SMTP id j19mr21301599qtj.40.1637186625332; 
+ Wed, 17 Nov 2021 14:03:45 -0800 (PST)
+Received: from [10.0.0.96] ([24.225.241.171])
+ by smtp.gmail.com with ESMTPSA id w10sm691272qkp.121.2021.11.17.14.03.44
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 17 Nov 2021 14:03:44 -0800 (PST)
+Message-ID: <0aea60c5-28d5-258a-3a32-bae1895a96ee@redhat.com>
+Date: Wed, 17 Nov 2021 17:06:02 -0500
 MIME-Version: 1.0
-X-OriginatorOrg: windriver.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: DM8PR11MB5686.namprd11.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 30ed7933-edfa-42f1-d25f-08d9a9c70efd
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Nov 2021 12:37:46.2875 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 8ddb2873-a1ad-4a18-ae4e-4644631433be
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: vQo+ZeRgbl/ZR24w4/ZvlutBsdg4lbA/eoqZ2H3BSdJ/expCjd9GU0qJsTv61eMSwGps1dXZzjxFTqFgtxpI9Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM4PR11MB5536
-X-Proofpoint-ORIG-GUID: DwA_ecA-iwYtgBB-yXfNLcgn-NoFsin5
-X-Proofpoint-GUID: DwA_ecA-iwYtgBB-yXfNLcgn-NoFsin5
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.205,Aquarius:18.0.790,Hydra:6.0.425,FMLib:17.0.607.475
- definitions=2021-11-17_04,2021-11-17_01,2020-04-07_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 phishscore=0
- lowpriorityscore=0 mlxlogscore=999 malwarescore=0 clxscore=1011
- impostorscore=0 priorityscore=1501 adultscore=0 spamscore=0 mlxscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2110150000 definitions=main-2111170065
-X-Spam-Score: -0.9 (/)
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.1.0
+To: Tadeusz Struk <tadeusz.struk@linaro.org>, davem@davemloft.net
+References: <20211115160143.5099-1-tadeusz.struk@linaro.org>
+From: Jon Maloy <jmaloy@redhat.com>
+In-Reply-To: <20211115160143.5099-1-tadeusz.struk@linaro.org>
+Authentication-Results: relay.mimecast.com;
+ auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Language: en-US
+X-Spam-Score: -3.6 (---)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Acked-by: Ying Xue <ying.xue@windriver.com> 
- Content analysis details:   (-0.9 points, 6.0 required)
+ Content preview:  Acked-by: Jon Maloy <jmaloy@redhat.com> On 11/15/21 11:01,
+ Tadeusz Struk wrote: > kmemdup can return a null pointer so need to check
+ for it,
+ otherwise > the null key will be dereferenced later in tipc_crypto_key_xmit
+ as > can be seen in the [...] 
+ Content analysis details:   (-3.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [170.10.129.124 listed in wl.mailspike.net]
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [205.220.166.238 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.220.166.238 listed in wl.mailspike.net]
+ low trust [170.10.129.124 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -176,7 +122,10 @@ X-Spam-Report: Spam detection software,
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-X-Headers-End: 1mnKCZ-000297-PO
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -2.0 NICE_REPLY_A           Looks like a legit reply (A)
+ -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1mnT22-00052B-VB
 Subject: Re: [tipc-discussion] [PATCH v2] tipc: check for null after calling
  kmemdup
 X-BeenThere: tipc-discussion@lists.sourceforge.net
@@ -190,64 +139,56 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "stable@vger.kernel.org" <stable@vger.kernel.org>,
- "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>, Jakub Kicinski <kuba@kernel.org>,
- Dmitry Vyukov <dvyukov@google.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org, tipc-discussion@lists.sourceforge.net,
+ Jakub Kicinski <kuba@kernel.org>, Dmitry Vyukov <dvyukov@google.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Acked-by: Ying Xue <ying.xue@windriver.com>
+Acked-by: Jon Maloy <jmaloy@redhat.com>
 
------Original Message-----
-From: Tadeusz Struk <tadeusz.struk@linaro.org> 
-Sent: Tuesday, November 16, 2021 12:02 AM
-To: davem@davemloft.net
-Cc: Tadeusz Struk <tadeusz.struk@linaro.org>; Jon Maloy <jmaloy@redhat.com>; Xue, Ying <Ying.Xue@windriver.com>; Jakub Kicinski <kuba@kernel.org>; netdev@vger.kernel.org; tipc-discussion@lists.sourceforge.net; linux-kernel@vger.kernel.org; stable@vger.kernel.org; Dmitry Vyukov <dvyukov@google.com>
-Subject: [PATCH v2] tipc: check for null after calling kmemdup
-
-kmemdup can return a null pointer so need to check for it, otherwise the null key will be dereferenced later in tipc_crypto_key_xmit as can be seen in the trace [1].
-
-Cc: Jon Maloy <jmaloy@redhat.com>
-Cc: Ying Xue <ying.xue@windriver.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Jakub Kicinski <kuba@kernel.org>
-Cc: netdev@vger.kernel.org
-Cc: tipc-discussion@lists.sourceforge.net
-Cc: linux-kernel@vger.kernel.org
-Cc: stable@vger.kernel.org # 5.15, 5.14, 5.10
-
-[1] https://syzkaller.appspot.com/bug?id=bca180abb29567b189efdbdb34cbf7ba851c2a58
-
-Reported-by: Dmitry Vyukov <dvyukov@google.com>
-Signed-off-by: Tadeusz Struk <tadeusz.struk@linaro.org>
----
-Changed in v2:
-- use tipc_aead_free() to free all crytpo tfm instances
-  that might have been allocated before the fail.
----
- net/tipc/crypto.c | 4 ++++
- 1 file changed, 4 insertions(+)
-
-diff --git a/net/tipc/crypto.c b/net/tipc/crypto.c index dc60c32bb70d..d293614d5fc6 100644
---- a/net/tipc/crypto.c
-+++ b/net/tipc/crypto.c
-@@ -597,6 +597,10 @@ static int tipc_aead_init(struct tipc_aead **aead, struct tipc_aead_key *ukey,
- 	tmp->cloned = NULL;
- 	tmp->authsize = TIPC_AES_GCM_TAG_SIZE;
- 	tmp->key = kmemdup(ukey, tipc_aead_key_size(ukey), GFP_KERNEL);
-+	if (!tmp->key) {
-+		tipc_aead_free(&tmp->rcu);
-+		return -ENOMEM;
-+	}
- 	memcpy(&tmp->salt, ukey->key + keylen, TIPC_AES_GCM_SALT_SIZE);
- 	atomic_set(&tmp->users, 0);
- 	atomic64_set(&tmp->seqno, 0);
---
-2.33.1
+On 11/15/21 11:01, Tadeusz Struk wrote:
+> kmemdup can return a null pointer so need to check for it, otherwise
+> the null key will be dereferenced later in tipc_crypto_key_xmit as
+> can be seen in the trace [1].
+>
+> Cc: Jon Maloy <jmaloy@redhat.com>
+> Cc: Ying Xue <ying.xue@windriver.com>
+> Cc: "David S. Miller" <davem@davemloft.net>
+> Cc: Jakub Kicinski <kuba@kernel.org>
+> Cc: netdev@vger.kernel.org
+> Cc: tipc-discussion@lists.sourceforge.net
+> Cc: linux-kernel@vger.kernel.org
+> Cc: stable@vger.kernel.org # 5.15, 5.14, 5.10
+>
+> [1] https://syzkaller.appspot.com/bug?id=bca180abb29567b189efdbdb34cbf7ba851c2a58
+>
+> Reported-by: Dmitry Vyukov <dvyukov@google.com>
+> Signed-off-by: Tadeusz Struk <tadeusz.struk@linaro.org>
+> ---
+> Changed in v2:
+> - use tipc_aead_free() to free all crytpo tfm instances
+>    that might have been allocated before the fail.
+> ---
+>   net/tipc/crypto.c | 4 ++++
+>   1 file changed, 4 insertions(+)
+>
+> diff --git a/net/tipc/crypto.c b/net/tipc/crypto.c
+> index dc60c32bb70d..d293614d5fc6 100644
+> --- a/net/tipc/crypto.c
+> +++ b/net/tipc/crypto.c
+> @@ -597,6 +597,10 @@ static int tipc_aead_init(struct tipc_aead **aead, struct tipc_aead_key *ukey,
+>   	tmp->cloned = NULL;
+>   	tmp->authsize = TIPC_AES_GCM_TAG_SIZE;
+>   	tmp->key = kmemdup(ukey, tipc_aead_key_size(ukey), GFP_KERNEL);
+> +	if (!tmp->key) {
+> +		tipc_aead_free(&tmp->rcu);
+> +		return -ENOMEM;
+> +	}
+>   	memcpy(&tmp->salt, ukey->key + keylen, TIPC_AES_GCM_SALT_SIZE);
+>   	atomic_set(&tmp->users, 0);
+>   	atomic64_set(&tmp->seqno, 0);
 
 
 
