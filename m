@@ -2,119 +2,102 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40BB4455022
-	for <lists+tipc-discussion@lfdr.de>; Wed, 17 Nov 2021 23:04:19 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C619458577
+	for <lists+tipc-discussion@lfdr.de>; Sun, 21 Nov 2021 18:32:14 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1mnT2D-00017B-D5; Wed, 17 Nov 2021 22:04:05 +0000
+	id 1moqh9-0006YL-UN; Sun, 21 Nov 2021 17:32:05 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <jmaloy@redhat.com>) id 1mnT2C-000175-8R
- for tipc-discussion@lists.sourceforge.net; Wed, 17 Nov 2021 22:04:04 +0000
+ (envelope-from <lucien.xin@gmail.com>) id 1moqh8-0006YF-TE
+ for tipc-discussion@lists.sourceforge.net; Sun, 21 Nov 2021 17:32:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=UM3rOln8kBcAURl+w/UPvP+woZK+h5DIoF92PXfCfdQ=; b=EecIkWvu7meIbAV+QBwfQrE0Ao
- dpgcunBghR89LFiRl9zGOtKmyDJbY4k5iauOyjLQaPHKkFEXsfwr+R5gFC1pNueMvvvs6dFfQzzpd
- asOZ6+0HinnfLpH3WcaWUT/8+4Ou9VpFBnsOSCNdHnpR0zDFLwEHhWB2W4OFcqeABfVE=;
+ bh=gcd/+bVis+JiiLaGKyyno9B85Gq/9PgmQrY9edyMVaw=; b=D9zZ1xBopJAobvmYlKomOmviP8
+ SSmXvpsHTvo5/yZUI8oGPgntQ7gQQx+86JxAjRUraRS06PsiL5WpRHRJ42bS6P0HbU7T//34xSVL3
+ zm8nueSF081Qu75pKkdDyFI9k5igD1t6x5XWhtkx7BVo5qvmwZD36hXhKPmFVd6Ih9hM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
- Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=UM3rOln8kBcAURl+w/UPvP+woZK+h5DIoF92PXfCfdQ=; b=ClWvStn5Yga6mt/6OuhjtSPeVO
- UNN02rntypObU4ChWlMkgxWQx5KUuF20qcVFNktDxWdd7f934jzkPn9OFc8/x+bkD/yEb61d9RcNC
- ctOUzRLY9xhNvauAIcIi3EpNJYduR9E9+MNYFNt/n9YC8dCysjw1rAhsk6Hd+cXa4qa8=;
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mnT22-00052B-VB
- for tipc-discussion@lists.sourceforge.net; Wed, 17 Nov 2021 22:04:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1637186628;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=UM3rOln8kBcAURl+w/UPvP+woZK+h5DIoF92PXfCfdQ=;
- b=dOiNVyE/DX6axuTysdNnu5K4bDhMGaY8fPmMrydCINAfYY7//b9LDR6ALn6j63IjV4HnFv
- K+XWpBrP++Be1+u+yve3m/8dapCkk9nqWJwn6YQEkgvTGlDROKiW8OllK6GGf9J9ZPYrt3
- Rfo7RSNZnAibM31pjDaCQiAGJXlyFx8=
-Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com
- [209.85.222.200]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- us-mta-47-qUkOEjYeOjW03eVAEWp6Xg-1; Wed, 17 Nov 2021 17:03:46 -0500
-X-MC-Unique: qUkOEjYeOjW03eVAEWp6Xg-1
-Received: by mail-qk1-f200.google.com with SMTP id
- bj10-20020a05620a190a00b004681da13edcso3110628qkb.1
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=gcd/+bVis+JiiLaGKyyno9B85Gq/9PgmQrY9edyMVaw=; b=H
+ M7qBmVHYg1IoDYFp4Wc1OrWcd5kCq8Z1jKAoLyFLlXjOyf9GtxtQLRyYdsGo5W2StN98uFxIVkbq5
+ dYTjV4aq9s1Nnv57FKDu8CizOrD4PWeJi++UsVMZu/P1y6WoKXoxbBA47+8MV21xBFsAFRW4IimDr
+ lxkop/P3GTAjA6q8=;
+Received: from mail-qt1-f180.google.com ([209.85.160.180])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
+ id 1moqh6-003fPT-I0
+ for tipc-discussion@lists.sourceforge.net; Sun, 21 Nov 2021 17:32:03 +0000
+Received: by mail-qt1-f180.google.com with SMTP id t34so14411032qtc.7
  for <tipc-discussion@lists.sourceforge.net>;
- Wed, 17 Nov 2021 14:03:45 -0800 (PST)
+ Sun, 21 Nov 2021 09:32:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=gcd/+bVis+JiiLaGKyyno9B85Gq/9PgmQrY9edyMVaw=;
+ b=QNV3/Vo+kEbmsks7FPytmCvvo1xVJxlhLVJ7vNqECuMDuyv6RhbLq9FW2MZPh4QnNw
+ MxIHsWhPes4NtFW5gqDmJ90cf5iKGrS5vzEVF7BumQdED2vz+I6/oeDAqx1WbI+TLc6s
+ 9cu4RMBpoFS7+4pdX8gW0Wy1rtSt3egSWURNMgGmi2vmvYpccKDu0f9wriHLwfaCgPHK
+ /Of+Un82pBm9JHZqjIXmRMEqMAtIosMit3GwNGJNwCruZp7ozcBE3S2HzY50zb2Y8CfW
+ NaqrE4X58SIOJ0iF4i8xOco36GO+6cuhPy16d+QAQ3yZY8HIFOQp+21l8jFUUXAkNUVh
+ mN0A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=x-gm-message-state:message-id:date:mime-version:user-agent:subject
- :content-language:to:cc:references:from:in-reply-to
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=UM3rOln8kBcAURl+w/UPvP+woZK+h5DIoF92PXfCfdQ=;
- b=SSaX5NZTHuuU/37BnFeAhgkaDxr/+E6iTHi6LtcaQdNmBPxuFOU16bw6+/1Q9Km10I
- u5eBmyEyp8mzczt6dTBi78GQ88eIrI5Viw88Qd7LAitZadg9Zeh9tAyNFkjTDPwVgIZX
- mHK1dfgR4Qy2SSZG35jJFtuX8a7qfKyocU/qYwSoOrN0xfHjUi0oFS5etuAsJF2dr3/a
- yA2LPYjh+NhODFVAZjVHnfojoigjzrOoHEzvYmi6WrHHGozOePkXOeMlPK0nrD2nDm4w
- b3R0zXuNvQELGQ97J0o1dhP55J/9U30KRb9+v2m4hMqa8G3RoOUHWjkaBqNvosnxtJN2
- h9iw==
-X-Gm-Message-State: AOAM531v6Nv5gzwG+ShUBCn6O7Kt1QXtMQCsk1L0uM3/b01r8KcL1XwE
- i3EY3QpTqJbD2+LbbFaf5yX8kEiMTqqVc13jU0yeY8zDm6yG1M8m8lTnByEdJUm70PIl8fdGBsh
- j6Dm757DOJomQ9M6YWN3XWOO11tWS5uNkHIIT
-X-Received: by 2002:ac8:5c53:: with SMTP id j19mr21301636qtj.40.1637186625569; 
- Wed, 17 Nov 2021 14:03:45 -0800 (PST)
-X-Google-Smtp-Source: ABdhPJwKbmfhLXEcjpNEixYPWQ886lMm649m9jzw2P56FDGKONoExY3utbgtPOsfA1loXEghxgDNQQ==
-X-Received: by 2002:ac8:5c53:: with SMTP id j19mr21301599qtj.40.1637186625332; 
- Wed, 17 Nov 2021 14:03:45 -0800 (PST)
-Received: from [10.0.0.96] ([24.225.241.171])
- by smtp.gmail.com with ESMTPSA id w10sm691272qkp.121.2021.11.17.14.03.44
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 17 Nov 2021 14:03:44 -0800 (PST)
-Message-ID: <0aea60c5-28d5-258a-3a32-bae1895a96ee@redhat.com>
-Date: Wed, 17 Nov 2021 17:06:02 -0500
+ bh=gcd/+bVis+JiiLaGKyyno9B85Gq/9PgmQrY9edyMVaw=;
+ b=MYpGUOUdENxx7mGJT2Sy0/ePW0MZTf5UQl4pgeeQAzPIvD/8n5oiKyrNu7RpFf2VZj
+ szndn8jkMMc3kwkFlpAQGhzluRUs1vAOofNpStOJAO1fi8LOC3jIQI/6rZEgr4Rr7OFq
+ l7QbgqQkIempv3rQOZ7kvoq+qIOMAA5YDGB6aYAokDcf1lCWYI62Q0B2dGaCEuOGvESk
+ x98L0iZHEhPVunD/YTVLOIwCGn14b3apfYNgHJARYkyUD6tOToYHU0dGfe1P5yTRWpsW
+ zrcXM7jEIXtE08bg9407ixLTtm3L6QXTzgDXvZuxtcnRpW7Tq3HnY7TyVIiwGKxhDfKV
+ 9R/A==
+X-Gm-Message-State: AOAM530gMt2gZCUocCb8mxTl8BBIHwX2oorVZ6T0ymPoXgdIa8Bh9SKP
+ VgOAsO6u5pJhWfDphDZZqw8JAzP7s/UkmA==
+X-Google-Smtp-Source: ABdhPJw8numz1sPWM8YYnyhjFiN/Eo7SB33TXgspU+SDRJiA51Or5sf4eFkv1m2JMh3g5ZNil+XcHg==
+X-Received: by 2002:a05:622a:44a:: with SMTP id
+ o10mr24159663qtx.251.1637515913839; 
+ Sun, 21 Nov 2021 09:31:53 -0800 (PST)
+Received: from wsfd-netdev15.ntdv.lab.eng.bos.redhat.com
+ (nat-pool-bos-t.redhat.com. [66.187.233.206])
+ by smtp.gmail.com with ESMTPSA id 14sm3194418qtx.84.2021.11.21.09.31.53
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 21 Nov 2021 09:31:53 -0800 (PST)
+From: Xin Long <lucien.xin@gmail.com>
+To: tipc-discussion@lists.sourceforge.net
+Date: Sun, 21 Nov 2021 12:31:52 -0500
+Message-Id: <4666eadb17aa2ed47fadee50b4813be38cf7da2d.1637515912.git.lucien.xin@gmail.com>
+X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.1.0
-To: Tadeusz Struk <tadeusz.struk@linaro.org>, davem@davemloft.net
-References: <20211115160143.5099-1-tadeusz.struk@linaro.org>
-From: Jon Maloy <jmaloy@redhat.com>
-In-Reply-To: <20211115160143.5099-1-tadeusz.struk@linaro.org>
-Authentication-Results: relay.mimecast.com;
- auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=jmaloy@redhat.com
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Language: en-US
-X-Spam-Score: -3.6 (---)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Acked-by: Jon Maloy <jmaloy@redhat.com> On 11/15/21 11:01,
- Tadeusz Struk wrote: > kmemdup can return a null pointer so need to check
- for it,
- otherwise > the null key will be dereferenced later in tipc_crypto_key_xmit
- as > can be seen in the [...] 
- Content analysis details:   (-3.6 points, 6.0 required)
+ Content preview:  When a skb comes to tipc_aead_encrypt(), it's always linear.
+ The unlikely check 'skb_cloned(skb) && tailen <= skb_tailroom(skb)' can
+ completely
+ be taken care of in skb_cow_data() by the code in branch [...] 
+ Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [170.10.129.124 listed in wl.mailspike.net]
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [170.10.129.124 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [lucien.xin[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.180 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -122,12 +105,12 @@ X-Spam-Report: Spam detection software,
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.180 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -2.0 NICE_REPLY_A           Looks like a legit reply (A)
- -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1mnT22-00052B-VB
-Subject: Re: [tipc-discussion] [PATCH v2] tipc: check for null after calling
- kmemdup
+X-Headers-End: 1moqh6-003fPT-I0
+Subject: [tipc-discussion] [PATCH net-next] tipc: delete the unlikely branch
+ in tipc_aead_encrypt
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -139,56 +122,56 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, tipc-discussion@lists.sourceforge.net,
- Jakub Kicinski <kuba@kernel.org>, Dmitry Vyukov <dvyukov@google.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Acked-by: Jon Maloy <jmaloy@redhat.com>
+When a skb comes to tipc_aead_encrypt(), it's always linear. The
+unlikely check 'skb_cloned(skb) && tailen <= skb_tailroom(skb)'
+can completely be taken care of in skb_cow_data() by the code
+in branch "if (!skb_has_frag_list())".
 
-On 11/15/21 11:01, Tadeusz Struk wrote:
-> kmemdup can return a null pointer so need to check for it, otherwise
-> the null key will be dereferenced later in tipc_crypto_key_xmit as
-> can be seen in the trace [1].
->
-> Cc: Jon Maloy <jmaloy@redhat.com>
-> Cc: Ying Xue <ying.xue@windriver.com>
-> Cc: "David S. Miller" <davem@davemloft.net>
-> Cc: Jakub Kicinski <kuba@kernel.org>
-> Cc: netdev@vger.kernel.org
-> Cc: tipc-discussion@lists.sourceforge.net
-> Cc: linux-kernel@vger.kernel.org
-> Cc: stable@vger.kernel.org # 5.15, 5.14, 5.10
->
-> [1] https://syzkaller.appspot.com/bug?id=bca180abb29567b189efdbdb34cbf7ba851c2a58
->
-> Reported-by: Dmitry Vyukov <dvyukov@google.com>
-> Signed-off-by: Tadeusz Struk <tadeusz.struk@linaro.org>
-> ---
-> Changed in v2:
-> - use tipc_aead_free() to free all crytpo tfm instances
->    that might have been allocated before the fail.
-> ---
->   net/tipc/crypto.c | 4 ++++
->   1 file changed, 4 insertions(+)
->
-> diff --git a/net/tipc/crypto.c b/net/tipc/crypto.c
-> index dc60c32bb70d..d293614d5fc6 100644
-> --- a/net/tipc/crypto.c
-> +++ b/net/tipc/crypto.c
-> @@ -597,6 +597,10 @@ static int tipc_aead_init(struct tipc_aead **aead, struct tipc_aead_key *ukey,
->   	tmp->cloned = NULL;
->   	tmp->authsize = TIPC_AES_GCM_TAG_SIZE;
->   	tmp->key = kmemdup(ukey, tipc_aead_key_size(ukey), GFP_KERNEL);
-> +	if (!tmp->key) {
-> +		tipc_aead_free(&tmp->rcu);
-> +		return -ENOMEM;
-> +	}
->   	memcpy(&tmp->salt, ukey->key + keylen, TIPC_AES_GCM_SALT_SIZE);
->   	atomic_set(&tmp->users, 0);
->   	atomic64_set(&tmp->seqno, 0);
+Also, remove the 'TODO:' annotation, as the pages in skbs are not
+writable, see more on commit 3cf4375a0904 ("tipc: do not write
+skb_shinfo frags when doing decrytion").
+
+Signed-off-by: Xin Long <lucien.xin@gmail.com>
+---
+ net/tipc/crypto.c | 19 ++++---------------
+ 1 file changed, 4 insertions(+), 15 deletions(-)
+
+diff --git a/net/tipc/crypto.c b/net/tipc/crypto.c
+index e701651f6533..c5eefe4a8c4d 100644
+--- a/net/tipc/crypto.c
++++ b/net/tipc/crypto.c
+@@ -757,21 +757,10 @@ static int tipc_aead_encrypt(struct tipc_aead *aead, struct sk_buff *skb,
+ 			 skb_tailroom(skb), tailen);
+ 	}
+ 
+-	if (unlikely(!skb_cloned(skb) && tailen <= skb_tailroom(skb))) {
+-		nsg = 1;
+-		trailer = skb;
+-	} else {
+-		/* TODO: We could avoid skb_cow_data() if skb has no frag_list
+-		 * e.g. by skb_fill_page_desc() to add another page to the skb
+-		 * with the wanted tailen... However, page skbs look not often,
+-		 * so take it easy now!
+-		 * Cloned skbs e.g. from link_xmit() seems no choice though :(
+-		 */
+-		nsg = skb_cow_data(skb, tailen, &trailer);
+-		if (unlikely(nsg < 0)) {
+-			pr_err("TX: skb_cow_data() returned %d\n", nsg);
+-			return nsg;
+-		}
++	nsg = skb_cow_data(skb, tailen, &trailer);
++	if (unlikely(nsg < 0)) {
++		pr_err("TX: skb_cow_data() returned %d\n", nsg);
++		return nsg;
+ 	}
+ 
+ 	pskb_put(skb, trailer, tailen);
+-- 
+2.27.0
 
 
 
