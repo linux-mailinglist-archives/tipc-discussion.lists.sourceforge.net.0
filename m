@@ -2,130 +2,83 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F3724CCC71
-	for <lists+tipc-discussion@lfdr.de>; Fri,  4 Mar 2022 04:58:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C40144CF3D5
+	for <lists+tipc-discussion@lfdr.de>; Mon,  7 Mar 2022 09:41:45 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1nPz5U-0005rh-TY; Fri, 04 Mar 2022 03:58:39 +0000
+	id 1nR8vx-0002a1-To; Mon, 07 Mar 2022 08:41:36 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <tung.q.nguyen@dektech.com.au>) id 1nPz5T-0005rb-81
- for tipc-discussion@lists.sourceforge.net; Fri, 04 Mar 2022 03:58:38 +0000
+ (envelope-from <lucien.xin@gmail.com>) id 1nR8vw-0002Zq-5b
+ for tipc-discussion@lists.sourceforge.net; Mon, 07 Mar 2022 08:41:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
- :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=c2E1uIKgpy8TBwZt2q+jcg+7iM79ypN/7IefPD4LDgw=; b=bwIFy+noUO6LMq7GU5lkNfvX23
- iXepywL6sv22Ra+rQUJrF42wFmU8yVb907b62GRFshp+zBRCiwfX+Dn4eejEGBSkvRiyx667jmabu
- a01/jv3hcqXwjdeKA+97pBoMeENyDvbm8dlDHega5o4fqCkKIYSxXW9CyIyVtZWWp6gI=;
+ bh=1GcuHp3FGXWGjv5xkpRTrRmKfs898Wol4WVS4h3sMxg=; b=NTBly2oIYanS2pS8qSIMZkAp2h
+ FHbKFGXpEDNX1tTUbggGJ3T8f24WNI1F7etl6yp8wGw811Do/xo9BKpIVpGPns5GexpY1epeBIucb
+ 97RZwP4VPsbszs/MJq4lTziMzIL0TFKE6+iV/Z9nF0IA65BGl8LfUfP6VaMgdQhgTQoY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Date:
- Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=c2E1uIKgpy8TBwZt2q+jcg+7iM79ypN/7IefPD4LDgw=; b=l
- VgaG2DaAQz4h6kAe+WI54dDH+cLJQcsJ6TxpucmzFtQM2WvkG9YnVx8hJu4MS18dvz4IO7RH4+Hhi
- nlu+EZCoB1AzyxsnW86qxi8J6aOuwTjwPABJntLajP2OvBMpNx51kOg0PaOQyfPvMzfPm+C33D+8i
- F/t5ONzrlx9N5H94=;
-Received: from mail-vi1eur05on2098.outbound.protection.outlook.com
- ([40.107.21.98] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1nPz5N-004MZl-1Z
- for tipc-discussion@lists.sourceforge.net; Fri, 04 Mar 2022 03:58:37 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Gd68365cK+WFUmgbWz15E3UIz1+SzHpscJdQQNy85Scy6z0jmpUkDEEWGDXz4g7KSCl1afKOte/zHIVsz0iHPcpgA+yaq7oq0gQY+wHMyZm+AmgQIQjJ8IA609dt+zv8mkIn8qpin/3UI4xl0guAF8ry9nqpMqhHbBHhwxBEuiXLUlx5zCwm9hSnUrzK0SFBDIE3FLPfGdHIBzurTCWYlGLD58m64+RHIC3BWIioMi7E2sggKhk+bUWqgUZ6bfep9ordqIElhR6Fi/kv/ArRTJ9WcyEModpaHdtgeTywURcSQMQQwWcwkYxGXpm6V9h+NUC+TB33IIgDaPeK+J3qrg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=c2E1uIKgpy8TBwZt2q+jcg+7iM79ypN/7IefPD4LDgw=;
- b=ig7y+VNbUh8v/fxvHSYteHsN7XlRHnuSa4jjdgqBxTGdJxG4gQZMTzqMKt8ADOOZcZ+yvey41fKK+tdDsNJI6uoQK+YuUTQdgqvXHL7UmOobR5Gu5gOOHSHdsg5RErs+CI9tvYGgx9juC4f9foN34ATLHnyx5+XGjKVDFZs41oMBLSw2pUmNVXYCF+xNitlCMTn5vzBcR9CyjAhs0Zd/unjdJNMG+yg0Xj6IsLonb01GVVaWS25KfK8uwJiyZ6dKt/XuaooAviOtrSz/pDbX93EJQ3KCn3Lm6HykZlL3F/xxhD80nC4HT7rER4EHLo41rNu5Kt2BWMWr1OlPxHHCcg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=dektech.com.au; dmarc=pass action=none
- header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=c2E1uIKgpy8TBwZt2q+jcg+7iM79ypN/7IefPD4LDgw=;
- b=u3+Z/lpqHtrasYWBMbeJKOoLFql3wZygpgTywM/W/iTlftZkidbjawaThceuc510HBzbzin9D1J6siC6GCHcmLWcgb0wSVtpwZV8K9I1fy4ArIGp0shjAcWYW7xypJQW2vzEVf5UrMqkQkXACwzlBy09SE09yGIAGk6mytl1aDQ=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=dektech.com.au;
-Received: from DB9PR05MB9078.eurprd05.prod.outlook.com (2603:10a6:10:36a::7)
- by AM8PR05MB7441.eurprd05.prod.outlook.com (2603:10a6:20b:1d1::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5017.26; Fri, 4 Mar
- 2022 03:25:33 +0000
-Received: from DB9PR05MB9078.eurprd05.prod.outlook.com
- ([fe80::f19e:3be:670d:9d13]) by DB9PR05MB9078.eurprd05.prod.outlook.com
- ([fe80::f19e:3be:670d:9d13%7]) with mapi id 15.20.5038.015; Fri, 4 Mar 2022
- 03:25:33 +0000
-From: Tung Nguyen <tung.q.nguyen@dektech.com.au>
-To: netdev@vger.kernel.org,
-	tipc-discussion@lists.sourceforge.net
-Date: Fri,  4 Mar 2022 03:25:18 +0000
-Message-Id: <20220304032518.9305-1-tung.q.nguyen@dektech.com.au>
-X-Mailer: git-send-email 2.25.1
-X-ClientProxiedBy: SG2PR01CA0122.apcprd01.prod.exchangelabs.com
- (2603:1096:4:40::26) To DB9PR05MB9078.eurprd05.prod.outlook.com
- (2603:10a6:10:36a::7)
+ List-Owner:List-Archive; bh=1GcuHp3FGXWGjv5xkpRTrRmKfs898Wol4WVS4h3sMxg=; b=m
+ 1LvYTczVf/3CQqx3OCKjS9B/TGOjNjd6jMDjhq9SxKHUAcNPWzP37gv0Ag6/91Pm+UuDV9r2T6DGL
+ eIZRvV5/L187to1zgqHjKLsWNNyy3t95Y3QfsSxkyQiUlDFs5nsXEaJ/mBwm5mQBFw1ekMLaPuQQz
+ QyKD1egKqjD+2+Kc=;
+Received: from mail-qv1-f42.google.com ([209.85.219.42])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.94.2)
+ id 1nR8vt-0005iN-0a
+ for tipc-discussion@lists.sourceforge.net; Mon, 07 Mar 2022 08:41:34 +0000
+Received: by mail-qv1-f42.google.com with SMTP id d3so11482300qvb.5
+ for <tipc-discussion@lists.sourceforge.net>;
+ Mon, 07 Mar 2022 00:41:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1GcuHp3FGXWGjv5xkpRTrRmKfs898Wol4WVS4h3sMxg=;
+ b=EOU0bjqjgMmSs9mion9MRiE+QCqbHVhCIm9hHbuzl6kCpiAk8nGrMZknhlKH+wmZnr
+ rwtHlGa/r2aZ1qOs7rXnMZJ+NW4TXcqa6KjLvAbLFw44lPYExfZ4otYikLLVwx//e031
+ amhpQSUkO6vDGzmI4nt2p2F+vKVqqvIVMSCRIHMUf/IeJs0OS5JZjDjmm9neLVSTJzKc
+ 4crfDwotGeh1PFZixffqLO+U691MGT3yRkPXdFwBuhtRZJJF0/wXiJIyewpoqiCzQBt8
+ a5PCpd+wLSDz8MeevupZx6R8xtZOInBvsPNi9M3xWfrXBGL2iDzksG7F6lXvBxJvCcSC
+ R4bw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1GcuHp3FGXWGjv5xkpRTrRmKfs898Wol4WVS4h3sMxg=;
+ b=Apse7ngkJDZzkJdr/5lms0k3ZlNqCn6bndKTAzCfOAQWKS/C/mEMvxFGXIePWNm5z/
+ qYsUbKRd8K83Yi+pKHU8bIoQuZJbxdqXQC8fQy7Id4RiMnC0ynqZPYDlNfSGc8lO4T2u
+ iu3PF0p7e0DX3CgA5rpLUTp26xv2jWNDHGm6ldo1BN85M97uKzZYEzFw1UxLI75hGQLd
+ GD2qsHeVzkLl8xql9S0P1Z1e8DtB+Txjtck+tj/uqiUlRDxLLh/aH62oeGWlnqvPZMDA
+ PBl/CWR7dcVoZQHwxYaFC9gNYCmqTtqHxvVc2T19yWla3jQk8Ah7SlPm7SEqvXPA2Sqt
+ fBQw==
+X-Gm-Message-State: AOAM5314EiMtD2gzZeRjyfcktv6jFiijnB7UL2Nb6n4U9NS4Afd4XLij
+ +CN1rWnEQ42VM1SFf1l0hBCdVA1FfnCWwg==
+X-Google-Smtp-Source: ABdhPJwhP/kjRkkmeO+pym+Cs9IHo+MhI01tBIkI6WOlCYcBgFZhFAIaO3FSMFtyK0Z3t+sUoSS4WA==
+X-Received: by 2002:a05:6214:1c88:b0:42c:459a:53b2 with SMTP id
+ ib8-20020a0562141c8800b0042c459a53b2mr7611683qvb.57.1646642487023; 
+ Mon, 07 Mar 2022 00:41:27 -0800 (PST)
+Received: from wsfd-netdev15.ntdv.lab.eng.bos.redhat.com
+ (nat-pool-bos-t.redhat.com. [66.187.233.206])
+ by smtp.gmail.com with ESMTPSA id
+ 70-20020a370649000000b0067b4cd8ffbasm18395qkg.60.2022.03.07.00.41.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 07 Mar 2022 00:41:26 -0800 (PST)
+From: Xin Long <lucien.xin@gmail.com>
+To: tipc-discussion@lists.sourceforge.net
+Date: Mon,  7 Mar 2022 03:41:24 -0500
+Message-Id: <a3564a88f88c6a4671b1174713c71aa2209caee8.1646642484.git.lucien.xin@gmail.com>
+X-Mailer: git-send-email 2.31.1
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 1c852049-2ac7-46e2-1711-08d9fd8ea3e6
-X-MS-TrafficTypeDiagnostic: AM8PR05MB7441:EE_
-X-Microsoft-Antispam-PRVS: <AM8PR05MB74416A92BF12D69BB7F7B45988059@AM8PR05MB7441.eurprd05.prod.outlook.com>
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: z38Lfi0tiql7KHUb2TbbL07srr1MTM1n4vIhTQNLQwrCOtDaLAJ5pdSLmTB/xGYNeie0ipGKlC/hKYNyKcBRapKrhfDsRs3WIboFYFqXCzKvgltWXdWt/t4nRWm9zBnVF4inHDliOt4HAgurKYAL59NugkIEMRPof0B3u+kllcAmkGS+q10PhfyOzwqX5gzd0t6HK4mUiot5XZ/LRTErBraCCQ0uN4/dPswsicjYyJP80sk8P6C07Ki9mhmmXVmDMEtZ0oFfRBhPQtIhFTQvI/R5anvip00bc9UR+lJbjFOa2QgthYhvkdCpnYSHMlbs8ObjQxJQsG6BKuV1upk5XuxV3XSCEvEmjnJ5nijeiO5DpU0zolrrYkBpViol/H16e6L0tDBpj6U+14zhH0VGuxRsukU14vGOm89+3KJ3ApkcXHNrAhmJvJEDAHX1bNVHFBrTrupfo609Szod+nzGSNaYgmrINBR5SBld5c0aQbgnTMqoafDMMnwuCTWp8N971k6i2/C1x6YpO7smnCbziUFFGcwkbpSeV/aAlG1H35MCK9B6Sh6JMV+ceWi7R+VvBIniyl5Oc32fVPlMr2iamT+tkX3F82SKd1XOj2JxGgFih9YRo7FVz63pN9ED9eJhUShgCybBijVwumzUgaCp+BEXIh9rKdDJwzetK04O+xtT2bVAeWe+4QyMA6I1mWzDnbVQfen55DGjfT/yNKAJTw==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB9PR05MB9078.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230001)(366004)(346002)(52116002)(86362001)(5660300002)(103116003)(83380400001)(6506007)(66946007)(8936002)(66556008)(8676002)(4326008)(66476007)(6666004)(508600001)(6486002)(54906003)(2616005)(38100700002)(1076003)(38350700002)(2906002)(36756003)(6512007)(26005)(186003);
- DIR:OUT; SFP:1102; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?p7g6H1El0ziBga9D7iJvy3zsobCLL4l4p3+0SQEgJ5tiOk3hWKB2uGJ5F53i?=
- =?us-ascii?Q?8o+6EFWWsstBz2dkosWyAQucxXlN8n0I+qp1D0/3oB270U5dyv+O8F6vTmdT?=
- =?us-ascii?Q?9BPo0bQW41tFtxAhGa/Ei9MiZYUA7F4uAqrCthx8KMq4im203isj/AsDorYH?=
- =?us-ascii?Q?mgvv8i6IBrWBKcWIhV8drqWh5gXwCloiKz5Fx677BniE4Htg7ztw+lEQez32?=
- =?us-ascii?Q?98o8MAV207XHpUMEj8qxtbjBD3nS8ne0Q0ehjuYXZaMiD3aG7WsovGzTwiyW?=
- =?us-ascii?Q?DfSxZ44mTNDwloDpcrQH0/dMZexjXlum4aeoql4DtiK50eBHzg3tmRSapVin?=
- =?us-ascii?Q?k6UQyvbrZx/qpoV3RbhRnhsew625I5QVkwxHhbmii1qWIZzkhJ/qtLE5D3jA?=
- =?us-ascii?Q?cWYywiq+dcrcStb03OyhyUQQSWihMufGXSJUNSS4wigP1FBXyPtXReU4U2m7?=
- =?us-ascii?Q?fMemm31Q4LIWrw1vJliY0mm+/qIExC7Pti/89P9zHmTXRp8hrO5yKnLmntYw?=
- =?us-ascii?Q?wNShEV2+ONQSnT8dIqjXDeRJLkXyrsTCB9VaF8G4Bg9gBSaVYC+vIzREKkbd?=
- =?us-ascii?Q?lfucYyVJj8WnsWRkM3nLmFc1JtUHZLI8UsUWzpln0o2AK2XWLW0iUzXHC0Tu?=
- =?us-ascii?Q?Du8wCAoa1szC5Sodwdk21B/9Z9ZICjjN+pLV343TLqCRL7NxkHjfI7sggKyC?=
- =?us-ascii?Q?NZPWJWEPMD7muegk1JlOBc9yy4ov567NA8byY5fOeP655vNXPGSQi4JPhAN7?=
- =?us-ascii?Q?hKGBBbMkTkt4zHOx8349TdQgqNKDU8rRyKY1lQvsM+wfbpS/GXIdGCKbtoZU?=
- =?us-ascii?Q?zHccrf5TKCqNhSF1hr76yRd3qEMDlZaY33RRkSzTmcscexrRvq3HXHmEwhya?=
- =?us-ascii?Q?zALjd+PhGGPiCjeZdIB10PMuCthD5Z4g1Yo5XxcXyki+dTeCwRju3xv2Scje?=
- =?us-ascii?Q?vLj0BvSRMMhIAXHAsj2pTZxMtZCSQ/gWgOlY90Qv6W8vXmSOvGciPbjrAS2T?=
- =?us-ascii?Q?k+o7a8iYzunuDedPB75V6GTpZ2kw9I0kdyEurh/yYJjQS4V1N7SWllXvM6Aj?=
- =?us-ascii?Q?3tm80VRudrEewRY/il6BIljdBbaEC+TiyRhjpJUVx5aKRfsNYkDKVGEbyDE8?=
- =?us-ascii?Q?+NEejL91YvrjX4/knvvCsPu0/XrKirXgQoUoYARG5S6drF2fWd8W85YF8uBx?=
- =?us-ascii?Q?FseEnMLi4YTfD+kqA3RQwxbEjVTxN6zpRv0auUUb65sS1cRP5S0ZkYsgGCRy?=
- =?us-ascii?Q?CKEQhuS+R4ooIrEBdAjTWrGAUD6BfBZ8SO8BVZRj5jmapMpKBoWZCUAoeDGE?=
- =?us-ascii?Q?XI8zBimFLTMjxyXsjwjC6XHi1jwWxxz7l4o1LXK7716WMaqc8KQn34p7t335?=
- =?us-ascii?Q?SFTySEQx25OqZZFrxnPKLVqI1fTzj4xByL4OkXRqSYj70pIHbeBvUzyTfXOW?=
- =?us-ascii?Q?4RWeq3AYH1S3uaD1LSvh9hXWdbZ0BOXiy64GWpXttXMmEPH3UTZW/Zd3idZN?=
- =?us-ascii?Q?LuPuI/keXMfeWfhvYDLnk73s4107UoVszE5Run/PTdQxq5rgRnFk9Rd1Ovh4?=
- =?us-ascii?Q?RxS70vA3vuaaMEDk6dxhlfRDLgdrkNARWe18X9lrQh28polDGeo/Ybk3iclb?=
- =?us-ascii?Q?yGL7egDyyqsjnCo+GQ5eSIRbrJh2Qya7haM51sJndgseFUv5iDYcR58d2LKY?=
- =?us-ascii?Q?fvgkLQ=3D=3D?=
-X-OriginatorOrg: dektech.com.au
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1c852049-2ac7-46e2-1711-08d9fd8ea3e6
-X-MS-Exchange-CrossTenant-AuthSource: DB9PR05MB9078.eurprd05.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Mar 2022 03:25:32.9240 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: /sIuP7N/5D3Mku3vpKPXAFG5/8WDX1IlVvWvYn2+6D3nET8MCsCdlwhJnMlQyP9CIq0XZ9qAgUwRiEDCMWh2vbZglkcfBMaMeb0a4eg9j6g=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8PR05MB7441
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
@@ -133,29 +86,31 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  When enabling a bearer on a node, a kernel panic is observed:
- [ 4.498085] RIP: 0010:tipc_mon_prep+0x4e/0x130 [tipc] ... [ 4.520030] Call
- Trace: [ 4.520689] <IRQ> [ 4.521236] tipc_link_build_proto_msg+0x375/0x750
- [tipc] [ 4.522654] tipc_link_build_state_msg+0x48/ [...] 
+ Content preview:  We need this switch, as lxc_xmit works around the MEDIA to
+ send the data to another netns directly. It causes all netfilter and tc rules
+ to not apply to the traffic, which might not be expected in som [...] 
  Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.21.98 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.21.98 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [lucien.xin[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1nPz5N-004MZl-1Z
-Subject: [tipc-discussion] [PATCH net v2 1/1] tipc: fix kernel panic when
- enabling bearer
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.219.42 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.219.42 listed in list.dnswl.org]
+ -0.0 T_SCC_BODY_TEXT_LINE   No description available.
+X-Headers-End: 1nR8vt-0005iN-0a
+Subject: [tipc-discussion] [PATCH net-next] tipc: add lxc_xmit switch for
+ the transmission between netns
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -167,105 +122,84 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: kuba@kernel.org, davem@davemloft.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-When enabling a bearer on a node, a kernel panic is observed:
+We need this switch, as lxc_xmit works around the MEDIA to send
+the data to another netns directly. It causes all netfilter and
+tc rules to not apply to the traffic, which might not be
+expected in some cases. Also, it cause that we can't do testing
+over UDP/ETH MEDIA properly.
 
-[    4.498085] RIP: 0010:tipc_mon_prep+0x4e/0x130 [tipc]
-...
-[    4.520030] Call Trace:
-[    4.520689]  <IRQ>
-[    4.521236]  tipc_link_build_proto_msg+0x375/0x750 [tipc]
-[    4.522654]  tipc_link_build_state_msg+0x48/0xc0 [tipc]
-[    4.524034]  __tipc_node_link_up+0xd7/0x290 [tipc]
-[    4.525292]  tipc_rcv+0x5da/0x730 [tipc]
-[    4.526346]  ? __netif_receive_skb_core+0xb7/0xfc0
-[    4.527601]  tipc_l2_rcv_msg+0x5e/0x90 [tipc]
-[    4.528737]  __netif_receive_skb_list_core+0x20b/0x260
-[    4.530068]  netif_receive_skb_list_internal+0x1bf/0x2e0
-[    4.531450]  ? dev_gro_receive+0x4c2/0x680
-[    4.532512]  napi_complete_done+0x6f/0x180
-[    4.533570]  virtnet_poll+0x29c/0x42e [virtio_net]
-...
+So add a systcl switch for lxc_xmit, so that users can use TIPC
+between netns as before by setting it to 0. Note that it only
+affects the new created nodes.
 
-The node in question is receiving activate messages in another
-thread after changing bearer status to allow message sending/
-receiving in current thread:
-
-         thread 1           |              thread 2
-         --------           |              --------
-                            |
-tipc_enable_bearer()        |
-  test_and_set_bit_lock()   |
-    tipc_bearer_xmit_skb()  |
-                            | tipc_l2_rcv_msg()
-                            |   tipc_rcv()
-                            |     __tipc_node_link_up()
-                            |       tipc_link_build_state_msg()
-                            |         tipc_link_build_proto_msg()
-                            |           tipc_mon_prep()
-                            |           {
-                            |             ...
-                            |             // null-pointer dereference
-                            |             u16 gen = mon->dom_gen;
-                            |             ...
-                            |           }
-  // Not being executed yet |
-  tipc_mon_create()         |
-  {                         |
-    ...                     |
-    // allocate             |
-    mon = kzalloc();        |
-    ...                     |
-  }                         |
-
-Monitoring pointer in thread 2 is dereferenced before monitoring data
-is allocated in thread 1. This causes kernel panic.
-
-This commit fixes it by allocating the monitoring data before enabling
-the bearer to receive messages.
-
-Fixes: 35c55c9877f8 ("tipc: add neighbor monitoring framework")
-Reported-by: Shuang Li <shuali@redhat.com>
-Acked-by: Jon Maloy <jmaloy@redhat.com>
-Signed-off-by: Tung Nguyen <tung.q.nguyen@dektech.com.au>
+Signed-off-by: Xin Long <lucien.xin@gmail.com>
 ---
- net/tipc/bearer.c | 12 +++++++-----
- 1 file changed, 7 insertions(+), 5 deletions(-)
+ net/tipc/node.c   | 4 +++-
+ net/tipc/node.h   | 2 ++
+ net/tipc/sysctl.c | 9 +++++++++
+ 3 files changed, 14 insertions(+), 1 deletion(-)
 
-diff --git a/net/tipc/bearer.c b/net/tipc/bearer.c
-index 473a790f5894..a2f9c9640716 100644
---- a/net/tipc/bearer.c
-+++ b/net/tipc/bearer.c
-@@ -352,16 +352,18 @@ static int tipc_enable_bearer(struct net *net, const char *name,
- 		goto rejected;
- 	}
+diff --git a/net/tipc/node.c b/net/tipc/node.c
+index 6ef95ce565bd..c7ffb2cdefc3 100644
+--- a/net/tipc/node.c
++++ b/net/tipc/node.c
+@@ -49,6 +49,8 @@
+ #define INVALID_NODE_SIG	0x10000
+ #define NODE_CLEANUP_AFTER	300000
  
--	test_and_set_bit_lock(0, &b->up);
--	rcu_assign_pointer(tn->bearer_list[bearer_id], b);
--	if (skb)
--		tipc_bearer_xmit_skb(net, bearer_id, skb, &b->bcast_addr);
--
-+	/* Create monitoring data before accepting activate messages */
- 	if (tipc_mon_create(net, bearer_id)) {
- 		bearer_disable(net, b);
-+		kfree_skb(skb);
- 		return -ENOMEM;
- 	}
- 
-+	test_and_set_bit_lock(0, &b->up);
-+	rcu_assign_pointer(tn->bearer_list[bearer_id], b);
-+	if (skb)
-+		tipc_bearer_xmit_skb(net, bearer_id, skb, &b->bcast_addr);
++int sysctl_tipc_lxc_xmit __read_mostly = 1;
 +
- 	pr_info("Enabled bearer <%s>, priority %u\n", name, prio);
+ /* Flags used to take different actions according to flag type
+  * TIPC_NOTIFY_NODE_DOWN: notify node is down
+  * TIPC_NOTIFY_NODE_UP: notify node is up
+@@ -446,7 +448,7 @@ static void tipc_node_assign_peer_net(struct tipc_node *n, u32 hash_mixes)
+ 	struct net *tmp;
+ 	u32 hash_chk;
  
- 	return res;
+-	if (n->peer_net)
++	if (!sysctl_tipc_lxc_xmit || n->peer_net)
+ 		return;
+ 
+ 	for_each_net_rcu(tmp) {
+diff --git a/net/tipc/node.h b/net/tipc/node.h
+index 154a5bbb0d29..db57335c9d6c 100644
+--- a/net/tipc/node.h
++++ b/net/tipc/node.h
+@@ -42,6 +42,8 @@
+ #include "bearer.h"
+ #include "msg.h"
+ 
++extern int sysctl_tipc_lxc_xmit __read_mostly;
++
+ /* Optional capabilities supported by this code version
+  */
+ enum {
+diff --git a/net/tipc/sysctl.c b/net/tipc/sysctl.c
+index 9fb65c988f7f..ca27c1922e71 100644
+--- a/net/tipc/sysctl.c
++++ b/net/tipc/sysctl.c
+@@ -91,6 +91,15 @@ static struct ctl_table tipc_table[] = {
+ 		.mode		= 0644,
+ 		.proc_handler	= proc_doulongvec_minmax,
+ 	},
++	{
++		.procname	= "lxc_xmit",
++		.data		= &sysctl_tipc_lxc_xmit,
++		.maxlen		= sizeof(sysctl_tipc_lxc_xmit),
++		.mode		= 0644,
++		.proc_handler	= proc_dointvec_minmax,
++		.extra1         = SYSCTL_ZERO,
++		.extra2         = SYSCTL_ONE,
++	},
+ 	{}
+ };
+ 
 -- 
-2.25.1
+2.31.1
 
 
 
