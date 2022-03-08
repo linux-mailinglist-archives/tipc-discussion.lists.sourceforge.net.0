@@ -2,83 +2,130 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C40144CF3D5
-	for <lists+tipc-discussion@lfdr.de>; Mon,  7 Mar 2022 09:41:45 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 080CC4D0E00
+	for <lists+tipc-discussion@lfdr.de>; Tue,  8 Mar 2022 03:28:47 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1nR8vx-0002a1-To; Mon, 07 Mar 2022 08:41:36 +0000
+	id 1nRPaX-0006SK-HK; Tue, 08 Mar 2022 02:28:36 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <lucien.xin@gmail.com>) id 1nR8vw-0002Zq-5b
- for tipc-discussion@lists.sourceforge.net; Mon, 07 Mar 2022 08:41:35 +0000
+ (envelope-from <tung.q.nguyen@dektech.com.au>) id 1nRPaW-0006SE-0r
+ for tipc-discussion@lists.sourceforge.net; Tue, 08 Mar 2022 02:28:34 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
+ :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=1GcuHp3FGXWGjv5xkpRTrRmKfs898Wol4WVS4h3sMxg=; b=NTBly2oIYanS2pS8qSIMZkAp2h
- FHbKFGXpEDNX1tTUbggGJ3T8f24WNI1F7etl6yp8wGw811Do/xo9BKpIVpGPns5GexpY1epeBIucb
- 97RZwP4VPsbszs/MJq4lTziMzIL0TFKE6+iV/Z9nF0IA65BGl8LfUfP6VaMgdQhgTQoY=;
+ bh=Gu3PdqjqwBQc+041xcgy+r2KgnXgy1EtRAQc9y9ZKNU=; b=Dwgi6Lp3VkEiX+lwG0E+E58weN
+ bFCExwGIhlPT3Z+NbF1qFgq8u0kP7i+rw0useX1k6ualurB1YnyvGqGVh6MCxVhKO+x2I/mhuZ/ss
+ pAPZ5gddbIONB8WK36AhlxLJa0R69JsnzAQFSyi/POD7+kQdq9DpwD0pTJG1ze+mzevc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Date:
+ Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=1GcuHp3FGXWGjv5xkpRTrRmKfs898Wol4WVS4h3sMxg=; b=m
- 1LvYTczVf/3CQqx3OCKjS9B/TGOjNjd6jMDjhq9SxKHUAcNPWzP37gv0Ag6/91Pm+UuDV9r2T6DGL
- eIZRvV5/L187to1zgqHjKLsWNNyy3t95Y3QfsSxkyQiUlDFs5nsXEaJ/mBwm5mQBFw1ekMLaPuQQz
- QyKD1egKqjD+2+Kc=;
-Received: from mail-qv1-f42.google.com ([209.85.219.42])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.94.2)
- id 1nR8vt-0005iN-0a
- for tipc-discussion@lists.sourceforge.net; Mon, 07 Mar 2022 08:41:34 +0000
-Received: by mail-qv1-f42.google.com with SMTP id d3so11482300qvb.5
- for <tipc-discussion@lists.sourceforge.net>;
- Mon, 07 Mar 2022 00:41:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=1GcuHp3FGXWGjv5xkpRTrRmKfs898Wol4WVS4h3sMxg=;
- b=EOU0bjqjgMmSs9mion9MRiE+QCqbHVhCIm9hHbuzl6kCpiAk8nGrMZknhlKH+wmZnr
- rwtHlGa/r2aZ1qOs7rXnMZJ+NW4TXcqa6KjLvAbLFw44lPYExfZ4otYikLLVwx//e031
- amhpQSUkO6vDGzmI4nt2p2F+vKVqqvIVMSCRIHMUf/IeJs0OS5JZjDjmm9neLVSTJzKc
- 4crfDwotGeh1PFZixffqLO+U691MGT3yRkPXdFwBuhtRZJJF0/wXiJIyewpoqiCzQBt8
- a5PCpd+wLSDz8MeevupZx6R8xtZOInBvsPNi9M3xWfrXBGL2iDzksG7F6lXvBxJvCcSC
- R4bw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=1GcuHp3FGXWGjv5xkpRTrRmKfs898Wol4WVS4h3sMxg=;
- b=Apse7ngkJDZzkJdr/5lms0k3ZlNqCn6bndKTAzCfOAQWKS/C/mEMvxFGXIePWNm5z/
- qYsUbKRd8K83Yi+pKHU8bIoQuZJbxdqXQC8fQy7Id4RiMnC0ynqZPYDlNfSGc8lO4T2u
- iu3PF0p7e0DX3CgA5rpLUTp26xv2jWNDHGm6ldo1BN85M97uKzZYEzFw1UxLI75hGQLd
- GD2qsHeVzkLl8xql9S0P1Z1e8DtB+Txjtck+tj/uqiUlRDxLLh/aH62oeGWlnqvPZMDA
- PBl/CWR7dcVoZQHwxYaFC9gNYCmqTtqHxvVc2T19yWla3jQk8Ah7SlPm7SEqvXPA2Sqt
- fBQw==
-X-Gm-Message-State: AOAM5314EiMtD2gzZeRjyfcktv6jFiijnB7UL2Nb6n4U9NS4Afd4XLij
- +CN1rWnEQ42VM1SFf1l0hBCdVA1FfnCWwg==
-X-Google-Smtp-Source: ABdhPJwhP/kjRkkmeO+pym+Cs9IHo+MhI01tBIkI6WOlCYcBgFZhFAIaO3FSMFtyK0Z3t+sUoSS4WA==
-X-Received: by 2002:a05:6214:1c88:b0:42c:459a:53b2 with SMTP id
- ib8-20020a0562141c8800b0042c459a53b2mr7611683qvb.57.1646642487023; 
- Mon, 07 Mar 2022 00:41:27 -0800 (PST)
-Received: from wsfd-netdev15.ntdv.lab.eng.bos.redhat.com
- (nat-pool-bos-t.redhat.com. [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id
- 70-20020a370649000000b0067b4cd8ffbasm18395qkg.60.2022.03.07.00.41.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 07 Mar 2022 00:41:26 -0800 (PST)
-From: Xin Long <lucien.xin@gmail.com>
-To: tipc-discussion@lists.sourceforge.net
-Date: Mon,  7 Mar 2022 03:41:24 -0500
-Message-Id: <a3564a88f88c6a4671b1174713c71aa2209caee8.1646642484.git.lucien.xin@gmail.com>
-X-Mailer: git-send-email 2.31.1
+ List-Owner:List-Archive; bh=Gu3PdqjqwBQc+041xcgy+r2KgnXgy1EtRAQc9y9ZKNU=; b=h
+ +12Z4uY9TuhZrw67DstSbVcJHbGIm0QVFhbGlubArFAHj8XteLm4ZS4JwzpPAK4ZInkKwy8s67alt
+ Gwd31wwZl+sMMEzjQQwcSVP4MMVUDyrBZpGom77z1q0mYMf2bZD3z39C2cInKbLPjy5oxfTCuayST
+ 04WfF2kRnV0etYhE=;
+Received: from mail-vi1eur05on2136.outbound.protection.outlook.com
+ ([40.107.21.136] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
+ id 1nRPaL-0082pv-JT
+ for tipc-discussion@lists.sourceforge.net; Tue, 08 Mar 2022 02:28:34 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Knt8smWoMPnbl0ggmqWxbWUOViKVeaF3siXoJio4Cjh8z4h7mTPOrek9NnUoU9HG3zhT5C411tV1QvcTN6GKNw/XJ9RaGfQ97cXEQUalej1wURSgL8FD05ipJmGOsb9dfbtaTjh5h6k5NlvYV1LsSXdJ0sxKcPkU1bwW+56LQ96AScJInRo4TD/r1DIqVa8tjB4SV4i8xkNsNfm0eIEu0HzxIHJMzofjBcJ3GXc2mqipTl3UWuL+YedhXDeRuGySztjYwMLESd7rMp3kBxkjst+ceNCDDp++bqP3MiEFz0YLgBGgDf6Jp+HDor8I6M/DMbvGsoep0JdNy3CGRxZn6Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Gu3PdqjqwBQc+041xcgy+r2KgnXgy1EtRAQc9y9ZKNU=;
+ b=k0jpr0vsaK3I5hDLhEuXcbMCMq4d1RXH15GKvgDE9IKB5916l5VZHNtIq7Ks+JIU8T+GnjkrFMAhQVLISSATYfPZnODdztVPqlh8KHlsUs0tUArejbSF20en0iv1ZQF93XTYdiyzKwpAFMnNX647nStCxZ/TwAQbud62A47GrjayRLLzeZ/SYD2IF3Esrw3HsDd/XDcbPN269SzAOx8QWty4TwHm5uwBKJCd+fJV11YJ50YJ6kCNobxore26LjtHVCc121A/iteOrbPmBWaBtqNnlsFzGxF852QRoYcY5p/MN+70/1+LKAeWRddWmvBtBCav7rwkFRCExa/5+t3SRg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=dektech.com.au; dmarc=pass action=none
+ header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Gu3PdqjqwBQc+041xcgy+r2KgnXgy1EtRAQc9y9ZKNU=;
+ b=mpi1FQ2ruGk04o9iZKs3GOmwbS+kGNhyjwv1kl1ym4pDKLY1f/gMD1veBs/2ya8cvxpHvbgaie5HCHgk3mvnlkHl4d1z5Hz1LccfCtcSu24fLLgc0Idy3ii08V7h+ivm/WAymZZ/uCwA9EpZv63u6wbY/Bo2Nm8De5svVFnSFPY=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=dektech.com.au;
+Received: from DB9PR05MB9078.eurprd05.prod.outlook.com (2603:10a6:10:36a::7)
+ by AM6PR05MB4455.eurprd05.prod.outlook.com (2603:10a6:209:4c::24) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5038.16; Tue, 8 Mar
+ 2022 02:12:16 +0000
+Received: from DB9PR05MB9078.eurprd05.prod.outlook.com
+ ([fe80::f19e:3be:670d:9d13]) by DB9PR05MB9078.eurprd05.prod.outlook.com
+ ([fe80::f19e:3be:670d:9d13%7]) with mapi id 15.20.5038.027; Tue, 8 Mar 2022
+ 02:12:16 +0000
+From: Tung Nguyen <tung.q.nguyen@dektech.com.au>
+To: netdev@vger.kernel.org,
+	tipc-discussion@lists.sourceforge.net
+Date: Tue,  8 Mar 2022 02:11:59 +0000
+Message-Id: <20220308021200.9245-1-tung.q.nguyen@dektech.com.au>
+X-Mailer: git-send-email 2.25.1
+X-ClientProxiedBy: SI2PR02CA0013.apcprd02.prod.outlook.com
+ (2603:1096:4:194::21) To DB9PR05MB9078.eurprd05.prod.outlook.com
+ (2603:10a6:10:36a::7)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 20c39ce9-cc45-4a3b-a0ad-08da00a91097
+X-MS-TrafficTypeDiagnostic: AM6PR05MB4455:EE_
+X-Microsoft-Antispam-PRVS: <AM6PR05MB44556F8FE0539D303A273ACE88099@AM6PR05MB4455.eurprd05.prod.outlook.com>
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: KWbtz6oE4M15b4XHHUxe3+AWSFsF9tvdMVqQ/OlfGd5YeqG7obmVQXWjsSiFVpdc1RcAY2s7xphKGWONQNSE8PpPlA1djLXsB4FlQuuX1Ik5lY1sKDR5J9VX8isoW/IiVejo4Dm2PrvcB0lwd/jm35CG+5qH4MRHUMiII4lbxYRVcmE0YQ0DLBrgmWjUsKFY2kFfJJM0oH55mwnNzc+5We7ES7IKrC+ynUnSSYBIZo9BuplLn0cpOsPbEWRJYdJHtnnMTAxCcB4DgUTsPEy7brb88mx71GHo/PET8iKojDoDlw57DGbCfJoUwOQ7/jyojUZ4+2JuZ3xEyCCT3w7+AI/Cif9QcXv59N57Csox2xyuRY3oR24fBYLp4iKnc59KxDxq5w2QPYVA35N01yFqRy5bi4rmIJgbue2ZsLsJi1jxHuRvk3xF1iLkUD2P5zvjvjMh286quyOAzxM7up1zJFZGyz4lUuLgBGY/LZKS06Vhz0wupgG42TJ1mmIovUUBwq0BAS3Tvj5h6Ra7GzH1Cg+lG+arizUkYTqGu3+osRbATVTkiGHkrcW3TQn6TYmS4Ziexx9uAFDhwwNEnXRNg1s0eXNdUNNF3ZaQap0R8gwZhd59YMcWqXe72eEywW46sEHkX8X8uw3WlfnsgZPq5KbUYndpld1QXyvWjes3IgGjAf1/zfmm1WXKXxsKPOxHBgNk3eg+m1+mpqThKMogtA==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB9PR05MB9078.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(13230001)(366004)(136003)(376002)(39850400004)(346002)(396003)(52116002)(36756003)(5660300002)(6486002)(186003)(26005)(2616005)(83380400001)(1076003)(6506007)(6512007)(6666004)(103116003)(508600001)(2906002)(86362001)(4326008)(15650500001)(66476007)(66946007)(66556008)(8936002)(38100700002)(38350700002)(8676002)(316002);
+ DIR:OUT; SFP:1102; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?9XCRG2DRzL4Gr5K/aTC1OD4NSpl+G0g5Ct9ZV9a5/aronYRP+c5EJw1ADrr6?=
+ =?us-ascii?Q?L3kpLvobyMaINiaatn6H5RfdKnhM7sIDvCXV8yokTvAv1WS3UcZeILaVPiVX?=
+ =?us-ascii?Q?XflatkycAeN6nWNxVEiHiOIJGmyR97nxbgbEYReiZwHLWnM6a7oGW3v6aUM1?=
+ =?us-ascii?Q?UeseIb0jqYqdcCaMZsNSJOTdwvQ031kox6lkXxWwlt9n9r2wzPwxiDh7qRT2?=
+ =?us-ascii?Q?sbaHtOn2MUfLNr9CBj74gn6qWzRZ3CYrgzvJ9dYJXU5eFzHz2xfQWHd/S+fG?=
+ =?us-ascii?Q?FcMcibneRrhzcDL281/QJvJFgx5A+rT0pMbBhGqrv0wPmzcYD/77d5M3KvXq?=
+ =?us-ascii?Q?6s72IHOXjkjkHkS/wwxKuz7kEDKPOyBBktI5zuBPnmyLko6YT1+EgbX/RgBv?=
+ =?us-ascii?Q?c6VLjuPovrOMsoTmXuwljsIMudcA2C5/cr3FDrCCxhEgaFOqAwR/3StHerUK?=
+ =?us-ascii?Q?cnvBDkduReb1V4nRJAbGrUVo0k1SiQLQMxD20g+9QcAbuXHpdBBwv4EF0k+u?=
+ =?us-ascii?Q?suUB+ia+PKMWovm3O02kZxgNR3qQZdLvyt6BtMXvmt0VmRBZTnTO6QsfbWoZ?=
+ =?us-ascii?Q?dj9AdcdTtATs0jA4XCdOhe2cqVJ9mkOG4drTgtODF+lcR84WeI7d75G8Y3h1?=
+ =?us-ascii?Q?RoT35ZRhxnQbqlJwDK9vm1mL4xGJNZqzO4BHyA4TSIA+cjYRtTS2G7XwOVZX?=
+ =?us-ascii?Q?9zrkX08RKBwoc9/ONt71gmKz9AfjLch3CQEfN7F+RD791hiPradaXKCneqhD?=
+ =?us-ascii?Q?AsYc6yysncsFntNoWqcTZg86IyolglNtj9k3QlOwUAt3bG0LtBXwYOb8XxZH?=
+ =?us-ascii?Q?7q4qKNF2dbtFm8KRi0RFSV7IDSF/uqWI2cJ6eJirLq19AVyDnMw+m/dRL4+Z?=
+ =?us-ascii?Q?JuLCfb1E3AznIMqA9XSSa7SnDJeLaHGcLHCjoMFwjzbC2CHgWDqWKXmrQbMn?=
+ =?us-ascii?Q?CRlYYLzYKqaJTv1oP9xE0lCikkUK/GO4tOU11r2O94Xsx2OuWJF783ZyK5X6?=
+ =?us-ascii?Q?hVln3hA8g0KYbF2FEcK20LK+hbrWDpDsH1C8Eaju6FnvqO1grzxTxAs9nV1q?=
+ =?us-ascii?Q?ayb3w4VwbDgjlqanymgP7McFy5nR0zefhnrRh1bjSJ7EexHi0wRUWqBhoXd+?=
+ =?us-ascii?Q?dWSoYdzrFsinJ9OaIUPIP19MTv2bvRGwhuWCxrhExJyzC6bcmdjXV1lWcWhA?=
+ =?us-ascii?Q?IhUD/ycr0jAWMEvLWOpzqY3NvilnOvTvhVCINjn3jdnHtr5h2U00FkNVpp74?=
+ =?us-ascii?Q?8loBbmNEDMLvDtQZuf51e4CbztT1Dw7Uqrs61wffibUvOCKe7r3iG0ltbD6J?=
+ =?us-ascii?Q?wMOA9btMKQVHxxN8IBqqcx/se5OtbbvyvlXHQzSAL1zigQ6Bwly1Qu9Dd9uw?=
+ =?us-ascii?Q?y8AkEHyMpb1S2AvjBTnPgm+01f6jexv7ZEmoLYKTLK4J+Kkbp3PypmH65dS2?=
+ =?us-ascii?Q?ftMEbcz7H67AJMKg5LSHYPoBW0AZgOcWGrnoGFhvCMI8zS+C4Ai8d0bMmHBH?=
+ =?us-ascii?Q?Eu4xy0eh8UqkHLMWHfkPDGu3nLMMMy6+tjhZSd3zAIakMrSB496VTL7cOPYX?=
+ =?us-ascii?Q?iz8MKvA90oEf4W9cZQUFe8cdstRBc0ncrIWBc7XvWpdMf0zM9OYIOuo4Sr5b?=
+ =?us-ascii?Q?NKejrQ3KxVgqikojv0atHrHM1VFeEm/UATtc2HPRIcgqctUo/wSo3JVljd8f?=
+ =?us-ascii?Q?4L1MzA=3D=3D?=
+X-OriginatorOrg: dektech.com.au
+X-MS-Exchange-CrossTenant-Network-Message-Id: 20c39ce9-cc45-4a3b-a0ad-08da00a91097
+X-MS-Exchange-CrossTenant-AuthSource: DB9PR05MB9078.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Mar 2022 02:12:15.7941 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: dFOKiSECpMlp7ht8I7BWVotuitr3rSUtS55GLxiXBOEnkk5Bm2BnNHI004DccmkzyRwPf/I7oHaxaO7HpzXVbw64c5tUALamZ+QS998nTxs=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR05MB4455
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
@@ -86,15 +133,18 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  We need this switch, as lxc_xmit works around the MEDIA to
- send the data to another netns directly. It causes all netfilter and tc rules
- to not apply to the traffic, which might not be expected in som [...] 
+ Content preview:  When receiving a state message,
+ function tipc_link_validate_msg()
+ is called to validate its header portion. Then, its data portion is validated
+ before it can be accessed correctly. However, current da [...] 
  Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [lucien.xin[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.21.136 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.21.136 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -103,14 +153,10 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.219.42 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.219.42 listed in list.dnswl.org]
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1nR8vt-0005iN-0a
-Subject: [tipc-discussion] [PATCH net-next] tipc: add lxc_xmit switch for
- the transmission between netns
+X-Headers-End: 1nRPaL-0082pv-JT
+Subject: [tipc-discussion] [PATCH net 1/1] tipc: fix incorrect order of
+ state message data sanity check
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -122,84 +168,57 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: kuba@kernel.org, davem@davemloft.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-We need this switch, as lxc_xmit works around the MEDIA to send
-the data to another netns directly. It causes all netfilter and
-tc rules to not apply to the traffic, which might not be
-expected in some cases. Also, it cause that we can't do testing
-over UDP/ETH MEDIA properly.
+When receiving a state message, function tipc_link_validate_msg()
+is called to validate its header portion. Then, its data portion
+is validated before it can be accessed correctly. However, current
+data sanity  check is done after the message header is accessed to
+update some link variables.
 
-So add a systcl switch for lxc_xmit, so that users can use TIPC
-between netns as before by setting it to 0. Note that it only
-affects the new created nodes.
+This commit fixes this issue by moving the data sanity check to
+the beginning of state message handling and right after the header
+sanity check.
 
-Signed-off-by: Xin Long <lucien.xin@gmail.com>
+Fixes: 9aa422ad3266 ("tipc: improve size validations for received domain records")
+Acked-by: Jon Maloy <jmaloy@redhat.com>
+Signed-off-by: Tung Nguyen <tung.q.nguyen@dektech.com.au>
 ---
- net/tipc/node.c   | 4 +++-
- net/tipc/node.h   | 2 ++
- net/tipc/sysctl.c | 9 +++++++++
- 3 files changed, 14 insertions(+), 1 deletion(-)
+ net/tipc/link.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
-diff --git a/net/tipc/node.c b/net/tipc/node.c
-index 6ef95ce565bd..c7ffb2cdefc3 100644
---- a/net/tipc/node.c
-+++ b/net/tipc/node.c
-@@ -49,6 +49,8 @@
- #define INVALID_NODE_SIG	0x10000
- #define NODE_CLEANUP_AFTER	300000
+diff --git a/net/tipc/link.c b/net/tipc/link.c
+index 1e14d7f8f28f..e260c0d557f5 100644
+--- a/net/tipc/link.c
++++ b/net/tipc/link.c
+@@ -2286,6 +2286,11 @@ static int tipc_link_proto_rcv(struct tipc_link *l, struct sk_buff *skb,
+ 		break;
  
-+int sysctl_tipc_lxc_xmit __read_mostly = 1;
+ 	case STATE_MSG:
++		/* Validate Gap ACK blocks, drop if invalid */
++		glen = tipc_get_gap_ack_blks(&ga, l, hdr, true);
++		if (glen > dlen)
++			break;
 +
- /* Flags used to take different actions according to flag type
-  * TIPC_NOTIFY_NODE_DOWN: notify node is down
-  * TIPC_NOTIFY_NODE_UP: notify node is up
-@@ -446,7 +448,7 @@ static void tipc_node_assign_peer_net(struct tipc_node *n, u32 hash_mixes)
- 	struct net *tmp;
- 	u32 hash_chk;
+ 		l->rcv_nxt_state = msg_seqno(hdr) + 1;
  
--	if (n->peer_net)
-+	if (!sysctl_tipc_lxc_xmit || n->peer_net)
- 		return;
+ 		/* Update own tolerance if peer indicates a non-zero value */
+@@ -2311,10 +2316,6 @@ static int tipc_link_proto_rcv(struct tipc_link *l, struct sk_buff *skb,
+ 			break;
+ 		}
  
- 	for_each_net_rcu(tmp) {
-diff --git a/net/tipc/node.h b/net/tipc/node.h
-index 154a5bbb0d29..db57335c9d6c 100644
---- a/net/tipc/node.h
-+++ b/net/tipc/node.h
-@@ -42,6 +42,8 @@
- #include "bearer.h"
- #include "msg.h"
- 
-+extern int sysctl_tipc_lxc_xmit __read_mostly;
-+
- /* Optional capabilities supported by this code version
-  */
- enum {
-diff --git a/net/tipc/sysctl.c b/net/tipc/sysctl.c
-index 9fb65c988f7f..ca27c1922e71 100644
---- a/net/tipc/sysctl.c
-+++ b/net/tipc/sysctl.c
-@@ -91,6 +91,15 @@ static struct ctl_table tipc_table[] = {
- 		.mode		= 0644,
- 		.proc_handler	= proc_doulongvec_minmax,
- 	},
-+	{
-+		.procname	= "lxc_xmit",
-+		.data		= &sysctl_tipc_lxc_xmit,
-+		.maxlen		= sizeof(sysctl_tipc_lxc_xmit),
-+		.mode		= 0644,
-+		.proc_handler	= proc_dointvec_minmax,
-+		.extra1         = SYSCTL_ZERO,
-+		.extra2         = SYSCTL_ONE,
-+	},
- 	{}
- };
+-		/* Receive Gap ACK blocks from peer if any */
+-		glen = tipc_get_gap_ack_blks(&ga, l, hdr, true);
+-		if(glen > dlen)
+-			break;
+ 		tipc_mon_rcv(l->net, data + glen, dlen - glen, l->addr,
+ 			     &l->mon_state, l->bearer_id);
  
 -- 
-2.31.1
+2.25.1
 
 
 
