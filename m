@@ -2,162 +2,163 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id F370F54E5D2
-	for <lists+tipc-discussion@lfdr.de>; Thu, 16 Jun 2022 17:16:27 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6856454E5D8
+	for <lists+tipc-discussion@lfdr.de>; Thu, 16 Jun 2022 17:19:04 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1o1rEJ-0000GY-5u; Thu, 16 Jun 2022 15:16:20 +0000
+	id 1o1rGp-0000Nx-NE; Thu, 16 Jun 2022 15:18:56 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <hoang.h.le@dektech.com.au>) id 1o1rEH-0000GS-P0
- for tipc-discussion@lists.sourceforge.net; Thu, 16 Jun 2022 15:16:18 +0000
+ (envelope-from <hoang.h.le@dektech.com.au>) id 1o1rGo-0000Nh-1E
+ for tipc-discussion@lists.sourceforge.net; Thu, 16 Jun 2022 15:18:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
- :Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+ :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=+IBLS+iKgI/rybRk1T7CetiuuQ5OBBepiF0SUGRDq/k=; b=Wr5BSZ4Ou1dtLwNcNBA9Tw9EgX
- y8q/a6AB1DezKAPI7pbrVDbstUqVi/Fprufotpu3RLMYWaCzqvVjkkRpMJp18SX8RVp8ldq8ijIBA
- h2+ITlCR/8GfGWokB40XUYhjXiyfjKiNWOn4SpTcEDVrRFw39NU5MBXPYU+QyI/V8jxY=;
+ bh=GiMteV4TX9fEmoVJRgcY9ER1CEnhk/7NMQRFtnCtfb8=; b=i2jOc6aSbTLegXuS5+n5bQziAv
+ XiCbRr2GqvJmDk03gXRbl0M+GvZNNmt/w/pdrN9p6VIIkqOYyApwdcA8yWCbwOtSGg3nB9BCmSJv/
+ yNTfqGLqCKkSwHoIXaIo9geDfytXqW27GY4oV04wTThCWtYD8KlqmJ+BQJIadCf3NTHw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Date:
- Subject:To:From:Sender:Reply-To:Cc:Content-ID:Content-Description:Resent-Date
+ Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
  :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=+IBLS+iKgI/rybRk1T7CetiuuQ5OBBepiF0SUGRDq/k=; b=L
- ASlReamFUQTu5STHBJFw23YlIzYxX+1AyCCtzC4dy7fhXMxyIxLcBi2saQD4NfL4NNpBKQXHrm3aJ
- amOPr1Q1tfjqvM47jrFJ+sgmuZZPzXIZYIq7ffOLUv6n0tvjCuO3GD+EgIhNK7BnC8YNnrjEVCN8M
- NlvUqExgIaWSKMj8=;
-Received: from mail-eopbgr70121.outbound.protection.outlook.com
- ([40.107.7.121] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+ List-Owner:List-Archive; bh=GiMteV4TX9fEmoVJRgcY9ER1CEnhk/7NMQRFtnCtfb8=; b=A
+ Q5ZbY5jw7dAB3B0CsasN2mJATlP4K4NV1rg7qvCD7vE5Onk1+xqlQHO3bEpmzw/gJsFIlRh/Izsrc
+ NY4jrdWlf7ZV1vQSDJmY8radxqKG//CXJYDQS5PPeCWJhX70svjj9EaK52b9XlN8P+KAFcsvAqdi3
+ BeCGfu1TiNewrYTU=;
+Received: from mail-am6eur05on2121.outbound.protection.outlook.com
+ ([40.107.22.121] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1o1rEC-004FzQ-R3
- for tipc-discussion@lists.sourceforge.net; Thu, 16 Jun 2022 15:16:18 +0000
+ id 1o1rGn-004G8a-Ch
+ for tipc-discussion@lists.sourceforge.net; Thu, 16 Jun 2022 15:18:54 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=jz1gZzowzIeBKUW1OiKtxDYEzjSxSr4jQ08z/WI6VIaPC/g6fdDI+7b3EFcwKs506wuLRZdgKQrKcy3hARn6v4jgjou5gtNZpsQWu4Heh5AqDEeUBize/3pAEPgun8Yk9jAXE5gvxSTXeWHBWYFaYihqFwlGWxIgAUKy57PAw9oS/Q6YdtgLbk98QtRlAjh7TANFVVpI1ShMmixPsUDBvBpeMAzhx75jCcXl6gKJP9CB4dvLTJ7qckbM+epMb7yyRELnZ7j99Fj1NlNiKy6ldp0VuKdwSYS9KaiU1swNCfwZUos7krd+DCRvfAF2bht5fi7i23XwCRGHrEWJHKjuwg==
+ b=IrFEAIL9VnCfHne+eQgvJ77v+2NC0IGFUx4JrN8d3UI0rx9QiHBcTwa3jlgIR7hrYUrR/CnbSq2SwAkQlodpw3UPYkkRzM+oLoUBYtAEKU53u2dXbJylcheI72dNWlrOUqrptbwr+tqW5kpq478MB9NFQ8MRZHcJfsSFcfPJrrV0cNhIf80iYPF9aqmagMLtGnRoCmuj5J5IXsumP4tflNoAxyU3UMEfFzG7KvwyMPvSobnaevGuwyWBNyxduRKngSNAECgzbwh7qhKJWgZe7eAJbt7EwwA9bv9fQUMy91TX+l1sYU92tM3tKQ6/fnuKlofoWsenj4UjypZ4K8Ff9w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=+IBLS+iKgI/rybRk1T7CetiuuQ5OBBepiF0SUGRDq/k=;
- b=A1qsKMSnI1z/clAHbAUaSFS+k3d1XPuJSK2aqIDTQMnzKK+TXFnS49Rs+7YShJMyFAXQpQpiFDDX6yJC09bugCu4NzcZXQ4SBJQQVpFAU9zGnPhHgUxCvBeqTOwrG7cn62wAoRCs8f3qW+AIDuPM5bZoBVTG+gVb1MraQYTvXbz28Y6cftX3alS13UgLon4ldZyI1JhYhEBYLduL92A8o9XvdP5B9SDTzWmMkoDz7ilyF7WN74yWAzmqO74TDzcrFmgN1R/v2RNh+xDMx10yugI4n11ST92GmKH6iDBwMwA0zCb4fzYSPbnLJ1j92VCgu3EyLI9xq25eaOKbJfmW4A==
+ bh=GiMteV4TX9fEmoVJRgcY9ER1CEnhk/7NMQRFtnCtfb8=;
+ b=MNuEMl5A1FAn6v8l5BypBMlhP8sGU86sb2SW5PiElS/bwjLK9LEid6i81YwH7jCwvXhj++GbQgITcDlYEjl7nU2eqH8nNUoxBzHvpLVg1zQOA45976oY334KWymYboAnfwOoRtZcaOr74f6Z/CxVACiuGi0+/LjWR1zUzr9VONa+QIUHx516I+V1Y7XW3DaOIavm/mZutm1C+iTrXRMuIGHFXinzkV0LB31c56ukvZJ5OpPPzHgDH//30WrwFScq9BKUCchgdrjvSzevOnbP26rBPRQQ7qdI/CPISAXjdUc4khSOEVy7wGqNiPc2AD5Wg3bjj6cFOOtOugYhGaXFCw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=dektech.com.au; dmarc=pass action=none
  header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+IBLS+iKgI/rybRk1T7CetiuuQ5OBBepiF0SUGRDq/k=;
- b=oUg1opB36P0DbMR6MEvr/jcMunpXXAgxakYSKcb5n7LnfUqUker/8WarOMYduPi0fX2IpjsXL6OcbG6hPSxe7uaeMu356SxHA98H/AfLNZ5qaqeHeYYy1diJr1yi2JlKxjgz7IPCt6TPKStO4lxcC9K8Sw7opzBRG4O0HSRCcnY=
+ bh=GiMteV4TX9fEmoVJRgcY9ER1CEnhk/7NMQRFtnCtfb8=;
+ b=jfIBkzQwEwMnuFaOZfgYuKx8yh2ee9KlUiQINC/Hx9uJVvlzJGiIoi4dvW8FqXMP6ypXN24YgzCrutEN/E4eSA/SIrY+5ijGCFk86S/5RmlsmbdfogxCeMo33WbT7BPK3DSdY4zEA8GR+FIapFwoTisMt+Gfnf7+1AUVGP+rOKQ=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=dektech.com.au;
 Received: from DB9PR05MB7641.eurprd05.prod.outlook.com (2603:10a6:10:21f::6)
- by DB7PR05MB5034.eurprd05.prod.outlook.com (2603:10a6:10:16::26) with
+ by AS1PR05MB9650.eurprd05.prod.outlook.com (2603:10a6:20b:476::10) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5353.15; Thu, 16 Jun
- 2022 15:16:03 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5314.19; Thu, 16 Jun
+ 2022 15:18:45 +0000
 Received: from DB9PR05MB7641.eurprd05.prod.outlook.com
  ([fe80::f429:2b60:9077:6ba8]) by DB9PR05MB7641.eurprd05.prod.outlook.com
  ([fe80::f429:2b60:9077:6ba8%5]) with mapi id 15.20.5353.015; Thu, 16 Jun 2022
- 15:16:03 +0000
+ 15:18:45 +0000
 From: Hoang Le <hoang.h.le@dektech.com.au>
 To: jmaloy@redhat.com, maloy@donjonn.com, ying.xue@windriver.com,
  tung.q.nguyen@dektech.com.au, kuba@kernel.org, pabeni@redhat.com,
  edumazet@google.com, tipc-discussion@lists.sourceforge.net
-Date: Thu, 16 Jun 2022 22:01:29 +0700
-Message-Id: <20220616150129.9187-1-hoang.h.le@dektech.com.au>
+Date: Thu, 16 Jun 2022 22:04:11 +0700
+Message-Id: <20220616150411.10329-1-hoang.h.le@dektech.com.au>
 X-Mailer: git-send-email 2.30.2
-X-ClientProxiedBy: SI2PR02CA0029.apcprd02.prod.outlook.com
- (2603:1096:4:195::6) To DB9PR05MB7641.eurprd05.prod.outlook.com
+X-ClientProxiedBy: SG2P153CA0039.APCP153.PROD.OUTLOOK.COM (2603:1096:4:c6::8)
+ To DB9PR05MB7641.eurprd05.prod.outlook.com
  (2603:10a6:10:21f::6)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 8d9ccc19-d1de-4753-de0d-08da4fab2085
-X-MS-TrafficTypeDiagnostic: DB7PR05MB5034:EE_
-X-Microsoft-Antispam-PRVS: <DB7PR05MB5034085BE096F5B631EE13D8F1AC9@DB7PR05MB5034.eurprd05.prod.outlook.com>
+X-MS-Office365-Filtering-Correlation-Id: f28fd519-4d1d-4bc8-8597-08da4fab8132
+X-MS-TrafficTypeDiagnostic: AS1PR05MB9650:EE_
+X-Microsoft-Antispam-PRVS: <AS1PR05MB9650DC83A500E7BA71213FCFF1AC9@AS1PR05MB9650.eurprd05.prod.outlook.com>
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: Yr6fpIdCKlFWLpneS3yvJkGNnKruwdXQ1WpYU9Rum4TVTEPELBWbeCLprATL2y/mzliI1udHtCAhHfk+Z0pQdPQNKaAaaFpl+2JIfVJk2XR4VjoTGauceYctVk+s5C8oZOYDHi+FUHvUNGMpnZTH7l+7YvciGdUwrT73q3wj1SstvCNO2ilIsTuw/fomlxIMXJ9SJr+l3UyBRQr50d27ms9/Ye16IuhqkXTw/lJSu0Wu0QqBNALaZ87LAJZjXHYmS9Lz4v07RjPgpMCoVQjS8lAVHYfQp2CJXfwYEVMu7tIbj9INGPyzxwXDueonSltMsNPbsRS/5mABBZm5WTiN5+bp47ftdheqJ8WOHy50GvMLl1NL6QDOZTfCyQ7UBcAHVrTj1nxRfXrd2QHHI+5FaLjtVHWqRhxq/IQJ652Xk/ROkDOUyTlr1Xb9RfcSEJ30cm+JFHQ9N5mc06hR8ILKTFdZPCTepRZw8Zmm804CnU7Ze8fymiLTezx+qwuQn2ZPBeRD5ACeuF2XZaKEEnvCfQW5s2KhjvNnKtIMLch/4v6ZSQJWEuFgRT688VGfqjsFgAQJw7bnxhFxJSBkFg/lVOA+pBBFN7yS5Ub76hSv4KVxDwaxkO5r4vPTEMlKF2h/1cRijQbJk5iRgjHA4xOtnCuoXW4pspUqkZG4mPz2pSk8s+QdBXXXP5Q6yvSMjzhRQcQrNsnDouFijmm0AUS83Q==
+X-Microsoft-Antispam-Message-Info: +5vOI06F69MmGdEkHWQnnrEiin3SNJwX8fP6hFKe712EV1ANNqGHRuA9/IwFF87kp0cLKt/maj5oG7AeGbnCF9qdVVqUjNKIkTEXM22qOF/b+s31eQ8iGVl+qBfJJ/IHzWwueP47jIbfhNojCeXn2Ukz4vsrL9lExFS2MOqak6rDvtvyf0tVtqSlBVVBsIPVANz9qtacboQ/QkjO1fBUrEwAJwFSUJjnj7G/LQ3BpDZj3Q+4ODGAcY4Gcva0Qu77MegOnPB0wI9WLcgYSYlgXJkp3fZXRGeRsNyptos9aMHZbId4uiasRsKnVrgxhfb/zmS/bznuxKi+IXvigJ8wbd7Kute+0drssZDAe1jfeQZ8dUbI8+x77fWXaVmUGdWezIszVobslHIcbY30vVlc+nk2XoxVql5m5ZHJLWi2Rko5Di60sSrpueFHQhUlDor6pAjk/ChHe85JxGa0Q7QvcDnu+BYY7t4W3dA6hzUBLRc9cgTfrc4LvdiDCGVtNP61cemWpR5cyx43CqDJ/Tj+wmwKAFqS4Zfo8J+VuGX+LctzQfSWK1qfMjb7UK0A6daSSlAwSKR11QQJIXAMnAFVG4CrchN6bHnZM/0F7LDEIJql2O+hJwy/C2R9YqR/H7ON29MiK1H52fuO3PCjl7PGy55EEp30pRnAE5nhxuUJoAKAbHlMhphhRyIp5vHXdwEQrHNZRz4TqvN0r2LYD92RVQ==
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:DB9PR05MB7641.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230016)(39840400004)(136003)(346002)(396003)(366004)(66556008)(66946007)(83380400001)(8676002)(86362001)(66476007)(6486002)(508600001)(186003)(316002)(55236004)(52116002)(38350700002)(6666004)(26005)(6506007)(38100700002)(8936002)(103116003)(6512007)(2906002)(36756003)(41300700001)(5660300002)(1076003)(2616005);
+ SFS:(13230016)(366004)(346002)(39850400004)(396003)(136003)(316002)(66946007)(2616005)(5660300002)(26005)(508600001)(41300700001)(66556008)(6512007)(66476007)(52116002)(86362001)(83380400001)(186003)(6506007)(36756003)(38100700002)(8676002)(4326008)(8936002)(55236004)(6486002)(2906002)(38350700002)(1076003)(6666004)(103116003);
  DIR:OUT; SFP:1102; 
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?vtNZv+wj0o2FwcPFkK3W/tjTWJ3Knr5+S0kPqOxfpMGSHgWsUPB+IeWhHYCg?=
- =?us-ascii?Q?Yj+QKHVh6KoMfyAorx9gSagf0TNxWkuU9hvmgcbnmIExiIQxmOZ3Bp8SCx58?=
- =?us-ascii?Q?M/WkPzkg5Qh90/nUReQgPd8D3N7yTfLZbIIYUEWvh5juEAH+y5xjIr4lbFY1?=
- =?us-ascii?Q?dsD3/ln6qtw83NbDrPkVExb6uHVRr1tIpfvYZxioFdmODYxkVqhnZ0UsVCK+?=
- =?us-ascii?Q?M61Md26kxUAlHjqt5Ci/ZSr8a+NkPGOMv96yFwIDkTogXB4grYy9PlmoUFbX?=
- =?us-ascii?Q?nm6sMJmYiCrYq+uLtMqIP7XOnD8hedGP5JaY+4jnLaudxSpAso1n2zdfyu6S?=
- =?us-ascii?Q?h6jb1ljeBv6FyDb+XNh8AcDsQv5Ntc2ccRM/zgpYywueXpQrzX67nN33lK11?=
- =?us-ascii?Q?rWBzNQn5+l6RMcJ+IFtM6ydAZB63jVqltyiwIjfyhdyAnyE8jKU28XnhyPxS?=
- =?us-ascii?Q?wW3YhAdM2XARtzmhvEZOX//6hdqWiLeOUdjpP2tOobAPgOCRFH5SU7yLqphP?=
- =?us-ascii?Q?B3B6071999pzP18d78YZhu6+vBbYQ+YS32bkDkzlhJeBnbgQzAEQ9cYDKcWI?=
- =?us-ascii?Q?iupt1TSP8rm6WvUMOQE3cjBDlYb/SrU9Vcc7pUHBhBDn1ET+qeqvgCj6kY46?=
- =?us-ascii?Q?hiqVuX3Jq6TolfeEeJysAqOb5NBShyEFwNuVJgAS2yjUAOE57M+nzAy/deqB?=
- =?us-ascii?Q?KfVqrf7a8ibGG32j37J4rMrhPdrQeYQ+SA1Ao84lMZJt/HSS/mGvtHdGy3In?=
- =?us-ascii?Q?ZLIkzBF8mPQNAPqHj/ZyjoHrH0DbdO5VB7TAIjkjwRboYJJ/lnWS0+LJbIVT?=
- =?us-ascii?Q?5Y1KfpCo429HLzVDpm/7qK2ZX7zGOQAotgdYinvxhk1lN3c6+A3mFMHs+WaL?=
- =?us-ascii?Q?GnS16GRwKws/8RKKHJfMnRqA2OAAaH3cw5souY/OigdMt54kuZ+L+j3LBBPq?=
- =?us-ascii?Q?x7l6c5d8wMmJSmQrbIVRJ49LhbGwbDZu9cjCxtOiK3AftgCs4QcotyyZGga0?=
- =?us-ascii?Q?Qr7hl90stw893aeyItaAuqMH0fVxHfHslBxciqr4XHVgYqhCuftZVGi/CH47?=
- =?us-ascii?Q?oT/vrWanEfBdfG5GbSNnJ6YOHU9h0U6gTjfMFAoGzx/wyLGB+Ejz1WQW/eKA?=
- =?us-ascii?Q?nmZn56uhvwhQUvbBPatesZmE3V5uLS4B/R2F3/uELeaW86yXOAqM1ZtjQ7H9?=
- =?us-ascii?Q?kdQyNWsH3UeYFLiVLFsAVD3WFMEj8rmArxrZ8m5YCsR8nkOlzaobxDrdWUCD?=
- =?us-ascii?Q?dRQXnzen7wmomA0N5boabNsqF+6/G7vOwUCJ3WNhO/gfVGfB6eoWH5/DXMN6?=
- =?us-ascii?Q?WNOvvzXH1KVgK5mWzgOfGY6pLSG08+kH+vSgCNFXJlkFe1EilLvwL80jHriD?=
- =?us-ascii?Q?hZO5dbQbSxTh1dl4Ftr8aqZ/WidIl61g+T5xLa6/qCUc7vdhGIqLClTlJNFt?=
- =?us-ascii?Q?XmJafAenytz2i3nwu5DFtIwnk/tS+EBnefZRbeJp2+QIFz+jIOjalD7ZZNBb?=
- =?us-ascii?Q?6bWz3szPZcVI7ursSlvvI7d4Tfk8qVAoH+So00B7+lDo5HDfy78q/ufWwKFk?=
- =?us-ascii?Q?qSrD+qMkk++MSB//mSaYK2Nr5mrcWWs7VkiLGzmw7U8cvYRB+i9OS7oCFAT5?=
- =?us-ascii?Q?MTDQJhT3IsUr2lzz02vfgmv4n+5FIQU7MB8N2GO4xkiwfY3GMDSOKZW5Mkk1?=
- =?us-ascii?Q?Wm7/vUIO3On9TS1lnuzTLNpHNEIBhKgmvN5p/O04bN47GjpHVdnyrccHNpY4?=
- =?us-ascii?Q?aaaOlFmSOXlJHVTYeLuDea9plRah2DE=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?gY5110mJGTXf2ZV0UyREn4ezEHlRAiFSnAYk3v5v8yhNOOKZqR9chluAm8tr?=
+ =?us-ascii?Q?UpTtq1+HwAvh36uiL5CKh8D/SH9ZMJWIzhyBHS7+pZfwTb73tN+9M58KMBug?=
+ =?us-ascii?Q?7JGnRl83uRuyV/l2YdC1bdT8eVmjjz1kEzo4kDZvW46BTelBgsPgbfde6B/k?=
+ =?us-ascii?Q?dmCSIJTeYNlxPbWNLjRdV3bjAcmFyFJ6sh2qevTDay7uWUU3F2dqFc7bR1KM?=
+ =?us-ascii?Q?MeO1yDX38iKq6DuWuxq9QmX5B8W0aUboJHiJtaJGoriAbKuxYLyjoQCSqKrN?=
+ =?us-ascii?Q?EzeoAoOc0rahABWdpJeJkPVyq45tr/MTdNe5Ulu4+PqLz2/fwHf/Oncp2/ur?=
+ =?us-ascii?Q?Vwxzvlq5rWeXzx5sJ7nWeUChuYJOnOuQDNZL5ynVPotOzLwBol7OS6KWrPT0?=
+ =?us-ascii?Q?EMK9NybmsD8yuaEehQSkYwV0EoJ3uzFbx2R5Phw1zqwt6aRqhHXQCSgAsrgb?=
+ =?us-ascii?Q?fp5PPsvcpMAQAZZ7mAvujR9p8cLlPy9q873kmtkXU7J7VZfhA8xsz4sxGlf5?=
+ =?us-ascii?Q?3aKGcZH2K9OMkrL7OLzLbdjRsPuY2Ht0rFzACaN6CKelunvo9VGSNz4VT2+r?=
+ =?us-ascii?Q?o4hzgfcXb0wU+bpY0VqGJd5O6i11+fLeTdztVVcTGEFNjCI5U6A5ThPhzQb6?=
+ =?us-ascii?Q?JbPixZIfZaE9WpGEa8U/ZKAsA5GMb4SL4ZQoHXxgSpTsdZ0NT0GotUhCnsEf?=
+ =?us-ascii?Q?5gooTYbaOEvTS+f3jzcqvb1fcV7aPgdNBgQvHTMclmrfjSqymwZCbFaWuUar?=
+ =?us-ascii?Q?4MigAtHQI6DYF15OAVuClPKuTJlDd6F54AVkN2Nq73zyizRt+UR3V+kUPYQZ?=
+ =?us-ascii?Q?AEQLTqM2kAG3FAYbdkF/9vc/hal2EO5XpwMAiyusrfekyJzFxzbGvThd8N6E?=
+ =?us-ascii?Q?I09ahaDoWVH3ATU7AISZYDICeZSIrE4v82Tj55BVV1ct4HBaKeWw/8w3Q9Sl?=
+ =?us-ascii?Q?cAvkkZ00oo6YR65UQpkc8wxlOIogEFymJQx1F0W1U094IXoPyaxZYZoJpp8f?=
+ =?us-ascii?Q?15XfXpE2XNfSLoFXYe5QOrGRng7NavkaU9nkk89DTdrB3ysNbBu7CkX39ipu?=
+ =?us-ascii?Q?d6YdeWqhn+L1p1mAHJGIJkRD7dfQGM+5AcduSrFO3eww04FWmct0JKDLIrZ6?=
+ =?us-ascii?Q?9yfZWf08aLZqIw1SwbUpocsm+dCgaiULG5u1qHSK+2otusJfLr8FE78Eyn1A?=
+ =?us-ascii?Q?+1LZhP1ytHrIJ0jHIrjdHLUG1WBJ3e3FAPubOwhBNHfPhhKc9e/PexQmpzoW?=
+ =?us-ascii?Q?pGV2gssuhFFuW97A70wOP87JY8ZS79AsKPyheJ32DHwkL0VRKISK6aS+UpD7?=
+ =?us-ascii?Q?+q/JFYbaJM2Mfr9ZV3u6z5VqiVOpiePd/9RqgPu3n6lTaPIOEkmxuSTpcfgQ?=
+ =?us-ascii?Q?Wg0dAbHCKq/XMS8mCc5xUQ1CWW/+ZQVF7+OTRp9r/7QocsjyqOmCjHHC09jD?=
+ =?us-ascii?Q?292Oz4vlHJypJWjn9uJ2qyvL0+JZnVznic5MqEzIVrsIhplW0AT1kZT0NMyt?=
+ =?us-ascii?Q?AOQp9QhjmrC+OA9M3EWdIaswemzpkB3kP2ul9sI2kO9bbJOKNieJEMP1p9SL?=
+ =?us-ascii?Q?cAFXBpXDD56n256+N/lKxgo+NmbdB0K64ZI+fSVq35o2ZSCb1tZVU+QuHsKr?=
+ =?us-ascii?Q?IUpUlwRGC8TNOl59Z3fNM/qbtlHg6+kXlJg+Upt6AYJfJErbdv1GsIIftfIm?=
+ =?us-ascii?Q?Bwyvk73owXH/N4UXeI8PxZS7Vu33eQqMzU3rlGx6goytrA7R0Kaomw3N9PWk?=
+ =?us-ascii?Q?GnKxEQ9i7RE/CMVxeK4e6m9fZjITutY=3D?=
 X-OriginatorOrg: dektech.com.au
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8d9ccc19-d1de-4753-de0d-08da4fab2085
+X-MS-Exchange-CrossTenant-Network-Message-Id: f28fd519-4d1d-4bc8-8597-08da4fab8132
 X-MS-Exchange-CrossTenant-AuthSource: DB9PR05MB7641.eurprd05.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jun 2022 15:16:03.4847 (UTC)
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jun 2022 15:18:45.3482 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 1957ea50-0dd8-4360-8db0-c9530df996b2
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 4SHnh7cajuSOHJnWNguHun64leNZZaSY+oZnku47HCcjIgXyfPlNyaBURugyUbHnVgRrwar4KcajQ9AzQLmGIoCe8ETlm9CFnc/VCty/YaM=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR05MB5034
+X-MS-Exchange-CrossTenant-UserPrincipalName: MF77i0HLsabnEDufPSLCDfR9oxGkHL9Jhjq0977IYZ1wNka+eD+E1qZIMl9RAQI2SudUkCCuEi4g99cRLwNOHOeaAAXu4q0/dXDBAxEd/M4=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS1PR05MB9650
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: tipc_dest_list_len() is not being called anywhere. Clean it
- up. Acked-by: Jon Maloy <jmaloy@redhat.com> Signed-off-by: Hoang Le
- <hoang.h.le@dektech.com.au>
- --- net/tipc/name_table.c | 11 net/tipc/name_table.h | 1 - 2 files changed,
- 12 deletions(-) 
+ Content preview: syzbot found the following issue on:
+ ==================================================================
+ BUG: KASAN: use-after-free in tipc_named_reinit+0x94f/0x9b0
+ net/tipc/name_distr.c:413 Read of si [...] 
  Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.7.121 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.121 listed in list.dnswl.org]
+ no trust [40.107.22.121 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.22.121 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-X-Headers-End: 1o1rEC-004FzQ-R3
-Subject: [tipc-discussion] [net-next] tipc: cleanup unused function
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 T_SCC_BODY_TEXT_LINE   No description available.
+X-Headers-End: 1o1rGn-004G8a-Ch
+Subject: [tipc-discussion] [net] tipc: fix use-after-free Read in
+ tipc_named_reinit
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -169,49 +170,77 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: syzbot+47af19f3307fc9c5c82e@syzkaller.appspotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-tipc_dest_list_len() is not being called anywhere. Clean it up.
+syzbot found the following issue on:
+==================================================================
+BUG: KASAN: use-after-free in tipc_named_reinit+0x94f/0x9b0
+net/tipc/name_distr.c:413
+Read of size 8 at addr ffff88805299a000 by task kworker/1:9/23764
 
+CPU: 1 PID: 23764 Comm: kworker/1:9 Not tainted
+5.18.0-rc4-syzkaller-00878-g17d49e6e8012 #0
+Hardware name: Google Compute Engine/Google Compute Engine,
+BIOS Google 01/01/2011
+Workqueue: events tipc_net_finalize_work
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:88 [inline]
+ dump_stack_lvl+0xcd/0x134 lib/dump_stack.c:106
+ print_address_description.constprop.0.cold+0xeb/0x495
+mm/kasan/report.c:313
+ print_report mm/kasan/report.c:429 [inline]
+ kasan_report.cold+0xf4/0x1c6 mm/kasan/report.c:491
+ tipc_named_reinit+0x94f/0x9b0 net/tipc/name_distr.c:413
+ tipc_net_finalize+0x234/0x3d0 net/tipc/net.c:138
+ process_one_work+0x996/0x1610 kernel/workqueue.c:2289
+ worker_thread+0x665/0x1080 kernel/workqueue.c:2436
+ kthread+0x2e9/0x3a0 kernel/kthread.c:376
+ ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:298
+ </TASK>
+[...]
+==================================================================
+
+In the commit
+d966ddcc3821 ("tipc: fix a deadlock when flushing scheduled work"),
+the cancel_work_sync() function just to make sure ONLY the work
+tipc_net_finalize_work() is executing/pending on any CPU completed before
+tipc namespace is destroyed through tipc_exit_net(). But this function
+is not guaranteed the work is the last queued. So, the destroyed instance
+may be accessed in the work which will try to enqueue later.
+
+In order to completely fix, we re-order the calling of cancel_work_sync()
+to make sure the work tipc_net_finalize_work() was last queued and it
+must be completed by calling cancel_work_sync().
+
+Reported-by: syzbot+47af19f3307fc9c5c82e@syzkaller.appspotmail.com
+Fixes: d966ddcc3821 ("tipc: fix a deadlock when flushing scheduled work")
 Acked-by: Jon Maloy <jmaloy@redhat.com>
+Signed-off-by: Ying Xue <ying.xue@windriver.com>
 Signed-off-by: Hoang Le <hoang.h.le@dektech.com.au>
 ---
- net/tipc/name_table.c | 11 -----------
- net/tipc/name_table.h |  1 -
- 2 files changed, 12 deletions(-)
+ net/tipc/core.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/net/tipc/name_table.c b/net/tipc/name_table.c
-index 1d8ba233d047..d1180370fdf4 100644
---- a/net/tipc/name_table.c
-+++ b/net/tipc/name_table.c
-@@ -1202,14 +1202,3 @@ void tipc_dest_list_purge(struct list_head *l)
- 		kfree(dst);
- 	}
- }
--
--int tipc_dest_list_len(struct list_head *l)
--{
--	struct tipc_dest *dst;
--	int i = 0;
--
--	list_for_each_entry(dst, l, list) {
--		i++;
--	}
--	return i;
--}
-diff --git a/net/tipc/name_table.h b/net/tipc/name_table.h
-index 259f95e3d99c..3bcd9ef8cee3 100644
---- a/net/tipc/name_table.h
-+++ b/net/tipc/name_table.h
-@@ -151,6 +151,5 @@ bool tipc_dest_push(struct list_head *l, u32 node, u32 port);
- bool tipc_dest_pop(struct list_head *l, u32 *node, u32 *port);
- bool tipc_dest_del(struct list_head *l, u32 node, u32 port);
- void tipc_dest_list_purge(struct list_head *l);
--int tipc_dest_list_len(struct list_head *l);
+diff --git a/net/tipc/core.c b/net/tipc/core.c
+index 3f4542e0f065..434e70eabe08 100644
+--- a/net/tipc/core.c
++++ b/net/tipc/core.c
+@@ -109,10 +109,9 @@ static void __net_exit tipc_exit_net(struct net *net)
+ 	struct tipc_net *tn = tipc_net(net);
  
- #endif
+ 	tipc_detach_loopback(net);
++	tipc_net_stop(net);
+ 	/* Make sure the tipc_net_finalize_work() finished */
+ 	cancel_work_sync(&tn->work);
+-	tipc_net_stop(net);
+-
+ 	tipc_bcast_stop(net);
+ 	tipc_nametbl_stop(net);
+ 	tipc_sk_rht_destroy(net);
 -- 
 2.30.2
 
