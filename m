@@ -2,110 +2,121 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8E57603349
-	for <lists+tipc-discussion@lfdr.de>; Tue, 18 Oct 2022 21:20:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 885A0606328
+	for <lists+tipc-discussion@lfdr.de>; Thu, 20 Oct 2022 16:34:03 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1oks8C-0001yH-Bn;
-	Tue, 18 Oct 2022 19:20:04 +0000
+	id 1olWcL-00047Z-38;
+	Thu, 20 Oct 2022 14:33:53 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <lucien.xin@gmail.com>) id 1oks8B-0001yB-8r
+ (envelope-from <jmaloy@redhat.com>) id 1olWcK-00047S-43
  for tipc-discussion@lists.sourceforge.net;
- Tue, 18 Oct 2022 19:20:03 +0000
+ Thu, 20 Oct 2022 14:33:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=BUDZV+anbDpvXzCf37543h9sYjwTmnDTYhyA4NXTpv4=; b=IZbXhOsLkICz7xhXbf7tmAvV1U
- UTTTLJQs5hyrDPwMeffDFNBw+Wqguxizz5knUn1eNAzW19NLm4bAHtqdN6TqlQwyHoWeoJEaAYcsp
- LsaMY9ZaQfosYi8vbhhDSRwe3cT/OdeEryrqcj6IY+J8vdoZJaZNFvSdvmhc2kK0/9E0=;
+ bh=+x8rK65W1ez4jAcOPHngQTQQopdMXuxkGBnKu6LB1us=; b=aS4r1Y3RnxPht2vluDInEPsfCV
+ IErN+O5Bq5OMi4z81Nctvhgzfjo28d2lIcpRJ43m+DmOaLDULMDxitgvBvndydHEMrOD4S9xOZ8XU
+ CLXJzekCbZ/oix2OQ7a0fwLx47iul5I/dQ4fTtrGpJUfvRBh00kxcUdWaJmruKbHOsvE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=BUDZV+anbDpvXzCf37543h9sYjwTmnDTYhyA4NXTpv4=; b=F
- QuJW7hYgVQF5OUBeMEKT64dZhZdY9TC7UKyn+9dLtZkAvU4HV7mBe1YBe08rIhqihxpRnhwMCxJwp
- ax88WPI/cfuQYcwBaZvJ2Oru2Egmiy0r7lsEsplKl0bS4KVgqICaFJc+zrkFkZZ1lX8Fq76Xn2pmV
- 3vVT8+M2EdMj/LjM=;
-Received: from mail-qk1-f178.google.com ([209.85.222.178])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1oks86-008ld9-2b for tipc-discussion@lists.sourceforge.net;
- Tue, 18 Oct 2022 19:20:03 +0000
-Received: by mail-qk1-f178.google.com with SMTP id o22so9322771qkl.8
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
+ Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=+x8rK65W1ez4jAcOPHngQTQQopdMXuxkGBnKu6LB1us=; b=PxFzKh821cAw0llGfE43DUWoVM
+ X6I+whvqCFwzlvDkmNa2kmWQlMObgcJLXH70aHcCx3Istndw7Y5gB8/hPeRiwVRqcIRkOY2JJ6Cmx
+ W0C39sov+UakmEPIMNJQp1fyBGXNMq3ECVo/x98S44drt9hgdHpBbEkmi8mCfsIJeLK8=;
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1olWcJ-0000jd-5R for tipc-discussion@lists.sourceforge.net;
+ Thu, 20 Oct 2022 14:33:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1666276424;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=+x8rK65W1ez4jAcOPHngQTQQopdMXuxkGBnKu6LB1us=;
+ b=gF4hC/66iYwcSqy7ef04lifECktdMRUmYYi9Fi05OnruEO9qa+1Hj9o8rrf+AdP0wfB5/v
+ xF7L4Bhd3JX9Vg5PYtkAptyjDZHTOZGJHBArij4hkYuV+H7m7dsW5oOxNWhT7AnDjgZdr0
+ rmXpVzfKhnDa2YVIkq3WhviRCdvnops=
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
+ [209.85.222.197]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_128_GCM_SHA256) id
+ us-mta-643-KIVO8VCHMSmuiBJtdnGGmg-1; Thu, 20 Oct 2022 10:33:43 -0400
+X-MC-Unique: KIVO8VCHMSmuiBJtdnGGmg-1
+Received: by mail-qk1-f197.google.com with SMTP id
+ j13-20020a05620a410d00b006e08208eb31so17419720qko.3
  for <tipc-discussion@lists.sourceforge.net>;
- Tue, 18 Oct 2022 12:19:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=content-transfer-encoding:mime-version:message-id:date:subject:cc
- :to:from:from:to:cc:subject:date:message-id:reply-to;
- bh=BUDZV+anbDpvXzCf37543h9sYjwTmnDTYhyA4NXTpv4=;
- b=cROKZnZI0L2SGarRuzleR7wKNlEGoxIAxlJL7kO7iODX/scdBa5UitMRyLR/5GfVAa
- 8SCl2vGfEYUzO+ScICZATNAqh2B9YFOgd2lq5710EQGTfr6YlVAAnmKKStEqIVNBrVvN
- jtRSke7a7emicPRv5CVkfefLpYJlqXYm0qQw0/7vKEXcCh4eysKj4v+GUG7sEp7uo8/g
- JvhjHzFYfp+1ym+0H2OtFV8uIRonRiQ3YOxZH5cgxIOVXjkpmb1kTD2UBcXKFzOvDAYT
- PcYidvsG3dVQcWJVPdbFfZ2koOn8iT+FCetgg7lGhBXX5ZHFbzNsqGavfhfbU1KUcJLc
- Li2Q==
+ Thu, 20 Oct 2022 07:33:43 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=content-transfer-encoding:mime-version:message-id:date:subject:cc
- :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
- :reply-to;
- bh=BUDZV+anbDpvXzCf37543h9sYjwTmnDTYhyA4NXTpv4=;
- b=oDXelsxXG/Ng7M4HUP9BNEJmJKBs+NFam7zalUNZeoMhlUv4zx5qGdZ/p06hanbEtu
- EyeayT+ayajj/4G1WadTqzRUv/dlFrFvR8PGKKsVsM/lVO/D+WsisKep1dX/8y7pviV2
- yzR0hwhHupPT2C3lJeJhKypxRGyoDaXO7h8htlMeegkZL3kEivoNNNJ37qBzhH+EwyQD
- e4oCqtzXk1XEOzMyL4r9EO7h+CEU2gSyDzKk8rMOCaQlGTx1Jt8g8hyEIjFLkczGCmKU
- KZkGWFGe/PPG1txHNr7OM6Go1afJq6dP184HJs9MsyBfDGlHtAxluT4xRbza3fssbgDs
- 4xsg==
-X-Gm-Message-State: ACrzQf2aLFaKACTZ9BQu/078CRfmJlSNA/gGzqWssrMO4moMqdf+J4Se
- BmNOvkPywssrYhyE6XAF8BM=
-X-Google-Smtp-Source: AMsMyM7P04yVON6r2O2ji1jfQvClcBNM7bdJkGeaIPXjbA6XuOPfltyFX3p8Ky0MxYlv9F+cMKRGbg==
-X-Received: by 2002:a05:620a:150b:b0:6ee:8d04:f70 with SMTP id
- i11-20020a05620a150b00b006ee8d040f70mr3020274qkk.101.1666120792238; 
- Tue, 18 Oct 2022 12:19:52 -0700 (PDT)
-Received: from wsfd-netdev15.ntdv.lab.eng.bos.redhat.com
- (nat-pool-bos-t.redhat.com. [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id
- c25-20020ac81119000000b003996aa171b9sm2385074qtj.97.2022.10.18.12.19.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 18 Oct 2022 12:19:51 -0700 (PDT)
-From: Xin Long <lucien.xin@gmail.com>
-To: network dev <netdev@vger.kernel.org>, tipc-discussion@lists.sourceforge.net
-Date: Tue, 18 Oct 2022 15:19:50 -0400
-Message-Id: <4eee264380c409c61c6451af1059b7fb271a7e7b.1666120790.git.lucien.xin@gmail.com>
-X-Mailer: git-send-email 2.31.1
+ h=content-transfer-encoding:in-reply-to:from:references:cc:to
+ :content-language:subject:user-agent:mime-version:date:message-id
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+ bh=+x8rK65W1ez4jAcOPHngQTQQopdMXuxkGBnKu6LB1us=;
+ b=V3ur+jGKqS8fgLsbO094gqZ7Ba/vFTgg8uLAJCCSlpSId30JoYWRGZfxDtqgplNEf9
+ /iwPE39cBDzzGKN4KYoOo9GPTPyZa+TQeKGqq5kvbW2ofaB+J9Shf1ZLDCFXQLe3NAf/
+ anOnTS8MobUCRiaStB/So5V09NWyP3hG5F+v1g0It4yMmhdpc8ydUQd5dY4ZiOi9CkDQ
+ XRPU0Z91ySdJH67WaNdhcHRZ2nOSp4RTc/xNuDxRwv+PrPVtaLXUOaCKQ553yflkZWUe
+ DLlQo5v5HBT5p5K1d1LKn3S2N8/5BGJNf2Cq4KTZTvVGAQtP3hqUAsgc5E+miouGAYvN
+ YTlg==
+X-Gm-Message-State: ACrzQf1iRCcqRUyVfR+Eab0j3wsNQlIYzN1K4PqUcvWbf89QKsjgkRw0
+ UoGqp6aGcfhmLLNqSy6PuWFOAzT9bYXhqnFFB8YVbl1iTyyc5lW1Sr3YFQawyy92kxYFxhwjVHF
+ cAl7FOC/4hDeE9sqQQ4omJqg3pETb+0tE+p5c
+X-Received: by 2002:a05:620a:4626:b0:6ee:b43:d2bc with SMTP id
+ br38-20020a05620a462600b006ee0b43d2bcmr9156481qkb.764.1666276422958; 
+ Thu, 20 Oct 2022 07:33:42 -0700 (PDT)
+X-Google-Smtp-Source: AMsMyM7rnl1MY4IaRNWroVHz/zCKchyC83sUPnsr+F4F+ILebXHtwc8G6pxBk+mbkkLPjonF/IHz3Q==
+X-Received: by 2002:a05:620a:4626:b0:6ee:b43:d2bc with SMTP id
+ br38-20020a05620a462600b006ee0b43d2bcmr9156456qkb.764.1666276422676; 
+ Thu, 20 Oct 2022 07:33:42 -0700 (PDT)
+Received: from [10.0.0.96] ([24.225.241.171]) by smtp.gmail.com with ESMTPSA id
+ bw15-20020a05622a098f00b0035d08c1da35sm6211061qtb.45.2022.10.20.07.33.41
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 20 Oct 2022 07:33:41 -0700 (PDT)
+Message-ID: <9c71f2f1-b3d0-cc82-3d62-afd72a92d94d@redhat.com>
+Date: Thu, 20 Oct 2022 10:33:40 -0400
 MIME-Version: 1.0
-X-Spam-Score: -0.2 (/)
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.11.0
+To: Xin Long <lucien.xin@gmail.com>, network dev <netdev@vger.kernel.org>,
+ tipc-discussion@lists.sourceforge.net
+References: <4eee264380c409c61c6451af1059b7fb271a7e7b.1666120790.git.lucien.xin@gmail.com>
+From: Jon Maloy <jmaloy@redhat.com>
+In-Reply-To: <4eee264380c409c61c6451af1059b7fb271a7e7b.1666120790.git.lucien.xin@gmail.com>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Language: en-US
+X-Spam-Score: -2.9 (--)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: syzbot found a crash in tipc_topsrv_accept: KASAN:
- null-ptr-deref
- in range [0x0000000000000008-0x000000000000000f] Workqueue: tipc_rcv
- tipc_topsrv_accept
- RIP: 0010:kernel_accept+0x22d/0x350 net/socket.c:3487 Call Trace: <TASK>
- tipc_topsrv_acce [...] 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  On 10/18/22 15:19, Xin Long wrote: > syzbot found a crash
+ in tipc_topsrv_accept: > > KASAN: null-ptr-deref in range
+ [0x0000000000000008-0x000000000000000f]
+ > Workqueue: tipc_rcv tipc_topsrv_accept > R [...] 
+ Content analysis details:   (-2.9 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [lucien.xin[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [170.10.129.124 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.178 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.178 listed in list.dnswl.org]
+ [170.10.129.124 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -113,8 +124,10 @@ X-Spam-Report: Spam detection software,
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-X-Headers-End: 1oks86-008ld9-2b
-Subject: [tipc-discussion] [PATCH net] tipc: fix a null-ptr-deref in
+ -2.0 NICE_REPLY_A           Looks like a legit reply (A)
+ -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1olWcJ-0000jd-5R
+Subject: Re: [tipc-discussion] [PATCH net] tipc: fix a null-ptr-deref in
  tipc_topsrv_accept
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -127,96 +140,97 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Eric Dumazet <edumazet@google.com>, kuba@kernel.org,
+Cc: kuba@kernel.org, Eric Dumazet <edumazet@google.com>,
  Paolo Abeni <pabeni@redhat.com>, davem@davemloft.net
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-syzbot found a crash in tipc_topsrv_accept:
 
-  KASAN: null-ptr-deref in range [0x0000000000000008-0x000000000000000f]
-  Workqueue: tipc_rcv tipc_topsrv_accept
-  RIP: 0010:kernel_accept+0x22d/0x350 net/socket.c:3487
-  Call Trace:
-   <TASK>
-   tipc_topsrv_accept+0x197/0x280 net/tipc/topsrv.c:460
-   process_one_work+0x991/0x1610 kernel/workqueue.c:2289
-   worker_thread+0x665/0x1080 kernel/workqueue.c:2436
-   kthread+0x2e4/0x3a0 kernel/kthread.c:376
-   ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:306
-
-It was caused by srv->listener that might be set to null by
-tipc_topsrv_stop() in net .exit whereas it's still used in
-tipc_topsrv_accept() worker.
-
-srv->listener is protected by srv->idr_lock in tipc_topsrv_stop(), so add
-a check for srv->listener under srv->idr_lock in tipc_topsrv_accept() to
-avoid the null-ptr-deref. To ensure the lsock is not released during the
-tipc_topsrv_accept(), move sock_release() after tipc_topsrv_work_stop()
-where it's waiting until the tipc_topsrv_accept worker to be done.
-
-Note that sk_callback_lock is used to protect sk->sk_user_data instead of
-srv->listener, and it should check srv in tipc_topsrv_listener_data_ready()
-instead. This also ensures that no more tipc_topsrv_accept worker will be
-started after tipc_conn_close() is called in tipc_topsrv_stop() where it
-sets sk->sk_user_data to null.
-
-Fixes: 0ef897be12b8 ("tipc: separate topology server listener socket from subcsriber sockets")
-Reported-by: syzbot+c5ce866a8d30f4be0651@syzkaller.appspotmail.com
-Signed-off-by: Xin Long <lucien.xin@gmail.com>
----
- net/tipc/topsrv.c | 16 ++++++++++++----
- 1 file changed, 12 insertions(+), 4 deletions(-)
-
-diff --git a/net/tipc/topsrv.c b/net/tipc/topsrv.c
-index 14fd05fd6107..d92ec92f0b71 100644
---- a/net/tipc/topsrv.c
-+++ b/net/tipc/topsrv.c
-@@ -450,12 +450,19 @@ static void tipc_conn_data_ready(struct sock *sk)
- static void tipc_topsrv_accept(struct work_struct *work)
- {
- 	struct tipc_topsrv *srv = container_of(work, struct tipc_topsrv, awork);
--	struct socket *lsock = srv->listener;
--	struct socket *newsock;
-+	struct socket *newsock, *lsock;
- 	struct tipc_conn *con;
- 	struct sock *newsk;
- 	int ret;
- 
-+	spin_lock_bh(&srv->idr_lock);
-+	if (!srv->listener) {
-+		spin_unlock_bh(&srv->idr_lock);
-+		return;
-+	}
-+	lsock = srv->listener;
-+	spin_unlock_bh(&srv->idr_lock);
-+
- 	while (1) {
- 		ret = kernel_accept(lsock, &newsock, O_NONBLOCK);
- 		if (ret < 0)
-@@ -489,7 +496,7 @@ static void tipc_topsrv_listener_data_ready(struct sock *sk)
- 
- 	read_lock_bh(&sk->sk_callback_lock);
- 	srv = sk->sk_user_data;
--	if (srv->listener)
-+	if (srv)
- 		queue_work(srv->rcv_wq, &srv->awork);
- 	read_unlock_bh(&sk->sk_callback_lock);
- }
-@@ -699,8 +706,9 @@ static void tipc_topsrv_stop(struct net *net)
- 	__module_get(lsock->sk->sk_prot_creator->owner);
- 	srv->listener = NULL;
- 	spin_unlock_bh(&srv->idr_lock);
--	sock_release(lsock);
-+
- 	tipc_topsrv_work_stop(srv);
-+	sock_release(lsock);
- 	idr_destroy(&srv->conn_idr);
- 	kfree(srv);
- }
--- 
-2.31.1
+On 10/18/22 15:19, Xin Long wrote:
+> syzbot found a crash in tipc_topsrv_accept:
+>
+>    KASAN: null-ptr-deref in range [0x0000000000000008-0x000000000000000f]
+>    Workqueue: tipc_rcv tipc_topsrv_accept
+>    RIP: 0010:kernel_accept+0x22d/0x350 net/socket.c:3487
+>    Call Trace:
+>     <TASK>
+>     tipc_topsrv_accept+0x197/0x280 net/tipc/topsrv.c:460
+>     process_one_work+0x991/0x1610 kernel/workqueue.c:2289
+>     worker_thread+0x665/0x1080 kernel/workqueue.c:2436
+>     kthread+0x2e4/0x3a0 kernel/kthread.c:376
+>     ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:306
+>
+> It was caused by srv->listener that might be set to null by
+> tipc_topsrv_stop() in net .exit whereas it's still used in
+> tipc_topsrv_accept() worker.
+>
+> srv->listener is protected by srv->idr_lock in tipc_topsrv_stop(), so add
+> a check for srv->listener under srv->idr_lock in tipc_topsrv_accept() to
+> avoid the null-ptr-deref. To ensure the lsock is not released during the
+> tipc_topsrv_accept(), move sock_release() after tipc_topsrv_work_stop()
+> where it's waiting until the tipc_topsrv_accept worker to be done.
+>
+> Note that sk_callback_lock is used to protect sk->sk_user_data instead of
+> srv->listener, and it should check srv in tipc_topsrv_listener_data_ready()
+> instead. This also ensures that no more tipc_topsrv_accept worker will be
+> started after tipc_conn_close() is called in tipc_topsrv_stop() where it
+> sets sk->sk_user_data to null.
+>
+> Fixes: 0ef897be12b8 ("tipc: separate topology server listener socket from subcsriber sockets")
+> Reported-by: syzbot+c5ce866a8d30f4be0651@syzkaller.appspotmail.com
+> Signed-off-by: Xin Long <lucien.xin@gmail.com>
+> ---
+>   net/tipc/topsrv.c | 16 ++++++++++++----
+>   1 file changed, 12 insertions(+), 4 deletions(-)
+>
+> diff --git a/net/tipc/topsrv.c b/net/tipc/topsrv.c
+> index 14fd05fd6107..d92ec92f0b71 100644
+> --- a/net/tipc/topsrv.c
+> +++ b/net/tipc/topsrv.c
+> @@ -450,12 +450,19 @@ static void tipc_conn_data_ready(struct sock *sk)
+>   static void tipc_topsrv_accept(struct work_struct *work)
+>   {
+>   	struct tipc_topsrv *srv = container_of(work, struct tipc_topsrv, awork);
+> -	struct socket *lsock = srv->listener;
+> -	struct socket *newsock;
+> +	struct socket *newsock, *lsock;
+>   	struct tipc_conn *con;
+>   	struct sock *newsk;
+>   	int ret;
+>   
+> +	spin_lock_bh(&srv->idr_lock);
+> +	if (!srv->listener) {
+> +		spin_unlock_bh(&srv->idr_lock);
+> +		return;
+> +	}
+> +	lsock = srv->listener;
+> +	spin_unlock_bh(&srv->idr_lock);
+> +
+>   	while (1) {
+>   		ret = kernel_accept(lsock, &newsock, O_NONBLOCK);
+>   		if (ret < 0)
+> @@ -489,7 +496,7 @@ static void tipc_topsrv_listener_data_ready(struct sock *sk)
+>   
+>   	read_lock_bh(&sk->sk_callback_lock);
+>   	srv = sk->sk_user_data;
+> -	if (srv->listener)
+> +	if (srv)
+>   		queue_work(srv->rcv_wq, &srv->awork);
+>   	read_unlock_bh(&sk->sk_callback_lock);
+>   }
+> @@ -699,8 +706,9 @@ static void tipc_topsrv_stop(struct net *net)
+>   	__module_get(lsock->sk->sk_prot_creator->owner);
+>   	srv->listener = NULL;
+>   	spin_unlock_bh(&srv->idr_lock);
+> -	sock_release(lsock);
+> +
+>   	tipc_topsrv_work_stop(srv);
+> +	sock_release(lsock);
+>   	idr_destroy(&srv->conn_idr);
+>   	kfree(srv);
+>   }
+Acked-by: Jon Maloy <jmaloy@redhat.com>
 
 
 
