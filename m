@@ -2,163 +2,124 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 883657021CF
-	for <lists+tipc-discussion@lfdr.de>; Mon, 15 May 2023 04:41:52 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0527970234D
+	for <lists+tipc-discussion@lfdr.de>; Mon, 15 May 2023 07:28:54 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1pyO9f-0002NL-SF;
-	Mon, 15 May 2023 02:41:43 +0000
+	id 1pyQlK-0007BJ-9Z;
+	Mon, 15 May 2023 05:28:46 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <tung.q.nguyen@dektech.com.au>) id 1pyO9a-0002NE-NZ
+ (envelope-from <ps13.bisht@gmail.com>) id 1pyQlI-0007BC-Kz
  for tipc-discussion@lists.sourceforge.net;
- Mon, 15 May 2023 02:41:38 +0000
+ Mon, 15 May 2023 05:28:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
+ In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
+ :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=R3trkVY7wnJtOmfV+bC7X/ydUK7fhQ3FHGVFoTA5YmE=; b=KIe5n9xzJeqLqmjw3Xy4IpWMTp
- Wc13bq/SsBACYmsbJ9IJ2hQrLKqoRjXFCuYc+0Z7wpdLFvbnt9UvLnnFNgCiMe/6HOpy/f+221ncL
- A30Ob81/dK1G8z2+h6dxa11W1a9tOGcY3pTHqFc7xa0GPhBU6wFSeVAatXiO0MzQUjrc=;
+ bh=wbp4EzCK1oqeTq9lvfVD8VqcvD3o7BTywxO/26plIgI=; b=mxnKQKhq6PIE1sc8L2/OQZfYOx
+ 3M3yTpY8mAcs/wPaJi8fFYsPSgD4noJM9i40ieb1tVw2rW8T8uLvCPQmK1uJIz8KowCeKbGJ6DdRH
+ pLcouGSwVditG/92KErfyoJ/azGXcHWi56oKyOX/qz9yRaKG6NHcmilk2BEwXOm6GYus=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
- References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
+ h=Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+ MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=R3trkVY7wnJtOmfV+bC7X/ydUK7fhQ3FHGVFoTA5YmE=; b=nPUaFF0Mfsdsp6gi1MGUmLgPRr
- 1TS1UbJ2o4o1+LAHQxr2xIdYDstkh3O/AKXhnGYKtsKKj/due1txkRWbk4X86+qfMl/kepES9ctO9
- 4bGbvuWPFgYm8idSlZSUJOJusOhT/AL5soFwkEpwBLnHbOgFn1df8c3lr3pHfkykUZ3s=;
-Received: from mail-db3eur04on2121.outbound.protection.outlook.com
- ([40.107.6.121] helo=EUR04-DB3-obe.outbound.protection.outlook.com)
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1pyO9N-007uYl-M2 for tipc-discussion@lists.sourceforge.net;
- Mon, 15 May 2023 02:41:38 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Gfij8DXl3ltjmRJhb2vwdpLDvEJIic7Q3QASKduumWl0HOoGUNX5O0Kj+pwWAGOw/ji1sGKhhQQOTbAEd1DZOar417F6gloTpJvri2Hwezym0l3GlAFP0yNpiwKJ1MMBX2G7u8cY2GLcRlrZx+uN9G3bQ+d1i7ROnEP8giwbeh5y/M9GQlpTU2O2oYtQ/XHov9v5GjBdbjWYRQ0ugl/oOAeKoEv/h0m3UjLJUivPxyVg+iKe9HC3LgsnI7X95d98h6dBACIx99M+qYgjSYSlAaRuMr/29aIgEiQG1ujUyvq1xlFuHv0TJab7cWrlXMPRxaimVxGDd79eo6CV84G/Xw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=R3trkVY7wnJtOmfV+bC7X/ydUK7fhQ3FHGVFoTA5YmE=;
- b=BxuxqJY0sJR2oebpUpBOE0789UZ9cr4YsRiK60w3wSRSsh6lzb3Fbu6F+1htNj595+PZ4QFb405mkvY+My9JXOi8YzjugCCmpWwMe44IhO2eFNr5OfkoMpGowA9PBVV5jpcK4e+C0qbpabfqc4KYcmQwndBl8nor12/QYuhAwxInytUufDFNoXyhotZu8R6bCcDBFWNwgY8ErgYUQ4GoubA+QD87LUpRczDKN06zRkJqyorBrtDYgHDl1562LKl9zTz+UtSADG7fsm32r3Tjg5tLvSI0pXS0yKvfUV80vwwDfkBaz5olBt7jw5ABw2bNWZc4KWIpP6Bc1QHmPY9xAw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=dektech.com.au; dmarc=pass action=none
- header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=R3trkVY7wnJtOmfV+bC7X/ydUK7fhQ3FHGVFoTA5YmE=;
- b=bqLyxu3WvZpILh9Kc3U6zpIDNaC8SHQl8Bit5Qx5m0ZBmqLMLgv/C8igZ+2hmNAvbmu+Ed+r20DUYENtiP1gbXoTlTjx1uUovi0SMhpt/VO/Gr4u8tUCnL7Cc4XzKwk+9Dyz/hbHcpfgDLljvD5YPHV3kHJL1SdlNlcBvkdFY2c=
-Received: from DB9PR05MB9078.eurprd05.prod.outlook.com (2603:10a6:10:36a::7)
- by PAXPR05MB8207.eurprd05.prod.outlook.com (2603:10a6:102:12d::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6387.30; Mon, 15 May
- 2023 02:41:13 +0000
-Received: from DB9PR05MB9078.eurprd05.prod.outlook.com
- ([fe80::bb8:eab5:13e9:6d25]) by DB9PR05MB9078.eurprd05.prod.outlook.com
- ([fe80::bb8:eab5:13e9:6d25%6]) with mapi id 15.20.6387.030; Mon, 15 May 2023
- 02:41:13 +0000
-To: Xin Long <lucien.xin@gmail.com>, network dev <netdev@vger.kernel.org>,
- "tipc-discussion@lists.sourceforge.net"
- <tipc-discussion@lists.sourceforge.net>
-Thread-Topic: [PATCHv3 net 0/3] tipc: fix the mtu update in link mtu
- negotiation
-Thread-Index: AQHZhp2hXKwEAyOCgUqmXm7Tstc3Va9an82g
-Date: Mon, 15 May 2023 02:41:13 +0000
-Message-ID: <DB9PR05MB907845D6F1CF8AAC8140CB7A88789@DB9PR05MB9078.eurprd05.prod.outlook.com>
-References: <cover.1684093873.git.lucien.xin@gmail.com>
-In-Reply-To: <cover.1684093873.git.lucien.xin@gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=dektech.com.au;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: DB9PR05MB9078:EE_|PAXPR05MB8207:EE_
-x-ms-office365-filtering-correlation-id: c75180a1-2765-42c5-979f-08db54edd965
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: bbaRJHy49rK3P+lPZ1tP0oyahZAtCUn7Q6VRyMkqUZMtIFxTuoqyNti/lIFWsmN/ouVlGStFqzh1FylBTajObvml1MxrM5NbHhQkIn9Hd3TcobfWQf2A65Epn9O+f0HuP0cNKBsnMxWVqy/g3znUr3NpmqiklozyqhLLpTJj0lVgtNlKht4rewwN2oXt3A3pSCpKIYVZTLigClJ6X3GwVBk1SgDNqWV56hyLbkY78O/q88lBYHpAMfK/wsZGmIA06LzIvokngS/OdhwR4Ej/CWwZNJ+zzVRY3rJPwJxTBz4G+MDqeq0jxvcx+QwUqGMrKwNIYSIw7XRcR7Ge543b1I5sDy04TU1hbHHhxgEaG7EqbV40JDpaO7C8SWRcDD/lRZnmHrMp8Nv52VJ5dIVRj7L2k38FJekp3owF5G8urR8DVD4Na6H0JaI6dmfWtm7H/v5n4ynoa/uH+e24YRCWvf+LhHiFKnuPEs9gru8W/7V0YRJmtpuO2GaeBoB3X7HuC6OrTHcjoL+RCd9wAh1dRAv2Hii8YvRnfNMKo1+FiR5AW9Hp8MzYQGxK8aTso9KeuysGKRBAPuaZgPfXfCce7IxWs4dcglAXWzgLN9cMyCifjcJaAXe7DLvik8vj2/Zw
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB9PR05MB9078.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230028)(4636009)(136003)(396003)(366004)(39840400004)(376002)(346002)(451199021)(54906003)(478600001)(110136005)(86362001)(83380400001)(33656002)(6506007)(186003)(26005)(71200400001)(9686003)(38100700002)(122000001)(38070700005)(55016003)(7696005)(4744005)(66556008)(66446008)(66476007)(76116006)(66946007)(2906002)(64756008)(4326008)(316002)(52536014)(5660300002)(8936002)(8676002)(41300700001)(15650500001);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?zh9aHEtcDd0AOpQHeiibEbJIsJlKKQIs81C1jOLypQSJeGTc4yUcXopMS7AB?=
- =?us-ascii?Q?mhtOOUD2mFm0eZ79+R19kA79KxyFyAeODfhbPNFRX+ckuSto/bsiIbhoREZc?=
- =?us-ascii?Q?cJ+UK8gBxnjhbcxtiGSN4HETmDN9BepE+4hW9LBxA/xXYcBW5AgGXzZ1Zkdu?=
- =?us-ascii?Q?7QLoxqityMxNqbUwoOaDBN0HhlRhioSxKgrF2UiHNQFy9PZgsChVdnaz7KuU?=
- =?us-ascii?Q?34ycN1umOfKIVMzFo7AJ2N6KMCT9A/dStNG0asWJRCsgSOQqE8NtAeb3XW/a?=
- =?us-ascii?Q?ji4SFm8Dw0GgdcqnwVE7Qw4WQLO4eIn+LBWgT2h3BeJy1uF01Yr7MU9FHkkz?=
- =?us-ascii?Q?rapLCZw6YQzC/XD7i56QeFWfAfVQSYHf4VpsaJX4Ju5vUj0t7SDfdH1Oqo5G?=
- =?us-ascii?Q?lUC2cxFi/2Ykm+yBG0542UhJ/lb1wnKv6AgNNLUjNEDbMZON8yzrUXGykP88?=
- =?us-ascii?Q?V3P0kwRz6JYfYjZyjHzSrIH+imZuUfxcyfq/xtmYh/ViYbVkkequYXk50ibl?=
- =?us-ascii?Q?9/j0/noTUVUIuvY0JsbMLhWcaW4LWfKHsuVg46jH/1QteGpU03PlmG513AkE?=
- =?us-ascii?Q?twfbsb1MEYxaP+gBwxCpFJ4Xse05JHad2dwHBfwKoOBOj2+9tWDVoz3Ufpia?=
- =?us-ascii?Q?9B4DKItLPDsPmvT74QTkCat9hnWm9s1t6zKKZ1NvwmBYs7UUbeivyS7niJRV?=
- =?us-ascii?Q?iEPA6/zDd0txo75WzJaoVxC4tvuijkTRGVHsTu/Hxke0k/bujODucGlyFTwv?=
- =?us-ascii?Q?KloXGb0UhIh9LZ7GlXF7f58Taw9xQTm8+fI4+7Owqk2eWUejuwp6r3gUcBCQ?=
- =?us-ascii?Q?KD0uv7R0dnM5QEUHfcfTTJz/jTd+vP7uIhxyQQnrSRnOV32asunr4aAy/msC?=
- =?us-ascii?Q?zaJ++qWMURUVEdwcI/AhVcli/0lkusjj07OmZyFzhB2idZYUeWZWCE0GFhYd?=
- =?us-ascii?Q?soBRyDp/bHh78b4O38l0W/LgvWeySxzdb7z1c0sjIKx2IZS+jTlCC6qaz1Ji?=
- =?us-ascii?Q?Tes5cMC3IqU2uVRDZV5NUg4SFgDTFSefL+RiRANlY48rWsZRe8PLI8p3GHFO?=
- =?us-ascii?Q?wsoEn3InCGdhAgae2h1hYDA+mXYXE67M+BRsPWiRJ9F1S0kzMF6OMPFg1k4W?=
- =?us-ascii?Q?9UGsihanSFsKOJt4iyUk3miGFMRClOkwjyKmHTy7VxfcSFXIge9ODwePU6EK?=
- =?us-ascii?Q?8vfHu1nc7YUNZzqhlbcUGm36yWIQiiqOuOtLTJLtJ0SPqUFs3orf35yJUeBb?=
- =?us-ascii?Q?0PxqBeC3Bhp8pzqJHz4ZjLCCJJ+QwH5HYGfdtPAcsh/uj2pUL9kKk4obKFMD?=
- =?us-ascii?Q?Zbv4l5SO5bWocAHNnm4u07CCNmIseAjsXrzMRIqg8aja1AgITaf6Q1ABL+VQ?=
- =?us-ascii?Q?cSQ/CxxdLxRDRgB68N+RQWGTZcYDArmcLNnUrmVsTfBEBBqWQEm6zawoNIoN?=
- =?us-ascii?Q?R6nLZ1CX86pam8xXljJck4pQ34dQpcNVeNY0DN2YzlWUYIPDHJrLH9kiFOcv?=
- =?us-ascii?Q?188r9ZCXDWToSCVfi6iJXqiOZz8Fk4JQg9vWWNAJq5A+UBOVmzWcIYUGayYy?=
- =?us-ascii?Q?D+n5fUCmusgtctkdzJqRMxnQaw2m38nNvIkwQOs9?=
+ bh=wbp4EzCK1oqeTq9lvfVD8VqcvD3o7BTywxO/26plIgI=; b=UPy0NXP46W2F+v7yOxhJZK5AXl
+ E3FZx+8Oc9R//0KHhJM1iJVlODLK0ytDndXhMXYIp1TVcoVz6yK4QHuYA+n/ZOeHhWM5HgCTT0S8L
+ QCJnqLCLUKjzBuiYWFqmkIaibV1kRsvsqPS822wlErO1m16uBCPDhGLPsq37XbwIebrA=;
+Received: from mail-oa1-f41.google.com ([209.85.160.41])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1pyQlG-0001wD-NE for tipc-discussion@lists.sourceforge.net;
+ Mon, 15 May 2023 05:28:44 +0000
+Received: by mail-oa1-f41.google.com with SMTP id
+ 586e51a60fabf-1929818d7faso69643364fac.0
+ for <tipc-discussion@lists.sourceforge.net>;
+ Sun, 14 May 2023 22:28:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20221208; t=1684128517; x=1686720517;
+ h=cc:to:subject:message-id:date:from:in-reply-to:references
+ :mime-version:from:to:cc:subject:date:message-id:reply-to;
+ bh=wbp4EzCK1oqeTq9lvfVD8VqcvD3o7BTywxO/26plIgI=;
+ b=lQJDVDc6zWEQos5Q0pQMCGYXFruoWOtrYn16Uf7q2UjxcceMjsmetBKgNMDFMRjDJB
+ IXT2o2MyfFYIkHG8ZWQ/L4DVFaU36kBV28LXVjJLK6Y36dmO4fDk6efoAbP9UQh6z17K
+ Z1sbmh2u351lY5Gbqz4DsCUr9k+KCq8ywR2WGqH6OTvUTjEB8L8PVd3grZ6mxiYZf2VC
+ SwuWOtdZ6nhNUSuwgqLQKZHnE1Jt7zhe///iyrx343T0ATbFmK3XhSxKEjCNum++17CL
+ isoXX987kHMXr/Fe9Dt3Q6TLfzbmfSjXmEzZ2pWjp4Himc0lVUb5a1bJrLzKiHH25nMo
+ 8ADw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20221208; t=1684128517; x=1686720517;
+ h=cc:to:subject:message-id:date:from:in-reply-to:references
+ :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=wbp4EzCK1oqeTq9lvfVD8VqcvD3o7BTywxO/26plIgI=;
+ b=jNSA6hnKmYc2jtrO36Mqr+d7bUAbPZJuFq0CAMk3GFPdm/vYBuekh3GFejb2rY8xou
+ 5GhxJ+78dLpGiui9SBm4wL7Dx16XKXR6m+1/IdU/Nnx9QH9IcsNAZiooRNAzxX67AXmH
+ y+6Y2eFcbQWHBa7SngMYmCqfbHgYVLPLciDoFU6zSTUcsyKOB9UYyd3FQTbSSAzsSxBp
+ Q8L7Fep+VCbqZR6yShSWHFDDbG2zDvxxThAHDY7TZ5Nch4VeLcAPIpVTvOzWiPxUlY+5
+ Wn1Pu+LxR4F8pP2sm4DeIFlEjtuwma82LiQ3uzfwicB2ZKMytHMsJ7eE3utExlvVNjFl
+ rwzQ==
+X-Gm-Message-State: AC+VfDwmcZJTZsdfsgQNWIQxbErrqYgyh1xgXufnU2GkqQ2T8DMHiHqX
+ LTsc2lWJQNPStCe8HYxLpu2HkZQMt8Pz9zf3W840QZt2
+X-Google-Smtp-Source: ACHHUZ6OkpgJqvmql/HBRNDjoz1TYvaTwgeL17p5EhsWPzlIb6xmjZv5cvmlcOCyd/vPZE4JoqBakLvfZQdX3u+q98A=
+X-Received: by 2002:a05:6870:3a28:b0:192:d231:1c27 with SMTP id
+ du40-20020a0568703a2800b00192d2311c27mr14681402oab.26.1684128516907; Sun, 14
+ May 2023 22:28:36 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: dektech.com.au
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: DB9PR05MB9078.eurprd05.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c75180a1-2765-42c5-979f-08db54edd965
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 May 2023 02:41:13.4139 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 1957ea50-0dd8-4360-8db0-c9530df996b2
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: SXM0yg7gBNpq5n2uLbf4Ytx2WgLl1ntfK5S/EXV/t8uTbrCHPi974JWu1eVjlZ+EpyNJMcuO5jtf4Q2fsJQ7/9MMsytobqUx2FMPAW+gH3A=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR05MB8207
+References: <CACB1WsRUCkb6ZfNZ1fCQ=q_M6Zo0t-MuXouoxKWwgReRNCn9QQ@mail.gmail.com>
+ <CACB1WsQswDHuvQrpHu_F=G6SM7MAZJ1RU=XAkOBgnw95KquM9g@mail.gmail.com>
+ <DB9PR05MB9078720FB4FED1290AE929FC889D9@DB9PR05MB9078.eurprd05.prod.outlook.com>
+ <CACB1WsQ03cxhCDBLUCKp4gXEnqSYLG-NbVST02PQCLgx_a-azA@mail.gmail.com>
+In-Reply-To: <CACB1WsQ03cxhCDBLUCKp4gXEnqSYLG-NbVST02PQCLgx_a-azA@mail.gmail.com>
+From: prakash bisht <ps13.bisht@gmail.com>
+Date: Mon, 15 May 2023 10:58:29 +0530
+Message-ID: <CACB1WsQ78_0R+2-EhocereqipRse7i6D87CJEYjMnrwJCLKUfQ@mail.gmail.com>
+To: Tung Quang Nguyen <tung.q.nguyen@dektech.com.au>
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+X-Spam-Report: Spam detection software, running on the system "util-spamd-1.v13.lw.sourceforge.com",
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: >Subject: [PATCHv3 net 0/3] tipc: fix the mtu update in link
- mtu negotiation > >This patchset fixes a crash caused by a too small MTU
- carried in the >activate msg. Note that as such malicious packet d [...] 
+ 
+ Content preview:  Hi Tung, Can you please share your thoughts. I have responded
+    to your queries in my previous email. Please let me know if you need any
+   additional information from my end. Thanks and regards, Prakash On Tue, Apr
+    25, 2023 at 2:43 PM prakash bisht wrote: 
+ 
  Content analysis details:   (-0.2 points, 6.0 required)
- pts rule name              description
+ 
+  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.6.121 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.121 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider
+                             [ps13.bisht[at]gmail.com]
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+                             [209.85.160.41 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [209.85.160.41 listed in list.dnswl.org]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+                             envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-X-Headers-End: 1pyO9N-007uYl-M2
-Subject: Re: [tipc-discussion] [PATCHv3 net 0/3] tipc: fix the mtu update in
- link mtu negotiation
+                             author's domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1pyQlG-0001wD-NE
+X-Content-Filtered-By: Mailman/MimeDel 2.1.21
+Subject: Re: [tipc-discussion] TIPC socket ( SOCK_SEQPACKET) cleanup issue
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -170,44 +131,85 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Tung Quang Nguyen via tipc-discussion
+Cc: Xin Long <lxin@redhat.com>, "tipc-discussion@lists.sourceforge.net"
  <tipc-discussion@lists.sourceforge.net>
-Reply-To: Tung Quang Nguyen <tung.q.nguyen@dektech.com.au>
-Cc: "kuba@kernel.org" <kuba@kernel.org>, Eric Dumazet <edumazet@google.com>,
- Paolo Abeni <pabeni@redhat.com>, "davem@davemloft.net" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
->Subject: [PATCHv3 net 0/3] tipc: fix the mtu update in link mtu negotiation
->
->This patchset fixes a crash caused by a too small MTU carried in the
->activate msg. Note that as such malicious packet does not exist in
->the normal env, the fix won't break any application
->
->The 1st patch introduces a function to calculate the minimum MTU for
->the bearer, and the 2nd patch fixes the crash with this helper. While
->at it, the 3rd patch fixes the udp bearer mtu update by netlink with
->this helper.
->
->Xin Long (3):
->  tipc: add tipc_bearer_min_mtu to calculate min mtu
->  tipc: do not update mtu if msg_max is too small in mtu negotiation
->  tipc: check the bearer min mtu properly when setting it by netlink
->
-> net/tipc/bearer.c    | 17 +++++++++++++++--
-> net/tipc/bearer.h    |  3 +++
-> net/tipc/link.c      |  9 ++++++---
-> net/tipc/udp_media.c |  5 +++--
-> 4 files changed, 27 insertions(+), 7 deletions(-)
->
->--
->2.39.1
-For the whole series:
-Reviewed-by: Tung Nguyen <tung.q.nguyen@dektech.com.au>
-
-
-_______________________________________________
-tipc-discussion mailing list
-tipc-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/tipc-discussion
+SGkgVHVuZywKQ2FuIHlvdSBwbGVhc2Ugc2hhcmUgeW91ciB0aG91Z2h0cy4KSSBoYXZlIHJlc3Bv
+bmRlZCB0byB5b3VyIHF1ZXJpZXMgaW4gbXkgcHJldmlvdXMgZW1haWwuIFBsZWFzZSBsZXQgbWUg
+a25vdwppZiB5b3UgbmVlZCBhbnkgYWRkaXRpb25hbCBpbmZvcm1hdGlvbiBmcm9tIG15IGVuZC4K
+ClRoYW5rcyBhbmQgcmVnYXJkcywKUHJha2FzaAoKT24gVHVlLCBBcHIgMjUsIDIwMjMgYXQgMjo0
+M+KAr1BNIHByYWthc2ggYmlzaHQgPHBzMTMuYmlzaHRAZ21haWwuY29tPiB3cm90ZToKCj4gVGhh
+bmtzIFR1bmcuCj4gUGxlYXNlIGZpbmQgbXkgcmVzcG9uc2UgaW5saW5lLgo+Cj4KPiBUaGFua3Mg
+YW5kIHJlZ2FyZHMsCj4gUHJha2FzaAo+Cj4gT24gVHVlLCBBcHIgMTgsIDIwMjMgYXQgNzowNOKA
+r0FNIFR1bmcgUXVhbmcgTmd1eWVuIDwKPiB0dW5nLnEubmd1eWVuQGRla3RlY2guY29tLmF1PiB3
+cm90ZToKPgo+Pgo+Pgo+Pgo+Pgo+PiAqRnJvbToqIHByYWthc2ggYmlzaHQgPHBzMTMuYmlzaHRA
+Z21haWwuY29tPgo+PiAqU2VudDoqIE1vbmRheSwgQXByaWwgMTcsIDIwMjMgMTE6MjAgQU0KPj4g
+KlRvOiogdGlwYy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldDsgWGluIExvbmcgPGx4
+aW5AcmVkaGF0LmNvbT47Cj4+IFR1bmcgUXVhbmcgTmd1eWVuIDx0dW5nLnEubmd1eWVuQGRla3Rl
+Y2guY29tLmF1Pjsgam1hbG95QHJlZGhhdC5jb20KPj4gKlN1YmplY3Q6KiBGd2Q6IFRJUEMgc29j
+a2V0ICggU09DS19TRVFQQUNLRVQpIGNsZWFudXAgaXNzdWUKPj4KPj4KPj4KPj4gSGkgSm9obi9Y
+aW4sVHVuZywKPj4KPj4KPj4KPj4gQW55IHRob3VnaHRzIG9uIG15IHByZXZpb3VzIGVtYWlsPyBX
+ZSBhcmUgdXNpbmcgdGlwYyBmb3Igb3VyIHByb2R1Y3QgZm9yCj4+IHF1aXRlIGEgd2hpbGUgYW5k
+IHN0YXJ0ZWQgZmFjaW5nIHRoaXMgaXNzdWUgcmVjZW50bHkgaW4gYSBzcGVjaWZpYyBzY2VuYXJp
+bwo+PiB3ZSBsYXVuY2ggc3RyYWNlIHRvIG1vbml0b3IgYW5vdGhlciBwcm9jZXNzLgo+Pgo+PiBB
+bHNvIGlzIHRoZXJlIGFueSB3YXkgdG8gZGVueSBjcmVhdGlvbiBvZiBhbm90aGVyIHRpcGMgc29j
+a2V0IHdpdGggdGhlCj4+IHNhbWUgdGlwYyBhZGRyZXNzID8gIEluIG91ciBjYXNlIGFwcGxpY2F0
+aW9ucyBuZWVkIGEgdW5pcXVlIHRpcGMgc2VydmVyCj4+IHNvY2tldC4KPj4KPj4gPj4+IFRoZXJl
+IGlzIG5vIGxpbWl0YXRpb24gZm9yIGNyZWF0aW5nIG1hbnkgc29ja2V0cyBiaW5kaW5nIHRvIHRo
+ZSBzYW1lCj4+IHRpcGMgYWRkcmVzcy4gV2h5IHlvdSBuZWVkIOKAnGEgdW5pcXVlIHRpcGMgc2Vy
+dmVyIHNvY2tldOKAnSA/IENhbiB5b3UgcHJvdmlkZQo+PiB5b3VyIGNvZGUgdG8gZGVtb25zdHJh
+dGUgeW91ciB1c2UgY2FzZSA/Cj4+Cj4KPgo+PiAqW1ByYWthc2hdKiBXZSBoYXZlIHNlcnZpY2Vz
+IHdoaWNoIGFyZSB1bmlxdWUgaW4gb3VyIHN5c3RlbSBhbmQgbm90Cj4+IG1lYW50IGZvciBsb2Fk
+IGJhbGFuY2luZy4gRWFjaCBzZXJ2aWNlIGlzIHVuaXF1ZWx5IHJlcHJlc2VudGVkIGJ5IGEgdGlw
+Ywo+PiBzZXJ2aWNlIGFkZHJlc3ModHlwZSxpbnN0YW5jZSkuICBXaGF0IHdlIGFyZSBsb29raW5n
+IGZvciBpcyB0aGF0IGlmIHNvbWVvbmUKPj4gYnkgbWlzdGFrZSBjcmVhdGVzIGEgc2Vjb25kIFNl
+cnZpY2UgdXNpbmcgdGhlIHNhbWUgYWRkcmVzcyh0eXBlLGluc3RhbmNlKQo+PiB0aGVuIHRoZSBz
+ZXJ2aWNlIGNyZWF0aW9uIGZhaWwgYW5kIHRocm93IGFuIGVycm9yLiBUaGlzIGlzIGp1c3QgdG8g
+YXZvaWQgYQo+PiBzaWxlbnQgZmFpbHVyZS4KPj4KPgo+Cj4KPj4KPj4KPj4gVGhhbmtzIGFuZCBS
+ZWdhcmRzLAo+Pgo+PiBQcmFrYXNoCj4+Cj4+IC0tLS0tLS0tLS0gRm9yd2FyZGVkIG1lc3NhZ2Ug
+LS0tLS0tLS0tCj4+IEZyb206ICpwcmFrYXNoIGJpc2h0KiA8cHMxMy5iaXNodEBnbWFpbC5jb20+
+Cj4+IERhdGU6IE1vbiwgQXByIDMsIDIwMjMgYXQgNDozM+KAr1BNCj4+IFN1YmplY3Q6IFRJUEMg
+c29ja2V0ICggU09DS19TRVFQQUNLRVQpIGNsZWFudXAgaXNzdWUKPj4gVG86IDx0aXBjLWRpc2N1
+c3Npb25AbGlzdHMuc291cmNlZm9yZ2UubmV0Pgo+Pgo+Pgo+Pgo+PiBIaSBhbGwsCj4+Cj4+Cj4+
+Cj4+IEkgYW0gZmFjaW5nIGFuIGlzc3VlIHdoaWxlIGNsb3NpbmcgdGhlIFRJUEMgc2VydmVyIHNv
+Y2tldC4gSW4gY2VydGFpbgo+PiBzY2VuYXJpb3MsIGV2ZW4gYWZ0ZXIgY2xvc2luZyB0aGUgc2Vy
+dmVyIHNvY2tldCBmZCB0aGUg4oCYdGlwYyBzb2NrZXQgbGlzdOKAmQo+PiBpcyBzdGlsbCBzaG93
+aW5nIGl0IGFzIGFsaXZlLgo+Pgo+PiA+Pj4gV2hhdCBpcyB5b3UgaXByb3V0ZTIgdmVyc2lvbiA/
+IENhbiB5b3UgcHJvdmlkZSB5b3VyIGNvZGUgdG8KPj4gZGVtb25zdHJhdGUgeW91ciB1c2UgY2Fz
+ZSA/Cj4+Cj4KPgo+PiAqW1ByYWthc2ggXSogIFdlIGFyZSB1c2luZyBpcHJvdXRlMiB2ZXJzaW9u
+LTQuMjAuMC0yK2RlYjEwdTEgb24gYW1kNjQKPj4gcGxhdGZvcm0uIE91ciB1c2UgY2FzZSBpcyB2
+ZXJ5IHNpbXBsZS4gV2UgYXJlIGNyZWF0aW5nL2Rlc3Ryb3lpbmcgYSBzZXJ2ZXIKPj4gc29ja2V0
+IGJhc2VkIG9uIHNvbWUgZXZlbnQgdXNpbmcgYmVsb3cgY29kZS4KPj4KPiAgICAgICAvLyBzZXJ2
+ZXIgc29ja2V0IGNyZWF0aW9uCj4gICAgICAgICAgICBpbnQgc2QgPSBzb2NrZXQoQUZfVElQQywg
+U09DS19TRVFQQUNLRVQsIDApOwo+ICAgICAgIC8vIENsb3Npbmcgc2VydmVyIHNvY2tldAo+ICAg
+ICAgICAgICBjbG9zZShzZCk7Cj4KPiAgICAgICBBZnRlciBjbG9zaW5nIHRoZSBzb2NrZXQgdGhl
+IGZpbGUgZGVzY3JpcHRvciBpcyBmcmVlZCBidXQgdGhlIHRpcGMKPiBzb2NrZXQgaXMgc3RpbGwg
+cHJlc2VudCBpbiAidGlwYyBzb2NrZXQgbGlzdCIgb3V0cHV0Lgo+ICAgICAgIFdlIGhhdmUgbXVs
+dGlwbGUgYXBwbGljYXRpb25zIGluIG91ciBzeXN0ZW0gd2hpY2ggYXJlIHVzaW5nIHRpcGMKPiBz
+b2NrZXRzLiBCdXQgd2Ugc2VlIHRoaXMgYmVoYXZpb3VyKHN0YWxlIHRpcGMgc29ja2V0KSBvbmx5
+IGluIG9uZQo+IGFwcGxpY2F0aW9uLgo+ICAgICAgIFRoZSBvbmx5IGRpZmZlcmVuY2Ugd2hpY2gg
+SSBjYW4gbm90aWNlIGlzIHRoYXQgdGhpcyBwYXJ0aWN1bGFyCj4gYXBwbGljYXRpb24gIGlzIHNw
+YXduaW5nICJzdHJhY2UiIHRvIG1vbml0b3Igc29tZSBvdGhlciBhcHBsaWNhdGlvbi4gSSBhbQo+
+IG5vdCBzdXJlIGJ1dCBpdCBsb29rcyBsaWtlIHNvbWVob3cgcnVubmluZyBzdHJhY2UgaXMgYWZm
+ZWN0aW5nIHRpcGMgc29ja2V0Cj4KPiAgICAgICAgY2xlYW51cC4KPgo+Cj4KPj4gSSBhbSBzdXJl
+IHRoYXQgdGhlIGZkIGhhcyBiZWVuIGNsb3NlZCBhcyB0aGUgbmV4dCBzb2NrZXQgY3JlYXRpb24g
+cmVxdWVzdAo+PiBnZXRzIHRoZSBzYW1lIGZkIGZyb20gbGludXguIEV2ZW4gd2hlbiB0aGUgcHJv
+Y2VzcyBleGl0cywgdGhlIHN0YWxlIHNvY2tldAo+PiBlbnRyeSBpcyBzdGlsbCBwcmVzZW50IGlu
+IHRoZSDigJh0aXBjIHNvY2tldCBsaXN04oCZIGFuZCBpdCB2YW5pc2hlcyBvbmx5IGFmdGVyCj4+
+IHJlYm9vdGluZyB0aGUgc3lzdGVtLgo+Pgo+PiAgS2VybmVsIHZlcnNpb24gOiA0LjE5LjgxCj4+
+Cj4+IFNvY2tldCB0eXBlIDogICAgICBTT0NLX1NFUVBBQ0tFVAo+Pgo+Pgo+Pgo+PiBBbHNvLCBp
+cyB0aGVyZSBhbnkgd2F5IG9mIGZpbmRpbmcgb3V0IHdoZXRoZXIgYSB0aXBjIHNvY2tldCBiZWxv
+bmdzIHRvCj4+IHdoaWNoIGxpbnV4IHByb2Nlc3MgPwo+Pgo+PiA+Pj4gVGhlcmUgaXMgbm8gY29t
+bWFuZCB0byBrbm93IHdoaWNoIHRpcGMgc29ja2V0IGJlbG9uZ3MgdG8gd2hpY2ggTGludXgKPj4g
+cHJvY2Vzcy4gQnV0IHlvdSBjYW4gdXNlIGZ1bmN0aW9uIGdldHNvY2tuYW1lKCkgdG8gcHJpbnQg
+b3V0IHRoZSBwb3J0IGlkCj4+IGFmdGVyIGNyZWF0aW5nIGEgc29ja2V0LiBUaGVuIHlvdSBrbm93
+IHRoZSBjcmVhdGVkIHNvY2tldCBiZWxvbmdzIHRvIHRoZQo+PiBjYWxsaW5nIHByb2Nlc3MuCj4+
+Cj4gWwo+Cj4+ICAqW1ByYWthc2hdKiBUaGFua3MuICBnZXRzb2NrbmFtZSgpIHNob3VsZCBzZXJ2
+ZXIgdGhlIHB1cnBvc2UgaGVyZS4KPj4KPgo+Cj4+IFdvdWxkIGFwcHJlY2lhdGUgYW55IGhlbHAu
+Cj4+Cj4+Cj4+Cj4+IFRoYW5rcywKPj4KPj4gUHJha2FzaAo+Pgo+CgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwp0aXBjLWRpc2N1c3Npb24gbWFpbGluZyBs
+aXN0CnRpcGMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5z
+b3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vdGlwYy1kaXNjdXNzaW9uCg==
