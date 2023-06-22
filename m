@@ -2,132 +2,75 @@ Return-Path: <tipc-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+tipc-discussion@lfdr.de
 Delivered-To: lists+tipc-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6DF27385A3
-	for <lists+tipc-discussion@lfdr.de>; Wed, 21 Jun 2023 15:48:34 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1236E739D30
+	for <lists+tipc-discussion@lfdr.de>; Thu, 22 Jun 2023 11:33:30 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <tipc-discussion-bounces@lists.sourceforge.net>)
-	id 1qByCA-00067O-5I;
-	Wed, 21 Jun 2023 13:48:27 +0000
+	id 1qCGgr-0005C3-8V;
+	Thu, 22 Jun 2023 09:33:21 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <runet@innovsys.com>) id 1qByC8-00067H-Ij
+ (envelope-from <tung.q.nguyen@dektech.com.au>) id 1qCGgp-0005Bx-DL
  for tipc-discussion@lists.sourceforge.net;
- Wed, 21 Jun 2023 13:48:25 +0000
+ Thu, 22 Jun 2023 09:33:19 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Type:In-Reply-To:References:
+ Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=FzJ7V2iIN1cfJWm4GokCowNYbzuxC0vTMJnjgzqpOi0=; b=kdl/G20d69JLCv59q1xXtMxItm
- eXAxvTnAyTrvFiZ+YOlcpeUlKeNG6VFzSJn9yUfccJWZV1p+JSimg2Yo/HJULfqiFczKmI4SU1bNL
- YvFZAkzL6ercAyJXBsAoII5lzX3qT2H5SUb2YJcF3uCve0YTReX/VSOvbhz4IYM9Jop8=;
+ bh=NTeRaaRWOOuQWcPd2NHUh5UaGk4AomE6MSvfNHImsgY=; b=FlMutNMP8eZ2YRpnClcP5B/IFH
+ DEQsoBCNHXoL04TLPAkt41bMx9e+GOFa2r+k2tRmx09QnjG1XFXmmKukmbKSo6xfFM/VwXayzLCQM
+ cQr3eCBHPd6h6k/0ZAhFwLXIf8QI+7pJDIE1aSgq8oCv1KuuIUfVBTy41FZfxloztq5E=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:
- References:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+ h=MIME-Version:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:
+ To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=FzJ7V2iIN1cfJWm4GokCowNYbzuxC0vTMJnjgzqpOi0=; b=VoycaRqdHf2yaFGUjp/m2GFnIi
- azWHxzSIl6sT9g2eu2zLcqNV/17VIKmzyTGlyDODPa50LiKrAV+wnBct5YmN0K5gxCZjl5x2Ll7TE
- hzqQTbBObsofebMnOOXuSAlHE+MaG/bLihgFlGh+x/SMUozyqOIGj9MGi0l1Y58uhcqo=;
-Received: from smtp.innovsys.com ([96.2.206.15])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1qByC7-00AgT8-JQ for tipc-discussion@lists.sourceforge.net;
- Wed, 21 Jun 2023 13:48:25 +0000
-X-Sendio-Return-Path: runet@innovsys.com
-X-Sendio-Delivered: Wed, 21 Jun 2023 08:48:17 -0500
-Received: (sendio-qmail 32617 invoked from network); 21 Jun 2023 13:48:17 -0000
-X-Sendio-SenderIP: 104.47.55.169
-X-Sendio-RemoteSenderIP: 104.47.55.169
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=innovsys.com; s=default; t=1687355296; i=runet@innovsys.com;
- h=Received:ARC-Seal:ARC-Message-Signature:
- ARC-Authentication-Results:Received:Received:From:To:Subject:
- Thread-Topic:Thread-Index:Date:Message-ID:References:In-Reply-To:
- Accept-Language:Content-Language:msip_labels:
- authentication-results:Content-Type:Content-Transfer-Encoding:
- MIME-Version; bh=FzJ7V2iIN1cfJWm4GokCowNYbzuxC0vTMJnjgzqpOi0=;
- b=B8slx5n+6vzqMzkoueBpuy+dOrIigJPmhlnEXFXnr6p/+MIRu/tTcxtFaE/7GE
- ghtEPUIisF4XGZ++uijVPvcY8KE1EyZntXDNQ1IL9AtsZPIJsm1IRplCSMwiz+c8
- z2NhvXW9lgU6X8xkMtquL7uIedaVvwXGXpepPBOxibRrU=
-X-Sendio-LASED-Version: Antispam-Engine: 5.1.3, AntispamData: 2023.6.21.132717
-X-Sendio-LASED-Spam: NonSpam
-X-Sendio-LASED-SpamProbability: 0.081286
-X-Sendio-LASED-Hits: BODYTEXTP_SIZE_3000_LESS 0.000000,
- BODY_SIZE_2000_2999 0.000000, BODY_SIZE_5000_LESS 0.000000
- BODY_SIZE_7000_LESS 0.000000, CTE_QUOTED_PRINTABLE 0.000000,
- HTML_00_01 0.050000
- HTML_00_10 0.050000, IN_REP_TO 0.000000, LEGITIMATE_SIGNS 0.000000
- MSG_THREAD 0.000000, NO_FUR_HEADER 0.000000, REFERENCES 0.000000
- SINGLE_URI_IN_BODY 0.000000, SUPERLONG_LINE 0.050000, SUSP_DH_NEG 0.000000
- TRANSACTIONAL 0.000000, URI_WITH_PATH_ONLY 0.000000, __ANY_URI 0.000000
- __ARCAUTH_DKIM_PASSED 0.000000, __ARCAUTH_DMARC_PASSED 0.000000,
- __ARCAUTH_PASSED 0.000000
- __ARC_SEAL_MICROSOFT 0.000000, __ARC_SIGNATURE_MICROSOFT 0.000000,
- __BODY_NO_MAILTO 0.000000
- __BOUNCE_CHALLENGE_SUBJ 0.000000, __BOUNCE_NDR_SUBJ_EXEMPT 0.000000,
- __CP_URI_IN_BODY 0.000000
- __CT 0.000000, __CTE 0.000000, __CT_TEXT_PLAIN 0.000000
- __DQ_NEG_DOMAIN 0.000000, __DQ_NEG_HEUR 0.000000, __DQ_NEG_IP 0.000000
- __FORWARDED_MSG 0.000000, __FRAUD_URGENCY 0.000000,
- __FROM_DOMAIN_IN_ANY_TO1 0.000000
- __FROM_DOMAIN_IN_RCPT 0.000000, __HAS_FROM 0.000000, __HAS_MSGID 0.000000
- __HAS_REFERENCES 0.000000, __HAS_X_FF_ASR 0.000000, __HAS_X_FF_ASR_CAT 0.000000
- __HAS_X_FF_ASR_SFV 0.000000, __HTTPS_URI 0.000000, __IN_REP_TO 0.000000
- __MAIL_CHAIN 0.000000, __MIME_BOUND_CHARSET 0.000000, __MIME_TEXT_ONLY 0.000000
- __MIME_TEXT_P 0.000000, __MIME_TEXT_P1 0.000000, __MIME_VERSION 0.000000
- __MSGID_32_64_CAPS 0.000000, __MULTIPLE_RCPTS_TO_X2 0.000000,
- __NO_HTML_TAG_RAW 0.000000
- __PHISH_PHRASE10_D 0.000000, __PHISH_SPEAR_SUBJ_SUBJECT 0.000000,
- __RCVD_FROM_SUSP_HOSTNAME 0.000000
- __REFERENCES 0.000000, __SANE_MSGID 0.000000, __SCAN_D_NEG 0.000000
- __SCAN_D_NEG2 0.000000, __SCAN_D_NEG_HEUR 0.000000, __SCAN_D_NEG_HEUR2 0.000000
- __SINGLE_URI_TEXT 0.000000, __SUBJ_ALPHA_END 0.000000,
- __SUBJ_ALPHA_NEGATE 0.000000
- __SUBJ_REPLY 0.000000, __SUBJ_TRANSACTIONAL 0.000000, __SUBJ_TR_GEN 0.000000
- __TO_MALFORMED_2 0.000000, __TO_NAME 0.000000, __TO_NAME_DIFF_FROM_ACC 0.000000
- __TO_REAL_NAMES 0.000000, __URI_IN_BODY 0.000000, __URI_MAILTO 0.000000
- __URI_NOT_IMG 0.000000, __URI_NO_WWW 0.000000, __URI_NS 0.000000
- __URI_WITH_PATH 0.000000, __X_FF_ASR_SCL_NSP 0.000000,
- __X_FF_ASR_SFV_NSPM 0.000000
-X-Sendio-IP-Reputation: neutral
-X-Sendio-MessageID: 1687355296.32603.1
-Received: from unknown (HELO NAM12-BN8-obe.outbound.protection.outlook.com)
- (104.47.55.169)
- by smtp.innovsys.com with ESMTPS (ECDHE-RSA-AES256-GCM-SHA384 encrypted);
- 21 Jun 2023 13:48:16 -0000
+ bh=NTeRaaRWOOuQWcPd2NHUh5UaGk4AomE6MSvfNHImsgY=; b=OodBtDI13Ete8mnPf0ikwVXRUd
+ BHUjcasAwTpVYX7fW9mZctXEbBoBh8ybaIsSAMWxt05BB4BIUQtXfbgzl/6PtqtWAfLYprLuDIw06
+ jeSSwfb+dKyMnt4mE8itZ1BvwhPnf3MH98HpKNN8FA6Rl0t4vBFFzPbuAbAGSTPrWnAQ=;
+Received: from mail-am7eur03on2107.outbound.protection.outlook.com
+ ([40.107.105.107] helo=EUR03-AM7-obe.outbound.protection.outlook.com)
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1qCGgf-0003Yu-29 for tipc-discussion@lists.sourceforge.net;
+ Thu, 22 Jun 2023 09:33:19 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=LVt+BClE30lWyKyek2kl2R3dogIXgr3IeqlHpGQQy4NvkQsUhBoq1Tls5/RLSjgmMheEnPj7Ydx+zb11jd2yqsM5FitylUSGUAzXwGjZi3Cf02qmoyX1ye/Nm2aJBQaR8p7qrQ0RSIja4k6EawAI6yUWj/xNNXzDhwYS100pB5M4ped46vRSDGaDAH19mApIN5hdqkH+1S0aVCS1c/4ZO1gAzfU/evH/R8T3qwDFIm1tESFy4Ci5KUGxNFWnlQyZmNm85nKdmvZlyti6vm++45KlUjyq8oFpanqf4bBfeZsLaBmlhYS18EIBLV5B7cwf7QDz234/yyDDHLQAI29CvA==
+ b=UXcVVIrzLmtVMLxHz+krcqCKnVmUbnjMxkXDKB1JLd3eA+KE4jMMjk8Flh6o04mkR4pD6k+i6mQFgmMvbjGDgB57+ofhLNHnbBEQFpetSxYD6t9W9W4t63y/R2S5GN2DXvn6+63VB0ujjfCVa7ePQp0fUzJh4o66j8LV07xyO3J1WJJg/wAcwvX5+lFTzDv9NyTdnXbGihf0I3DtUF84YPguWe+cXzmCxFYCoXk0biCdVGIDepTOKTZ/HnHJu0pbavecYNbwUFlGw3SEdCK58xSb31prjZL0dAMYfihU+8wUVFKJFcV12WNIcZUEvQ+ACUb2jeS+l6VCcGmwbJmLUA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=FzJ7V2iIN1cfJWm4GokCowNYbzuxC0vTMJnjgzqpOi0=;
- b=CSgyqeQrM5Q6GDCm9hOb692OlqeVSsx6hUrPzOeIchY0vsdTPLAktYqTCqDiZKVzRlmgdjyo3VEcKqEx6ebz6spmbKaan5xVLnur2eBky9yYpRmBl5CnxZOBIwxRqZ+rE3itQi5E0mLGcqKnoQQUje9ioJjZio3VmM/jJyJxrgS7TUFL4T+DYml5hVYT4w9p8B0T0ADAVBuLxFhDhPKQ/oMa+s/FIL32vZnUOQ9UaqLh3kROXIDFWJFKtKQbB6HfDEzPZIqkDIpPsHnPI6SCP/H6GtCHsbUvijC16xYyJ5WSLlrc0M2w7QZJiNlBxnJ5/HofYVWKqZ2H9/7G7CBflQ==
+ bh=NTeRaaRWOOuQWcPd2NHUh5UaGk4AomE6MSvfNHImsgY=;
+ b=Q6lpXwiB60mGPyv6ay5cy6O9fHvo5/9tzjwyU+2/kUEj6r/7yAaiUrict8T4C9JLeMjhXH2+9f9LeNEhpps6nGw7LWRi7F/fgDTBd/gpRYJrN7FIidwsxIIbdAUjnGQNmQ6JKrQM1trWMnrPKzSsLYa29Rm1sZCviKLRdnjN6xcSs+y2JzPe0gHyjEG3MZhRQ3SEnA8R4N3yXsO6oQTAL1u79fP4OqltvZIg5m/eZV6E0pPW4RcFvYXO+zHszstKvf2EtN6Jc0E+CmpN0sFfy0yaKnzKiQ0SzU+u6CWBkvQ+ey5jBGr8AV4d7lzEyUlKddcxrVNLLgZTiVWxAMY12w==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=innovsys.com; dmarc=pass action=none header.from=innovsys.com;
- dkim=pass header.d=innovsys.com; arc=none
-Received: from DM5PR1301MB1995.namprd13.prod.outlook.com (2603:10b6:4:30::28)
- by BY5PR13MB3811.namprd13.prod.outlook.com (2603:10b6:a03:22e::21)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6521.21; Wed, 21 Jun
- 2023 13:48:12 +0000
-Received: from DM5PR1301MB1995.namprd13.prod.outlook.com
- ([fe80::4d51:14e7:83e0:8b17]) by DM5PR1301MB1995.namprd13.prod.outlook.com
- ([fe80::4d51:14e7:83e0:8b17%5]) with mapi id 15.20.6500.031; Wed, 21 Jun 2023
- 13:48:11 +0000
-From: Rune Torgersen <runet@innovsys.com>
-To: Rune Torgersen <runet@innovsys.com>, Tung Quang Nguyen
- <tung.q.nguyen@dektech.com.au>, "tipc-discussion@lists.sourceforge.net"
+ smtp.mailfrom=dektech.com.au; dmarc=pass action=none
+ header.from=dektech.com.au; dkim=pass header.d=dektech.com.au; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dektech.com.au;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=NTeRaaRWOOuQWcPd2NHUh5UaGk4AomE6MSvfNHImsgY=;
+ b=tSbpvLOP3BCbGHMkE5b+S215qRkN2Ojnrv9zQOngKfjm8A7nxI188kbtVWpCmzAqh0+zcireUnuE1lfMRSukamhMVEY8/JpGpomgZKW2WfVHvO5Fv6KfO8vQGQJDdexUUPEg3K3IXcR9ilZgbYX165fKFfYOm7x7kLBfifnWMNY=
+Received: from DB9PR05MB9078.eurprd05.prod.outlook.com (2603:10a6:10:36a::7)
+ by AM7PR05MB6680.eurprd05.prod.outlook.com (2603:10a6:20b:141::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6521.24; Thu, 22 Jun
+ 2023 09:33:01 +0000
+Received: from DB9PR05MB9078.eurprd05.prod.outlook.com
+ ([fe80::e2bd:186:9dfe:1fc3]) by DB9PR05MB9078.eurprd05.prod.outlook.com
+ ([fe80::e2bd:186:9dfe:1fc3%7]) with mapi id 15.20.6521.023; Thu, 22 Jun 2023
+ 09:33:00 +0000
+To: Rune Torgersen <runet@innovsys.com>,
+ "tipc-discussion@lists.sourceforge.net"
  <tipc-discussion@lists.sourceforge.net>
 Thread-Topic: TIPC out-of-order publish message
-Thread-Index: Admjvh3Dz94vxOkrT2iyOU+KitnwHwASv4w3AA4J7CAAAVc4cA==
-Date: Wed, 21 Jun 2023 13:48:11 +0000
-Message-ID: <DM5PR1301MB19958A8131373193525AA774C45DA@DM5PR1301MB1995.namprd13.prod.outlook.com>
+Thread-Index: Admjvh3Dz94vxOkrT2iyOU+KitnwHwASv4w3AA4J7CAAKnkxcA==
+Date: Thu, 22 Jun 2023 09:33:00 +0000
+Message-ID: <DB9PR05MB907830F6439F71E6317C6E108822A@DB9PR05MB9078.eurprd05.prod.outlook.com>
 References: <DM5PR1301MB19955F75723A04B9C6EBE3CAC45CA@DM5PR1301MB1995.namprd13.prod.outlook.com>
  <DB9PR05MB907890FF4DE02BEAB6E80EAC885DA@DB9PR05MB9078.eurprd05.prod.outlook.com>
  <DM5PR1301MB19955167B7004B600128DDA7C45DA@DM5PR1301MB1995.namprd13.prod.outlook.com>
@@ -138,57 +81,59 @@ X-MS-Has-Attach:
 X-MS-TNEF-Correlator: 
 msip_labels: 
 authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=innovsys.com;
+ header.d=none;dmarc=none action=none header.from=dektech.com.au;
 x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: DM5PR1301MB1995:EE_|BY5PR13MB3811:EE_
-x-ms-office365-filtering-correlation-id: a82b450e-78b2-42ef-cad2-08db725e278c
+x-ms-traffictypediagnostic: DB9PR05MB9078:EE_|AM7PR05MB6680:EE_
+x-ms-office365-filtering-correlation-id: 88200326-9e54-4d0a-0c77-08db7303abde
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 7VIgk8k/rik4CSqIATqC0/ZkPBafD3r44OJ9YYS3fHvua3ABF35SXPZo/+bocky6rnyyuVPOx8vJRokYZZiG5YyRrU8xyPewi+57tRzjbzBE3C8o4+eKGormXmqWTQMIv7hzuIwwhmNkFnzg+osSjUokuJLSvbZohYHzS1J0amtvn7L0MnitJM35o25r8OO6XHQok0cl7GazLshwgAPXEOpXW9non0uXrGjsKQsdZyHemgL5Gmdnk8ywLrpxgEtzvZ8g/AEdpSluBMhCBrKEBd42jVjfaU0FkIU2ZRBZix7vbh5KALSjBq+GW2nYbsRJRNi6Rn+f2H42u2lJRaRerQgSklWSR8Sx7mAXG5toJSo/VfYKLv4IfZ15ivZeAlt5K76xjzVhNjqMpARWjcWvnL/k46XkxJfC0YKmjLYpQLBpLuIP5zHsslO/hOL1RCGjjWVpYBDwgFyC11VRFDwJdZW5x3CQNKg+hhPpeh9TImKZtE8hYTLrikFLuSlyOpyCOsLdflw9udO0iKberg/VJIcT2ADBoL2tgkRp2FRlTDCIy0QX99DKnLYRmjoDMksFzAJrAs4MmGoA1ITG3L9Lo1NG+qFdWhvUoWCDYOWvl1NPeSrcEgna/kMcKNIe4838gt2mh6m/y4kOyI4a2s1/nA==
+x-microsoft-antispam-message-info: EuPlvCjQK+im0BxTYDsPjbgj9b80FkQxp3f1/q4VXykHT2gB95l0HI0qm5pULd6ISInCFj5U27PGd0euM3Ag3tlCIYJ8+tlOY0JGU3IKvSgXtjtZe7E3IiNthMBpD9aJNLd//kqRqLDScl/7l59V4Jr52jtQzlxaj4YEIHkT7TebKLEvh5UqzFrQIZ0ERMAEXWWN0hl8sX8WgkJsId1CMTdKDGGim7Hg/UtJvXU3Nvp9pBeHVNQgMgwjPh5VmkxGf8ujOr+GgJ7okw26l0JuVa9AgwW8u1CNLBXyW/bsgQtNdOFOo3vdiTbV4AnrmcJJGqh3PndwmlEJlCBvmHFJxePvxX53K4JqpA1ws7KmCnyBgSRyTXtdzdtrJc6CzJVIbS+AzfHEIIZNdRLPE4XoIeFdRWXiQnoyJjtDvluUM4DyxP4euuVMMrH1n6XAjNlsbXlO+rXGrvNGK9mJEXJsIpa4sVUdYhdsCi2BLSokXTe3NJuwoChPJWKj+WD40di78+q2Hu3FTQBWOA/KMXp0Ji9/yOJ0vb0QSGyMuFYOfZ9Uv29IyKvGmercY4SeurO8TXYJCosUDs1qPhDBWxwHoUbzUh8iqouCzg4TXg0J88jncXYeVpWfsjDVmuDaCmxJ
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DM5PR1301MB1995.namprd13.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230028)(4636009)(396003)(366004)(346002)(136003)(376002)(39840400004)(451199021)(53546011)(55236004)(33656002)(66556008)(38070700005)(5660300002)(52536014)(8936002)(8676002)(86362001)(41300700001)(64756008)(66476007)(76116006)(66946007)(66446008)(38100700002)(316002)(55016003)(122000001)(966005)(6506007)(9686003)(2906002)(26005)(186003)(2940100002)(15650500001)(7696005)(478600001)(83380400001)(45080400002)(71200400001)(110136005);
+ IPV:NLI; SFV:NSPM; H:DB9PR05MB9078.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(13230028)(4636009)(376002)(366004)(136003)(39840400004)(346002)(396003)(451199021)(15650500001)(41300700001)(186003)(91956017)(66476007)(66556008)(66946007)(76116006)(110136005)(52536014)(5660300002)(86362001)(7696005)(71200400001)(2906002)(19627405001)(38070700005)(8676002)(8936002)(6506007)(122000001)(9686003)(26005)(83380400001)(53546011)(55016003)(66446008)(33656002)(64756008)(38100700002)(316002)(478600001);
  DIR:OUT; SFP:1102; 
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?PLZ6qZILplzW1IdkhKsKYqIohnwdBCrI46wcGm1Tzz2J9RN+BNmiTA7NuC2x?=
- =?us-ascii?Q?GWNojctpvfoxveIDku2YfmJ1PFyFqx3UmKSCA/nMi6ahMeXOUdvrePeEvS5Z?=
- =?us-ascii?Q?EW7RMB6q2crkz8cfpzknx/fJTgRvCTsqJF58cJrE20/Hj/9cuhnjkmit+qfl?=
- =?us-ascii?Q?vUtGIxaFFrxMndxLhBrT+YbePkl1MGo0bQBCl5FMTeh3x5aoduMJmxB4p55b?=
- =?us-ascii?Q?lbqGKnXGjnq8RcPV2tEYEtIGWDF9tVF2dF4BnvhAOeo5zzvbDOr8Ub0HVsv/?=
- =?us-ascii?Q?YU1/Vlu62Gx6qtp02ZZLBsWKBCohgp+L/uLg6zRQsmP/TLfyGpq79fSynzbD?=
- =?us-ascii?Q?MssqVLmgd0YA5cHSbskJU60XlOPfKMano8Hb6vLM232YYORtCEJgdg79g1NS?=
- =?us-ascii?Q?EgK5Oc0Qwb8V8qJ/zFiJed/NxE2gT4veF20bubQAEXNwQQOgFiDvRahhDAaw?=
- =?us-ascii?Q?Dy3eLyIjeI7A8eoyvAbGO5MxRFE1fxalna+mk9mrQDBl5+ZbLpIoFt2NB6F3?=
- =?us-ascii?Q?one18pWgrEFXj1/kqL6hxFIM3U99pURLkcn8AGXT9jHfIk+Rs3qjkDaQvnau?=
- =?us-ascii?Q?pERgdhoQMFXUczYvpeWMdTW1qOZaSzJNQIWcCmMrjDntqeFCGrNv5gRObdvQ?=
- =?us-ascii?Q?4v+04vENSGYqzmrSYZ4W+QUBQ3jpwHqY0hXQ7o5+/86y1qeWfyLqphI2iMwt?=
- =?us-ascii?Q?SUwsNH5tQVvzLS08H8kqN8ZNiYWnI3aJwA2L+VSyzlH56VItY3KoWFG4IoLE?=
- =?us-ascii?Q?0FFLpGIHFsyRiNTMWH8gkOCGFky1aDlNBmmCexyawXPxKSNIw4jE9mkZYN8O?=
- =?us-ascii?Q?zXwm9U+N+mx07roLVqwmldm//59RPxvQkfFe4P2B0cq+cZKm322uXTQkg6Sd?=
- =?us-ascii?Q?gl55lQEylPZ8jSiva9Bvd/HHRVWtfnNS6UFsA0NuPZXz/GFw6UHBSdbMCfh4?=
- =?us-ascii?Q?YRv7SGspdufVTm4ocqOwYX1qFZR3bGdwCrcXDYloNvZNM/gSwx7elgbXpnmk?=
- =?us-ascii?Q?Y1MHwD20822uVHHLmpxIr50bQYSnWXH+krj/vlSnR+ZZxc/qBGgrHEhCMkxz?=
- =?us-ascii?Q?t9c8v8MavNOovu/ngxYHCb5FcYx+3YEMyvsAvlF2e01dB+9bYk/f/TOs0LUQ?=
- =?us-ascii?Q?GUDtzCF32qS1MTI9elrKSYNpuqs6Dm/hPdjj2m2U8JT7+TJoS9JPxCSJhBus?=
- =?us-ascii?Q?rWMJF5YDYkN1bYBpEimUb6ZvefAkGwjPG6htqLs+ezNiV5LpIt7EqMMBPSMo?=
- =?us-ascii?Q?NXqGUoezL3WqpuS4uNrKqhNBi1qXBXpBOeUWrtV3eLzC22v6hKXdRZG497QK?=
- =?us-ascii?Q?CmQdYhx7yEiskFaWHIF/hlxfn+dNWf6OEgK3AGE1TVG/6FVXIyRQAJZ0eyL4?=
- =?us-ascii?Q?+OgcxaFsq3NAoa1OVPgkNC9KSXuHi4j/TD75BEBoa8Y+5ppXePRhYD0FvxCO?=
- =?us-ascii?Q?fZDK3jUKghG9VnrmLpZRiCHFjgdp3MzYxpOlkQqKcKeofANVVJ9PX904i6sE?=
- =?us-ascii?Q?tr3UFkTZAxgQ3soBUsVIyyvUmhhIp6q0mYEx0o4x+TuM32c+e9k8a1DNMPBW?=
- =?us-ascii?Q?i4L2XyM6JvwAdYLS7Q7BnB+vpRDg/Y6cFj+ID2U6?=
+x-ms-exchange-antispam-messagedata-0: =?iso-8859-1?Q?prlCXFdExoMfX08tFXNqyqPqtqx75yEJFHhiYL8N9ZR8NvOjz3SNmTjz75?=
+ =?iso-8859-1?Q?kBfIGYqGX/+m38QFQjGoj9EOBFScjQUOBjDH7ongW/IxsKUv8dA3lLKHSt?=
+ =?iso-8859-1?Q?niGQYRgyJIQFg6UoqzNfEi9EaHi+0U+E93JZ2UT7Xixw16vseONOyLvBMr?=
+ =?iso-8859-1?Q?x0toR/6aJJmjwPPS8HGmJNT2v1ehCZq6Vz2rGMiLv9UEcePNFAp/k0v6l1?=
+ =?iso-8859-1?Q?LZhkZotDzAsmteTuGdi7B3I/HPbXjJv2dYzjprLhamu7+SzhqKzTbEI8LG?=
+ =?iso-8859-1?Q?L6S9A6BCPvA3BFSOAfYjofnTkakz5aJ/s5rYt7XxFDWgqF3lf4BBwHvfvk?=
+ =?iso-8859-1?Q?CJs9NJuLaacyquUfTjQuEw7zkAWZyg5d0YzEiN8rnZDSe7FK4KbAKriDza?=
+ =?iso-8859-1?Q?vCn4+qjAA4FOc/SiKim3y5As7ziZe2mRNmaRyDL7A9en4k/UNj6jM3u78X?=
+ =?iso-8859-1?Q?L6M8bmkhsR2i7d6yXAD6DLGAIbRj7uQmF2VrFp0h7uFNKHiJC47uYRkVqe?=
+ =?iso-8859-1?Q?Ayj+q9N2fPA9Ddti5Xfp9U0X2uieJkyKTeyoCVqEo5K6QcsazdS1qobeA8?=
+ =?iso-8859-1?Q?nR8FGS3kYPn9WPkMtUbXFnRb+cyv24jPMgN/CITe72hTav3h5h2HjDYuR+?=
+ =?iso-8859-1?Q?YvVLZ7c5qFWcQSpnGLNyGmmqw9bl0FF1m41lKEk7fBsHYQt4Lpw1Hx5tSi?=
+ =?iso-8859-1?Q?CnH8GTFB3U1ohbWk5lMmq2Em7sj5dV2FfhXF0j7CeAksax6FByxOF3PUSy?=
+ =?iso-8859-1?Q?aOz+AVhT5P0o3VbojsrNe6ur9kyd0etHJPEx7kOCzCujZSDGcM80vDSwZ4?=
+ =?iso-8859-1?Q?Of61p+uXFZ1XQuVC7468xCV+AKEM8TXwgaD2DomXHEGEN9a9qhZPLPylQv?=
+ =?iso-8859-1?Q?YSDrJ6c2/ApNneBCz7Rl+vsdUIo5R6UyRAWfi4cRGQKpbetCSQdbyAPUhN?=
+ =?iso-8859-1?Q?N+fmxyDsl1jbW0rJaOzjvuF4b+w4+rDnKPcV16Rap63XXvXdqzSqAIbwJd?=
+ =?iso-8859-1?Q?yp8cGwaHw4tm6KTb1DnFfxr8Gi4X7wG+UEzPuWCzm363fSTyXxSod05LFp?=
+ =?iso-8859-1?Q?p4i0jSEPIpSrv+gCo3hmNYsc5Cv3tsK6HqPN6cCzPYnCmu9BxZIz5fvFW6?=
+ =?iso-8859-1?Q?927Hyr2r88H+ZUAjgx+qFXU5yIcqB1Z9z6NJgsbqfbTI9IJkq7LOwrBg5L?=
+ =?iso-8859-1?Q?54IwrBceeH/F9kAOtBOD0Qbw0k5Irt4vzEqwYJAW+1dlhebQylRGSJrqCo?=
+ =?iso-8859-1?Q?F0mJCdhHIYJ972eKU3AXgu1ZOKl3JhwReOuWEuY/T+fsOfpRVk29Fr1Ron?=
+ =?iso-8859-1?Q?Fjeqpj776pAlY6c/TjPcbc4DVQWH9Q4hGFW8zX8e0+K60pLpMAIi5GlMMh?=
+ =?iso-8859-1?Q?IxoQrHNJY0PCMw2YfmDwIpjP6PZXW4lHtBp8WZVg6i0mqc/i4DA3NGencx?=
+ =?iso-8859-1?Q?7YVRywiZ8yoIUdWHkKFgR388fsDAZ2VyZFQUXkc0JaB/cIjwcM/XS6a3sT?=
+ =?iso-8859-1?Q?lgY2cVv+a8e1Jor/5gyN1RFVkzkrgdZ/k/FiEV5zDtVyRIbKOFnfH18mwa?=
+ =?iso-8859-1?Q?YkWO0sqUHWp6sDyD6FZTyUalxsHy1MF/8fy974xJIQpdv1C4K6Q1zIMcCB?=
+ =?iso-8859-1?Q?eSdMObJVoK87Z7tjgaNfAohgs8NjRXH+Apgoddbx6IQp4pbc0+AFMB2w?=
+ =?iso-8859-1?Q?=3D=3D?=
 MIME-Version: 1.0
-X-OriginatorOrg: innovsys.com
+X-OriginatorOrg: dektech.com.au
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: DM5PR1301MB1995.namprd13.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a82b450e-78b2-42ef-cad2-08db725e278c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Jun 2023 13:48:11.8893 (UTC)
+X-MS-Exchange-CrossTenant-AuthSource: DB9PR05MB9078.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 88200326-9e54-4d0a-0c77-08db7303abde
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Jun 2023 09:33:00.8522 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 7a48ce45-ee97-4a95-ac18-3390878a179b
+X-MS-Exchange-CrossTenant-id: 1957ea50-0dd8-4360-8db0-c9530df996b2
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: bH4qPwcAhhmlyOFC/lhswbektnkQ7d1I2nbl2Jc5o1IF5fI5pYWqGXwXUnE7G8BJjybX5UOGmaJ+Zg4mGF/xCFDgbVFf+uyr59phw/t75sY=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR13MB3811
+X-MS-Exchange-CrossTenant-userprincipalname: V8X/I6pIITz/uuS9EQsCAviV4fNn3ZNpVgZnz8XlEvufSKNaKxjaqrjZVv/VBxJa8JsCXblI2Q3YIgKlDMdeKgZ1vieq79TRl7Wym4jP5+U=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR05MB6680
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
@@ -196,15 +141,19 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Also,
- since the publish and unicast is not guaranteed in order, 
- should not reception of a unicast data message before a publish update the
- publish table on the receiving end so you can expect to reply [...] 
+ Content preview:  > if we send a message from a newly opened tipc socket to
+ a different node, we cannot send back a reply immediately, as the tipc stack
+ will silently throw away the message because the publish has not [...] 
  Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.105.107 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.105.107 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -212,7 +161,8 @@ X-Spam-Report: Spam detection software,
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1qByC7-00AgT8-JQ
+X-Headers-End: 1qCGgf-0003Yu-29
+X-Content-Filtered-By: Mailman/MimeDel 2.1.21
 Subject: Re: [tipc-discussion] TIPC out-of-order publish message
 X-BeenThere: tipc-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -225,30 +175,21 @@ List-Post: <mailto:tipc-discussion@lists.sourceforge.net>
 List-Help: <mailto:tipc-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tipc-discussion>, 
  <mailto:tipc-discussion-request@lists.sourceforge.net?subject=subscribe>
+From: Tung Quang Nguyen via tipc-discussion
+ <tipc-discussion@lists.sourceforge.net>
+Reply-To: Tung Quang Nguyen <tung.q.nguyen@dektech.com.au>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: tipc-discussion-bounces@lists.sourceforge.net
 
-Also, since the publish and unicast is not guaranteed in order, should not reception of a unicast data message before a publish update the publish table on the receiving end so you can expect to reply back immediately.
-
-Take UDP as the other datagram protocol. You are expected to be able to send back a reply to the sending socket immediately upon reception of a message, as by receiving it you know the farend is up.
-
-
------Original Message-----
-From: Rune Torgersen <runet@innovsys.com>
-Sent: Wednesday, June 21, 2023 8:18 AM
-To: Tung Quang Nguyen <tung.q.nguyen@dektech.com.au>; tipc-discussion@lists.sourceforge.net
-Subject: Re: [tipc-discussion] TIPC out-of-order publish message
-
-This email originated from outside Innovative Systems. Do not click links or open attachments unless you recognize the sender and know the content is safe.
+>  if we send a message from a newly opened tipc socket to a different node, we cannot send back a reply immediately, as the tipc stack will silently throw away the message because the publish has not yet been received.
+You can always send the message back if communication is being performed on the known service (in your example: type 226, instance 2). If you send a message back using new service (type 226, instance addr) which is not known yet by the sender, of course TIPC will drop this message.
 
 
-Example is a extremely paired down version of the problem.
-What it means in reality for us, is that if we send a message from a newly opened tipc socket to a different node, we cannot send back a reply immediately, as the tipc stack will silently throw away the message because the publish has not yet been received.
+> We have a workaround right now by querying the topologyserver before each send, but that slows down everthing by several orders of magnitude.
 
-Problem is, this is in use in applications we've been selling for years (originally released under ubuntu 16, and has always worked correctly until now. We've used TIPC back to 2.6 kernels, and never had this issue before.
+This is the right thing to do.
 
-It is basically not feasible to rewire it all. We have a workaround right now by querying the topologyserver before each send, but that slows down everthing by several orders of magnitude.
 
 
 
@@ -258,24 +199,29 @@ Sent: Wednesday, June 21, 2023 1:41 AM
 To: Rune Torgersen <runet@innovsys.com>; tipc-discussion@lists.sourceforge.net
 Subject: Re: TIPC out-of-order publish message
 
+
+
 This email originated from outside Innovative Systems. Do not click links or open attachments unless you recognize the sender and know the content is safe.
 
 
+
+
+
 >        if (-1 == bind(sock, (struct sockaddr*)&listen_addr, sizeof(struct sockaddr_tipc)))
+
 >          perror("Error opening TIPC socket");
 
  >       *(int*)buf = addr;
  >       int rc = sendto(sock, buf, sendsize, 0, (struct sockaddr*)&to_addr, sizeof(to_addr));
 
+
+
 You are not recommended to design your application this way.
+
 Published messages are TIPC internal messages. There is no guarantee that they and user data messages are sent/received in correct order. Especially, since kernel 5.10, Published messages are sent on Broadcast link whereas user data messages are sent on Unicast link.
+
 These links have different send queues, sequence numbering engines etc. So, what you showed in TCP dump is an expected behavior.
 
-
-_______________________________________________
-tipc-discussion mailing list
-tipc-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/tipc-discussion
 
 
 _______________________________________________
